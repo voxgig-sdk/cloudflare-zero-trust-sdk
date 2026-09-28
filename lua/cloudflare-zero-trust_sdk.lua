@@ -346,6 +346,48 @@ end
 
 
 
+-- Idiomatic facade: client:AlexandriaDeleteApplication():list() / client:AlexandriaDeleteApplication():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:AlexandriaDeleteApplication(data)
+  local EntityMod = require("entity.alexandria_delete_application_entity")
+  if data == nil then
+    if self._alexandria_delete_application == nil then
+      self._alexandria_delete_application = EntityMod.new(self, nil)
+    end
+    return self._alexandria_delete_application
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:AlexandriaGetApplication():list() / client:AlexandriaGetApplication():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:AlexandriaGetApplication(data)
+  local EntityMod = require("entity.alexandria_get_application_entity")
+  if data == nil then
+    if self._alexandria_get_application == nil then
+      self._alexandria_get_application = EntityMod.new(self, nil)
+    end
+    return self._alexandria_get_application
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:AlexandriaGetCategory():list() / client:AlexandriaGetCategory():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:AlexandriaGetCategory(data)
+  local EntityMod = require("entity.alexandria_get_category_entity")
+  if data == nil then
+    if self._alexandria_get_category == nil then
+      self._alexandria_get_category = EntityMod.new(self, nil)
+    end
+    return self._alexandria_get_category
+  end
+  return EntityMod.new(self, data)
+end
+
+
 -- Idiomatic facade: client:ClientVersion():list() / client:ClientVersion():load({ id = ... })
 -- Entity access is capitalised (PascalCase) for parity with the other SDKs.
 function CloudflareZeroTrustSDK:ClientVersion(data)
@@ -528,6 +570,20 @@ function CloudflareZeroTrustSDK:DigitalExperienceMonitoringFleetStatusOverTime(d
 end
 
 
+-- Idiomatic facade: client:Integration():list() / client:Integration():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:Integration(data)
+  local EntityMod = require("entity.integration_entity")
+  if data == nil then
+    if self._integration == nil then
+      self._integration = EntityMod.new(self, nil)
+    end
+    return self._integration
+  end
+  return EntityMod.new(self, data)
+end
+
+
 -- Idiomatic facade: client:Interconnect():list() / client:Interconnect():load({ id = ... })
 -- Entity access is capitalised (PascalCase) for parity with the other SDKs.
 function CloudflareZeroTrustSDK:Interconnect(data)
@@ -663,6 +719,146 @@ function CloudflareZeroTrustSDK:NscStatusInfo(data)
       self._nsc_status_info = EntityMod.new(self, nil)
     end
     return self._nsc_status_info
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:OneApplicationDetail():list() / client:OneApplicationDetail():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:OneApplicationDetail(data)
+  local EntityMod = require("entity.one_application_detail_entity")
+  if data == nil then
+    if self._one_application_detail == nil then
+      self._one_application_detail = EntityMod.new(self, nil)
+    end
+    return self._one_application_detail
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:OneIntegrationCreate():list() / client:OneIntegrationCreate():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:OneIntegrationCreate(data)
+  local EntityMod = require("entity.one_integration_create_entity")
+  if data == nil then
+    if self._one_integration_create == nil then
+      self._one_integration_create = EntityMod.new(self, nil)
+    end
+    return self._one_integration_create
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:OneIntegrationDetail():list() / client:OneIntegrationDetail():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:OneIntegrationDetail(data)
+  local EntityMod = require("entity.one_integration_detail_entity")
+  if data == nil then
+    if self._one_integration_detail == nil then
+      self._one_integration_detail = EntityMod.new(self, nil)
+    end
+    return self._one_integration_detail
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:OneIntegrationPause():list() / client:OneIntegrationPause():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:OneIntegrationPause(data)
+  local EntityMod = require("entity.one_integration_pause_entity")
+  if data == nil then
+    if self._one_integration_pause == nil then
+      self._one_integration_pause = EntityMod.new(self, nil)
+    end
+    return self._one_integration_pause
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:OneIntegrationResume():list() / client:OneIntegrationResume():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:OneIntegrationResume(data)
+  local EntityMod = require("entity.one_integration_resume_entity")
+  if data == nil then
+    if self._one_integration_resume == nil then
+      self._one_integration_resume = EntityMod.new(self, nil)
+    end
+    return self._one_integration_resume
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:OneIntegrationUpdate():list() / client:OneIntegrationUpdate():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:OneIntegrationUpdate(data)
+  local EntityMod = require("entity.one_integration_update_entity")
+  if data == nil then
+    if self._one_integration_update == nil then
+      self._one_integration_update = EntityMod.new(self, nil)
+    end
+    return self._one_integration_update
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:OnePaginatedApplicationListList():list() / client:OnePaginatedApplicationListList():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:OnePaginatedApplicationListList(data)
+  local EntityMod = require("entity.one_paginated_application_list_list_entity")
+  if data == nil then
+    if self._one_paginated_application_list_list == nil then
+      self._one_paginated_application_list_list = EntityMod.new(self, nil)
+    end
+    return self._one_paginated_application_list_list
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:OnePaginatedAuthMethodDetailList():list() / client:OnePaginatedAuthMethodDetailList():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:OnePaginatedAuthMethodDetailList(data)
+  local EntityMod = require("entity.one_paginated_auth_method_detail_list_entity")
+  if data == nil then
+    if self._one_paginated_auth_method_detail_list == nil then
+      self._one_paginated_auth_method_detail_list = EntityMod.new(self, nil)
+    end
+    return self._one_paginated_auth_method_detail_list
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:OnePaginatedIntegrationV2ListItemList():list() / client:OnePaginatedIntegrationV2ListItemList():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:OnePaginatedIntegrationV2ListItemList(data)
+  local EntityMod = require("entity.one_paginated_integration_v2_list_item_list_entity")
+  if data == nil then
+    if self._one_paginated_integration_v2_list_item_list == nil then
+      self._one_paginated_integration_v2_list_item_list = EntityMod.new(self, nil)
+    end
+    return self._one_paginated_integration_v2_list_item_list
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:OnePaginatedSetupFlowList():list() / client:OnePaginatedSetupFlowList():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:OnePaginatedSetupFlowList(data)
+  local EntityMod = require("entity.one_paginated_setup_flow_list_entity")
+  if data == nil then
+    if self._one_paginated_setup_flow_list == nil then
+      self._one_paginated_setup_flow_list = EntityMod.new(self, nil)
+    end
+    return self._one_paginated_setup_flow_list
   end
   return EntityMod.new(self, data)
 end
@@ -845,6 +1041,20 @@ function CloudflareZeroTrustSDK:TeamsDevicesDeviceSettingsResponseCollection(dat
       self._teams_devices_device_settings_response_collection = EntityMod.new(self, nil)
     end
     return self._teams_devices_device_settings_response_collection
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:TeamsDevicesDevicesPolicyCertificatesSingle():list() / client:TeamsDevicesDevicesPolicyCertificatesSingle():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CloudflareZeroTrustSDK:TeamsDevicesDevicesPolicyCertificatesSingle(data)
+  local EntityMod = require("entity.teams_devices_devices_policy_certificates_single_entity")
+  if data == nil then
+    if self._teams_devices_devices_policy_certificates_single == nil then
+      self._teams_devices_devices_policy_certificates_single = EntityMod.new(self, nil)
+    end
+    return self._teams_devices_devices_policy_certificates_single
   end
   return EntityMod.new(self, data)
 end

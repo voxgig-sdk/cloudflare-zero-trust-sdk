@@ -289,6 +289,27 @@ class CloudflareZeroTrustSDK
   end
 
 
+  # Canonical facade: client.AlexandriaDeleteApplication.list / client.AlexandriaDeleteApplication.load({ "id" => ... })
+  def AlexandriaDeleteApplication(data = nil)
+    require_relative 'entity/alexandria_delete_application_entity'
+    AlexandriaDeleteApplicationEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.AlexandriaGetApplication.list / client.AlexandriaGetApplication.load({ "id" => ... })
+  def AlexandriaGetApplication(data = nil)
+    require_relative 'entity/alexandria_get_application_entity'
+    AlexandriaGetApplicationEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.AlexandriaGetCategory.list / client.AlexandriaGetCategory.load({ "id" => ... })
+  def AlexandriaGetCategory(data = nil)
+    require_relative 'entity/alexandria_get_category_entity'
+    AlexandriaGetCategoryEntity.new(self, data)
+  end
+
+
   # Canonical facade: client.ClientVersion.list / client.ClientVersion.load({ "id" => ... })
   def ClientVersion(data = nil)
     require_relative 'entity/client_version_entity'
@@ -380,6 +401,13 @@ class CloudflareZeroTrustSDK
   end
 
 
+  # Canonical facade: client.Integration.list / client.Integration.load({ "id" => ... })
+  def Integration(data = nil)
+    require_relative 'entity/integration_entity'
+    IntegrationEntity.new(self, data)
+  end
+
+
   # Canonical facade: client.Interconnect.list / client.Interconnect.load({ "id" => ... })
   def Interconnect(data = nil)
     require_relative 'entity/interconnect_entity'
@@ -447,6 +475,76 @@ class CloudflareZeroTrustSDK
   def NscStatusInfo(data = nil)
     require_relative 'entity/nsc_status_info_entity'
     NscStatusInfoEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.OneApplicationDetail.list / client.OneApplicationDetail.load({ "id" => ... })
+  def OneApplicationDetail(data = nil)
+    require_relative 'entity/one_application_detail_entity'
+    OneApplicationDetailEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.OneIntegrationCreate.list / client.OneIntegrationCreate.load({ "id" => ... })
+  def OneIntegrationCreate(data = nil)
+    require_relative 'entity/one_integration_create_entity'
+    OneIntegrationCreateEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.OneIntegrationDetail.list / client.OneIntegrationDetail.load({ "id" => ... })
+  def OneIntegrationDetail(data = nil)
+    require_relative 'entity/one_integration_detail_entity'
+    OneIntegrationDetailEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.OneIntegrationPause.list / client.OneIntegrationPause.load({ "id" => ... })
+  def OneIntegrationPause(data = nil)
+    require_relative 'entity/one_integration_pause_entity'
+    OneIntegrationPauseEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.OneIntegrationResume.list / client.OneIntegrationResume.load({ "id" => ... })
+  def OneIntegrationResume(data = nil)
+    require_relative 'entity/one_integration_resume_entity'
+    OneIntegrationResumeEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.OneIntegrationUpdate.list / client.OneIntegrationUpdate.load({ "id" => ... })
+  def OneIntegrationUpdate(data = nil)
+    require_relative 'entity/one_integration_update_entity'
+    OneIntegrationUpdateEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.OnePaginatedApplicationListList.list / client.OnePaginatedApplicationListList.load({ "id" => ... })
+  def OnePaginatedApplicationListList(data = nil)
+    require_relative 'entity/one_paginated_application_list_list_entity'
+    OnePaginatedApplicationListListEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.OnePaginatedAuthMethodDetailList.list / client.OnePaginatedAuthMethodDetailList.load({ "id" => ... })
+  def OnePaginatedAuthMethodDetailList(data = nil)
+    require_relative 'entity/one_paginated_auth_method_detail_list_entity'
+    OnePaginatedAuthMethodDetailListEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.OnePaginatedIntegrationV2ListItemList.list / client.OnePaginatedIntegrationV2ListItemList.load({ "id" => ... })
+  def OnePaginatedIntegrationV2ListItemList(data = nil)
+    require_relative 'entity/one_paginated_integration_v2_list_item_list_entity'
+    OnePaginatedIntegrationV2ListItemListEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.OnePaginatedSetupFlowList.list / client.OnePaginatedSetupFlowList.load({ "id" => ... })
+  def OnePaginatedSetupFlowList(data = nil)
+    require_relative 'entity/one_paginated_setup_flow_list_entity'
+    OnePaginatedSetupFlowListEntity.new(self, data)
   end
 
 
@@ -538,6 +636,13 @@ class CloudflareZeroTrustSDK
   def TeamsDevicesDeviceSettingsResponseCollection(data = nil)
     require_relative 'entity/teams_devices_device_settings_response_collection_entity'
     TeamsDevicesDeviceSettingsResponseCollectionEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.TeamsDevicesDevicesPolicyCertificatesSingle.list / client.TeamsDevicesDevicesPolicyCertificatesSingle.load({ "id" => ... })
+  def TeamsDevicesDevicesPolicyCertificatesSingle(data = nil)
+    require_relative 'entity/teams_devices_devices_policy_certificates_single_entity'
+    TeamsDevicesDevicesPolicyCertificatesSingleEntity.new(self, data)
   end
 
 

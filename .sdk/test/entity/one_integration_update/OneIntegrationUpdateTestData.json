@@ -1,0 +1,67 @@
+{
+  "existing": {
+    "one_integration_update": {
+      "ONE_INTEGRATION_UPDATE00": {
+        "credentials": {},
+        "dlp_profiles": [],
+        "errors": [],
+        "id": "ONE_INTEGRATION_UPDATE00",
+        "messages": [],
+        "name": "s69",
+        "permissions": [],
+        "result": "s6b",
+        "success": true,
+        "use_cases": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ONE_INTEGRATION_UPDATE01": {
+        "credentials": {},
+        "dlp_profiles": [],
+        "errors": [],
+        "id": "ONE_INTEGRATION_UPDATE01",
+        "messages": [],
+        "name": "scd",
+        "permissions": [],
+        "result": "scf",
+        "success": true,
+        "use_cases": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ONE_INTEGRATION_UPDATE02": {
+        "credentials": {},
+        "dlp_profiles": [],
+        "errors": [],
+        "id": "ONE_INTEGRATION_UPDATE02",
+        "messages": [],
+        "name": "s131",
+        "permissions": [],
+        "result": "s133",
+        "success": true,
+        "use_cases": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "one_integration_update": {
+      "one_integration_update_ref01": {
+        "credentials": {},
+        "dlp_profiles": [],
+        "errors": [],
+        "messages": [],
+        "name": "s195",
+        "permissions": [],
+        "result": "s197",
+        "success": true,
+        "use_cases": []
+      }
+    }
+  },
+  "requests": {
+    "PATCH /accounts/{account_id}/one/integrations/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

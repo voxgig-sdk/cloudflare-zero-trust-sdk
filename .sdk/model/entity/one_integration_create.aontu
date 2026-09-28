@@ -1,0 +1,114 @@
+# Entity: one_integration_create
+
+main: kit: entity: one_integration_create: {
+
+  alias: field: {}
+
+  fields: {
+    application: {
+      h: "Application"
+      n: "application"
+      r: true
+      sh: "Vendor/application slug (e.g., GOOGLE_WORKSPACE)."
+      t: "`$STRING`"
+    }
+    auth_method: {
+      h: "Auth Method"
+      n: "auth_method"
+      r: false
+      sh: "Authentication method slug (uses default if omitted)."
+      t: "`$STRING`"
+    }
+    credentials: {
+      h: "Credentials"
+      n: "credentials"
+      r: true
+      sh: "Credentials for the integration."
+      t: "`$OBJECT`"
+    }
+    dlp_profiles: {
+      h: "Dlp Profiles"
+      n: "dlp_profiles"
+      r: false
+      sh: "List of DLP profile IDs to associate."
+      t: "`$ARRAY`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "Name of the integration."
+      t: "`$STRING`"
+    }
+    permissions: {
+      h: "Permissions"
+      n: "permissions"
+      r: false
+      sh: "List of permission scopes (uses policy defaults if empty)."
+      t: "`$ARRAY`"
+    }
+    use_cases: {
+      h: "Use Cases"
+      n: "use_cases"
+      r: false
+      sh: "List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation'])."
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "one_integration_create"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/one/integrations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/one/integrations"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "one"
+            }
+            {
+              lit: "integrations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

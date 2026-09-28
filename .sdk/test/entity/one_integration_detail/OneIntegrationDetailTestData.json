@@ -1,0 +1,47 @@
+{
+  "existing": {
+    "one_integration_detail": {
+      "ONE_INTEGRATION_DETAIL00": {
+        "errors": [],
+        "id": "ONE_INTEGRATION_DETAIL00",
+        "messages": [],
+        "result": "s35",
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "ONE_INTEGRATION_DETAIL01": {
+        "errors": [],
+        "id": "ONE_INTEGRATION_DETAIL01",
+        "messages": [],
+        "result": "s67",
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "ONE_INTEGRATION_DETAIL02": {
+        "errors": [],
+        "id": "ONE_INTEGRATION_DETAIL02",
+        "messages": [],
+        "result": "s99",
+        "success": true,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "one_integration_detail": {
+      "one_integration_detail_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": "scb",
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/one/integrations/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

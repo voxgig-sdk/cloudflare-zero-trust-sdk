@@ -42,6 +42,18 @@ $client = CloudflareZeroTrustSDK::test();
 
 ### Instance Methods
 
+#### `AlexandriaDeleteApplication($data = null)`
+
+Create a new `AlexandriaDeleteApplicationEntity` instance. Pass `null` for no initial data.
+
+#### `AlexandriaGetApplication($data = null)`
+
+Create a new `AlexandriaGetApplicationEntity` instance. Pass `null` for no initial data.
+
+#### `AlexandriaGetCategory($data = null)`
+
+Create a new `AlexandriaGetCategoryEntity` instance. Pass `null` for no initial data.
+
 #### `ClientVersion($data = null)`
 
 Create a new `ClientVersionEntity` instance. Pass `null` for no initial data.
@@ -94,6 +106,10 @@ Create a new `DigitalExperienceMonitoringFleetStatusLiveEntity` instance. Pass `
 
 Create a new `DigitalExperienceMonitoringFleetStatusOverTimeEntity` instance. Pass `null` for no initial data.
 
+#### `Integration($data = null)`
+
+Create a new `IntegrationEntity` instance. Pass `null` for no initial data.
+
 #### `Interconnect($data = null)`
 
 Create a new `InterconnectEntity` instance. Pass `null` for no initial data.
@@ -133,6 +149,46 @@ Create a new `NscSlotInfoEntity` instance. Pass `null` for no initial data.
 #### `NscStatusInfo($data = null)`
 
 Create a new `NscStatusInfoEntity` instance. Pass `null` for no initial data.
+
+#### `OneApplicationDetail($data = null)`
+
+Create a new `OneApplicationDetailEntity` instance. Pass `null` for no initial data.
+
+#### `OneIntegrationCreate($data = null)`
+
+Create a new `OneIntegrationCreateEntity` instance. Pass `null` for no initial data.
+
+#### `OneIntegrationDetail($data = null)`
+
+Create a new `OneIntegrationDetailEntity` instance. Pass `null` for no initial data.
+
+#### `OneIntegrationPause($data = null)`
+
+Create a new `OneIntegrationPauseEntity` instance. Pass `null` for no initial data.
+
+#### `OneIntegrationResume($data = null)`
+
+Create a new `OneIntegrationResumeEntity` instance. Pass `null` for no initial data.
+
+#### `OneIntegrationUpdate($data = null)`
+
+Create a new `OneIntegrationUpdateEntity` instance. Pass `null` for no initial data.
+
+#### `OnePaginatedApplicationListList($data = null)`
+
+Create a new `OnePaginatedApplicationListListEntity` instance. Pass `null` for no initial data.
+
+#### `OnePaginatedAuthMethodDetailList($data = null)`
+
+Create a new `OnePaginatedAuthMethodDetailListEntity` instance. Pass `null` for no initial data.
+
+#### `OnePaginatedIntegrationV2ListItemList($data = null)`
+
+Create a new `OnePaginatedIntegrationV2ListItemListEntity` instance. Pass `null` for no initial data.
+
+#### `OnePaginatedSetupFlowList($data = null)`
+
+Create a new `OnePaginatedSetupFlowListEntity` instance. Pass `null` for no initial data.
 
 #### `OverrideCode($data = null)`
 
@@ -185,6 +241,10 @@ Create a new `TeamsDevicesDeviceSettingEntity` instance. Pass `null` for no init
 #### `TeamsDevicesDeviceSettingsResponseCollection($data = null)`
 
 Create a new `TeamsDevicesDeviceSettingsResponseCollectionEntity` instance. Pass `null` for no initial data.
+
+#### `TeamsDevicesDevicesPolicyCertificatesSingle($data = null)`
+
+Create a new `TeamsDevicesDevicesPolicyCertificatesSingleEntity` instance. Pass `null` for no initial data.
 
 #### `TeamsDevicesFallbackDomainResponseCollection($data = null)`
 
@@ -491,6 +551,249 @@ hatch: it does **not** throw. It returns a result array
 
 Prepare a fetch definition without sending the request. Returns the
 `$fetchdef` array. Throws on error.
+
+
+---
+
+## AlexandriaDeleteApplicationEntity
+
+```php
+$alexandria_delete_application = $client->AlexandriaDeleteApplication();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | No |  |
+
+### Operations
+
+#### `remove(array $reqmatch, ?array $ctrl = null): mixed`
+
+Remove the entity matching the given criteria. Throws on error.
+
+```php
+$result = $client->AlexandriaDeleteApplication()->remove(["account_id" => "account_id", "id" => 1]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): AlexandriaDeleteApplicationEntity`
+
+Create a new `AlexandriaDeleteApplicationEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## AlexandriaGetApplicationEntity
+
+```php
+$alexandria_get_application = $client->AlexandriaGetApplication();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `category_id` | `int` | Yes | Returns the category ID. |
+| `errors` | `array` | Yes |  |
+| `hostnames` | `array` | No | Hostnames matched by the application. |
+| `human_id` | `string` | Yes | Returns the human readable ID. |
+| `id` | `string` | No |  |
+| `ip_subnets` | `array` | No | IP subnets for this application. |
+| `messages` | `array` | Yes |  |
+| `name` | `string` | Yes | Returns the application name. |
+| `port_protocols` | `array` | No | Port and protocol pairs matched by the application. |
+| `result` | `array` | Yes | Returns the list of applications. |
+| `success` | `bool` | Yes | Indicates whether the API call was successful. |
+| `support_domains` | `array` | No | Support domains matched by the application. |
+
+### Field Usage by Operation
+
+| Field | load | list | create | update |
+| --- | --- | --- | --- | --- |
+| `category_id` | - | - | - | - |
+| `errors` | - | - | - | - |
+| `hostnames` | - | - | - | - |
+| `human_id` | - | - | - | - |
+| `id` | - | - | - | - |
+| `ip_subnets` | - | - | - | - |
+| `messages` | - | - | - | - |
+| `name` | - | - | - | - |
+| `port_protocols` | - | - | - | - |
+| `result` | - | Yes | - | - |
+| `success` | - | - | - | - |
+| `support_domains` | - | - | - | - |
+
+### Operations
+
+#### `create(array $reqdata, ?array $ctrl = null): mixed`
+
+Create a new entity with the given data. Throws on error.
+
+```php
+$result = $client->AlexandriaGetApplication()->create([
+  "account_id" => null, // string
+  "category_id" => null, // int
+  "errors" => null, // array
+  "human_id" => null, // string
+  "messages" => null, // array
+  "name" => null, // string
+  "result" => null, // array
+  "success" => null, // bool
+]);
+```
+
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
+
+```php
+$results = $client->AlexandriaGetApplication()->list();
+```
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Throws on error.
+
+```php
+$result = $client->AlexandriaGetApplication()->load(["id" => 1, "account_id" => "account_id"]);
+```
+
+#### `update(array $reqdata, ?array $ctrl = null): mixed`
+
+Update an existing entity. The data must include the entity `id`. Throws on error.
+
+```php
+$result = $client->AlexandriaGetApplication()->update([
+  "id" => 1,
+  "account_id" => "account_id",
+  // Fields to update
+]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): AlexandriaGetApplicationEntity`
+
+Create a new `AlexandriaGetApplicationEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## AlexandriaGetCategoryEntity
+
+```php
+$alexandria_get_category = $client->AlexandriaGetCategory();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `array` | Yes |  |
+| `id` | `string` | No |  |
+| `messages` | `array` | Yes |  |
+| `result` | `array` | Yes | Returns the list of categories. |
+| `success` | `bool` | Yes | Indicates whether the API call was successful. |
+
+### Field Usage by Operation
+
+| Field | load | list |
+| --- | --- | --- |
+| `errors` | - | - |
+| `id` | - | - |
+| `messages` | - | - |
+| `result` | - | Yes |
+| `success` | - | - |
+
+### Operations
+
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
+
+```php
+$results = $client->AlexandriaGetCategory()->list();
+```
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Throws on error.
+
+```php
+$result = $client->AlexandriaGetCategory()->load(["id" => 1, "account_id" => "account_id"]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): AlexandriaGetCategoryEntity`
+
+Create a new `AlexandriaGetCategoryEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
 
 
 ---
@@ -1400,6 +1703,58 @@ Return the entity name.
 
 ---
 
+## IntegrationEntity
+
+```php
+$integration = $client->Integration();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | No |  |
+
+### Operations
+
+#### `remove(array $reqmatch, ?array $ctrl = null): mixed`
+
+Remove the entity matching the given criteria. Throws on error.
+
+```php
+$result = $client->Integration()->remove(["account_id" => "account_id", "id" => "id"]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): IntegrationEntity`
+
+Create a new `IntegrationEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
 ## InterconnectEntity
 
 ```php
@@ -2086,6 +2441,600 @@ Set the entity match criteria.
 #### `make(): NscStatusInfoEntity`
 
 Create a new `NscStatusInfoEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## OneApplicationDetailEntity
+
+```php
+$one_application_detail = $client->OneApplicationDetail();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `array` | No | List of errors. |
+| `messages` | `array` | No | List of messages. |
+| `result` | `mixed` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Throws on error.
+
+```php
+$result = $client->OneApplicationDetail()->load(["account_id" => "account_id", "application_id" => "application_id"]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): OneApplicationDetailEntity`
+
+Create a new `OneApplicationDetailEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationCreateEntity
+
+```php
+$one_integration_create = $client->OneIntegrationCreate();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `application` | `string` | Yes | Vendor/application slug (e.g., GOOGLE_WORKSPACE). |
+| `auth_method` | `string` | No | Authentication method slug (uses default if omitted). |
+| `credentials` | `array` | Yes | Credentials for the integration. |
+| `dlp_profiles` | `array` | No | List of DLP profile IDs to associate. |
+| `name` | `string` | Yes | Name of the integration. |
+| `permissions` | `array` | No | List of permission scopes (uses policy defaults if empty). |
+| `use_cases` | `array` | No | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+### Operations
+
+#### `create(array $reqdata, ?array $ctrl = null): mixed`
+
+Create a new entity with the given data. Throws on error.
+
+```php
+$result = $client->OneIntegrationCreate()->create([
+  "account_id" => null, // string
+  "application" => null, // string
+  "credentials" => null, // array
+  "name" => null, // string
+]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): OneIntegrationCreateEntity`
+
+Create a new `OneIntegrationCreateEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationDetailEntity
+
+```php
+$one_integration_detail = $client->OneIntegrationDetail();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `array` | No | List of errors. |
+| `id` | `string` | No |  |
+| `messages` | `array` | No | List of messages. |
+| `result` | `mixed` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Throws on error.
+
+```php
+$result = $client->OneIntegrationDetail()->load(["id" => "one_integration_detail_id", "account_id" => "account_id"]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): OneIntegrationDetailEntity`
+
+Create a new `OneIntegrationDetailEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationPauseEntity
+
+```php
+$one_integration_pause = $client->OneIntegrationPause();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `array` | No | List of errors. |
+| `messages` | `array` | No | List of messages. |
+| `result` | `mixed` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `create(array $reqdata, ?array $ctrl = null): mixed`
+
+Create a new entity with the given data. Throws on error.
+
+```php
+$result = $client->OneIntegrationPause()->create([
+  "account_id" => null, // string
+  "integration_id" => null, // string
+  "result" => null, // mixed
+  "success" => null, // bool
+]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): OneIntegrationPauseEntity`
+
+Create a new `OneIntegrationPauseEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationResumeEntity
+
+```php
+$one_integration_resume = $client->OneIntegrationResume();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `array` | No | List of errors. |
+| `messages` | `array` | No | List of messages. |
+| `result` | `mixed` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `create(array $reqdata, ?array $ctrl = null): mixed`
+
+Create a new entity with the given data. Throws on error.
+
+```php
+$result = $client->OneIntegrationResume()->create([
+  "account_id" => null, // string
+  "integration_id" => null, // string
+  "result" => null, // mixed
+  "success" => null, // bool
+]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): OneIntegrationResumeEntity`
+
+Create a new `OneIntegrationResumeEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationUpdateEntity
+
+```php
+$one_integration_update = $client->OneIntegrationUpdate();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `array` | No | Partial credential fields to merge with existing. |
+| `dlp_profiles` | `array` | No | List of DLP profile IDs to associate with the integration. |
+| `errors` | `array` | No | List of errors. |
+| `id` | `string` | No |  |
+| `messages` | `array` | No | List of messages. |
+| `name` | `string` | No | Name of the integration. |
+| `permissions` | `array` | No | List of permission scopes granted to the integration. |
+| `result` | `mixed` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+| `use_cases` | `array` | No | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+### Operations
+
+#### `update(array $reqdata, ?array $ctrl = null): mixed`
+
+Update an existing entity. The data must include the entity `id`. Throws on error.
+
+```php
+$result = $client->OneIntegrationUpdate()->update([
+  "account_id" => "account_id",
+  "id" => "id",
+  // Fields to update
+]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): OneIntegrationUpdateEntity`
+
+Create a new `OneIntegrationUpdateEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedApplicationListListEntity
+
+```php
+$one_paginated_application_list_list = $client->OnePaginatedApplicationListList();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auth_methods` | `array` | Yes | Available auth methods. |
+| `category` | `string` | Yes | Vendor category (e.g. |
+| `description` | `string` | Yes | Brief description of the integration. |
+| `display_name` | `string` | Yes | Human-readable vendor name. |
+| `dlp_enabled` | `bool` | Yes | Whether DLP scanning is supported. |
+| `id` | `string` | Yes | Vendor identifier (e.g. |
+| `logo` | `string` | Yes | Logo path. |
+| `permissions` | `array` | Yes | All permissions with severity. |
+| `supported_environments` | `array` | Yes | Environments this vendor supports (standard, fedramp). |
+| `use_cases` | `array` | Yes | Supported use cases. |
+
+### Operations
+
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
+
+```php
+$results = $client->OnePaginatedApplicationListList()->list();
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): OnePaginatedApplicationListListEntity`
+
+Create a new `OnePaginatedApplicationListListEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedAuthMethodDetailListEntity
+
+```php
+$one_paginated_auth_method_detail_list = $client->OnePaginatedAuthMethodDetailList();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `display_name` | `string` | Yes | Human-readable auth method name. |
+| `human_interaction_required` | `bool` | Yes | Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction). |
+| `id` | `string` | Yes | Auth method identifier. |
+| `instructions` | `mixed` | Yes | Step-by-step instructions for obtaining credentials. |
+| `payload_example` | `array` | Yes | Example credentials payload with placeholder values. |
+| `payload_schema` | `array` | Yes | JSON Schema for the credentials object in POST /v2/integrations request. |
+| `redirect_url` | `string` | Yes | OAuth redirect URL for vendors requiring human interaction. |
+
+### Operations
+
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
+
+```php
+$results = $client->OnePaginatedAuthMethodDetailList()->list();
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): OnePaginatedAuthMethodDetailListEntity`
+
+Create a new `OnePaginatedAuthMethodDetailListEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedIntegrationV2ListItemListEntity
+
+```php
+$one_paginated_integration_v2_list_item_list = $client->OnePaginatedIntegrationV2ListItemList();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `application` | `array` | Yes |  |
+| `created` | `string` | Yes | When the integration was created. |
+| `id` | `string` | Yes | Integration ID. |
+| `is_paused` | `bool` | Yes | Whether the user paused the integration. |
+| `name` | `string` | Yes | Name of the integration. |
+| `status` | `string` | Yes | Integration status. |
+| `updated` | `string` | Yes | When the integration was last updated. |
+
+### Operations
+
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
+
+```php
+$results = $client->OnePaginatedIntegrationV2ListItemList()->list();
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): OnePaginatedIntegrationV2ListItemListEntity`
+
+Create a new `OnePaginatedIntegrationV2ListItemListEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedSetupFlowListEntity
+
+```php
+$one_paginated_setup_flow_list = $client->OnePaginatedSetupFlowList();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auth_config` | `mixed` | No | OAuth configuration (present for OAuth-based flows). |
+| `default` | `bool` | Yes | Whether this is the default auth method. |
+| `description` | `string` | Yes | Flow description. |
+| `id` | `string` | Yes | Setup flow identifier. |
+| `name` | `string` | Yes | Human-readable flow name. |
+| `steps` | `array` | Yes | Ordered list of setup steps. |
+| `supported_environments` | `array` | Yes | Environments this auth method supports (standard, fedramp). |
+
+### Operations
+
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
+
+```php
+$results = $client->OnePaginatedSetupFlowList()->list();
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): OnePaginatedSetupFlowListEntity`
+
+Create a new `OnePaginatedSetupFlowListEntity` instance with the same client and
 options.
 
 #### `get_name(): string`
@@ -3045,6 +3994,70 @@ Set the entity match criteria.
 #### `make(): TeamsDevicesDeviceSettingsResponseCollectionEntity`
 
 Create a new `TeamsDevicesDeviceSettingsResponseCollectionEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## TeamsDevicesDevicesPolicyCertificatesSingleEntity
+
+```php
+$teams_devices_devices_policy_certificates_single = $client->TeamsDevicesDevicesPolicyCertificatesSingle();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `enabled` | `bool` | Yes | The current status of the device policy certificate provisioning feature for WARP clients. |
+| `result` | `array` | Yes |  |
+
+### Operations
+
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Throws on error.
+
+```php
+$result = $client->TeamsDevicesDevicesPolicyCertificatesSingle()->load(["zone_id" => "zone_id"]);
+```
+
+#### `update(array $reqdata, ?array $ctrl = null): mixed`
+
+Update an existing entity. The data must include the entity `id`. Throws on error.
+
+```php
+$result = $client->TeamsDevicesDevicesPolicyCertificatesSingle()->update([
+  "zone_id" => "zone_id",
+  // Fields to update
+]);
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): TeamsDevicesDevicesPolicyCertificatesSingleEntity`
+
+Create a new `TeamsDevicesDevicesPolicyCertificatesSingleEntity` instance with the same client and
 options.
 
 #### `get_name(): string`

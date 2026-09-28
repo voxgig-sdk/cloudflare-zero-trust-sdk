@@ -48,6 +48,18 @@ client := sdk.TestSDK(testopts, sdkopts)
 
 ### Instance Methods
 
+#### `AlexandriaDeleteApplication(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `AlexandriaDeleteApplication` entity instance. Pass `nil` for no initial data.
+
+#### `AlexandriaGetApplication(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `AlexandriaGetApplication` entity instance. Pass `nil` for no initial data.
+
+#### `AlexandriaGetCategory(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `AlexandriaGetCategory` entity instance. Pass `nil` for no initial data.
+
 #### `ClientVersion(data map[string]any) CloudflareZeroTrustEntity`
 
 Create a new `ClientVersion` entity instance. Pass `nil` for no initial data.
@@ -100,6 +112,10 @@ Create a new `DigitalExperienceMonitoringFleetStatusLive` entity instance. Pass 
 
 Create a new `DigitalExperienceMonitoringFleetStatusOverTime` entity instance. Pass `nil` for no initial data.
 
+#### `Integration(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `Integration` entity instance. Pass `nil` for no initial data.
+
 #### `Interconnect(data map[string]any) CloudflareZeroTrustEntity`
 
 Create a new `Interconnect` entity instance. Pass `nil` for no initial data.
@@ -139,6 +155,46 @@ Create a new `NscSlotInfo` entity instance. Pass `nil` for no initial data.
 #### `NscStatusInfo(data map[string]any) CloudflareZeroTrustEntity`
 
 Create a new `NscStatusInfo` entity instance. Pass `nil` for no initial data.
+
+#### `OneApplicationDetail(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `OneApplicationDetail` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationCreate(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `OneIntegrationCreate` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationDetail(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `OneIntegrationDetail` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationPause(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `OneIntegrationPause` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationResume(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `OneIntegrationResume` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationUpdate(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `OneIntegrationUpdate` entity instance. Pass `nil` for no initial data.
+
+#### `OnePaginatedApplicationListList(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `OnePaginatedApplicationListList` entity instance. Pass `nil` for no initial data.
+
+#### `OnePaginatedAuthMethodDetailList(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `OnePaginatedAuthMethodDetailList` entity instance. Pass `nil` for no initial data.
+
+#### `OnePaginatedIntegrationV2ListItemList(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `OnePaginatedIntegrationV2ListItemList` entity instance. Pass `nil` for no initial data.
+
+#### `OnePaginatedSetupFlowList(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `OnePaginatedSetupFlowList` entity instance. Pass `nil` for no initial data.
 
 #### `OverrideCode(data map[string]any) CloudflareZeroTrustEntity`
 
@@ -191,6 +247,10 @@ Create a new `TeamsDevicesDeviceSetting` entity instance. Pass `nil` for no init
 #### `TeamsDevicesDeviceSettingsResponseCollection(data map[string]any) CloudflareZeroTrustEntity`
 
 Create a new `TeamsDevicesDeviceSettingsResponseCollection` entity instance. Pass `nil` for no initial data.
+
+#### `TeamsDevicesDevicesPolicyCertificatesSingle(data map[string]any) CloudflareZeroTrustEntity`
+
+Create a new `TeamsDevicesDevicesPolicyCertificatesSingle` entity instance. Pass `nil` for no initial data.
 
 #### `TeamsDevicesFallbackDomainResponseCollection(data map[string]any) CloudflareZeroTrustEntity`
 
@@ -496,6 +556,262 @@ Prepare a fetch definition without sending the request. Accepts the
 same parameters as `Direct()`.
 
 **Returns:** `(map[string]any, error)`
+
+
+---
+
+## AlexandriaDeleteApplicationEntity
+
+```go
+alexandriaDeleteApplication := client.AlexandriaDeleteApplication(nil)
+fmt.Println(alexandriaDeleteApplication.GetName()) // "alexandria_delete_application"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | No |  |
+
+### Operations
+
+#### `Remove(reqmatch, ctrl map[string]any) (any, error)`
+
+Remove the entity matching the given criteria.
+
+```go
+result, err := client.AlexandriaDeleteApplication(nil).Remove(map[string]any{"account_id": "account_id", "id": 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `AlexandriaDeleteApplicationEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## AlexandriaGetApplicationEntity
+
+```go
+alexandriaGetApplication := client.AlexandriaGetApplication(nil)
+fmt.Println(alexandriaGetApplication.GetName()) // "alexandria_get_application"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `category_id` | `int` | Yes | Returns the category ID. |
+| `errors` | `[]any` | Yes |  |
+| `hostnames` | `[]any` | No | Hostnames matched by the application. |
+| `human_id` | `string` | Yes | Returns the human readable ID. |
+| `id` | `string` | No |  |
+| `ip_subnets` | `[]any` | No | IP subnets for this application. |
+| `messages` | `[]any` | Yes |  |
+| `name` | `string` | Yes | Returns the application name. |
+| `port_protocols` | `[]any` | No | Port and protocol pairs matched by the application. |
+| `result` | `map[string]any` | Yes | Returns the list of applications. |
+| `success` | `bool` | Yes | Indicates whether the API call was successful. |
+| `support_domains` | `[]any` | No | Support domains matched by the application. |
+
+### Field Usage by Operation
+
+| Field | load | list | create | update |
+| --- | --- | --- | --- | --- |
+| `category_id` | - | - | - | - |
+| `errors` | - | - | - | - |
+| `hostnames` | - | - | - | - |
+| `human_id` | - | - | - | - |
+| `id` | - | - | - | - |
+| `ip_subnets` | - | - | - | - |
+| `messages` | - | - | - | - |
+| `name` | - | - | - | - |
+| `port_protocols` | - | - | - | - |
+| `result` | - | Yes | - | - |
+| `success` | - | - | - | - |
+| `support_domains` | - | - | - | - |
+
+### Operations
+
+#### `List(reqmatch, ctrl map[string]any) (any, error)`
+
+List entities matching the given criteria. Returns an array.
+
+```go
+results, err := client.AlexandriaGetApplication(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
+```
+
+#### `Load(reqmatch, ctrl map[string]any) (any, error)`
+
+Load a single entity matching the given criteria.
+
+```go
+result, err := client.AlexandriaGetApplication(nil).Load(map[string]any{"id": 1, "account_id": "account_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+#### `Create(reqdata, ctrl map[string]any) (any, error)`
+
+Create a new entity with the given data.
+
+```go
+result, err := client.AlexandriaGetApplication(nil).Create(map[string]any{
+    "account_id": "example_account_id",
+    "category_id": 1,
+    "errors": []any{},
+    "human_id": "example_human_id",
+    "messages": []any{},
+    "name": "example_name",
+    "result": map[string]any{},
+    "success": true,
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+#### `Update(reqdata, ctrl map[string]any) (any, error)`
+
+Update an existing entity. The data must include the entity `id`.
+
+```go
+result, err := client.AlexandriaGetApplication(nil).Update(map[string]any{
+    "id": 1,
+    "account_id": "account_id",
+    // Fields to update
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `AlexandriaGetApplicationEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## AlexandriaGetCategoryEntity
+
+```go
+alexandriaGetCategory := client.AlexandriaGetCategory(nil)
+fmt.Println(alexandriaGetCategory.GetName()) // "alexandria_get_category"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `[]any` | Yes |  |
+| `id` | `string` | No |  |
+| `messages` | `[]any` | Yes |  |
+| `result` | `map[string]any` | Yes | Returns the list of categories. |
+| `success` | `bool` | Yes | Indicates whether the API call was successful. |
+
+### Field Usage by Operation
+
+| Field | load | list |
+| --- | --- | --- |
+| `errors` | - | - |
+| `id` | - | - |
+| `messages` | - | - |
+| `result` | - | Yes |
+| `success` | - | - |
+
+### Operations
+
+#### `List(reqmatch, ctrl map[string]any) (any, error)`
+
+List entities matching the given criteria. Returns an array.
+
+```go
+results, err := client.AlexandriaGetCategory(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
+```
+
+#### `Load(reqmatch, ctrl map[string]any) (any, error)`
+
+Load a single entity matching the given criteria.
+
+```go
+result, err := client.AlexandriaGetCategory(nil).Load(map[string]any{"id": 1, "account_id": "account_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `AlexandriaGetCategoryEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
 
 
 ---
@@ -1436,6 +1752,57 @@ Return the entity name.
 
 ---
 
+## IntegrationEntity
+
+```go
+integration := client.Integration(nil)
+fmt.Println(integration.GetName()) // "integration"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | No |  |
+
+### Operations
+
+#### `Remove(reqmatch, ctrl map[string]any) (any, error)`
+
+Remove the entity matching the given criteria.
+
+```go
+result, err := client.Integration(nil).Remove(map[string]any{"account_id": "account_id", "id": "id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `IntegrationEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
 ## InterconnectEntity
 
 ```go
@@ -2160,6 +2527,590 @@ Get or set the entity match criteria. Works the same as `Data()`.
 #### `Make() Entity`
 
 Create a new `NscStatusInfoEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## OneApplicationDetailEntity
+
+```go
+oneApplicationDetail := client.OneApplicationDetail(nil)
+fmt.Println(oneApplicationDetail.GetName()) // "one_application_detail"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `[]any` | No | List of errors. |
+| `messages` | `[]any` | No | List of messages. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `Load(reqmatch, ctrl map[string]any) (any, error)`
+
+Load a single entity matching the given criteria.
+
+```go
+result, err := client.OneApplicationDetail(nil).Load(map[string]any{"account_id": "account_id", "application_id": "application_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `OneApplicationDetailEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationCreateEntity
+
+```go
+oneIntegrationCreate := client.OneIntegrationCreate(nil)
+fmt.Println(oneIntegrationCreate.GetName()) // "one_integration_create"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `application` | `string` | Yes | Vendor/application slug (e.g., GOOGLE_WORKSPACE). |
+| `auth_method` | `string` | No | Authentication method slug (uses default if omitted). |
+| `credentials` | `map[string]any` | Yes | Credentials for the integration. |
+| `dlp_profiles` | `[]any` | No | List of DLP profile IDs to associate. |
+| `name` | `string` | Yes | Name of the integration. |
+| `permissions` | `[]any` | No | List of permission scopes (uses policy defaults if empty). |
+| `use_cases` | `[]any` | No | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+### Operations
+
+#### `Create(reqdata, ctrl map[string]any) (any, error)`
+
+Create a new entity with the given data.
+
+```go
+result, err := client.OneIntegrationCreate(nil).Create(map[string]any{
+    "account_id": "example_account_id",
+    "application": "example_application",
+    "credentials": map[string]any{},
+    "name": "example_name",
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `OneIntegrationCreateEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationDetailEntity
+
+```go
+oneIntegrationDetail := client.OneIntegrationDetail(nil)
+fmt.Println(oneIntegrationDetail.GetName()) // "one_integration_detail"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `[]any` | No | List of errors. |
+| `id` | `string` | No |  |
+| `messages` | `[]any` | No | List of messages. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `Load(reqmatch, ctrl map[string]any) (any, error)`
+
+Load a single entity matching the given criteria.
+
+```go
+result, err := client.OneIntegrationDetail(nil).Load(map[string]any{"id": "one_integration_detail_id", "account_id": "account_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `OneIntegrationDetailEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationPauseEntity
+
+```go
+oneIntegrationPause := client.OneIntegrationPause(nil)
+fmt.Println(oneIntegrationPause.GetName()) // "one_integration_pause"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `[]any` | No | List of errors. |
+| `messages` | `[]any` | No | List of messages. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `Create(reqdata, ctrl map[string]any) (any, error)`
+
+Create a new entity with the given data.
+
+```go
+result, err := client.OneIntegrationPause(nil).Create(map[string]any{
+    "account_id": "example_account_id",
+    "integration_id": "example_integration_id",
+    "result": "example_result",
+    "success": true,
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `OneIntegrationPauseEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationResumeEntity
+
+```go
+oneIntegrationResume := client.OneIntegrationResume(nil)
+fmt.Println(oneIntegrationResume.GetName()) // "one_integration_resume"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `[]any` | No | List of errors. |
+| `messages` | `[]any` | No | List of messages. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `Create(reqdata, ctrl map[string]any) (any, error)`
+
+Create a new entity with the given data.
+
+```go
+result, err := client.OneIntegrationResume(nil).Create(map[string]any{
+    "account_id": "example_account_id",
+    "integration_id": "example_integration_id",
+    "result": "example_result",
+    "success": true,
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `OneIntegrationResumeEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationUpdateEntity
+
+```go
+oneIntegrationUpdate := client.OneIntegrationUpdate(nil)
+fmt.Println(oneIntegrationUpdate.GetName()) // "one_integration_update"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `map[string]any` | No | Partial credential fields to merge with existing. |
+| `dlp_profiles` | `[]any` | No | List of DLP profile IDs to associate with the integration. |
+| `errors` | `[]any` | No | List of errors. |
+| `id` | `string` | No |  |
+| `messages` | `[]any` | No | List of messages. |
+| `name` | `string` | No | Name of the integration. |
+| `permissions` | `[]any` | No | List of permission scopes granted to the integration. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+| `use_cases` | `[]any` | No | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+### Operations
+
+#### `Update(reqdata, ctrl map[string]any) (any, error)`
+
+Update an existing entity. The data must include the entity `id`.
+
+```go
+result, err := client.OneIntegrationUpdate(nil).Update(map[string]any{
+    "account_id": "account_id",
+    "id": "id",
+    // Fields to update
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `OneIntegrationUpdateEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedApplicationListListEntity
+
+```go
+onePaginatedApplicationListList := client.OnePaginatedApplicationListList(nil)
+fmt.Println(onePaginatedApplicationListList.GetName()) // "one_paginated_application_list_list"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auth_methods` | `[]any` | Yes | Available auth methods. |
+| `category` | `string` | Yes | Vendor category (e.g. |
+| `description` | `string` | Yes | Brief description of the integration. |
+| `display_name` | `string` | Yes | Human-readable vendor name. |
+| `dlp_enabled` | `bool` | Yes | Whether DLP scanning is supported. |
+| `id` | `string` | Yes | Vendor identifier (e.g. |
+| `logo` | `string` | Yes | Logo path. |
+| `permissions` | `[]any` | Yes | All permissions with severity. |
+| `supported_environments` | `[]any` | Yes | Environments this vendor supports (standard, fedramp). |
+| `use_cases` | `[]any` | Yes | Supported use cases. |
+
+### Operations
+
+#### `List(reqmatch, ctrl map[string]any) (any, error)`
+
+List entities matching the given criteria. Returns an array.
+
+```go
+results, err := client.OnePaginatedApplicationListList(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `OnePaginatedApplicationListListEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedAuthMethodDetailListEntity
+
+```go
+onePaginatedAuthMethodDetailList := client.OnePaginatedAuthMethodDetailList(nil)
+fmt.Println(onePaginatedAuthMethodDetailList.GetName()) // "one_paginated_auth_method_detail_list"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `display_name` | `string` | Yes | Human-readable auth method name. |
+| `human_interaction_required` | `bool` | Yes | Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction). |
+| `id` | `string` | Yes | Auth method identifier. |
+| `instructions` | `any` | Yes | Step-by-step instructions for obtaining credentials. |
+| `payload_example` | `map[string]any` | Yes | Example credentials payload with placeholder values. |
+| `payload_schema` | `map[string]any` | Yes | JSON Schema for the credentials object in POST /v2/integrations request. |
+| `redirect_url` | `string` | Yes | OAuth redirect URL for vendors requiring human interaction. |
+
+### Operations
+
+#### `List(reqmatch, ctrl map[string]any) (any, error)`
+
+List entities matching the given criteria. Returns an array.
+
+```go
+results, err := client.OnePaginatedAuthMethodDetailList(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `OnePaginatedAuthMethodDetailListEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedIntegrationV2ListItemListEntity
+
+```go
+onePaginatedIntegrationV2ListItemList := client.OnePaginatedIntegrationV2ListItemList(nil)
+fmt.Println(onePaginatedIntegrationV2ListItemList.GetName()) // "one_paginated_integration_v2_list_item_list"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `application` | `map[string]any` | Yes |  |
+| `created` | `string` | Yes | When the integration was created. |
+| `id` | `string` | Yes | Integration ID. |
+| `is_paused` | `bool` | Yes | Whether the user paused the integration. |
+| `name` | `string` | Yes | Name of the integration. |
+| `status` | `string` | Yes | Integration status. |
+| `updated` | `string` | Yes | When the integration was last updated. |
+
+### Operations
+
+#### `List(reqmatch, ctrl map[string]any) (any, error)`
+
+List entities matching the given criteria. Returns an array.
+
+```go
+results, err := client.OnePaginatedIntegrationV2ListItemList(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `OnePaginatedIntegrationV2ListItemListEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedSetupFlowListEntity
+
+```go
+onePaginatedSetupFlowList := client.OnePaginatedSetupFlowList(nil)
+fmt.Println(onePaginatedSetupFlowList.GetName()) // "one_paginated_setup_flow_list"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auth_config` | `any` | No | OAuth configuration (present for OAuth-based flows). |
+| `default` | `bool` | Yes | Whether this is the default auth method. |
+| `description` | `string` | Yes | Flow description. |
+| `id` | `string` | Yes | Setup flow identifier. |
+| `name` | `string` | Yes | Human-readable flow name. |
+| `steps` | `[]any` | Yes | Ordered list of setup steps. |
+| `supported_environments` | `[]any` | Yes | Environments this auth method supports (standard, fedramp). |
+
+### Operations
+
+#### `List(reqmatch, ctrl map[string]any) (any, error)`
+
+List entities matching the given criteria. Returns an array.
+
+```go
+results, err := client.OnePaginatedSetupFlowList(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `OnePaginatedSetupFlowListEntity` instance with the same client and
 options.
 
 #### `GetName() string`
@@ -3166,6 +4117,73 @@ Get or set the entity match criteria. Works the same as `Data()`.
 #### `Make() Entity`
 
 Create a new `TeamsDevicesDeviceSettingsResponseCollectionEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## TeamsDevicesDevicesPolicyCertificatesSingleEntity
+
+```go
+teamsDevicesDevicesPolicyCertificatesSingle := client.TeamsDevicesDevicesPolicyCertificatesSingle(nil)
+fmt.Println(teamsDevicesDevicesPolicyCertificatesSingle.GetName()) // "teams_devices_devices_policy_certificates_single"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `enabled` | `bool` | Yes | The current status of the device policy certificate provisioning feature for WARP clients. |
+| `result` | `map[string]any` | Yes |  |
+
+### Operations
+
+#### `Load(reqmatch, ctrl map[string]any) (any, error)`
+
+Load a single entity matching the given criteria.
+
+```go
+result, err := client.TeamsDevicesDevicesPolicyCertificatesSingle(nil).Load(map[string]any{"zone_id": "zone_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+#### `Update(reqdata, ctrl map[string]any) (any, error)`
+
+Update an existing entity. The data must include the entity `id`.
+
+```go
+result, err := client.TeamsDevicesDevicesPolicyCertificatesSingle(nil).Update(map[string]any{
+    "zone_id": "zone_id",
+    // Fields to update
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `TeamsDevicesDevicesPolicyCertificatesSingleEntity` instance with the same client and
 options.
 
 #### `GetName() string`

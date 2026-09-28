@@ -1,3 +1,83 @@
+export interface AlexandriaDeleteApplication {
+    id?: string;
+}
+export interface AlexandriaDeleteApplicationRemoveMatch {
+    account_id: string;
+    id: number;
+}
+export interface AlexandriaGetApplication {
+    category_id: number;
+    errors: any[];
+    hostnames?: any[];
+    human_id: string;
+    id?: string;
+    ip_subnets?: any[];
+    messages: any[];
+    name: string;
+    port_protocols?: any[];
+    result: Record<string, any>;
+    success: boolean;
+    support_domains?: any[];
+}
+export interface AlexandriaGetApplicationLoadMatch {
+    account_id: string;
+    id: number;
+}
+export interface AlexandriaGetApplicationListMatch {
+    account_id: string;
+    field?: string;
+    filter?: string;
+    limit?: number;
+    offset?: number;
+    order_by?: string;
+    search?: string;
+}
+export interface AlexandriaGetApplicationCreateData {
+    account_id: string;
+    category_id: number;
+    errors: any[];
+    hostnames?: any[];
+    human_id: string;
+    id?: string;
+    ip_subnets?: any[];
+    messages: any[];
+    name: string;
+    port_protocols?: any[];
+    result: Record<string, any>;
+    success: boolean;
+    support_domains?: any[];
+}
+export interface AlexandriaGetApplicationUpdateData {
+    account_id: string;
+    id: number;
+    category_id?: number;
+    errors?: any[];
+    hostnames?: any[];
+    human_id?: string;
+    ip_subnets?: any[];
+    messages?: any[];
+    name?: string;
+    port_protocols?: any[];
+    result?: Record<string, any>;
+    success?: boolean;
+    support_domains?: any[];
+}
+export interface AlexandriaGetCategory {
+    errors: any[];
+    id?: string;
+    messages: any[];
+    result: Record<string, any>;
+    success: boolean;
+}
+export interface AlexandriaGetCategoryLoadMatch {
+    account_id: string;
+    id: number;
+}
+export interface AlexandriaGetCategoryListMatch {
+    account_id: string;
+    limit?: number;
+    offset?: number;
+}
 export interface ClientVersion {
     errors: any[];
     messages: any[];
@@ -309,6 +389,13 @@ export interface DigitalExperienceMonitoringFleetStatusOverTimeLoadMatch {
     from: string;
     to: string;
 }
+export interface Integration {
+    id?: string;
+}
+export interface IntegrationRemoveMatch {
+    account_id: string;
+    id: string;
+}
 export interface Interconnect {
     id?: string;
 }
@@ -505,6 +592,170 @@ export interface NscStatusInfo {
 export interface NscStatusInfoLoadMatch {
     account_id: string;
     icon: string;
+}
+export interface OneApplicationDetail {
+    errors?: any[];
+    messages?: any[];
+    result: any;
+    success: boolean;
+}
+export interface OneApplicationDetailLoadMatch {
+    account_id: string;
+    application_id: string;
+}
+export interface OneIntegrationCreate {
+    application: string;
+    auth_method?: string;
+    credentials: Record<string, any>;
+    dlp_profiles?: any[];
+    name: string;
+    permissions?: any[];
+    use_cases?: any[];
+}
+export interface OneIntegrationCreateCreateData {
+    account_id: string;
+    application: string;
+    auth_method?: string;
+    credentials: Record<string, any>;
+    dlp_profiles?: any[];
+    name: string;
+    permissions?: any[];
+    use_cases?: any[];
+}
+export interface OneIntegrationDetail {
+    errors?: any[];
+    id?: string;
+    messages?: any[];
+    result: any;
+    success: boolean;
+}
+export interface OneIntegrationDetailLoadMatch {
+    account_id: string;
+    id: string;
+}
+export interface OneIntegrationPause {
+    errors?: any[];
+    messages?: any[];
+    result: any;
+    success: boolean;
+}
+export interface OneIntegrationPauseCreateData {
+    account_id: string;
+    integration_id: string;
+    errors?: any[];
+    messages?: any[];
+    result: any;
+    success: boolean;
+}
+export interface OneIntegrationResume {
+    errors?: any[];
+    messages?: any[];
+    result: any;
+    success: boolean;
+}
+export interface OneIntegrationResumeCreateData {
+    account_id: string;
+    integration_id: string;
+    errors?: any[];
+    messages?: any[];
+    result: any;
+    success: boolean;
+}
+export interface OneIntegrationUpdate {
+    credentials?: Record<string, any>;
+    dlp_profiles?: any[];
+    errors?: any[];
+    id?: string;
+    messages?: any[];
+    name?: string;
+    permissions?: any[];
+    result: any;
+    success: boolean;
+    use_cases?: any[];
+}
+export interface OneIntegrationUpdateUpdateData {
+    account_id: string;
+    id: string;
+    credentials?: Record<string, any>;
+    dlp_profiles?: any[];
+    errors?: any[];
+    messages?: any[];
+    name?: string;
+    permissions?: any[];
+    result?: any;
+    success?: boolean;
+    use_cases?: any[];
+}
+export interface OnePaginatedApplicationListList {
+    auth_methods: any[];
+    category: string;
+    description: string;
+    display_name: string;
+    dlp_enabled: boolean;
+    id: string;
+    logo: string;
+    permissions: any[];
+    supported_environments: any[];
+    use_cases: any[];
+}
+export interface OnePaginatedApplicationListListListMatch {
+    account_id: string;
+    environment?: string;
+    page?: number;
+    page_size?: number;
+}
+export interface OnePaginatedAuthMethodDetailList {
+    display_name: string;
+    human_interaction_required: boolean;
+    id: string;
+    instructions: any;
+    payload_example: Record<string, any>;
+    payload_schema: Record<string, any>;
+    redirect_url: string;
+}
+export interface OnePaginatedAuthMethodDetailListListMatch {
+    account_id: string;
+    application_id: string;
+    page?: number;
+    page_size?: number;
+}
+export interface OnePaginatedIntegrationV2ListItemList {
+    application: Record<string, any>;
+    created: string;
+    id: string;
+    is_paused: boolean;
+    name: string;
+    status: string;
+    updated: string;
+}
+export interface OnePaginatedIntegrationV2ListItemListListMatch {
+    account_id: string;
+    application?: string;
+    direction?: string;
+    dlp_enabled?: boolean;
+    order?: string;
+    page?: number;
+    page_size?: number;
+    search?: string;
+    status?: string;
+    use_case?: string;
+}
+export interface OnePaginatedSetupFlowList {
+    auth_config?: any;
+    default: boolean;
+    description: string;
+    id: string;
+    name: string;
+    steps: any[];
+    supported_environments: any[];
+}
+export interface OnePaginatedSetupFlowListListMatch {
+    account_id: string;
+    application_id: string;
+    auth_method?: string;
+    environment?: string;
+    page?: number;
+    page_size?: number;
 }
 export interface OverrideCode {
     device_id?: string;
@@ -866,6 +1117,18 @@ export interface TeamsDevicesDeviceSettingsResponseCollectionListMatch {
 export interface TeamsDevicesDeviceSettingsResponseCollectionRemoveMatch {
     account_id: string;
     policy_id: string;
+}
+export interface TeamsDevicesDevicesPolicyCertificatesSingle {
+    enabled: boolean;
+    result: Record<string, any>;
+}
+export interface TeamsDevicesDevicesPolicyCertificatesSingleLoadMatch {
+    zone_id: string;
+}
+export interface TeamsDevicesDevicesPolicyCertificatesSingleUpdateData {
+    zone_id: string;
+    enabled?: boolean;
+    result?: Record<string, any>;
 }
 export interface TeamsDevicesFallbackDomainResponseCollection {
     result?: any[];

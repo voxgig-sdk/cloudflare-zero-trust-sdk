@@ -1,0 +1,9 @@
+# BasicIntegrationFlow
+
+main: kit: flow: BasicIntegrationFlow:
+{
+  entity: "integration",
+  kind: "basic",
+  name: "BasicIntegrationFlow",
+  "key$": "BasicIntegrationFlow"
+}

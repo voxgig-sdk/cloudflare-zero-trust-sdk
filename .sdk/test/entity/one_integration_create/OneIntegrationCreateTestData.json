@@ -1,0 +1,59 @@
+{
+  "existing": {
+    "one_integration_create": {
+      "ONE_INTEGRATION_CREATE00": {
+        "application": "s46",
+        "auth_method": "s47",
+        "credentials": {},
+        "dlp_profiles": [],
+        "name": "s4a",
+        "permissions": [],
+        "use_cases": [],
+        "account_id": "ACCOUNT01",
+        "id": "ONE_INTEGRATION_CREATE00"
+      },
+      "ONE_INTEGRATION_CREATE01": {
+        "application": "s8c",
+        "auth_method": "s8d",
+        "credentials": {},
+        "dlp_profiles": [],
+        "name": "s90",
+        "permissions": [],
+        "use_cases": [],
+        "account_id": "ACCOUNT01",
+        "id": "ONE_INTEGRATION_CREATE01"
+      },
+      "ONE_INTEGRATION_CREATE02": {
+        "application": "sd2",
+        "auth_method": "sd3",
+        "credentials": {},
+        "dlp_profiles": [],
+        "name": "sd6",
+        "permissions": [],
+        "use_cases": [],
+        "account_id": "ACCOUNT01",
+        "id": "ONE_INTEGRATION_CREATE02"
+      }
+    }
+  },
+  "new": {
+    "one_integration_create": {
+      "one_integration_create_ref01": {
+        "application": "s118",
+        "auth_method": "s119",
+        "credentials": {},
+        "dlp_profiles": [],
+        "name": "s11c",
+        "permissions": [],
+        "use_cases": []
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/one/integrations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

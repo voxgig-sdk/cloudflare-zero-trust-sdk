@@ -1,0 +1,385 @@
+# Entity: alexandria_get_application
+
+main: kit: entity: alexandria_get_application: {
+
+  alias: field: {}
+
+  fields: {
+    category_id: {
+      fo: "int64"
+      h: "Category Id"
+      n: "category_id"
+      r: true
+      sh: "Returns the category ID."
+      t: "`$INTEGER`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    hostnames: {
+      h: "Hostnames"
+      n: "hostnames"
+      r: false
+      sh: "Hostnames matched by the application."
+      t: "`$ARRAY`"
+    }
+    human_id: {
+      h: "Human Id"
+      n: "human_id"
+      r: true
+      sh: "Returns the human readable ID."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    ip_subnets: {
+      h: "Ip Subnets"
+      n: "ip_subnets"
+      r: false
+      sh: "IP subnets for this application."
+      t: "`$ARRAY`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "Returns the application name."
+      t: "`$STRING`"
+    }
+    port_protocols: {
+      h: "Port Protocols"
+      n: "port_protocols"
+      r: false
+      sh: "Port and protocol pairs matched by the application."
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      op: {
+        list: {
+          req: false
+          type: "`$ARRAY`"
+        }
+      }
+      r: true
+      sh: "Returns the list of applications."
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Indicates whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+    support_domains: {
+      h: "Support Domains"
+      n: "support_domains"
+      r: false
+      sh: "Support domains matched by the application."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "alexandria_get_application"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/resource-library/applications"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/resource-library/applications"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "resource-library"
+            }
+            {
+              lit: "applications"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/resource-library/applications"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "id,name"
+                k: "query"
+                n: "field"
+                or: "field"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "filter=name:HR&filter=source:cloudflare&filter=id:498"
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 25
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "name:asc"
+                k: "query"
+                n: "order_by"
+                or: "order_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "MyNewApp"
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/resource-library/applications"
+          q: {
+            exist: [
+              "account_id"
+              "field"
+              "filter"
+              "limit"
+              "offset"
+              "order_by"
+              "search"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "resource-library"
+            }
+            {
+              lit: "applications"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/resource-library/applications/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 498
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/resource-library/applications/{id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "resource-library"
+            }
+            {
+              lit: "applications"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/resource-library/applications/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 498
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/resource-library/applications/{id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "resource-library"
+            }
+            {
+              lit: "applications"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

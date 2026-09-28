@@ -1,0 +1,27 @@
+# BasicOnePaginatedAuthMethodDetailListFlow
+
+main: kit: flow: BasicOnePaginatedAuthMethodDetailListFlow:
+{
+  entity: "one_paginated_auth_method_detail_list",
+  kind: "basic",
+  name: "BasicOnePaginatedAuthMethodDetailListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01",
+        application_id: "application01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "one_paginated_auth_method_detail_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOnePaginatedAuthMethodDetailListFlow"
+}

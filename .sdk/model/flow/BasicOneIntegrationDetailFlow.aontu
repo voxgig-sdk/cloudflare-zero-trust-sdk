@@ -1,0 +1,33 @@
+# BasicOneIntegrationDetailFlow
+
+main: kit: flow: BasicOneIntegrationDetailFlow:
+{
+  entity: "one_integration_detail",
+  kind: "basic",
+  name: "BasicOneIntegrationDetailFlow",
+  step: [
+    {
+      i: {
+        ref: "one_integration_detail_ref01",
+        srcdatavar: "one_integration_detail_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "one_integration_detail01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-one_integration_detail_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOneIntegrationDetailFlow"
+}

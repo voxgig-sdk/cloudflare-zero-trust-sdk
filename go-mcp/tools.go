@@ -15,7 +15,7 @@ import (
 // reqdata map passed through to the SDK. For load, `query` should be
 // `{"id": <value>}`. For list, omit `query` or pass an empty map.
 type Args struct {
-	Entity string         `json:"entity" jsonschema:"client_version | cni | deployment_group | dex_remote_command | dex_rule | dex_synthetic_application_monitoring | digital_experience_monitoring_device | digital_experience_monitoring_dex_delete_response_collection | digital_experience_monitoring_dex_response_collection | digital_experience_monitoring_dex_single | digital_experience_monitoring_fleet_status_device | digital_experience_monitoring_fleet_status_live | digital_experience_monitoring_fleet_status_over_time | interconnect | ip_profile | list | location | nsc_cni | nsc_default_name | nsc_interconnect | nsc_setting | nsc_slot_info | nsc_status_info | override_code | pacfile | physical_device | proxy_endpoint | registration | rule | teams_devices_api_response_single | teams_devices_components_schemas_response_collection | teams_devices_components_schemas_single | teams_devices_default_device_setting | teams_devices_device | teams_devices_device_setting | teams_devices_device_settings_response_collection | teams_devices_fallback_domain_response_collection | teams_devices_global_warp_override | teams_devices_id | teams_devices_override_code | teams_devices_response_collection | teams_devices_schemas_id | teams_devices_schemas_response_collection | teams_devices_schemas_single | teams_devices_single | teams_devices_split_tunnel_include_response_collection | teams_devices_split_tunnel_response_collection | teams_devices_zero_trust_account_device_setting | tunnel | tunnel_cfd_tunnel_response_collection | tunnel_cfd_tunnel_response_single | tunnel_configuration | tunnel_empty | tunnel_hostname_route_response_collection | tunnel_hostname_route_response_single | tunnel_mesh_configuration_response_single | tunnel_route_response_single | tunnel_subnet_response_collection | tunnel_subnet_response_single | tunnel_subnet_response_single_nullable | tunnel_teamnet_response_collection | tunnel_teamnet_response_single | tunnel_tunnel_client | tunnel_tunnel_connection | tunnel_tunnel_response_token | tunnel_tunnel_warp_connector_client | tunnel_tunnel_warp_connector_connection | tunnel_vnet_response_collection | tunnel_vnet_response_single | tunnel_warp_connector_response_collection | tunnel_warp_connector_response_single | tunnel_zero_trust_connectivity_setting | warp | warp_change_event | warp_teams_device_api_other | zero_trust_gateway_applications_review_status | zero_trust_gateway_csv_operation_single | zero_trust_gateway_custom_certificate_setting | zero_trust_gateway_gateway_account | zero_trust_gateway_gateway_account_config | zero_trust_gateway_gateway_account_egress_cidr_pair_list | zero_trust_gateway_gateway_account_logging_setting | zero_trust_gateway_list_item_response_collection | zero_trust_gateway_list_single | zero_trust_gateway_response_collection | zero_trust_gateway_response_collection_10 | zero_trust_gateway_response_collection_2 | zero_trust_gateway_response_collection_3 | zero_trust_gateway_response_collection_4 | zero_trust_gateway_response_collection_5 | zero_trust_gateway_response_collection_6 | zero_trust_gateway_response_collection_7 | zero_trust_gateway_response_collection_8 | zero_trust_gateway_response_collection_9 | zero_trust_gateway_single | zero_trust_gateway_single_response_2 | zero_trust_gateway_single_response_3 | zero_trust_gateway_single_response_4 | zero_trust_gateway_single_response_5 | zero_trust_gateway_single_response_6 | zero_trust_gateway_single_response_7 | zero_trust_gateway_single_response_with_list_item | zero_trust_risk_scoring | zero_trust_risk_scoring_integration"`
+	Entity string         `json:"entity" jsonschema:"alexandria_delete_application | alexandria_get_application | alexandria_get_category | client_version | cni | deployment_group | dex_remote_command | dex_rule | dex_synthetic_application_monitoring | digital_experience_monitoring_device | digital_experience_monitoring_dex_delete_response_collection | digital_experience_monitoring_dex_response_collection | digital_experience_monitoring_dex_single | digital_experience_monitoring_fleet_status_device | digital_experience_monitoring_fleet_status_live | digital_experience_monitoring_fleet_status_over_time | integration | interconnect | ip_profile | list | location | nsc_cni | nsc_default_name | nsc_interconnect | nsc_setting | nsc_slot_info | nsc_status_info | one_application_detail | one_integration_create | one_integration_detail | one_integration_pause | one_integration_resume | one_integration_update | one_paginated_application_list_list | one_paginated_auth_method_detail_list | one_paginated_integration_v2_list_item_list | one_paginated_setup_flow_list | override_code | pacfile | physical_device | proxy_endpoint | registration | rule | teams_devices_api_response_single | teams_devices_components_schemas_response_collection | teams_devices_components_schemas_single | teams_devices_default_device_setting | teams_devices_device | teams_devices_device_setting | teams_devices_device_settings_response_collection | teams_devices_devices_policy_certificates_single | teams_devices_fallback_domain_response_collection | teams_devices_global_warp_override | teams_devices_id | teams_devices_override_code | teams_devices_response_collection | teams_devices_schemas_id | teams_devices_schemas_response_collection | teams_devices_schemas_single | teams_devices_single | teams_devices_split_tunnel_include_response_collection | teams_devices_split_tunnel_response_collection | teams_devices_zero_trust_account_device_setting | tunnel | tunnel_cfd_tunnel_response_collection | tunnel_cfd_tunnel_response_single | tunnel_configuration | tunnel_empty | tunnel_hostname_route_response_collection | tunnel_hostname_route_response_single | tunnel_mesh_configuration_response_single | tunnel_route_response_single | tunnel_subnet_response_collection | tunnel_subnet_response_single | tunnel_subnet_response_single_nullable | tunnel_teamnet_response_collection | tunnel_teamnet_response_single | tunnel_tunnel_client | tunnel_tunnel_connection | tunnel_tunnel_response_token | tunnel_tunnel_warp_connector_client | tunnel_tunnel_warp_connector_connection | tunnel_vnet_response_collection | tunnel_vnet_response_single | tunnel_warp_connector_response_collection | tunnel_warp_connector_response_single | tunnel_zero_trust_connectivity_setting | warp | warp_change_event | warp_teams_device_api_other | zero_trust_gateway_applications_review_status | zero_trust_gateway_csv_operation_single | zero_trust_gateway_custom_certificate_setting | zero_trust_gateway_gateway_account | zero_trust_gateway_gateway_account_config | zero_trust_gateway_gateway_account_egress_cidr_pair_list | zero_trust_gateway_gateway_account_logging_setting | zero_trust_gateway_list_item_response_collection | zero_trust_gateway_list_single | zero_trust_gateway_response_collection | zero_trust_gateway_response_collection_10 | zero_trust_gateway_response_collection_2 | zero_trust_gateway_response_collection_3 | zero_trust_gateway_response_collection_4 | zero_trust_gateway_response_collection_5 | zero_trust_gateway_response_collection_6 | zero_trust_gateway_response_collection_7 | zero_trust_gateway_response_collection_8 | zero_trust_gateway_response_collection_9 | zero_trust_gateway_single | zero_trust_gateway_single_response_2 | zero_trust_gateway_single_response_3 | zero_trust_gateway_single_response_4 | zero_trust_gateway_single_response_5 | zero_trust_gateway_single_response_6 | zero_trust_gateway_single_response_7 | zero_trust_gateway_single_response_with_list_item | zero_trust_risk_scoring | zero_trust_risk_scoring_integration"`
 	Query  map[string]any `json:"query,omitempty" jsonschema:"optional match map e.g. {\"id\":1} for load, omit for list"`
 }
 
@@ -76,6 +76,12 @@ func runOp(client *sdk.CloudflareZeroTrustSDK, op string, args Args) (*mcp.CallT
 // emits one `case "<name>":` per entity defined in the SDK model.
 func entityFor(client *sdk.CloudflareZeroTrustSDK, name string) (sdk.CloudflareZeroTrustEntity, error) {
 	switch strings.ToLower(name) {
+	case "alexandria_delete_application":
+		return client.AlexandriaDeleteApplication(nil), nil
+	case "alexandria_get_application":
+		return client.AlexandriaGetApplication(nil), nil
+	case "alexandria_get_category":
+		return client.AlexandriaGetCategory(nil), nil
 	case "client_version":
 		return client.ClientVersion(nil), nil
 	case "cni":
@@ -102,6 +108,8 @@ func entityFor(client *sdk.CloudflareZeroTrustSDK, name string) (sdk.CloudflareZ
 		return client.DigitalExperienceMonitoringFleetStatusLive(nil), nil
 	case "digital_experience_monitoring_fleet_status_over_time":
 		return client.DigitalExperienceMonitoringFleetStatusOverTime(nil), nil
+	case "integration":
+		return client.Integration(nil), nil
 	case "interconnect":
 		return client.Interconnect(nil), nil
 	case "ip_profile":
@@ -122,6 +130,26 @@ func entityFor(client *sdk.CloudflareZeroTrustSDK, name string) (sdk.CloudflareZ
 		return client.NscSlotInfo(nil), nil
 	case "nsc_status_info":
 		return client.NscStatusInfo(nil), nil
+	case "one_application_detail":
+		return client.OneApplicationDetail(nil), nil
+	case "one_integration_create":
+		return client.OneIntegrationCreate(nil), nil
+	case "one_integration_detail":
+		return client.OneIntegrationDetail(nil), nil
+	case "one_integration_pause":
+		return client.OneIntegrationPause(nil), nil
+	case "one_integration_resume":
+		return client.OneIntegrationResume(nil), nil
+	case "one_integration_update":
+		return client.OneIntegrationUpdate(nil), nil
+	case "one_paginated_application_list_list":
+		return client.OnePaginatedApplicationListList(nil), nil
+	case "one_paginated_auth_method_detail_list":
+		return client.OnePaginatedAuthMethodDetailList(nil), nil
+	case "one_paginated_integration_v2_list_item_list":
+		return client.OnePaginatedIntegrationV2ListItemList(nil), nil
+	case "one_paginated_setup_flow_list":
+		return client.OnePaginatedSetupFlowList(nil), nil
 	case "override_code":
 		return client.OverrideCode(nil), nil
 	case "pacfile":
@@ -148,6 +176,8 @@ func entityFor(client *sdk.CloudflareZeroTrustSDK, name string) (sdk.CloudflareZ
 		return client.TeamsDevicesDeviceSetting(nil), nil
 	case "teams_devices_device_settings_response_collection":
 		return client.TeamsDevicesDeviceSettingsResponseCollection(nil), nil
+	case "teams_devices_devices_policy_certificates_single":
+		return client.TeamsDevicesDevicesPolicyCertificatesSingle(nil), nil
 	case "teams_devices_fallback_domain_response_collection":
 		return client.TeamsDevicesFallbackDomainResponseCollection(nil), nil
 	case "teams_devices_global_warp_override":

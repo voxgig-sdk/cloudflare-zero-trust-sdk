@@ -12,6 +12,88 @@ import (
 	"github.com/voxgig-sdk/cloudflare-zero-trust-sdk/go/core"
 )
 
+// AlexandriaDeleteApplication is the typed data model for the alexandria_delete_application entity.
+type AlexandriaDeleteApplication struct {
+}
+
+// AlexandriaDeleteApplicationRemoveMatch is the typed request payload for AlexandriaDeleteApplication.RemoveTyped.
+type AlexandriaDeleteApplicationRemoveMatch struct {
+	AccountId string `json:"account_id"`
+	Id int `json:"id"`
+}
+
+// AlexandriaGetApplication is the typed data model for the alexandria_get_application entity.
+type AlexandriaGetApplication struct {
+}
+
+// AlexandriaGetApplicationLoadMatch is the typed request payload for AlexandriaGetApplication.LoadTyped.
+type AlexandriaGetApplicationLoadMatch struct {
+	AccountId string `json:"account_id"`
+	Id int `json:"id"`
+}
+
+// AlexandriaGetApplicationListMatch is the typed request payload for AlexandriaGetApplication.ListTyped.
+type AlexandriaGetApplicationListMatch struct {
+	AccountId string `json:"account_id"`
+	Field *string `json:"field,omitempty"`
+	Filter *string `json:"filter,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
+	OrderBy *string `json:"order_by,omitempty"`
+	Search *string `json:"search,omitempty"`
+}
+
+// AlexandriaGetApplicationCreateData is the typed request payload for AlexandriaGetApplication.CreateTyped.
+type AlexandriaGetApplicationCreateData struct {
+	AccountId string `json:"account_id"`
+	CategoryId int `json:"category_id"`
+	Errors []any `json:"errors"`
+	Hostnames *[]any `json:"hostnames,omitempty"`
+	HumanId string `json:"human_id"`
+	Id *string `json:"id,omitempty"`
+	IpSubnets *[]any `json:"ip_subnets,omitempty"`
+	Messages []any `json:"messages"`
+	Name string `json:"name"`
+	PortProtocols *[]any `json:"port_protocols,omitempty"`
+	Result map[string]any `json:"result"`
+	Success bool `json:"success"`
+	SupportDomains *[]any `json:"support_domains,omitempty"`
+}
+
+// AlexandriaGetApplicationUpdateData is the typed request payload for AlexandriaGetApplication.UpdateTyped.
+type AlexandriaGetApplicationUpdateData struct {
+	AccountId string `json:"account_id"`
+	Id int `json:"id"`
+	CategoryId *int `json:"category_id,omitempty"`
+	Errors *[]any `json:"errors,omitempty"`
+	Hostnames *[]any `json:"hostnames,omitempty"`
+	HumanId *string `json:"human_id,omitempty"`
+	IpSubnets *[]any `json:"ip_subnets,omitempty"`
+	Messages *[]any `json:"messages,omitempty"`
+	Name *string `json:"name,omitempty"`
+	PortProtocols *[]any `json:"port_protocols,omitempty"`
+	Result *map[string]any `json:"result,omitempty"`
+	Success *bool `json:"success,omitempty"`
+	SupportDomains *[]any `json:"support_domains,omitempty"`
+}
+
+// AlexandriaGetCategory is the typed data model for the alexandria_get_category entity.
+type AlexandriaGetCategory struct {
+}
+
+// AlexandriaGetCategoryLoadMatch is the typed request payload for AlexandriaGetCategory.LoadTyped.
+type AlexandriaGetCategoryLoadMatch struct {
+	AccountId string `json:"account_id"`
+	Id int `json:"id"`
+}
+
+// AlexandriaGetCategoryListMatch is the typed request payload for AlexandriaGetCategory.ListTyped.
+type AlexandriaGetCategoryListMatch struct {
+	AccountId string `json:"account_id"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
+}
+
 // ClientVersion is the typed data model for the client_version entity.
 type ClientVersion struct {
 }
@@ -311,6 +393,16 @@ type DigitalExperienceMonitoringFleetStatusOverTimeLoadMatch struct {
 	To string `json:"to"`
 }
 
+// Integration is the typed data model for the integration entity.
+type Integration struct {
+}
+
+// IntegrationRemoveMatch is the typed request payload for Integration.RemoveTyped.
+type IntegrationRemoveMatch struct {
+	AccountId string `json:"account_id"`
+	Id string `json:"id"`
+}
+
 // Interconnect is the typed data model for the interconnect entity.
 type Interconnect struct {
 }
@@ -531,6 +623,145 @@ type NscStatusInfo struct {
 type NscStatusInfoLoadMatch struct {
 	AccountId string `json:"account_id"`
 	Icon string `json:"icon"`
+}
+
+// OneApplicationDetail is the typed data model for the one_application_detail entity.
+type OneApplicationDetail struct {
+}
+
+// OneApplicationDetailLoadMatch is the typed request payload for OneApplicationDetail.LoadTyped.
+type OneApplicationDetailLoadMatch struct {
+	AccountId string `json:"account_id"`
+	ApplicationId string `json:"application_id"`
+}
+
+// OneIntegrationCreate is the typed data model for the one_integration_create entity.
+type OneIntegrationCreate struct {
+}
+
+// OneIntegrationCreateCreateData is the typed request payload for OneIntegrationCreate.CreateTyped.
+type OneIntegrationCreateCreateData struct {
+	AccountId string `json:"account_id"`
+	Application string `json:"application"`
+	AuthMethod *string `json:"auth_method,omitempty"`
+	Credentials map[string]any `json:"credentials"`
+	DlpProfiles *[]any `json:"dlp_profiles,omitempty"`
+	Name string `json:"name"`
+	Permissions *[]any `json:"permissions,omitempty"`
+	UseCases *[]any `json:"use_cases,omitempty"`
+}
+
+// OneIntegrationDetail is the typed data model for the one_integration_detail entity.
+type OneIntegrationDetail struct {
+}
+
+// OneIntegrationDetailLoadMatch is the typed request payload for OneIntegrationDetail.LoadTyped.
+type OneIntegrationDetailLoadMatch struct {
+	AccountId string `json:"account_id"`
+	Id string `json:"id"`
+}
+
+// OneIntegrationPause is the typed data model for the one_integration_pause entity.
+type OneIntegrationPause struct {
+}
+
+// OneIntegrationPauseCreateData is the typed request payload for OneIntegrationPause.CreateTyped.
+type OneIntegrationPauseCreateData struct {
+	AccountId string `json:"account_id"`
+	IntegrationId string `json:"integration_id"`
+	Errors *[]any `json:"errors,omitempty"`
+	Messages *[]any `json:"messages,omitempty"`
+	Result any `json:"result"`
+	Success bool `json:"success"`
+}
+
+// OneIntegrationResume is the typed data model for the one_integration_resume entity.
+type OneIntegrationResume struct {
+}
+
+// OneIntegrationResumeCreateData is the typed request payload for OneIntegrationResume.CreateTyped.
+type OneIntegrationResumeCreateData struct {
+	AccountId string `json:"account_id"`
+	IntegrationId string `json:"integration_id"`
+	Errors *[]any `json:"errors,omitempty"`
+	Messages *[]any `json:"messages,omitempty"`
+	Result any `json:"result"`
+	Success bool `json:"success"`
+}
+
+// OneIntegrationUpdate is the typed data model for the one_integration_update entity.
+type OneIntegrationUpdate struct {
+}
+
+// OneIntegrationUpdateUpdateData is the typed request payload for OneIntegrationUpdate.UpdateTyped.
+type OneIntegrationUpdateUpdateData struct {
+	AccountId string `json:"account_id"`
+	Id string `json:"id"`
+	Credentials *map[string]any `json:"credentials,omitempty"`
+	DlpProfiles *[]any `json:"dlp_profiles,omitempty"`
+	Errors *[]any `json:"errors,omitempty"`
+	Messages *[]any `json:"messages,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Permissions *[]any `json:"permissions,omitempty"`
+	Result *any `json:"result,omitempty"`
+	Success *bool `json:"success,omitempty"`
+	UseCases *[]any `json:"use_cases,omitempty"`
+}
+
+// OnePaginatedApplicationListList is the typed data model for the one_paginated_application_list_list entity.
+type OnePaginatedApplicationListList struct {
+}
+
+// OnePaginatedApplicationListListListMatch is the typed request payload for OnePaginatedApplicationListList.ListTyped.
+type OnePaginatedApplicationListListListMatch struct {
+	AccountId string `json:"account_id"`
+	Environment *string `json:"environment,omitempty"`
+	Page *int `json:"page,omitempty"`
+	PageSize *int `json:"page_size,omitempty"`
+}
+
+// OnePaginatedAuthMethodDetailList is the typed data model for the one_paginated_auth_method_detail_list entity.
+type OnePaginatedAuthMethodDetailList struct {
+}
+
+// OnePaginatedAuthMethodDetailListListMatch is the typed request payload for OnePaginatedAuthMethodDetailList.ListTyped.
+type OnePaginatedAuthMethodDetailListListMatch struct {
+	AccountId string `json:"account_id"`
+	ApplicationId string `json:"application_id"`
+	Page *int `json:"page,omitempty"`
+	PageSize *int `json:"page_size,omitempty"`
+}
+
+// OnePaginatedIntegrationV2ListItemList is the typed data model for the one_paginated_integration_v2_list_item_list entity.
+type OnePaginatedIntegrationV2ListItemList struct {
+}
+
+// OnePaginatedIntegrationV2ListItemListListMatch is the typed request payload for OnePaginatedIntegrationV2ListItemList.ListTyped.
+type OnePaginatedIntegrationV2ListItemListListMatch struct {
+	AccountId string `json:"account_id"`
+	Application *string `json:"application,omitempty"`
+	Direction *string `json:"direction,omitempty"`
+	DlpEnabled *bool `json:"dlp_enabled,omitempty"`
+	Order *string `json:"order,omitempty"`
+	Page *int `json:"page,omitempty"`
+	PageSize *int `json:"page_size,omitempty"`
+	Search *string `json:"search,omitempty"`
+	Status *string `json:"status,omitempty"`
+	UseCase *string `json:"use_case,omitempty"`
+}
+
+// OnePaginatedSetupFlowList is the typed data model for the one_paginated_setup_flow_list entity.
+type OnePaginatedSetupFlowList struct {
+}
+
+// OnePaginatedSetupFlowListListMatch is the typed request payload for OnePaginatedSetupFlowList.ListTyped.
+type OnePaginatedSetupFlowListListMatch struct {
+	AccountId string `json:"account_id"`
+	ApplicationId string `json:"application_id"`
+	AuthMethod *string `json:"auth_method,omitempty"`
+	Environment *string `json:"environment,omitempty"`
+	Page *int `json:"page,omitempty"`
+	PageSize *int `json:"page_size,omitempty"`
 }
 
 // OverrideCode is the typed data model for the override_code entity.
@@ -886,6 +1117,22 @@ type TeamsDevicesDeviceSettingsResponseCollectionListMatch struct {
 type TeamsDevicesDeviceSettingsResponseCollectionRemoveMatch struct {
 	AccountId string `json:"account_id"`
 	PolicyId string `json:"policy_id"`
+}
+
+// TeamsDevicesDevicesPolicyCertificatesSingle is the typed data model for the teams_devices_devices_policy_certificates_single entity.
+type TeamsDevicesDevicesPolicyCertificatesSingle struct {
+}
+
+// TeamsDevicesDevicesPolicyCertificatesSingleLoadMatch is the typed request payload for TeamsDevicesDevicesPolicyCertificatesSingle.LoadTyped.
+type TeamsDevicesDevicesPolicyCertificatesSingleLoadMatch struct {
+	ZoneId string `json:"zone_id"`
+}
+
+// TeamsDevicesDevicesPolicyCertificatesSingleUpdateData is the typed request payload for TeamsDevicesDevicesPolicyCertificatesSingle.UpdateTyped.
+type TeamsDevicesDevicesPolicyCertificatesSingleUpdateData struct {
+	ZoneId string `json:"zone_id"`
+	Enabled *bool `json:"enabled,omitempty"`
+	Result *map[string]any `json:"result,omitempty"`
 }
 
 // TeamsDevicesFallbackDomainResponseCollection is the typed data model for the teams_devices_fallback_domain_response_collection entity.

@@ -1,0 +1,67 @@
+{
+  "existing": {
+    "one_paginated_application_list_list": {
+      "ONE_PAGINATED_APPLICATION_LIST_LIST00": {
+        "auth_methods": [],
+        "category": "s65",
+        "description": "s66",
+        "display_name": "s67",
+        "dlp_enabled": true,
+        "id": "ONE_PAGINATED_APPLICATION_LIST_LIST00",
+        "logo": "s6a",
+        "permissions": [],
+        "supported_environments": [],
+        "use_cases": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ONE_PAGINATED_APPLICATION_LIST_LIST01": {
+        "auth_methods": [],
+        "category": "sc9",
+        "description": "sca",
+        "display_name": "scb",
+        "dlp_enabled": true,
+        "id": "ONE_PAGINATED_APPLICATION_LIST_LIST01",
+        "logo": "sce",
+        "permissions": [],
+        "supported_environments": [],
+        "use_cases": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ONE_PAGINATED_APPLICATION_LIST_LIST02": {
+        "auth_methods": [],
+        "category": "s12d",
+        "description": "s12e",
+        "display_name": "s12f",
+        "dlp_enabled": true,
+        "id": "ONE_PAGINATED_APPLICATION_LIST_LIST02",
+        "logo": "s132",
+        "permissions": [],
+        "supported_environments": [],
+        "use_cases": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "one_paginated_application_list_list": {
+      "one_paginated_application_list_list_ref01": {
+        "auth_methods": [],
+        "category": "s191",
+        "description": "s192",
+        "display_name": "s193",
+        "dlp_enabled": true,
+        "logo": "s196",
+        "permissions": [],
+        "supported_environments": [],
+        "use_cases": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/one/applications": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

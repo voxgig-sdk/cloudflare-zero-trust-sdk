@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "teams_devices_devices_policy_certificates_single": {
+      "TEAMS_DEVICES_DEVICES_POLICY_CERTIFICATES_SINGLE00": {
+        "enabled": true,
+        "result": {},
+        "zone_id": "ZONE01",
+        "id": "TEAMS_DEVICES_DEVICES_POLICY_CERTIFICATES_SINGLE00"
+      },
+      "TEAMS_DEVICES_DEVICES_POLICY_CERTIFICATES_SINGLE01": {
+        "enabled": true,
+        "result": {},
+        "zone_id": "ZONE01",
+        "id": "TEAMS_DEVICES_DEVICES_POLICY_CERTIFICATES_SINGLE01"
+      },
+      "TEAMS_DEVICES_DEVICES_POLICY_CERTIFICATES_SINGLE02": {
+        "enabled": true,
+        "result": {},
+        "zone_id": "ZONE01",
+        "id": "TEAMS_DEVICES_DEVICES_POLICY_CERTIFICATES_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_devices_policy_certificates_single": {
+      "teams_devices_devices_policy_certificates_single_ref01": {
+        "enabled": true,
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /zones/{zone_id}/devices/policy/certificates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /zones/{zone_id}/devices/policy/certificates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

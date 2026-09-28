@@ -326,6 +326,30 @@ func (sdk *CloudflareZeroTrustSDK) Graphql(
 }
 
 
+// AlexandriaDeleteApplication returns a AlexandriaDeleteApplication entity bound to this client.
+// Idiomatic usage: client.AlexandriaDeleteApplication(nil).List(nil, nil) or
+// client.AlexandriaDeleteApplication(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) AlexandriaDeleteApplication(data map[string]any) CloudflareZeroTrustEntity {
+	return NewAlexandriaDeleteApplicationEntityFunc(sdk, data)
+}
+
+
+// AlexandriaGetApplication returns a AlexandriaGetApplication entity bound to this client.
+// Idiomatic usage: client.AlexandriaGetApplication(nil).List(nil, nil) or
+// client.AlexandriaGetApplication(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) AlexandriaGetApplication(data map[string]any) CloudflareZeroTrustEntity {
+	return NewAlexandriaGetApplicationEntityFunc(sdk, data)
+}
+
+
+// AlexandriaGetCategory returns a AlexandriaGetCategory entity bound to this client.
+// Idiomatic usage: client.AlexandriaGetCategory(nil).List(nil, nil) or
+// client.AlexandriaGetCategory(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) AlexandriaGetCategory(data map[string]any) CloudflareZeroTrustEntity {
+	return NewAlexandriaGetCategoryEntityFunc(sdk, data)
+}
+
+
 // ClientVersion returns a ClientVersion entity bound to this client.
 // Idiomatic usage: client.ClientVersion(nil).List(nil, nil) or
 // client.ClientVersion(nil).Load(map[string]any{"id": ...}, nil).
@@ -430,6 +454,14 @@ func (sdk *CloudflareZeroTrustSDK) DigitalExperienceMonitoringFleetStatusOverTim
 }
 
 
+// Integration returns a Integration entity bound to this client.
+// Idiomatic usage: client.Integration(nil).List(nil, nil) or
+// client.Integration(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) Integration(data map[string]any) CloudflareZeroTrustEntity {
+	return NewIntegrationEntityFunc(sdk, data)
+}
+
+
 // Interconnect returns a Interconnect entity bound to this client.
 // Idiomatic usage: client.Interconnect(nil).List(nil, nil) or
 // client.Interconnect(nil).Load(map[string]any{"id": ...}, nil).
@@ -507,6 +539,86 @@ func (sdk *CloudflareZeroTrustSDK) NscSlotInfo(data map[string]any) CloudflareZe
 // client.NscStatusInfo(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *CloudflareZeroTrustSDK) NscStatusInfo(data map[string]any) CloudflareZeroTrustEntity {
 	return NewNscStatusInfoEntityFunc(sdk, data)
+}
+
+
+// OneApplicationDetail returns a OneApplicationDetail entity bound to this client.
+// Idiomatic usage: client.OneApplicationDetail(nil).List(nil, nil) or
+// client.OneApplicationDetail(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) OneApplicationDetail(data map[string]any) CloudflareZeroTrustEntity {
+	return NewOneApplicationDetailEntityFunc(sdk, data)
+}
+
+
+// OneIntegrationCreate returns a OneIntegrationCreate entity bound to this client.
+// Idiomatic usage: client.OneIntegrationCreate(nil).List(nil, nil) or
+// client.OneIntegrationCreate(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) OneIntegrationCreate(data map[string]any) CloudflareZeroTrustEntity {
+	return NewOneIntegrationCreateEntityFunc(sdk, data)
+}
+
+
+// OneIntegrationDetail returns a OneIntegrationDetail entity bound to this client.
+// Idiomatic usage: client.OneIntegrationDetail(nil).List(nil, nil) or
+// client.OneIntegrationDetail(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) OneIntegrationDetail(data map[string]any) CloudflareZeroTrustEntity {
+	return NewOneIntegrationDetailEntityFunc(sdk, data)
+}
+
+
+// OneIntegrationPause returns a OneIntegrationPause entity bound to this client.
+// Idiomatic usage: client.OneIntegrationPause(nil).List(nil, nil) or
+// client.OneIntegrationPause(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) OneIntegrationPause(data map[string]any) CloudflareZeroTrustEntity {
+	return NewOneIntegrationPauseEntityFunc(sdk, data)
+}
+
+
+// OneIntegrationResume returns a OneIntegrationResume entity bound to this client.
+// Idiomatic usage: client.OneIntegrationResume(nil).List(nil, nil) or
+// client.OneIntegrationResume(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) OneIntegrationResume(data map[string]any) CloudflareZeroTrustEntity {
+	return NewOneIntegrationResumeEntityFunc(sdk, data)
+}
+
+
+// OneIntegrationUpdate returns a OneIntegrationUpdate entity bound to this client.
+// Idiomatic usage: client.OneIntegrationUpdate(nil).List(nil, nil) or
+// client.OneIntegrationUpdate(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) OneIntegrationUpdate(data map[string]any) CloudflareZeroTrustEntity {
+	return NewOneIntegrationUpdateEntityFunc(sdk, data)
+}
+
+
+// OnePaginatedApplicationListList returns a OnePaginatedApplicationListList entity bound to this client.
+// Idiomatic usage: client.OnePaginatedApplicationListList(nil).List(nil, nil) or
+// client.OnePaginatedApplicationListList(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) OnePaginatedApplicationListList(data map[string]any) CloudflareZeroTrustEntity {
+	return NewOnePaginatedApplicationListListEntityFunc(sdk, data)
+}
+
+
+// OnePaginatedAuthMethodDetailList returns a OnePaginatedAuthMethodDetailList entity bound to this client.
+// Idiomatic usage: client.OnePaginatedAuthMethodDetailList(nil).List(nil, nil) or
+// client.OnePaginatedAuthMethodDetailList(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) OnePaginatedAuthMethodDetailList(data map[string]any) CloudflareZeroTrustEntity {
+	return NewOnePaginatedAuthMethodDetailListEntityFunc(sdk, data)
+}
+
+
+// OnePaginatedIntegrationV2ListItemList returns a OnePaginatedIntegrationV2ListItemList entity bound to this client.
+// Idiomatic usage: client.OnePaginatedIntegrationV2ListItemList(nil).List(nil, nil) or
+// client.OnePaginatedIntegrationV2ListItemList(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) OnePaginatedIntegrationV2ListItemList(data map[string]any) CloudflareZeroTrustEntity {
+	return NewOnePaginatedIntegrationV2ListItemListEntityFunc(sdk, data)
+}
+
+
+// OnePaginatedSetupFlowList returns a OnePaginatedSetupFlowList entity bound to this client.
+// Idiomatic usage: client.OnePaginatedSetupFlowList(nil).List(nil, nil) or
+// client.OnePaginatedSetupFlowList(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) OnePaginatedSetupFlowList(data map[string]any) CloudflareZeroTrustEntity {
+	return NewOnePaginatedSetupFlowListEntityFunc(sdk, data)
 }
 
 
@@ -611,6 +723,14 @@ func (sdk *CloudflareZeroTrustSDK) TeamsDevicesDeviceSetting(data map[string]any
 // client.TeamsDevicesDeviceSettingsResponseCollection(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *CloudflareZeroTrustSDK) TeamsDevicesDeviceSettingsResponseCollection(data map[string]any) CloudflareZeroTrustEntity {
 	return NewTeamsDevicesDeviceSettingsResponseCollectionEntityFunc(sdk, data)
+}
+
+
+// TeamsDevicesDevicesPolicyCertificatesSingle returns a TeamsDevicesDevicesPolicyCertificatesSingle entity bound to this client.
+// Idiomatic usage: client.TeamsDevicesDevicesPolicyCertificatesSingle(nil).List(nil, nil) or
+// client.TeamsDevicesDevicesPolicyCertificatesSingle(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *CloudflareZeroTrustSDK) TeamsDevicesDevicesPolicyCertificatesSingle(data map[string]any) CloudflareZeroTrustEntity {
+	return NewTeamsDevicesDevicesPolicyCertificatesSingleEntityFunc(sdk, data)
 }
 
 

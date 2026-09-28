@@ -6,6 +6,12 @@ var NewBaseFeatureFunc func() Feature
 
 var NewTestFeatureFunc func() Feature
 
+var NewAlexandriaDeleteApplicationEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewAlexandriaGetApplicationEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewAlexandriaGetCategoryEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
 var NewClientVersionEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
 
 var NewCniEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
@@ -32,6 +38,8 @@ var NewDigitalExperienceMonitoringFleetStatusLiveEntityFunc func(client *Cloudfl
 
 var NewDigitalExperienceMonitoringFleetStatusOverTimeEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
 
+var NewIntegrationEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
 var NewInterconnectEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
 
 var NewIpProfileEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
@@ -51,6 +59,26 @@ var NewNscSettingEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[str
 var NewNscSlotInfoEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
 
 var NewNscStatusInfoEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewOneApplicationDetailEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewOneIntegrationCreateEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewOneIntegrationDetailEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewOneIntegrationPauseEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewOneIntegrationResumeEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewOneIntegrationUpdateEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewOnePaginatedApplicationListListEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewOnePaginatedAuthMethodDetailListEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewOnePaginatedIntegrationV2ListItemListEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewOnePaginatedSetupFlowListEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
 
 var NewOverrideCodeEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
 
@@ -77,6 +105,8 @@ var NewTeamsDevicesDeviceEntityFunc func(client *CloudflareZeroTrustSDK, entopts
 var NewTeamsDevicesDeviceSettingEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
 
 var NewTeamsDevicesDeviceSettingsResponseCollectionEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
+
+var NewTeamsDevicesDevicesPolicyCertificatesSingleEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
 
 var NewTeamsDevicesFallbackDomainResponseCollectionEntityFunc func(client *CloudflareZeroTrustSDK, entopts map[string]any) CloudflareZeroTrustEntity
 

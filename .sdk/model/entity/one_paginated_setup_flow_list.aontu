@@ -1,0 +1,167 @@
+# Entity: one_paginated_setup_flow_list
+
+main: kit: entity: one_paginated_setup_flow_list: {
+
+  alias: field: {}
+
+  fields: {
+    auth_config: {
+      h: "Auth Config"
+      n: "auth_config"
+      r: false
+      sh: "OAuth configuration (present for OAuth-based flows)."
+      t: "`$ANY`"
+    }
+    default: {
+      h: "Default"
+      n: "default"
+      r: true
+      sh: "Whether this is the default auth method."
+      t: "`$BOOLEAN`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: true
+      sh: "Flow description."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Setup flow identifier."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "Human-readable flow name."
+      t: "`$STRING`"
+    }
+    steps: {
+      h: "Steps"
+      n: "steps"
+      r: true
+      sh: "Ordered list of setup steps."
+      t: "`$ARRAY`"
+    }
+    supported_environments: {
+      h: "Supported Environments"
+      n: "supported_environments"
+      r: true
+      sh: "Environments this auth method supports (standard, fedramp)."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "one_paginated_setup_flow_list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/one/applications/{application_id}/setup-flows"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "application_id"
+                or: "application_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "auth_method"
+                or: "auth_method"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "environment"
+                or: "environment"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/one/applications/{application_id}/setup-flows"
+          q: {
+            exist: [
+              "account_id"
+              "application_id"
+              "auth_method"
+              "environment"
+              "page"
+              "page_size"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "one"
+            }
+            {
+              lit: "applications"
+            }
+            {
+              var: "application_id"
+            }
+            {
+              lit: "setup-flows"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

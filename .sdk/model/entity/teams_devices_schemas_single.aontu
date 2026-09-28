@@ -255,5 +255,8 @@ main: kit: entity: teams_devices_schemas_single: {
   }
 
 
+  relations: ancestors: [
+    [path("$.main.kit.entity.integration")]
+  ]
 
 }

@@ -1,0 +1,84 @@
+# BasicAlexandriaGetApplicationFlow
+
+main: kit: flow: BasicAlexandriaGetApplicationFlow:
+{
+  entity: "alexandria_get_application",
+  kind: "basic",
+  name: "BasicAlexandriaGetApplicationFlow",
+  step: [
+    {
+      i: {
+        ref: "alexandria_get_application_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "alexandria_get_application_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "alexandria_get_application_ref01",
+        srcdatavar: "alexandria_get_application_ref01_data",
+        suffix: "_up0",
+        textfield: "human_id"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-alexandria_get_application_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "alexandria_get_application_ref01",
+        srcdatavar: "alexandria_get_application_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "alexandria_get_application01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-alexandria_get_application_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAlexandriaGetApplicationFlow"
+}

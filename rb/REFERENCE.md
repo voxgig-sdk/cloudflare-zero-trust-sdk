@@ -42,6 +42,18 @@ client = CloudflareZeroTrustSDK.test
 
 ### Instance Methods
 
+#### `AlexandriaDeleteApplication(data = nil)`
+
+Create a new `AlexandriaDeleteApplication` entity instance. Pass `nil` for no initial data.
+
+#### `AlexandriaGetApplication(data = nil)`
+
+Create a new `AlexandriaGetApplication` entity instance. Pass `nil` for no initial data.
+
+#### `AlexandriaGetCategory(data = nil)`
+
+Create a new `AlexandriaGetCategory` entity instance. Pass `nil` for no initial data.
+
 #### `ClientVersion(data = nil)`
 
 Create a new `ClientVersion` entity instance. Pass `nil` for no initial data.
@@ -94,6 +106,10 @@ Create a new `DigitalExperienceMonitoringFleetStatusLive` entity instance. Pass 
 
 Create a new `DigitalExperienceMonitoringFleetStatusOverTime` entity instance. Pass `nil` for no initial data.
 
+#### `Integration(data = nil)`
+
+Create a new `Integration` entity instance. Pass `nil` for no initial data.
+
 #### `Interconnect(data = nil)`
 
 Create a new `Interconnect` entity instance. Pass `nil` for no initial data.
@@ -133,6 +149,46 @@ Create a new `NscSlotInfo` entity instance. Pass `nil` for no initial data.
 #### `NscStatusInfo(data = nil)`
 
 Create a new `NscStatusInfo` entity instance. Pass `nil` for no initial data.
+
+#### `OneApplicationDetail(data = nil)`
+
+Create a new `OneApplicationDetail` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationCreate(data = nil)`
+
+Create a new `OneIntegrationCreate` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationDetail(data = nil)`
+
+Create a new `OneIntegrationDetail` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationPause(data = nil)`
+
+Create a new `OneIntegrationPause` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationResume(data = nil)`
+
+Create a new `OneIntegrationResume` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationUpdate(data = nil)`
+
+Create a new `OneIntegrationUpdate` entity instance. Pass `nil` for no initial data.
+
+#### `OnePaginatedApplicationListList(data = nil)`
+
+Create a new `OnePaginatedApplicationListList` entity instance. Pass `nil` for no initial data.
+
+#### `OnePaginatedAuthMethodDetailList(data = nil)`
+
+Create a new `OnePaginatedAuthMethodDetailList` entity instance. Pass `nil` for no initial data.
+
+#### `OnePaginatedIntegrationV2ListItemList(data = nil)`
+
+Create a new `OnePaginatedIntegrationV2ListItemList` entity instance. Pass `nil` for no initial data.
+
+#### `OnePaginatedSetupFlowList(data = nil)`
+
+Create a new `OnePaginatedSetupFlowList` entity instance. Pass `nil` for no initial data.
 
 #### `OverrideCode(data = nil)`
 
@@ -185,6 +241,10 @@ Create a new `TeamsDevicesDeviceSetting` entity instance. Pass `nil` for no init
 #### `TeamsDevicesDeviceSettingsResponseCollection(data = nil)`
 
 Create a new `TeamsDevicesDeviceSettingsResponseCollection` entity instance. Pass `nil` for no initial data.
+
+#### `TeamsDevicesDevicesPolicyCertificatesSingle(data = nil)`
+
+Create a new `TeamsDevicesDevicesPolicyCertificatesSingle` entity instance. Pass `nil` for no initial data.
 
 #### `TeamsDevicesFallbackDomainResponseCollection(data = nil)`
 
@@ -492,6 +552,249 @@ Prepare a fetch definition without sending the request. Accepts the
 same parameters as `direct()`. Raises on error.
 
 **Returns:** `Hash` (the fetch definition; raises on error)
+
+
+---
+
+## AlexandriaDeleteApplicationEntity
+
+```ruby
+alexandria_delete_application = client.AlexandriaDeleteApplication
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `String` | No |  |
+
+### Operations
+
+#### `remove(reqmatch, ctrl = nil) -> result`
+
+Remove the entity matching the given criteria. Raises on error.
+
+```ruby
+result = client.AlexandriaDeleteApplication.remove({ "account_id" => "account_id", "id" => 1 })
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `AlexandriaDeleteApplicationEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## AlexandriaGetApplicationEntity
+
+```ruby
+alexandria_get_application = client.AlexandriaGetApplication
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `category_id` | `Integer` | Yes | Returns the category ID. |
+| `errors` | `Array` | Yes |  |
+| `hostnames` | `Array` | No | Hostnames matched by the application. |
+| `human_id` | `String` | Yes | Returns the human readable ID. |
+| `id` | `String` | No |  |
+| `ip_subnets` | `Array` | No | IP subnets for this application. |
+| `messages` | `Array` | Yes |  |
+| `name` | `String` | Yes | Returns the application name. |
+| `port_protocols` | `Array` | No | Port and protocol pairs matched by the application. |
+| `result` | `Hash` | Yes | Returns the list of applications. |
+| `success` | `Boolean` | Yes | Indicates whether the API call was successful. |
+| `support_domains` | `Array` | No | Support domains matched by the application. |
+
+### Field Usage by Operation
+
+| Field | load | list | create | update |
+| --- | --- | --- | --- | --- |
+| `category_id` | - | - | - | - |
+| `errors` | - | - | - | - |
+| `hostnames` | - | - | - | - |
+| `human_id` | - | - | - | - |
+| `id` | - | - | - | - |
+| `ip_subnets` | - | - | - | - |
+| `messages` | - | - | - | - |
+| `name` | - | - | - | - |
+| `port_protocols` | - | - | - | - |
+| `result` | - | Yes | - | - |
+| `success` | - | - | - | - |
+| `support_domains` | - | - | - | - |
+
+### Operations
+
+#### `create(reqdata, ctrl = nil) -> result`
+
+Create a new entity with the given data. Raises on error.
+
+```ruby
+result = client.AlexandriaGetApplication.create({
+  "account_id" => "example_account_id", # String
+  "category_id" => 1, # Integer
+  "errors" => [], # Array
+  "human_id" => "example_human_id", # String
+  "messages" => [], # Array
+  "name" => "example_name", # String
+  "result" => {}, # Hash
+  "success" => true, # Boolean
+})
+```
+
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+
+```ruby
+results = client.AlexandriaGetApplication.list
+```
+
+#### `load(reqmatch, ctrl = nil) -> result`
+
+Load a single entity matching the given criteria. Raises on error.
+
+```ruby
+result = client.AlexandriaGetApplication.load({ "id" => 1, "account_id" => "account_id" })
+```
+
+#### `update(reqdata, ctrl = nil) -> result`
+
+Update an existing entity. The data must include the entity `id`. Raises on error.
+
+```ruby
+result = client.AlexandriaGetApplication.update({
+  "id" => 1,
+  "account_id" => "account_id",
+  # Fields to update
+})
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `AlexandriaGetApplicationEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## AlexandriaGetCategoryEntity
+
+```ruby
+alexandria_get_category = client.AlexandriaGetCategory
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `Array` | Yes |  |
+| `id` | `String` | No |  |
+| `messages` | `Array` | Yes |  |
+| `result` | `Hash` | Yes | Returns the list of categories. |
+| `success` | `Boolean` | Yes | Indicates whether the API call was successful. |
+
+### Field Usage by Operation
+
+| Field | load | list |
+| --- | --- | --- |
+| `errors` | - | - |
+| `id` | - | - |
+| `messages` | - | - |
+| `result` | - | Yes |
+| `success` | - | - |
+
+### Operations
+
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+
+```ruby
+results = client.AlexandriaGetCategory.list
+```
+
+#### `load(reqmatch, ctrl = nil) -> result`
+
+Load a single entity matching the given criteria. Raises on error.
+
+```ruby
+result = client.AlexandriaGetCategory.load({ "id" => 1, "account_id" => "account_id" })
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `AlexandriaGetCategoryEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
 
 
 ---
@@ -1401,6 +1704,58 @@ Return the entity name.
 
 ---
 
+## IntegrationEntity
+
+```ruby
+integration = client.Integration
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `String` | No |  |
+
+### Operations
+
+#### `remove(reqmatch, ctrl = nil) -> result`
+
+Remove the entity matching the given criteria. Raises on error.
+
+```ruby
+result = client.Integration.remove({ "account_id" => "account_id", "id" => "id" })
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `IntegrationEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
 ## InterconnectEntity
 
 ```ruby
@@ -2087,6 +2442,600 @@ Set the entity match criteria.
 #### `make -> Entity`
 
 Create a new `NscStatusInfoEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## OneApplicationDetailEntity
+
+```ruby
+one_application_detail = client.OneApplicationDetail
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `Array` | No | List of errors. |
+| `messages` | `Array` | No | List of messages. |
+| `result` | `Object` | Yes | The requested item. |
+| `success` | `Boolean` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `load(reqmatch, ctrl = nil) -> result`
+
+Load a single entity matching the given criteria. Raises on error.
+
+```ruby
+result = client.OneApplicationDetail.load({ "account_id" => "account_id", "application_id" => "application_id" })
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `OneApplicationDetailEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationCreateEntity
+
+```ruby
+one_integration_create = client.OneIntegrationCreate
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `application` | `String` | Yes | Vendor/application slug (e.g., GOOGLE_WORKSPACE). |
+| `auth_method` | `String` | No | Authentication method slug (uses default if omitted). |
+| `credentials` | `Hash` | Yes | Credentials for the integration. |
+| `dlp_profiles` | `Array` | No | List of DLP profile IDs to associate. |
+| `name` | `String` | Yes | Name of the integration. |
+| `permissions` | `Array` | No | List of permission scopes (uses policy defaults if empty). |
+| `use_cases` | `Array` | No | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+### Operations
+
+#### `create(reqdata, ctrl = nil) -> result`
+
+Create a new entity with the given data. Raises on error.
+
+```ruby
+result = client.OneIntegrationCreate.create({
+  "account_id" => "example_account_id", # String
+  "application" => "example_application", # String
+  "credentials" => {}, # Hash
+  "name" => "example_name", # String
+})
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `OneIntegrationCreateEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationDetailEntity
+
+```ruby
+one_integration_detail = client.OneIntegrationDetail
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `Array` | No | List of errors. |
+| `id` | `String` | No |  |
+| `messages` | `Array` | No | List of messages. |
+| `result` | `Object` | Yes | The requested item. |
+| `success` | `Boolean` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `load(reqmatch, ctrl = nil) -> result`
+
+Load a single entity matching the given criteria. Raises on error.
+
+```ruby
+result = client.OneIntegrationDetail.load({ "id" => "one_integration_detail_id", "account_id" => "account_id" })
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `OneIntegrationDetailEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationPauseEntity
+
+```ruby
+one_integration_pause = client.OneIntegrationPause
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `Array` | No | List of errors. |
+| `messages` | `Array` | No | List of messages. |
+| `result` | `Object` | Yes | The requested item. |
+| `success` | `Boolean` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `create(reqdata, ctrl = nil) -> result`
+
+Create a new entity with the given data. Raises on error.
+
+```ruby
+result = client.OneIntegrationPause.create({
+  "account_id" => "example_account_id", # String
+  "integration_id" => "example_integration_id", # String
+  "result" => "example_result", # Object
+  "success" => true, # Boolean
+})
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `OneIntegrationPauseEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationResumeEntity
+
+```ruby
+one_integration_resume = client.OneIntegrationResume
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `Array` | No | List of errors. |
+| `messages` | `Array` | No | List of messages. |
+| `result` | `Object` | Yes | The requested item. |
+| `success` | `Boolean` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `create(reqdata, ctrl = nil) -> result`
+
+Create a new entity with the given data. Raises on error.
+
+```ruby
+result = client.OneIntegrationResume.create({
+  "account_id" => "example_account_id", # String
+  "integration_id" => "example_integration_id", # String
+  "result" => "example_result", # Object
+  "success" => true, # Boolean
+})
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `OneIntegrationResumeEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationUpdateEntity
+
+```ruby
+one_integration_update = client.OneIntegrationUpdate
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `Hash` | No | Partial credential fields to merge with existing. |
+| `dlp_profiles` | `Array` | No | List of DLP profile IDs to associate with the integration. |
+| `errors` | `Array` | No | List of errors. |
+| `id` | `String` | No |  |
+| `messages` | `Array` | No | List of messages. |
+| `name` | `String` | No | Name of the integration. |
+| `permissions` | `Array` | No | List of permission scopes granted to the integration. |
+| `result` | `Object` | Yes | The requested item. |
+| `success` | `Boolean` | Yes | Whether the request succeeded. |
+| `use_cases` | `Array` | No | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+### Operations
+
+#### `update(reqdata, ctrl = nil) -> result`
+
+Update an existing entity. The data must include the entity `id`. Raises on error.
+
+```ruby
+result = client.OneIntegrationUpdate.update({
+  "account_id" => "account_id",
+  "id" => "id",
+  # Fields to update
+})
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `OneIntegrationUpdateEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedApplicationListListEntity
+
+```ruby
+one_paginated_application_list_list = client.OnePaginatedApplicationListList
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auth_methods` | `Array` | Yes | Available auth methods. |
+| `category` | `String` | Yes | Vendor category (e.g. |
+| `description` | `String` | Yes | Brief description of the integration. |
+| `display_name` | `String` | Yes | Human-readable vendor name. |
+| `dlp_enabled` | `Boolean` | Yes | Whether DLP scanning is supported. |
+| `id` | `String` | Yes | Vendor identifier (e.g. |
+| `logo` | `String` | Yes | Logo path. |
+| `permissions` | `Array` | Yes | All permissions with severity. |
+| `supported_environments` | `Array` | Yes | Environments this vendor supports (standard, fedramp). |
+| `use_cases` | `Array` | Yes | Supported use cases. |
+
+### Operations
+
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+
+```ruby
+results = client.OnePaginatedApplicationListList.list
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `OnePaginatedApplicationListListEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedAuthMethodDetailListEntity
+
+```ruby
+one_paginated_auth_method_detail_list = client.OnePaginatedAuthMethodDetailList
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `display_name` | `String` | Yes | Human-readable auth method name. |
+| `human_interaction_required` | `Boolean` | Yes | Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction). |
+| `id` | `String` | Yes | Auth method identifier. |
+| `instructions` | `Object` | Yes | Step-by-step instructions for obtaining credentials. |
+| `payload_example` | `Hash` | Yes | Example credentials payload with placeholder values. |
+| `payload_schema` | `Hash` | Yes | JSON Schema for the credentials object in POST /v2/integrations request. |
+| `redirect_url` | `String` | Yes | OAuth redirect URL for vendors requiring human interaction. |
+
+### Operations
+
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+
+```ruby
+results = client.OnePaginatedAuthMethodDetailList.list
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `OnePaginatedAuthMethodDetailListEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedIntegrationV2ListItemListEntity
+
+```ruby
+one_paginated_integration_v2_list_item_list = client.OnePaginatedIntegrationV2ListItemList
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `application` | `Hash` | Yes |  |
+| `created` | `String` | Yes | When the integration was created. |
+| `id` | `String` | Yes | Integration ID. |
+| `is_paused` | `Boolean` | Yes | Whether the user paused the integration. |
+| `name` | `String` | Yes | Name of the integration. |
+| `status` | `String` | Yes | Integration status. |
+| `updated` | `String` | Yes | When the integration was last updated. |
+
+### Operations
+
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+
+```ruby
+results = client.OnePaginatedIntegrationV2ListItemList.list
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `OnePaginatedIntegrationV2ListItemListEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedSetupFlowListEntity
+
+```ruby
+one_paginated_setup_flow_list = client.OnePaginatedSetupFlowList
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auth_config` | `Object` | No | OAuth configuration (present for OAuth-based flows). |
+| `default` | `Boolean` | Yes | Whether this is the default auth method. |
+| `description` | `String` | Yes | Flow description. |
+| `id` | `String` | Yes | Setup flow identifier. |
+| `name` | `String` | Yes | Human-readable flow name. |
+| `steps` | `Array` | Yes | Ordered list of setup steps. |
+| `supported_environments` | `Array` | Yes | Environments this auth method supports (standard, fedramp). |
+
+### Operations
+
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+
+```ruby
+results = client.OnePaginatedSetupFlowList.list
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `OnePaginatedSetupFlowListEntity` instance with the same client and
 options.
 
 #### `get_name -> String`
@@ -3046,6 +3995,70 @@ Set the entity match criteria.
 #### `make -> Entity`
 
 Create a new `TeamsDevicesDeviceSettingsResponseCollectionEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## TeamsDevicesDevicesPolicyCertificatesSingleEntity
+
+```ruby
+teams_devices_devices_policy_certificates_single = client.TeamsDevicesDevicesPolicyCertificatesSingle
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `enabled` | `Boolean` | Yes | The current status of the device policy certificate provisioning feature for WARP clients. |
+| `result` | `Hash` | Yes |  |
+
+### Operations
+
+#### `load(reqmatch, ctrl = nil) -> result`
+
+Load a single entity matching the given criteria. Raises on error.
+
+```ruby
+result = client.TeamsDevicesDevicesPolicyCertificatesSingle.load({ "zone_id" => "zone_id" })
+```
+
+#### `update(reqdata, ctrl = nil) -> result`
+
+Update an existing entity. The data must include the entity `id`. Raises on error.
+
+```ruby
+result = client.TeamsDevicesDevicesPolicyCertificatesSingle.update({
+  "zone_id" => "zone_id",
+  # Fields to update
+})
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `TeamsDevicesDevicesPolicyCertificatesSingleEntity` instance with the same client and
 options.
 
 #### `get_name -> String`

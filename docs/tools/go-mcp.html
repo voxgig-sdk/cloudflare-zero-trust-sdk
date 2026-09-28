@@ -6,6 +6,9 @@
 <div class="site-notice" role="note"></div>
 <div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Zero Trust Gateway</a></details>
 <details><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/alexandria_delete_application.html">AlexandriaDeleteApplication</a>
+<a href="../api/alexandria_get_application.html">AlexandriaGetApplication</a>
+<a href="../api/alexandria_get_category.html">AlexandriaGetCategory</a>
 <a href="../api/client_version.html">ClientVersion</a>
 <a href="../api/cni.html">Cni</a>
 <a href="../api/deployment_group.html">DeploymentGroup</a>
@@ -19,6 +22,7 @@
 <a href="../api/digital_experience_monitoring_fleet_status_device.html">DigitalExperienceMonitoringFleetStatusDevice</a>
 <a href="../api/digital_experience_monitoring_fleet_status_live.html">DigitalExperienceMonitoringFleetStatusLive</a>
 <a href="../api/digital_experience_monitoring_fleet_status_over_time.html">DigitalExperienceMonitoringFleetStatusOverTime</a>
+<a href="../api/integration.html">Integration</a>
 <a href="../api/interconnect.html">Interconnect</a>
 <a href="../api/ip_profile.html">IpProfile</a>
 <a href="../api/list.html">List</a>
@@ -29,6 +33,16 @@
 <a href="../api/nsc_setting.html">NscSetting</a>
 <a href="../api/nsc_slot_info.html">NscSlotInfo</a>
 <a href="../api/nsc_status_info.html">NscStatusInfo</a>
+<a href="../api/one_application_detail.html">OneApplicationDetail</a>
+<a href="../api/one_integration_create.html">OneIntegrationCreate</a>
+<a href="../api/one_integration_detail.html">OneIntegrationDetail</a>
+<a href="../api/one_integration_pause.html">OneIntegrationPause</a>
+<a href="../api/one_integration_resume.html">OneIntegrationResume</a>
+<a href="../api/one_integration_update.html">OneIntegrationUpdate</a>
+<a href="../api/one_paginated_application_list_list.html">OnePaginatedApplicationListList</a>
+<a href="../api/one_paginated_auth_method_detail_list.html">OnePaginatedAuthMethodDetailList</a>
+<a href="../api/one_paginated_integration_v2_list_item_list.html">OnePaginatedIntegrationV2ListItemList</a>
+<a href="../api/one_paginated_setup_flow_list.html">OnePaginatedSetupFlowList</a>
 <a href="../api/override_code.html">OverrideCode</a>
 <a href="../api/pacfile.html">Pacfile</a>
 <a href="../api/physical_device.html">PhysicalDevice</a>
@@ -42,6 +56,7 @@
 <a href="../api/teams_devices_device.html">TeamsDevicesDevice</a>
 <a href="../api/teams_devices_device_setting.html">TeamsDevicesDeviceSetting</a>
 <a href="../api/teams_devices_device_settings_response_collection.html">TeamsDevicesDeviceSettingsResponseCollection</a>
+<a href="../api/teams_devices_devices_policy_certificates_single.html">TeamsDevicesDevicesPolicyCertificatesSingle</a>
 <a href="../api/teams_devices_fallback_domain_response_collection.html">TeamsDevicesFallbackDomainResponseCollection</a>
 <a href="../api/teams_devices_global_warp_override.html">TeamsDevicesGlobalWarpOverride</a>
 <a href="../api/teams_devices_id.html">TeamsDevicesId</a>
@@ -139,6 +154,18 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../api/alexandria_delete_application.html">AlexandriaDeleteApplication</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/alexandria_get_application.html">AlexandriaGetApplication</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/alexandria_get_category.html">AlexandriaGetCategory</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
 <td><a href="../api/client_version.html">ClientVersion</a></td>
 <td><code>list</code></td>
 </tr>
@@ -191,6 +218,10 @@
 <td><code>load</code></td>
 </tr>
 <tr>
+<td><a href="../api/integration.html">Integration</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
 <td><a href="../api/interconnect.html">Interconnect</a></td>
 <td><code>load</code>, <code>remove</code></td>
 </tr>
@@ -229,6 +260,46 @@
 <tr>
 <td><a href="../api/nsc_status_info.html">NscStatusInfo</a></td>
 <td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/one_application_detail.html">OneApplicationDetail</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/one_integration_create.html">OneIntegrationCreate</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/one_integration_detail.html">OneIntegrationDetail</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/one_integration_pause.html">OneIntegrationPause</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/one_integration_resume.html">OneIntegrationResume</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/one_integration_update.html">OneIntegrationUpdate</a></td>
+<td><code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/one_paginated_application_list_list.html">OnePaginatedApplicationListList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/one_paginated_auth_method_detail_list.html">OnePaginatedAuthMethodDetailList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/one_paginated_integration_v2_list_item_list.html">OnePaginatedIntegrationV2ListItemList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/one_paginated_setup_flow_list.html">OnePaginatedSetupFlowList</a></td>
+<td><code>list</code></td>
 </tr>
 <tr>
 <td><a href="../api/override_code.html">OverrideCode</a></td>
@@ -281,6 +352,10 @@
 <tr>
 <td><a href="../api/teams_devices_device_settings_response_collection.html">TeamsDevicesDeviceSettingsResponseCollection</a></td>
 <td><code>list</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_devices_policy_certificates_single.html">TeamsDevicesDevicesPolicyCertificatesSingle</a></td>
+<td><code>load</code>, <code>update</code></td>
 </tr>
 <tr>
 <td><a href="../api/teams_devices_fallback_domain_response_collection.html">TeamsDevicesFallbackDomainResponseCollection</a></td>
@@ -573,7 +648,7 @@
   &quot;properties&quot;: {
     &quot;entity&quot;: {
       &quot;type&quot;: &quot;string&quot;,
-      &quot;description&quot;: &quot;client_version | cni | deployment_group | dex_remote_command | dex_rule | dex_synthetic_application_monitoring | digital_experience_monitoring_device | digital_experience_monitoring_dex_delete_response_collection | digital_experience_monitoring_dex_response_collection | digital_experience_monitoring_dex_single | digital_experience_monitoring_fleet_status_device | digital_experience_monitoring_fleet_status_live | digital_experience_monitoring_fleet_status_over_time | interconnect | ip_profile | list | location | nsc_cni | nsc_default_name | nsc_interconnect | nsc_setting | nsc_slot_info | nsc_status_info | override_code | pacfile | physical_device | proxy_endpoint | registration | rule | teams_devices_api_response_single | teams_devices_components_schemas_response_collection | teams_devices_components_schemas_single | teams_devices_default_device_setting | teams_devices_device | teams_devices_device_setting | teams_devices_device_settings_response_collection | teams_devices_fallback_domain_response_collection | teams_devices_global_warp_override | teams_devices_id | teams_devices_override_code | teams_devices_response_collection | teams_devices_schemas_id | teams_devices_schemas_response_collection | teams_devices_schemas_single | teams_devices_single | teams_devices_split_tunnel_include_response_collection | teams_devices_split_tunnel_response_collection | teams_devices_zero_trust_account_device_setting | tunnel | tunnel_cfd_tunnel_response_collection | tunnel_cfd_tunnel_response_single | tunnel_configuration | tunnel_empty | tunnel_hostname_route_response_collection | tunnel_hostname_route_response_single | tunnel_mesh_configuration_response_single | tunnel_route_response_single | tunnel_subnet_response_collection | tunnel_subnet_response_single | tunnel_subnet_response_single_nullable | tunnel_teamnet_response_collection | tunnel_teamnet_response_single | tunnel_tunnel_client | tunnel_tunnel_connection | tunnel_tunnel_response_token | tunnel_tunnel_warp_connector_client | tunnel_tunnel_warp_connector_connection | tunnel_vnet_response_collection | tunnel_vnet_response_single | tunnel_warp_connector_response_collection | tunnel_warp_connector_response_single | tunnel_zero_trust_connectivity_setting | warp | warp_change_event | warp_teams_device_api_other | zero_trust_gateway_applications_review_status | zero_trust_gateway_csv_operation_single | zero_trust_gateway_custom_certificate_setting | zero_trust_gateway_gateway_account | zero_trust_gateway_gateway_account_config | zero_trust_gateway_gateway_account_egress_cidr_pair_list | zero_trust_gateway_gateway_account_logging_setting | zero_trust_gateway_list_item_response_collection | zero_trust_gateway_list_single | zero_trust_gateway_response_collection | zero_trust_gateway_response_collection_10 | zero_trust_gateway_response_collection_2 | zero_trust_gateway_response_collection_3 | zero_trust_gateway_response_collection_4 | zero_trust_gateway_response_collection_5 | zero_trust_gateway_response_collection_6 | zero_trust_gateway_response_collection_7 | zero_trust_gateway_response_collection_8 | zero_trust_gateway_response_collection_9 | zero_trust_gateway_single | zero_trust_gateway_single_response_2 | zero_trust_gateway_single_response_3 | zero_trust_gateway_single_response_4 | zero_trust_gateway_single_response_5 | zero_trust_gateway_single_response_6 | zero_trust_gateway_single_response_7 | zero_trust_gateway_single_response_with_list_item | zero_trust_risk_scoring | zero_trust_risk_scoring_integration&quot;
+      &quot;description&quot;: &quot;alexandria_delete_application | alexandria_get_application | alexandria_get_category | client_version | cni | deployment_group | dex_remote_command | dex_rule | dex_synthetic_application_monitoring | digital_experience_monitoring_device | digital_experience_monitoring_dex_delete_response_collection | digital_experience_monitoring_dex_response_collection | digital_experience_monitoring_dex_single | digital_experience_monitoring_fleet_status_device | digital_experience_monitoring_fleet_status_live | digital_experience_monitoring_fleet_status_over_time | integration | interconnect | ip_profile | list | location | nsc_cni | nsc_default_name | nsc_interconnect | nsc_setting | nsc_slot_info | nsc_status_info | one_application_detail | one_integration_create | one_integration_detail | one_integration_pause | one_integration_resume | one_integration_update | one_paginated_application_list_list | one_paginated_auth_method_detail_list | one_paginated_integration_v2_list_item_list | one_paginated_setup_flow_list | override_code | pacfile | physical_device | proxy_endpoint | registration | rule | teams_devices_api_response_single | teams_devices_components_schemas_response_collection | teams_devices_components_schemas_single | teams_devices_default_device_setting | teams_devices_device | teams_devices_device_setting | teams_devices_device_settings_response_collection | teams_devices_devices_policy_certificates_single | teams_devices_fallback_domain_response_collection | teams_devices_global_warp_override | teams_devices_id | teams_devices_override_code | teams_devices_response_collection | teams_devices_schemas_id | teams_devices_schemas_response_collection | teams_devices_schemas_single | teams_devices_single | teams_devices_split_tunnel_include_response_collection | teams_devices_split_tunnel_response_collection | teams_devices_zero_trust_account_device_setting | tunnel | tunnel_cfd_tunnel_response_collection | tunnel_cfd_tunnel_response_single | tunnel_configuration | tunnel_empty | tunnel_hostname_route_response_collection | tunnel_hostname_route_response_single | tunnel_mesh_configuration_response_single | tunnel_route_response_single | tunnel_subnet_response_collection | tunnel_subnet_response_single | tunnel_subnet_response_single_nullable | tunnel_teamnet_response_collection | tunnel_teamnet_response_single | tunnel_tunnel_client | tunnel_tunnel_connection | tunnel_tunnel_response_token | tunnel_tunnel_warp_connector_client | tunnel_tunnel_warp_connector_connection | tunnel_vnet_response_collection | tunnel_vnet_response_single | tunnel_warp_connector_response_collection | tunnel_warp_connector_response_single | tunnel_zero_trust_connectivity_setting | warp | warp_change_event | warp_teams_device_api_other | zero_trust_gateway_applications_review_status | zero_trust_gateway_csv_operation_single | zero_trust_gateway_custom_certificate_setting | zero_trust_gateway_gateway_account | zero_trust_gateway_gateway_account_config | zero_trust_gateway_gateway_account_egress_cidr_pair_list | zero_trust_gateway_gateway_account_logging_setting | zero_trust_gateway_list_item_response_collection | zero_trust_gateway_list_single | zero_trust_gateway_response_collection | zero_trust_gateway_response_collection_10 | zero_trust_gateway_response_collection_2 | zero_trust_gateway_response_collection_3 | zero_trust_gateway_response_collection_4 | zero_trust_gateway_response_collection_5 | zero_trust_gateway_response_collection_6 | zero_trust_gateway_response_collection_7 | zero_trust_gateway_response_collection_8 | zero_trust_gateway_response_collection_9 | zero_trust_gateway_single | zero_trust_gateway_single_response_2 | zero_trust_gateway_single_response_3 | zero_trust_gateway_single_response_4 | zero_trust_gateway_single_response_5 | zero_trust_gateway_single_response_6 | zero_trust_gateway_single_response_7 | zero_trust_gateway_single_response_with_list_item | zero_trust_risk_scoring | zero_trust_risk_scoring_integration&quot;
     },
     &quot;query&quot;: {
       &quot;type&quot;: &quot;object&quot;,
@@ -582,7 +657,7 @@
   }
 }
 </code></pre>
-<p>Supported entities: <code>client_version</code>, <code>deployment_group</code>, <code>dex_synthetic_application_monitoring</code>, <code>digital_experience_monitoring_device</code>, <code>digital_experience_monitoring_dex_response_collection</code>, <code>digital_experience_monitoring_fleet_status_device</code>, <code>ip_profile</code>, <code>nsc_cni</code>, <code>nsc_interconnect</code>, <code>nsc_slot_info</code>, <code>physical_device</code>, <code>registration</code>, <code>teams_devices_components_schemas_response_collection</code>, <code>teams_devices_device</code>, <code>teams_devices_device_settings_response_collection</code>, <code>teams_devices_fallback_domain_response_collection</code>, <code>teams_devices_response_collection</code>, <code>teams_devices_schemas_response_collection</code>, <code>teams_devices_split_tunnel_include_response_collection</code>, <code>teams_devices_split_tunnel_response_collection</code>, <code>tunnel</code>, <code>tunnel_cfd_tunnel_response_collection</code>, <code>tunnel_hostname_route_response_collection</code>, <code>tunnel_subnet_response_collection</code>, <code>tunnel_teamnet_response_collection</code>, <code>tunnel_tunnel_connection</code>, <code>tunnel_tunnel_response_token</code>, <code>tunnel_tunnel_warp_connector_connection</code>, <code>tunnel_vnet_response_collection</code>, <code>tunnel_warp_connector_response_collection</code>, <code>tunnel_zero_trust_connectivity_setting</code>, <code>warp_change_event</code>, <code>warp_teams_device_api_other</code>, <code>zero_trust_gateway_gateway_account_egress_cidr_pair_list</code>, <code>zero_trust_gateway_list_item_response_collection</code>, <code>zero_trust_gateway_response_collection</code>, <code>zero_trust_gateway_response_collection_10</code>, <code>zero_trust_gateway_response_collection_2</code>, <code>zero_trust_gateway_response_collection_3</code>, <code>zero_trust_gateway_response_collection_4</code>, <code>zero_trust_gateway_response_collection_5</code>, <code>zero_trust_gateway_response_collection_6</code>, <code>zero_trust_gateway_response_collection_7</code>, <code>zero_trust_gateway_response_collection_8</code>, <code>zero_trust_gateway_response_collection_9</code>, <code>zero_trust_risk_scoring_integration</code>.</p>
+<p>Supported entities: <code>alexandria_get_application</code>, <code>alexandria_get_category</code>, <code>client_version</code>, <code>deployment_group</code>, <code>dex_synthetic_application_monitoring</code>, <code>digital_experience_monitoring_device</code>, <code>digital_experience_monitoring_dex_response_collection</code>, <code>digital_experience_monitoring_fleet_status_device</code>, <code>ip_profile</code>, <code>nsc_cni</code>, <code>nsc_interconnect</code>, <code>nsc_slot_info</code>, <code>one_paginated_application_list_list</code>, <code>one_paginated_auth_method_detail_list</code>, <code>one_paginated_integration_v2_list_item_list</code>, <code>one_paginated_setup_flow_list</code>, <code>physical_device</code>, <code>registration</code>, <code>teams_devices_components_schemas_response_collection</code>, <code>teams_devices_device</code>, <code>teams_devices_device_settings_response_collection</code>, <code>teams_devices_fallback_domain_response_collection</code>, <code>teams_devices_response_collection</code>, <code>teams_devices_schemas_response_collection</code>, <code>teams_devices_split_tunnel_include_response_collection</code>, <code>teams_devices_split_tunnel_response_collection</code>, <code>tunnel</code>, <code>tunnel_cfd_tunnel_response_collection</code>, <code>tunnel_hostname_route_response_collection</code>, <code>tunnel_subnet_response_collection</code>, <code>tunnel_teamnet_response_collection</code>, <code>tunnel_tunnel_connection</code>, <code>tunnel_tunnel_response_token</code>, <code>tunnel_tunnel_warp_connector_connection</code>, <code>tunnel_vnet_response_collection</code>, <code>tunnel_warp_connector_response_collection</code>, <code>tunnel_zero_trust_connectivity_setting</code>, <code>warp_change_event</code>, <code>warp_teams_device_api_other</code>, <code>zero_trust_gateway_gateway_account_egress_cidr_pair_list</code>, <code>zero_trust_gateway_list_item_response_collection</code>, <code>zero_trust_gateway_response_collection</code>, <code>zero_trust_gateway_response_collection_10</code>, <code>zero_trust_gateway_response_collection_2</code>, <code>zero_trust_gateway_response_collection_3</code>, <code>zero_trust_gateway_response_collection_4</code>, <code>zero_trust_gateway_response_collection_5</code>, <code>zero_trust_gateway_response_collection_6</code>, <code>zero_trust_gateway_response_collection_7</code>, <code>zero_trust_gateway_response_collection_8</code>, <code>zero_trust_gateway_response_collection_9</code>, <code>zero_trust_risk_scoring_integration</code>.</p>
 <h3 id="cloudflare-zero-trust_load"><code>cloudflare-zero-trust_load</code></h3>
 <p>Load one record for an entity.</p>
 <pre><code class="language-json">{
@@ -593,7 +668,7 @@
   &quot;properties&quot;: {
     &quot;entity&quot;: {
       &quot;type&quot;: &quot;string&quot;,
-      &quot;description&quot;: &quot;client_version | cni | deployment_group | dex_remote_command | dex_rule | dex_synthetic_application_monitoring | digital_experience_monitoring_device | digital_experience_monitoring_dex_delete_response_collection | digital_experience_monitoring_dex_response_collection | digital_experience_monitoring_dex_single | digital_experience_monitoring_fleet_status_device | digital_experience_monitoring_fleet_status_live | digital_experience_monitoring_fleet_status_over_time | interconnect | ip_profile | list | location | nsc_cni | nsc_default_name | nsc_interconnect | nsc_setting | nsc_slot_info | nsc_status_info | override_code | pacfile | physical_device | proxy_endpoint | registration | rule | teams_devices_api_response_single | teams_devices_components_schemas_response_collection | teams_devices_components_schemas_single | teams_devices_default_device_setting | teams_devices_device | teams_devices_device_setting | teams_devices_device_settings_response_collection | teams_devices_fallback_domain_response_collection | teams_devices_global_warp_override | teams_devices_id | teams_devices_override_code | teams_devices_response_collection | teams_devices_schemas_id | teams_devices_schemas_response_collection | teams_devices_schemas_single | teams_devices_single | teams_devices_split_tunnel_include_response_collection | teams_devices_split_tunnel_response_collection | teams_devices_zero_trust_account_device_setting | tunnel | tunnel_cfd_tunnel_response_collection | tunnel_cfd_tunnel_response_single | tunnel_configuration | tunnel_empty | tunnel_hostname_route_response_collection | tunnel_hostname_route_response_single | tunnel_mesh_configuration_response_single | tunnel_route_response_single | tunnel_subnet_response_collection | tunnel_subnet_response_single | tunnel_subnet_response_single_nullable | tunnel_teamnet_response_collection | tunnel_teamnet_response_single | tunnel_tunnel_client | tunnel_tunnel_connection | tunnel_tunnel_response_token | tunnel_tunnel_warp_connector_client | tunnel_tunnel_warp_connector_connection | tunnel_vnet_response_collection | tunnel_vnet_response_single | tunnel_warp_connector_response_collection | tunnel_warp_connector_response_single | tunnel_zero_trust_connectivity_setting | warp | warp_change_event | warp_teams_device_api_other | zero_trust_gateway_applications_review_status | zero_trust_gateway_csv_operation_single | zero_trust_gateway_custom_certificate_setting | zero_trust_gateway_gateway_account | zero_trust_gateway_gateway_account_config | zero_trust_gateway_gateway_account_egress_cidr_pair_list | zero_trust_gateway_gateway_account_logging_setting | zero_trust_gateway_list_item_response_collection | zero_trust_gateway_list_single | zero_trust_gateway_response_collection | zero_trust_gateway_response_collection_10 | zero_trust_gateway_response_collection_2 | zero_trust_gateway_response_collection_3 | zero_trust_gateway_response_collection_4 | zero_trust_gateway_response_collection_5 | zero_trust_gateway_response_collection_6 | zero_trust_gateway_response_collection_7 | zero_trust_gateway_response_collection_8 | zero_trust_gateway_response_collection_9 | zero_trust_gateway_single | zero_trust_gateway_single_response_2 | zero_trust_gateway_single_response_3 | zero_trust_gateway_single_response_4 | zero_trust_gateway_single_response_5 | zero_trust_gateway_single_response_6 | zero_trust_gateway_single_response_7 | zero_trust_gateway_single_response_with_list_item | zero_trust_risk_scoring | zero_trust_risk_scoring_integration&quot;
+      &quot;description&quot;: &quot;alexandria_delete_application | alexandria_get_application | alexandria_get_category | client_version | cni | deployment_group | dex_remote_command | dex_rule | dex_synthetic_application_monitoring | digital_experience_monitoring_device | digital_experience_monitoring_dex_delete_response_collection | digital_experience_monitoring_dex_response_collection | digital_experience_monitoring_dex_single | digital_experience_monitoring_fleet_status_device | digital_experience_monitoring_fleet_status_live | digital_experience_monitoring_fleet_status_over_time | integration | interconnect | ip_profile | list | location | nsc_cni | nsc_default_name | nsc_interconnect | nsc_setting | nsc_slot_info | nsc_status_info | one_application_detail | one_integration_create | one_integration_detail | one_integration_pause | one_integration_resume | one_integration_update | one_paginated_application_list_list | one_paginated_auth_method_detail_list | one_paginated_integration_v2_list_item_list | one_paginated_setup_flow_list | override_code | pacfile | physical_device | proxy_endpoint | registration | rule | teams_devices_api_response_single | teams_devices_components_schemas_response_collection | teams_devices_components_schemas_single | teams_devices_default_device_setting | teams_devices_device | teams_devices_device_setting | teams_devices_device_settings_response_collection | teams_devices_devices_policy_certificates_single | teams_devices_fallback_domain_response_collection | teams_devices_global_warp_override | teams_devices_id | teams_devices_override_code | teams_devices_response_collection | teams_devices_schemas_id | teams_devices_schemas_response_collection | teams_devices_schemas_single | teams_devices_single | teams_devices_split_tunnel_include_response_collection | teams_devices_split_tunnel_response_collection | teams_devices_zero_trust_account_device_setting | tunnel | tunnel_cfd_tunnel_response_collection | tunnel_cfd_tunnel_response_single | tunnel_configuration | tunnel_empty | tunnel_hostname_route_response_collection | tunnel_hostname_route_response_single | tunnel_mesh_configuration_response_single | tunnel_route_response_single | tunnel_subnet_response_collection | tunnel_subnet_response_single | tunnel_subnet_response_single_nullable | tunnel_teamnet_response_collection | tunnel_teamnet_response_single | tunnel_tunnel_client | tunnel_tunnel_connection | tunnel_tunnel_response_token | tunnel_tunnel_warp_connector_client | tunnel_tunnel_warp_connector_connection | tunnel_vnet_response_collection | tunnel_vnet_response_single | tunnel_warp_connector_response_collection | tunnel_warp_connector_response_single | tunnel_zero_trust_connectivity_setting | warp | warp_change_event | warp_teams_device_api_other | zero_trust_gateway_applications_review_status | zero_trust_gateway_csv_operation_single | zero_trust_gateway_custom_certificate_setting | zero_trust_gateway_gateway_account | zero_trust_gateway_gateway_account_config | zero_trust_gateway_gateway_account_egress_cidr_pair_list | zero_trust_gateway_gateway_account_logging_setting | zero_trust_gateway_list_item_response_collection | zero_trust_gateway_list_single | zero_trust_gateway_response_collection | zero_trust_gateway_response_collection_10 | zero_trust_gateway_response_collection_2 | zero_trust_gateway_response_collection_3 | zero_trust_gateway_response_collection_4 | zero_trust_gateway_response_collection_5 | zero_trust_gateway_response_collection_6 | zero_trust_gateway_response_collection_7 | zero_trust_gateway_response_collection_8 | zero_trust_gateway_response_collection_9 | zero_trust_gateway_single | zero_trust_gateway_single_response_2 | zero_trust_gateway_single_response_3 | zero_trust_gateway_single_response_4 | zero_trust_gateway_single_response_5 | zero_trust_gateway_single_response_6 | zero_trust_gateway_single_response_7 | zero_trust_gateway_single_response_with_list_item | zero_trust_risk_scoring | zero_trust_risk_scoring_integration&quot;
     },
     &quot;query&quot;: {
       &quot;type&quot;: &quot;object&quot;,
@@ -602,6 +677,6 @@
   }
 }
 </code></pre>
-<p>Supported entities: <code>deployment_group</code>, <code>dex_remote_command</code>, <code>dex_rule</code>, <code>dex_synthetic_application_monitoring</code>, <code>digital_experience_monitoring_dex_single</code>, <code>digital_experience_monitoring_fleet_status_live</code>, <code>digital_experience_monitoring_fleet_status_over_time</code>, <code>interconnect</code>, <code>ip_profile</code>, <code>nsc_cni</code>, <code>nsc_default_name</code>, <code>nsc_interconnect</code>, <code>nsc_setting</code>, <code>nsc_slot_info</code>, <code>nsc_status_info</code>, <code>physical_device</code>, <code>registration</code>, <code>teams_devices_components_schemas_single</code>, <code>teams_devices_default_device_setting</code>, <code>teams_devices_device</code>, <code>teams_devices_device_setting</code>, <code>teams_devices_global_warp_override</code>, <code>teams_devices_override_code</code>, <code>teams_devices_schemas_single</code>, <code>teams_devices_single</code>, <code>teams_devices_zero_trust_account_device_setting</code>, <code>tunnel_cfd_tunnel_response_single</code>, <code>tunnel_configuration</code>, <code>tunnel_hostname_route_response_single</code>, <code>tunnel_mesh_configuration_response_single</code>, <code>tunnel_route_response_single</code>, <code>tunnel_subnet_response_single</code>, <code>tunnel_teamnet_response_single</code>, <code>tunnel_tunnel_client</code>, <code>tunnel_tunnel_warp_connector_client</code>, <code>tunnel_vnet_response_single</code>, <code>tunnel_warp_connector_response_single</code>, <code>warp</code>, <code>zero_trust_gateway_applications_review_status</code>, <code>zero_trust_gateway_custom_certificate_setting</code>, <code>zero_trust_gateway_gateway_account</code>, <code>zero_trust_gateway_gateway_account_config</code>, <code>zero_trust_gateway_gateway_account_logging_setting</code>, <code>zero_trust_gateway_list_single</code>, <code>zero_trust_gateway_single</code>, <code>zero_trust_gateway_single_response_2</code>, <code>zero_trust_gateway_single_response_3</code>, <code>zero_trust_gateway_single_response_4</code>, <code>zero_trust_gateway_single_response_5</code>, <code>zero_trust_gateway_single_response_6</code>, <code>zero_trust_gateway_single_response_7</code>, <code>zero_trust_risk_scoring</code>, <code>zero_trust_risk_scoring_integration</code>.</p>
+<p>Supported entities: <code>alexandria_get_application</code>, <code>alexandria_get_category</code>, <code>deployment_group</code>, <code>dex_remote_command</code>, <code>dex_rule</code>, <code>dex_synthetic_application_monitoring</code>, <code>digital_experience_monitoring_dex_single</code>, <code>digital_experience_monitoring_fleet_status_live</code>, <code>digital_experience_monitoring_fleet_status_over_time</code>, <code>interconnect</code>, <code>ip_profile</code>, <code>nsc_cni</code>, <code>nsc_default_name</code>, <code>nsc_interconnect</code>, <code>nsc_setting</code>, <code>nsc_slot_info</code>, <code>nsc_status_info</code>, <code>one_application_detail</code>, <code>one_integration_detail</code>, <code>physical_device</code>, <code>registration</code>, <code>teams_devices_components_schemas_single</code>, <code>teams_devices_default_device_setting</code>, <code>teams_devices_device</code>, <code>teams_devices_device_setting</code>, <code>teams_devices_devices_policy_certificates_single</code>, <code>teams_devices_global_warp_override</code>, <code>teams_devices_override_code</code>, <code>teams_devices_schemas_single</code>, <code>teams_devices_single</code>, <code>teams_devices_zero_trust_account_device_setting</code>, <code>tunnel_cfd_tunnel_response_single</code>, <code>tunnel_configuration</code>, <code>tunnel_hostname_route_response_single</code>, <code>tunnel_mesh_configuration_response_single</code>, <code>tunnel_route_response_single</code>, <code>tunnel_subnet_response_single</code>, <code>tunnel_teamnet_response_single</code>, <code>tunnel_tunnel_client</code>, <code>tunnel_tunnel_warp_connector_client</code>, <code>tunnel_vnet_response_single</code>, <code>tunnel_warp_connector_response_single</code>, <code>warp</code>, <code>zero_trust_gateway_applications_review_status</code>, <code>zero_trust_gateway_custom_certificate_setting</code>, <code>zero_trust_gateway_gateway_account</code>, <code>zero_trust_gateway_gateway_account_config</code>, <code>zero_trust_gateway_gateway_account_logging_setting</code>, <code>zero_trust_gateway_list_single</code>, <code>zero_trust_gateway_single</code>, <code>zero_trust_gateway_single_response_2</code>, <code>zero_trust_gateway_single_response_3</code>, <code>zero_trust_gateway_single_response_4</code>, <code>zero_trust_gateway_single_response_5</code>, <code>zero_trust_gateway_single_response_6</code>, <code>zero_trust_gateway_single_response_7</code>, <code>zero_trust_risk_scoring</code>, <code>zero_trust_risk_scoring_integration</code>.</p>
 </main></div>
 <script src="../assets/search.js" defer></script></body></html>

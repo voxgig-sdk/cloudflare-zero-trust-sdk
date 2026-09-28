@@ -85,7 +85,7 @@ func teams_devices_schemas_idBasicSetup(extra map[string]any) *entityTestSetup {
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap, _ := vs.Transform(
-		[]any{"teams_devices_schemas_id01", "teams_devices_schemas_id02", "teams_devices_schemas_id03"},
+		[]any{"teams_devices_schemas_id01", "teams_devices_schemas_id02", "teams_devices_schemas_id03", "integration01", "integration02", "integration03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

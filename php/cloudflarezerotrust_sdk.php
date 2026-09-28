@@ -341,6 +341,60 @@ class CloudflareZeroTrustSDK
     }
 
 
+    private $_alexandria_delete_application = null;
+
+    // Canonical facade: $client->AlexandriaDeleteApplication()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->alexandria_delete_application()
+    // resolves here too.
+    public function AlexandriaDeleteApplication($data = null)
+    {
+        require_once __DIR__ . '/entity/alexandria_delete_application_entity.php';
+        if ($data === null) {
+            if ($this->_alexandria_delete_application === null) {
+                $this->_alexandria_delete_application = new AlexandriaDeleteApplicationEntity($this, null);
+            }
+            return $this->_alexandria_delete_application;
+        }
+        return new AlexandriaDeleteApplicationEntity($this, $data);
+    }
+
+
+    private $_alexandria_get_application = null;
+
+    // Canonical facade: $client->AlexandriaGetApplication()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->alexandria_get_application()
+    // resolves here too.
+    public function AlexandriaGetApplication($data = null)
+    {
+        require_once __DIR__ . '/entity/alexandria_get_application_entity.php';
+        if ($data === null) {
+            if ($this->_alexandria_get_application === null) {
+                $this->_alexandria_get_application = new AlexandriaGetApplicationEntity($this, null);
+            }
+            return $this->_alexandria_get_application;
+        }
+        return new AlexandriaGetApplicationEntity($this, $data);
+    }
+
+
+    private $_alexandria_get_category = null;
+
+    // Canonical facade: $client->AlexandriaGetCategory()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->alexandria_get_category()
+    // resolves here too.
+    public function AlexandriaGetCategory($data = null)
+    {
+        require_once __DIR__ . '/entity/alexandria_get_category_entity.php';
+        if ($data === null) {
+            if ($this->_alexandria_get_category === null) {
+                $this->_alexandria_get_category = new AlexandriaGetCategoryEntity($this, null);
+            }
+            return $this->_alexandria_get_category;
+        }
+        return new AlexandriaGetCategoryEntity($this, $data);
+    }
+
+
     private $_client_version = null;
 
     // Canonical facade: $client->ClientVersion()->list() / ->load(["id" => ...]).
@@ -575,6 +629,24 @@ class CloudflareZeroTrustSDK
     }
 
 
+    private $_integration = null;
+
+    // Canonical facade: $client->Integration()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->integration()
+    // resolves here too.
+    public function Integration($data = null)
+    {
+        require_once __DIR__ . '/entity/integration_entity.php';
+        if ($data === null) {
+            if ($this->_integration === null) {
+                $this->_integration = new IntegrationEntity($this, null);
+            }
+            return $this->_integration;
+        }
+        return new IntegrationEntity($this, $data);
+    }
+
+
     private $_interconnect = null;
 
     // Canonical facade: $client->Interconnect()->list() / ->load(["id" => ...]).
@@ -752,6 +824,186 @@ class CloudflareZeroTrustSDK
             return $this->_nsc_status_info;
         }
         return new NscStatusInfoEntity($this, $data);
+    }
+
+
+    private $_one_application_detail = null;
+
+    // Canonical facade: $client->OneApplicationDetail()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->one_application_detail()
+    // resolves here too.
+    public function OneApplicationDetail($data = null)
+    {
+        require_once __DIR__ . '/entity/one_application_detail_entity.php';
+        if ($data === null) {
+            if ($this->_one_application_detail === null) {
+                $this->_one_application_detail = new OneApplicationDetailEntity($this, null);
+            }
+            return $this->_one_application_detail;
+        }
+        return new OneApplicationDetailEntity($this, $data);
+    }
+
+
+    private $_one_integration_create = null;
+
+    // Canonical facade: $client->OneIntegrationCreate()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->one_integration_create()
+    // resolves here too.
+    public function OneIntegrationCreate($data = null)
+    {
+        require_once __DIR__ . '/entity/one_integration_create_entity.php';
+        if ($data === null) {
+            if ($this->_one_integration_create === null) {
+                $this->_one_integration_create = new OneIntegrationCreateEntity($this, null);
+            }
+            return $this->_one_integration_create;
+        }
+        return new OneIntegrationCreateEntity($this, $data);
+    }
+
+
+    private $_one_integration_detail = null;
+
+    // Canonical facade: $client->OneIntegrationDetail()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->one_integration_detail()
+    // resolves here too.
+    public function OneIntegrationDetail($data = null)
+    {
+        require_once __DIR__ . '/entity/one_integration_detail_entity.php';
+        if ($data === null) {
+            if ($this->_one_integration_detail === null) {
+                $this->_one_integration_detail = new OneIntegrationDetailEntity($this, null);
+            }
+            return $this->_one_integration_detail;
+        }
+        return new OneIntegrationDetailEntity($this, $data);
+    }
+
+
+    private $_one_integration_pause = null;
+
+    // Canonical facade: $client->OneIntegrationPause()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->one_integration_pause()
+    // resolves here too.
+    public function OneIntegrationPause($data = null)
+    {
+        require_once __DIR__ . '/entity/one_integration_pause_entity.php';
+        if ($data === null) {
+            if ($this->_one_integration_pause === null) {
+                $this->_one_integration_pause = new OneIntegrationPauseEntity($this, null);
+            }
+            return $this->_one_integration_pause;
+        }
+        return new OneIntegrationPauseEntity($this, $data);
+    }
+
+
+    private $_one_integration_resume = null;
+
+    // Canonical facade: $client->OneIntegrationResume()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->one_integration_resume()
+    // resolves here too.
+    public function OneIntegrationResume($data = null)
+    {
+        require_once __DIR__ . '/entity/one_integration_resume_entity.php';
+        if ($data === null) {
+            if ($this->_one_integration_resume === null) {
+                $this->_one_integration_resume = new OneIntegrationResumeEntity($this, null);
+            }
+            return $this->_one_integration_resume;
+        }
+        return new OneIntegrationResumeEntity($this, $data);
+    }
+
+
+    private $_one_integration_update = null;
+
+    // Canonical facade: $client->OneIntegrationUpdate()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->one_integration_update()
+    // resolves here too.
+    public function OneIntegrationUpdate($data = null)
+    {
+        require_once __DIR__ . '/entity/one_integration_update_entity.php';
+        if ($data === null) {
+            if ($this->_one_integration_update === null) {
+                $this->_one_integration_update = new OneIntegrationUpdateEntity($this, null);
+            }
+            return $this->_one_integration_update;
+        }
+        return new OneIntegrationUpdateEntity($this, $data);
+    }
+
+
+    private $_one_paginated_application_list_list = null;
+
+    // Canonical facade: $client->OnePaginatedApplicationListList()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->one_paginated_application_list_list()
+    // resolves here too.
+    public function OnePaginatedApplicationListList($data = null)
+    {
+        require_once __DIR__ . '/entity/one_paginated_application_list_list_entity.php';
+        if ($data === null) {
+            if ($this->_one_paginated_application_list_list === null) {
+                $this->_one_paginated_application_list_list = new OnePaginatedApplicationListListEntity($this, null);
+            }
+            return $this->_one_paginated_application_list_list;
+        }
+        return new OnePaginatedApplicationListListEntity($this, $data);
+    }
+
+
+    private $_one_paginated_auth_method_detail_list = null;
+
+    // Canonical facade: $client->OnePaginatedAuthMethodDetailList()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->one_paginated_auth_method_detail_list()
+    // resolves here too.
+    public function OnePaginatedAuthMethodDetailList($data = null)
+    {
+        require_once __DIR__ . '/entity/one_paginated_auth_method_detail_list_entity.php';
+        if ($data === null) {
+            if ($this->_one_paginated_auth_method_detail_list === null) {
+                $this->_one_paginated_auth_method_detail_list = new OnePaginatedAuthMethodDetailListEntity($this, null);
+            }
+            return $this->_one_paginated_auth_method_detail_list;
+        }
+        return new OnePaginatedAuthMethodDetailListEntity($this, $data);
+    }
+
+
+    private $_one_paginated_integration_v2_list_item_list = null;
+
+    // Canonical facade: $client->OnePaginatedIntegrationV2ListItemList()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->one_paginated_integration_v2_list_item_list()
+    // resolves here too.
+    public function OnePaginatedIntegrationV2ListItemList($data = null)
+    {
+        require_once __DIR__ . '/entity/one_paginated_integration_v2_list_item_list_entity.php';
+        if ($data === null) {
+            if ($this->_one_paginated_integration_v2_list_item_list === null) {
+                $this->_one_paginated_integration_v2_list_item_list = new OnePaginatedIntegrationV2ListItemListEntity($this, null);
+            }
+            return $this->_one_paginated_integration_v2_list_item_list;
+        }
+        return new OnePaginatedIntegrationV2ListItemListEntity($this, $data);
+    }
+
+
+    private $_one_paginated_setup_flow_list = null;
+
+    // Canonical facade: $client->OnePaginatedSetupFlowList()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->one_paginated_setup_flow_list()
+    // resolves here too.
+    public function OnePaginatedSetupFlowList($data = null)
+    {
+        require_once __DIR__ . '/entity/one_paginated_setup_flow_list_entity.php';
+        if ($data === null) {
+            if ($this->_one_paginated_setup_flow_list === null) {
+                $this->_one_paginated_setup_flow_list = new OnePaginatedSetupFlowListEntity($this, null);
+            }
+            return $this->_one_paginated_setup_flow_list;
+        }
+        return new OnePaginatedSetupFlowListEntity($this, $data);
     }
 
 
@@ -986,6 +1238,24 @@ class CloudflareZeroTrustSDK
             return $this->_teams_devices_device_settings_response_collection;
         }
         return new TeamsDevicesDeviceSettingsResponseCollectionEntity($this, $data);
+    }
+
+
+    private $_teams_devices_devices_policy_certificates_single = null;
+
+    // Canonical facade: $client->TeamsDevicesDevicesPolicyCertificatesSingle()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->teams_devices_devices_policy_certificates_single()
+    // resolves here too.
+    public function TeamsDevicesDevicesPolicyCertificatesSingle($data = null)
+    {
+        require_once __DIR__ . '/entity/teams_devices_devices_policy_certificates_single_entity.php';
+        if ($data === null) {
+            if ($this->_teams_devices_devices_policy_certificates_single === null) {
+                $this->_teams_devices_devices_policy_certificates_single = new TeamsDevicesDevicesPolicyCertificatesSingleEntity($this, null);
+            }
+            return $this->_teams_devices_devices_policy_certificates_single;
+        }
+        return new TeamsDevicesDevicesPolicyCertificatesSingleEntity($this, $data);
     }
 
 

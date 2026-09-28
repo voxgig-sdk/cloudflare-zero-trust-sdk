@@ -1,0 +1,27 @@
+# BasicOnePaginatedSetupFlowListFlow
+
+main: kit: flow: BasicOnePaginatedSetupFlowListFlow:
+{
+  entity: "one_paginated_setup_flow_list",
+  kind: "basic",
+  name: "BasicOnePaginatedSetupFlowListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01",
+        application_id: "application01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "one_paginated_setup_flow_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOnePaginatedSetupFlowListFlow"
+}

@@ -16,6 +16,114 @@ from __future__ import annotations
 from typing import TypedDict, Any
 
 
+class AlexandriaDeleteApplication(TypedDict, total=False):
+    id: str
+
+
+class AlexandriaDeleteApplicationRemoveMatch(TypedDict):
+    account_id: str
+    id: int
+
+
+class AlexandriaGetApplicationRequired(TypedDict):
+    category_id: int
+    errors: list
+    human_id: str
+    messages: list
+    name: str
+    result: dict
+    success: bool
+
+
+class AlexandriaGetApplication(AlexandriaGetApplicationRequired, total=False):
+    hostnames: list
+    id: str
+    ip_subnets: list
+    port_protocols: list
+    support_domains: list
+
+
+class AlexandriaGetApplicationLoadMatch(TypedDict):
+    account_id: str
+    id: int
+
+
+class AlexandriaGetApplicationListMatchRequired(TypedDict):
+    account_id: str
+
+
+class AlexandriaGetApplicationListMatch(AlexandriaGetApplicationListMatchRequired, total=False):
+    field: str
+    filter: str
+    limit: int
+    offset: int
+    order_by: str
+    search: str
+
+
+class AlexandriaGetApplicationCreateDataRequired(TypedDict):
+    account_id: str
+    category_id: int
+    errors: list
+    human_id: str
+    messages: list
+    name: str
+    result: dict
+    success: bool
+
+
+class AlexandriaGetApplicationCreateData(AlexandriaGetApplicationCreateDataRequired, total=False):
+    hostnames: list
+    id: str
+    ip_subnets: list
+    port_protocols: list
+    support_domains: list
+
+
+class AlexandriaGetApplicationUpdateDataRequired(TypedDict):
+    account_id: str
+    id: int
+
+
+class AlexandriaGetApplicationUpdateData(AlexandriaGetApplicationUpdateDataRequired, total=False):
+    category_id: int
+    errors: list
+    hostnames: list
+    human_id: str
+    ip_subnets: list
+    messages: list
+    name: str
+    port_protocols: list
+    result: dict
+    success: bool
+    support_domains: list
+
+
+class AlexandriaGetCategoryRequired(TypedDict):
+    errors: list
+    messages: list
+    result: dict
+    success: bool
+
+
+class AlexandriaGetCategory(AlexandriaGetCategoryRequired, total=False):
+    id: str
+
+
+class AlexandriaGetCategoryLoadMatch(TypedDict):
+    account_id: str
+    id: int
+
+
+class AlexandriaGetCategoryListMatchRequired(TypedDict):
+    account_id: str
+
+
+class AlexandriaGetCategoryListMatch(AlexandriaGetCategoryListMatchRequired, total=False):
+    limit: int
+    offset: int
+
+
 class ClientVersion(TypedDict):
     errors: list
     messages: list
@@ -424,6 +532,15 @@ class DigitalExperienceMonitoringFleetStatusOverTimeLoadMatch(DigitalExperienceM
     device_id: str
 
 
+class Integration(TypedDict, total=False):
+    id: str
+
+
+class IntegrationRemoveMatch(TypedDict):
+    account_id: str
+    id: str
+
+
 class Interconnect(TypedDict, total=False):
     id: str
 
@@ -695,6 +812,235 @@ class NscStatusInfo(TypedDict):
 class NscStatusInfoLoadMatch(TypedDict):
     account_id: str
     icon: str
+
+
+class OneApplicationDetailRequired(TypedDict):
+    result: Any
+    success: bool
+
+
+class OneApplicationDetail(OneApplicationDetailRequired, total=False):
+    errors: list
+    messages: list
+
+
+class OneApplicationDetailLoadMatch(TypedDict):
+    account_id: str
+    application_id: str
+
+
+class OneIntegrationCreateRequired(TypedDict):
+    application: str
+    credentials: dict
+    name: str
+
+
+class OneIntegrationCreate(OneIntegrationCreateRequired, total=False):
+    auth_method: str
+    dlp_profiles: list
+    permissions: list
+    use_cases: list
+
+
+class OneIntegrationCreateCreateDataRequired(TypedDict):
+    account_id: str
+    application: str
+    credentials: dict
+    name: str
+
+
+class OneIntegrationCreateCreateData(OneIntegrationCreateCreateDataRequired, total=False):
+    auth_method: str
+    dlp_profiles: list
+    permissions: list
+    use_cases: list
+
+
+class OneIntegrationDetailRequired(TypedDict):
+    result: Any
+    success: bool
+
+
+class OneIntegrationDetail(OneIntegrationDetailRequired, total=False):
+    errors: list
+    id: str
+    messages: list
+
+
+class OneIntegrationDetailLoadMatch(TypedDict):
+    account_id: str
+    id: str
+
+
+class OneIntegrationPauseRequired(TypedDict):
+    result: Any
+    success: bool
+
+
+class OneIntegrationPause(OneIntegrationPauseRequired, total=False):
+    errors: list
+    messages: list
+
+
+class OneIntegrationPauseCreateDataRequired(TypedDict):
+    account_id: str
+    integration_id: str
+    result: Any
+    success: bool
+
+
+class OneIntegrationPauseCreateData(OneIntegrationPauseCreateDataRequired, total=False):
+    errors: list
+    messages: list
+
+
+class OneIntegrationResumeRequired(TypedDict):
+    result: Any
+    success: bool
+
+
+class OneIntegrationResume(OneIntegrationResumeRequired, total=False):
+    errors: list
+    messages: list
+
+
+class OneIntegrationResumeCreateDataRequired(TypedDict):
+    account_id: str
+    integration_id: str
+    result: Any
+    success: bool
+
+
+class OneIntegrationResumeCreateData(OneIntegrationResumeCreateDataRequired, total=False):
+    errors: list
+    messages: list
+
+
+class OneIntegrationUpdateRequired(TypedDict):
+    result: Any
+    success: bool
+
+
+class OneIntegrationUpdate(OneIntegrationUpdateRequired, total=False):
+    credentials: dict
+    dlp_profiles: list
+    errors: list
+    id: str
+    messages: list
+    name: str
+    permissions: list
+    use_cases: list
+
+
+class OneIntegrationUpdateUpdateDataRequired(TypedDict):
+    account_id: str
+    id: str
+
+
+class OneIntegrationUpdateUpdateData(OneIntegrationUpdateUpdateDataRequired, total=False):
+    credentials: dict
+    dlp_profiles: list
+    errors: list
+    messages: list
+    name: str
+    permissions: list
+    result: Any
+    success: bool
+    use_cases: list
+
+
+class OnePaginatedApplicationListList(TypedDict):
+    auth_methods: list
+    category: str
+    description: str
+    display_name: str
+    dlp_enabled: bool
+    id: str
+    logo: str
+    permissions: list
+    supported_environments: list
+    use_cases: list
+
+
+class OnePaginatedApplicationListListListMatchRequired(TypedDict):
+    account_id: str
+
+
+class OnePaginatedApplicationListListListMatch(OnePaginatedApplicationListListListMatchRequired, total=False):
+    environment: str
+    page: int
+    page_size: int
+
+
+class OnePaginatedAuthMethodDetailList(TypedDict):
+    display_name: str
+    human_interaction_required: bool
+    id: str
+    instructions: Any
+    payload_example: dict
+    payload_schema: dict
+    redirect_url: str
+
+
+class OnePaginatedAuthMethodDetailListListMatchRequired(TypedDict):
+    account_id: str
+    application_id: str
+
+
+class OnePaginatedAuthMethodDetailListListMatch(OnePaginatedAuthMethodDetailListListMatchRequired, total=False):
+    page: int
+    page_size: int
+
+
+class OnePaginatedIntegrationV2ListItemList(TypedDict):
+    application: dict
+    created: str
+    id: str
+    is_paused: bool
+    name: str
+    status: str
+    updated: str
+
+
+class OnePaginatedIntegrationV2ListItemListListMatchRequired(TypedDict):
+    account_id: str
+
+
+class OnePaginatedIntegrationV2ListItemListListMatch(OnePaginatedIntegrationV2ListItemListListMatchRequired, total=False):
+    application: str
+    direction: str
+    dlp_enabled: bool
+    order: str
+    page: int
+    page_size: int
+    search: str
+    status: str
+    use_case: str
+
+
+class OnePaginatedSetupFlowListRequired(TypedDict):
+    default: bool
+    description: str
+    id: str
+    name: str
+    steps: list
+    supported_environments: list
+
+
+class OnePaginatedSetupFlowList(OnePaginatedSetupFlowListRequired, total=False):
+    auth_config: Any
+
+
+class OnePaginatedSetupFlowListListMatchRequired(TypedDict):
+    account_id: str
+    application_id: str
+
+
+class OnePaginatedSetupFlowListListMatch(OnePaginatedSetupFlowListListMatchRequired, total=False):
+    auth_method: str
+    environment: str
+    page: int
+    page_size: int
 
 
 class OverrideCodeRequired(TypedDict):
@@ -1151,6 +1497,24 @@ class TeamsDevicesDeviceSettingsResponseCollectionListMatch(TeamsDevicesDeviceSe
 class TeamsDevicesDeviceSettingsResponseCollectionRemoveMatch(TypedDict):
     account_id: str
     policy_id: str
+
+
+class TeamsDevicesDevicesPolicyCertificatesSingle(TypedDict):
+    enabled: bool
+    result: dict
+
+
+class TeamsDevicesDevicesPolicyCertificatesSingleLoadMatch(TypedDict):
+    zone_id: str
+
+
+class TeamsDevicesDevicesPolicyCertificatesSingleUpdateDataRequired(TypedDict):
+    zone_id: str
+
+
+class TeamsDevicesDevicesPolicyCertificatesSingleUpdateData(TeamsDevicesDevicesPolicyCertificatesSingleUpdateDataRequired, total=False):
+    enabled: bool
+    result: dict
 
 
 class TeamsDevicesFallbackDomainResponseCollection(TypedDict, total=False):

@@ -6,11 +6,47 @@ Cloudflare Zero Trust Gateway: policies, proxy endpoints, audit rules, categorie
 
 This guide introduces the API, the client libraries, and the companion tools in this repository. Start with the API capabilities, choose a client for your application, and use the linked reference when you need exact request and response details.
 
-The selected API surface contains 104 entities and 242 HTTP routes. There are 6 SDK targets and 2 companion tools.
+The selected API surface contains 119 entities and 262 HTTP routes. There are 6 SDK targets and 2 companion tools.
 
 An entity groups related API operations. An operation can have several routes with different inputs or authentication requirements. The SDK exposes the entity and its operations using the conventions of the selected language.
 
 ## What the API provides
+
+### [AlexandriaDeleteApplication](docs/api/alexandria_delete_application.html)
+
+Results: Delete application response.
+
+SDK operations: `remove`.
+
+Key fields to recognise:
+
+- `id`: The public identifier of the referencing resource.
+
+### [AlexandriaGetApplication](docs/api/alexandria_get_application.html)
+
+Results: Create application response.; Get the application response.; Update application response.
+
+SDK operations: `create`, `list`, `load`, `update`.
+
+Key fields to recognise:
+
+- `category_id`: Returns the category ID.
+- `hostnames`: Hostnames matched by the application.
+- `human_id`: Returns the human readable ID.
+- `id`: Returns the application ID.
+- `ip_subnets`: IP subnets for this application. Custom application create and update requests accept IPv4 prefix lengths /8 through /32 and IPv6 prefix lengths /32 through /128.
+
+### [AlexandriaGetCategory](docs/api/alexandria_get_category.html)
+
+Results: Get all application categories response.; Get application category by id response.
+
+SDK operations: `list`, `load`.
+
+Key fields to recognise:
+
+- `id`: Returns the category ID.
+- `result`: Returns the list of categories.
+- `success`: Indicates whether the API call was successful.
 
 ### [ClientVersion](docs/api/client_version.html)
 
@@ -132,6 +168,12 @@ Results: Get DEX devices aggregate success response.
 
 SDK operations: `load`.
 
+### [Integration](docs/api/integration.html)
+
+Results: Integration deleted successfully.
+
+SDK operations: `remove`.
+
 ### [Interconnect](docs/api/interconnect.html)
 
 Results: Generated LOA in PDF format; Successfully deleted interconnect.
@@ -217,6 +259,143 @@ Key fields to recognise:
 Results: Current interconnect status.
 
 SDK operations: `load`.
+
+### [OneApplicationDetail](docs/api/one_application_detail.html)
+
+Results: Application details.
+
+SDK operations: `load`.
+
+Key fields to recognise:
+
+- `errors`: List of errors.
+- `messages`: List of messages.
+- `result`: The requested item.
+- `success`: Whether the request succeeded.
+
+### [OneIntegrationCreate](docs/api/one_integration_create.html)
+
+Results: Integration created successfully.
+
+SDK operations: `create`.
+
+Key fields to recognise:
+
+- `application`: Vendor/application slug (for example, GOOGLE_WORKSPACE).
+- `auth_method`: The integration&#39;s authentication method.
+- `credentials`: Credentials for the integration.
+- `dlp_profiles`: DLP Profiles enabled for the integration.
+- `name`: Name of the integration.
+
+### [OneIntegrationDetail](docs/api/one_integration_detail.html)
+
+Results: Integration details.
+
+SDK operations: `load`.
+
+Key fields to recognise:
+
+- `errors`: List of errors.
+- `id`: Integration ID.
+- `messages`: List of messages.
+- `result`: The requested item.
+- `success`: Whether the request succeeded.
+
+### [OneIntegrationPause](docs/api/one_integration_pause.html)
+
+Results: Integration paused successfully.
+
+SDK operations: `create`.
+
+Key fields to recognise:
+
+- `errors`: List of errors.
+- `messages`: List of messages.
+- `result`: The requested item.
+- `success`: Whether the request succeeded.
+
+### [OneIntegrationResume](docs/api/one_integration_resume.html)
+
+Results: Integration resumed successfully.
+
+SDK operations: `create`.
+
+Key fields to recognise:
+
+- `errors`: List of errors.
+- `messages`: List of messages.
+- `result`: The requested item.
+- `success`: Whether the request succeeded.
+
+### [OneIntegrationUpdate](docs/api/one_integration_update.html)
+
+Results: Integration updated successfully.
+
+SDK operations: `update`.
+
+Key fields to recognise:
+
+- `credentials`: Partial credential fields to merge with existing.
+- `dlp_profiles`: DLP Profiles enabled for the integration.
+- `errors`: List of errors.
+- `id`: Integration ID.
+- `messages`: List of messages.
+
+### [OnePaginatedApplicationListList](docs/api/one_paginated_application_list_list.html)
+
+Results: List of applications.
+
+SDK operations: `list`.
+
+Key fields to recognise:
+
+- `auth_methods`: Available auth methods.
+- `category`: Vendor category (for example Productivity, AI).
+- `description`: Brief description of the integration.
+- `display_name`: Human-readable vendor name.
+- `dlp_enabled`: Whether DLP scanning is supported.
+
+### [OnePaginatedAuthMethodDetailList](docs/api/one_paginated_auth_method_detail_list.html)
+
+Results: Auth methods available for this application.
+
+SDK operations: `list`.
+
+Key fields to recognise:
+
+- `display_name`: Human-readable auth method name.
+- `human_interaction_required`: Whether setup requires human interaction or integration can be created purely using API (for example, For OAuth can not be created without user interaction).
+- `id`: Auth method identifier.
+- `instructions`: Step-by-step instructions for obtaining credentials.
+- `payload_example`: Example credentials payload with placeholder values.
+
+### [OnePaginatedIntegrationV2ListItemList](docs/api/one_paginated_integration_v2_list_item_list.html)
+
+Results: List of integrations.
+
+SDK operations: `list`.
+
+Key fields to recognise:
+
+- `created`: When the integration was created.
+- `id`: Integration ID.
+- `is_paused`: Whether the user paused the integration.
+- `name`: Name of the integration.
+- `status`: Integration status.
+
+### [OnePaginatedSetupFlowList](docs/api/one_paginated_setup_flow_list.html)
+
+Results: List of setup flows.
+
+SDK operations: `list`.
+
+Key fields to recognise:
+
+- `auth_config`: OAuth configuration (present for OAuth-based flows).
+- `default`: Whether this is the default auth method.
+- `description`: Flow description.
+- `id`: Setup flow identifier.
+- `name`: Human-readable flow name.
 
 ### [OverrideCode](docs/api/override_code.html)
 
@@ -344,6 +523,16 @@ Key fields to recognise:
 Results: List device settings profiles response.; Delete a device settings profile response.
 
 SDK operations: `list`, `remove`.
+
+### [TeamsDevicesDevicesPolicyCertificatesSingle](docs/api/teams_devices_devices_policy_certificates_single.html)
+
+Results: Get WARP client provision certificates enabled status response.; Update a zone to toggle permission for devices to provision certificates response.
+
+SDK operations: `load`, `update`.
+
+Key fields to recognise:
+
+- `enabled`: The current status of the device policy certificate provisioning feature for WARP clients.
 
 ### [TeamsDevicesFallbackDomainResponseCollection](docs/api/teams_devices_fallback_domain_response_collection.html)
 
@@ -1015,6 +1204,13 @@ Use this map to locate a capability. Consult the entity reference before supplyi
 
 | Entity | SDK operation | HTTP route | Authentication |
 | --- | --- | --- | --- |
+| [AlexandriaDeleteApplication](docs/api/alexandria_delete_application.html) | `remove` | `DELETE /accounts/{account_id}/resource-library/applications/{id}` | Required |
+| [AlexandriaGetApplication](docs/api/alexandria_get_application.html) | `create` | `POST /accounts/{account_id}/resource-library/applications` | Required |
+| [AlexandriaGetApplication](docs/api/alexandria_get_application.html) | `list` | `GET /accounts/{account_id}/resource-library/applications` | Required |
+| [AlexandriaGetApplication](docs/api/alexandria_get_application.html) | `load` | `GET /accounts/{account_id}/resource-library/applications/{id}` | Required |
+| [AlexandriaGetApplication](docs/api/alexandria_get_application.html) | `update` | `PATCH /accounts/{account_id}/resource-library/applications/{id}` | Required |
+| [AlexandriaGetCategory](docs/api/alexandria_get_category.html) | `list` | `GET /accounts/{account_id}/resource-library/categories` | Required |
+| [AlexandriaGetCategory](docs/api/alexandria_get_category.html) | `load` | `GET /accounts/{account_id}/resource-library/categories/{id}` | Required |
 | [ClientVersion](docs/api/client_version.html) | `list` | `GET /accounts/{account_id}/devices/client-versions` | Required |
 | [ClientVersion](docs/api/client_version.html) | `list` | `GET /accounts/{account_id}/devices/client-versions/target-environments` | Required |
 | [Cni](docs/api/cni.html) | `remove` | `DELETE /accounts/{account_id}/cni/cnis/{cni}` | Required |
@@ -1053,6 +1249,7 @@ Use this map to locate a capability. Consult the entity reference before supplyi
 | [DigitalExperienceMonitoringFleetStatusDevice](docs/api/digital_experience_monitoring_fleet_status_device.html) | `list` | `GET /accounts/{account_id}/dex/fleet-status/devices` | Required |
 | [DigitalExperienceMonitoringFleetStatusLive](docs/api/digital_experience_monitoring_fleet_status_live.html) | `load` | `GET /accounts/{account_id}/dex/fleet-status/live` | Required |
 | [DigitalExperienceMonitoringFleetStatusOverTime](docs/api/digital_experience_monitoring_fleet_status_over_time.html) | `load` | `GET /accounts/{account_id}/dex/fleet-status/over-time` | Required |
+| [Integration](docs/api/integration.html) | `remove` | `DELETE /accounts/{account_id}/one/integrations/{id}` | Required |
 | [Interconnect](docs/api/interconnect.html) | `load` | `GET /accounts/{account_id}/cni/interconnects/{icon}/loa` | Required |
 | [Interconnect](docs/api/interconnect.html) | `remove` | `DELETE /accounts/{account_id}/cni/interconnects/{icon}` | Required |
 | [IpProfile](docs/api/ip_profile.html) | `create` | `POST /accounts/{account_id}/devices/ip-profiles` | Required |
@@ -1075,6 +1272,16 @@ Use this map to locate a capability. Consult the entity reference before supplyi
 | [NscSlotInfo](docs/api/nsc_slot_info.html) | `list` | `GET /accounts/{account_id}/cni/slots` | Required |
 | [NscSlotInfo](docs/api/nsc_slot_info.html) | `load` | `GET /accounts/{account_id}/cni/slots/{slot}` | Required |
 | [NscStatusInfo](docs/api/nsc_status_info.html) | `load` | `GET /accounts/{account_id}/cni/interconnects/{icon}/status` | Required |
+| [OneApplicationDetail](docs/api/one_application_detail.html) | `load` | `GET /accounts/{account_id}/one/applications/{application_id}` | Required |
+| [OneIntegrationCreate](docs/api/one_integration_create.html) | `create` | `POST /accounts/{account_id}/one/integrations` | Required |
+| [OneIntegrationDetail](docs/api/one_integration_detail.html) | `load` | `GET /accounts/{account_id}/one/integrations/{id}` | Required |
+| [OneIntegrationPause](docs/api/one_integration_pause.html) | `create` | `POST /accounts/{account_id}/one/integrations/{id}/pause` | Required |
+| [OneIntegrationResume](docs/api/one_integration_resume.html) | `create` | `POST /accounts/{account_id}/one/integrations/{id}/resume` | Required |
+| [OneIntegrationUpdate](docs/api/one_integration_update.html) | `update` | `PATCH /accounts/{account_id}/one/integrations/{id}` | Required |
+| [OnePaginatedApplicationListList](docs/api/one_paginated_application_list_list.html) | `list` | `GET /accounts/{account_id}/one/applications` | Required |
+| [OnePaginatedAuthMethodDetailList](docs/api/one_paginated_auth_method_detail_list.html) | `list` | `GET /accounts/{account_id}/one/applications/{application_id}/auth-methods` | Required |
+| [OnePaginatedIntegrationV2ListItemList](docs/api/one_paginated_integration_v2_list_item_list.html) | `list` | `GET /accounts/{account_id}/one/integrations` | Required |
+| [OnePaginatedSetupFlowList](docs/api/one_paginated_setup_flow_list.html) | `list` | `GET /accounts/{account_id}/one/applications/{application_id}/setup-flows` | Required |
 | [OverrideCode](docs/api/override_code.html) | `create` | `POST /accounts/{account_id}/devices/override_codes` | Required |
 | [Pacfile](docs/api/pacfile.html) | `remove` | `DELETE /accounts/{account_id}/gateway/pacfiles/{pacfile_id}` | Required |
 | [PhysicalDevice](docs/api/physical_device.html) | `create` | `POST /accounts/{account_id}/devices/physical-devices/{device_id}/revoke` | Required |
@@ -1106,6 +1313,8 @@ Use this map to locate a capability. Consult the entity reference before supplyi
 | [TeamsDevicesDeviceSetting](docs/api/teams_devices_device_setting.html) | `update` | `PATCH /accounts/{account_id}/devices/policy/{policy_id}` | Required |
 | [TeamsDevicesDeviceSettingsResponseCollection](docs/api/teams_devices_device_settings_response_collection.html) | `list` | `GET /accounts/{account_id}/devices/policies` | Required |
 | [TeamsDevicesDeviceSettingsResponseCollection](docs/api/teams_devices_device_settings_response_collection.html) | `remove` | `DELETE /accounts/{account_id}/devices/policy/{policy_id}` | Required |
+| [TeamsDevicesDevicesPolicyCertificatesSingle](docs/api/teams_devices_devices_policy_certificates_single.html) | `load` | `GET /zones/{zone_id}/devices/policy/certificates` | Required |
+| [TeamsDevicesDevicesPolicyCertificatesSingle](docs/api/teams_devices_devices_policy_certificates_single.html) | `update` | `PATCH /zones/{zone_id}/devices/policy/certificates` | Required |
 | [TeamsDevicesFallbackDomainResponseCollection](docs/api/teams_devices_fallback_domain_response_collection.html) | `list` | `GET /accounts/{account_id}/devices/policy/{policy_id}/fallback_domains` | Required |
 | [TeamsDevicesFallbackDomainResponseCollection](docs/api/teams_devices_fallback_domain_response_collection.html) | `list` | `GET /accounts/{account_id}/devices/policy/fallback_domains` | Required |
 | [TeamsDevicesFallbackDomainResponseCollection](docs/api/teams_devices_fallback_domain_response_collection.html) | `remove` | `DELETE /accounts/{account_id}/devices/policy/{policy_id}/fallback_domains` | Required |
@@ -1306,8 +1515,8 @@ Use the MCP server to expose supported API operations to an MCP client.
 
 Repository directory: `go-mcp/`. Not published. Build from the go-mcp directory.
 
-- `cloudflare-zero-trust_list`: List records for an entity. Supported entities: `client_version`, `deployment_group`, `dex_synthetic_application_monitoring`, `digital_experience_monitoring_device`, `digital_experience_monitoring_dex_response_collection`, `digital_experience_monitoring_fleet_status_device`, `ip_profile`, `nsc_cni`, `nsc_interconnect`, `nsc_slot_info`, `physical_device`, `registration`, `teams_devices_components_schemas_response_collection`, `teams_devices_device`, `teams_devices_device_settings_response_collection`, `teams_devices_fallback_domain_response_collection`, `teams_devices_response_collection`, `teams_devices_schemas_response_collection`, `teams_devices_split_tunnel_include_response_collection`, `teams_devices_split_tunnel_response_collection`, `tunnel`, `tunnel_cfd_tunnel_response_collection`, `tunnel_hostname_route_response_collection`, `tunnel_subnet_response_collection`, `tunnel_teamnet_response_collection`, `tunnel_tunnel_connection`, `tunnel_tunnel_response_token`, `tunnel_tunnel_warp_connector_connection`, `tunnel_vnet_response_collection`, `tunnel_warp_connector_response_collection`, `tunnel_zero_trust_connectivity_setting`, `warp_change_event`, `warp_teams_device_api_other`, `zero_trust_gateway_gateway_account_egress_cidr_pair_list`, `zero_trust_gateway_list_item_response_collection`, `zero_trust_gateway_response_collection`, `zero_trust_gateway_response_collection_10`, `zero_trust_gateway_response_collection_2`, `zero_trust_gateway_response_collection_3`, `zero_trust_gateway_response_collection_4`, `zero_trust_gateway_response_collection_5`, `zero_trust_gateway_response_collection_6`, `zero_trust_gateway_response_collection_7`, `zero_trust_gateway_response_collection_8`, `zero_trust_gateway_response_collection_9`, `zero_trust_risk_scoring_integration`.
-- `cloudflare-zero-trust_load`: Load one record for an entity. Supported entities: `deployment_group`, `dex_remote_command`, `dex_rule`, `dex_synthetic_application_monitoring`, `digital_experience_monitoring_dex_single`, `digital_experience_monitoring_fleet_status_live`, `digital_experience_monitoring_fleet_status_over_time`, `interconnect`, `ip_profile`, `nsc_cni`, `nsc_default_name`, `nsc_interconnect`, `nsc_setting`, `nsc_slot_info`, `nsc_status_info`, `physical_device`, `registration`, `teams_devices_components_schemas_single`, `teams_devices_default_device_setting`, `teams_devices_device`, `teams_devices_device_setting`, `teams_devices_global_warp_override`, `teams_devices_override_code`, `teams_devices_schemas_single`, `teams_devices_single`, `teams_devices_zero_trust_account_device_setting`, `tunnel_cfd_tunnel_response_single`, `tunnel_configuration`, `tunnel_hostname_route_response_single`, `tunnel_mesh_configuration_response_single`, `tunnel_route_response_single`, `tunnel_subnet_response_single`, `tunnel_teamnet_response_single`, `tunnel_tunnel_client`, `tunnel_tunnel_warp_connector_client`, `tunnel_vnet_response_single`, `tunnel_warp_connector_response_single`, `warp`, `zero_trust_gateway_applications_review_status`, `zero_trust_gateway_custom_certificate_setting`, `zero_trust_gateway_gateway_account`, `zero_trust_gateway_gateway_account_config`, `zero_trust_gateway_gateway_account_logging_setting`, `zero_trust_gateway_list_single`, `zero_trust_gateway_single`, `zero_trust_gateway_single_response_2`, `zero_trust_gateway_single_response_3`, `zero_trust_gateway_single_response_4`, `zero_trust_gateway_single_response_5`, `zero_trust_gateway_single_response_6`, `zero_trust_gateway_single_response_7`, `zero_trust_risk_scoring`, `zero_trust_risk_scoring_integration`.
+- `cloudflare-zero-trust_list`: List records for an entity. Supported entities: `alexandria_get_application`, `alexandria_get_category`, `client_version`, `deployment_group`, `dex_synthetic_application_monitoring`, `digital_experience_monitoring_device`, `digital_experience_monitoring_dex_response_collection`, `digital_experience_monitoring_fleet_status_device`, `ip_profile`, `nsc_cni`, `nsc_interconnect`, `nsc_slot_info`, `one_paginated_application_list_list`, `one_paginated_auth_method_detail_list`, `one_paginated_integration_v2_list_item_list`, `one_paginated_setup_flow_list`, `physical_device`, `registration`, `teams_devices_components_schemas_response_collection`, `teams_devices_device`, `teams_devices_device_settings_response_collection`, `teams_devices_fallback_domain_response_collection`, `teams_devices_response_collection`, `teams_devices_schemas_response_collection`, `teams_devices_split_tunnel_include_response_collection`, `teams_devices_split_tunnel_response_collection`, `tunnel`, `tunnel_cfd_tunnel_response_collection`, `tunnel_hostname_route_response_collection`, `tunnel_subnet_response_collection`, `tunnel_teamnet_response_collection`, `tunnel_tunnel_connection`, `tunnel_tunnel_response_token`, `tunnel_tunnel_warp_connector_connection`, `tunnel_vnet_response_collection`, `tunnel_warp_connector_response_collection`, `tunnel_zero_trust_connectivity_setting`, `warp_change_event`, `warp_teams_device_api_other`, `zero_trust_gateway_gateway_account_egress_cidr_pair_list`, `zero_trust_gateway_list_item_response_collection`, `zero_trust_gateway_response_collection`, `zero_trust_gateway_response_collection_10`, `zero_trust_gateway_response_collection_2`, `zero_trust_gateway_response_collection_3`, `zero_trust_gateway_response_collection_4`, `zero_trust_gateway_response_collection_5`, `zero_trust_gateway_response_collection_6`, `zero_trust_gateway_response_collection_7`, `zero_trust_gateway_response_collection_8`, `zero_trust_gateway_response_collection_9`, `zero_trust_risk_scoring_integration`.
+- `cloudflare-zero-trust_load`: Load one record for an entity. Supported entities: `alexandria_get_application`, `alexandria_get_category`, `deployment_group`, `dex_remote_command`, `dex_rule`, `dex_synthetic_application_monitoring`, `digital_experience_monitoring_dex_single`, `digital_experience_monitoring_fleet_status_live`, `digital_experience_monitoring_fleet_status_over_time`, `interconnect`, `ip_profile`, `nsc_cni`, `nsc_default_name`, `nsc_interconnect`, `nsc_setting`, `nsc_slot_info`, `nsc_status_info`, `one_application_detail`, `one_integration_detail`, `physical_device`, `registration`, `teams_devices_components_schemas_single`, `teams_devices_default_device_setting`, `teams_devices_device`, `teams_devices_device_setting`, `teams_devices_devices_policy_certificates_single`, `teams_devices_global_warp_override`, `teams_devices_override_code`, `teams_devices_schemas_single`, `teams_devices_single`, `teams_devices_zero_trust_account_device_setting`, `tunnel_cfd_tunnel_response_single`, `tunnel_configuration`, `tunnel_hostname_route_response_single`, `tunnel_mesh_configuration_response_single`, `tunnel_route_response_single`, `tunnel_subnet_response_single`, `tunnel_teamnet_response_single`, `tunnel_tunnel_client`, `tunnel_tunnel_warp_connector_client`, `tunnel_vnet_response_single`, `tunnel_warp_connector_response_single`, `warp`, `zero_trust_gateway_applications_review_status`, `zero_trust_gateway_custom_certificate_setting`, `zero_trust_gateway_gateway_account`, `zero_trust_gateway_gateway_account_config`, `zero_trust_gateway_gateway_account_logging_setting`, `zero_trust_gateway_list_single`, `zero_trust_gateway_single`, `zero_trust_gateway_single_response_2`, `zero_trust_gateway_single_response_3`, `zero_trust_gateway_single_response_4`, `zero_trust_gateway_single_response_5`, `zero_trust_gateway_single_response_6`, `zero_trust_gateway_single_response_7`, `zero_trust_risk_scoring`, `zero_trust_risk_scoring_integration`.
 
 ## Operational features
 

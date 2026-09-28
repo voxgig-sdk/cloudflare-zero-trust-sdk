@@ -1,0 +1,58 @@
+{
+  "existing": {
+    "one_paginated_auth_method_detail_list": {
+      "ONE_PAGINATED_AUTH_METHOD_DETAIL_LIST00": {
+        "display_name": "s46",
+        "human_interaction_required": false,
+        "id": "ONE_PAGINATED_AUTH_METHOD_DETAIL_LIST00",
+        "instructions": "s49",
+        "payload_example": {},
+        "payload_schema": {},
+        "redirect_url": "s4c",
+        "account_id": "ACCOUNT01",
+        "application_id": "APPLICATION01"
+      },
+      "ONE_PAGINATED_AUTH_METHOD_DETAIL_LIST01": {
+        "display_name": "s8c",
+        "human_interaction_required": false,
+        "id": "ONE_PAGINATED_AUTH_METHOD_DETAIL_LIST01",
+        "instructions": "s8f",
+        "payload_example": {},
+        "payload_schema": {},
+        "redirect_url": "s92",
+        "account_id": "ACCOUNT01",
+        "application_id": "APPLICATION01"
+      },
+      "ONE_PAGINATED_AUTH_METHOD_DETAIL_LIST02": {
+        "display_name": "sd2",
+        "human_interaction_required": false,
+        "id": "ONE_PAGINATED_AUTH_METHOD_DETAIL_LIST02",
+        "instructions": "sd5",
+        "payload_example": {},
+        "payload_schema": {},
+        "redirect_url": "sd8",
+        "account_id": "ACCOUNT01",
+        "application_id": "APPLICATION01"
+      }
+    }
+  },
+  "new": {
+    "one_paginated_auth_method_detail_list": {
+      "one_paginated_auth_method_detail_list_ref01": {
+        "display_name": "s118",
+        "human_interaction_required": false,
+        "instructions": "s11b",
+        "payload_example": {},
+        "payload_schema": {},
+        "redirect_url": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/one/applications/{application_id}/auth-methods": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

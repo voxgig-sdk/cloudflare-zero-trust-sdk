@@ -1,0 +1,49 @@
+# BasicAlexandriaGetCategoryFlow
+
+main: kit: flow: BasicAlexandriaGetCategoryFlow:
+{
+  entity: "alexandria_get_category",
+  kind: "basic",
+  name: "BasicAlexandriaGetCategoryFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "alexandria_get_category_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "alexandria_get_category_ref01",
+        srcdatavar: "alexandria_get_category_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "alexandria_get_category01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-alexandria_get_category_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAlexandriaGetCategoryFlow"
+}

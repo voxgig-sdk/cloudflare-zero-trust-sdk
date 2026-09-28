@@ -1,0 +1,9 @@
+# BasicAlexandriaDeleteApplicationFlow
+
+main: kit: flow: BasicAlexandriaDeleteApplicationFlow:
+{
+  entity: "alexandria_delete_application",
+  kind: "basic",
+  name: "BasicAlexandriaDeleteApplicationFlow",
+  "key$": "BasicAlexandriaDeleteApplicationFlow"
+}

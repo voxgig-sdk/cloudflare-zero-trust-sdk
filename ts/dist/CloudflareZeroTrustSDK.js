@@ -2,6 +2,9 @@
 // CloudflareZeroTrust Ts SDK
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SDK = exports.CloudflareZeroTrustSDK = exports.CloudflareZeroTrustEntityBase = exports.BaseFeature = exports.config = exports.stdutil = void 0;
+const AlexandriaDeleteApplicationEntity_1 = require("./entity/AlexandriaDeleteApplicationEntity");
+const AlexandriaGetApplicationEntity_1 = require("./entity/AlexandriaGetApplicationEntity");
+const AlexandriaGetCategoryEntity_1 = require("./entity/AlexandriaGetCategoryEntity");
 const ClientVersionEntity_1 = require("./entity/ClientVersionEntity");
 const CniEntity_1 = require("./entity/CniEntity");
 const DeploymentGroupEntity_1 = require("./entity/DeploymentGroupEntity");
@@ -15,6 +18,7 @@ const DigitalExperienceMonitoringDexSingleEntity_1 = require("./entity/DigitalEx
 const DigitalExperienceMonitoringFleetStatusDeviceEntity_1 = require("./entity/DigitalExperienceMonitoringFleetStatusDeviceEntity");
 const DigitalExperienceMonitoringFleetStatusLiveEntity_1 = require("./entity/DigitalExperienceMonitoringFleetStatusLiveEntity");
 const DigitalExperienceMonitoringFleetStatusOverTimeEntity_1 = require("./entity/DigitalExperienceMonitoringFleetStatusOverTimeEntity");
+const IntegrationEntity_1 = require("./entity/IntegrationEntity");
 const InterconnectEntity_1 = require("./entity/InterconnectEntity");
 const IpProfileEntity_1 = require("./entity/IpProfileEntity");
 const ListEntity_1 = require("./entity/ListEntity");
@@ -25,6 +29,16 @@ const NscInterconnectEntity_1 = require("./entity/NscInterconnectEntity");
 const NscSettingEntity_1 = require("./entity/NscSettingEntity");
 const NscSlotInfoEntity_1 = require("./entity/NscSlotInfoEntity");
 const NscStatusInfoEntity_1 = require("./entity/NscStatusInfoEntity");
+const OneApplicationDetailEntity_1 = require("./entity/OneApplicationDetailEntity");
+const OneIntegrationCreateEntity_1 = require("./entity/OneIntegrationCreateEntity");
+const OneIntegrationDetailEntity_1 = require("./entity/OneIntegrationDetailEntity");
+const OneIntegrationPauseEntity_1 = require("./entity/OneIntegrationPauseEntity");
+const OneIntegrationResumeEntity_1 = require("./entity/OneIntegrationResumeEntity");
+const OneIntegrationUpdateEntity_1 = require("./entity/OneIntegrationUpdateEntity");
+const OnePaginatedApplicationListListEntity_1 = require("./entity/OnePaginatedApplicationListListEntity");
+const OnePaginatedAuthMethodDetailListEntity_1 = require("./entity/OnePaginatedAuthMethodDetailListEntity");
+const OnePaginatedIntegrationV2ListItemListEntity_1 = require("./entity/OnePaginatedIntegrationV2ListItemListEntity");
+const OnePaginatedSetupFlowListEntity_1 = require("./entity/OnePaginatedSetupFlowListEntity");
 const OverrideCodeEntity_1 = require("./entity/OverrideCodeEntity");
 const PacfileEntity_1 = require("./entity/PacfileEntity");
 const PhysicalDeviceEntity_1 = require("./entity/PhysicalDeviceEntity");
@@ -38,6 +52,7 @@ const TeamsDevicesDefaultDeviceSettingEntity_1 = require("./entity/TeamsDevicesD
 const TeamsDevicesDeviceEntity_1 = require("./entity/TeamsDevicesDeviceEntity");
 const TeamsDevicesDeviceSettingEntity_1 = require("./entity/TeamsDevicesDeviceSettingEntity");
 const TeamsDevicesDeviceSettingsResponseCollectionEntity_1 = require("./entity/TeamsDevicesDeviceSettingsResponseCollectionEntity");
+const TeamsDevicesDevicesPolicyCertificatesSingleEntity_1 = require("./entity/TeamsDevicesDevicesPolicyCertificatesSingleEntity");
 const TeamsDevicesFallbackDomainResponseCollectionEntity_1 = require("./entity/TeamsDevicesFallbackDomainResponseCollectionEntity");
 const TeamsDevicesGlobalWarpOverrideEntity_1 = require("./entity/TeamsDevicesGlobalWarpOverrideEntity");
 const TeamsDevicesIdEntity_1 = require("./entity/TeamsDevicesIdEntity");
@@ -313,6 +328,27 @@ class CloudflareZeroTrustSDK {
         }
         return res;
     }
+    // Entity access: `client.AlexandriaDeleteApplication().list()` / `client.AlexandriaDeleteApplication().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    AlexandriaDeleteApplication(entopts) {
+        const self = this;
+        return new AlexandriaDeleteApplicationEntity_1.AlexandriaDeleteApplicationEntity(self, entopts);
+    }
+    // Entity access: `client.AlexandriaGetApplication().list()` / `client.AlexandriaGetApplication().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    AlexandriaGetApplication(entopts) {
+        const self = this;
+        return new AlexandriaGetApplicationEntity_1.AlexandriaGetApplicationEntity(self, entopts);
+    }
+    // Entity access: `client.AlexandriaGetCategory().list()` / `client.AlexandriaGetCategory().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    AlexandriaGetCategory(entopts) {
+        const self = this;
+        return new AlexandriaGetCategoryEntity_1.AlexandriaGetCategoryEntity(self, entopts);
+    }
     // Entity access: `client.ClientVersion().list()` / `client.ClientVersion().load({ id })`.
     // The argument is the entity OPTIONS object (passed to the entity
     // constructor as entopts), not initial entity data.
@@ -404,6 +440,13 @@ class CloudflareZeroTrustSDK {
         const self = this;
         return new DigitalExperienceMonitoringFleetStatusOverTimeEntity_1.DigitalExperienceMonitoringFleetStatusOverTimeEntity(self, entopts);
     }
+    // Entity access: `client.Integration().list()` / `client.Integration().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    Integration(entopts) {
+        const self = this;
+        return new IntegrationEntity_1.IntegrationEntity(self, entopts);
+    }
     // Entity access: `client.Interconnect().list()` / `client.Interconnect().load({ id })`.
     // The argument is the entity OPTIONS object (passed to the entity
     // constructor as entopts), not initial entity data.
@@ -473,6 +516,76 @@ class CloudflareZeroTrustSDK {
     NscStatusInfo(entopts) {
         const self = this;
         return new NscStatusInfoEntity_1.NscStatusInfoEntity(self, entopts);
+    }
+    // Entity access: `client.OneApplicationDetail().list()` / `client.OneApplicationDetail().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    OneApplicationDetail(entopts) {
+        const self = this;
+        return new OneApplicationDetailEntity_1.OneApplicationDetailEntity(self, entopts);
+    }
+    // Entity access: `client.OneIntegrationCreate().list()` / `client.OneIntegrationCreate().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    OneIntegrationCreate(entopts) {
+        const self = this;
+        return new OneIntegrationCreateEntity_1.OneIntegrationCreateEntity(self, entopts);
+    }
+    // Entity access: `client.OneIntegrationDetail().list()` / `client.OneIntegrationDetail().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    OneIntegrationDetail(entopts) {
+        const self = this;
+        return new OneIntegrationDetailEntity_1.OneIntegrationDetailEntity(self, entopts);
+    }
+    // Entity access: `client.OneIntegrationPause().list()` / `client.OneIntegrationPause().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    OneIntegrationPause(entopts) {
+        const self = this;
+        return new OneIntegrationPauseEntity_1.OneIntegrationPauseEntity(self, entopts);
+    }
+    // Entity access: `client.OneIntegrationResume().list()` / `client.OneIntegrationResume().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    OneIntegrationResume(entopts) {
+        const self = this;
+        return new OneIntegrationResumeEntity_1.OneIntegrationResumeEntity(self, entopts);
+    }
+    // Entity access: `client.OneIntegrationUpdate().list()` / `client.OneIntegrationUpdate().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    OneIntegrationUpdate(entopts) {
+        const self = this;
+        return new OneIntegrationUpdateEntity_1.OneIntegrationUpdateEntity(self, entopts);
+    }
+    // Entity access: `client.OnePaginatedApplicationListList().list()` / `client.OnePaginatedApplicationListList().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    OnePaginatedApplicationListList(entopts) {
+        const self = this;
+        return new OnePaginatedApplicationListListEntity_1.OnePaginatedApplicationListListEntity(self, entopts);
+    }
+    // Entity access: `client.OnePaginatedAuthMethodDetailList().list()` / `client.OnePaginatedAuthMethodDetailList().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    OnePaginatedAuthMethodDetailList(entopts) {
+        const self = this;
+        return new OnePaginatedAuthMethodDetailListEntity_1.OnePaginatedAuthMethodDetailListEntity(self, entopts);
+    }
+    // Entity access: `client.OnePaginatedIntegrationV2ListItemList().list()` / `client.OnePaginatedIntegrationV2ListItemList().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    OnePaginatedIntegrationV2ListItemList(entopts) {
+        const self = this;
+        return new OnePaginatedIntegrationV2ListItemListEntity_1.OnePaginatedIntegrationV2ListItemListEntity(self, entopts);
+    }
+    // Entity access: `client.OnePaginatedSetupFlowList().list()` / `client.OnePaginatedSetupFlowList().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    OnePaginatedSetupFlowList(entopts) {
+        const self = this;
+        return new OnePaginatedSetupFlowListEntity_1.OnePaginatedSetupFlowListEntity(self, entopts);
     }
     // Entity access: `client.OverrideCode().list()` / `client.OverrideCode().load({ id })`.
     // The argument is the entity OPTIONS object (passed to the entity
@@ -564,6 +677,13 @@ class CloudflareZeroTrustSDK {
     TeamsDevicesDeviceSettingsResponseCollection(entopts) {
         const self = this;
         return new TeamsDevicesDeviceSettingsResponseCollectionEntity_1.TeamsDevicesDeviceSettingsResponseCollectionEntity(self, entopts);
+    }
+    // Entity access: `client.TeamsDevicesDevicesPolicyCertificatesSingle().list()` / `client.TeamsDevicesDevicesPolicyCertificatesSingle().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    TeamsDevicesDevicesPolicyCertificatesSingle(entopts) {
+        const self = this;
+        return new TeamsDevicesDevicesPolicyCertificatesSingleEntity_1.TeamsDevicesDevicesPolicyCertificatesSingleEntity(self, entopts);
     }
     // Entity access: `client.TeamsDevicesFallbackDomainResponseCollection().list()` / `client.TeamsDevicesFallbackDomainResponseCollection().load({ id })`.
     // The argument is the entity OPTIONS object (passed to the entity

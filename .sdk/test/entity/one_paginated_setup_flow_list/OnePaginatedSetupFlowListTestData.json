@@ -1,0 +1,58 @@
+{
+  "existing": {
+    "one_paginated_setup_flow_list": {
+      "ONE_PAGINATED_SETUP_FLOW_LIST00": {
+        "auth_config": "s46",
+        "default": false,
+        "description": "s48",
+        "id": "ONE_PAGINATED_SETUP_FLOW_LIST00",
+        "name": "s4a",
+        "steps": [],
+        "supported_environments": [],
+        "account_id": "ACCOUNT01",
+        "application_id": "APPLICATION01"
+      },
+      "ONE_PAGINATED_SETUP_FLOW_LIST01": {
+        "auth_config": "s8c",
+        "default": false,
+        "description": "s8e",
+        "id": "ONE_PAGINATED_SETUP_FLOW_LIST01",
+        "name": "s90",
+        "steps": [],
+        "supported_environments": [],
+        "account_id": "ACCOUNT01",
+        "application_id": "APPLICATION01"
+      },
+      "ONE_PAGINATED_SETUP_FLOW_LIST02": {
+        "auth_config": "sd2",
+        "default": false,
+        "description": "sd4",
+        "id": "ONE_PAGINATED_SETUP_FLOW_LIST02",
+        "name": "sd6",
+        "steps": [],
+        "supported_environments": [],
+        "account_id": "ACCOUNT01",
+        "application_id": "APPLICATION01"
+      }
+    }
+  },
+  "new": {
+    "one_paginated_setup_flow_list": {
+      "one_paginated_setup_flow_list_ref01": {
+        "auth_config": "s118",
+        "default": false,
+        "description": "s11a",
+        "name": "s11c",
+        "steps": [],
+        "supported_environments": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/one/applications/{application_id}/setup-flows": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

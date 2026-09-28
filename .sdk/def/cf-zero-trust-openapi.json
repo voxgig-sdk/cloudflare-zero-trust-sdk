@@ -16215,6 +16215,2151 @@
         "x-fern-sdk-method-name": "reset-expiration"
       }
     },
+    "/accounts/{account_id}/one/applications": {
+      "get": {
+        "operationId": "list_applications_v2",
+        "summary": "List applications",
+        "description": "Returns a list of available applications with use cases and permissions.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "description": "Filter by supported environment (standard, fedramp).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of applications.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "SampleSuccessfulReturn": {
+                    "summary": "Example application list response",
+                    "value": {
+                      "errors": [],
+                      "messages": [],
+                      "result": [
+                        {
+                          "auth_methods": [
+                            {
+                              "display_name": "OAuth 2.0 Admin Consent",
+                              "id": "oauth2_standard"
+                            }
+                          ],
+                          "category": "Productivity",
+                          "description": "Monitor OneDrive, SharePoint, Teams, and Outlook.",
+                          "display_name": "Microsoft",
+                          "dlp_enabled": true,
+                          "id": "MICROSOFT_INTERNAL",
+                          "logo": "https://dash.cloudflare.com/v2/static/microsoft_internal.svg",
+                          "permissions": [
+                            {
+                              "display_name": "Read all users' full profiles",
+                              "scope": "User.Read.All",
+                              "severity": "high"
+                            },
+                            {
+                              "display_name": "Read all files",
+                              "scope": "Files.Read.All",
+                              "severity": "high"
+                            },
+                            {
+                              "display_name": "Read and write mail",
+                              "scope": "Mail.ReadWrite",
+                              "severity": "critical"
+                            }
+                          ],
+                          "supported_environments": [
+                            "standard",
+                            "fedramp"
+                          ],
+                          "use_cases": [
+                            {
+                              "display_name": "Cloud Access Security Broker",
+                              "id": "casb"
+                            },
+                            {
+                              "display_name": "Cloud Email Security",
+                              "id": "ces"
+                            }
+                          ]
+                        }
+                      ],
+                      "result_info": {
+                        "count": 1,
+                        "next": null,
+                        "page": 1,
+                        "per_page": 10,
+                        "previous": null,
+                        "total_count": 1
+                      },
+                      "success": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/one_PaginatedApplicationListList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Applications"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.casb.applications",
+        "x-fern-sdk-method-name": "list",
+        "x-stability": "beta"
+      }
+    },
+    "/accounts/{account_id}/one/applications/{application_id}": {
+      "get": {
+        "operationId": "get_application_v2",
+        "summary": "Get application details",
+        "description": "Returns full application details including auth methods, use cases, and permissions.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353"
+            }
+          },
+          {
+            "name": "application_id",
+            "in": "path",
+            "description": "Application/vendor identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ANTHROPIC",
+                "AWS",
+                "BITBUCKET",
+                "BOX",
+                "CONFLUENCE",
+                "DROPBOX",
+                "GITHUB",
+                "GOOGLE_CLOUD_PLATFORM",
+                "GOOGLE_WORKSPACE",
+                "JIRA",
+                "MICROSOFT_INTERNAL",
+                "OPENAI",
+                "SALESFORCE",
+                "SERVICENOW",
+                "SLACK"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Application details.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "SampleSuccessfulReturn": {
+                    "summary": "Example application detail response",
+                    "value": {
+                      "errors": [],
+                      "messages": [],
+                      "result": {
+                        "auth_methods": [
+                          {
+                            "display_name": "OAuth 2.0 Admin Consent",
+                            "id": "oauth2",
+                            "is_default": true,
+                            "supported_environments": [
+                              "standard",
+                              "fedramp"
+                            ]
+                          }
+                        ],
+                        "category": "Productivity",
+                        "description": "Monitor OneDrive, SharePoint, Teams, and Outlook.",
+                        "display_name": "Microsoft",
+                        "dlp_enabled": true,
+                        "id": "MICROSOFT_INTERNAL",
+                        "instructions": "You'll need a Microsoft 365 admin account with Global Admin or Application Admin role.",
+                        "logo": "https://dash.cloudflare.com/v2/static/microsoft_internal.svg",
+                        "use_cases": [
+                          {
+                            "base_scopes": [
+                              {
+                                "display_name": "Read all users' full profiles",
+                                "scope": "User.Read.All",
+                                "severity": "high"
+                              },
+                              {
+                                "display_name": "Read all files",
+                                "scope": "Files.Read.All",
+                                "severity": "high"
+                              }
+                            ],
+                            "description": "Discover and secure SaaS applications",
+                            "display_name": "Cloud Access Security Broker",
+                            "features": [
+                              {
+                                "description": "Automatically remediate security issues",
+                                "display_name": "Auto Remediation",
+                                "id": "auto_remediation",
+                                "scopes": [
+                                  {
+                                    "display_name": "Read and write all files",
+                                    "scope": "Files.ReadWrite.All",
+                                    "severity": "critical"
+                                  }
+                                ]
+                              }
+                            ],
+                            "id": "casb"
+                          }
+                        ]
+                      },
+                      "success": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/one_ApplicationDetailResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Application not found."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Applications"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.casb.applications",
+        "x-fern-sdk-method-name": "get",
+        "x-stability": "beta"
+      }
+    },
+    "/accounts/{account_id}/one/applications/{application_id}/auth-methods": {
+      "get": {
+        "operationId": "get_application_auth_methods_v2",
+        "summary": "Get auth methods",
+        "description": "Returns available auth methods for the specified vendor, including credential schema, instructions, and example payloads. Use this to understand what credentials are required before calling POST /v2/integrations.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353"
+            }
+          },
+          {
+            "name": "application_id",
+            "in": "path",
+            "description": "Application/vendor identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ANTHROPIC",
+                "AWS",
+                "BITBUCKET",
+                "BOX",
+                "CONFLUENCE",
+                "DROPBOX",
+                "GITHUB",
+                "GOOGLE_CLOUD_PLATFORM",
+                "GOOGLE_WORKSPACE",
+                "JIRA",
+                "MICROSOFT_INTERNAL",
+                "OPENAI",
+                "SALESFORCE",
+                "SERVICENOW",
+                "SLACK"
+              ]
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Auth methods available for this application.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "SampleSuccessfulReturn": {
+                    "summary": "Example auth methods response",
+                    "value": {
+                      "errors": [],
+                      "messages": [],
+                      "result": [
+                        {
+                          "display_name": "API Key",
+                          "human_interaction_required": false,
+                          "id": "api_key",
+                          "instructions": {
+                            "markdown": "## Getting your API Key\n\n1. Log in to your admin console\n2. Navigate to Settings > API\n3. Generate a new API key"
+                          },
+                          "payload_example": {
+                            "api_key": "sk-xxxxxxxxxxxxxxxxxxxx"
+                          },
+                          "payload_schema": {
+                            "properties": {
+                              "api_key": {
+                                "description": "Your API key",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "api_key"
+                            ],
+                            "type": "object"
+                          },
+                          "redirect_url": null
+                        }
+                      ],
+                      "result_info": {
+                        "count": 1,
+                        "next": null,
+                        "page": 1,
+                        "per_page": 10,
+                        "previous": null,
+                        "total_count": 1
+                      },
+                      "success": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/one_PaginatedAuthMethodDetailList"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Application not found."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Applications"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.casb.applications.auth-methods",
+        "x-fern-sdk-method-name": "list",
+        "x-stability": "beta"
+      }
+    },
+    "/accounts/{account_id}/one/applications/{application_id}/setup-flows": {
+      "get": {
+        "operationId": "get_application_setup_flows_v2",
+        "summary": "Get application setup flows",
+        "description": "Returns all available setup flows for the application, one per auth method.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353"
+            }
+          },
+          {
+            "name": "application_id",
+            "in": "path",
+            "description": "Application/vendor identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ANTHROPIC",
+                "AWS",
+                "BITBUCKET",
+                "BOX",
+                "CONFLUENCE",
+                "DROPBOX",
+                "GITHUB",
+                "GOOGLE_CLOUD_PLATFORM",
+                "GOOGLE_WORKSPACE",
+                "JIRA",
+                "MICROSOFT_INTERNAL",
+                "OPENAI",
+                "SALESFORCE",
+                "SERVICENOW",
+                "SLACK"
+              ]
+            }
+          },
+          {
+            "name": "auth_method",
+            "in": "query",
+            "description": "Filter by auth method id. Get available ids from GET /v2/applications.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "description": "Filter by environment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "fedramp",
+                "standard"
+              ]
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of setup flows.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "SampleSuccessfulReturn": {
+                    "summary": "Example setup flow response",
+                    "value": {
+                      "errors": [],
+                      "messages": [],
+                      "result": [
+                        {
+                          "auth_config": {
+                            "authorization_url": "https://login.microsoftonline.com/common/adminconsent",
+                            "client_id": "abc123-def456",
+                            "requires_pkce": false,
+                            "scopes": [
+                              "https://graph.microsoft.com/.default"
+                            ],
+                            "url_placeholders": []
+                          },
+                          "default": true,
+                          "description": "Connect to Microsoft using OAuth 2.0 Admin Consent.",
+                          "id": "microsoft_internal_oauth2",
+                          "name": "Microsoft (OAuth 2.0 Admin Consent)",
+                          "steps": [
+                            {
+                              "component_id": "common/name_integration",
+                              "parameters": null,
+                              "type": "component"
+                            },
+                            {
+                              "description": "Click the button to be redirected to the vendor and grant access.",
+                              "dynamic_content": null,
+                              "title": "Authorize Application",
+                              "type": "oauth_redirect"
+                            }
+                          ],
+                          "supported_environments": [
+                            "standard",
+                            "fedramp"
+                          ]
+                        }
+                      ],
+                      "result_info": {
+                        "count": 1,
+                        "next": null,
+                        "page": 1,
+                        "per_page": 10,
+                        "previous": null,
+                        "total_count": 1
+                      },
+                      "success": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/one_PaginatedSetupFlowList"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Application not found or no flows available."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Applications"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
+        "x-fern-sdk-group-name": "zero-trust.casb.applications.setup-flows",
+        "x-fern-sdk-method-name": "list",
+        "x-stability": "beta"
+      }
+    },
+    "/accounts/{account_id}/one/integrations": {
+      "get": {
+        "operationId": "list_integrations_v2",
+        "summary": "List integrations",
+        "description": "Returns a paginated list of integrations for the account.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353"
+            }
+          },
+          {
+            "name": "application",
+            "in": "query",
+            "description": "Filter by application/vendor (e.g., GOOGLE_WORKSPACE, MICROSOFT_INTERNAL).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "direction",
+            "in": "query",
+            "description": "Direction to order results.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            }
+          },
+          {
+            "name": "dlp_enabled",
+            "in": "query",
+            "description": "Filter by DLP enabled status (true/false).",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Field to order results by.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "application",
+                "created",
+                "name",
+                "status"
+              ]
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number within the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "Number of results per page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Search integrations by name or application.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter by integration status.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Healthy",
+                "Initializing",
+                "Offline",
+                "Unhealthy"
+              ]
+            }
+          },
+          {
+            "name": "use_cases",
+            "in": "query",
+            "description": "Filter by enabled use cases (e.g., casb, ces). Matches integrations enrolled in any of the specified values. Can be specified multiple times.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of integrations.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "SampleSuccessfulReturn": {
+                    "summary": "Example integration list response",
+                    "value": {
+                      "errors": [],
+                      "messages": [],
+                      "result": [
+                        {
+                          "application": {
+                            "category": "Productivity",
+                            "display_name": "Google Workspace",
+                            "logo": "https://dash.cloudflare.com/v2/static/google_workspace.png"
+                          },
+                          "created": "2025-01-15T10:00:00Z",
+                          "id": "019d2e6a-d995-7185-afbd-4feead9e42ec",
+                          "is_paused": false,
+                          "name": "My Google Workspace",
+                          "status": "Healthy",
+                          "updated": "2025-04-10T08:30:00Z"
+                        }
+                      ],
+                      "result_info": {
+                        "count": 1,
+                        "next": null,
+                        "page": 1,
+                        "per_page": 10,
+                        "previous": null,
+                        "total_count": 1
+                      },
+                      "success": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/one_PaginatedIntegrationV2ListItemList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Integrations"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.casb.integrations",
+        "x-fern-sdk-method-name": "list",
+        "x-stability": "beta"
+      },
+      "post": {
+        "operationId": "create_integration_v2",
+        "summary": "Create integration",
+        "description": "Creates a new integration for the specified application. Integration creation with OAuth is not supported by API at the moment. For other auth methods, use `GET /v2/applications/{application_id}/credential-guide` to see the required credential structure and example payloads for each vendor.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "examples": {
+                "SampleRequest": {
+                  "summary": "Example integration create request",
+                  "value": {
+                    "application": "GOOGLE_WORKSPACE",
+                    "auth_method": "service_account",
+                    "credentials": {
+                      "admin_email": "admin@corp.com"
+                    },
+                    "dlp_profiles": [
+                      "e91a2360-da51-4fdf-9711-bcdecd462614"
+                    ],
+                    "name": "My Google Workspace",
+                    "permissions": [
+                      "https://www.googleapis.com/auth/drive.readonly"
+                    ],
+                    "use_cases": [
+                      "casb",
+                      "ces"
+                    ]
+                  }
+                }
+              },
+              "schema": {
+                "$ref": "#/components/schemas/one_IntegrationV2CreateRequest"
+              }
+            },
+            "text/plain;charset=UTF-8": {
+              "schema": {
+                "$ref": "#/components/schemas/one_IntegrationV2CreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Integration created successfully.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "SampleSuccessfulReturn": {
+                    "summary": "Example integration create response",
+                    "value": {
+                      "errors": [],
+                      "messages": [],
+                      "result": {
+                        "application": {
+                          "category": "Productivity",
+                          "display_name": "Google Workspace",
+                          "logo": "https://dash.cloudflare.com/v2/static/google_workspace.png"
+                        },
+                        "auth_method": {
+                          "display_name": "OAuth 2.0",
+                          "id": "oauth"
+                        },
+                        "authorization_link": {
+                          "components": {
+                            "client_id": "abc",
+                            "instance_name": "example"
+                          },
+                          "link": "https://example.cloudflare.com/authorize"
+                        },
+                        "created": "2025-01-01T00:00:00Z",
+                        "credentials_expiry": "2026-01-01T00:00:00Z",
+                        "dlp_profiles": [
+                          "e91a2360-da51-4fdf-9711-bcdecd462614"
+                        ],
+                        "health_details": [],
+                        "id": "019d2e6a-d995-7185-afbd-4feead9e42ec",
+                        "is_paused": false,
+                        "last_hydrated": "2025-04-10T08:30:00Z",
+                        "name": "My Google Workspace",
+                        "status": "Healthy",
+                        "updated": "2025-04-10T08:30:00Z",
+                        "use_cases": [
+                          {
+                            "description": "Discover and secure SaaS applications",
+                            "features": [
+                              {
+                                "description": "Automatically remediate security issues (requires write permissions)",
+                                "id": "auto_remediation",
+                                "is_enabled": true,
+                                "name": "Auto Remediation",
+                                "permissions": [
+                                  {
+                                    "display_name": "Manage users",
+                                    "scope": "https://www.googleapis.com/auth/admin.directory.user",
+                                    "status": "granted"
+                                  }
+                                ]
+                              }
+                            ],
+                            "id": "casb",
+                            "is_enabled": true,
+                            "name": "Cloud Access Security Broker",
+                            "permissions": [
+                              {
+                                "display_name": "Drive (Read Only)",
+                                "scope": "https://www.googleapis.com/auth/drive.readonly",
+                                "status": "granted"
+                              },
+                              {
+                                "display_name": "Gmail (Read Only)",
+                                "scope": "https://www.googleapis.com/auth/gmail.readonly",
+                                "status": "missing"
+                              }
+                            ]
+                          },
+                          {
+                            "description": "Protect against email-based threats",
+                            "features": [],
+                            "id": "ces",
+                            "is_enabled": false,
+                            "name": "Cloud Email Security",
+                            "permissions": []
+                          }
+                        ]
+                      },
+                      "success": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/one_IntegrationCreateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Integrations"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.casb.integrations",
+        "x-fern-sdk-method-name": "create",
+        "x-stability": "beta"
+      }
+    },
+    "/accounts/{account_id}/one/integrations/{id}": {
+      "delete": {
+        "operationId": "delete_integration_v2",
+        "summary": "Delete integration",
+        "description": "Delete an integration by soft-deleting it.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Integration ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Integration deleted successfully."
+          },
+          "400": {
+            "description": "Invalid request."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Integrations"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.casb.integrations",
+        "x-fern-sdk-method-name": "delete",
+        "x-stability": "beta"
+      },
+      "get": {
+        "operationId": "get_integration_v2",
+        "summary": "Get integration details",
+        "description": "Returns full integration details including use cases and permissions.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Integration ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Integration details.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "SampleSuccessfulReturn": {
+                    "summary": "Example integration detail response",
+                    "value": {
+                      "errors": [],
+                      "messages": [],
+                      "result": {
+                        "application": {
+                          "category": "Productivity",
+                          "display_name": "Google Workspace",
+                          "logo": "https://dash.cloudflare.com/v2/static/google_workspace.png"
+                        },
+                        "auth_method": {
+                          "display_name": "OAuth 2.0",
+                          "id": "oauth"
+                        },
+                        "authorization_link": {
+                          "components": {
+                            "client_id": "abc",
+                            "instance_name": "example"
+                          },
+                          "link": "https://example.cloudflare.com/authorize"
+                        },
+                        "created": "2025-01-01T00:00:00Z",
+                        "credentials_expiry": "2026-01-01T00:00:00Z",
+                        "dlp_profiles": [
+                          "e91a2360-da51-4fdf-9711-bcdecd462614"
+                        ],
+                        "health_details": [],
+                        "id": "019d2e6a-d995-7185-afbd-4feead9e42ec",
+                        "is_paused": false,
+                        "last_hydrated": "2025-04-10T08:30:00Z",
+                        "name": "My Google Workspace",
+                        "status": "Healthy",
+                        "updated": "2025-04-10T08:30:00Z",
+                        "use_cases": [
+                          {
+                            "description": "Discover and secure SaaS applications",
+                            "features": [
+                              {
+                                "description": "Automatically remediate security issues (requires write permissions)",
+                                "id": "auto_remediation",
+                                "is_enabled": true,
+                                "name": "Auto Remediation",
+                                "permissions": [
+                                  {
+                                    "display_name": "Manage users",
+                                    "scope": "https://www.googleapis.com/auth/admin.directory.user",
+                                    "status": "granted"
+                                  }
+                                ]
+                              }
+                            ],
+                            "id": "casb",
+                            "is_enabled": true,
+                            "name": "Cloud Access Security Broker",
+                            "permissions": [
+                              {
+                                "display_name": "Drive (Read Only)",
+                                "scope": "https://www.googleapis.com/auth/drive.readonly",
+                                "status": "granted"
+                              },
+                              {
+                                "display_name": "Gmail (Read Only)",
+                                "scope": "https://www.googleapis.com/auth/gmail.readonly",
+                                "status": "missing"
+                              }
+                            ]
+                          },
+                          {
+                            "description": "Protect against email-based threats",
+                            "features": [],
+                            "id": "ces",
+                            "is_enabled": false,
+                            "name": "Cloud Email Security",
+                            "permissions": []
+                          }
+                        ]
+                      },
+                      "success": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/one_IntegrationDetailResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Integration not found."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Integrations"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.casb.integrations",
+        "x-fern-sdk-method-name": "get",
+        "x-stability": "beta"
+      },
+      "patch": {
+        "operationId": "update_integration_v2",
+        "summary": "Update integration",
+        "description": "Updates an integration's name, permissions, DLP profiles, use cases, or credentials.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Integration ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "UpdateCredentials": {
+                  "summary": "Example credentials update request",
+                  "value": {
+                    "credentials": {
+                      "access_token": "new_access_token",
+                      "refresh_token": "new_refresh_token"
+                    }
+                  }
+                },
+                "UpdateFields": {
+                  "summary": "Example update integration request",
+                  "value": {
+                    "credentials": {
+                      "admin_email": "admin@corp.com"
+                    },
+                    "dlp_profiles": [
+                      "e91a2360-da51-4fdf-9711-bcdecd462614"
+                    ],
+                    "name": "My Updated Integration",
+                    "permissions": [
+                      "https://www.googleapis.com/auth/drive.readonly"
+                    ],
+                    "use_cases": [
+                      "casb",
+                      "ces"
+                    ]
+                  }
+                }
+              },
+              "schema": {
+                "$ref": "#/components/schemas/one_PatchedUpdateIntegrationV2Request"
+              }
+            },
+            "text/plain;charset=UTF-8": {
+              "schema": {
+                "$ref": "#/components/schemas/one_PatchedUpdateIntegrationV2Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Integration updated successfully.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "SampleSuccessfulReturn": {
+                    "summary": "Example integration update response",
+                    "value": {
+                      "errors": [],
+                      "messages": [],
+                      "result": {
+                        "application": {
+                          "category": "Productivity",
+                          "display_name": "Google Workspace",
+                          "logo": "https://dash.cloudflare.com/v2/static/google_workspace.png"
+                        },
+                        "auth_method": {
+                          "display_name": "OAuth 2.0",
+                          "id": "oauth"
+                        },
+                        "authorization_link": {
+                          "components": {
+                            "client_id": "abc",
+                            "instance_name": "example"
+                          },
+                          "link": "https://example.cloudflare.com/authorize"
+                        },
+                        "created": "2025-01-01T00:00:00Z",
+                        "credentials_expiry": "2026-01-01T00:00:00Z",
+                        "dlp_profiles": [
+                          "e91a2360-da51-4fdf-9711-bcdecd462614"
+                        ],
+                        "health_details": [],
+                        "id": "019d2e6a-d995-7185-afbd-4feead9e42ec",
+                        "is_paused": false,
+                        "last_hydrated": "2025-04-10T08:30:00Z",
+                        "name": "My Google Workspace",
+                        "status": "Healthy",
+                        "updated": "2025-04-10T08:30:00Z",
+                        "use_cases": [
+                          {
+                            "description": "Discover and secure SaaS applications",
+                            "features": [
+                              {
+                                "description": "Automatically remediate security issues (requires write permissions)",
+                                "id": "auto_remediation",
+                                "is_enabled": true,
+                                "name": "Auto Remediation",
+                                "permissions": [
+                                  {
+                                    "display_name": "Manage users",
+                                    "scope": "https://www.googleapis.com/auth/admin.directory.user",
+                                    "status": "granted"
+                                  }
+                                ]
+                              }
+                            ],
+                            "id": "casb",
+                            "is_enabled": true,
+                            "name": "Cloud Access Security Broker",
+                            "permissions": [
+                              {
+                                "display_name": "Drive (Read Only)",
+                                "scope": "https://www.googleapis.com/auth/drive.readonly",
+                                "status": "granted"
+                              },
+                              {
+                                "display_name": "Gmail (Read Only)",
+                                "scope": "https://www.googleapis.com/auth/gmail.readonly",
+                                "status": "missing"
+                              }
+                            ]
+                          },
+                          {
+                            "description": "Protect against email-based threats",
+                            "features": [],
+                            "id": "ces",
+                            "is_enabled": false,
+                            "name": "Cloud Email Security",
+                            "permissions": []
+                          }
+                        ]
+                      },
+                      "success": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/one_IntegrationUpdateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Integrations"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.casb.integrations",
+        "x-fern-sdk-method-name": "update",
+        "x-stability": "beta"
+      }
+    },
+    "/accounts/{account_id}/one/integrations/{id}/pause": {
+      "post": {
+        "operationId": "pause_integration_v2",
+        "summary": "Pause integration",
+        "description": "Pauses an integration, stopping all crawlers.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Integration ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Integration paused successfully.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "SampleSuccessfulReturn": {
+                    "summary": "Example integration pause response",
+                    "value": {
+                      "errors": [],
+                      "messages": [],
+                      "result": {
+                        "application": {
+                          "category": "Productivity",
+                          "display_name": "Google Workspace",
+                          "logo": "https://dash.cloudflare.com/v2/static/google_workspace.png"
+                        },
+                        "auth_method": {
+                          "display_name": "OAuth 2.0",
+                          "id": "oauth"
+                        },
+                        "authorization_link": {
+                          "components": {
+                            "client_id": "abc",
+                            "instance_name": "example"
+                          },
+                          "link": "https://example.cloudflare.com/authorize"
+                        },
+                        "created": "2025-01-01T00:00:00Z",
+                        "credentials_expiry": "2026-01-01T00:00:00Z",
+                        "dlp_profiles": [
+                          "e91a2360-da51-4fdf-9711-bcdecd462614"
+                        ],
+                        "health_details": [],
+                        "id": "019d2e6a-d995-7185-afbd-4feead9e42ec",
+                        "is_paused": true,
+                        "last_hydrated": "2025-04-10T08:30:00Z",
+                        "name": "My Google Workspace",
+                        "status": "Healthy",
+                        "updated": "2025-04-10T08:30:00Z",
+                        "use_cases": [
+                          {
+                            "description": "Discover and secure SaaS applications",
+                            "features": [
+                              {
+                                "description": "Automatically remediate security issues (requires write permissions)",
+                                "id": "auto_remediation",
+                                "is_enabled": true,
+                                "name": "Auto Remediation",
+                                "permissions": [
+                                  {
+                                    "display_name": "Manage users",
+                                    "scope": "https://www.googleapis.com/auth/admin.directory.user",
+                                    "status": "granted"
+                                  }
+                                ]
+                              }
+                            ],
+                            "id": "casb",
+                            "is_enabled": true,
+                            "name": "Cloud Access Security Broker",
+                            "permissions": [
+                              {
+                                "display_name": "Drive (Read Only)",
+                                "scope": "https://www.googleapis.com/auth/drive.readonly",
+                                "status": "granted"
+                              },
+                              {
+                                "display_name": "Gmail (Read Only)",
+                                "scope": "https://www.googleapis.com/auth/gmail.readonly",
+                                "status": "missing"
+                              }
+                            ]
+                          },
+                          {
+                            "description": "Protect against email-based threats",
+                            "features": [],
+                            "id": "ces",
+                            "is_enabled": false,
+                            "name": "Cloud Email Security",
+                            "permissions": []
+                          }
+                        ]
+                      },
+                      "success": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/one_IntegrationPauseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Integrations"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.casb.integrations",
+        "x-fern-sdk-method-name": "pause",
+        "x-stability": "beta"
+      }
+    },
+    "/accounts/{account_id}/one/integrations/{id}/resume": {
+      "post": {
+        "operationId": "resume_integration_v2",
+        "summary": "Resume integration",
+        "description": "Resumes a paused integration, restarting crawlers.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Integration ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Integration resumed successfully.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "SampleSuccessfulReturn": {
+                    "summary": "Example integration resume response",
+                    "value": {
+                      "errors": [],
+                      "messages": [],
+                      "result": {
+                        "application": {
+                          "category": "Productivity",
+                          "display_name": "Google Workspace",
+                          "logo": "https://dash.cloudflare.com/v2/static/google_workspace.png"
+                        },
+                        "auth_method": {
+                          "display_name": "OAuth 2.0",
+                          "id": "oauth"
+                        },
+                        "authorization_link": {
+                          "components": {
+                            "client_id": "abc",
+                            "instance_name": "example"
+                          },
+                          "link": "https://example.cloudflare.com/authorize"
+                        },
+                        "created": "2025-01-01T00:00:00Z",
+                        "credentials_expiry": "2026-01-01T00:00:00Z",
+                        "dlp_profiles": [
+                          "e91a2360-da51-4fdf-9711-bcdecd462614"
+                        ],
+                        "health_details": [],
+                        "id": "019d2e6a-d995-7185-afbd-4feead9e42ec",
+                        "is_paused": false,
+                        "last_hydrated": "2025-04-10T08:30:00Z",
+                        "name": "My Google Workspace",
+                        "status": "Healthy",
+                        "updated": "2025-04-10T08:30:00Z",
+                        "use_cases": [
+                          {
+                            "description": "Discover and secure SaaS applications",
+                            "features": [
+                              {
+                                "description": "Automatically remediate security issues (requires write permissions)",
+                                "id": "auto_remediation",
+                                "is_enabled": true,
+                                "name": "Auto Remediation",
+                                "permissions": [
+                                  {
+                                    "display_name": "Manage users",
+                                    "scope": "https://www.googleapis.com/auth/admin.directory.user",
+                                    "status": "granted"
+                                  }
+                                ]
+                              }
+                            ],
+                            "id": "casb",
+                            "is_enabled": true,
+                            "name": "Cloud Access Security Broker",
+                            "permissions": [
+                              {
+                                "display_name": "Drive (Read Only)",
+                                "scope": "https://www.googleapis.com/auth/drive.readonly",
+                                "status": "granted"
+                              },
+                              {
+                                "display_name": "Gmail (Read Only)",
+                                "scope": "https://www.googleapis.com/auth/gmail.readonly",
+                                "status": "missing"
+                              }
+                            ]
+                          },
+                          {
+                            "description": "Protect against email-based threats",
+                            "features": [],
+                            "id": "ces",
+                            "is_enabled": false,
+                            "name": "Cloud Email Security",
+                            "permissions": []
+                          }
+                        ]
+                      },
+                      "success": true
+                    }
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/one_IntegrationResumeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request."
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Integrations"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.casb.integrations",
+        "x-fern-sdk-method-name": "resume",
+        "x-stability": "beta"
+      }
+    },
+    "/accounts/{account_id}/resource-library/applications": {
+      "get": {
+        "operationId": "getResourceLibraryApplications",
+        "summary": "List applications",
+        "description": "List the applications available to an account, both the applications Cloudflare\ncurates and the custom applications the account has defined.\n\nResults are paginated. Use `filter` and `search` to narrow the list, `order_by` to\nsort it, and `fields` to reduce each result to only the properties you need.\n\nThe authenticated principal must have access to the account identified by\n`account_id`.\n",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Account ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "023e105f4ecef8ad9ca31a8372d0c353"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter applications using key:value format. Supported filter keys:\n- name: Filter by application name (e.g., name:HR)\n- id: Filter by application ID (e.g., id:498)\n- human_id: Filter by human-readable ID (e.g., human_id:HR)\n- hostname: Filter by hostname or support domain (e.g., hostname:portal.example.com)\n- source: Filter by application source name (e.g., source:cloudflare)\n- ip_subnet: Filter by IP subnet using CIDR containment \u2014 returns applications where any stored subnet contains the search value (e.g., ip_subnet:10.0.1.5/32 matches apps with 10.0.0.0/16)\n- category_id: Filter by category ID (e.g., category_id:12).\n- category_name: Filter by category name (e.g., category_name:HR).\n- supported: Filter by supported Cloudflare product (e.g., supported:ACCESS). Values: GATEWAY, ACCESS, CASB.\n- review_status: Filter by the account's Gateway review status. Values: approved, unapproved, in_review, unreviewed.\n.\n",
+            "schema": {
+              "type": "string"
+            },
+            "example": "filter=name:HR&filter=source:cloudflare&filter=id:498"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit of number of results to return (max 250).",
+            "schema": {
+              "type": "integer",
+              "default": 25
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of results to return.",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "Order results using field:direction format. Supported fields are name, id, human_id,\ncategory_id, application_type, application_confidence_score, and gen_ai_score.\nSupported directions are asc and desc. Ignored when search is provided; results are\nranked by relevance instead.\n",
+            "schema": {
+              "type": "string"
+            },
+            "example": "name:asc"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Fuzzy search across application name and hostnames. Results are ranked by relevance. Must be between 2 and 200 characters. Can be combined with filter parameters.",
+            "schema": {
+              "type": "string",
+              "maxLength": 200,
+              "minLength": 2
+            },
+            "example": "MyNewApp"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Return only the listed properties on each application, as a comma-separated list.\nUse this to keep responses small when you only need part of each application \u2014 for\nexample populating a picker with `fields=id,name` instead of downloading every\nhostname and IP subnet.\n\nOmit this parameter to receive the full application object.\n\n`id` is always returned.\n\nSelectable properties: `id`, `name`, `human_id`, `version`, `hostnames`,\n`support_domains`, `ip_subnets`, `port_protocols`, `supported`, `gen_ai_score`,\n`application_confidence_score`, `created_at`, `updated_at`, `review_status`.\n\nUnknown or empty property names return `400`.\n",
+            "schema": {
+              "type": "string"
+            },
+            "example": "id,name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get the application response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_get_applications_response"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The authenticated principal does not have access to the requested account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Application review statuses could not be retrieved.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Application review statuses were requested but are not available.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Get application response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Applications"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "accounts.applications.get",
+        "x-fern-sdk-method-name": "applications"
+      },
+      "post": {
+        "operationId": "createResourceLibraryApplication",
+        "summary": "Create application",
+        "description": "Create a custom application for an account.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Account ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "023e105f4ecef8ad9ca31a8372d0c353"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/alexandria_create_application_request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Create application response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_get_application_response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Create application response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Applications"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "accounts.applications",
+        "x-fern-sdk-method-name": "create"
+      }
+    },
+    "/accounts/{account_id}/resource-library/applications/{id}": {
+      "delete": {
+        "operationId": "deleteResourceLibraryApplication",
+        "summary": "Delete application",
+        "description": "Delete a custom application and all of its versions. Deletion is rejected when other resources reference the application.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Account ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "023e105f4ecef8ad9ca31a8372d0c353"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Application ID.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/alexandria_application_id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete application response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_delete_application_response"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The application is referenced by other resources and cannot be deleted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_delete_application_conflict_response"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Application deletion could not be safely completed because a required validation was unavailable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Delete application response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Applications"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "accounts.applications",
+        "x-fern-sdk-method-name": "delete"
+      },
+      "get": {
+        "operationId": "getResourceLibraryApplicationById",
+        "summary": "Get application",
+        "description": "Get application by ID.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Account ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "023e105f4ecef8ad9ca31a8372d0c353"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Application ID.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/alexandria_application_id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get the application response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_get_application_response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Get application by id response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Applications"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "accounts.applications.get.by",
+        "x-fern-sdk-method-name": "id"
+      },
+      "patch": {
+        "operationId": "updateResourceLibraryApplication",
+        "summary": "Update application",
+        "description": "Replace the network matchers for a custom application and create a new version.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Account ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "023e105f4ecef8ad9ca31a8372d0c353"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Application ID.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/alexandria_application_id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/alexandria_update_application_request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Update application response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_get_application_response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Update application response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Applications"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "accounts.applications",
+        "x-fern-sdk-method-name": "update"
+      }
+    },
+    "/accounts/{account_id}/resource-library/categories": {
+      "get": {
+        "operationId": "getResourceLibraryCategories",
+        "summary": "List application categories",
+        "description": "List application categories.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Account ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "023e105f4ecef8ad9ca31a8372d0c353"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit of number of results to return.",
+            "schema": {
+              "type": "integer",
+              "default": 25
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset of results to return.",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get all application categories response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_get_categories_response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Get application categories response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Category"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "accounts.categories.get",
+        "x-fern-sdk-method-name": "categories"
+      }
+    },
+    "/accounts/{account_id}/resource-library/categories/{id}": {
+      "get": {
+        "operationId": "getResourceLibraryCategoryById",
+        "summary": "Get application category",
+        "description": "Get application category by ID.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Account ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "023e105f4ecef8ad9ca31a8372d0c353"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Application category ID.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/alexandria_category_id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get application category by id response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_get_category_response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Get application category by id response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/alexandria_api_response_common_failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Category"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "accounts.categories.get.by",
+        "x-fern-sdk-method-name": "id"
+      }
+    },
     "/accounts/{account_id}/teamnet/routes": {
       "get": {
         "operationId": "tunnel-route-list-tunnel-routes",
@@ -20975,6 +23120,127 @@
         "x-forge-hidden": true,
         "x-forge-require-confirmation": "This operation wipes risk-scoring history."
       }
+    },
+    "/zones/{zone_id}/devices/policy/certificates": {
+      "get": {
+        "operationId": "devices-get-policy-certificates",
+        "summary": "Get device certificate provisioning status",
+        "description": "Fetches device certificate provisioning.",
+        "parameters": [
+          {
+            "name": "zone_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/teams-devices_identifier"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get WARP client provision certificates enabled status response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teams-devices_devices_policy_certificates_single"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Get WARP client provision certificates enabled status failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teams-devices_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_email": [],
+            "api_key": [],
+            "api_token": []
+          }
+        ],
+        "tags": [
+          "Devices"
+        ],
+        "x-api-token-group": [
+          "SSL and Certificates Write",
+          "SSL and Certificates Read"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
+        "x-fern-sdk-group-name": "zero-trust.devices.profiles.default.certificates",
+        "x-fern-sdk-method-name": "get"
+      },
+      "patch": {
+        "operationId": "devices-update-policy-certificates",
+        "summary": "Update device certificate provisioning status",
+        "description": "Enable Zero Trust Clients to provision a certificate, containing a x509 subject, and referenced by Access device posture policies when the client visits MTLS protected domains. This facilitates device posture without a WARP session.",
+        "parameters": [
+          {
+            "name": "zone_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/teams-devices_identifier"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/teams-devices_devices_policy_certificates"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Update a zone to toggle permission for devices to provision certificates response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teams-devices_devices_policy_certificates_single"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Patch a zone to toggle permission for devices to provision certificates failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/teams-devices_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_email": [],
+            "api_key": [],
+            "api_token": []
+          }
+        ],
+        "tags": [
+          "Devices"
+        ],
+        "x-api-token-group": [
+          "SSL and Certificates Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-ignore": true,
+        "x-fern-sdk-group-name": "zero-trust.devices.profiles.default.certificates",
+        "x-fern-sdk-method-name": "update"
+      }
     }
   },
   "components": {
@@ -21306,6 +23572,769 @@
       }
     },
     "schemas": {
+      "alexandria_api-response-collection": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/alexandria_api-response-common"
+          },
+          {
+            "properties": {
+              "result_info": {
+                "type": "object",
+                "properties": {
+                  "count": {
+                    "description": "Returns the total number of results for the requested service.",
+                    "type": "number",
+                    "example": 1
+                  },
+                  "page": {
+                    "description": "Returns the current page within paginated list of results.",
+                    "type": "number",
+                    "example": 1
+                  },
+                  "per_page": {
+                    "description": "Returns the number of results per page of results.",
+                    "type": "number",
+                    "example": 20
+                  },
+                  "total_count": {
+                    "description": "Returns the total results available without any search parameters.",
+                    "type": "number",
+                    "example": 2000
+                  }
+                }
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "alexandria_api-response-common": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "$ref": "#/components/schemas/alexandria_messages"
+          },
+          "messages": {
+            "$ref": "#/components/schemas/alexandria_messages"
+          },
+          "success": {
+            "description": "Indicates whether the API call was successful.",
+            "type": "boolean",
+            "example": true,
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "success",
+          "errors",
+          "messages"
+        ]
+      },
+      "alexandria_api_response_common_failure": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "example": [
+              {
+                "code": 7003,
+                "message": "No route for the URI"
+              }
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/alexandria_messages"
+              }
+            ],
+            "minLength": 1
+          },
+          "messages": {
+            "example": [],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/alexandria_messages"
+              }
+            ]
+          },
+          "result": {
+            "type": "object",
+            "enum": [
+              null
+            ],
+            "nullable": true
+          },
+          "success": {
+            "description": "Indicates whether the API call was successful.",
+            "type": "boolean",
+            "example": false,
+            "enum": [
+              false
+            ]
+          }
+        },
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ]
+      },
+      "alexandria_application": {
+        "type": "object",
+        "properties": {
+          "application_confidence_score": {
+            "$ref": "#/components/schemas/alexandria_application_confidence_score"
+          },
+          "application_score_composition": {
+            "$ref": "#/components/schemas/alexandria_application_score_composition"
+          },
+          "application_source": {
+            "$ref": "#/components/schemas/alexandria_application_source"
+          },
+          "application_type": {
+            "$ref": "#/components/schemas/alexandria_application_type"
+          },
+          "application_type_description": {
+            "$ref": "#/components/schemas/alexandria_application_type_description"
+          },
+          "category_id": {
+            "$ref": "#/components/schemas/alexandria_category_id"
+          },
+          "created_at": {
+            "$ref": "#/components/schemas/alexandria_application_created_at"
+          },
+          "gen_ai_score": {
+            "$ref": "#/components/schemas/alexandria_application_gen_ai_score"
+          },
+          "hostnames": {
+            "$ref": "#/components/schemas/alexandria_application_hostnames"
+          },
+          "human_id": {
+            "$ref": "#/components/schemas/alexandria_application_human_id"
+          },
+          "id": {
+            "$ref": "#/components/schemas/alexandria_application_id"
+          },
+          "ip_subnets": {
+            "$ref": "#/components/schemas/alexandria_application_ip_subnets"
+          },
+          "name": {
+            "$ref": "#/components/schemas/alexandria_application_name"
+          },
+          "port_protocols": {
+            "$ref": "#/components/schemas/alexandria_application_port_protocols"
+          },
+          "support_domains": {
+            "$ref": "#/components/schemas/alexandria_application_support_domains"
+          },
+          "supported": {
+            "$ref": "#/components/schemas/alexandria_application_supported"
+          },
+          "updated_at": {
+            "$ref": "#/components/schemas/alexandria_application_updated_at"
+          },
+          "version": {
+            "$ref": "#/components/schemas/alexandria_application_version"
+          }
+        },
+        "required": [
+          "application_source",
+          "application_type",
+          "category_id",
+          "application_type_description",
+          "gen_ai_score",
+          "application_confidence_score",
+          "created_at",
+          "supported",
+          "hostnames",
+          "human_id",
+          "id",
+          "ip_subnets",
+          "name",
+          "port_protocols",
+          "support_domains",
+          "updated_at",
+          "version"
+        ]
+      },
+      "alexandria_application_confidence_score": {
+        "description": "Confidence score for the application. Returns -1 when no score is available.",
+        "type": "number",
+        "format": "float",
+        "example": 0.92
+      },
+      "alexandria_application_created_at": {
+        "description": "Returns the application creation time.",
+        "type": "string",
+        "example": "2025-01-01T00:00:00Z"
+      },
+      "alexandria_application_gen_ai_score": {
+        "description": "GenAI score for the application. Returns -1 when no score is available.",
+        "type": "number",
+        "format": "float",
+        "example": 1.5
+      },
+      "alexandria_application_hostnames": {
+        "description": "Hostnames matched by the application.",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "example": [
+          "example.com",
+          "foo.com"
+        ],
+        "x-stainless-collection-type": "set"
+      },
+      "alexandria_application_human_id": {
+        "description": "Returns the human readable ID.",
+        "type": "string",
+        "example": "HR"
+      },
+      "alexandria_application_id": {
+        "description": "Returns the application ID.",
+        "type": "integer",
+        "format": "int64",
+        "example": 498,
+        "maximum": 4294967295,
+        "minimum": 0
+      },
+      "alexandria_application_ip_subnets": {
+        "description": "IP subnets for this application. Custom application create and update requests accept IPv4 prefix lengths /8 through /32 and IPv6 prefix lengths /32 through /128.",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "example": [
+          "192.168.1.0/24",
+          "2001:db8::/48"
+        ],
+        "x-stainless-collection-type": "set"
+      },
+      "alexandria_application_list_item": {
+        "description": "Describes one application in a list response. This endpoint returns every property below unless the `fields` query parameter narrows the response, so treat all of them except `id` as optional.",
+        "type": "object",
+        "properties": {
+          "application_confidence_score": {
+            "$ref": "#/components/schemas/alexandria_application_confidence_score"
+          },
+          "application_score_composition": {
+            "$ref": "#/components/schemas/alexandria_application_score_composition"
+          },
+          "application_source": {
+            "$ref": "#/components/schemas/alexandria_application_source"
+          },
+          "application_type": {
+            "$ref": "#/components/schemas/alexandria_application_type"
+          },
+          "application_type_description": {
+            "$ref": "#/components/schemas/alexandria_application_type_description"
+          },
+          "category_id": {
+            "$ref": "#/components/schemas/alexandria_category_id"
+          },
+          "created_at": {
+            "$ref": "#/components/schemas/alexandria_application_created_at"
+          },
+          "gen_ai_score": {
+            "$ref": "#/components/schemas/alexandria_application_gen_ai_score"
+          },
+          "hostnames": {
+            "$ref": "#/components/schemas/alexandria_application_hostnames"
+          },
+          "human_id": {
+            "$ref": "#/components/schemas/alexandria_application_human_id"
+          },
+          "id": {
+            "$ref": "#/components/schemas/alexandria_application_id"
+          },
+          "ip_subnets": {
+            "$ref": "#/components/schemas/alexandria_application_ip_subnets"
+          },
+          "name": {
+            "$ref": "#/components/schemas/alexandria_application_name"
+          },
+          "port_protocols": {
+            "$ref": "#/components/schemas/alexandria_application_port_protocols"
+          },
+          "review_status": {
+            "description": "The account-specific Gateway review status. Applications with no assigned review status are returned as `unreviewed`.",
+            "type": "string",
+            "enum": [
+              "approved",
+              "unapproved",
+              "in_review",
+              "unreviewed"
+            ]
+          },
+          "support_domains": {
+            "$ref": "#/components/schemas/alexandria_application_support_domains"
+          },
+          "supported": {
+            "$ref": "#/components/schemas/alexandria_application_supported"
+          },
+          "updated_at": {
+            "$ref": "#/components/schemas/alexandria_application_updated_at"
+          },
+          "version": {
+            "$ref": "#/components/schemas/alexandria_application_version"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "alexandria_application_name": {
+        "description": "Returns the application name.",
+        "type": "string",
+        "example": "HR"
+      },
+      "alexandria_application_port_protocols": {
+        "description": "Port and protocol pairs matched by the application.",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "example": [
+          "tcp/80",
+          "tcp/443"
+        ],
+        "x-stainless-collection-type": "set"
+      },
+      "alexandria_application_reference": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The public identifier of the referencing resource.",
+            "type": "string",
+            "example": "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+          },
+          "name": {
+            "description": "The name of the referencing resource.",
+            "type": "string",
+            "example": "Allow Spotify"
+          },
+          "type": {
+            "description": "The resource type, such as Rule or Profile. Additional types may be returned.",
+            "type": "string",
+            "example": "Rule"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "type"
+        ]
+      },
+      "alexandria_application_score_composition": {
+        "description": "Returns the score composition breakdown for the application.",
+        "type": "object",
+        "example": {
+          "categories": [
+            {
+              "confidence": 0.95,
+              "name": "Security"
+            }
+          ],
+          "plan": "free"
+        },
+        "nullable": true
+      },
+      "alexandria_application_source": {
+        "description": "Returns the application source.",
+        "type": "string",
+        "example": "cloudflare"
+      },
+      "alexandria_application_support_domains": {
+        "description": "Support domains matched by the application.",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "example": [
+          "example.com",
+          "foo.com"
+        ],
+        "x-stainless-collection-type": "set"
+      },
+      "alexandria_application_supported": {
+        "description": "Cloudflare products that support this application.",
+        "type": "array",
+        "items": {
+          "enum": [
+            "GATEWAY",
+            "ACCESS",
+            "CASB"
+          ],
+          "type": "string"
+        },
+        "example": [
+          "GATEWAY",
+          "ACCESS"
+        ],
+        "x-stainless-collection-type": "set"
+      },
+      "alexandria_application_type": {
+        "description": "Returns the application type.",
+        "type": "string",
+        "example": "Human Resources"
+      },
+      "alexandria_application_type_description": {
+        "description": "Returns the application type description.",
+        "type": "string",
+        "example": "Applications used to manage employees and workforce tools."
+      },
+      "alexandria_application_updated_at": {
+        "description": "Returns the application update time.",
+        "type": "string",
+        "example": "2025-01-01T00:00:00Z"
+      },
+      "alexandria_application_version": {
+        "description": "Returns the application version.",
+        "type": "string",
+        "example": "2025-01-01T00:00:00Z"
+      },
+      "alexandria_applications": {
+        "description": "Returns the list of applications.",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/alexandria_application_list_item"
+        }
+      },
+      "alexandria_categories": {
+        "description": "Returns the list of categories.",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/alexandria_category"
+        }
+      },
+      "alexandria_category": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "$ref": "#/components/schemas/alexandria_category_created_at"
+          },
+          "description": {
+            "$ref": "#/components/schemas/alexandria_category_description"
+          },
+          "id": {
+            "$ref": "#/components/schemas/alexandria_category_id"
+          },
+          "name": {
+            "$ref": "#/components/schemas/alexandria_category_name"
+          }
+        },
+        "required": [
+          "created_at",
+          "description",
+          "id",
+          "name"
+        ]
+      },
+      "alexandria_category_created_at": {
+        "description": "Returns the category creation time.",
+        "type": "string",
+        "example": "2025-01-01T00:00:00Z"
+      },
+      "alexandria_category_description": {
+        "description": "Returns the category description.",
+        "type": "string",
+        "example": "Category description"
+      },
+      "alexandria_category_id": {
+        "description": "Returns the category ID.",
+        "type": "integer",
+        "format": "int64",
+        "example": 12,
+        "maximum": 4294967295,
+        "minimum": 1
+      },
+      "alexandria_category_name": {
+        "description": "Returns the category name.",
+        "type": "string",
+        "example": "Category name"
+      },
+      "alexandria_create_application_request": {
+        "description": "Defines a custom application. At least one hostname or IP subnet is required.\nSupport domains and port/protocol pairs do not satisfy this requirement.\n",
+        "type": "object",
+        "properties": {
+          "category_id": {
+            "$ref": "#/components/schemas/alexandria_category_id"
+          },
+          "hostnames": {
+            "$ref": "#/components/schemas/alexandria_application_hostnames"
+          },
+          "human_id": {
+            "$ref": "#/components/schemas/alexandria_application_human_id"
+          },
+          "ip_subnets": {
+            "$ref": "#/components/schemas/alexandria_application_ip_subnets"
+          },
+          "name": {
+            "$ref": "#/components/schemas/alexandria_application_name"
+          },
+          "port_protocols": {
+            "$ref": "#/components/schemas/alexandria_application_port_protocols"
+          },
+          "support_domains": {
+            "$ref": "#/components/schemas/alexandria_application_support_domains"
+          }
+        },
+        "anyOf": [
+          {
+            "properties": {
+              "hostnames": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/alexandria_application_hostnames"
+                  },
+                  {
+                    "items": {
+                      "minLength": 1,
+                      "pattern": ".*\\S.*",
+                      "type": "string"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "hostnames"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "ip_subnets": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/alexandria_application_ip_subnets"
+                  },
+                  {
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "ip_subnets"
+            ],
+            "type": "object"
+          }
+        ],
+        "required": [
+          "name",
+          "human_id",
+          "category_id"
+        ]
+      },
+      "alexandria_delete_application_conflict_response": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "code": {
+                  "type": "integer",
+                  "minimum": 1000
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Application is referenced by other resources"
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "references": {
+                      "description": "The complete list of resources in the account that reference the application.",
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/alexandria_application_reference"
+                      },
+                      "minItems": 1
+                    }
+                  },
+                  "required": [
+                    "references"
+                  ]
+                }
+              },
+              "required": [
+                "code",
+                "message",
+                "meta"
+              ],
+              "type": "object"
+            },
+            "maxItems": 1,
+            "minItems": 1
+          },
+          "messages": {
+            "$ref": "#/components/schemas/alexandria_messages"
+          },
+          "result": {
+            "type": "object",
+            "enum": [
+              null
+            ],
+            "nullable": true
+          },
+          "success": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          }
+        },
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ]
+      },
+      "alexandria_delete_application_response": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/alexandria_api-response-common"
+          },
+          {
+            "properties": {
+              "result": {
+                "type": "object",
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
+            },
+            "required": [
+              "result"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "alexandria_get_application_response": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/alexandria_api-response-common"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/alexandria_application"
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "alexandria_get_applications_response": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/alexandria_api-response-collection"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/alexandria_applications"
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "alexandria_get_categories_response": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/alexandria_api-response-common"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/alexandria_categories"
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "alexandria_get_category_response": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/alexandria_api-response-common"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/alexandria_category"
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "alexandria_messages": {
+        "type": "array",
+        "items": {
+          "properties": {
+            "code": {
+              "type": "integer",
+              "minimum": 1000
+            },
+            "documentation_url": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "source": {
+              "type": "object",
+              "properties": {
+                "pointer": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "type": "object",
+          "uniqueItems": true
+        },
+        "example": []
+      },
+      "alexandria_update_application_request": {
+        "description": "Update the network matchers for the application. The service preserves omitted\nmatcher lists; send an empty array to clear a list. The resulting application must\ncontain at least one hostname or IP subnet. Support domains and port/protocol pairs\ndo not satisfy this requirement.\n",
+        "type": "object",
+        "properties": {
+          "hostnames": {
+            "$ref": "#/components/schemas/alexandria_application_hostnames"
+          },
+          "ip_subnets": {
+            "$ref": "#/components/schemas/alexandria_application_ip_subnets"
+          },
+          "port_protocols": {
+            "$ref": "#/components/schemas/alexandria_application_port_protocols"
+          },
+          "support_domains": {
+            "$ref": "#/components/schemas/alexandria_application_support_domains"
+          }
+        }
+      },
       "digital-experience-monitoring_account_identifier": {
         "description": "Unique identifier linked to an account.",
         "type": "string",
@@ -25361,6 +28390,1469 @@
           }
         ]
       },
+      "one_ApplicationDetail": {
+        "description": "Full application detail for onboarding UI.",
+        "type": "object",
+        "properties": {
+          "auth_methods": {
+            "description": "Available authentication methods.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_AuthMethod"
+            }
+          },
+          "category": {
+            "description": "Vendor category.",
+            "type": "string"
+          },
+          "description": {
+            "description": "Brief description.",
+            "type": "string"
+          },
+          "display_name": {
+            "description": "Human-readable vendor name.",
+            "type": "string"
+          },
+          "dlp_enabled": {
+            "description": "Whether DLP scanning is supported.",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Vendor identifier.\n\n* `ANTHROPIC` - ANTHROPIC\n* `AWS` - AWS\n* `BITBUCKET` - BITBUCKET\n* `BOX` - BOX\n* `CONFLUENCE` - CONFLUENCE\n* `DROPBOX` - DROPBOX\n* `GITHUB` - GITHUB\n* `GOOGLE_CLOUD_PLATFORM` - GOOGLE_CLOUD_PLATFORM\n* `GOOGLE_WORKSPACE` - GOOGLE_WORKSPACE\n* `JIRA` - JIRA\n* `MICROSOFT_INTERNAL` - MICROSOFT_INTERNAL\n* `OPENAI` - OPENAI\n* `SALESFORCE` - SALESFORCE\n* `SERVICENOW` - SERVICENOW\n* `SLACK` - SLACK",
+            "type": "string",
+            "enum": [
+              "ANTHROPIC",
+              "AWS",
+              "BITBUCKET",
+              "BOX",
+              "CONFLUENCE",
+              "DROPBOX",
+              "GITHUB",
+              "GOOGLE_CLOUD_PLATFORM",
+              "GOOGLE_WORKSPACE",
+              "JIRA",
+              "MICROSOFT_INTERNAL",
+              "OPENAI",
+              "SALESFORCE",
+              "SERVICENOW",
+              "SLACK"
+            ]
+          },
+          "instructions": {
+            "description": "Setup instructions for the user.",
+            "type": "string",
+            "nullable": true
+          },
+          "logo": {
+            "description": "Logo path.",
+            "type": "string",
+            "nullable": true
+          },
+          "use_cases": {
+            "description": "Use cases with full scope details.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_UseCaseDetail"
+            }
+          }
+        },
+        "required": [
+          "auth_methods",
+          "category",
+          "description",
+          "display_name",
+          "dlp_enabled",
+          "id",
+          "instructions",
+          "logo",
+          "use_cases"
+        ]
+      },
+      "one_ApplicationDetailResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "List of errors.",
+            "type": "array",
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "default": []
+          },
+          "messages": {
+            "description": "List of messages.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "result": {
+            "description": "The requested item.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/one_ApplicationDetail"
+              }
+            ]
+          },
+          "success": {
+            "description": "Whether the request succeeded.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "result",
+          "success"
+        ]
+      },
+      "one_ApplicationList": {
+        "description": "Application item in list response.",
+        "type": "object",
+        "properties": {
+          "auth_methods": {
+            "description": "Available auth methods.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_AuthMethodSummary"
+            }
+          },
+          "category": {
+            "description": "Vendor category (e.g. Productivity, AI).",
+            "type": "string"
+          },
+          "description": {
+            "description": "Brief description of the integration.",
+            "type": "string"
+          },
+          "display_name": {
+            "description": "Human-readable vendor name.",
+            "type": "string"
+          },
+          "dlp_enabled": {
+            "description": "Whether DLP scanning is supported.",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Vendor identifier (e.g. microsoft_internal, google_workspace).\n\n* `ANTHROPIC` - ANTHROPIC\n* `AWS` - AWS\n* `BITBUCKET` - BITBUCKET\n* `BOX` - BOX\n* `CONFLUENCE` - CONFLUENCE\n* `DROPBOX` - DROPBOX\n* `GITHUB` - GITHUB\n* `GOOGLE_CLOUD_PLATFORM` - GOOGLE_CLOUD_PLATFORM\n* `GOOGLE_WORKSPACE` - GOOGLE_WORKSPACE\n* `JIRA` - JIRA\n* `MICROSOFT_INTERNAL` - MICROSOFT_INTERNAL\n* `OPENAI` - OPENAI\n* `SALESFORCE` - SALESFORCE\n* `SERVICENOW` - SERVICENOW\n* `SLACK` - SLACK",
+            "type": "string",
+            "enum": [
+              "ANTHROPIC",
+              "AWS",
+              "BITBUCKET",
+              "BOX",
+              "CONFLUENCE",
+              "DROPBOX",
+              "GITHUB",
+              "GOOGLE_CLOUD_PLATFORM",
+              "GOOGLE_WORKSPACE",
+              "JIRA",
+              "MICROSOFT_INTERNAL",
+              "OPENAI",
+              "SALESFORCE",
+              "SERVICENOW",
+              "SLACK"
+            ]
+          },
+          "logo": {
+            "description": "Logo path.",
+            "type": "string",
+            "nullable": true
+          },
+          "permissions": {
+            "description": "All permissions with severity.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_Permission"
+            }
+          },
+          "supported_environments": {
+            "description": "Environments this vendor supports (standard, fedramp).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "use_cases": {
+            "description": "Supported use cases.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_UseCaseSummary"
+            }
+          }
+        },
+        "required": [
+          "auth_methods",
+          "category",
+          "description",
+          "display_name",
+          "dlp_enabled",
+          "id",
+          "logo",
+          "permissions",
+          "supported_environments",
+          "use_cases"
+        ]
+      },
+      "one_AuthConfig": {
+        "description": "OAuth configuration for setup flows that use OAuth.",
+        "type": "object",
+        "properties": {
+          "authorization_url": {
+            "description": "Full OAuth authorization URL with query parameters.",
+            "type": "string",
+            "nullable": true
+          },
+          "client_id": {
+            "description": "OAuth client ID.",
+            "type": "string",
+            "nullable": true
+          },
+          "requires_pkce": {
+            "description": "Whether PKCE is required.",
+            "type": "boolean"
+          },
+          "scopes": {
+            "description": "OAuth scopes to request.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "url_placeholders": {
+            "description": "Placeholders in authorization URL that frontend must fill.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "authorization_url",
+          "client_id",
+          "requires_pkce",
+          "scopes",
+          "url_placeholders"
+        ]
+      },
+      "one_AuthMethod": {
+        "description": "Authentication method available for a vendor.",
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "description": "Human-readable auth method name.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Auth method identifier.",
+            "type": "string"
+          },
+          "is_default": {
+            "description": "Whether this is the default auth method.",
+            "type": "boolean"
+          },
+          "supported_environments": {
+            "description": "Environments this auth method supports.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "display_name",
+          "id",
+          "is_default",
+          "supported_environments"
+        ]
+      },
+      "one_AuthMethodDetail": {
+        "description": "Detailed auth method info including credentials schema and instructions.",
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "description": "Human-readable auth method name.",
+            "type": "string"
+          },
+          "human_interaction_required": {
+            "description": "Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction).",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Auth method identifier.",
+            "type": "string"
+          },
+          "instructions": {
+            "description": "Step-by-step instructions for obtaining credentials.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/one_Instructions"
+              }
+            ]
+          },
+          "payload_example": {
+            "description": "Example credentials payload with placeholder values.",
+            "type": "object",
+            "additionalProperties": true,
+            "nullable": true
+          },
+          "payload_schema": {
+            "description": "JSON Schema for the credentials object in POST /v2/integrations request.",
+            "type": "object",
+            "additionalProperties": true,
+            "nullable": true
+          },
+          "redirect_url": {
+            "description": "OAuth redirect URL for vendors requiring human interaction.",
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "display_name",
+          "human_interaction_required",
+          "id",
+          "instructions",
+          "payload_example",
+          "payload_schema",
+          "redirect_url"
+        ]
+      },
+      "one_AuthMethodSummary": {
+        "description": "Auth method summary for list endpoint.",
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "description": "Human-readable auth method name.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Auth method identifier.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "display_name",
+          "id"
+        ]
+      },
+      "one_DynamicContent": {
+        "description": "Dynamic content for instruction/form_input steps.",
+        "type": "object",
+        "properties": {
+          "label": {
+            "description": "Display label.",
+            "type": "string"
+          },
+          "type": {
+            "description": "Content type.\n\n* `copy_block` - copy_block\n* `external_link` - external_link",
+            "type": "string",
+            "enum": [
+              "copy_block",
+              "external_link"
+            ]
+          },
+          "url_template": {
+            "description": "URL template with {{ variable }} interpolation (for external_link).",
+            "type": "string",
+            "nullable": true
+          },
+          "value_from": {
+            "description": "Field path to get value from (for copy_block).",
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "label",
+          "type"
+        ]
+      },
+      "one_FeatureScope": {
+        "description": "A feature with its additional scopes.",
+        "type": "object",
+        "properties": {
+          "description": {
+            "description": "Feature description.",
+            "type": "string"
+          },
+          "display_name": {
+            "description": "Human-readable feature name.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Feature identifier.",
+            "type": "string"
+          },
+          "scopes": {
+            "description": "Additional scopes when feature is enabled.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_Permission"
+            }
+          }
+        },
+        "required": [
+          "description",
+          "display_name",
+          "id",
+          "scopes"
+        ]
+      },
+      "one_FormField": {
+        "description": "A form field within a form_input step.",
+        "type": "object",
+        "properties": {
+          "label": {
+            "description": "Human-readable field label.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Field identifier (maps to credentials key).",
+            "type": "string"
+          },
+          "placeholder": {
+            "description": "Placeholder text.",
+            "type": "string",
+            "nullable": true
+          },
+          "required": {
+            "description": "Whether field is required.",
+            "type": "boolean"
+          },
+          "supported_file_types": {
+            "description": "Allowed file extensions for file_upload type.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "type": {
+            "description": "Field input type.\n\n* `text` - text\n* `password` - password\n* `email` - email\n* `file_upload` - file_upload",
+            "type": "string",
+            "enum": [
+              "text",
+              "password",
+              "email",
+              "file_upload"
+            ]
+          }
+        },
+        "required": [
+          "label",
+          "name",
+          "placeholder",
+          "required",
+          "supported_file_types",
+          "type"
+        ]
+      },
+      "one_Instructions": {
+        "description": "Instructions for obtaining credentials.",
+        "type": "object",
+        "properties": {
+          "markdown": {
+            "description": "Detailed instructions in markdown format.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "markdown"
+        ]
+      },
+      "one_IntegrationCreateResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "List of errors.",
+            "type": "array",
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "default": []
+          },
+          "messages": {
+            "description": "List of messages.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "result": {
+            "description": "The requested item.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/one_IntegrationV2Detail"
+              }
+            ]
+          },
+          "success": {
+            "description": "Whether the request succeeded.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "result",
+          "success"
+        ]
+      },
+      "one_IntegrationDetailResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "List of errors.",
+            "type": "array",
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "default": []
+          },
+          "messages": {
+            "description": "List of messages.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "result": {
+            "description": "The requested item.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/one_IntegrationV2Detail"
+              }
+            ]
+          },
+          "success": {
+            "description": "Whether the request succeeded.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "result",
+          "success"
+        ]
+      },
+      "one_IntegrationPauseResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "List of errors.",
+            "type": "array",
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "default": []
+          },
+          "messages": {
+            "description": "List of messages.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "result": {
+            "description": "The requested item.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/one_IntegrationV2Detail"
+              }
+            ]
+          },
+          "success": {
+            "description": "Whether the request succeeded.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "result",
+          "success"
+        ]
+      },
+      "one_IntegrationResumeResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "List of errors.",
+            "type": "array",
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "default": []
+          },
+          "messages": {
+            "description": "List of messages.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "result": {
+            "description": "The requested item.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/one_IntegrationV2Detail"
+              }
+            ]
+          },
+          "success": {
+            "description": "Whether the request succeeded.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "result",
+          "success"
+        ]
+      },
+      "one_IntegrationUpdateResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "List of errors.",
+            "type": "array",
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "default": []
+          },
+          "messages": {
+            "description": "List of messages.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "result": {
+            "description": "The requested item.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/one_IntegrationV2Detail"
+              }
+            ]
+          },
+          "success": {
+            "description": "Whether the request succeeded.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "result",
+          "success"
+        ]
+      },
+      "one_IntegrationV2CreateRequest": {
+        "description": "Serializer for v2 integration create requests.",
+        "type": "object",
+        "properties": {
+          "application": {
+            "description": "Vendor/application slug (e.g., GOOGLE_WORKSPACE).\n\n* `ANTHROPIC` - ANTHROPIC\n* `AWS` - AWS\n* `BITBUCKET` - BITBUCKET\n* `BOX` - BOX\n* `CONFLUENCE` - CONFLUENCE\n* `DROPBOX` - DROPBOX\n* `GITHUB` - GITHUB\n* `GOOGLE_CLOUD_PLATFORM` - GOOGLE_CLOUD_PLATFORM\n* `GOOGLE_WORKSPACE` - GOOGLE_WORKSPACE\n* `JIRA` - JIRA\n* `MICROSOFT_INTERNAL` - MICROSOFT_INTERNAL\n* `OPENAI` - OPENAI\n* `SALESFORCE` - SALESFORCE\n* `SERVICENOW` - SERVICENOW\n* `SLACK` - SLACK",
+            "type": "string",
+            "enum": [
+              "ANTHROPIC",
+              "AWS",
+              "BITBUCKET",
+              "BOX",
+              "CONFLUENCE",
+              "DROPBOX",
+              "GITHUB",
+              "GOOGLE_CLOUD_PLATFORM",
+              "GOOGLE_WORKSPACE",
+              "JIRA",
+              "MICROSOFT_INTERNAL",
+              "OPENAI",
+              "SALESFORCE",
+              "SERVICENOW",
+              "SLACK"
+            ]
+          },
+          "auth_method": {
+            "description": "Authentication method slug (uses default if omitted).",
+            "type": "string",
+            "minLength": 1,
+            "nullable": true
+          },
+          "credentials": {
+            "description": "Credentials for the integration.",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "dlp_profiles": {
+            "description": "List of DLP profile IDs to associate.",
+            "type": "array",
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 20
+          },
+          "name": {
+            "description": "Name of the integration.",
+            "type": "string",
+            "maxLength": 256,
+            "minLength": 1
+          },
+          "permissions": {
+            "description": "List of permission scopes (uses policy defaults if empty).",
+            "type": "array",
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "use_cases": {
+            "description": "List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']).",
+            "type": "array",
+            "items": {
+              "description": "* `casb` - casb\n* `ces` - ces\n* `auto_remediation` - auto_remediation",
+              "enum": [
+                "casb",
+                "ces",
+                "auto_remediation"
+              ],
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "application",
+          "credentials",
+          "name"
+        ]
+      },
+      "one_IntegrationV2Detail": {
+        "description": "Serializer for v2 integration detail response with use cases.",
+        "type": "object",
+        "properties": {
+          "application": {
+            "type": "object",
+            "additionalProperties": {
+              "nullable": true,
+              "type": "string"
+            },
+            "readOnly": true
+          },
+          "auth_method": {
+            "description": "The integration's authentication method.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "authorization_link": {
+            "description": "Authorization link for the integration.",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "components": {
+                "additionalProperties": true,
+                "nullable": true,
+                "type": "object"
+              },
+              "link": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            "readOnly": true,
+            "required": [
+              "link",
+              "components"
+            ]
+          },
+          "created": {
+            "description": "When the integration was created.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "credentials_expiry": {
+            "description": "Credentials expiry time.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "dlp_profiles": {
+            "description": "DLP Profiles enabled for the integration.",
+            "type": "array",
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "readOnly": true
+          },
+          "health_details": {
+            "description": "Health details with remediation hints.",
+            "type": "array",
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "readOnly": true
+          },
+          "id": {
+            "description": "Integration ID.",
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "is_paused": {
+            "description": "Whether the user paused the integration.",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "last_hydrated": {
+            "description": "Last time the integration was hydrated.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "name": {
+            "description": "Name of the integration.",
+            "type": "string",
+            "readOnly": true
+          },
+          "status": {
+            "description": "Integration status.",
+            "type": "string"
+          },
+          "updated": {
+            "description": "When the integration was last updated.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "use_cases": {
+            "description": "Use cases enabled for the integration.",
+            "type": "array",
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "readOnly": true
+          }
+        },
+        "required": [
+          "application",
+          "auth_method",
+          "authorization_link",
+          "created",
+          "credentials_expiry",
+          "dlp_profiles",
+          "health_details",
+          "id",
+          "is_paused",
+          "last_hydrated",
+          "name",
+          "status",
+          "updated",
+          "use_cases"
+        ]
+      },
+      "one_IntegrationV2ListItem": {
+        "description": "Serializer for v2 integration list responses.",
+        "type": "object",
+        "properties": {
+          "application": {
+            "type": "object",
+            "additionalProperties": {
+              "nullable": true,
+              "type": "string"
+            },
+            "readOnly": true
+          },
+          "created": {
+            "description": "When the integration was created.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "id": {
+            "description": "Integration ID.",
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "is_paused": {
+            "description": "Whether the user paused the integration.",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "name": {
+            "description": "Name of the integration.",
+            "type": "string",
+            "readOnly": true
+          },
+          "status": {
+            "description": "Integration status.",
+            "type": "string"
+          },
+          "updated": {
+            "description": "When the integration was last updated.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "application",
+          "created",
+          "id",
+          "is_paused",
+          "name",
+          "status",
+          "updated"
+        ]
+      },
+      "one_PaginatedApplicationListList": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "List of errors.",
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "default": []
+          },
+          "messages": {
+            "description": "List of messages.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "result": {
+            "description": "List of items.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_ApplicationList"
+            }
+          },
+          "result_info": {
+            "description": "Pagination metadata.",
+            "type": "object",
+            "properties": {
+              "count": {
+                "description": "Number of items in current page.",
+                "type": "integer"
+              },
+              "next": {
+                "description": "URL for next page.",
+                "type": "string",
+                "format": "uri",
+                "nullable": true
+              },
+              "page": {
+                "description": "Current page number.",
+                "type": "integer"
+              },
+              "per_page": {
+                "description": "Number of items per page.",
+                "type": "integer"
+              },
+              "previous": {
+                "description": "URL for previous page.",
+                "type": "string",
+                "format": "uri",
+                "nullable": true
+              },
+              "total_count": {
+                "description": "Total number of items.",
+                "type": "integer"
+              }
+            }
+          },
+          "success": {
+            "description": "Whether the request succeeded.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "result",
+          "success",
+          "errors",
+          "messages",
+          "result_info"
+        ]
+      },
+      "one_PaginatedAuthMethodDetailList": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "List of errors.",
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "default": []
+          },
+          "messages": {
+            "description": "List of messages.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "result": {
+            "description": "List of items.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_AuthMethodDetail"
+            }
+          },
+          "result_info": {
+            "description": "Pagination metadata.",
+            "type": "object",
+            "properties": {
+              "count": {
+                "description": "Number of items in current page.",
+                "type": "integer"
+              },
+              "next": {
+                "description": "URL for next page.",
+                "type": "string",
+                "format": "uri",
+                "nullable": true
+              },
+              "page": {
+                "description": "Current page number.",
+                "type": "integer"
+              },
+              "per_page": {
+                "description": "Number of items per page.",
+                "type": "integer"
+              },
+              "previous": {
+                "description": "URL for previous page.",
+                "type": "string",
+                "format": "uri",
+                "nullable": true
+              },
+              "total_count": {
+                "description": "Total number of items.",
+                "type": "integer"
+              }
+            }
+          },
+          "success": {
+            "description": "Whether the request succeeded.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "result",
+          "success",
+          "errors",
+          "messages",
+          "result_info"
+        ]
+      },
+      "one_PaginatedIntegrationV2ListItemList": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "List of errors.",
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "default": []
+          },
+          "messages": {
+            "description": "List of messages.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "result": {
+            "description": "List of items.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_IntegrationV2ListItem"
+            }
+          },
+          "result_info": {
+            "description": "Pagination metadata.",
+            "type": "object",
+            "properties": {
+              "count": {
+                "description": "Number of items in current page.",
+                "type": "integer"
+              },
+              "next": {
+                "description": "URL for next page.",
+                "type": "string",
+                "format": "uri",
+                "nullable": true
+              },
+              "page": {
+                "description": "Current page number.",
+                "type": "integer"
+              },
+              "per_page": {
+                "description": "Number of items per page.",
+                "type": "integer"
+              },
+              "previous": {
+                "description": "URL for previous page.",
+                "type": "string",
+                "format": "uri",
+                "nullable": true
+              },
+              "total_count": {
+                "description": "Total number of items.",
+                "type": "integer"
+              }
+            }
+          },
+          "success": {
+            "description": "Whether the request succeeded.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "result",
+          "success",
+          "errors",
+          "messages",
+          "result_info"
+        ]
+      },
+      "one_PaginatedSetupFlowList": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "List of errors.",
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "default": []
+          },
+          "messages": {
+            "description": "List of messages.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "result": {
+            "description": "List of items.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_SetupFlow"
+            }
+          },
+          "result_info": {
+            "description": "Pagination metadata.",
+            "type": "object",
+            "properties": {
+              "count": {
+                "description": "Number of items in current page.",
+                "type": "integer"
+              },
+              "next": {
+                "description": "URL for next page.",
+                "type": "string",
+                "format": "uri",
+                "nullable": true
+              },
+              "page": {
+                "description": "Current page number.",
+                "type": "integer"
+              },
+              "per_page": {
+                "description": "Number of items per page.",
+                "type": "integer"
+              },
+              "previous": {
+                "description": "URL for previous page.",
+                "type": "string",
+                "format": "uri",
+                "nullable": true
+              },
+              "total_count": {
+                "description": "Total number of items.",
+                "type": "integer"
+              }
+            }
+          },
+          "success": {
+            "description": "Whether the request succeeded.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "result",
+          "success",
+          "errors",
+          "messages",
+          "result_info"
+        ]
+      },
+      "one_PatchedUpdateIntegrationV2Request": {
+        "description": "Serializer for v2 integration PATCH requests.",
+        "type": "object",
+        "properties": {
+          "credentials": {
+            "description": "Partial credential fields to merge with existing.",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "dlp_profiles": {
+            "description": "List of DLP profile IDs to associate with the integration.",
+            "type": "array",
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 20
+          },
+          "name": {
+            "description": "Name of the integration.",
+            "type": "string",
+            "maxLength": 256,
+            "minLength": 1
+          },
+          "permissions": {
+            "description": "List of permission scopes granted to the integration.",
+            "type": "array",
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "use_cases": {
+            "description": "List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']).",
+            "type": "array",
+            "items": {
+              "description": "* `casb` - casb\n* `ces` - ces\n* `auto_remediation` - auto_remediation",
+              "enum": [
+                "casb",
+                "ces",
+                "auto_remediation"
+              ],
+              "type": "string"
+            }
+          }
+        }
+      },
+      "one_Permission": {
+        "description": "Permission/scope with severity for display.",
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "description": "Human-readable permission name.",
+            "type": "string"
+          },
+          "scope": {
+            "description": "Vendor-native scope identifier.",
+            "type": "string"
+          },
+          "severity": {
+            "description": "Permission sensitivity level.\n\n* `low` - low\n* `medium` - medium\n* `high` - high\n* `critical` - critical",
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ]
+          }
+        },
+        "required": [
+          "display_name",
+          "scope",
+          "severity"
+        ]
+      },
+      "one_SetupFlow": {
+        "description": "Setup flow for an application auth method.",
+        "type": "object",
+        "properties": {
+          "auth_config": {
+            "description": "OAuth configuration (present for OAuth-based flows).",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/one_AuthConfig"
+              }
+            ]
+          },
+          "default": {
+            "description": "Whether this is the default auth method.",
+            "type": "boolean"
+          },
+          "description": {
+            "description": "Flow description.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Setup flow identifier.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Human-readable flow name.",
+            "type": "string"
+          },
+          "steps": {
+            "description": "Ordered list of setup steps.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_SetupFlowStep"
+            }
+          },
+          "supported_environments": {
+            "description": "Environments this auth method supports (standard, fedramp).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "default",
+          "description",
+          "id",
+          "name",
+          "steps",
+          "supported_environments"
+        ]
+      },
+      "one_SetupFlowStep": {
+        "description": "A single step in the setup flow. Polymorphic based on type.",
+        "type": "object",
+        "properties": {
+          "component_id": {
+            "description": "Component identifier (for component type).",
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "description": "Step description with markdown support.",
+            "type": "string",
+            "nullable": true
+          },
+          "dynamic_content": {
+            "description": "Dynamic content blocks (for instruction/form_input).",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_DynamicContent"
+            },
+            "nullable": true
+          },
+          "form_fields": {
+            "description": "Form fields (for form_input).",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_FormField"
+            }
+          },
+          "is_required": {
+            "description": "Whether step is required (for form_input).",
+            "type": "boolean"
+          },
+          "parameters": {
+            "description": "Component parameters (for component type).",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "title": {
+            "description": "Step title (for instruction/form_input/oauth_redirect).",
+            "type": "string"
+          },
+          "type": {
+            "description": "Step type.\n\n* `component` - component\n* `instruction` - instruction\n* `form_input` - form_input\n* `oauth_redirect` - oauth_redirect",
+            "type": "string",
+            "enum": [
+              "component",
+              "instruction",
+              "form_input",
+              "oauth_redirect"
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "one_UseCaseDetail": {
+        "description": "Full use case with scopes and features for detail endpoint.",
+        "type": "object",
+        "properties": {
+          "base_scopes": {
+            "description": "Scopes always required for this use case.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_Permission"
+            }
+          },
+          "description": {
+            "description": "Use case description.",
+            "type": "string"
+          },
+          "display_name": {
+            "description": "Human-readable use case name.",
+            "type": "string"
+          },
+          "features": {
+            "description": "Optional features with extra scopes.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/one_FeatureScope"
+            }
+          },
+          "id": {
+            "description": "Use case identifier.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "base_scopes",
+          "description",
+          "display_name",
+          "features",
+          "id"
+        ]
+      },
+      "one_UseCaseSummary": {
+        "description": "Lightweight use case for list endpoint.",
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "description": "Human-readable use case name.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Use case identifier (e.g. casb, ces).",
+            "type": "string"
+          }
+        },
+        "required": [
+          "display_name",
+          "id"
+        ]
+      },
       "teams-devices_access_serial_number_list_input_request": {
         "type": "object",
         "properties": {
@@ -26758,6 +31250,34 @@
             "$ref": "#/components/schemas/teams-devices_version"
           }
         }
+      },
+      "teams-devices_devices_policy_certificates": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "description": "The current status of the device policy certificate provisioning feature for WARP clients.",
+            "type": "boolean",
+            "example": true
+          }
+        },
+        "required": [
+          "enabled"
+        ]
+      },
+      "teams-devices_devices_policy_certificates_single": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/teams-devices_api-response-single"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/teams-devices_devices_policy_certificates"
+              }
+            },
+            "type": "object"
+          }
+        ]
       },
       "teams-devices_devices_response": {
         "allOf": [

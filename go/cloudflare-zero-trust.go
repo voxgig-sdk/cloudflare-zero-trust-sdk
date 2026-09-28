@@ -32,6 +32,15 @@ func init() {
 	core.NewTestFeatureFunc = func() core.Feature {
 		return feature.NewTestFeature()
 	}
+	core.NewAlexandriaDeleteApplicationEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewAlexandriaDeleteApplicationEntity(client, entopts)
+	}
+	core.NewAlexandriaGetApplicationEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewAlexandriaGetApplicationEntity(client, entopts)
+	}
+	core.NewAlexandriaGetCategoryEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewAlexandriaGetCategoryEntity(client, entopts)
+	}
 	core.NewClientVersionEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
 		return entity.NewClientVersionEntity(client, entopts)
 	}
@@ -71,6 +80,9 @@ func init() {
 	core.NewDigitalExperienceMonitoringFleetStatusOverTimeEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
 		return entity.NewDigitalExperienceMonitoringFleetStatusOverTimeEntity(client, entopts)
 	}
+	core.NewIntegrationEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewIntegrationEntity(client, entopts)
+	}
 	core.NewInterconnectEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
 		return entity.NewInterconnectEntity(client, entopts)
 	}
@@ -100,6 +112,36 @@ func init() {
 	}
 	core.NewNscStatusInfoEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
 		return entity.NewNscStatusInfoEntity(client, entopts)
+	}
+	core.NewOneApplicationDetailEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewOneApplicationDetailEntity(client, entopts)
+	}
+	core.NewOneIntegrationCreateEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewOneIntegrationCreateEntity(client, entopts)
+	}
+	core.NewOneIntegrationDetailEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewOneIntegrationDetailEntity(client, entopts)
+	}
+	core.NewOneIntegrationPauseEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewOneIntegrationPauseEntity(client, entopts)
+	}
+	core.NewOneIntegrationResumeEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewOneIntegrationResumeEntity(client, entopts)
+	}
+	core.NewOneIntegrationUpdateEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewOneIntegrationUpdateEntity(client, entopts)
+	}
+	core.NewOnePaginatedApplicationListListEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewOnePaginatedApplicationListListEntity(client, entopts)
+	}
+	core.NewOnePaginatedAuthMethodDetailListEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewOnePaginatedAuthMethodDetailListEntity(client, entopts)
+	}
+	core.NewOnePaginatedIntegrationV2ListItemListEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewOnePaginatedIntegrationV2ListItemListEntity(client, entopts)
+	}
+	core.NewOnePaginatedSetupFlowListEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewOnePaginatedSetupFlowListEntity(client, entopts)
 	}
 	core.NewOverrideCodeEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
 		return entity.NewOverrideCodeEntity(client, entopts)
@@ -139,6 +181,9 @@ func init() {
 	}
 	core.NewTeamsDevicesDeviceSettingsResponseCollectionEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
 		return entity.NewTeamsDevicesDeviceSettingsResponseCollectionEntity(client, entopts)
+	}
+	core.NewTeamsDevicesDevicesPolicyCertificatesSingleEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
+		return entity.NewTeamsDevicesDevicesPolicyCertificatesSingleEntity(client, entopts)
 	}
 	core.NewTeamsDevicesFallbackDomainResponseCollectionEntityFunc = func(client *core.CloudflareZeroTrustSDK, entopts map[string]any) core.CloudflareZeroTrustEntity {
 		return entity.NewTeamsDevicesFallbackDomainResponseCollectionEntity(client, entopts)

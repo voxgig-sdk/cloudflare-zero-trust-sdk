@@ -27,11 +27,11 @@ Tool-call arguments (what an agent sends):
 
 ```jsonc
 // cloudflare-zero-trust_list: first page of records
-{ "entity": "client_version" }
-{ "entity": "client_version", "query": { } }
+{ "entity": "alexandria_get_application" }
+{ "entity": "alexandria_get_application", "query": { } }
 
 // cloudflare-zero-trust_load: one record by id
-{ "entity": "deployment_group", "query": { "id": 1 } }
+{ "entity": "alexandria_get_application", "query": { "id": 1 } }
 ```
 
 > The rest of this guide follows the [Diátaxis](https://diataxis.fr) framework:
@@ -60,8 +60,8 @@ Tool-call arguments (what an agent sends):
    ```
 
 4. **Restart Claude Code.** The `cloudflare-zero-trust_list` and `cloudflare-zero-trust_load` tools now appear
-   in new sessions. Ask the agent to *"list client_version using cloudflare-zero-trust"*
-   and it calls `cloudflare-zero-trust_list` with `{"entity":"client_version"}`.
+   in new sessions. Ask the agent to *"list alexandria_get_application using cloudflare-zero-trust"*
+   and it calls `cloudflare-zero-trust_list` with `{"entity":"alexandria_get_application"}`.
 
 ## How-to guides
 
@@ -92,7 +92,7 @@ Args: `entity` (required), `query` (optional filter map). Returns the first
 page of records as JSON:
 
 ```jsonc
-{ "entity": "client_version" }
+{ "entity": "alexandria_get_application" }
 ```
 
 ### Call the `cloudflare-zero-trust_load` tool
@@ -101,7 +101,7 @@ Args: `entity` (required), `query` = `{"id":N}` (required). Returns the single
 record as JSON:
 
 ```jsonc
-{ "entity": "deployment_group", "query": { "id": 1 } }
+{ "entity": "alexandria_get_application", "query": { "id": 1 } }
 ```
 
 ### Cross-compile release binaries
@@ -129,7 +129,7 @@ Both tools take the same argument object:
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `entity` | string | One of the 104 supported entities (see below). |
+| `entity` | string | One of the 119 supported entities (see below). |
 | `query` | object | Optional match map. `{"id":N}` for load; omit or `{}` for list. |
 
 JSON schemas are emitted by the SDK from the `Args` struct's `json` /
@@ -151,9 +151,9 @@ JSON schemas are emitted by the SDK from the `Args` struct's `json` /
 
 ### Entities
 
-The 104 entities valid as the `entity` argument:
+The 119 entities valid as the `entity` argument:
 
-client_version | cni | deployment_group | dex_remote_command | dex_rule | dex_synthetic_application_monitoring | digital_experience_monitoring_device | digital_experience_monitoring_dex_delete_response_collection | digital_experience_monitoring_dex_response_collection | digital_experience_monitoring_dex_single | digital_experience_monitoring_fleet_status_device | digital_experience_monitoring_fleet_status_live | digital_experience_monitoring_fleet_status_over_time | interconnect | ip_profile | list | location | nsc_cni | nsc_default_name | nsc_interconnect | nsc_setting | nsc_slot_info | nsc_status_info | override_code | pacfile | physical_device | proxy_endpoint | registration | rule | teams_devices_api_response_single | teams_devices_components_schemas_response_collection | teams_devices_components_schemas_single | teams_devices_default_device_setting | teams_devices_device | teams_devices_device_setting | teams_devices_device_settings_response_collection | teams_devices_fallback_domain_response_collection | teams_devices_global_warp_override | teams_devices_id | teams_devices_override_code | teams_devices_response_collection | teams_devices_schemas_id | teams_devices_schemas_response_collection | teams_devices_schemas_single | teams_devices_single | teams_devices_split_tunnel_include_response_collection | teams_devices_split_tunnel_response_collection | teams_devices_zero_trust_account_device_setting | tunnel | tunnel_cfd_tunnel_response_collection | tunnel_cfd_tunnel_response_single | tunnel_configuration | tunnel_empty | tunnel_hostname_route_response_collection | tunnel_hostname_route_response_single | tunnel_mesh_configuration_response_single | tunnel_route_response_single | tunnel_subnet_response_collection | tunnel_subnet_response_single | tunnel_subnet_response_single_nullable | tunnel_teamnet_response_collection | tunnel_teamnet_response_single | tunnel_tunnel_client | tunnel_tunnel_connection | tunnel_tunnel_response_token | tunnel_tunnel_warp_connector_client | tunnel_tunnel_warp_connector_connection | tunnel_vnet_response_collection | tunnel_vnet_response_single | tunnel_warp_connector_response_collection | tunnel_warp_connector_response_single | tunnel_zero_trust_connectivity_setting | warp | warp_change_event | warp_teams_device_api_other | zero_trust_gateway_applications_review_status | zero_trust_gateway_csv_operation_single | zero_trust_gateway_custom_certificate_setting | zero_trust_gateway_gateway_account | zero_trust_gateway_gateway_account_config | zero_trust_gateway_gateway_account_egress_cidr_pair_list | zero_trust_gateway_gateway_account_logging_setting | zero_trust_gateway_list_item_response_collection | zero_trust_gateway_list_single | zero_trust_gateway_response_collection | zero_trust_gateway_response_collection_10 | zero_trust_gateway_response_collection_2 | zero_trust_gateway_response_collection_3 | zero_trust_gateway_response_collection_4 | zero_trust_gateway_response_collection_5 | zero_trust_gateway_response_collection_6 | zero_trust_gateway_response_collection_7 | zero_trust_gateway_response_collection_8 | zero_trust_gateway_response_collection_9 | zero_trust_gateway_single | zero_trust_gateway_single_response_2 | zero_trust_gateway_single_response_3 | zero_trust_gateway_single_response_4 | zero_trust_gateway_single_response_5 | zero_trust_gateway_single_response_6 | zero_trust_gateway_single_response_7 | zero_trust_gateway_single_response_with_list_item | zero_trust_risk_scoring | zero_trust_risk_scoring_integration
+alexandria_delete_application | alexandria_get_application | alexandria_get_category | client_version | cni | deployment_group | dex_remote_command | dex_rule | dex_synthetic_application_monitoring | digital_experience_monitoring_device | digital_experience_monitoring_dex_delete_response_collection | digital_experience_monitoring_dex_response_collection | digital_experience_monitoring_dex_single | digital_experience_monitoring_fleet_status_device | digital_experience_monitoring_fleet_status_live | digital_experience_monitoring_fleet_status_over_time | integration | interconnect | ip_profile | list | location | nsc_cni | nsc_default_name | nsc_interconnect | nsc_setting | nsc_slot_info | nsc_status_info | one_application_detail | one_integration_create | one_integration_detail | one_integration_pause | one_integration_resume | one_integration_update | one_paginated_application_list_list | one_paginated_auth_method_detail_list | one_paginated_integration_v2_list_item_list | one_paginated_setup_flow_list | override_code | pacfile | physical_device | proxy_endpoint | registration | rule | teams_devices_api_response_single | teams_devices_components_schemas_response_collection | teams_devices_components_schemas_single | teams_devices_default_device_setting | teams_devices_device | teams_devices_device_setting | teams_devices_device_settings_response_collection | teams_devices_devices_policy_certificates_single | teams_devices_fallback_domain_response_collection | teams_devices_global_warp_override | teams_devices_id | teams_devices_override_code | teams_devices_response_collection | teams_devices_schemas_id | teams_devices_schemas_response_collection | teams_devices_schemas_single | teams_devices_single | teams_devices_split_tunnel_include_response_collection | teams_devices_split_tunnel_response_collection | teams_devices_zero_trust_account_device_setting | tunnel | tunnel_cfd_tunnel_response_collection | tunnel_cfd_tunnel_response_single | tunnel_configuration | tunnel_empty | tunnel_hostname_route_response_collection | tunnel_hostname_route_response_single | tunnel_mesh_configuration_response_single | tunnel_route_response_single | tunnel_subnet_response_collection | tunnel_subnet_response_single | tunnel_subnet_response_single_nullable | tunnel_teamnet_response_collection | tunnel_teamnet_response_single | tunnel_tunnel_client | tunnel_tunnel_connection | tunnel_tunnel_response_token | tunnel_tunnel_warp_connector_client | tunnel_tunnel_warp_connector_connection | tunnel_vnet_response_collection | tunnel_vnet_response_single | tunnel_warp_connector_response_collection | tunnel_warp_connector_response_single | tunnel_zero_trust_connectivity_setting | warp | warp_change_event | warp_teams_device_api_other | zero_trust_gateway_applications_review_status | zero_trust_gateway_csv_operation_single | zero_trust_gateway_custom_certificate_setting | zero_trust_gateway_gateway_account | zero_trust_gateway_gateway_account_config | zero_trust_gateway_gateway_account_egress_cidr_pair_list | zero_trust_gateway_gateway_account_logging_setting | zero_trust_gateway_list_item_response_collection | zero_trust_gateway_list_single | zero_trust_gateway_response_collection | zero_trust_gateway_response_collection_10 | zero_trust_gateway_response_collection_2 | zero_trust_gateway_response_collection_3 | zero_trust_gateway_response_collection_4 | zero_trust_gateway_response_collection_5 | zero_trust_gateway_response_collection_6 | zero_trust_gateway_response_collection_7 | zero_trust_gateway_response_collection_8 | zero_trust_gateway_response_collection_9 | zero_trust_gateway_single | zero_trust_gateway_single_response_2 | zero_trust_gateway_single_response_3 | zero_trust_gateway_single_response_4 | zero_trust_gateway_single_response_5 | zero_trust_gateway_single_response_6 | zero_trust_gateway_single_response_7 | zero_trust_gateway_single_response_with_list_item | zero_trust_risk_scoring | zero_trust_risk_scoring_integration
 
 ### Smoke test via HTTP (raw JSON-RPC)
 
@@ -173,7 +173,7 @@ curl -sN -X POST http://localhost:18080 \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json, text/event-stream' \
   -H "Mcp-Session-Id: $SESSION" \
-  -d '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"cloudflare-zero-trust_load","arguments":{"entity":"deployment_group","query":{"id":1}}}}'
+  -d '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"cloudflare-zero-trust_load","arguments":{"entity":"alexandria_get_application","query":{"id":1}}}}'
 ```
 
 ## Explanation

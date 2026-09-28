@@ -4,7 +4,7 @@
 
 The Python SDK for the CloudflareZeroTrust API — an entity-oriented client following Pythonic conventions.
 
-The SDK exposes the API as capitalised, semantic **Entities** — for example `client.ClientVersion()` — each
+The SDK exposes the API as capitalised, semantic **Entities** — for example `client.AlexandriaDeleteApplication()` — each
 carrying a small, uniform set of operations (`list`, `load`, `create`, `update`, `remove`, `patch`) instead of raw URL
 paths and query strings. You work with named resources and verbs, which
 keeps the cognitive load low.
@@ -39,20 +39,6 @@ client = CloudflareZeroTrustSDK({
 })
 ```
 
-### 2. List clientversion records
-
-`list()` returns a `list` of records (each a `dict`) and raises on
-error — iterate it directly.
-
-```python
-try:
-    clientversions = client.ClientVersion().list({"account_id": "example", "release_track": "example", "target_environment": "example"})
-    for clientversion in clientversions:
-        print(clientversion)
-except Exception as err:
-    print(f"list failed: {err}")
-```
-
 ### 3. Load a nscdefaultname
 
 NscDefaultName is nested under account, so provide the `account_id`.
@@ -66,6 +52,13 @@ except Exception as err:
     print(f"load failed: {err}")
 ```
 
+### 4. Create, update, and remove
+
+```python
+# Remove
+client.AlexandriaDeleteApplication().remove({"account_id": "example_account_id", "id": 1})
+```
+
 
 ## Error handling
 
@@ -73,8 +66,8 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    zerotrustgatewaysingleresponse6 = client.ZeroTrustGatewaySingleResponse6().load({"account_id": "example"})
-    print(zerotrustgatewaysingleresponse6)
+    teamsdevicesglobalwarpoverride = client.TeamsDevicesGlobalWarpOverride().load({"account_id": "example"})
+    print(teamsdevicesglobalwarpoverride)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -142,8 +135,8 @@ client = CloudflareZeroTrustSDK.test()
 
 # Entity ops return the ENTITY and raises on error;
 # call data_get() for the record.
-zerotrustgatewaysingleresponse6 = client.ZeroTrustGatewaySingleResponse6().load({"account_id": "example"})
-# zerotrustgatewaysingleresponse6 contains the mock response record
+teamsdevicesglobalwarpoverride = client.TeamsDevicesGlobalWarpOverride().load({"account_id": "example"})
+# teamsdevicesglobalwarpoverride contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -221,6 +214,9 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
+| `AlexandriaDeleteApplication` | `(data) -> AlexandriaDeleteApplicationEntity` | Create an AlexandriaDeleteApplication entity instance. |
+| `AlexandriaGetApplication` | `(data) -> AlexandriaGetApplicationEntity` | Create an AlexandriaGetApplication entity instance. |
+| `AlexandriaGetCategory` | `(data) -> AlexandriaGetCategoryEntity` | Create an AlexandriaGetCategory entity instance. |
 | `ClientVersion` | `(data) -> ClientVersionEntity` | Create a ClientVersion entity instance. |
 | `Cni` | `(data) -> CniEntity` | Create a Cni entity instance. |
 | `DeploymentGroup` | `(data) -> DeploymentGroupEntity` | Create a DeploymentGroup entity instance. |
@@ -234,6 +230,7 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `DigitalExperienceMonitoringFleetStatusDevice` | `(data) -> DigitalExperienceMonitoringFleetStatusDeviceEntity` | Create a DigitalExperienceMonitoringFleetStatusDevice entity instance. |
 | `DigitalExperienceMonitoringFleetStatusLive` | `(data) -> DigitalExperienceMonitoringFleetStatusLiveEntity` | Create a DigitalExperienceMonitoringFleetStatusLive entity instance. |
 | `DigitalExperienceMonitoringFleetStatusOverTime` | `(data) -> DigitalExperienceMonitoringFleetStatusOverTimeEntity` | Create a DigitalExperienceMonitoringFleetStatusOverTime entity instance. |
+| `Integration` | `(data) -> IntegrationEntity` | Create an Integration entity instance. |
 | `Interconnect` | `(data) -> InterconnectEntity` | Create an Interconnect entity instance. |
 | `IpProfile` | `(data) -> IpProfileEntity` | Create an IpProfile entity instance. |
 | `List` | `(data) -> ListEntity` | Create a List entity instance. |
@@ -244,6 +241,16 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `NscSetting` | `(data) -> NscSettingEntity` | Create a NscSetting entity instance. |
 | `NscSlotInfo` | `(data) -> NscSlotInfoEntity` | Create a NscSlotInfo entity instance. |
 | `NscStatusInfo` | `(data) -> NscStatusInfoEntity` | Create a NscStatusInfo entity instance. |
+| `OneApplicationDetail` | `(data) -> OneApplicationDetailEntity` | Create an OneApplicationDetail entity instance. |
+| `OneIntegrationCreate` | `(data) -> OneIntegrationCreateEntity` | Create an OneIntegrationCreate entity instance. |
+| `OneIntegrationDetail` | `(data) -> OneIntegrationDetailEntity` | Create an OneIntegrationDetail entity instance. |
+| `OneIntegrationPause` | `(data) -> OneIntegrationPauseEntity` | Create an OneIntegrationPause entity instance. |
+| `OneIntegrationResume` | `(data) -> OneIntegrationResumeEntity` | Create an OneIntegrationResume entity instance. |
+| `OneIntegrationUpdate` | `(data) -> OneIntegrationUpdateEntity` | Create an OneIntegrationUpdate entity instance. |
+| `OnePaginatedApplicationListList` | `(data) -> OnePaginatedApplicationListListEntity` | Create an OnePaginatedApplicationListList entity instance. |
+| `OnePaginatedAuthMethodDetailList` | `(data) -> OnePaginatedAuthMethodDetailListEntity` | Create an OnePaginatedAuthMethodDetailList entity instance. |
+| `OnePaginatedIntegrationV2ListItemList` | `(data) -> OnePaginatedIntegrationV2ListItemListEntity` | Create an OnePaginatedIntegrationV2ListItemList entity instance. |
+| `OnePaginatedSetupFlowList` | `(data) -> OnePaginatedSetupFlowListEntity` | Create an OnePaginatedSetupFlowList entity instance. |
 | `OverrideCode` | `(data) -> OverrideCodeEntity` | Create an OverrideCode entity instance. |
 | `Pacfile` | `(data) -> PacfileEntity` | Create a Pacfile entity instance. |
 | `PhysicalDevice` | `(data) -> PhysicalDeviceEntity` | Create a PhysicalDevice entity instance. |
@@ -257,6 +264,7 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `TeamsDevicesDevice` | `(data) -> TeamsDevicesDeviceEntity` | Create a TeamsDevicesDevice entity instance. |
 | `TeamsDevicesDeviceSetting` | `(data) -> TeamsDevicesDeviceSettingEntity` | Create a TeamsDevicesDeviceSetting entity instance. |
 | `TeamsDevicesDeviceSettingsResponseCollection` | `(data) -> TeamsDevicesDeviceSettingsResponseCollectionEntity` | Create a TeamsDevicesDeviceSettingsResponseCollection entity instance. |
+| `TeamsDevicesDevicesPolicyCertificatesSingle` | `(data) -> TeamsDevicesDevicesPolicyCertificatesSingleEntity` | Create a TeamsDevicesDevicesPolicyCertificatesSingle entity instance. |
 | `TeamsDevicesFallbackDomainResponseCollection` | `(data) -> TeamsDevicesFallbackDomainResponseCollectionEntity` | Create a TeamsDevicesFallbackDomainResponseCollection entity instance. |
 | `TeamsDevicesGlobalWarpOverride` | `(data) -> TeamsDevicesGlobalWarpOverrideEntity` | Create a TeamsDevicesGlobalWarpOverride entity instance. |
 | `TeamsDevicesId` | `(data) -> TeamsDevicesIdEntity` | Create a TeamsDevicesId entity instance. |
@@ -363,6 +371,51 @@ you branch on via `result["ok"]`:
 On error, `ok` is `False` and `err` contains the error value.
 
 ### Entities
+
+#### AlexandriaDeleteApplication
+
+| Field | Description |
+| --- | --- |
+| `id` |  |
+
+Operations: Remove.
+
+API path: `/accounts/{account_id}/resource-library/applications/{id}`
+
+#### AlexandriaGetApplication
+
+| Field | Description |
+| --- | --- |
+| `category_id` | Returns the category ID. |
+| `errors` |  |
+| `hostnames` | Hostnames matched by the application. |
+| `human_id` | Returns the human readable ID. |
+| `id` |  |
+| `ip_subnets` | IP subnets for this application. |
+| `messages` |  |
+| `name` | Returns the application name. |
+| `port_protocols` | Port and protocol pairs matched by the application. |
+| `result` | Returns the list of applications. |
+| `success` | Indicates whether the API call was successful. |
+| `support_domains` | Support domains matched by the application. |
+
+Operations: Create, List, Load, Update.
+
+API path: `/accounts/{account_id}/resource-library/applications`
+
+#### AlexandriaGetCategory
+
+| Field | Description |
+| --- | --- |
+| `errors` |  |
+| `id` |  |
+| `messages` |  |
+| `result` | Returns the list of categories. |
+| `success` | Indicates whether the API call was successful. |
+
+Operations: List, Load.
+
+API path: `/accounts/{account_id}/resource-library/categories`
 
 #### ClientVersion
 
@@ -565,6 +618,16 @@ Operations: Load.
 
 API path: `/accounts/{account_id}/dex/fleet-status/over-time`
 
+#### Integration
+
+| Field | Description |
+| --- | --- |
+| `id` |  |
+
+Operations: Remove.
+
+API path: `/accounts/{account_id}/one/integrations/{id}`
+
 #### Interconnect
 
 | Field | Description |
@@ -691,6 +754,161 @@ API path: `/accounts/{account_id}/cni/slots`
 Operations: Load.
 
 API path: `/accounts/{account_id}/cni/interconnects/{icon}/status`
+
+#### OneApplicationDetail
+
+| Field | Description |
+| --- | --- |
+| `errors` | List of errors. |
+| `messages` | List of messages. |
+| `result` | The requested item. |
+| `success` | Whether the request succeeded. |
+
+Operations: Load.
+
+API path: `/accounts/{account_id}/one/applications/{application_id}`
+
+#### OneIntegrationCreate
+
+| Field | Description |
+| --- | --- |
+| `application` | Vendor/application slug (e.g., GOOGLE_WORKSPACE). |
+| `auth_method` | Authentication method slug (uses default if omitted). |
+| `credentials` | Credentials for the integration. |
+| `dlp_profiles` | List of DLP profile IDs to associate. |
+| `name` | Name of the integration. |
+| `permissions` | List of permission scopes (uses policy defaults if empty). |
+| `use_cases` | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+Operations: Create.
+
+API path: `/accounts/{account_id}/one/integrations`
+
+#### OneIntegrationDetail
+
+| Field | Description |
+| --- | --- |
+| `errors` | List of errors. |
+| `id` |  |
+| `messages` | List of messages. |
+| `result` | The requested item. |
+| `success` | Whether the request succeeded. |
+
+Operations: Load.
+
+API path: `/accounts/{account_id}/one/integrations/{id}`
+
+#### OneIntegrationPause
+
+| Field | Description |
+| --- | --- |
+| `errors` | List of errors. |
+| `messages` | List of messages. |
+| `result` | The requested item. |
+| `success` | Whether the request succeeded. |
+
+Operations: Create.
+
+API path: `/accounts/{account_id}/one/integrations/{id}/pause`
+
+#### OneIntegrationResume
+
+| Field | Description |
+| --- | --- |
+| `errors` | List of errors. |
+| `messages` | List of messages. |
+| `result` | The requested item. |
+| `success` | Whether the request succeeded. |
+
+Operations: Create.
+
+API path: `/accounts/{account_id}/one/integrations/{id}/resume`
+
+#### OneIntegrationUpdate
+
+| Field | Description |
+| --- | --- |
+| `credentials` | Partial credential fields to merge with existing. |
+| `dlp_profiles` | List of DLP profile IDs to associate with the integration. |
+| `errors` | List of errors. |
+| `id` |  |
+| `messages` | List of messages. |
+| `name` | Name of the integration. |
+| `permissions` | List of permission scopes granted to the integration. |
+| `result` | The requested item. |
+| `success` | Whether the request succeeded. |
+| `use_cases` | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+Operations: Update.
+
+API path: `/accounts/{account_id}/one/integrations/{id}`
+
+#### OnePaginatedApplicationListList
+
+| Field | Description |
+| --- | --- |
+| `auth_methods` | Available auth methods. |
+| `category` | Vendor category (e.g. |
+| `description` | Brief description of the integration. |
+| `display_name` | Human-readable vendor name. |
+| `dlp_enabled` | Whether DLP scanning is supported. |
+| `id` | Vendor identifier (e.g. |
+| `logo` | Logo path. |
+| `permissions` | All permissions with severity. |
+| `supported_environments` | Environments this vendor supports (standard, fedramp). |
+| `use_cases` | Supported use cases. |
+
+Operations: List.
+
+API path: `/accounts/{account_id}/one/applications`
+
+#### OnePaginatedAuthMethodDetailList
+
+| Field | Description |
+| --- | --- |
+| `display_name` | Human-readable auth method name. |
+| `human_interaction_required` | Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction). |
+| `id` | Auth method identifier. |
+| `instructions` | Step-by-step instructions for obtaining credentials. |
+| `payload_example` | Example credentials payload with placeholder values. |
+| `payload_schema` | JSON Schema for the credentials object in POST /v2/integrations request. |
+| `redirect_url` | OAuth redirect URL for vendors requiring human interaction. |
+
+Operations: List.
+
+API path: `/accounts/{account_id}/one/applications/{application_id}/auth-methods`
+
+#### OnePaginatedIntegrationV2ListItemList
+
+| Field | Description |
+| --- | --- |
+| `application` |  |
+| `created` | When the integration was created. |
+| `id` | Integration ID. |
+| `is_paused` | Whether the user paused the integration. |
+| `name` | Name of the integration. |
+| `status` | Integration status. |
+| `updated` | When the integration was last updated. |
+
+Operations: List.
+
+API path: `/accounts/{account_id}/one/integrations`
+
+#### OnePaginatedSetupFlowList
+
+| Field | Description |
+| --- | --- |
+| `auth_config` | OAuth configuration (present for OAuth-based flows). |
+| `default` | Whether this is the default auth method. |
+| `description` | Flow description. |
+| `id` | Setup flow identifier. |
+| `name` | Human-readable flow name. |
+| `steps` | Ordered list of setup steps. |
+| `supported_environments` | Environments this auth method supports (standard, fedramp). |
+
+Operations: List.
+
+API path: `/accounts/{account_id}/one/applications/{application_id}/setup-flows`
 
 #### OverrideCode
 
@@ -892,6 +1110,17 @@ API path: `/accounts/{account_id}/devices/policy`
 Operations: List, Remove.
 
 API path: `/accounts/{account_id}/devices/policies`
+
+#### TeamsDevicesDevicesPolicyCertificatesSingle
+
+| Field | Description |
+| --- | --- |
+| `enabled` | The current status of the device policy certificate provisioning feature for WARP clients. |
+| `result` |  |
+
+Operations: Load, Update.
+
+API path: `/zones/{zone_id}/devices/policy/certificates`
 
 #### TeamsDevicesFallbackDomainResponseCollection
 
@@ -1716,6 +1945,115 @@ API path: `/accounts/{account_id}/zt_risk_scoring/integrations`
 ## Entities
 
 
+### AlexandriaDeleteApplication
+
+Create an instance: `alexandria_delete_application = client.AlexandriaDeleteApplication()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `remove(match)` | Remove the matching entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | `str` |  |
+
+
+### AlexandriaGetApplication
+
+Create an instance: `alexandria_get_application = client.AlexandriaGetApplication()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `create(data)` | Create a new entity with the given data. |
+| `list()` | List entities, optionally matching the given criteria. |
+| `load(match)` | Load a single entity by match criteria. |
+| `update(data)` | Update an existing entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `category_id` | `int` | Returns the category ID. |
+| `errors` | `list` |  |
+| `hostnames` | `list` | Hostnames matched by the application. |
+| `human_id` | `str` | Returns the human readable ID. |
+| `id` | `str` |  |
+| `ip_subnets` | `list` | IP subnets for this application. |
+| `messages` | `list` |  |
+| `name` | `str` | Returns the application name. |
+| `port_protocols` | `list` | Port and protocol pairs matched by the application. |
+| `result` | `dict` | Returns the list of applications. |
+| `success` | `bool` | Indicates whether the API call was successful. |
+| `support_domains` | `list` | Support domains matched by the application. |
+
+#### Example: Load
+
+```python
+alexandria_get_application = client.AlexandriaGetApplication().load({"id": 1, "account_id": "account_id"})
+```
+
+#### Example: List
+
+```python
+alexandria_get_applications = client.AlexandriaGetApplication().list({"account_id": "example"})
+```
+
+#### Example: Create
+
+```python
+alexandria_get_application = client.AlexandriaGetApplication().create({
+    "account_id": "example_account_id",  # str
+    "category_id": 1,  # int
+    "errors": [],  # list
+    "human_id": "example_human_id",  # str
+    "messages": [],  # list
+    "name": "example_name",  # str
+    "result": {},  # dict
+    "success": True,  # bool
+})
+```
+
+
+### AlexandriaGetCategory
+
+Create an instance: `alexandria_get_category = client.AlexandriaGetCategory()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `list()` | List entities, optionally matching the given criteria. |
+| `load(match)` | Load a single entity by match criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `list` |  |
+| `id` | `str` |  |
+| `messages` | `list` |  |
+| `result` | `dict` | Returns the list of categories. |
+| `success` | `bool` | Indicates whether the API call was successful. |
+
+#### Example: Load
+
+```python
+alexandria_get_category = client.AlexandriaGetCategory().load({"id": 1, "account_id": "account_id"})
+```
+
+#### Example: List
+
+```python
+alexandria_get_categorys = client.AlexandriaGetCategory().list({"account_id": "example"})
+```
+
+
 ### ClientVersion
 
 Create an instance: `client_version = client.ClientVersion()`
@@ -2139,6 +2477,23 @@ digital_experience_monitoring_fleet_status_over_time = client.DigitalExperienceM
 ```
 
 
+### Integration
+
+Create an instance: `integration = client.Integration()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `remove(match)` | Remove the matching entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | `str` |  |
+
+
 ### Interconnect
 
 Create an instance: `interconnect = client.Interconnect()`
@@ -2453,6 +2808,300 @@ Create an instance: `nsc_status_info = client.NscStatusInfo()`
 
 ```python
 nsc_status_info = client.NscStatusInfo().load({"account_id": "account_id", "icon": "icon"})
+```
+
+
+### OneApplicationDetail
+
+Create an instance: `one_application_detail = client.OneApplicationDetail()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `load(match)` | Load a single entity by match criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `list` | List of errors. |
+| `messages` | `list` | List of messages. |
+| `result` | `Any` | The requested item. |
+| `success` | `bool` | Whether the request succeeded. |
+
+#### Example: Load
+
+```python
+one_application_detail = client.OneApplicationDetail().load({"account_id": "account_id", "application_id": "application_id"})
+```
+
+
+### OneIntegrationCreate
+
+Create an instance: `one_integration_create = client.OneIntegrationCreate()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `create(data)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `application` | `str` | Vendor/application slug (e.g., GOOGLE_WORKSPACE). |
+| `auth_method` | `str` | Authentication method slug (uses default if omitted). |
+| `credentials` | `dict` | Credentials for the integration. |
+| `dlp_profiles` | `list` | List of DLP profile IDs to associate. |
+| `name` | `str` | Name of the integration. |
+| `permissions` | `list` | List of permission scopes (uses policy defaults if empty). |
+| `use_cases` | `list` | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+#### Example: Create
+
+```python
+one_integration_create = client.OneIntegrationCreate().create({
+    "account_id": "example_account_id",  # str
+    "application": "example_application",  # str
+    "credentials": {},  # dict
+    "name": "example_name",  # str
+})
+```
+
+
+### OneIntegrationDetail
+
+Create an instance: `one_integration_detail = client.OneIntegrationDetail()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `load(match)` | Load a single entity by match criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `list` | List of errors. |
+| `id` | `str` |  |
+| `messages` | `list` | List of messages. |
+| `result` | `Any` | The requested item. |
+| `success` | `bool` | Whether the request succeeded. |
+
+#### Example: Load
+
+```python
+one_integration_detail = client.OneIntegrationDetail().load({"id": "one_integration_detail_id", "account_id": "account_id"})
+```
+
+
+### OneIntegrationPause
+
+Create an instance: `one_integration_pause = client.OneIntegrationPause()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `create(data)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `list` | List of errors. |
+| `messages` | `list` | List of messages. |
+| `result` | `Any` | The requested item. |
+| `success` | `bool` | Whether the request succeeded. |
+
+#### Example: Create
+
+```python
+one_integration_pause = client.OneIntegrationPause().create({
+    "account_id": "example_account_id",  # str
+    "integration_id": "example_integration_id",  # str
+    "result": "example_result",  # Any
+    "success": True,  # bool
+})
+```
+
+
+### OneIntegrationResume
+
+Create an instance: `one_integration_resume = client.OneIntegrationResume()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `create(data)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `list` | List of errors. |
+| `messages` | `list` | List of messages. |
+| `result` | `Any` | The requested item. |
+| `success` | `bool` | Whether the request succeeded. |
+
+#### Example: Create
+
+```python
+one_integration_resume = client.OneIntegrationResume().create({
+    "account_id": "example_account_id",  # str
+    "integration_id": "example_integration_id",  # str
+    "result": "example_result",  # Any
+    "success": True,  # bool
+})
+```
+
+
+### OneIntegrationUpdate
+
+Create an instance: `one_integration_update = client.OneIntegrationUpdate()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `update(data)` | Update an existing entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `credentials` | `dict` | Partial credential fields to merge with existing. |
+| `dlp_profiles` | `list` | List of DLP profile IDs to associate with the integration. |
+| `errors` | `list` | List of errors. |
+| `id` | `str` |  |
+| `messages` | `list` | List of messages. |
+| `name` | `str` | Name of the integration. |
+| `permissions` | `list` | List of permission scopes granted to the integration. |
+| `result` | `Any` | The requested item. |
+| `success` | `bool` | Whether the request succeeded. |
+| `use_cases` | `list` | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+
+### OnePaginatedApplicationListList
+
+Create an instance: `one_paginated_application_list_list = client.OnePaginatedApplicationListList()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `list()` | List entities, optionally matching the given criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `auth_methods` | `list` | Available auth methods. |
+| `category` | `str` | Vendor category (e.g. |
+| `description` | `str` | Brief description of the integration. |
+| `display_name` | `str` | Human-readable vendor name. |
+| `dlp_enabled` | `bool` | Whether DLP scanning is supported. |
+| `id` | `str` | Vendor identifier (e.g. |
+| `logo` | `str` | Logo path. |
+| `permissions` | `list` | All permissions with severity. |
+| `supported_environments` | `list` | Environments this vendor supports (standard, fedramp). |
+| `use_cases` | `list` | Supported use cases. |
+
+#### Example: List
+
+```python
+one_paginated_application_list_lists = client.OnePaginatedApplicationListList().list({"account_id": "example"})
+```
+
+
+### OnePaginatedAuthMethodDetailList
+
+Create an instance: `one_paginated_auth_method_detail_list = client.OnePaginatedAuthMethodDetailList()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `list()` | List entities, optionally matching the given criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `display_name` | `str` | Human-readable auth method name. |
+| `human_interaction_required` | `bool` | Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction). |
+| `id` | `str` | Auth method identifier. |
+| `instructions` | `Any` | Step-by-step instructions for obtaining credentials. |
+| `payload_example` | `dict` | Example credentials payload with placeholder values. |
+| `payload_schema` | `dict` | JSON Schema for the credentials object in POST /v2/integrations request. |
+| `redirect_url` | `str` | OAuth redirect URL for vendors requiring human interaction. |
+
+#### Example: List
+
+```python
+one_paginated_auth_method_detail_lists = client.OnePaginatedAuthMethodDetailList().list({"account_id": "example", "application_id": "example"})
+```
+
+
+### OnePaginatedIntegrationV2ListItemList
+
+Create an instance: `one_paginated_integration_v2_list_item_list = client.OnePaginatedIntegrationV2ListItemList()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `list()` | List entities, optionally matching the given criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `application` | `dict` |  |
+| `created` | `str` | When the integration was created. |
+| `id` | `str` | Integration ID. |
+| `is_paused` | `bool` | Whether the user paused the integration. |
+| `name` | `str` | Name of the integration. |
+| `status` | `str` | Integration status. |
+| `updated` | `str` | When the integration was last updated. |
+
+#### Example: List
+
+```python
+one_paginated_integration_v2_list_item_lists = client.OnePaginatedIntegrationV2ListItemList().list({"account_id": "example"})
+```
+
+
+### OnePaginatedSetupFlowList
+
+Create an instance: `one_paginated_setup_flow_list = client.OnePaginatedSetupFlowList()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `list()` | List entities, optionally matching the given criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `auth_config` | `Any` | OAuth configuration (present for OAuth-based flows). |
+| `default` | `bool` | Whether this is the default auth method. |
+| `description` | `str` | Flow description. |
+| `id` | `str` | Setup flow identifier. |
+| `name` | `str` | Human-readable flow name. |
+| `steps` | `list` | Ordered list of setup steps. |
+| `supported_environments` | `list` | Environments this auth method supports (standard, fedramp). |
+
+#### Example: List
+
+```python
+one_paginated_setup_flow_lists = client.OnePaginatedSetupFlowList().list({"account_id": "example", "application_id": "example"})
 ```
 
 
@@ -2895,6 +3544,31 @@ Create an instance: `teams_devices_device_settings_response_collection = client.
 
 ```python
 teams_devices_device_settings_response_collections = client.TeamsDevicesDeviceSettingsResponseCollection().list({"account_id": "example"})
+```
+
+
+### TeamsDevicesDevicesPolicyCertificatesSingle
+
+Create an instance: `teams_devices_devices_policy_certificates_single = client.TeamsDevicesDevicesPolicyCertificatesSingle()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `load(match)` | Load a single entity by match criteria. |
+| `update(data)` | Update an existing entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `enabled` | `bool` | The current status of the device policy certificate provisioning feature for WARP clients. |
+| `result` | `dict` |  |
+
+#### Example: Load
+
+```python
+teams_devices_devices_policy_certificates_single = client.TeamsDevicesDevicesPolicyCertificatesSingle().load({"zone_id": "zone_id"})
 ```
 
 
@@ -4968,11 +5642,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-zerotrustgatewaysingleresponse6 = client.ZeroTrustGatewaySingleResponse6()
-zerotrustgatewaysingleresponse6.load({"account_id": "example"})
+teamsdevicesglobalwarpoverride = client.TeamsDevicesGlobalWarpOverride()
+teamsdevicesglobalwarpoverride.load({"account_id": "example"})
 
-# zerotrustgatewaysingleresponse6.data_get() now returns the zerotrustgatewaysingleresponse6 data from the last load
-# zerotrustgatewaysingleresponse6.match_get() returns the last match criteria
+# teamsdevicesglobalwarpoverride.data_get() now returns the teamsdevicesglobalwarpoverride data from the last load
+# teamsdevicesglobalwarpoverride.match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

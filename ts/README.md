@@ -5,7 +5,7 @@
 The TypeScript SDK for the CloudflareZeroTrust API — a type-safe, entity-oriented client with full async/await support.
 
 The API is exposed as capitalised, semantic **Entities** — e.g.
-`client.ClientVersion()` — each with a small set of operations (`list`, `load`, `create`, `update`, `remove`, `patch`)
+`client.AlexandriaDeleteApplication()` — each with a small set of operations (`list`, `load`, `create`, `update`, `remove`, `patch`)
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
@@ -35,20 +35,6 @@ const client = new CloudflareZeroTrustSDK({
 })
 ```
 
-### 2. List clientversion records
-
-`list()` resolves to an array of ClientVersion ENTITIES — every operation
-resolves to entities, not raw records. Iterate them directly, and call
-`.data()` on one for the record it holds:
-
-```ts
-const clientversions = await client.ClientVersion().list({ account_id: "example", release_track: "example", target_environment: "example" })
-
-for (const clientversion of clientversions) {
-  console.log(clientversion)
-}
-```
-
 ### 3. Load a nscdefaultname
 
 NscDefaultName is nested under account, so provide the `account_id`.
@@ -66,6 +52,16 @@ try {
 }
 ```
 
+### 4. Create, update, and remove
+
+```ts
+// Remove
+await client.AlexandriaDeleteApplication().remove({
+  account_id: 'example_account_id',
+  id: 1,
+})
+```
+
 
 ## Error handling
 
@@ -73,8 +69,8 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const zerotrustgatewaysingleresponse6 = await client.ZeroTrustGatewaySingleResponse6().load({ account_id: "example" })
-  console.log(zerotrustgatewaysingleresponse6)
+  const teamsdevicesglobalwarpoverride = await client.TeamsDevicesGlobalWarpOverride().load({ account_id: "example" })
+  console.log(teamsdevicesglobalwarpoverride)
 } catch (err) {
   console.error('load failed:', err)
 }
@@ -140,10 +136,10 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = CloudflareZeroTrustSDK.test()
 
-const zerotrustgatewaysingleresponse6 = await client.ZeroTrustGatewaySingleResponse6().load({ account_id: 'example_account_id' })
-// zerotrustgatewaysingleresponse6 is the entity, populated with mock response data
-// — call zerotrustgatewaysingleresponse6.data() for the record itself
-console.log(zerotrustgatewaysingleresponse6)
+const teamsdevicesglobalwarpoverride = await client.TeamsDevicesGlobalWarpOverride().load({ account_id: 'example_account_id' })
+// teamsdevicesglobalwarpoverride is the entity, populated with mock response data
+// — call teamsdevicesglobalwarpoverride.data() for the record itself
+console.log(teamsdevicesglobalwarpoverride)
 ```
 
 You can also use the instance method:
@@ -158,7 +154,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.ZeroTrustGatewaySingleResponse6()
+const entity = client.TeamsDevicesGlobalWarpOverride()
 
 // First call runs the operation and stores its result
 await entity.load({ account_id: 'example_account_id' })
@@ -245,6 +241,9 @@ new CloudflareZeroTrustSDK(options?: {
 | `utility()` | `Utility` | Deep copy of the SDK utility object. |
 | `prepare(fetchargs?)` | `Promise<FetchDef>` | Build an HTTP request definition without sending it. |
 | `direct(fetchargs?)` | `Promise<DirectResult>` | Build and send an HTTP request. |
+| `AlexandriaDeleteApplication(data?)` | `AlexandriaDeleteApplicationEntity` | Create an AlexandriaDeleteApplication entity instance. |
+| `AlexandriaGetApplication(data?)` | `AlexandriaGetApplicationEntity` | Create an AlexandriaGetApplication entity instance. |
+| `AlexandriaGetCategory(data?)` | `AlexandriaGetCategoryEntity` | Create an AlexandriaGetCategory entity instance. |
 | `ClientVersion(data?)` | `ClientVersionEntity` | Create a ClientVersion entity instance. |
 | `Cni(data?)` | `CniEntity` | Create a Cni entity instance. |
 | `DeploymentGroup(data?)` | `DeploymentGroupEntity` | Create a DeploymentGroup entity instance. |
@@ -258,6 +257,7 @@ new CloudflareZeroTrustSDK(options?: {
 | `DigitalExperienceMonitoringFleetStatusDevice(data?)` | `DigitalExperienceMonitoringFleetStatusDeviceEntity` | Create a DigitalExperienceMonitoringFleetStatusDevice entity instance. |
 | `DigitalExperienceMonitoringFleetStatusLive(data?)` | `DigitalExperienceMonitoringFleetStatusLiveEntity` | Create a DigitalExperienceMonitoringFleetStatusLive entity instance. |
 | `DigitalExperienceMonitoringFleetStatusOverTime(data?)` | `DigitalExperienceMonitoringFleetStatusOverTimeEntity` | Create a DigitalExperienceMonitoringFleetStatusOverTime entity instance. |
+| `Integration(data?)` | `IntegrationEntity` | Create an Integration entity instance. |
 | `Interconnect(data?)` | `InterconnectEntity` | Create an Interconnect entity instance. |
 | `IpProfile(data?)` | `IpProfileEntity` | Create an IpProfile entity instance. |
 | `List(data?)` | `ListEntity` | Create a List entity instance. |
@@ -268,6 +268,16 @@ new CloudflareZeroTrustSDK(options?: {
 | `NscSetting(data?)` | `NscSettingEntity` | Create a NscSetting entity instance. |
 | `NscSlotInfo(data?)` | `NscSlotInfoEntity` | Create a NscSlotInfo entity instance. |
 | `NscStatusInfo(data?)` | `NscStatusInfoEntity` | Create a NscStatusInfo entity instance. |
+| `OneApplicationDetail(data?)` | `OneApplicationDetailEntity` | Create an OneApplicationDetail entity instance. |
+| `OneIntegrationCreate(data?)` | `OneIntegrationCreateEntity` | Create an OneIntegrationCreate entity instance. |
+| `OneIntegrationDetail(data?)` | `OneIntegrationDetailEntity` | Create an OneIntegrationDetail entity instance. |
+| `OneIntegrationPause(data?)` | `OneIntegrationPauseEntity` | Create an OneIntegrationPause entity instance. |
+| `OneIntegrationResume(data?)` | `OneIntegrationResumeEntity` | Create an OneIntegrationResume entity instance. |
+| `OneIntegrationUpdate(data?)` | `OneIntegrationUpdateEntity` | Create an OneIntegrationUpdate entity instance. |
+| `OnePaginatedApplicationListList(data?)` | `OnePaginatedApplicationListListEntity` | Create an OnePaginatedApplicationListList entity instance. |
+| `OnePaginatedAuthMethodDetailList(data?)` | `OnePaginatedAuthMethodDetailListEntity` | Create an OnePaginatedAuthMethodDetailList entity instance. |
+| `OnePaginatedIntegrationV2ListItemList(data?)` | `OnePaginatedIntegrationV2ListItemListEntity` | Create an OnePaginatedIntegrationV2ListItemList entity instance. |
+| `OnePaginatedSetupFlowList(data?)` | `OnePaginatedSetupFlowListEntity` | Create an OnePaginatedSetupFlowList entity instance. |
 | `OverrideCode(data?)` | `OverrideCodeEntity` | Create an OverrideCode entity instance. |
 | `Pacfile(data?)` | `PacfileEntity` | Create a Pacfile entity instance. |
 | `PhysicalDevice(data?)` | `PhysicalDeviceEntity` | Create a PhysicalDevice entity instance. |
@@ -281,6 +291,7 @@ new CloudflareZeroTrustSDK(options?: {
 | `TeamsDevicesDevice(data?)` | `TeamsDevicesDeviceEntity` | Create a TeamsDevicesDevice entity instance. |
 | `TeamsDevicesDeviceSetting(data?)` | `TeamsDevicesDeviceSettingEntity` | Create a TeamsDevicesDeviceSetting entity instance. |
 | `TeamsDevicesDeviceSettingsResponseCollection(data?)` | `TeamsDevicesDeviceSettingsResponseCollectionEntity` | Create a TeamsDevicesDeviceSettingsResponseCollection entity instance. |
+| `TeamsDevicesDevicesPolicyCertificatesSingle(data?)` | `TeamsDevicesDevicesPolicyCertificatesSingleEntity` | Create a TeamsDevicesDevicesPolicyCertificatesSingle entity instance. |
 | `TeamsDevicesFallbackDomainResponseCollection(data?)` | `TeamsDevicesFallbackDomainResponseCollectionEntity` | Create a TeamsDevicesFallbackDomainResponseCollection entity instance. |
 | `TeamsDevicesGlobalWarpOverride(data?)` | `TeamsDevicesGlobalWarpOverrideEntity` | Create a TeamsDevicesGlobalWarpOverride entity instance. |
 | `TeamsDevicesId(data?)` | `TeamsDevicesIdEntity` | Create a TeamsDevicesId entity instance. |
@@ -419,6 +430,51 @@ The `prepare()` method returns:
 ```
 
 ### Entities
+
+#### AlexandriaDeleteApplication
+
+| Field | Description |
+| --- | --- |
+| `id` |  |
+
+Operations: remove.
+
+API path: `/accounts/{account_id}/resource-library/applications/{id}`
+
+#### AlexandriaGetApplication
+
+| Field | Description |
+| --- | --- |
+| `category_id` | Returns the category ID. |
+| `errors` |  |
+| `hostnames` | Hostnames matched by the application. |
+| `human_id` | Returns the human readable ID. |
+| `id` |  |
+| `ip_subnets` | IP subnets for this application. |
+| `messages` |  |
+| `name` | Returns the application name. |
+| `port_protocols` | Port and protocol pairs matched by the application. |
+| `result` | Returns the list of applications. |
+| `success` | Indicates whether the API call was successful. |
+| `support_domains` | Support domains matched by the application. |
+
+Operations: create, list, load, update.
+
+API path: `/accounts/{account_id}/resource-library/applications`
+
+#### AlexandriaGetCategory
+
+| Field | Description |
+| --- | --- |
+| `errors` |  |
+| `id` |  |
+| `messages` |  |
+| `result` | Returns the list of categories. |
+| `success` | Indicates whether the API call was successful. |
+
+Operations: list, load.
+
+API path: `/accounts/{account_id}/resource-library/categories`
 
 #### ClientVersion
 
@@ -621,6 +677,16 @@ Operations: load.
 
 API path: `/accounts/{account_id}/dex/fleet-status/over-time`
 
+#### Integration
+
+| Field | Description |
+| --- | --- |
+| `id` |  |
+
+Operations: remove.
+
+API path: `/accounts/{account_id}/one/integrations/{id}`
+
 #### Interconnect
 
 | Field | Description |
@@ -747,6 +813,161 @@ API path: `/accounts/{account_id}/cni/slots`
 Operations: load.
 
 API path: `/accounts/{account_id}/cni/interconnects/{icon}/status`
+
+#### OneApplicationDetail
+
+| Field | Description |
+| --- | --- |
+| `errors` | List of errors. |
+| `messages` | List of messages. |
+| `result` | The requested item. |
+| `success` | Whether the request succeeded. |
+
+Operations: load.
+
+API path: `/accounts/{account_id}/one/applications/{application_id}`
+
+#### OneIntegrationCreate
+
+| Field | Description |
+| --- | --- |
+| `application` | Vendor/application slug (e.g., GOOGLE_WORKSPACE). |
+| `auth_method` | Authentication method slug (uses default if omitted). |
+| `credentials` | Credentials for the integration. |
+| `dlp_profiles` | List of DLP profile IDs to associate. |
+| `name` | Name of the integration. |
+| `permissions` | List of permission scopes (uses policy defaults if empty). |
+| `use_cases` | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+Operations: create.
+
+API path: `/accounts/{account_id}/one/integrations`
+
+#### OneIntegrationDetail
+
+| Field | Description |
+| --- | --- |
+| `errors` | List of errors. |
+| `id` |  |
+| `messages` | List of messages. |
+| `result` | The requested item. |
+| `success` | Whether the request succeeded. |
+
+Operations: load.
+
+API path: `/accounts/{account_id}/one/integrations/{id}`
+
+#### OneIntegrationPause
+
+| Field | Description |
+| --- | --- |
+| `errors` | List of errors. |
+| `messages` | List of messages. |
+| `result` | The requested item. |
+| `success` | Whether the request succeeded. |
+
+Operations: create.
+
+API path: `/accounts/{account_id}/one/integrations/{id}/pause`
+
+#### OneIntegrationResume
+
+| Field | Description |
+| --- | --- |
+| `errors` | List of errors. |
+| `messages` | List of messages. |
+| `result` | The requested item. |
+| `success` | Whether the request succeeded. |
+
+Operations: create.
+
+API path: `/accounts/{account_id}/one/integrations/{id}/resume`
+
+#### OneIntegrationUpdate
+
+| Field | Description |
+| --- | --- |
+| `credentials` | Partial credential fields to merge with existing. |
+| `dlp_profiles` | List of DLP profile IDs to associate with the integration. |
+| `errors` | List of errors. |
+| `id` |  |
+| `messages` | List of messages. |
+| `name` | Name of the integration. |
+| `permissions` | List of permission scopes granted to the integration. |
+| `result` | The requested item. |
+| `success` | Whether the request succeeded. |
+| `use_cases` | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+Operations: update.
+
+API path: `/accounts/{account_id}/one/integrations/{id}`
+
+#### OnePaginatedApplicationListList
+
+| Field | Description |
+| --- | --- |
+| `auth_methods` | Available auth methods. |
+| `category` | Vendor category (e.g. |
+| `description` | Brief description of the integration. |
+| `display_name` | Human-readable vendor name. |
+| `dlp_enabled` | Whether DLP scanning is supported. |
+| `id` | Vendor identifier (e.g. |
+| `logo` | Logo path. |
+| `permissions` | All permissions with severity. |
+| `supported_environments` | Environments this vendor supports (standard, fedramp). |
+| `use_cases` | Supported use cases. |
+
+Operations: list.
+
+API path: `/accounts/{account_id}/one/applications`
+
+#### OnePaginatedAuthMethodDetailList
+
+| Field | Description |
+| --- | --- |
+| `display_name` | Human-readable auth method name. |
+| `human_interaction_required` | Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction). |
+| `id` | Auth method identifier. |
+| `instructions` | Step-by-step instructions for obtaining credentials. |
+| `payload_example` | Example credentials payload with placeholder values. |
+| `payload_schema` | JSON Schema for the credentials object in POST /v2/integrations request. |
+| `redirect_url` | OAuth redirect URL for vendors requiring human interaction. |
+
+Operations: list.
+
+API path: `/accounts/{account_id}/one/applications/{application_id}/auth-methods`
+
+#### OnePaginatedIntegrationV2ListItemList
+
+| Field | Description |
+| --- | --- |
+| `application` |  |
+| `created` | When the integration was created. |
+| `id` | Integration ID. |
+| `is_paused` | Whether the user paused the integration. |
+| `name` | Name of the integration. |
+| `status` | Integration status. |
+| `updated` | When the integration was last updated. |
+
+Operations: list.
+
+API path: `/accounts/{account_id}/one/integrations`
+
+#### OnePaginatedSetupFlowList
+
+| Field | Description |
+| --- | --- |
+| `auth_config` | OAuth configuration (present for OAuth-based flows). |
+| `default` | Whether this is the default auth method. |
+| `description` | Flow description. |
+| `id` | Setup flow identifier. |
+| `name` | Human-readable flow name. |
+| `steps` | Ordered list of setup steps. |
+| `supported_environments` | Environments this auth method supports (standard, fedramp). |
+
+Operations: list.
+
+API path: `/accounts/{account_id}/one/applications/{application_id}/setup-flows`
 
 #### OverrideCode
 
@@ -948,6 +1169,17 @@ API path: `/accounts/{account_id}/devices/policy`
 Operations: list, remove.
 
 API path: `/accounts/{account_id}/devices/policies`
+
+#### TeamsDevicesDevicesPolicyCertificatesSingle
+
+| Field | Description |
+| --- | --- |
+| `enabled` | The current status of the device policy certificate provisioning feature for WARP clients. |
+| `result` |  |
+
+Operations: load, update.
+
+API path: `/zones/{zone_id}/devices/policy/certificates`
 
 #### TeamsDevicesFallbackDomainResponseCollection
 
@@ -1772,6 +2004,115 @@ API path: `/accounts/{account_id}/zt_risk_scoring/integrations`
 ## Entities
 
 
+### AlexandriaDeleteApplication
+
+Create an instance: `const alexandria_delete_application = client.AlexandriaDeleteApplication()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `remove(match)` | Remove the matching entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | `string` |  |
+
+
+### AlexandriaGetApplication
+
+Create an instance: `const alexandria_get_application = client.AlexandriaGetApplication()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `create(data)` | Create a new entity with the given data. |
+| `list(match)` | List entities matching the criteria. |
+| `load(match)` | Load a single entity by match criteria. |
+| `update(data)` | Update an existing entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `category_id` | `number` | Returns the category ID. |
+| `errors` | `any[]` |  |
+| `hostnames` | `any[]` | Hostnames matched by the application. |
+| `human_id` | `string` | Returns the human readable ID. |
+| `id` | `string` |  |
+| `ip_subnets` | `any[]` | IP subnets for this application. |
+| `messages` | `any[]` |  |
+| `name` | `string` | Returns the application name. |
+| `port_protocols` | `any[]` | Port and protocol pairs matched by the application. |
+| `result` | `Record<string, any>` | Returns the list of applications. |
+| `success` | `boolean` | Indicates whether the API call was successful. |
+| `support_domains` | `any[]` | Support domains matched by the application. |
+
+#### Example: Load
+
+```ts
+const alexandria_get_application = await client.AlexandriaGetApplication().load({ id: 1, account_id: 'account_id' })
+```
+
+#### Example: List
+
+```ts
+const alexandria_get_applications = await client.AlexandriaGetApplication().list({ account_id: "example" })
+```
+
+#### Example: Create
+
+```ts
+const alexandria_get_application = await client.AlexandriaGetApplication().create({
+  account_id: 'example_account_id',
+  category_id: 1,
+  errors: [],
+  human_id: 'example_human_id',
+  messages: [],
+  name: 'example_name',
+  result: {},
+  success: true,
+})
+```
+
+
+### AlexandriaGetCategory
+
+Create an instance: `const alexandria_get_category = client.AlexandriaGetCategory()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `list(match)` | List entities matching the criteria. |
+| `load(match)` | Load a single entity by match criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `any[]` |  |
+| `id` | `string` |  |
+| `messages` | `any[]` |  |
+| `result` | `Record<string, any>` | Returns the list of categories. |
+| `success` | `boolean` | Indicates whether the API call was successful. |
+
+#### Example: Load
+
+```ts
+const alexandria_get_category = await client.AlexandriaGetCategory().load({ id: 1, account_id: 'account_id' })
+```
+
+#### Example: List
+
+```ts
+const alexandria_get_categorys = await client.AlexandriaGetCategory().list({ account_id: "example" })
+```
+
+
 ### ClientVersion
 
 Create an instance: `const client_version = client.ClientVersion()`
@@ -2195,6 +2536,23 @@ const digital_experience_monitoring_fleet_status_over_time = await client.Digita
 ```
 
 
+### Integration
+
+Create an instance: `const integration = client.Integration()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `remove(match)` | Remove the matching entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | `string` |  |
+
+
 ### Interconnect
 
 Create an instance: `const interconnect = client.Interconnect()`
@@ -2509,6 +2867,300 @@ Create an instance: `const nsc_status_info = client.NscStatusInfo()`
 
 ```ts
 const nsc_status_info = await client.NscStatusInfo().load({ account_id: 'account_id', icon: 'icon' })
+```
+
+
+### OneApplicationDetail
+
+Create an instance: `const one_application_detail = client.OneApplicationDetail()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `load(match)` | Load a single entity by match criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `any[]` | List of errors. |
+| `messages` | `any[]` | List of messages. |
+| `result` | `any` | The requested item. |
+| `success` | `boolean` | Whether the request succeeded. |
+
+#### Example: Load
+
+```ts
+const one_application_detail = await client.OneApplicationDetail().load({ account_id: 'account_id', application_id: 'application_id' })
+```
+
+
+### OneIntegrationCreate
+
+Create an instance: `const one_integration_create = client.OneIntegrationCreate()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `create(data)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `application` | `string` | Vendor/application slug (e.g., GOOGLE_WORKSPACE). |
+| `auth_method` | `string` | Authentication method slug (uses default if omitted). |
+| `credentials` | `Record<string, any>` | Credentials for the integration. |
+| `dlp_profiles` | `any[]` | List of DLP profile IDs to associate. |
+| `name` | `string` | Name of the integration. |
+| `permissions` | `any[]` | List of permission scopes (uses policy defaults if empty). |
+| `use_cases` | `any[]` | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+#### Example: Create
+
+```ts
+const one_integration_create = await client.OneIntegrationCreate().create({
+  account_id: 'example_account_id',
+  application: 'example_application',
+  credentials: {},
+  name: 'example_name',
+})
+```
+
+
+### OneIntegrationDetail
+
+Create an instance: `const one_integration_detail = client.OneIntegrationDetail()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `load(match)` | Load a single entity by match criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `any[]` | List of errors. |
+| `id` | `string` |  |
+| `messages` | `any[]` | List of messages. |
+| `result` | `any` | The requested item. |
+| `success` | `boolean` | Whether the request succeeded. |
+
+#### Example: Load
+
+```ts
+const one_integration_detail = await client.OneIntegrationDetail().load({ id: 'one_integration_detail_id', account_id: 'account_id' })
+```
+
+
+### OneIntegrationPause
+
+Create an instance: `const one_integration_pause = client.OneIntegrationPause()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `create(data)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `any[]` | List of errors. |
+| `messages` | `any[]` | List of messages. |
+| `result` | `any` | The requested item. |
+| `success` | `boolean` | Whether the request succeeded. |
+
+#### Example: Create
+
+```ts
+const one_integration_pause = await client.OneIntegrationPause().create({
+  account_id: 'example_account_id',
+  integration_id: 'example_integration_id',
+  result: 'example_result',
+  success: true,
+})
+```
+
+
+### OneIntegrationResume
+
+Create an instance: `const one_integration_resume = client.OneIntegrationResume()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `create(data)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `any[]` | List of errors. |
+| `messages` | `any[]` | List of messages. |
+| `result` | `any` | The requested item. |
+| `success` | `boolean` | Whether the request succeeded. |
+
+#### Example: Create
+
+```ts
+const one_integration_resume = await client.OneIntegrationResume().create({
+  account_id: 'example_account_id',
+  integration_id: 'example_integration_id',
+  result: 'example_result',
+  success: true,
+})
+```
+
+
+### OneIntegrationUpdate
+
+Create an instance: `const one_integration_update = client.OneIntegrationUpdate()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `update(data)` | Update an existing entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `credentials` | `Record<string, any>` | Partial credential fields to merge with existing. |
+| `dlp_profiles` | `any[]` | List of DLP profile IDs to associate with the integration. |
+| `errors` | `any[]` | List of errors. |
+| `id` | `string` |  |
+| `messages` | `any[]` | List of messages. |
+| `name` | `string` | Name of the integration. |
+| `permissions` | `any[]` | List of permission scopes granted to the integration. |
+| `result` | `any` | The requested item. |
+| `success` | `boolean` | Whether the request succeeded. |
+| `use_cases` | `any[]` | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+
+### OnePaginatedApplicationListList
+
+Create an instance: `const one_paginated_application_list_list = client.OnePaginatedApplicationListList()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `list(match)` | List entities matching the criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `auth_methods` | `any[]` | Available auth methods. |
+| `category` | `string` | Vendor category (e.g. |
+| `description` | `string` | Brief description of the integration. |
+| `display_name` | `string` | Human-readable vendor name. |
+| `dlp_enabled` | `boolean` | Whether DLP scanning is supported. |
+| `id` | `string` | Vendor identifier (e.g. |
+| `logo` | `string` | Logo path. |
+| `permissions` | `any[]` | All permissions with severity. |
+| `supported_environments` | `any[]` | Environments this vendor supports (standard, fedramp). |
+| `use_cases` | `any[]` | Supported use cases. |
+
+#### Example: List
+
+```ts
+const one_paginated_application_list_lists = await client.OnePaginatedApplicationListList().list({ account_id: "example" })
+```
+
+
+### OnePaginatedAuthMethodDetailList
+
+Create an instance: `const one_paginated_auth_method_detail_list = client.OnePaginatedAuthMethodDetailList()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `list(match)` | List entities matching the criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `display_name` | `string` | Human-readable auth method name. |
+| `human_interaction_required` | `boolean` | Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction). |
+| `id` | `string` | Auth method identifier. |
+| `instructions` | `any` | Step-by-step instructions for obtaining credentials. |
+| `payload_example` | `Record<string, any>` | Example credentials payload with placeholder values. |
+| `payload_schema` | `Record<string, any>` | JSON Schema for the credentials object in POST /v2/integrations request. |
+| `redirect_url` | `string` | OAuth redirect URL for vendors requiring human interaction. |
+
+#### Example: List
+
+```ts
+const one_paginated_auth_method_detail_lists = await client.OnePaginatedAuthMethodDetailList().list({ account_id: "example", application_id: "example" })
+```
+
+
+### OnePaginatedIntegrationV2ListItemList
+
+Create an instance: `const one_paginated_integration_v2_list_item_list = client.OnePaginatedIntegrationV2ListItemList()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `list(match)` | List entities matching the criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `application` | `Record<string, any>` |  |
+| `created` | `string` | When the integration was created. |
+| `id` | `string` | Integration ID. |
+| `is_paused` | `boolean` | Whether the user paused the integration. |
+| `name` | `string` | Name of the integration. |
+| `status` | `string` | Integration status. |
+| `updated` | `string` | When the integration was last updated. |
+
+#### Example: List
+
+```ts
+const one_paginated_integration_v2_list_item_lists = await client.OnePaginatedIntegrationV2ListItemList().list({ account_id: "example" })
+```
+
+
+### OnePaginatedSetupFlowList
+
+Create an instance: `const one_paginated_setup_flow_list = client.OnePaginatedSetupFlowList()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `list(match)` | List entities matching the criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `auth_config` | `any` | OAuth configuration (present for OAuth-based flows). |
+| `default` | `boolean` | Whether this is the default auth method. |
+| `description` | `string` | Flow description. |
+| `id` | `string` | Setup flow identifier. |
+| `name` | `string` | Human-readable flow name. |
+| `steps` | `any[]` | Ordered list of setup steps. |
+| `supported_environments` | `any[]` | Environments this auth method supports (standard, fedramp). |
+
+#### Example: List
+
+```ts
+const one_paginated_setup_flow_lists = await client.OnePaginatedSetupFlowList().list({ account_id: "example", application_id: "example" })
 ```
 
 
@@ -2951,6 +3603,31 @@ Create an instance: `const teams_devices_device_settings_response_collection = c
 
 ```ts
 const teams_devices_device_settings_response_collections = await client.TeamsDevicesDeviceSettingsResponseCollection().list({ account_id: "example" })
+```
+
+
+### TeamsDevicesDevicesPolicyCertificatesSingle
+
+Create an instance: `const teams_devices_devices_policy_certificates_single = client.TeamsDevicesDevicesPolicyCertificatesSingle()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `load(match)` | Load a single entity by match criteria. |
+| `update(data)` | Update an existing entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `enabled` | `boolean` | The current status of the device policy certificate provisioning feature for WARP clients. |
+| `result` | `Record<string, any>` |  |
+
+#### Example: Load
+
+```ts
+const teams_devices_devices_policy_certificates_single = await client.TeamsDevicesDevicesPolicyCertificatesSingle().load({ zone_id: 'zone_id' })
 ```
 
 
@@ -5017,11 +5694,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const zerotrustgatewaysingleresponse6 = client.ZeroTrustGatewaySingleResponse6()
-await zerotrustgatewaysingleresponse6.load({ account_id: "example" })
+const teamsdevicesglobalwarpoverride = client.TeamsDevicesGlobalWarpOverride()
+await teamsdevicesglobalwarpoverride.load({ account_id: "example" })
 
-// zerotrustgatewaysingleresponse6.data() now returns the zerotrustgatewaysingleresponse6 data from the last `load`
-// zerotrustgatewaysingleresponse6.match() returns the last match criteria
+// teamsdevicesglobalwarpoverride.data() now returns the teamsdevicesglobalwarpoverride data from the last `load`
+// teamsdevicesglobalwarpoverride.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

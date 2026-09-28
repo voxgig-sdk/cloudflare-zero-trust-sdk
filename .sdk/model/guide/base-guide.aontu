@@ -4,9 +4,35 @@
 #   guide.aontu
 
 guide: {
-  metrics: count: entity: 104
-  metrics: count: path: 138
-  metrics: count: method: 242
+  metrics: count: entity: 119
+  metrics: count: path: 151
+  metrics: count: method: 262
+
+  entity: alexandria_delete_application: {
+    path: "/accounts/{account_id}/resource-library/applications/{id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: alexandria_get_application: {
+    path: "/accounts/{account_id}/resource-library/applications": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/resource-library/applications/{id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: alexandria_get_category: {
+    path: "/accounts/{account_id}/resource-library/categories": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/resource-library/categories/{id}": {
+      op: load: method: *GET
+    }
+  }
 
   entity: client_version: {
     path: "/accounts/{account_id}/devices/client-versions": {
@@ -153,6 +179,12 @@ guide: {
     }
   }
 
+  entity: integration: {
+    path: "/accounts/{account_id}/one/integrations/{id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
   entity: interconnect: {
     path: "/accounts/{account_id}/cni/interconnects/{icon}": {
       rename: param: "icon": *"id"
@@ -244,6 +276,68 @@ guide: {
   entity: nsc_status_info: {
     path: "/accounts/{account_id}/cni/interconnects/{icon}/status": {
       op: load: method: *GET
+    }
+  }
+
+  entity: one_application_detail: {
+    path: "/accounts/{account_id}/one/applications/{application_id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: one_integration_create: {
+    path: "/accounts/{account_id}/one/integrations": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: one_integration_detail: {
+    path: "/accounts/{account_id}/one/integrations/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: one_integration_pause: {
+    path: "/accounts/{account_id}/one/integrations/{id}/pause": {
+      rename: param: "id": *"integration_id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: one_integration_resume: {
+    path: "/accounts/{account_id}/one/integrations/{id}/resume": {
+      rename: param: "id": *"integration_id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: one_integration_update: {
+    path: "/accounts/{account_id}/one/integrations/{id}": {
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: one_paginated_application_list_list: {
+    path: "/accounts/{account_id}/one/applications": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: one_paginated_auth_method_detail_list: {
+    path: "/accounts/{account_id}/one/applications/{application_id}/auth-methods": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: one_paginated_integration_v2_list_item_list: {
+    path: "/accounts/{account_id}/one/integrations": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: one_paginated_setup_flow_list: {
+    path: "/accounts/{account_id}/one/applications/{application_id}/setup-flows": {
+      op: list: method: *GET
     }
   }
 
@@ -375,6 +469,13 @@ guide: {
     }
     path: "/accounts/{account_id}/devices/policy/{policy_id}": {
       op: remove: method: *DELETE
+    }
+  }
+
+  entity: teams_devices_devices_policy_certificates_single: {
+    path: "/zones/{zone_id}/devices/policy/certificates": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
     }
   }
 

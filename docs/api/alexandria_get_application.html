@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AlexandriaGetApplication | Cloudflare Zero Trust Gateway</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Zero Trust Gateway<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-zero-trust-sdk">voxgig-sdk/cloudflare-zero-trust-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Zero Trust Gateway</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/alexandria_delete_application.html">AlexandriaDeleteApplication</a>
+<a aria-current="page" href="../api/alexandria_get_application.html">AlexandriaGetApplication</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idresource-libraryapplications">POST /accounts/{account_id}/resource-library/applications</a>
+<a class="nav-section" href="#get-accountsaccount_idresource-libraryapplications">GET /accounts/{account_id}/resource-library/applications</a>
+<a class="nav-section" href="#get-accountsaccount_idresource-libraryapplicationsid">GET /accounts/{account_id}/resource-library/applications/{id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idresource-libraryapplicationsid">PATCH /accounts/{account_id}/resource-library/applications/{id}</a></div>
+<a href="../api/alexandria_get_category.html">AlexandriaGetCategory</a>
+<a href="../api/client_version.html">ClientVersion</a>
+<a href="../api/cni.html">Cni</a>
+<a href="../api/deployment_group.html">DeploymentGroup</a>
+<a href="../api/dex_remote_command.html">DexRemoteCommand</a>
+<a href="../api/dex_rule.html">DexRule</a>
+<a href="../api/dex_synthetic_application_monitoring.html">DexSyntheticApplicationMonitoring</a>
+<a href="../api/digital_experience_monitoring_device.html">DigitalExperienceMonitoringDevice</a>
+<a href="../api/digital_experience_monitoring_dex_delete_response_collection.html">DigitalExperienceMonitoringDexDeleteResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_response_collection.html">DigitalExperienceMonitoringDexResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_single.html">DigitalExperienceMonitoringDexSingle</a>
+<a href="../api/digital_experience_monitoring_fleet_status_device.html">DigitalExperienceMonitoringFleetStatusDevice</a>
+<a href="../api/digital_experience_monitoring_fleet_status_live.html">DigitalExperienceMonitoringFleetStatusLive</a>
+<a href="../api/digital_experience_monitoring_fleet_status_over_time.html">DigitalExperienceMonitoringFleetStatusOverTime</a>
+<a href="../api/integration.html">Integration</a>
+<a href="../api/interconnect.html">Interconnect</a>
+<a href="../api/ip_profile.html">IpProfile</a>
+<a href="../api/list.html">List</a>
+<a href="../api/location.html">Location</a>
+<a href="../api/nsc_cni.html">NscCni</a>
+<a href="../api/nsc_default_name.html">NscDefaultName</a>
+<a href="../api/nsc_interconnect.html">NscInterconnect</a>
+<a href="../api/nsc_setting.html">NscSetting</a>
+<a href="../api/nsc_slot_info.html">NscSlotInfo</a>
+<a href="../api/nsc_status_info.html">NscStatusInfo</a>
+<a href="../api/one_application_detail.html">OneApplicationDetail</a>
+<a href="../api/one_integration_create.html">OneIntegrationCreate</a>
+<a href="../api/one_integration_detail.html">OneIntegrationDetail</a>
+<a href="../api/one_integration_pause.html">OneIntegrationPause</a>
+<a href="../api/one_integration_resume.html">OneIntegrationResume</a>
+<a href="../api/one_integration_update.html">OneIntegrationUpdate</a>
+<a href="../api/one_paginated_application_list_list.html">OnePaginatedApplicationListList</a>
+<a href="../api/one_paginated_auth_method_detail_list.html">OnePaginatedAuthMethodDetailList</a>
+<a href="../api/one_paginated_integration_v2_list_item_list.html">OnePaginatedIntegrationV2ListItemList</a>
+<a href="../api/one_paginated_setup_flow_list.html">OnePaginatedSetupFlowList</a>
+<a href="../api/override_code.html">OverrideCode</a>
+<a href="../api/pacfile.html">Pacfile</a>
+<a href="../api/physical_device.html">PhysicalDevice</a>
+<a href="../api/proxy_endpoint.html">ProxyEndpoint</a>
+<a href="../api/registration.html">Registration</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/teams_devices_api_response_single.html">TeamsDevicesApiResponseSingle</a>
+<a href="../api/teams_devices_components_schemas_response_collection.html">TeamsDevicesComponentsSchemasResponseCollection</a>
+<a href="../api/teams_devices_components_schemas_single.html">TeamsDevicesComponentsSchemasSingle</a>
+<a href="../api/teams_devices_default_device_setting.html">TeamsDevicesDefaultDeviceSetting</a>
+<a href="../api/teams_devices_device.html">TeamsDevicesDevice</a>
+<a href="../api/teams_devices_device_setting.html">TeamsDevicesDeviceSetting</a>
+<a href="../api/teams_devices_device_settings_response_collection.html">TeamsDevicesDeviceSettingsResponseCollection</a>
+<a href="../api/teams_devices_devices_policy_certificates_single.html">TeamsDevicesDevicesPolicyCertificatesSingle</a>
+<a href="../api/teams_devices_fallback_domain_response_collection.html">TeamsDevicesFallbackDomainResponseCollection</a>
+<a href="../api/teams_devices_global_warp_override.html">TeamsDevicesGlobalWarpOverride</a>
+<a href="../api/teams_devices_id.html">TeamsDevicesId</a>
+<a href="../api/teams_devices_override_code.html">TeamsDevicesOverrideCode</a>
+<a href="../api/teams_devices_response_collection.html">TeamsDevicesResponseCollection</a>
+<a href="../api/teams_devices_schemas_id.html">TeamsDevicesSchemasId</a>
+<a href="../api/teams_devices_schemas_response_collection.html">TeamsDevicesSchemasResponseCollection</a>
+<a href="../api/teams_devices_schemas_single.html">TeamsDevicesSchemasSingle</a>
+<a href="../api/teams_devices_single.html">TeamsDevicesSingle</a>
+<a href="../api/teams_devices_split_tunnel_include_response_collection.html">TeamsDevicesSplitTunnelIncludeResponseCollection</a>
+<a href="../api/teams_devices_split_tunnel_response_collection.html">TeamsDevicesSplitTunnelResponseCollection</a>
+<a href="../api/teams_devices_zero_trust_account_device_setting.html">TeamsDevicesZeroTrustAccountDeviceSetting</a>
+<a href="../api/tunnel.html">Tunnel</a>
+<a href="../api/tunnel_cfd_tunnel_response_collection.html">TunnelCfdTunnelResponseCollection</a>
+<a href="../api/tunnel_cfd_tunnel_response_single.html">TunnelCfdTunnelResponseSingle</a>
+<a href="../api/tunnel_configuration.html">TunnelConfiguration</a>
+<a href="../api/tunnel_empty.html">TunnelEmpty</a>
+<a href="../api/tunnel_hostname_route_response_collection.html">TunnelHostnameRouteResponseCollection</a>
+<a href="../api/tunnel_hostname_route_response_single.html">TunnelHostnameRouteResponseSingle</a>
+<a href="../api/tunnel_mesh_configuration_response_single.html">TunnelMeshConfigurationResponseSingle</a>
+<a href="../api/tunnel_route_response_single.html">TunnelRouteResponseSingle</a>
+<a href="../api/tunnel_subnet_response_collection.html">TunnelSubnetResponseCollection</a>
+<a href="../api/tunnel_subnet_response_single.html">TunnelSubnetResponseSingle</a>
+<a href="../api/tunnel_subnet_response_single_nullable.html">TunnelSubnetResponseSingleNullable</a>
+<a href="../api/tunnel_teamnet_response_collection.html">TunnelTeamnetResponseCollection</a>
+<a href="../api/tunnel_teamnet_response_single.html">TunnelTeamnetResponseSingle</a>
+<a href="../api/tunnel_tunnel_client.html">TunnelTunnelClient</a>
+<a href="../api/tunnel_tunnel_connection.html">TunnelTunnelConnection</a>
+<a href="../api/tunnel_tunnel_response_token.html">TunnelTunnelResponseToken</a>
+<a href="../api/tunnel_tunnel_warp_connector_client.html">TunnelTunnelWarpConnectorClient</a>
+<a href="../api/tunnel_tunnel_warp_connector_connection.html">TunnelTunnelWarpConnectorConnection</a>
+<a href="../api/tunnel_vnet_response_collection.html">TunnelVnetResponseCollection</a>
+<a href="../api/tunnel_vnet_response_single.html">TunnelVnetResponseSingle</a>
+<a href="../api/tunnel_warp_connector_response_collection.html">TunnelWarpConnectorResponseCollection</a>
+<a href="../api/tunnel_warp_connector_response_single.html">TunnelWarpConnectorResponseSingle</a>
+<a href="../api/tunnel_zero_trust_connectivity_setting.html">TunnelZeroTrustConnectivitySetting</a>
+<a href="../api/warp.html">Warp</a>
+<a href="../api/warp_change_event.html">WarpChangeEvent</a>
+<a href="../api/warp_teams_device_api_other.html">WarpTeamsDeviceApiOther</a>
+<a href="../api/zero_trust_gateway_applications_review_status.html">ZeroTrustGatewayApplicationsReviewStatus</a>
+<a href="../api/zero_trust_gateway_csv_operation_single.html">ZeroTrustGatewayCsvOperationSingle</a>
+<a href="../api/zero_trust_gateway_custom_certificate_setting.html">ZeroTrustGatewayCustomCertificateSetting</a>
+<a href="../api/zero_trust_gateway_gateway_account.html">ZeroTrustGatewayGatewayAccount</a>
+<a href="../api/zero_trust_gateway_gateway_account_config.html">ZeroTrustGatewayGatewayAccountConfig</a>
+<a href="../api/zero_trust_gateway_gateway_account_egress_cidr_pair_list.html">ZeroTrustGatewayGatewayAccountEgressCidrPairList</a>
+<a href="../api/zero_trust_gateway_gateway_account_logging_setting.html">ZeroTrustGatewayGatewayAccountLoggingSetting</a>
+<a href="../api/zero_trust_gateway_list_item_response_collection.html">ZeroTrustGatewayListItemResponseCollection</a>
+<a href="../api/zero_trust_gateway_list_single.html">ZeroTrustGatewayListSingle</a>
+<a href="../api/zero_trust_gateway_response_collection.html">ZeroTrustGatewayResponseCollection</a>
+<a href="../api/zero_trust_gateway_response_collection_10.html">ZeroTrustGatewayResponseCollection10</a>
+<a href="../api/zero_trust_gateway_response_collection_2.html">ZeroTrustGatewayResponseCollection2</a>
+<a href="../api/zero_trust_gateway_response_collection_3.html">ZeroTrustGatewayResponseCollection3</a>
+<a href="../api/zero_trust_gateway_response_collection_4.html">ZeroTrustGatewayResponseCollection4</a>
+<a href="../api/zero_trust_gateway_response_collection_5.html">ZeroTrustGatewayResponseCollection5</a>
+<a href="../api/zero_trust_gateway_response_collection_6.html">ZeroTrustGatewayResponseCollection6</a>
+<a href="../api/zero_trust_gateway_response_collection_7.html">ZeroTrustGatewayResponseCollection7</a>
+<a href="../api/zero_trust_gateway_response_collection_8.html">ZeroTrustGatewayResponseCollection8</a>
+<a href="../api/zero_trust_gateway_response_collection_9.html">ZeroTrustGatewayResponseCollection9</a>
+<a href="../api/zero_trust_gateway_single.html">ZeroTrustGatewaySingle</a>
+<a href="../api/zero_trust_gateway_single_response_2.html">ZeroTrustGatewaySingleResponse2</a>
+<a href="../api/zero_trust_gateway_single_response_3.html">ZeroTrustGatewaySingleResponse3</a>
+<a href="../api/zero_trust_gateway_single_response_4.html">ZeroTrustGatewaySingleResponse4</a>
+<a href="../api/zero_trust_gateway_single_response_5.html">ZeroTrustGatewaySingleResponse5</a>
+<a href="../api/zero_trust_gateway_single_response_6.html">ZeroTrustGatewaySingleResponse6</a>
+<a href="../api/zero_trust_gateway_single_response_7.html">ZeroTrustGatewaySingleResponse7</a>
+<a href="../api/zero_trust_gateway_single_response_with_list_item.html">ZeroTrustGatewaySingleResponseWithListItem</a>
+<a href="../api/zero_trust_risk_scoring.html">ZeroTrustRiskScoring</a>
+<a href="../api/zero_trust_risk_scoring_integration.html">ZeroTrustRiskScoringIntegration</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="alexandriagetapplication">AlexandriaGetApplication</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idresource-libraryapplications"><code>/accounts/{account_id}/resource-library/applications</code></a></td>
+<td><code>create</code></td>
+<td>Create application response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idresource-libraryapplications"><code>/accounts/{account_id}/resource-library/applications</code></a></td>
+<td><code>list</code></td>
+<td>Get the application response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idresource-libraryapplicationsid"><code>/accounts/{account_id}/resource-library/applications/{id}</code></a></td>
+<td><code>load</code></td>
+<td>Get the application response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idresource-libraryapplicationsid"><code>/accounts/{account_id}/resource-library/applications/{id}</code></a></td>
+<td><code>update</code></td>
+<td>Update application response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">alexandria_get_applications, err := client.AlexandriaGetApplication(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(alexandria_get_applications)
+alexandria_get_application, err := client.AlexandriaGetApplication(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(alexandria_get_application)
+created, err := client.AlexandriaGetApplication(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;category_id&quot;: 1, &quot;errors&quot;: []any{}, &quot;human_id&quot;: &quot;example&quot;, &quot;messages&quot;: []any{}, &quot;name&quot;: &quot;example&quot;, &quot;result&quot;: map[string]any{}, &quot;success&quot;: true}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.AlexandriaGetApplication(nil).Update(map[string]any{&quot;id&quot;: 1, &quot;account_id&quot;: &quot;example&quot;, &quot;category_id&quot;: 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local alexandria_get_applications, err = client:AlexandriaGetApplication():list({ account_id = &quot;example&quot; })
+local alexandria_get_application, err = client:AlexandriaGetApplication():load({ account_id = &quot;example&quot;, id = 1 })
+local created, err = client:AlexandriaGetApplication():create({ account_id = &quot;example&quot;, category_id = 1, errors = {}, human_id = &quot;example&quot;, messages = {}, name = &quot;example&quot;, result = {}, success = true })
+local updated, err = client:AlexandriaGetApplication():update({ id = 1, account_id = &quot;example&quot;, category_id = 1 })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$alexandria_get_applications = $client-&gt;AlexandriaGetApplication()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$alexandria_get_application = $client-&gt;AlexandriaGetApplication()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; 1]);
+$created = $client-&gt;AlexandriaGetApplication()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;category_id&quot; =&gt; 1, &quot;errors&quot; =&gt; [], &quot;human_id&quot; =&gt; &quot;example&quot;, &quot;messages&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; [], &quot;success&quot; =&gt; true]);
+$updated = $client-&gt;AlexandriaGetApplication()-&gt;update([&quot;id&quot; =&gt; 1, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;category_id&quot; =&gt; 1]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">alexandria_get_applications = client.AlexandriaGetApplication().list({&quot;account_id&quot;: &quot;example&quot;})
+alexandria_get_application = client.AlexandriaGetApplication().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: 1})
+created = client.AlexandriaGetApplication().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;category_id&quot;: 1, &quot;errors&quot;: [], &quot;human_id&quot;: &quot;example&quot;, &quot;messages&quot;: [], &quot;name&quot;: &quot;example&quot;, &quot;result&quot;: {}, &quot;success&quot;: True })
+updated = client.AlexandriaGetApplication().update({&quot;id&quot;: 1, &quot;account_id&quot;: &quot;example&quot;, &quot;category_id&quot;: 1})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">alexandria_get_applications = client.AlexandriaGetApplication.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+alexandria_get_application = client.AlexandriaGetApplication.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; 1 })
+created = client.AlexandriaGetApplication.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;category_id&quot; =&gt; 1, &quot;errors&quot; =&gt; [], &quot;human_id&quot; =&gt; &quot;example&quot;, &quot;messages&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; {}, &quot;success&quot; =&gt; true })
+updated = client.AlexandriaGetApplication.update({ &quot;id&quot; =&gt; 1, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;category_id&quot; =&gt; 1 })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const alexandria_get_applications = await client.AlexandriaGetApplication().list({ account_id: &quot;example&quot; })
+const alexandria_get_application = await client.AlexandriaGetApplication().load({ account_id: &quot;example&quot;, id: 1 })
+const created = await client.AlexandriaGetApplication().create({ account_id: &quot;example&quot;, category_id: 1, errors: [], human_id: &quot;example&quot;, messages: [], name: &quot;example&quot;, result: {}, success: true })
+const updated = await client.AlexandriaGetApplication().update({ id: 1, account_id: &quot;example&quot;, category_id: 1 })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Returns the category ID.</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>hostnames</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Hostnames matched by the application.</td>
+</tr>
+<tr>
+<td><code>human_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Returns the human readable ID.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>ip_subnets</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>IP subnets for this application.</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Returns the application name.</td>
+</tr>
+<tr>
+<td><code>port_protocols</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Port and protocol pairs matched by the application.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Returns the list of applications.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Indicates whether the API call was successful.</td>
+</tr>
+<tr>
+<td><code>support_domains</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Support domains matched by the application.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idresource-libraryapplications" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/resource-library/applications</h3>
+<p>Operation ID: <code>createResourceLibraryApplication</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category_id</code></td>
+<td><code>integer (int64)</code></td>
+<td>Yes</td>
+<td>Returns the category ID.</td>
+</tr>
+<tr>
+<td><code>hostnames</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Hostnames matched by the application.</td>
+</tr>
+<tr>
+<td><code>human_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Returns the human readable ID.</td>
+</tr>
+<tr>
+<td><code>ip_subnets</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>IP subnets for this application. Custom application create and update requests accept IPv4 prefix lengths /8 through /32 and IPv6 prefix lengths /32 through /128.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Returns the application name.</td>
+</tr>
+<tr>
+<td><code>port_protocols</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Port and protocol pairs matched by the application.</td>
+</tr>
+<tr>
+<td><code>support_domains</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Support domains matched by the application.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="201-create-application-response" class="status" data-status="2xx">201: Create application response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-create-application-response-failure">4XX: Create application response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Indicates whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idresource-libraryapplications" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/resource-library/applications</h3>
+<p>Operation ID: <code>getResourceLibraryApplications</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>filter</code> | <code>query</code> | <code>string</code> | No | Filter applications using key:value format. Supported filter keys: - name: Filter by application name (for example, name:HR) - id: Filter by application ID (for example, id:498) - <code>human_id</code>: Filter by human-readable ID (for example, <code>human_id</code>:HR) - hostname: Filter by hostname or support domain (for example, hostname:portal.example.com) - source: Filter by application source name (for example, source:cloudflare) - <code>ip_subnet</code>: Filter by IP subnet using CIDR containment, returns applications where any stored subnet contains the search value (for example, <code>ip_subnet</code>:10.0.1.5/32 matches apps with 10.0.0.0/16) - <code>category_id</code>: Filter by category ID (for example, <code>category_id</code>:12). - <code>category_name</code>: Filter by category name (for example, <code>category_name</code>:HR). - supported: Filter by supported Cloudflare product (for example, supported:ACCESS). Values: GATEWAY, ACCESS, CASB. - <code>review_status</code>: Filter by the account's Gateway review status. Values: approved, unapproved, <code>in_review</code>, unreviewed. . |
+| <code>limit</code> | <code>query</code> | <code>integer</code> | No | Limit of number of results to return (max 250). |
+| <code>offset</code> | <code>query</code> | <code>integer</code> | No | Offset of results to return. |
+| <code>order_by</code> | <code>query</code> | <code>string</code> | No | Order results using field:direction format. Supported fields are name, id, <code>human_id</code>, <code>category_id</code>, <code>application_type</code>, <code>application_confidence_score</code>, and <code>gen_ai_score</code>. Supported directions are asc and desc. Ignored when search is provided; results are ranked by relevance instead. |
+| <code>search</code> | <code>query</code> | <code>string</code> | No | Fuzzy search across application name and hostnames. Results are ranked by relevance. Must be between 2 and 200 characters. Can be combined with filter parameters. |
+| <code>fields</code> | <code>query</code> | <code>string</code> | No | Return only the listed properties on each application, as a comma-separated list. Use this to keep responses small when you only need part of each application, for example populating a picker with <code>fields=id,name</code> instead of downloading every hostname and IP subnet. Omit this parameter to receive the full application object. <code>id</code> is always returned. Selectable properties: <code>id</code>, <code>name</code>, <code>human_id</code>, <code>version</code>, <code>hostnames</code>, <code>support_domains</code>, <code>ip_subnets</code>, <code>port_protocols</code>, <code>supported</code>, <code>gen_ai_score</code>, <code>application_confidence_score</code>, <code>created_at</code>, <code>updated_at</code>, <code>review_status</code>. Unknown or empty property names return <code>400</code>. |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-get-the-application-response" class="status" data-status="2xx">200: Get the application response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="403-the-authenticated-principal-does-not-have-access-to-the-requested-account" class="status" data-status="4xx">403: The authenticated principal does not have access to the requested account</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Indicates whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="502-application-review-statuses-could-not-be-retrieved" class="status" data-status="5xx">502: Application review statuses could not be retrieved</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Indicates whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="503-application-review-statuses-were-requested-but-are-not-available" class="status" data-status="5xx">503: Application review statuses were requested but are not available</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Indicates whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-get-application-response-failure">4XX: Get application response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Indicates whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idresource-libraryapplicationsid" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/resource-library/applications/{id}</h3>
+<p>Operation ID: <code>getResourceLibraryApplicationById</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>id</code> | <code>path</code> | <code>integer (int64)</code> | Yes | Application ID. |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-get-the-application-response-1" class="status" data-status="2xx">200: Get the application response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-get-application-by-id-response-failure">4XX: Get application by id response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Indicates whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="patch-accountsaccount_idresource-libraryapplicationsid" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/resource-library/applications/{id}</h3>
+<p>Operation ID: <code>updateResourceLibraryApplication</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>id</code> | <code>path</code> | <code>integer (int64)</code> | Yes | Application ID. |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hostnames</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Hostnames matched by the application.</td>
+</tr>
+<tr>
+<td><code>ip_subnets</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>IP subnets for this application. Custom application create and update requests accept IPv4 prefix lengths /8 through /32 and IPv6 prefix lengths /32 through /128.</td>
+</tr>
+<tr>
+<td><code>port_protocols</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Port and protocol pairs matched by the application.</td>
+</tr>
+<tr>
+<td><code>support_domains</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Support domains matched by the application.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-update-application-response" class="status" data-status="2xx">200: Update application response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-application-response-failure">4XX: Update application response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Indicates whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

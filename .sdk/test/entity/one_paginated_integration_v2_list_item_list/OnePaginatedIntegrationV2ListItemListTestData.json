@@ -1,0 +1,55 @@
+{
+  "existing": {
+    "one_paginated_integration_v2_list_item_list": {
+      "ONE_PAGINATED_INTEGRATION_V2_LIST_ITEM_LIST00": {
+        "application": {},
+        "created": "s47",
+        "id": "ONE_PAGINATED_INTEGRATION_V2_LIST_ITEM_LIST00",
+        "is_paused": false,
+        "name": "s4a",
+        "status": "s4b",
+        "updated": "s4c",
+        "account_id": "ACCOUNT01"
+      },
+      "ONE_PAGINATED_INTEGRATION_V2_LIST_ITEM_LIST01": {
+        "application": {},
+        "created": "s8d",
+        "id": "ONE_PAGINATED_INTEGRATION_V2_LIST_ITEM_LIST01",
+        "is_paused": false,
+        "name": "s90",
+        "status": "s91",
+        "updated": "s92",
+        "account_id": "ACCOUNT01"
+      },
+      "ONE_PAGINATED_INTEGRATION_V2_LIST_ITEM_LIST02": {
+        "application": {},
+        "created": "sd3",
+        "id": "ONE_PAGINATED_INTEGRATION_V2_LIST_ITEM_LIST02",
+        "is_paused": false,
+        "name": "sd6",
+        "status": "sd7",
+        "updated": "sd8",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "one_paginated_integration_v2_list_item_list": {
+      "one_paginated_integration_v2_list_item_list_ref01": {
+        "application": {},
+        "created": "s119",
+        "is_paused": false,
+        "name": "s11c",
+        "status": "s11d",
+        "updated": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/one/integrations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

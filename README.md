@@ -18,14 +18,13 @@ Learn more about Voxgig SDKs at [voxgig.com/sdk](https://voxgig.com/sdk/).
 
 ## Entities, not endpoints
 
-This SDK exposes the API as **104 semantic entities** that you
+This SDK exposes the API as **119 semantic entities** that you
 call directly, instead of assembling URL paths and query strings. See the [Entities](#entities) table below for the full list. Entities are
 **Capitalised** to mark them as the primary surface, each with the operations they
 support (`list`, `load`, `create`, `update`, `remove`, `patch`):
 
 ```ts
 const client = new CloudflareZeroTrustSDK()
-const items = await client.ClientVersion().list({ account_id: "example", release_track: "example", target_environment: "example" })
 ```
 
 Thinking in entities keeps the mental model small — for people and AI agents alike —
@@ -44,23 +43,23 @@ network, and no credentials:
 // Shape: { entity: { <entity-name>: { <id>: <record> } } }
 const client = CloudflareZeroTrustSDK.test({
   entity: {
-    zero_trust_gateway_single_response_6: {
-      test01: { id: 'test01', account_id: 'example_account_id', public_key: 'example_public_key' },
+    teams_devices_global_warp_override: {
+      test01: { id: 'test01', account_id: 'example_account_id', disconnect: true },
     },
   },
 })
-const zerotrustgatewaysingleresponse6 = await client.ZeroTrustGatewaySingleResponse6().load({ account_id: 'example_account_id' })
-// zerotrustgatewaysingleresponse6 is the ZeroTrustGatewaySingleResponse6 entity, populated with mock data
-// — call zerotrustgatewaysingleresponse6.data() for the record itself
-console.log(zerotrustgatewaysingleresponse6)
+const teamsdevicesglobalwarpoverride = await client.TeamsDevicesGlobalWarpOverride().load({ account_id: 'example_account_id' })
+// teamsdevicesglobalwarpoverride is the TeamsDevicesGlobalWarpOverride entity, populated with mock data
+// — call teamsdevicesglobalwarpoverride.data() for the record itself
+console.log(teamsdevicesglobalwarpoverride)
 ```
 
 ### Python
 
 ```python
 client = CloudflareZeroTrustSDK.test()
-zerotrustgatewaysingleresponse6 = client.ZeroTrustGatewaySingleResponse6().load({"account_id": "example"})
-print(zerotrustgatewaysingleresponse6)
+teamsdevicesglobalwarpoverride = client.TeamsDevicesGlobalWarpOverride().load({"account_id": "example"})
+print(teamsdevicesglobalwarpoverride)
 ```
 
 ### PHP
@@ -68,16 +67,16 @@ print(zerotrustgatewaysingleresponse6)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = CloudflareZeroTrustSDK::test([
-    "entity" => ["zerotrustgatewaysingleresponse6" => ["test01" => []]],
+    "entity" => ["teamsdevicesglobalwarpoverride" => ["test01" => []]],
 ]);
-$zerotrustgatewaysingleresponse6 = $client->ZeroTrustGatewaySingleResponse6()->load(["account_id" => "example"]);
+$teamsdevicesglobalwarpoverride = $client->TeamsDevicesGlobalWarpOverride()->load(["account_id" => "example"]);
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.ZeroTrustGatewaySingleResponse6(nil).Load(
+result, err := client.TeamsDevicesGlobalWarpOverride(nil).Load(
     nil, nil,
 )
 ```
@@ -87,16 +86,16 @@ result, err := client.ZeroTrustGatewaySingleResponse6(nil).Load(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = CloudflareZeroTrustSDK.test({
-  "entity" => { "zerotrustgatewaysingleresponse6" => { "test01" => {} } },
+  "entity" => { "teamsdevicesglobalwarpoverride" => { "test01" => {} } },
 })
-zerotrustgatewaysingleresponse6 = client.ZeroTrustGatewaySingleResponse6.load({ "account_id" => "example" })
+teamsdevicesglobalwarpoverride = client.TeamsDevicesGlobalWarpOverride.load({ "account_id" => "example" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:ZeroTrustGatewaySingleResponse6():load({ account_id = "example" })
+local result, err = client:TeamsDevicesGlobalWarpOverride():load({ account_id = "example" })
 ```
 
 ## Packages
@@ -123,11 +122,6 @@ const client = new CloudflareZeroTrustSDK({
   apikey: process.env.CLOUDFLARE_ZERO_TRUST_APIKEY,
 })
 
-// List all clientversions (returns ClientVersionEntity[] — .data() for the record)
-const clientversions = await client.ClientVersion().list({ account_id: "example", release_track: "example", target_environment: "example" })
-for (const clientversion of clientversions) {
-  console.log(clientversion)
-}
 
 // Load a specific nscdefaultname (returns a NscDefaultName)
 const nscdefaultname = await client.NscDefaultName().load({
@@ -171,10 +165,13 @@ Then add it to your agent's MCP config (Claude Desktop, Cursor, etc.):
 
 ## Entities
 
-The API exposes 104 entities:
+The API exposes 119 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
+| **AlexandriaDeleteApplication** | The AlexandriaDeleteApplication entity (remove). | `/accounts/{account_id}/resource-library/applications/{id}` |
+| **AlexandriaGetApplication** | The AlexandriaGetApplication entity (create, list, load, update). | `/accounts/{account_id}/resource-library/applications` |
+| **AlexandriaGetCategory** | The AlexandriaGetCategory entity (list, load). | `/accounts/{account_id}/resource-library/categories` |
 | **ClientVersion** | The ClientVersion entity (list). | `/accounts/{account_id}/devices/client-versions` |
 | **Cni** | The Cni entity (remove). | `/accounts/{account_id}/cni/cnis/{cni}` |
 | **DeploymentGroup** | The DeploymentGroup entity (create, list, load, remove, update). | `/accounts/{account_id}/devices/deployment-groups` |
@@ -188,6 +185,7 @@ The API exposes 104 entities:
 | **DigitalExperienceMonitoringFleetStatusDevice** | The DigitalExperienceMonitoringFleetStatusDevice entity (list). | `/accounts/{account_id}/dex/fleet-status/devices` |
 | **DigitalExperienceMonitoringFleetStatusLive** | The DigitalExperienceMonitoringFleetStatusLive entity (load). | `/accounts/{account_id}/dex/fleet-status/live` |
 | **DigitalExperienceMonitoringFleetStatusOverTime** | The DigitalExperienceMonitoringFleetStatusOverTime entity (load). | `/accounts/{account_id}/dex/fleet-status/over-time` |
+| **Integration** | The Integration entity (remove). | `/accounts/{account_id}/one/integrations/{id}` |
 | **Interconnect** | The Interconnect entity (load, remove). | `/accounts/{account_id}/cni/interconnects/{icon}/loa` |
 | **IpProfile** | The IpProfile entity (create, list, load, remove, update). | `/accounts/{account_id}/devices/ip-profiles` |
 | **List** | The List entity (remove). | `/accounts/{account_id}/gateway/lists/{list_id}` |
@@ -198,6 +196,16 @@ The API exposes 104 entities:
 | **NscSetting** | The NscSetting entity (load, update). | `/accounts/{account_id}/cni/settings` |
 | **NscSlotInfo** | The NscSlotInfo entity (list, load). | `/accounts/{account_id}/cni/slots` |
 | **NscStatusInfo** | The NscStatusInfo entity (load). | `/accounts/{account_id}/cni/interconnects/{icon}/status` |
+| **OneApplicationDetail** | The OneApplicationDetail entity (load). | `/accounts/{account_id}/one/applications/{application_id}` |
+| **OneIntegrationCreate** | The OneIntegrationCreate entity (create). | `/accounts/{account_id}/one/integrations` |
+| **OneIntegrationDetail** | The OneIntegrationDetail entity (load). | `/accounts/{account_id}/one/integrations/{id}` |
+| **OneIntegrationPause** | The OneIntegrationPause entity (create). | `/accounts/{account_id}/one/integrations/{id}/pause` |
+| **OneIntegrationResume** | The OneIntegrationResume entity (create). | `/accounts/{account_id}/one/integrations/{id}/resume` |
+| **OneIntegrationUpdate** | The OneIntegrationUpdate entity (update). | `/accounts/{account_id}/one/integrations/{id}` |
+| **OnePaginatedApplicationListList** | The OnePaginatedApplicationListList entity (list). | `/accounts/{account_id}/one/applications` |
+| **OnePaginatedAuthMethodDetailList** | The OnePaginatedAuthMethodDetailList entity (list). | `/accounts/{account_id}/one/applications/{application_id}/auth-methods` |
+| **OnePaginatedIntegrationV2ListItemList** | The OnePaginatedIntegrationV2ListItemList entity (list). | `/accounts/{account_id}/one/integrations` |
+| **OnePaginatedSetupFlowList** | The OnePaginatedSetupFlowList entity (list). | `/accounts/{account_id}/one/applications/{application_id}/setup-flows` |
 | **OverrideCode** | The OverrideCode entity (create). | `/accounts/{account_id}/devices/override_codes` |
 | **Pacfile** | The Pacfile entity (remove). | `/accounts/{account_id}/gateway/pacfiles/{pacfile_id}` |
 | **PhysicalDevice** | The PhysicalDevice entity (create, list, load, remove, update). | `/accounts/{account_id}/devices/physical-devices` |
@@ -211,6 +219,7 @@ The API exposes 104 entities:
 | **TeamsDevicesDevice** | The TeamsDevicesDevice entity (list, load). | `/accounts/{account_id}/devices` |
 | **TeamsDevicesDeviceSetting** | The TeamsDevicesDeviceSetting entity (create, load, update). | `/accounts/{account_id}/devices/policy/{policy_id}` |
 | **TeamsDevicesDeviceSettingsResponseCollection** | The TeamsDevicesDeviceSettingsResponseCollection entity (list, remove). | `/accounts/{account_id}/devices/policies` |
+| **TeamsDevicesDevicesPolicyCertificatesSingle** | The TeamsDevicesDevicesPolicyCertificatesSingle entity (load, update). | `/zones/{zone_id}/devices/policy/certificates` |
 | **TeamsDevicesFallbackDomainResponseCollection** | The TeamsDevicesFallbackDomainResponseCollection entity (list, remove, update). | `/accounts/{account_id}/devices/policy/{policy_id}/fallback_domains` |
 | **TeamsDevicesGlobalWarpOverride** | The TeamsDevicesGlobalWarpOverride entity (create, load). | `/accounts/{account_id}/devices/resilience/disconnect` |
 | **TeamsDevicesId** | The TeamsDevicesId entity (remove). | `/accounts/{account_id}/devices/posture/{rule_id}` |
@@ -295,10 +304,6 @@ client = CloudflareZeroTrustSDK({
     "apikey": os.environ.get("CLOUDFLARE_ZERO_TRUST_APIKEY"),
 })
 
-# List all clientversions (returns a list, raises on error)
-clientversions = client.ClientVersion().list({"account_id": "example", "release_track": "example", "target_environment": "example"})
-for clientversion in clientversions:
-    print(clientversion)
 ```
 
 ### PHP
@@ -311,9 +316,6 @@ $client = new CloudflareZeroTrustSDK([
     "apikey" => getenv("CLOUDFLARE_ZERO_TRUST_APIKEY"),
 ]);
 
-// List all clientversions (returns an array; throws on error)
-$clientversions = $client->ClientVersion()->list();
-print_r(array_map(fn($item) => $item->data_get(), $clientversions));
 ```
 
 ### Golang
@@ -325,12 +327,6 @@ client := sdk.NewCloudflareZeroTrustSDK(map[string]any{
     "apikey": os.Getenv("CLOUDFLARE_ZERO_TRUST_APIKEY"),
 })
 
-// List all clientversions
-clientVersions, err := client.ClientVersion(nil).List(nil, nil)
-if err != nil {
-    panic(err)
-}
-fmt.Println(clientVersions)
 
 // Load a specific nscdefaultname
 nscDefaultName, err := client.NscDefaultName(nil).Load(
@@ -351,9 +347,6 @@ client = CloudflareZeroTrustSDK.new({
   "apikey" => ENV["CLOUDFLARE_ZERO_TRUST_APIKEY"],
 })
 
-# List all clientversions (returns an Array; raises on error)
-clientversions = client.ClientVersion.list
-puts clientversions
 ```
 
 ### Lua
@@ -365,9 +358,6 @@ local client = sdk.new({
   apikey = os.getenv("CLOUDFLARE_ZERO_TRUST_APIKEY"),
 })
 
--- List all clientversions
-local clientversions, err = client:ClientVersion():list()
-print(clientversions)
 ```
 
 ## Direct and prepare

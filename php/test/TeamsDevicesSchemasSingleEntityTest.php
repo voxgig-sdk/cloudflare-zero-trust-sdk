@@ -85,7 +85,7 @@ function teams_devices_schemas_single_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["teams_devices_schemas_single01", "teams_devices_schemas_single02", "teams_devices_schemas_single03", "account01"] as $k) {
+    foreach (["teams_devices_schemas_single01", "teams_devices_schemas_single02", "teams_devices_schemas_single03", "integration01", "integration02", "integration03", "account01"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

@@ -1,0 +1,133 @@
+# Entity: teams_devices_devices_policy_certificates_single
+
+main: kit: entity: teams_devices_devices_policy_certificates_single: {
+
+  alias: field: {}
+
+  fields: {
+    enabled: {
+      h: "Enabled"
+      n: "enabled"
+      r: true
+      sh: "The current status of the device policy certificate provisioning feature for WARP clients."
+      t: "`$BOOLEAN`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "teams_devices_devices_policy_certificates_single"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /zones/{zone_id}/devices/policy/certificates"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/zones/{zone_id}/devices/policy/certificates"
+          q: {
+            exist: [
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              lit: "policy"
+            }
+            {
+              lit: "certificates"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /zones/{zone_id}/devices/policy/certificates"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "zone_id"
+                or: "zone_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/zones/{zone_id}/devices/policy/certificates"
+          q: {
+            exist: [
+              "zone_id"
+            ]
+          }
+          s: [
+            {
+              lit: "zones"
+            }
+            {
+              var: "zone_id"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              lit: "policy"
+            }
+            {
+              lit: "certificates"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

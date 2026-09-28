@@ -6,6 +6,86 @@
 -- @voxgig/apidef VALID_CANON). Annotations only — no runtime effect. Do not
 -- edit by hand.
 
+---@class AlexandriaDeleteApplication
+---@field id? string
+
+---@class AlexandriaDeleteApplicationRemoveMatch
+---@field account_id string
+---@field id number
+
+---@class AlexandriaGetApplication
+---@field category_id number
+---@field errors table
+---@field hostnames? table
+---@field human_id string
+---@field id? string
+---@field ip_subnets? table
+---@field messages table
+---@field name string
+---@field port_protocols? table
+---@field result table
+---@field success boolean
+---@field support_domains? table
+
+---@class AlexandriaGetApplicationLoadMatch
+---@field account_id string
+---@field id number
+
+---@class AlexandriaGetApplicationListMatch
+---@field account_id string
+---@field field? string
+---@field filter? string
+---@field limit? number
+---@field offset? number
+---@field order_by? string
+---@field search? string
+
+---@class AlexandriaGetApplicationCreateData
+---@field account_id string
+---@field category_id number
+---@field errors table
+---@field hostnames? table
+---@field human_id string
+---@field id? string
+---@field ip_subnets? table
+---@field messages table
+---@field name string
+---@field port_protocols? table
+---@field result table
+---@field success boolean
+---@field support_domains? table
+
+---@class AlexandriaGetApplicationUpdateData
+---@field account_id string
+---@field id number
+---@field category_id? number
+---@field errors? table
+---@field hostnames? table
+---@field human_id? string
+---@field ip_subnets? table
+---@field messages? table
+---@field name? string
+---@field port_protocols? table
+---@field result? table
+---@field success? boolean
+---@field support_domains? table
+
+---@class AlexandriaGetCategory
+---@field errors table
+---@field id? string
+---@field messages table
+---@field result table
+---@field success boolean
+
+---@class AlexandriaGetCategoryLoadMatch
+---@field account_id string
+---@field id number
+
+---@class AlexandriaGetCategoryListMatch
+---@field account_id string
+---@field limit? number
+---@field offset? number
+
 ---@class ClientVersion
 ---@field errors table
 ---@field messages table
@@ -315,6 +395,13 @@
 ---@field from string
 ---@field to string
 
+---@class Integration
+---@field id? string
+
+---@class IntegrationRemoveMatch
+---@field account_id string
+---@field id string
+
 ---@class Interconnect
 ---@field id? string
 
@@ -509,6 +596,170 @@
 ---@class NscStatusInfoLoadMatch
 ---@field account_id string
 ---@field icon string
+
+---@class OneApplicationDetail
+---@field errors? table
+---@field messages? table
+---@field result any
+---@field success boolean
+
+---@class OneApplicationDetailLoadMatch
+---@field account_id string
+---@field application_id string
+
+---@class OneIntegrationCreate
+---@field application string
+---@field auth_method? string
+---@field credentials table
+---@field dlp_profiles? table
+---@field name string
+---@field permissions? table
+---@field use_cases? table
+
+---@class OneIntegrationCreateCreateData
+---@field account_id string
+---@field application string
+---@field auth_method? string
+---@field credentials table
+---@field dlp_profiles? table
+---@field name string
+---@field permissions? table
+---@field use_cases? table
+
+---@class OneIntegrationDetail
+---@field errors? table
+---@field id? string
+---@field messages? table
+---@field result any
+---@field success boolean
+
+---@class OneIntegrationDetailLoadMatch
+---@field account_id string
+---@field id string
+
+---@class OneIntegrationPause
+---@field errors? table
+---@field messages? table
+---@field result any
+---@field success boolean
+
+---@class OneIntegrationPauseCreateData
+---@field account_id string
+---@field integration_id string
+---@field errors? table
+---@field messages? table
+---@field result any
+---@field success boolean
+
+---@class OneIntegrationResume
+---@field errors? table
+---@field messages? table
+---@field result any
+---@field success boolean
+
+---@class OneIntegrationResumeCreateData
+---@field account_id string
+---@field integration_id string
+---@field errors? table
+---@field messages? table
+---@field result any
+---@field success boolean
+
+---@class OneIntegrationUpdate
+---@field credentials? table
+---@field dlp_profiles? table
+---@field errors? table
+---@field id? string
+---@field messages? table
+---@field name? string
+---@field permissions? table
+---@field result any
+---@field success boolean
+---@field use_cases? table
+
+---@class OneIntegrationUpdateUpdateData
+---@field account_id string
+---@field id string
+---@field credentials? table
+---@field dlp_profiles? table
+---@field errors? table
+---@field messages? table
+---@field name? string
+---@field permissions? table
+---@field result? any
+---@field success? boolean
+---@field use_cases? table
+
+---@class OnePaginatedApplicationListList
+---@field auth_methods table
+---@field category string
+---@field description string
+---@field display_name string
+---@field dlp_enabled boolean
+---@field id string
+---@field logo string
+---@field permissions table
+---@field supported_environments table
+---@field use_cases table
+
+---@class OnePaginatedApplicationListListListMatch
+---@field account_id string
+---@field environment? string
+---@field page? number
+---@field page_size? number
+
+---@class OnePaginatedAuthMethodDetailList
+---@field display_name string
+---@field human_interaction_required boolean
+---@field id string
+---@field instructions any
+---@field payload_example table
+---@field payload_schema table
+---@field redirect_url string
+
+---@class OnePaginatedAuthMethodDetailListListMatch
+---@field account_id string
+---@field application_id string
+---@field page? number
+---@field page_size? number
+
+---@class OnePaginatedIntegrationV2ListItemList
+---@field application table
+---@field created string
+---@field id string
+---@field is_paused boolean
+---@field name string
+---@field status string
+---@field updated string
+
+---@class OnePaginatedIntegrationV2ListItemListListMatch
+---@field account_id string
+---@field application? string
+---@field direction? string
+---@field dlp_enabled? boolean
+---@field order? string
+---@field page? number
+---@field page_size? number
+---@field search? string
+---@field status? string
+---@field use_case? string
+
+---@class OnePaginatedSetupFlowList
+---@field auth_config? any
+---@field default boolean
+---@field description string
+---@field id string
+---@field name string
+---@field steps table
+---@field supported_environments table
+
+---@class OnePaginatedSetupFlowListListMatch
+---@field account_id string
+---@field application_id string
+---@field auth_method? string
+---@field environment? string
+---@field page? number
+---@field page_size? number
 
 ---@class OverrideCode
 ---@field device_id? string
@@ -866,6 +1117,18 @@
 ---@class TeamsDevicesDeviceSettingsResponseCollectionRemoveMatch
 ---@field account_id string
 ---@field policy_id string
+
+---@class TeamsDevicesDevicesPolicyCertificatesSingle
+---@field enabled boolean
+---@field result table
+
+---@class TeamsDevicesDevicesPolicyCertificatesSingleLoadMatch
+---@field zone_id string
+
+---@class TeamsDevicesDevicesPolicyCertificatesSingleUpdateData
+---@field zone_id string
+---@field enabled? boolean
+---@field result? table
 
 ---@class TeamsDevicesFallbackDomainResponseCollection
 ---@field result? table

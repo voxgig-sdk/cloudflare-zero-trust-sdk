@@ -307,6 +307,24 @@ class CloudflareZeroTrustSDK:
         return res
 
 
+    def AlexandriaDeleteApplication(self, data=None) -> "AlexandriaDeleteApplicationEntity":
+        """Entity factory: client.AlexandriaDeleteApplication().list() / client.AlexandriaDeleteApplication().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.alexandria_delete_application_entity import AlexandriaDeleteApplicationEntity
+        return AlexandriaDeleteApplicationEntity(self, data)
+
+
+    def AlexandriaGetApplication(self, data=None) -> "AlexandriaGetApplicationEntity":
+        """Entity factory: client.AlexandriaGetApplication().list() / client.AlexandriaGetApplication().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.alexandria_get_application_entity import AlexandriaGetApplicationEntity
+        return AlexandriaGetApplicationEntity(self, data)
+
+
+    def AlexandriaGetCategory(self, data=None) -> "AlexandriaGetCategoryEntity":
+        """Entity factory: client.AlexandriaGetCategory().list() / client.AlexandriaGetCategory().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.alexandria_get_category_entity import AlexandriaGetCategoryEntity
+        return AlexandriaGetCategoryEntity(self, data)
+
+
     def ClientVersion(self, data=None) -> "ClientVersionEntity":
         """Entity factory: client.ClientVersion().list() / client.ClientVersion().load({"id": ...})."""
         from cloudflarezerotrust_sdk.entity.client_version_entity import ClientVersionEntity
@@ -385,6 +403,12 @@ class CloudflareZeroTrustSDK:
         return DigitalExperienceMonitoringFleetStatusOverTimeEntity(self, data)
 
 
+    def Integration(self, data=None) -> "IntegrationEntity":
+        """Entity factory: client.Integration().list() / client.Integration().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.integration_entity import IntegrationEntity
+        return IntegrationEntity(self, data)
+
+
     def Interconnect(self, data=None) -> "InterconnectEntity":
         """Entity factory: client.Interconnect().list() / client.Interconnect().load({"id": ...})."""
         from cloudflarezerotrust_sdk.entity.interconnect_entity import InterconnectEntity
@@ -443,6 +467,66 @@ class CloudflareZeroTrustSDK:
         """Entity factory: client.NscStatusInfo().list() / client.NscStatusInfo().load({"id": ...})."""
         from cloudflarezerotrust_sdk.entity.nsc_status_info_entity import NscStatusInfoEntity
         return NscStatusInfoEntity(self, data)
+
+
+    def OneApplicationDetail(self, data=None) -> "OneApplicationDetailEntity":
+        """Entity factory: client.OneApplicationDetail().list() / client.OneApplicationDetail().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.one_application_detail_entity import OneApplicationDetailEntity
+        return OneApplicationDetailEntity(self, data)
+
+
+    def OneIntegrationCreate(self, data=None) -> "OneIntegrationCreateEntity":
+        """Entity factory: client.OneIntegrationCreate().list() / client.OneIntegrationCreate().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.one_integration_create_entity import OneIntegrationCreateEntity
+        return OneIntegrationCreateEntity(self, data)
+
+
+    def OneIntegrationDetail(self, data=None) -> "OneIntegrationDetailEntity":
+        """Entity factory: client.OneIntegrationDetail().list() / client.OneIntegrationDetail().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.one_integration_detail_entity import OneIntegrationDetailEntity
+        return OneIntegrationDetailEntity(self, data)
+
+
+    def OneIntegrationPause(self, data=None) -> "OneIntegrationPauseEntity":
+        """Entity factory: client.OneIntegrationPause().list() / client.OneIntegrationPause().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.one_integration_pause_entity import OneIntegrationPauseEntity
+        return OneIntegrationPauseEntity(self, data)
+
+
+    def OneIntegrationResume(self, data=None) -> "OneIntegrationResumeEntity":
+        """Entity factory: client.OneIntegrationResume().list() / client.OneIntegrationResume().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.one_integration_resume_entity import OneIntegrationResumeEntity
+        return OneIntegrationResumeEntity(self, data)
+
+
+    def OneIntegrationUpdate(self, data=None) -> "OneIntegrationUpdateEntity":
+        """Entity factory: client.OneIntegrationUpdate().list() / client.OneIntegrationUpdate().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.one_integration_update_entity import OneIntegrationUpdateEntity
+        return OneIntegrationUpdateEntity(self, data)
+
+
+    def OnePaginatedApplicationListList(self, data=None) -> "OnePaginatedApplicationListListEntity":
+        """Entity factory: client.OnePaginatedApplicationListList().list() / client.OnePaginatedApplicationListList().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.one_paginated_application_list_list_entity import OnePaginatedApplicationListListEntity
+        return OnePaginatedApplicationListListEntity(self, data)
+
+
+    def OnePaginatedAuthMethodDetailList(self, data=None) -> "OnePaginatedAuthMethodDetailListEntity":
+        """Entity factory: client.OnePaginatedAuthMethodDetailList().list() / client.OnePaginatedAuthMethodDetailList().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.one_paginated_auth_method_detail_list_entity import OnePaginatedAuthMethodDetailListEntity
+        return OnePaginatedAuthMethodDetailListEntity(self, data)
+
+
+    def OnePaginatedIntegrationV2ListItemList(self, data=None) -> "OnePaginatedIntegrationV2ListItemListEntity":
+        """Entity factory: client.OnePaginatedIntegrationV2ListItemList().list() / client.OnePaginatedIntegrationV2ListItemList().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.one_paginated_integration_v2_list_item_list_entity import OnePaginatedIntegrationV2ListItemListEntity
+        return OnePaginatedIntegrationV2ListItemListEntity(self, data)
+
+
+    def OnePaginatedSetupFlowList(self, data=None) -> "OnePaginatedSetupFlowListEntity":
+        """Entity factory: client.OnePaginatedSetupFlowList().list() / client.OnePaginatedSetupFlowList().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.one_paginated_setup_flow_list_entity import OnePaginatedSetupFlowListEntity
+        return OnePaginatedSetupFlowListEntity(self, data)
 
 
     def OverrideCode(self, data=None) -> "OverrideCodeEntity":
@@ -521,6 +605,12 @@ class CloudflareZeroTrustSDK:
         """Entity factory: client.TeamsDevicesDeviceSettingsResponseCollection().list() / client.TeamsDevicesDeviceSettingsResponseCollection().load({"id": ...})."""
         from cloudflarezerotrust_sdk.entity.teams_devices_device_settings_response_collection_entity import TeamsDevicesDeviceSettingsResponseCollectionEntity
         return TeamsDevicesDeviceSettingsResponseCollectionEntity(self, data)
+
+
+    def TeamsDevicesDevicesPolicyCertificatesSingle(self, data=None) -> "TeamsDevicesDevicesPolicyCertificatesSingleEntity":
+        """Entity factory: client.TeamsDevicesDevicesPolicyCertificatesSingle().list() / client.TeamsDevicesDevicesPolicyCertificatesSingle().load({"id": ...})."""
+        from cloudflarezerotrust_sdk.entity.teams_devices_devices_policy_certificates_single_entity import TeamsDevicesDevicesPolicyCertificatesSingleEntity
+        return TeamsDevicesDevicesPolicyCertificatesSingleEntity(self, data)
 
 
     def TeamsDevicesFallbackDomainResponseCollection(self, data=None) -> "TeamsDevicesFallbackDomainResponseCollectionEntity":
@@ -958,6 +1048,9 @@ class CloudflareZeroTrustSDK:
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+    from cloudflarezerotrust_sdk.entity.alexandria_delete_application_entity import AlexandriaDeleteApplicationEntity
+    from cloudflarezerotrust_sdk.entity.alexandria_get_application_entity import AlexandriaGetApplicationEntity
+    from cloudflarezerotrust_sdk.entity.alexandria_get_category_entity import AlexandriaGetCategoryEntity
     from cloudflarezerotrust_sdk.entity.client_version_entity import ClientVersionEntity
     from cloudflarezerotrust_sdk.entity.cni_entity import CniEntity
     from cloudflarezerotrust_sdk.entity.deployment_group_entity import DeploymentGroupEntity
@@ -971,6 +1064,7 @@ if TYPE_CHECKING:
     from cloudflarezerotrust_sdk.entity.digital_experience_monitoring_fleet_status_device_entity import DigitalExperienceMonitoringFleetStatusDeviceEntity
     from cloudflarezerotrust_sdk.entity.digital_experience_monitoring_fleet_status_live_entity import DigitalExperienceMonitoringFleetStatusLiveEntity
     from cloudflarezerotrust_sdk.entity.digital_experience_monitoring_fleet_status_over_time_entity import DigitalExperienceMonitoringFleetStatusOverTimeEntity
+    from cloudflarezerotrust_sdk.entity.integration_entity import IntegrationEntity
     from cloudflarezerotrust_sdk.entity.interconnect_entity import InterconnectEntity
     from cloudflarezerotrust_sdk.entity.ip_profile_entity import IpProfileEntity
     from cloudflarezerotrust_sdk.entity.list_entity import ListEntity
@@ -981,6 +1075,16 @@ if TYPE_CHECKING:
     from cloudflarezerotrust_sdk.entity.nsc_setting_entity import NscSettingEntity
     from cloudflarezerotrust_sdk.entity.nsc_slot_info_entity import NscSlotInfoEntity
     from cloudflarezerotrust_sdk.entity.nsc_status_info_entity import NscStatusInfoEntity
+    from cloudflarezerotrust_sdk.entity.one_application_detail_entity import OneApplicationDetailEntity
+    from cloudflarezerotrust_sdk.entity.one_integration_create_entity import OneIntegrationCreateEntity
+    from cloudflarezerotrust_sdk.entity.one_integration_detail_entity import OneIntegrationDetailEntity
+    from cloudflarezerotrust_sdk.entity.one_integration_pause_entity import OneIntegrationPauseEntity
+    from cloudflarezerotrust_sdk.entity.one_integration_resume_entity import OneIntegrationResumeEntity
+    from cloudflarezerotrust_sdk.entity.one_integration_update_entity import OneIntegrationUpdateEntity
+    from cloudflarezerotrust_sdk.entity.one_paginated_application_list_list_entity import OnePaginatedApplicationListListEntity
+    from cloudflarezerotrust_sdk.entity.one_paginated_auth_method_detail_list_entity import OnePaginatedAuthMethodDetailListEntity
+    from cloudflarezerotrust_sdk.entity.one_paginated_integration_v2_list_item_list_entity import OnePaginatedIntegrationV2ListItemListEntity
+    from cloudflarezerotrust_sdk.entity.one_paginated_setup_flow_list_entity import OnePaginatedSetupFlowListEntity
     from cloudflarezerotrust_sdk.entity.override_code_entity import OverrideCodeEntity
     from cloudflarezerotrust_sdk.entity.pacfile_entity import PacfileEntity
     from cloudflarezerotrust_sdk.entity.physical_device_entity import PhysicalDeviceEntity
@@ -994,6 +1098,7 @@ if TYPE_CHECKING:
     from cloudflarezerotrust_sdk.entity.teams_devices_device_entity import TeamsDevicesDeviceEntity
     from cloudflarezerotrust_sdk.entity.teams_devices_device_setting_entity import TeamsDevicesDeviceSettingEntity
     from cloudflarezerotrust_sdk.entity.teams_devices_device_settings_response_collection_entity import TeamsDevicesDeviceSettingsResponseCollectionEntity
+    from cloudflarezerotrust_sdk.entity.teams_devices_devices_policy_certificates_single_entity import TeamsDevicesDevicesPolicyCertificatesSingleEntity
     from cloudflarezerotrust_sdk.entity.teams_devices_fallback_domain_response_collection_entity import TeamsDevicesFallbackDomainResponseCollectionEntity
     from cloudflarezerotrust_sdk.entity.teams_devices_global_warp_override_entity import TeamsDevicesGlobalWarpOverrideEntity
     from cloudflarezerotrust_sdk.entity.teams_devices_id_entity import TeamsDevicesIdEntity

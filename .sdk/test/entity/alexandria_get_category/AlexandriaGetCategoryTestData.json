@@ -1,0 +1,52 @@
+{
+  "existing": {
+    "alexandria_get_category": {
+      "ALEXANDRIA_GET_CATEGORY00": {
+        "errors": [],
+        "id": "ALEXANDRIA_GET_CATEGORY00",
+        "messages": [],
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "ALEXANDRIA_GET_CATEGORY01": {
+        "errors": [],
+        "id": "ALEXANDRIA_GET_CATEGORY01",
+        "messages": [],
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "ALEXANDRIA_GET_CATEGORY02": {
+        "errors": [],
+        "id": "ALEXANDRIA_GET_CATEGORY02",
+        "messages": [],
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "alexandria_get_category": {
+      "alexandria_get_category_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/resource-library/categories": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/resource-library/categories/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

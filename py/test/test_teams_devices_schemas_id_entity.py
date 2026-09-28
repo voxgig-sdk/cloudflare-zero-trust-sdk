@@ -64,7 +64,7 @@ def _teams_devices_schemas_id_basic_setup(extra):
 
     # Generate idmap via transform.
     idmap = vs.transform(
-        ["teams_devices_schemas_id01", "teams_devices_schemas_id02", "teams_devices_schemas_id03"],
+        ["teams_devices_schemas_id01", "teams_devices_schemas_id02", "teams_devices_schemas_id03", "integration01", "integration02", "integration03"],
         {
             "`$PACK`": ["", {
                 "`$KEY`": "`$COPY`",

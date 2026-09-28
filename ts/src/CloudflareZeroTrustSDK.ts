@@ -1,5 +1,8 @@
 // CloudflareZeroTrust Ts SDK
 
+import { AlexandriaDeleteApplicationEntity } from './entity/AlexandriaDeleteApplicationEntity'
+import { AlexandriaGetApplicationEntity } from './entity/AlexandriaGetApplicationEntity'
+import { AlexandriaGetCategoryEntity } from './entity/AlexandriaGetCategoryEntity'
 import { ClientVersionEntity } from './entity/ClientVersionEntity'
 import { CniEntity } from './entity/CniEntity'
 import { DeploymentGroupEntity } from './entity/DeploymentGroupEntity'
@@ -13,6 +16,7 @@ import { DigitalExperienceMonitoringDexSingleEntity } from './entity/DigitalExpe
 import { DigitalExperienceMonitoringFleetStatusDeviceEntity } from './entity/DigitalExperienceMonitoringFleetStatusDeviceEntity'
 import { DigitalExperienceMonitoringFleetStatusLiveEntity } from './entity/DigitalExperienceMonitoringFleetStatusLiveEntity'
 import { DigitalExperienceMonitoringFleetStatusOverTimeEntity } from './entity/DigitalExperienceMonitoringFleetStatusOverTimeEntity'
+import { IntegrationEntity } from './entity/IntegrationEntity'
 import { InterconnectEntity } from './entity/InterconnectEntity'
 import { IpProfileEntity } from './entity/IpProfileEntity'
 import { ListEntity } from './entity/ListEntity'
@@ -23,6 +27,16 @@ import { NscInterconnectEntity } from './entity/NscInterconnectEntity'
 import { NscSettingEntity } from './entity/NscSettingEntity'
 import { NscSlotInfoEntity } from './entity/NscSlotInfoEntity'
 import { NscStatusInfoEntity } from './entity/NscStatusInfoEntity'
+import { OneApplicationDetailEntity } from './entity/OneApplicationDetailEntity'
+import { OneIntegrationCreateEntity } from './entity/OneIntegrationCreateEntity'
+import { OneIntegrationDetailEntity } from './entity/OneIntegrationDetailEntity'
+import { OneIntegrationPauseEntity } from './entity/OneIntegrationPauseEntity'
+import { OneIntegrationResumeEntity } from './entity/OneIntegrationResumeEntity'
+import { OneIntegrationUpdateEntity } from './entity/OneIntegrationUpdateEntity'
+import { OnePaginatedApplicationListListEntity } from './entity/OnePaginatedApplicationListListEntity'
+import { OnePaginatedAuthMethodDetailListEntity } from './entity/OnePaginatedAuthMethodDetailListEntity'
+import { OnePaginatedIntegrationV2ListItemListEntity } from './entity/OnePaginatedIntegrationV2ListItemListEntity'
+import { OnePaginatedSetupFlowListEntity } from './entity/OnePaginatedSetupFlowListEntity'
 import { OverrideCodeEntity } from './entity/OverrideCodeEntity'
 import { PacfileEntity } from './entity/PacfileEntity'
 import { PhysicalDeviceEntity } from './entity/PhysicalDeviceEntity'
@@ -36,6 +50,7 @@ import { TeamsDevicesDefaultDeviceSettingEntity } from './entity/TeamsDevicesDef
 import { TeamsDevicesDeviceEntity } from './entity/TeamsDevicesDeviceEntity'
 import { TeamsDevicesDeviceSettingEntity } from './entity/TeamsDevicesDeviceSettingEntity'
 import { TeamsDevicesDeviceSettingsResponseCollectionEntity } from './entity/TeamsDevicesDeviceSettingsResponseCollectionEntity'
+import { TeamsDevicesDevicesPolicyCertificatesSingleEntity } from './entity/TeamsDevicesDevicesPolicyCertificatesSingleEntity'
 import { TeamsDevicesFallbackDomainResponseCollectionEntity } from './entity/TeamsDevicesFallbackDomainResponseCollectionEntity'
 import { TeamsDevicesGlobalWarpOverrideEntity } from './entity/TeamsDevicesGlobalWarpOverrideEntity'
 import { TeamsDevicesIdEntity } from './entity/TeamsDevicesIdEntity'
@@ -385,6 +400,33 @@ class CloudflareZeroTrustSDK {
 
 
 
+  // Entity access: `client.AlexandriaDeleteApplication().list()` / `client.AlexandriaDeleteApplication().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  AlexandriaDeleteApplication(entopts?: Record<string, any>) {
+    const self = this
+    return new AlexandriaDeleteApplicationEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.AlexandriaGetApplication().list()` / `client.AlexandriaGetApplication().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  AlexandriaGetApplication(entopts?: Record<string, any>) {
+    const self = this
+    return new AlexandriaGetApplicationEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.AlexandriaGetCategory().list()` / `client.AlexandriaGetCategory().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  AlexandriaGetCategory(entopts?: Record<string, any>) {
+    const self = this
+    return new AlexandriaGetCategoryEntity(self, entopts)
+  }
+
+
   // Entity access: `client.ClientVersion().list()` / `client.ClientVersion().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
@@ -502,6 +544,15 @@ class CloudflareZeroTrustSDK {
   }
 
 
+  // Entity access: `client.Integration().list()` / `client.Integration().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Integration(entopts?: Record<string, any>) {
+    const self = this
+    return new IntegrationEntity(self, entopts)
+  }
+
+
   // Entity access: `client.Interconnect().list()` / `client.Interconnect().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
@@ -589,6 +640,96 @@ class CloudflareZeroTrustSDK {
   NscStatusInfo(entopts?: Record<string, any>) {
     const self = this
     return new NscStatusInfoEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.OneApplicationDetail().list()` / `client.OneApplicationDetail().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  OneApplicationDetail(entopts?: Record<string, any>) {
+    const self = this
+    return new OneApplicationDetailEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.OneIntegrationCreate().list()` / `client.OneIntegrationCreate().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  OneIntegrationCreate(entopts?: Record<string, any>) {
+    const self = this
+    return new OneIntegrationCreateEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.OneIntegrationDetail().list()` / `client.OneIntegrationDetail().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  OneIntegrationDetail(entopts?: Record<string, any>) {
+    const self = this
+    return new OneIntegrationDetailEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.OneIntegrationPause().list()` / `client.OneIntegrationPause().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  OneIntegrationPause(entopts?: Record<string, any>) {
+    const self = this
+    return new OneIntegrationPauseEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.OneIntegrationResume().list()` / `client.OneIntegrationResume().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  OneIntegrationResume(entopts?: Record<string, any>) {
+    const self = this
+    return new OneIntegrationResumeEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.OneIntegrationUpdate().list()` / `client.OneIntegrationUpdate().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  OneIntegrationUpdate(entopts?: Record<string, any>) {
+    const self = this
+    return new OneIntegrationUpdateEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.OnePaginatedApplicationListList().list()` / `client.OnePaginatedApplicationListList().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  OnePaginatedApplicationListList(entopts?: Record<string, any>) {
+    const self = this
+    return new OnePaginatedApplicationListListEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.OnePaginatedAuthMethodDetailList().list()` / `client.OnePaginatedAuthMethodDetailList().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  OnePaginatedAuthMethodDetailList(entopts?: Record<string, any>) {
+    const self = this
+    return new OnePaginatedAuthMethodDetailListEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.OnePaginatedIntegrationV2ListItemList().list()` / `client.OnePaginatedIntegrationV2ListItemList().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  OnePaginatedIntegrationV2ListItemList(entopts?: Record<string, any>) {
+    const self = this
+    return new OnePaginatedIntegrationV2ListItemListEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.OnePaginatedSetupFlowList().list()` / `client.OnePaginatedSetupFlowList().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  OnePaginatedSetupFlowList(entopts?: Record<string, any>) {
+    const self = this
+    return new OnePaginatedSetupFlowListEntity(self, entopts)
   }
 
 
@@ -706,6 +847,15 @@ class CloudflareZeroTrustSDK {
   TeamsDevicesDeviceSettingsResponseCollection(entopts?: Record<string, any>) {
     const self = this
     return new TeamsDevicesDeviceSettingsResponseCollectionEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.TeamsDevicesDevicesPolicyCertificatesSingle().list()` / `client.TeamsDevicesDevicesPolicyCertificatesSingle().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  TeamsDevicesDevicesPolicyCertificatesSingle(entopts?: Record<string, any>) {
+    const self = this
+    return new TeamsDevicesDevicesPolicyCertificatesSingleEntity(self, entopts)
   }
 
 

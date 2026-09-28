@@ -8,6 +8,296 @@
 # @voxgig/apidef VALID_CANON). Ruby types are unenforced; these YARD
 # annotations document the shapes. Do not edit by hand.
 
+# AlexandriaDeleteApplication entity data model.
+#
+# @!attribute [rw] id
+#   @return [String, nil]
+AlexandriaDeleteApplication = Struct.new(
+  :id,
+  keyword_init: true
+)
+
+# Request payload for AlexandriaDeleteApplication#remove.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] id
+#   @return [Integer]
+AlexandriaDeleteApplicationRemoveMatch = Struct.new(
+  :account_id,
+  :id,
+  keyword_init: true
+)
+
+# AlexandriaGetApplication entity data model.
+#
+# @!attribute [rw] category_id
+#   @return [Integer]
+#
+# @!attribute [rw] errors
+#   @return [Array]
+#
+# @!attribute [rw] hostnames
+#   @return [Array, nil]
+#
+# @!attribute [rw] human_id
+#   @return [String]
+#
+# @!attribute [rw] id
+#   @return [String, nil]
+#
+# @!attribute [rw] ip_subnets
+#   @return [Array, nil]
+#
+# @!attribute [rw] messages
+#   @return [Array]
+#
+# @!attribute [rw] name
+#   @return [String]
+#
+# @!attribute [rw] port_protocols
+#   @return [Array, nil]
+#
+# @!attribute [rw] result
+#   @return [Hash]
+#
+# @!attribute [rw] success
+#   @return [Boolean]
+#
+# @!attribute [rw] support_domains
+#   @return [Array, nil]
+AlexandriaGetApplication = Struct.new(
+  :category_id,
+  :errors,
+  :hostnames,
+  :human_id,
+  :id,
+  :ip_subnets,
+  :messages,
+  :name,
+  :port_protocols,
+  :result,
+  :success,
+  :support_domains,
+  keyword_init: true
+)
+
+# Request payload for AlexandriaGetApplication#load.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] id
+#   @return [Integer]
+AlexandriaGetApplicationLoadMatch = Struct.new(
+  :account_id,
+  :id,
+  keyword_init: true
+)
+
+# Request payload for AlexandriaGetApplication#list.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] field
+#   @return [String, nil]
+#
+# @!attribute [rw] filter
+#   @return [String, nil]
+#
+# @!attribute [rw] limit
+#   @return [Integer, nil]
+#
+# @!attribute [rw] offset
+#   @return [Integer, nil]
+#
+# @!attribute [rw] order_by
+#   @return [String, nil]
+#
+# @!attribute [rw] search
+#   @return [String, nil]
+AlexandriaGetApplicationListMatch = Struct.new(
+  :account_id,
+  :field,
+  :filter,
+  :limit,
+  :offset,
+  :order_by,
+  :search,
+  keyword_init: true
+)
+
+# Request payload for AlexandriaGetApplication#create.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] category_id
+#   @return [Integer]
+#
+# @!attribute [rw] errors
+#   @return [Array]
+#
+# @!attribute [rw] hostnames
+#   @return [Array, nil]
+#
+# @!attribute [rw] human_id
+#   @return [String]
+#
+# @!attribute [rw] id
+#   @return [String, nil]
+#
+# @!attribute [rw] ip_subnets
+#   @return [Array, nil]
+#
+# @!attribute [rw] messages
+#   @return [Array]
+#
+# @!attribute [rw] name
+#   @return [String]
+#
+# @!attribute [rw] port_protocols
+#   @return [Array, nil]
+#
+# @!attribute [rw] result
+#   @return [Hash]
+#
+# @!attribute [rw] success
+#   @return [Boolean]
+#
+# @!attribute [rw] support_domains
+#   @return [Array, nil]
+AlexandriaGetApplicationCreateData = Struct.new(
+  :account_id,
+  :category_id,
+  :errors,
+  :hostnames,
+  :human_id,
+  :id,
+  :ip_subnets,
+  :messages,
+  :name,
+  :port_protocols,
+  :result,
+  :success,
+  :support_domains,
+  keyword_init: true
+)
+
+# Request payload for AlexandriaGetApplication#update.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] id
+#   @return [Integer]
+#
+# @!attribute [rw] category_id
+#   @return [Integer, nil]
+#
+# @!attribute [rw] errors
+#   @return [Array, nil]
+#
+# @!attribute [rw] hostnames
+#   @return [Array, nil]
+#
+# @!attribute [rw] human_id
+#   @return [String, nil]
+#
+# @!attribute [rw] ip_subnets
+#   @return [Array, nil]
+#
+# @!attribute [rw] messages
+#   @return [Array, nil]
+#
+# @!attribute [rw] name
+#   @return [String, nil]
+#
+# @!attribute [rw] port_protocols
+#   @return [Array, nil]
+#
+# @!attribute [rw] result
+#   @return [Hash, nil]
+#
+# @!attribute [rw] success
+#   @return [Boolean, nil]
+#
+# @!attribute [rw] support_domains
+#   @return [Array, nil]
+AlexandriaGetApplicationUpdateData = Struct.new(
+  :account_id,
+  :id,
+  :category_id,
+  :errors,
+  :hostnames,
+  :human_id,
+  :ip_subnets,
+  :messages,
+  :name,
+  :port_protocols,
+  :result,
+  :success,
+  :support_domains,
+  keyword_init: true
+)
+
+# AlexandriaGetCategory entity data model.
+#
+# @!attribute [rw] errors
+#   @return [Array]
+#
+# @!attribute [rw] id
+#   @return [String, nil]
+#
+# @!attribute [rw] messages
+#   @return [Array]
+#
+# @!attribute [rw] result
+#   @return [Hash]
+#
+# @!attribute [rw] success
+#   @return [Boolean]
+AlexandriaGetCategory = Struct.new(
+  :errors,
+  :id,
+  :messages,
+  :result,
+  :success,
+  keyword_init: true
+)
+
+# Request payload for AlexandriaGetCategory#load.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] id
+#   @return [Integer]
+AlexandriaGetCategoryLoadMatch = Struct.new(
+  :account_id,
+  :id,
+  keyword_init: true
+)
+
+# Request payload for AlexandriaGetCategory#list.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] limit
+#   @return [Integer, nil]
+#
+# @!attribute [rw] offset
+#   @return [Integer, nil]
+AlexandriaGetCategoryListMatch = Struct.new(
+  :account_id,
+  :limit,
+  :offset,
+  keyword_init: true
+)
+
 # ClientVersion entity data model.
 #
 # @!attribute [rw] errors
@@ -1132,6 +1422,28 @@ DigitalExperienceMonitoringFleetStatusOverTimeLoadMatch = Struct.new(
   keyword_init: true
 )
 
+# Integration entity data model.
+#
+# @!attribute [rw] id
+#   @return [String, nil]
+Integration = Struct.new(
+  :id,
+  keyword_init: true
+)
+
+# Request payload for Integration#remove.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] id
+#   @return [String]
+IntegrationRemoveMatch = Struct.new(
+  :account_id,
+  :id,
+  keyword_init: true
+)
+
 # Interconnect entity data model.
 #
 # @!attribute [rw] id
@@ -1812,6 +2124,602 @@ end
 NscStatusInfoLoadMatch = Struct.new(
   :account_id,
   :icon,
+  keyword_init: true
+)
+
+# OneApplicationDetail entity data model.
+#
+# @!attribute [rw] errors
+#   @return [Array, nil]
+#
+# @!attribute [rw] messages
+#   @return [Array, nil]
+#
+# @!attribute [rw] result
+#   @return [Object]
+#
+# @!attribute [rw] success
+#   @return [Boolean]
+OneApplicationDetail = Struct.new(
+  :errors,
+  :messages,
+  :result,
+  :success,
+  keyword_init: true
+)
+
+# Request payload for OneApplicationDetail#load.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] application_id
+#   @return [String]
+OneApplicationDetailLoadMatch = Struct.new(
+  :account_id,
+  :application_id,
+  keyword_init: true
+)
+
+# OneIntegrationCreate entity data model.
+#
+# @!attribute [rw] application
+#   @return [String]
+#
+# @!attribute [rw] auth_method
+#   @return [String, nil]
+#
+# @!attribute [rw] credentials
+#   @return [Hash]
+#
+# @!attribute [rw] dlp_profiles
+#   @return [Array, nil]
+#
+# @!attribute [rw] name
+#   @return [String]
+#
+# @!attribute [rw] permissions
+#   @return [Array, nil]
+#
+# @!attribute [rw] use_cases
+#   @return [Array, nil]
+OneIntegrationCreate = Struct.new(
+  :application,
+  :auth_method,
+  :credentials,
+  :dlp_profiles,
+  :name,
+  :permissions,
+  :use_cases,
+  keyword_init: true
+)
+
+# Request payload for OneIntegrationCreate#create.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] application
+#   @return [String]
+#
+# @!attribute [rw] auth_method
+#   @return [String, nil]
+#
+# @!attribute [rw] credentials
+#   @return [Hash]
+#
+# @!attribute [rw] dlp_profiles
+#   @return [Array, nil]
+#
+# @!attribute [rw] name
+#   @return [String]
+#
+# @!attribute [rw] permissions
+#   @return [Array, nil]
+#
+# @!attribute [rw] use_cases
+#   @return [Array, nil]
+OneIntegrationCreateCreateData = Struct.new(
+  :account_id,
+  :application,
+  :auth_method,
+  :credentials,
+  :dlp_profiles,
+  :name,
+  :permissions,
+  :use_cases,
+  keyword_init: true
+)
+
+# OneIntegrationDetail entity data model.
+#
+# @!attribute [rw] errors
+#   @return [Array, nil]
+#
+# @!attribute [rw] id
+#   @return [String, nil]
+#
+# @!attribute [rw] messages
+#   @return [Array, nil]
+#
+# @!attribute [rw] result
+#   @return [Object]
+#
+# @!attribute [rw] success
+#   @return [Boolean]
+OneIntegrationDetail = Struct.new(
+  :errors,
+  :id,
+  :messages,
+  :result,
+  :success,
+  keyword_init: true
+)
+
+# Request payload for OneIntegrationDetail#load.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] id
+#   @return [String]
+OneIntegrationDetailLoadMatch = Struct.new(
+  :account_id,
+  :id,
+  keyword_init: true
+)
+
+# OneIntegrationPause entity data model.
+#
+# @!attribute [rw] errors
+#   @return [Array, nil]
+#
+# @!attribute [rw] messages
+#   @return [Array, nil]
+#
+# @!attribute [rw] result
+#   @return [Object]
+#
+# @!attribute [rw] success
+#   @return [Boolean]
+OneIntegrationPause = Struct.new(
+  :errors,
+  :messages,
+  :result,
+  :success,
+  keyword_init: true
+)
+
+# Request payload for OneIntegrationPause#create.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] integration_id
+#   @return [String]
+#
+# @!attribute [rw] errors
+#   @return [Array, nil]
+#
+# @!attribute [rw] messages
+#   @return [Array, nil]
+#
+# @!attribute [rw] result
+#   @return [Object]
+#
+# @!attribute [rw] success
+#   @return [Boolean]
+OneIntegrationPauseCreateData = Struct.new(
+  :account_id,
+  :integration_id,
+  :errors,
+  :messages,
+  :result,
+  :success,
+  keyword_init: true
+)
+
+# OneIntegrationResume entity data model.
+#
+# @!attribute [rw] errors
+#   @return [Array, nil]
+#
+# @!attribute [rw] messages
+#   @return [Array, nil]
+#
+# @!attribute [rw] result
+#   @return [Object]
+#
+# @!attribute [rw] success
+#   @return [Boolean]
+OneIntegrationResume = Struct.new(
+  :errors,
+  :messages,
+  :result,
+  :success,
+  keyword_init: true
+)
+
+# Request payload for OneIntegrationResume#create.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] integration_id
+#   @return [String]
+#
+# @!attribute [rw] errors
+#   @return [Array, nil]
+#
+# @!attribute [rw] messages
+#   @return [Array, nil]
+#
+# @!attribute [rw] result
+#   @return [Object]
+#
+# @!attribute [rw] success
+#   @return [Boolean]
+OneIntegrationResumeCreateData = Struct.new(
+  :account_id,
+  :integration_id,
+  :errors,
+  :messages,
+  :result,
+  :success,
+  keyword_init: true
+)
+
+# OneIntegrationUpdate entity data model.
+#
+# @!attribute [rw] credentials
+#   @return [Hash, nil]
+#
+# @!attribute [rw] dlp_profiles
+#   @return [Array, nil]
+#
+# @!attribute [rw] errors
+#   @return [Array, nil]
+#
+# @!attribute [rw] id
+#   @return [String, nil]
+#
+# @!attribute [rw] messages
+#   @return [Array, nil]
+#
+# @!attribute [rw] name
+#   @return [String, nil]
+#
+# @!attribute [rw] permissions
+#   @return [Array, nil]
+#
+# @!attribute [rw] result
+#   @return [Object]
+#
+# @!attribute [rw] success
+#   @return [Boolean]
+#
+# @!attribute [rw] use_cases
+#   @return [Array, nil]
+OneIntegrationUpdate = Struct.new(
+  :credentials,
+  :dlp_profiles,
+  :errors,
+  :id,
+  :messages,
+  :name,
+  :permissions,
+  :result,
+  :success,
+  :use_cases,
+  keyword_init: true
+)
+
+# Request payload for OneIntegrationUpdate#update.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] id
+#   @return [String]
+#
+# @!attribute [rw] credentials
+#   @return [Hash, nil]
+#
+# @!attribute [rw] dlp_profiles
+#   @return [Array, nil]
+#
+# @!attribute [rw] errors
+#   @return [Array, nil]
+#
+# @!attribute [rw] messages
+#   @return [Array, nil]
+#
+# @!attribute [rw] name
+#   @return [String, nil]
+#
+# @!attribute [rw] permissions
+#   @return [Array, nil]
+#
+# @!attribute [rw] result
+#   @return [Object, nil]
+#
+# @!attribute [rw] success
+#   @return [Boolean, nil]
+#
+# @!attribute [rw] use_cases
+#   @return [Array, nil]
+OneIntegrationUpdateUpdateData = Struct.new(
+  :account_id,
+  :id,
+  :credentials,
+  :dlp_profiles,
+  :errors,
+  :messages,
+  :name,
+  :permissions,
+  :result,
+  :success,
+  :use_cases,
+  keyword_init: true
+)
+
+# OnePaginatedApplicationListList entity data model.
+#
+# @!attribute [rw] auth_methods
+#   @return [Array]
+#
+# @!attribute [rw] category
+#   @return [String]
+#
+# @!attribute [rw] description
+#   @return [String]
+#
+# @!attribute [rw] display_name
+#   @return [String]
+#
+# @!attribute [rw] dlp_enabled
+#   @return [Boolean]
+#
+# @!attribute [rw] id
+#   @return [String]
+#
+# @!attribute [rw] logo
+#   @return [String]
+#
+# @!attribute [rw] permissions
+#   @return [Array]
+#
+# @!attribute [rw] supported_environments
+#   @return [Array]
+#
+# @!attribute [rw] use_cases
+#   @return [Array]
+OnePaginatedApplicationListList = Struct.new(
+  :auth_methods,
+  :category,
+  :description,
+  :display_name,
+  :dlp_enabled,
+  :id,
+  :logo,
+  :permissions,
+  :supported_environments,
+  :use_cases,
+  keyword_init: true
+)
+
+# Request payload for OnePaginatedApplicationListList#list.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] environment
+#   @return [String, nil]
+#
+# @!attribute [rw] page
+#   @return [Integer, nil]
+#
+# @!attribute [rw] page_size
+#   @return [Integer, nil]
+OnePaginatedApplicationListListListMatch = Struct.new(
+  :account_id,
+  :environment,
+  :page,
+  :page_size,
+  keyword_init: true
+)
+
+# OnePaginatedAuthMethodDetailList entity data model.
+#
+# @!attribute [rw] display_name
+#   @return [String]
+#
+# @!attribute [rw] human_interaction_required
+#   @return [Boolean]
+#
+# @!attribute [rw] id
+#   @return [String]
+#
+# @!attribute [rw] instructions
+#   @return [Object]
+#
+# @!attribute [rw] payload_example
+#   @return [Hash]
+#
+# @!attribute [rw] payload_schema
+#   @return [Hash]
+#
+# @!attribute [rw] redirect_url
+#   @return [String]
+OnePaginatedAuthMethodDetailList = Struct.new(
+  :display_name,
+  :human_interaction_required,
+  :id,
+  :instructions,
+  :payload_example,
+  :payload_schema,
+  :redirect_url,
+  keyword_init: true
+)
+
+# Request payload for OnePaginatedAuthMethodDetailList#list.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] application_id
+#   @return [String]
+#
+# @!attribute [rw] page
+#   @return [Integer, nil]
+#
+# @!attribute [rw] page_size
+#   @return [Integer, nil]
+OnePaginatedAuthMethodDetailListListMatch = Struct.new(
+  :account_id,
+  :application_id,
+  :page,
+  :page_size,
+  keyword_init: true
+)
+
+# OnePaginatedIntegrationV2ListItemList entity data model.
+#
+# @!attribute [rw] application
+#   @return [Hash]
+#
+# @!attribute [rw] created
+#   @return [String]
+#
+# @!attribute [rw] id
+#   @return [String]
+#
+# @!attribute [rw] is_paused
+#   @return [Boolean]
+#
+# @!attribute [rw] name
+#   @return [String]
+#
+# @!attribute [rw] status
+#   @return [String]
+#
+# @!attribute [rw] updated
+#   @return [String]
+OnePaginatedIntegrationV2ListItemList = Struct.new(
+  :application,
+  :created,
+  :id,
+  :is_paused,
+  :name,
+  :status,
+  :updated,
+  keyword_init: true
+)
+
+# Request payload for OnePaginatedIntegrationV2ListItemList#list.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] application
+#   @return [String, nil]
+#
+# @!attribute [rw] direction
+#   @return [String, nil]
+#
+# @!attribute [rw] dlp_enabled
+#   @return [Boolean, nil]
+#
+# @!attribute [rw] order
+#   @return [String, nil]
+#
+# @!attribute [rw] page
+#   @return [Integer, nil]
+#
+# @!attribute [rw] page_size
+#   @return [Integer, nil]
+#
+# @!attribute [rw] search
+#   @return [String, nil]
+#
+# @!attribute [rw] status
+#   @return [String, nil]
+#
+# @!attribute [rw] use_case
+#   @return [String, nil]
+OnePaginatedIntegrationV2ListItemListListMatch = Struct.new(
+  :account_id,
+  :application,
+  :direction,
+  :dlp_enabled,
+  :order,
+  :page,
+  :page_size,
+  :search,
+  :status,
+  :use_case,
+  keyword_init: true
+)
+
+# OnePaginatedSetupFlowList entity data model.
+#
+# @!attribute [rw] auth_config
+#   @return [Object, nil]
+#
+# @!attribute [rw] default
+#   @return [Boolean]
+#
+# @!attribute [rw] description
+#   @return [String]
+#
+# @!attribute [rw] id
+#   @return [String]
+#
+# @!attribute [rw] name
+#   @return [String]
+#
+# @!attribute [rw] steps
+#   @return [Array]
+#
+# @!attribute [rw] supported_environments
+#   @return [Array]
+OnePaginatedSetupFlowList = Struct.new(
+  :auth_config,
+  :default,
+  :description,
+  :id,
+  :name,
+  :steps,
+  :supported_environments,
+  keyword_init: true
+)
+
+# Request payload for OnePaginatedSetupFlowList#list.
+#
+# @!attribute [rw] account_id
+#   @return [String]
+#
+# @!attribute [rw] application_id
+#   @return [String]
+#
+# @!attribute [rw] auth_method
+#   @return [String, nil]
+#
+# @!attribute [rw] environment
+#   @return [String, nil]
+#
+# @!attribute [rw] page
+#   @return [Integer, nil]
+#
+# @!attribute [rw] page_size
+#   @return [Integer, nil]
+OnePaginatedSetupFlowListListMatch = Struct.new(
+  :account_id,
+  :application_id,
+  :auth_method,
+  :environment,
+  :page,
+  :page_size,
   keyword_init: true
 )
 
@@ -3116,6 +4024,45 @@ TeamsDevicesDeviceSettingsResponseCollectionListMatch = Struct.new(
 TeamsDevicesDeviceSettingsResponseCollectionRemoveMatch = Struct.new(
   :account_id,
   :policy_id,
+  keyword_init: true
+)
+
+# TeamsDevicesDevicesPolicyCertificatesSingle entity data model.
+#
+# @!attribute [rw] enabled
+#   @return [Boolean]
+#
+# @!attribute [rw] result
+#   @return [Hash]
+TeamsDevicesDevicesPolicyCertificatesSingle = Struct.new(
+  :enabled,
+  :result,
+  keyword_init: true
+)
+
+# Request payload for TeamsDevicesDevicesPolicyCertificatesSingle#load.
+#
+# @!attribute [rw] zone_id
+#   @return [String]
+TeamsDevicesDevicesPolicyCertificatesSingleLoadMatch = Struct.new(
+  :zone_id,
+  keyword_init: true
+)
+
+# Request payload for TeamsDevicesDevicesPolicyCertificatesSingle#update.
+#
+# @!attribute [rw] zone_id
+#   @return [String]
+#
+# @!attribute [rw] enabled
+#   @return [Boolean, nil]
+#
+# @!attribute [rw] result
+#   @return [Hash, nil]
+TeamsDevicesDevicesPolicyCertificatesSingleUpdateData = Struct.new(
+  :zone_id,
+  :enabled,
+  :result,
   keyword_init: true
 )
 

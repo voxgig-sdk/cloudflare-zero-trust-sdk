@@ -1,0 +1,33 @@
+# BasicOneIntegrationUpdateFlow
+
+main: kit: flow: BasicOneIntegrationUpdateFlow:
+{
+  entity: "one_integration_update",
+  kind: "basic",
+  name: "BasicOneIntegrationUpdateFlow",
+  step: [
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "one_integration_update_ref01",
+        srcdatavar: "one_integration_update_ref01_data",
+        suffix: "_up0",
+        textfield: "name"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-one_integration_update_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOneIntegrationUpdateFlow"
+}

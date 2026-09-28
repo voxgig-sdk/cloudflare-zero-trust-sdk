@@ -1,0 +1,201 @@
+# Entity: one_paginated_integration_v2_list_item_list
+
+main: kit: entity: one_paginated_integration_v2_list_item_list: {
+
+  alias: field: {}
+
+  fields: {
+    application: {
+      h: "Application"
+      n: "application"
+      r: true
+      ro: true
+      t: "`$OBJECT`"
+    }
+    created: {
+      fo: "date-time"
+      h: "Created"
+      n: "created"
+      r: true
+      ro: true
+      sh: "When the integration was created."
+      t: "`$STRING`"
+    }
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: true
+      ro: true
+      sh: "Integration ID."
+      t: "`$STRING`"
+    }
+    is_paused: {
+      h: "Is Paused"
+      n: "is_paused"
+      r: true
+      ro: true
+      sh: "Whether the user paused the integration."
+      t: "`$BOOLEAN`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      ro: true
+      sh: "Name of the integration."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Integration status."
+      t: "`$STRING`"
+    }
+    updated: {
+      fo: "date-time"
+      h: "Updated"
+      n: "updated"
+      r: true
+      ro: true
+      sh: "When the integration was last updated."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "one_paginated_integration_v2_list_item_list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/one/integrations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "application"
+                or: "application"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "dlp_enabled"
+                or: "dlp_enabled"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "use_case"
+                or: "use_case"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/one/integrations"
+          q: {
+            exist: [
+              "account_id"
+              "application"
+              "direction"
+              "dlp_enabled"
+              "order"
+              "page"
+              "page_size"
+              "search"
+              "status"
+              "use_case"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "one"
+            }
+            {
+              lit: "integrations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

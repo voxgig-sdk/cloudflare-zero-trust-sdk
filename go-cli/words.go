@@ -77,6 +77,12 @@ func runOp(client *sdk.CloudflareZeroTrustSDK, op string, query *eng.Value, enti
 // emits one `case "<name>":` per entity defined in the SDK model.
 func entityFor(client *sdk.CloudflareZeroTrustSDK, name string) (sdk.CloudflareZeroTrustEntity, error) {
 	switch strings.ToLower(name) {
+	case "alexandria_delete_application":
+		return client.AlexandriaDeleteApplication(nil), nil
+	case "alexandria_get_application":
+		return client.AlexandriaGetApplication(nil), nil
+	case "alexandria_get_category":
+		return client.AlexandriaGetCategory(nil), nil
 	case "client_version":
 		return client.ClientVersion(nil), nil
 	case "cni":
@@ -103,6 +109,8 @@ func entityFor(client *sdk.CloudflareZeroTrustSDK, name string) (sdk.CloudflareZ
 		return client.DigitalExperienceMonitoringFleetStatusLive(nil), nil
 	case "digital_experience_monitoring_fleet_status_over_time":
 		return client.DigitalExperienceMonitoringFleetStatusOverTime(nil), nil
+	case "integration":
+		return client.Integration(nil), nil
 	case "interconnect":
 		return client.Interconnect(nil), nil
 	case "ip_profile":
@@ -123,6 +131,26 @@ func entityFor(client *sdk.CloudflareZeroTrustSDK, name string) (sdk.CloudflareZ
 		return client.NscSlotInfo(nil), nil
 	case "nsc_status_info":
 		return client.NscStatusInfo(nil), nil
+	case "one_application_detail":
+		return client.OneApplicationDetail(nil), nil
+	case "one_integration_create":
+		return client.OneIntegrationCreate(nil), nil
+	case "one_integration_detail":
+		return client.OneIntegrationDetail(nil), nil
+	case "one_integration_pause":
+		return client.OneIntegrationPause(nil), nil
+	case "one_integration_resume":
+		return client.OneIntegrationResume(nil), nil
+	case "one_integration_update":
+		return client.OneIntegrationUpdate(nil), nil
+	case "one_paginated_application_list_list":
+		return client.OnePaginatedApplicationListList(nil), nil
+	case "one_paginated_auth_method_detail_list":
+		return client.OnePaginatedAuthMethodDetailList(nil), nil
+	case "one_paginated_integration_v2_list_item_list":
+		return client.OnePaginatedIntegrationV2ListItemList(nil), nil
+	case "one_paginated_setup_flow_list":
+		return client.OnePaginatedSetupFlowList(nil), nil
 	case "override_code":
 		return client.OverrideCode(nil), nil
 	case "pacfile":
@@ -149,6 +177,8 @@ func entityFor(client *sdk.CloudflareZeroTrustSDK, name string) (sdk.CloudflareZ
 		return client.TeamsDevicesDeviceSetting(nil), nil
 	case "teams_devices_device_settings_response_collection":
 		return client.TeamsDevicesDeviceSettingsResponseCollection(nil), nil
+	case "teams_devices_devices_policy_certificates_single":
+		return client.TeamsDevicesDevicesPolicyCertificatesSingle(nil), nil
 	case "teams_devices_fallback_domain_response_collection":
 		return client.TeamsDevicesFallbackDomainResponseCollection(nil), nil
 	case "teams_devices_global_warp_override":

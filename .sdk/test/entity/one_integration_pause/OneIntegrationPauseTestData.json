@@ -1,0 +1,50 @@
+{
+  "existing": {
+    "one_integration_pause": {
+      "ONE_INTEGRATION_PAUSE00": {
+        "errors": [],
+        "messages": [],
+        "result": "s2a",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "integration_id": "INTEGRATION01",
+        "id": "ONE_INTEGRATION_PAUSE00"
+      },
+      "ONE_INTEGRATION_PAUSE01": {
+        "errors": [],
+        "messages": [],
+        "result": "s52",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "integration_id": "INTEGRATION01",
+        "id": "ONE_INTEGRATION_PAUSE01"
+      },
+      "ONE_INTEGRATION_PAUSE02": {
+        "errors": [],
+        "messages": [],
+        "result": "s7a",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "integration_id": "INTEGRATION01",
+        "id": "ONE_INTEGRATION_PAUSE02"
+      }
+    }
+  },
+  "new": {
+    "one_integration_pause": {
+      "one_integration_pause_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": "sa2",
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/one/integrations/{id}/pause": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

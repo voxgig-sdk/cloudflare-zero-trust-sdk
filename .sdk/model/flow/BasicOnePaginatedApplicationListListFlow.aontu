@@ -1,0 +1,26 @@
+# BasicOnePaginatedApplicationListListFlow
+
+main: kit: flow: BasicOnePaginatedApplicationListListFlow:
+{
+  entity: "one_paginated_application_list_list",
+  kind: "basic",
+  name: "BasicOnePaginatedApplicationListListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "one_paginated_application_list_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOnePaginatedApplicationListListFlow"
+}

@@ -42,6 +42,18 @@ client = CloudflareZeroTrustSDK.test()
 
 ### Instance Methods
 
+#### `AlexandriaDeleteApplication(data=None)`
+
+Create a new `AlexandriaDeleteApplicationEntity` instance. Pass `None` for no initial data.
+
+#### `AlexandriaGetApplication(data=None)`
+
+Create a new `AlexandriaGetApplicationEntity` instance. Pass `None` for no initial data.
+
+#### `AlexandriaGetCategory(data=None)`
+
+Create a new `AlexandriaGetCategoryEntity` instance. Pass `None` for no initial data.
+
 #### `ClientVersion(data=None)`
 
 Create a new `ClientVersionEntity` instance. Pass `None` for no initial data.
@@ -94,6 +106,10 @@ Create a new `DigitalExperienceMonitoringFleetStatusLiveEntity` instance. Pass `
 
 Create a new `DigitalExperienceMonitoringFleetStatusOverTimeEntity` instance. Pass `None` for no initial data.
 
+#### `Integration(data=None)`
+
+Create a new `IntegrationEntity` instance. Pass `None` for no initial data.
+
 #### `Interconnect(data=None)`
 
 Create a new `InterconnectEntity` instance. Pass `None` for no initial data.
@@ -133,6 +149,46 @@ Create a new `NscSlotInfoEntity` instance. Pass `None` for no initial data.
 #### `NscStatusInfo(data=None)`
 
 Create a new `NscStatusInfoEntity` instance. Pass `None` for no initial data.
+
+#### `OneApplicationDetail(data=None)`
+
+Create a new `OneApplicationDetailEntity` instance. Pass `None` for no initial data.
+
+#### `OneIntegrationCreate(data=None)`
+
+Create a new `OneIntegrationCreateEntity` instance. Pass `None` for no initial data.
+
+#### `OneIntegrationDetail(data=None)`
+
+Create a new `OneIntegrationDetailEntity` instance. Pass `None` for no initial data.
+
+#### `OneIntegrationPause(data=None)`
+
+Create a new `OneIntegrationPauseEntity` instance. Pass `None` for no initial data.
+
+#### `OneIntegrationResume(data=None)`
+
+Create a new `OneIntegrationResumeEntity` instance. Pass `None` for no initial data.
+
+#### `OneIntegrationUpdate(data=None)`
+
+Create a new `OneIntegrationUpdateEntity` instance. Pass `None` for no initial data.
+
+#### `OnePaginatedApplicationListList(data=None)`
+
+Create a new `OnePaginatedApplicationListListEntity` instance. Pass `None` for no initial data.
+
+#### `OnePaginatedAuthMethodDetailList(data=None)`
+
+Create a new `OnePaginatedAuthMethodDetailListEntity` instance. Pass `None` for no initial data.
+
+#### `OnePaginatedIntegrationV2ListItemList(data=None)`
+
+Create a new `OnePaginatedIntegrationV2ListItemListEntity` instance. Pass `None` for no initial data.
+
+#### `OnePaginatedSetupFlowList(data=None)`
+
+Create a new `OnePaginatedSetupFlowListEntity` instance. Pass `None` for no initial data.
 
 #### `OverrideCode(data=None)`
 
@@ -185,6 +241,10 @@ Create a new `TeamsDevicesDeviceSettingEntity` instance. Pass `None` for no init
 #### `TeamsDevicesDeviceSettingsResponseCollection(data=None)`
 
 Create a new `TeamsDevicesDeviceSettingsResponseCollectionEntity` instance. Pass `None` for no initial data.
+
+#### `TeamsDevicesDevicesPolicyCertificatesSingle(data=None)`
+
+Create a new `TeamsDevicesDevicesPolicyCertificatesSingleEntity` instance. Pass `None` for no initial data.
 
 #### `TeamsDevicesFallbackDomainResponseCollection(data=None)`
 
@@ -486,6 +546,250 @@ Make a direct HTTP request to any API endpoint. Returns a result `dict` with `ok
 #### `prepare(fetchargs=None) -> dict`
 
 Prepare a fetch definition without sending. Returns the `fetchdef` and raises on error.
+
+
+---
+
+## AlexandriaDeleteApplicationEntity
+
+```python
+alexandria_delete_application = client.AlexandriaDeleteApplication()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `str` | No |  |
+
+### Operations
+
+#### `remove(reqmatch, ctrl=None) -> dict`
+
+Remove the entity matching the given criteria. Raises on error.
+
+```python
+result = client.AlexandriaDeleteApplication().remove({"account_id": "account_id", "id": 1})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `AlexandriaDeleteApplicationEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## AlexandriaGetApplicationEntity
+
+```python
+alexandria_get_application = client.AlexandriaGetApplication()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `category_id` | `int` | Yes | Returns the category ID. |
+| `errors` | `list` | Yes |  |
+| `hostnames` | `list` | No | Hostnames matched by the application. |
+| `human_id` | `str` | Yes | Returns the human readable ID. |
+| `id` | `str` | No |  |
+| `ip_subnets` | `list` | No | IP subnets for this application. |
+| `messages` | `list` | Yes |  |
+| `name` | `str` | Yes | Returns the application name. |
+| `port_protocols` | `list` | No | Port and protocol pairs matched by the application. |
+| `result` | `dict` | Yes | Returns the list of applications. |
+| `success` | `bool` | Yes | Indicates whether the API call was successful. |
+| `support_domains` | `list` | No | Support domains matched by the application. |
+
+### Field Usage by Operation
+
+| Field | load | list | create | update |
+| --- | --- | --- | --- | --- |
+| `category_id` | - | - | - | - |
+| `errors` | - | - | - | - |
+| `hostnames` | - | - | - | - |
+| `human_id` | - | - | - | - |
+| `id` | - | - | - | - |
+| `ip_subnets` | - | - | - | - |
+| `messages` | - | - | - | - |
+| `name` | - | - | - | - |
+| `port_protocols` | - | - | - | - |
+| `result` | - | Yes | - | - |
+| `success` | - | - | - | - |
+| `support_domains` | - | - | - | - |
+
+### Operations
+
+#### `create(reqdata, ctrl=None) -> dict`
+
+Create a new entity with the given data. Returns the created entity data and raises on error.
+
+```python
+result = client.AlexandriaGetApplication().create({
+    "account_id": "example_account_id",  # str
+    "category_id": 1,  # int
+    "errors": [],  # list
+    "human_id": "example_human_id",  # str
+    "messages": [],  # list
+    "name": "example_name",  # str
+    "result": {},  # dict
+    "success": True,  # bool
+})
+```
+
+#### `list(reqmatch=None, ctrl=None) -> list`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
+
+```python
+results = client.AlexandriaGetApplication().list({"account_id": "example"})
+for alexandria_get_application in results:
+    print(alexandria_get_application)
+```
+
+#### `load(reqmatch, ctrl=None) -> dict`
+
+Load a single entity matching the given criteria. Returns the entity data and raises on error.
+
+```python
+result = client.AlexandriaGetApplication().load({"id": 1, "account_id": "account_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> dict`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity data and raises on error.
+
+```python
+result = client.AlexandriaGetApplication().update({
+    "id": 1,
+    "account_id": "account_id",
+    # Fields to update
+})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `AlexandriaGetApplicationEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## AlexandriaGetCategoryEntity
+
+```python
+alexandria_get_category = client.AlexandriaGetCategory()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `list` | Yes |  |
+| `id` | `str` | No |  |
+| `messages` | `list` | Yes |  |
+| `result` | `dict` | Yes | Returns the list of categories. |
+| `success` | `bool` | Yes | Indicates whether the API call was successful. |
+
+### Field Usage by Operation
+
+| Field | load | list |
+| --- | --- | --- |
+| `errors` | - | - |
+| `id` | - | - |
+| `messages` | - | - |
+| `result` | - | Yes |
+| `success` | - | - |
+
+### Operations
+
+#### `list(reqmatch=None, ctrl=None) -> list`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
+
+```python
+results = client.AlexandriaGetCategory().list({"account_id": "example"})
+for alexandria_get_category in results:
+    print(alexandria_get_category)
+```
+
+#### `load(reqmatch, ctrl=None) -> dict`
+
+Load a single entity matching the given criteria. Returns the entity data and raises on error.
+
+```python
+result = client.AlexandriaGetCategory().load({"id": 1, "account_id": "account_id"})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `AlexandriaGetCategoryEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
 
 
 ---
@@ -1394,6 +1698,57 @@ Return the entity name.
 
 ---
 
+## IntegrationEntity
+
+```python
+integration = client.Integration()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `str` | No |  |
+
+### Operations
+
+#### `remove(reqmatch, ctrl=None) -> dict`
+
+Remove the entity matching the given criteria. Raises on error.
+
+```python
+result = client.Integration().remove({"account_id": "account_id", "id": "id"})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `IntegrationEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
 ## InterconnectEntity
 
 ```python
@@ -2079,6 +2434,598 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `NscStatusInfoEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## OneApplicationDetailEntity
+
+```python
+one_application_detail = client.OneApplicationDetail()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `list` | No | List of errors. |
+| `messages` | `list` | No | List of messages. |
+| `result` | `Any` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `load(reqmatch, ctrl=None) -> dict`
+
+Load a single entity matching the given criteria. Returns the entity data and raises on error.
+
+```python
+result = client.OneApplicationDetail().load({"account_id": "account_id", "application_id": "application_id"})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OneApplicationDetailEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationCreateEntity
+
+```python
+one_integration_create = client.OneIntegrationCreate()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `application` | `str` | Yes | Vendor/application slug (e.g., GOOGLE_WORKSPACE). |
+| `auth_method` | `str` | No | Authentication method slug (uses default if omitted). |
+| `credentials` | `dict` | Yes | Credentials for the integration. |
+| `dlp_profiles` | `list` | No | List of DLP profile IDs to associate. |
+| `name` | `str` | Yes | Name of the integration. |
+| `permissions` | `list` | No | List of permission scopes (uses policy defaults if empty). |
+| `use_cases` | `list` | No | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+### Operations
+
+#### `create(reqdata, ctrl=None) -> dict`
+
+Create a new entity with the given data. Returns the created entity data and raises on error.
+
+```python
+result = client.OneIntegrationCreate().create({
+    "account_id": "example_account_id",  # str
+    "application": "example_application",  # str
+    "credentials": {},  # dict
+    "name": "example_name",  # str
+})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OneIntegrationCreateEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationDetailEntity
+
+```python
+one_integration_detail = client.OneIntegrationDetail()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `list` | No | List of errors. |
+| `id` | `str` | No |  |
+| `messages` | `list` | No | List of messages. |
+| `result` | `Any` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `load(reqmatch, ctrl=None) -> dict`
+
+Load a single entity matching the given criteria. Returns the entity data and raises on error.
+
+```python
+result = client.OneIntegrationDetail().load({"id": "one_integration_detail_id", "account_id": "account_id"})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OneIntegrationDetailEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationPauseEntity
+
+```python
+one_integration_pause = client.OneIntegrationPause()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `list` | No | List of errors. |
+| `messages` | `list` | No | List of messages. |
+| `result` | `Any` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `create(reqdata, ctrl=None) -> dict`
+
+Create a new entity with the given data. Returns the created entity data and raises on error.
+
+```python
+result = client.OneIntegrationPause().create({
+    "account_id": "example_account_id",  # str
+    "integration_id": "example_integration_id",  # str
+    "result": "example_result",  # Any
+    "success": True,  # bool
+})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OneIntegrationPauseEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationResumeEntity
+
+```python
+one_integration_resume = client.OneIntegrationResume()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `list` | No | List of errors. |
+| `messages` | `list` | No | List of messages. |
+| `result` | `Any` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `create(reqdata, ctrl=None) -> dict`
+
+Create a new entity with the given data. Returns the created entity data and raises on error.
+
+```python
+result = client.OneIntegrationResume().create({
+    "account_id": "example_account_id",  # str
+    "integration_id": "example_integration_id",  # str
+    "result": "example_result",  # Any
+    "success": True,  # bool
+})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OneIntegrationResumeEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationUpdateEntity
+
+```python
+one_integration_update = client.OneIntegrationUpdate()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `dict` | No | Partial credential fields to merge with existing. |
+| `dlp_profiles` | `list` | No | List of DLP profile IDs to associate with the integration. |
+| `errors` | `list` | No | List of errors. |
+| `id` | `str` | No |  |
+| `messages` | `list` | No | List of messages. |
+| `name` | `str` | No | Name of the integration. |
+| `permissions` | `list` | No | List of permission scopes granted to the integration. |
+| `result` | `Any` | Yes | The requested item. |
+| `success` | `bool` | Yes | Whether the request succeeded. |
+| `use_cases` | `list` | No | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+### Operations
+
+#### `update(reqdata, ctrl=None) -> dict`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity data and raises on error.
+
+```python
+result = client.OneIntegrationUpdate().update({
+    "account_id": "account_id",
+    "id": "id",
+    # Fields to update
+})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OneIntegrationUpdateEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedApplicationListListEntity
+
+```python
+one_paginated_application_list_list = client.OnePaginatedApplicationListList()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auth_methods` | `list` | Yes | Available auth methods. |
+| `category` | `str` | Yes | Vendor category (e.g. |
+| `description` | `str` | Yes | Brief description of the integration. |
+| `display_name` | `str` | Yes | Human-readable vendor name. |
+| `dlp_enabled` | `bool` | Yes | Whether DLP scanning is supported. |
+| `id` | `str` | Yes | Vendor identifier (e.g. |
+| `logo` | `str` | Yes | Logo path. |
+| `permissions` | `list` | Yes | All permissions with severity. |
+| `supported_environments` | `list` | Yes | Environments this vendor supports (standard, fedramp). |
+| `use_cases` | `list` | Yes | Supported use cases. |
+
+### Operations
+
+#### `list(reqmatch=None, ctrl=None) -> list`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
+
+```python
+results = client.OnePaginatedApplicationListList().list({"account_id": "example"})
+for one_paginated_application_list_list in results:
+    print(one_paginated_application_list_list)
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OnePaginatedApplicationListListEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedAuthMethodDetailListEntity
+
+```python
+one_paginated_auth_method_detail_list = client.OnePaginatedAuthMethodDetailList()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `display_name` | `str` | Yes | Human-readable auth method name. |
+| `human_interaction_required` | `bool` | Yes | Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction). |
+| `id` | `str` | Yes | Auth method identifier. |
+| `instructions` | `Any` | Yes | Step-by-step instructions for obtaining credentials. |
+| `payload_example` | `dict` | Yes | Example credentials payload with placeholder values. |
+| `payload_schema` | `dict` | Yes | JSON Schema for the credentials object in POST /v2/integrations request. |
+| `redirect_url` | `str` | Yes | OAuth redirect URL for vendors requiring human interaction. |
+
+### Operations
+
+#### `list(reqmatch=None, ctrl=None) -> list`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
+
+```python
+results = client.OnePaginatedAuthMethodDetailList().list({"account_id": "example", "application_id": "example"})
+for one_paginated_auth_method_detail_list in results:
+    print(one_paginated_auth_method_detail_list)
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OnePaginatedAuthMethodDetailListEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedIntegrationV2ListItemListEntity
+
+```python
+one_paginated_integration_v2_list_item_list = client.OnePaginatedIntegrationV2ListItemList()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `application` | `dict` | Yes |  |
+| `created` | `str` | Yes | When the integration was created. |
+| `id` | `str` | Yes | Integration ID. |
+| `is_paused` | `bool` | Yes | Whether the user paused the integration. |
+| `name` | `str` | Yes | Name of the integration. |
+| `status` | `str` | Yes | Integration status. |
+| `updated` | `str` | Yes | When the integration was last updated. |
+
+### Operations
+
+#### `list(reqmatch=None, ctrl=None) -> list`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
+
+```python
+results = client.OnePaginatedIntegrationV2ListItemList().list({"account_id": "example"})
+for one_paginated_integration_v2_list_item_list in results:
+    print(one_paginated_integration_v2_list_item_list)
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OnePaginatedIntegrationV2ListItemListEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedSetupFlowListEntity
+
+```python
+one_paginated_setup_flow_list = client.OnePaginatedSetupFlowList()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auth_config` | `Any` | No | OAuth configuration (present for OAuth-based flows). |
+| `default` | `bool` | Yes | Whether this is the default auth method. |
+| `description` | `str` | Yes | Flow description. |
+| `id` | `str` | Yes | Setup flow identifier. |
+| `name` | `str` | Yes | Human-readable flow name. |
+| `steps` | `list` | Yes | Ordered list of setup steps. |
+| `supported_environments` | `list` | Yes | Environments this auth method supports (standard, fedramp). |
+
+### Operations
+
+#### `list(reqmatch=None, ctrl=None) -> list`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
+
+```python
+results = client.OnePaginatedSetupFlowList().list({"account_id": "example", "application_id": "example"})
+for one_paginated_setup_flow_list in results:
+    print(one_paginated_setup_flow_list)
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OnePaginatedSetupFlowListEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -3035,6 +3982,69 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `TeamsDevicesDeviceSettingsResponseCollectionEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## TeamsDevicesDevicesPolicyCertificatesSingleEntity
+
+```python
+teams_devices_devices_policy_certificates_single = client.TeamsDevicesDevicesPolicyCertificatesSingle()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `enabled` | `bool` | Yes | The current status of the device policy certificate provisioning feature for WARP clients. |
+| `result` | `dict` | Yes |  |
+
+### Operations
+
+#### `load(reqmatch, ctrl=None) -> dict`
+
+Load a single entity matching the given criteria. Returns the entity data and raises on error.
+
+```python
+result = client.TeamsDevicesDevicesPolicyCertificatesSingle().load({"zone_id": "zone_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> dict`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity data and raises on error.
+
+```python
+result = client.TeamsDevicesDevicesPolicyCertificatesSingle().update({
+    "zone_id": "zone_id",
+    # Fields to update
+})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `TeamsDevicesDevicesPolicyCertificatesSingleEntity` instance with the same options.
 
 #### `get_name() -> str`
 

@@ -1,0 +1,166 @@
+# Entity: one_paginated_application_list_list
+
+main: kit: entity: one_paginated_application_list_list: {
+
+  alias: field: {}
+
+  fields: {
+    auth_methods: {
+      h: "Auth Methods"
+      n: "auth_methods"
+      r: true
+      sh: "Available auth methods."
+      t: "`$ARRAY`"
+    }
+    category: {
+      h: "Category"
+      n: "category"
+      r: true
+      sh: "Vendor category (e.g."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: true
+      sh: "Brief description of the integration."
+      t: "`$STRING`"
+    }
+    display_name: {
+      h: "Display Name"
+      n: "display_name"
+      r: true
+      sh: "Human-readable vendor name."
+      t: "`$STRING`"
+    }
+    dlp_enabled: {
+      h: "Dlp Enabled"
+      n: "dlp_enabled"
+      r: true
+      sh: "Whether DLP scanning is supported."
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Vendor identifier (e.g."
+      t: "`$STRING`"
+    }
+    logo: {
+      h: "Logo"
+      n: "logo"
+      r: true
+      sh: "Logo path."
+      t: "`$STRING`"
+    }
+    permissions: {
+      h: "Permissions"
+      n: "permissions"
+      r: true
+      sh: "All permissions with severity."
+      t: "`$ARRAY`"
+    }
+    supported_environments: {
+      h: "Supported Environments"
+      n: "supported_environments"
+      r: true
+      sh: "Environments this vendor supports (standard, fedramp)."
+      t: "`$ARRAY`"
+    }
+    use_cases: {
+      h: "Use Cases"
+      n: "use_cases"
+      r: true
+      sh: "Supported use cases."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "one_paginated_application_list_list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/one/applications"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "environment"
+                or: "environment"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/one/applications"
+          q: {
+            exist: [
+              "account_id"
+              "environment"
+              "page"
+              "page_size"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "one"
+            }
+            {
+              lit: "applications"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

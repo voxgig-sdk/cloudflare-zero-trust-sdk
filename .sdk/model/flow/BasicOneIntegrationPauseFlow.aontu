@@ -1,0 +1,23 @@
+# BasicOneIntegrationPauseFlow
+
+main: kit: flow: BasicOneIntegrationPauseFlow:
+{
+  entity: "one_integration_pause",
+  kind: "basic",
+  name: "BasicOneIntegrationPauseFlow",
+  step: [
+    {
+      i: {
+        ref: "one_integration_pause_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        integration_id: "integration01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicOneIntegrationPauseFlow"
+}

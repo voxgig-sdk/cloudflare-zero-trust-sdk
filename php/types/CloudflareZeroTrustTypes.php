@@ -12,6 +12,116 @@ declare(strict_types=1);
 // registered on the composer classmap autoload. The SDK boundary exchanges
 // assoc-arrays; these classes name the shapes for tooling and typed callers.
 
+/** AlexandriaDeleteApplication entity data model. */
+class AlexandriaDeleteApplication
+{
+    public ?string $id = null;
+}
+
+/** Request payload for AlexandriaDeleteApplication#remove. */
+class AlexandriaDeleteApplicationRemoveMatch
+{
+    public string $account_id;
+    public int $id;
+}
+
+/** AlexandriaGetApplication entity data model. */
+class AlexandriaGetApplication
+{
+    public int $category_id;
+    public array $errors;
+    public ?array $hostnames = null;
+    public string $human_id;
+    public ?string $id = null;
+    public ?array $ip_subnets = null;
+    public array $messages;
+    public string $name;
+    public ?array $port_protocols = null;
+    public array $result;
+    public bool $success;
+    public ?array $support_domains = null;
+}
+
+/** Request payload for AlexandriaGetApplication#load. */
+class AlexandriaGetApplicationLoadMatch
+{
+    public string $account_id;
+    public int $id;
+}
+
+/** Request payload for AlexandriaGetApplication#list. */
+class AlexandriaGetApplicationListMatch
+{
+    public string $account_id;
+    public ?string $field = null;
+    public ?string $filter = null;
+    public ?int $limit = null;
+    public ?int $offset = null;
+    public ?string $order_by = null;
+    public ?string $search = null;
+}
+
+/** Request payload for AlexandriaGetApplication#create. */
+class AlexandriaGetApplicationCreateData
+{
+    public string $account_id;
+    public int $category_id;
+    public array $errors;
+    public ?array $hostnames = null;
+    public string $human_id;
+    public ?string $id = null;
+    public ?array $ip_subnets = null;
+    public array $messages;
+    public string $name;
+    public ?array $port_protocols = null;
+    public array $result;
+    public bool $success;
+    public ?array $support_domains = null;
+}
+
+/** Request payload for AlexandriaGetApplication#update. */
+class AlexandriaGetApplicationUpdateData
+{
+    public string $account_id;
+    public int $id;
+    public ?int $category_id = null;
+    public ?array $errors = null;
+    public ?array $hostnames = null;
+    public ?string $human_id = null;
+    public ?array $ip_subnets = null;
+    public ?array $messages = null;
+    public ?string $name = null;
+    public ?array $port_protocols = null;
+    public ?array $result = null;
+    public ?bool $success = null;
+    public ?array $support_domains = null;
+}
+
+/** AlexandriaGetCategory entity data model. */
+class AlexandriaGetCategory
+{
+    public array $errors;
+    public ?string $id = null;
+    public array $messages;
+    public array $result;
+    public bool $success;
+}
+
+/** Request payload for AlexandriaGetCategory#load. */
+class AlexandriaGetCategoryLoadMatch
+{
+    public string $account_id;
+    public int $id;
+}
+
+/** Request payload for AlexandriaGetCategory#list. */
+class AlexandriaGetCategoryListMatch
+{
+    public string $account_id;
+    public ?int $limit = null;
+    public ?int $offset = null;
+}
+
 /** ClientVersion entity data model. */
 class ClientVersion
 {
@@ -432,6 +542,19 @@ class DigitalExperienceMonitoringFleetStatusOverTimeLoadMatch
     public string $to;
 }
 
+/** Integration entity data model. */
+class Integration
+{
+    public ?string $id = null;
+}
+
+/** Request payload for Integration#remove. */
+class IntegrationRemoveMatch
+{
+    public string $account_id;
+    public string $id;
+}
+
 /** Interconnect entity data model. */
 class Interconnect
 {
@@ -721,6 +844,230 @@ class NscStatusInfoLoadMatch
 {
     public string $account_id;
     public string $icon;
+}
+
+/** OneApplicationDetail entity data model. */
+class OneApplicationDetail
+{
+    public ?array $errors = null;
+    public ?array $messages = null;
+    public mixed $result;
+    public bool $success;
+}
+
+/** Request payload for OneApplicationDetail#load. */
+class OneApplicationDetailLoadMatch
+{
+    public string $account_id;
+    public string $application_id;
+}
+
+/** OneIntegrationCreate entity data model. */
+class OneIntegrationCreate
+{
+    public string $application;
+    public ?string $auth_method = null;
+    public array $credentials;
+    public ?array $dlp_profiles = null;
+    public string $name;
+    public ?array $permissions = null;
+    public ?array $use_cases = null;
+}
+
+/** Request payload for OneIntegrationCreate#create. */
+class OneIntegrationCreateCreateData
+{
+    public string $account_id;
+    public string $application;
+    public ?string $auth_method = null;
+    public array $credentials;
+    public ?array $dlp_profiles = null;
+    public string $name;
+    public ?array $permissions = null;
+    public ?array $use_cases = null;
+}
+
+/** OneIntegrationDetail entity data model. */
+class OneIntegrationDetail
+{
+    public ?array $errors = null;
+    public ?string $id = null;
+    public ?array $messages = null;
+    public mixed $result;
+    public bool $success;
+}
+
+/** Request payload for OneIntegrationDetail#load. */
+class OneIntegrationDetailLoadMatch
+{
+    public string $account_id;
+    public string $id;
+}
+
+/** OneIntegrationPause entity data model. */
+class OneIntegrationPause
+{
+    public ?array $errors = null;
+    public ?array $messages = null;
+    public mixed $result;
+    public bool $success;
+}
+
+/** Request payload for OneIntegrationPause#create. */
+class OneIntegrationPauseCreateData
+{
+    public string $account_id;
+    public string $integration_id;
+    public ?array $errors = null;
+    public ?array $messages = null;
+    public mixed $result;
+    public bool $success;
+}
+
+/** OneIntegrationResume entity data model. */
+class OneIntegrationResume
+{
+    public ?array $errors = null;
+    public ?array $messages = null;
+    public mixed $result;
+    public bool $success;
+}
+
+/** Request payload for OneIntegrationResume#create. */
+class OneIntegrationResumeCreateData
+{
+    public string $account_id;
+    public string $integration_id;
+    public ?array $errors = null;
+    public ?array $messages = null;
+    public mixed $result;
+    public bool $success;
+}
+
+/** OneIntegrationUpdate entity data model. */
+class OneIntegrationUpdate
+{
+    public ?array $credentials = null;
+    public ?array $dlp_profiles = null;
+    public ?array $errors = null;
+    public ?string $id = null;
+    public ?array $messages = null;
+    public ?string $name = null;
+    public ?array $permissions = null;
+    public mixed $result;
+    public bool $success;
+    public ?array $use_cases = null;
+}
+
+/** Request payload for OneIntegrationUpdate#update. */
+class OneIntegrationUpdateUpdateData
+{
+    public string $account_id;
+    public string $id;
+    public ?array $credentials = null;
+    public ?array $dlp_profiles = null;
+    public ?array $errors = null;
+    public ?array $messages = null;
+    public ?string $name = null;
+    public ?array $permissions = null;
+    public mixed $result = null;
+    public ?bool $success = null;
+    public ?array $use_cases = null;
+}
+
+/** OnePaginatedApplicationListList entity data model. */
+class OnePaginatedApplicationListList
+{
+    public array $auth_methods;
+    public string $category;
+    public string $description;
+    public string $display_name;
+    public bool $dlp_enabled;
+    public string $id;
+    public string $logo;
+    public array $permissions;
+    public array $supported_environments;
+    public array $use_cases;
+}
+
+/** Request payload for OnePaginatedApplicationListList#list. */
+class OnePaginatedApplicationListListListMatch
+{
+    public string $account_id;
+    public ?string $environment = null;
+    public ?int $page = null;
+    public ?int $page_size = null;
+}
+
+/** OnePaginatedAuthMethodDetailList entity data model. */
+class OnePaginatedAuthMethodDetailList
+{
+    public string $display_name;
+    public bool $human_interaction_required;
+    public string $id;
+    public mixed $instructions;
+    public array $payload_example;
+    public array $payload_schema;
+    public string $redirect_url;
+}
+
+/** Request payload for OnePaginatedAuthMethodDetailList#list. */
+class OnePaginatedAuthMethodDetailListListMatch
+{
+    public string $account_id;
+    public string $application_id;
+    public ?int $page = null;
+    public ?int $page_size = null;
+}
+
+/** OnePaginatedIntegrationV2ListItemList entity data model. */
+class OnePaginatedIntegrationV2ListItemList
+{
+    public array $application;
+    public string $created;
+    public string $id;
+    public bool $is_paused;
+    public string $name;
+    public string $status;
+    public string $updated;
+}
+
+/** Request payload for OnePaginatedIntegrationV2ListItemList#list. */
+class OnePaginatedIntegrationV2ListItemListListMatch
+{
+    public string $account_id;
+    public ?string $application = null;
+    public ?string $direction = null;
+    public ?bool $dlp_enabled = null;
+    public ?string $order = null;
+    public ?int $page = null;
+    public ?int $page_size = null;
+    public ?string $search = null;
+    public ?string $status = null;
+    public ?string $use_case = null;
+}
+
+/** OnePaginatedSetupFlowList entity data model. */
+class OnePaginatedSetupFlowList
+{
+    public mixed $auth_config = null;
+    public bool $default;
+    public string $description;
+    public string $id;
+    public string $name;
+    public array $steps;
+    public array $supported_environments;
+}
+
+/** Request payload for OnePaginatedSetupFlowList#list. */
+class OnePaginatedSetupFlowListListMatch
+{
+    public string $account_id;
+    public string $application_id;
+    public ?string $auth_method = null;
+    public ?string $environment = null;
+    public ?int $page = null;
+    public ?int $page_size = null;
 }
 
 /** OverrideCode entity data model. */
@@ -1201,6 +1548,27 @@ class TeamsDevicesDeviceSettingsResponseCollectionRemoveMatch
 {
     public string $account_id;
     public string $policy_id;
+}
+
+/** TeamsDevicesDevicesPolicyCertificatesSingle entity data model. */
+class TeamsDevicesDevicesPolicyCertificatesSingle
+{
+    public bool $enabled;
+    public array $result;
+}
+
+/** Request payload for TeamsDevicesDevicesPolicyCertificatesSingle#load. */
+class TeamsDevicesDevicesPolicyCertificatesSingleLoadMatch
+{
+    public string $zone_id;
+}
+
+/** Request payload for TeamsDevicesDevicesPolicyCertificatesSingle#update. */
+class TeamsDevicesDevicesPolicyCertificatesSingleUpdateData
+{
+    public string $zone_id;
+    public ?bool $enabled = null;
+    public ?array $result = null;
 }
 
 /** TeamsDevicesFallbackDomainResponseCollection entity data model. */

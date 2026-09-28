@@ -41,6 +41,18 @@ local client = sdk.test()
 
 ### Instance Methods
 
+#### `AlexandriaDeleteApplication(data)`
+
+Create a new `AlexandriaDeleteApplication` entity instance. Pass `nil` for no initial data.
+
+#### `AlexandriaGetApplication(data)`
+
+Create a new `AlexandriaGetApplication` entity instance. Pass `nil` for no initial data.
+
+#### `AlexandriaGetCategory(data)`
+
+Create a new `AlexandriaGetCategory` entity instance. Pass `nil` for no initial data.
+
 #### `ClientVersion(data)`
 
 Create a new `ClientVersion` entity instance. Pass `nil` for no initial data.
@@ -93,6 +105,10 @@ Create a new `DigitalExperienceMonitoringFleetStatusLive` entity instance. Pass 
 
 Create a new `DigitalExperienceMonitoringFleetStatusOverTime` entity instance. Pass `nil` for no initial data.
 
+#### `Integration(data)`
+
+Create a new `Integration` entity instance. Pass `nil` for no initial data.
+
 #### `Interconnect(data)`
 
 Create a new `Interconnect` entity instance. Pass `nil` for no initial data.
@@ -132,6 +148,46 @@ Create a new `NscSlotInfo` entity instance. Pass `nil` for no initial data.
 #### `NscStatusInfo(data)`
 
 Create a new `NscStatusInfo` entity instance. Pass `nil` for no initial data.
+
+#### `OneApplicationDetail(data)`
+
+Create a new `OneApplicationDetail` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationCreate(data)`
+
+Create a new `OneIntegrationCreate` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationDetail(data)`
+
+Create a new `OneIntegrationDetail` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationPause(data)`
+
+Create a new `OneIntegrationPause` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationResume(data)`
+
+Create a new `OneIntegrationResume` entity instance. Pass `nil` for no initial data.
+
+#### `OneIntegrationUpdate(data)`
+
+Create a new `OneIntegrationUpdate` entity instance. Pass `nil` for no initial data.
+
+#### `OnePaginatedApplicationListList(data)`
+
+Create a new `OnePaginatedApplicationListList` entity instance. Pass `nil` for no initial data.
+
+#### `OnePaginatedAuthMethodDetailList(data)`
+
+Create a new `OnePaginatedAuthMethodDetailList` entity instance. Pass `nil` for no initial data.
+
+#### `OnePaginatedIntegrationV2ListItemList(data)`
+
+Create a new `OnePaginatedIntegrationV2ListItemList` entity instance. Pass `nil` for no initial data.
+
+#### `OnePaginatedSetupFlowList(data)`
+
+Create a new `OnePaginatedSetupFlowList` entity instance. Pass `nil` for no initial data.
 
 #### `OverrideCode(data)`
 
@@ -184,6 +240,10 @@ Create a new `TeamsDevicesDeviceSetting` entity instance. Pass `nil` for no init
 #### `TeamsDevicesDeviceSettingsResponseCollection(data)`
 
 Create a new `TeamsDevicesDeviceSettingsResponseCollection` entity instance. Pass `nil` for no initial data.
+
+#### `TeamsDevicesDevicesPolicyCertificatesSingle(data)`
+
+Create a new `TeamsDevicesDevicesPolicyCertificatesSingle` entity instance. Pass `nil` for no initial data.
 
 #### `TeamsDevicesFallbackDomainResponseCollection(data)`
 
@@ -489,6 +549,249 @@ Prepare a fetch definition without sending the request. Accepts the
 same parameters as `direct()`.
 
 **Returns:** `table, err`
+
+
+---
+
+## AlexandriaDeleteApplicationEntity
+
+```lua
+local alexandria_delete_application = client:AlexandriaDeleteApplication(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | No |  |
+
+### Operations
+
+#### `remove(reqmatch, ctrl) -> any, err`
+
+Remove the entity matching the given criteria.
+
+```lua
+local result, err = client:AlexandriaDeleteApplication():remove({ account_id = "account_id", id = 1 })
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `AlexandriaDeleteApplicationEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## AlexandriaGetApplicationEntity
+
+```lua
+local alexandria_get_application = client:AlexandriaGetApplication(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `category_id` | `number` | Yes | Returns the category ID. |
+| `errors` | `table` | Yes |  |
+| `hostnames` | `table` | No | Hostnames matched by the application. |
+| `human_id` | `string` | Yes | Returns the human readable ID. |
+| `id` | `string` | No |  |
+| `ip_subnets` | `table` | No | IP subnets for this application. |
+| `messages` | `table` | Yes |  |
+| `name` | `string` | Yes | Returns the application name. |
+| `port_protocols` | `table` | No | Port and protocol pairs matched by the application. |
+| `result` | `table` | Yes | Returns the list of applications. |
+| `success` | `boolean` | Yes | Indicates whether the API call was successful. |
+| `support_domains` | `table` | No | Support domains matched by the application. |
+
+### Field Usage by Operation
+
+| Field | load | list | create | update |
+| --- | --- | --- | --- | --- |
+| `category_id` | - | - | - | - |
+| `errors` | - | - | - | - |
+| `hostnames` | - | - | - | - |
+| `human_id` | - | - | - | - |
+| `id` | - | - | - | - |
+| `ip_subnets` | - | - | - | - |
+| `messages` | - | - | - | - |
+| `name` | - | - | - | - |
+| `port_protocols` | - | - | - | - |
+| `result` | - | Yes | - | - |
+| `success` | - | - | - | - |
+| `support_domains` | - | - | - | - |
+
+### Operations
+
+#### `create(reqdata, ctrl) -> any, err`
+
+Create a new entity with the given data.
+
+```lua
+local result, err = client:AlexandriaGetApplication():create({
+  account_id = --[[ string ]],
+  category_id = --[[ number ]],
+  errors = --[[ table ]],
+  human_id = --[[ string ]],
+  messages = --[[ table ]],
+  name = --[[ string ]],
+  result = --[[ table ]],
+  success = --[[ boolean ]],
+})
+```
+
+#### `list(reqmatch, ctrl) -> any, err`
+
+List entities matching the given criteria. Returns an array.
+
+```lua
+local results, err = client:AlexandriaGetApplication():list()
+```
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:AlexandriaGetApplication():load({ id = 1, account_id = "account_id" })
+```
+
+#### `update(reqdata, ctrl) -> any, err`
+
+Update an existing entity. The data must include the entity `id`.
+
+```lua
+local result, err = client:AlexandriaGetApplication():update({
+  id = 1,
+  account_id = "account_id",
+  -- Fields to update
+})
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `AlexandriaGetApplicationEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## AlexandriaGetCategoryEntity
+
+```lua
+local alexandria_get_category = client:AlexandriaGetCategory(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `table` | Yes |  |
+| `id` | `string` | No |  |
+| `messages` | `table` | Yes |  |
+| `result` | `table` | Yes | Returns the list of categories. |
+| `success` | `boolean` | Yes | Indicates whether the API call was successful. |
+
+### Field Usage by Operation
+
+| Field | load | list |
+| --- | --- | --- |
+| `errors` | - | - |
+| `id` | - | - |
+| `messages` | - | - |
+| `result` | - | Yes |
+| `success` | - | - |
+
+### Operations
+
+#### `list(reqmatch, ctrl) -> any, err`
+
+List entities matching the given criteria. Returns an array.
+
+```lua
+local results, err = client:AlexandriaGetCategory():list()
+```
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:AlexandriaGetCategory():load({ id = 1, account_id = "account_id" })
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `AlexandriaGetCategoryEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
 
 
 ---
@@ -1398,6 +1701,58 @@ Return the entity name.
 
 ---
 
+## IntegrationEntity
+
+```lua
+local integration = client:Integration(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | No |  |
+
+### Operations
+
+#### `remove(reqmatch, ctrl) -> any, err`
+
+Remove the entity matching the given criteria.
+
+```lua
+local result, err = client:Integration():remove({ account_id = "account_id", id = "id" })
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `IntegrationEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
 ## InterconnectEntity
 
 ```lua
@@ -2084,6 +2439,600 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `NscStatusInfoEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## OneApplicationDetailEntity
+
+```lua
+local one_application_detail = client:OneApplicationDetail(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `table` | No | List of errors. |
+| `messages` | `table` | No | List of messages. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `boolean` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:OneApplicationDetail():load({ account_id = "account_id", application_id = "application_id" })
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OneApplicationDetailEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationCreateEntity
+
+```lua
+local one_integration_create = client:OneIntegrationCreate(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `application` | `string` | Yes | Vendor/application slug (e.g., GOOGLE_WORKSPACE). |
+| `auth_method` | `string` | No | Authentication method slug (uses default if omitted). |
+| `credentials` | `table` | Yes | Credentials for the integration. |
+| `dlp_profiles` | `table` | No | List of DLP profile IDs to associate. |
+| `name` | `string` | Yes | Name of the integration. |
+| `permissions` | `table` | No | List of permission scopes (uses policy defaults if empty). |
+| `use_cases` | `table` | No | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+### Operations
+
+#### `create(reqdata, ctrl) -> any, err`
+
+Create a new entity with the given data.
+
+```lua
+local result, err = client:OneIntegrationCreate():create({
+  account_id = --[[ string ]],
+  application = --[[ string ]],
+  credentials = --[[ table ]],
+  name = --[[ string ]],
+})
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OneIntegrationCreateEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationDetailEntity
+
+```lua
+local one_integration_detail = client:OneIntegrationDetail(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `table` | No | List of errors. |
+| `id` | `string` | No |  |
+| `messages` | `table` | No | List of messages. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `boolean` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:OneIntegrationDetail():load({ id = "one_integration_detail_id", account_id = "account_id" })
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OneIntegrationDetailEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationPauseEntity
+
+```lua
+local one_integration_pause = client:OneIntegrationPause(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `table` | No | List of errors. |
+| `messages` | `table` | No | List of messages. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `boolean` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `create(reqdata, ctrl) -> any, err`
+
+Create a new entity with the given data.
+
+```lua
+local result, err = client:OneIntegrationPause():create({
+  account_id = --[[ string ]],
+  integration_id = --[[ string ]],
+  result = --[[ any ]],
+  success = --[[ boolean ]],
+})
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OneIntegrationPauseEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationResumeEntity
+
+```lua
+local one_integration_resume = client:OneIntegrationResume(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `table` | No | List of errors. |
+| `messages` | `table` | No | List of messages. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `boolean` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `create(reqdata, ctrl) -> any, err`
+
+Create a new entity with the given data.
+
+```lua
+local result, err = client:OneIntegrationResume():create({
+  account_id = --[[ string ]],
+  integration_id = --[[ string ]],
+  result = --[[ any ]],
+  success = --[[ boolean ]],
+})
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OneIntegrationResumeEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## OneIntegrationUpdateEntity
+
+```lua
+local one_integration_update = client:OneIntegrationUpdate(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `table` | No | Partial credential fields to merge with existing. |
+| `dlp_profiles` | `table` | No | List of DLP profile IDs to associate with the integration. |
+| `errors` | `table` | No | List of errors. |
+| `id` | `string` | No |  |
+| `messages` | `table` | No | List of messages. |
+| `name` | `string` | No | Name of the integration. |
+| `permissions` | `table` | No | List of permission scopes granted to the integration. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `boolean` | Yes | Whether the request succeeded. |
+| `use_cases` | `table` | No | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+### Operations
+
+#### `update(reqdata, ctrl) -> any, err`
+
+Update an existing entity. The data must include the entity `id`.
+
+```lua
+local result, err = client:OneIntegrationUpdate():update({
+  account_id = "account_id",
+  id = "id",
+  -- Fields to update
+})
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OneIntegrationUpdateEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedApplicationListListEntity
+
+```lua
+local one_paginated_application_list_list = client:OnePaginatedApplicationListList(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auth_methods` | `table` | Yes | Available auth methods. |
+| `category` | `string` | Yes | Vendor category (e.g. |
+| `description` | `string` | Yes | Brief description of the integration. |
+| `display_name` | `string` | Yes | Human-readable vendor name. |
+| `dlp_enabled` | `boolean` | Yes | Whether DLP scanning is supported. |
+| `id` | `string` | Yes | Vendor identifier (e.g. |
+| `logo` | `string` | Yes | Logo path. |
+| `permissions` | `table` | Yes | All permissions with severity. |
+| `supported_environments` | `table` | Yes | Environments this vendor supports (standard, fedramp). |
+| `use_cases` | `table` | Yes | Supported use cases. |
+
+### Operations
+
+#### `list(reqmatch, ctrl) -> any, err`
+
+List entities matching the given criteria. Returns an array.
+
+```lua
+local results, err = client:OnePaginatedApplicationListList():list()
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OnePaginatedApplicationListListEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedAuthMethodDetailListEntity
+
+```lua
+local one_paginated_auth_method_detail_list = client:OnePaginatedAuthMethodDetailList(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `display_name` | `string` | Yes | Human-readable auth method name. |
+| `human_interaction_required` | `boolean` | Yes | Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction). |
+| `id` | `string` | Yes | Auth method identifier. |
+| `instructions` | `any` | Yes | Step-by-step instructions for obtaining credentials. |
+| `payload_example` | `table` | Yes | Example credentials payload with placeholder values. |
+| `payload_schema` | `table` | Yes | JSON Schema for the credentials object in POST /v2/integrations request. |
+| `redirect_url` | `string` | Yes | OAuth redirect URL for vendors requiring human interaction. |
+
+### Operations
+
+#### `list(reqmatch, ctrl) -> any, err`
+
+List entities matching the given criteria. Returns an array.
+
+```lua
+local results, err = client:OnePaginatedAuthMethodDetailList():list()
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OnePaginatedAuthMethodDetailListEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedIntegrationV2ListItemListEntity
+
+```lua
+local one_paginated_integration_v2_list_item_list = client:OnePaginatedIntegrationV2ListItemList(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `application` | `table` | Yes |  |
+| `created` | `string` | Yes | When the integration was created. |
+| `id` | `string` | Yes | Integration ID. |
+| `is_paused` | `boolean` | Yes | Whether the user paused the integration. |
+| `name` | `string` | Yes | Name of the integration. |
+| `status` | `string` | Yes | Integration status. |
+| `updated` | `string` | Yes | When the integration was last updated. |
+
+### Operations
+
+#### `list(reqmatch, ctrl) -> any, err`
+
+List entities matching the given criteria. Returns an array.
+
+```lua
+local results, err = client:OnePaginatedIntegrationV2ListItemList():list()
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OnePaginatedIntegrationV2ListItemListEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## OnePaginatedSetupFlowListEntity
+
+```lua
+local one_paginated_setup_flow_list = client:OnePaginatedSetupFlowList(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auth_config` | `any` | No | OAuth configuration (present for OAuth-based flows). |
+| `default` | `boolean` | Yes | Whether this is the default auth method. |
+| `description` | `string` | Yes | Flow description. |
+| `id` | `string` | Yes | Setup flow identifier. |
+| `name` | `string` | Yes | Human-readable flow name. |
+| `steps` | `table` | Yes | Ordered list of setup steps. |
+| `supported_environments` | `table` | Yes | Environments this auth method supports (standard, fedramp). |
+
+### Operations
+
+#### `list(reqmatch, ctrl) -> any, err`
+
+List entities matching the given criteria. Returns an array.
+
+```lua
+local results, err = client:OnePaginatedSetupFlowList():list()
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OnePaginatedSetupFlowListEntity` instance with the same client and
 options.
 
 #### `get_name() -> string`
@@ -3043,6 +3992,70 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `TeamsDevicesDeviceSettingsResponseCollectionEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## TeamsDevicesDevicesPolicyCertificatesSingleEntity
+
+```lua
+local teams_devices_devices_policy_certificates_single = client:TeamsDevicesDevicesPolicyCertificatesSingle(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `enabled` | `boolean` | Yes | The current status of the device policy certificate provisioning feature for WARP clients. |
+| `result` | `table` | Yes |  |
+
+### Operations
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:TeamsDevicesDevicesPolicyCertificatesSingle():load({ zone_id = "zone_id" })
+```
+
+#### `update(reqdata, ctrl) -> any, err`
+
+Update an existing entity. The data must include the entity `id`.
+
+```lua
+local result, err = client:TeamsDevicesDevicesPolicyCertificatesSingle():update({
+  zone_id = "zone_id",
+  -- Fields to update
+})
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `TeamsDevicesDevicesPolicyCertificatesSingleEntity` instance with the same client and
 options.
 
 #### `get_name() -> string`

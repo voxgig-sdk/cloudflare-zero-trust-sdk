@@ -1,0 +1,90 @@
+{
+  "existing": {
+    "alexandria_get_application": {
+      "ALEXANDRIA_GET_APPLICATION00": {
+        "category_id": "CATEGORY01",
+        "errors": [],
+        "hostnames": [],
+        "human_id": "HUMAN01",
+        "id": "ALEXANDRIA_GET_APPLICATION00",
+        "ip_subnets": [],
+        "messages": [],
+        "name": "s7f",
+        "port_protocols": [],
+        "result": {},
+        "success": true,
+        "support_domains": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ALEXANDRIA_GET_APPLICATION01": {
+        "category_id": "CATEGORY01",
+        "errors": [],
+        "hostnames": [],
+        "human_id": "HUMAN01",
+        "id": "ALEXANDRIA_GET_APPLICATION01",
+        "ip_subnets": [],
+        "messages": [],
+        "name": "sf7",
+        "port_protocols": [],
+        "result": {},
+        "success": true,
+        "support_domains": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ALEXANDRIA_GET_APPLICATION02": {
+        "category_id": "CATEGORY01",
+        "errors": [],
+        "hostnames": [],
+        "human_id": "HUMAN01",
+        "id": "ALEXANDRIA_GET_APPLICATION02",
+        "ip_subnets": [],
+        "messages": [],
+        "name": "s16f",
+        "port_protocols": [],
+        "result": {},
+        "success": true,
+        "support_domains": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "alexandria_get_application": {
+      "alexandria_get_application_ref01": {
+        "category_id": "CATEGORY01",
+        "errors": [],
+        "hostnames": [],
+        "human_id": "HUMAN01",
+        "ip_subnets": [],
+        "messages": [],
+        "name": "s1e7",
+        "port_protocols": [],
+        "result": {},
+        "success": true,
+        "support_domains": []
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/resource-library/applications": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/resource-library/applications": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/resource-library/applications/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/resource-library/applications/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# BasicOnePaginatedIntegrationV2ListItemListFlow
+
+main: kit: flow: BasicOnePaginatedIntegrationV2ListItemListFlow:
+{
+  entity: "one_paginated_integration_v2_list_item_list",
+  kind: "basic",
+  name: "BasicOnePaginatedIntegrationV2ListItemListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "one_paginated_integration_v2_list_item_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOnePaginatedIntegrationV2ListItemListFlow"
+}

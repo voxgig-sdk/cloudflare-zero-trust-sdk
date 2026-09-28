@@ -1,0 +1,151 @@
+# Entity: one_paginated_auth_method_detail_list
+
+main: kit: entity: one_paginated_auth_method_detail_list: {
+
+  alias: field: {}
+
+  fields: {
+    display_name: {
+      h: "Display Name"
+      n: "display_name"
+      r: true
+      sh: "Human-readable auth method name."
+      t: "`$STRING`"
+    }
+    human_interaction_required: {
+      h: "Human Interaction Required"
+      n: "human_interaction_required"
+      r: true
+      sh: "Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction)."
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Auth method identifier."
+      t: "`$STRING`"
+    }
+    instructions: {
+      h: "Instructions"
+      n: "instructions"
+      r: true
+      sh: "Step-by-step instructions for obtaining credentials."
+      t: "`$ANY`"
+    }
+    payload_example: {
+      h: "Payload Example"
+      n: "payload_example"
+      r: true
+      sh: "Example credentials payload with placeholder values."
+      t: "`$OBJECT`"
+    }
+    payload_schema: {
+      h: "Payload Schema"
+      n: "payload_schema"
+      r: true
+      sh: "JSON Schema for the credentials object in POST /v2/integrations request."
+      t: "`$OBJECT`"
+    }
+    redirect_url: {
+      h: "Redirect Url"
+      n: "redirect_url"
+      r: true
+      sh: "OAuth redirect URL for vendors requiring human interaction."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "one_paginated_auth_method_detail_list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/one/applications/{application_id}/auth-methods"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "application_id"
+                or: "application_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/one/applications/{application_id}/auth-methods"
+          q: {
+            exist: [
+              "account_id"
+              "application_id"
+              "page"
+              "page_size"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "one"
+            }
+            {
+              lit: "applications"
+            }
+            {
+              var: "application_id"
+            }
+            {
+              lit: "auth-methods"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

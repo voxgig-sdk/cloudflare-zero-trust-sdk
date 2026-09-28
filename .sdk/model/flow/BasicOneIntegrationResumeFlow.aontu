@@ -1,0 +1,23 @@
+# BasicOneIntegrationResumeFlow
+
+main: kit: flow: BasicOneIntegrationResumeFlow:
+{
+  entity: "one_integration_resume",
+  kind: "basic",
+  name: "BasicOneIntegrationResumeFlow",
+  step: [
+    {
+      i: {
+        ref: "one_integration_resume_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        integration_id: "integration01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicOneIntegrationResumeFlow"
+}

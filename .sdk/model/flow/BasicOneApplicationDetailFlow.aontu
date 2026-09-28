@@ -1,0 +1,33 @@
+# BasicOneApplicationDetailFlow
+
+main: kit: flow: BasicOneApplicationDetailFlow:
+{
+  entity: "one_application_detail",
+  kind: "basic",
+  name: "BasicOneApplicationDetailFlow",
+  step: [
+    {
+      i: {
+        ref: "one_application_detail_ref01",
+        srcdatavar: "one_application_detail_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "one_application_detail01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-one_application_detail_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOneApplicationDetailFlow"
+}

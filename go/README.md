@@ -4,7 +4,7 @@
 
 The Golang SDK for the CloudflareZeroTrust API — an entity-oriented client using standard Go conventions. No generics required; data flows as `map[string]any`.
 
-It exposes the API as capitalised, semantic **Entities** — e.g. `client.ClientVersion(nil)` — each with the same small set of operations (`List`, `Load`, `Create`, `Update`, `Remove`, `Patch`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
+It exposes the API as capitalised, semantic **Entities** — e.g. `client.AlexandriaDeleteApplication(nil)` — each with the same small set of operations (`List`, `Load`, `Create`, `Update`, `Remove`, `Patch`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
 > Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
@@ -53,14 +53,12 @@ func main() {
         "apikey": os.Getenv("CLOUDFLARE_ZERO_TRUST_APIKEY"),
     })
 
-    // List clientVersion records — the value is the array of records itself.
-    clientVersions, err := client.ClientVersion(nil).List(nil, nil)
+    // Remove a alexandriaDeleteApplication.
+    removed, err := client.AlexandriaDeleteApplication(nil).Remove(map[string]any{"account_id": "example_account_id", "id": 1}, nil)
     if err != nil {
         panic(err)
     }
-    for _, item := range clientVersions.([]any) {
-        fmt.Println(item)
-    }
+    fmt.Println(removed)
 }
 ```
 
@@ -71,12 +69,12 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-zerotrustgatewaysingleresponse6, err := client.ZeroTrustGatewaySingleResponse6(nil).Load(map[string]any{"account_id": "example"}, nil)
+teamsdevicesglobalwarpoverride, err := client.TeamsDevicesGlobalWarpOverride(nil).Load(map[string]any{"account_id": "example"}, nil)
 if err != nil {
     // handle err
     return
 }
-_ = zerotrustgatewaysingleresponse6
+_ = teamsdevicesglobalwarpoverride
 ```
 
 `Direct` follows the same `(value, error)` convention:
@@ -140,13 +138,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-zeroTrustGatewaySingleResponse6, err := client.ZeroTrustGatewaySingleResponse6(nil).Load(
+teamsDevicesGlobalWarpOverride, err := client.TeamsDevicesGlobalWarpOverride(nil).Load(
     map[string]any{"account_id": "example"}, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(zeroTrustGatewaySingleResponse6) // the returned mock data
+fmt.Println(teamsDevicesGlobalWarpOverride) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -225,6 +223,9 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `GetUtility` | `() *Utility` | Copy of the SDK utility object. |
 | `Prepare` | `(fetchargs map[string]any) (map[string]any, error)` | Build an HTTP request definition without sending. |
 | `Direct` | `(fetchargs map[string]any) (map[string]any, error)` | Build and send an HTTP request. |
+| `AlexandriaDeleteApplication` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an AlexandriaDeleteApplication entity instance. |
+| `AlexandriaGetApplication` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an AlexandriaGetApplication entity instance. |
+| `AlexandriaGetCategory` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an AlexandriaGetCategory entity instance. |
 | `ClientVersion` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a ClientVersion entity instance. |
 | `Cni` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a Cni entity instance. |
 | `DeploymentGroup` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a DeploymentGroup entity instance. |
@@ -238,6 +239,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `DigitalExperienceMonitoringFleetStatusDevice` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a DigitalExperienceMonitoringFleetStatusDevice entity instance. |
 | `DigitalExperienceMonitoringFleetStatusLive` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a DigitalExperienceMonitoringFleetStatusLive entity instance. |
 | `DigitalExperienceMonitoringFleetStatusOverTime` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a DigitalExperienceMonitoringFleetStatusOverTime entity instance. |
+| `Integration` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an Integration entity instance. |
 | `Interconnect` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an Interconnect entity instance. |
 | `IpProfile` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an IpProfile entity instance. |
 | `List` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a List entity instance. |
@@ -248,6 +250,16 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `NscSetting` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a NscSetting entity instance. |
 | `NscSlotInfo` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a NscSlotInfo entity instance. |
 | `NscStatusInfo` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a NscStatusInfo entity instance. |
+| `OneApplicationDetail` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an OneApplicationDetail entity instance. |
+| `OneIntegrationCreate` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an OneIntegrationCreate entity instance. |
+| `OneIntegrationDetail` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an OneIntegrationDetail entity instance. |
+| `OneIntegrationPause` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an OneIntegrationPause entity instance. |
+| `OneIntegrationResume` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an OneIntegrationResume entity instance. |
+| `OneIntegrationUpdate` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an OneIntegrationUpdate entity instance. |
+| `OnePaginatedApplicationListList` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an OnePaginatedApplicationListList entity instance. |
+| `OnePaginatedAuthMethodDetailList` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an OnePaginatedAuthMethodDetailList entity instance. |
+| `OnePaginatedIntegrationV2ListItemList` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an OnePaginatedIntegrationV2ListItemList entity instance. |
+| `OnePaginatedSetupFlowList` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an OnePaginatedSetupFlowList entity instance. |
 | `OverrideCode` | `(data map[string]any) CloudflareZeroTrustEntity` | Create an OverrideCode entity instance. |
 | `Pacfile` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a Pacfile entity instance. |
 | `PhysicalDevice` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a PhysicalDevice entity instance. |
@@ -261,6 +273,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `TeamsDevicesDevice` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a TeamsDevicesDevice entity instance. |
 | `TeamsDevicesDeviceSetting` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a TeamsDevicesDeviceSetting entity instance. |
 | `TeamsDevicesDeviceSettingsResponseCollection` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a TeamsDevicesDeviceSettingsResponseCollection entity instance. |
+| `TeamsDevicesDevicesPolicyCertificatesSingle` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a TeamsDevicesDevicesPolicyCertificatesSingle entity instance. |
 | `TeamsDevicesFallbackDomainResponseCollection` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a TeamsDevicesFallbackDomainResponseCollection entity instance. |
 | `TeamsDevicesGlobalWarpOverride` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a TeamsDevicesGlobalWarpOverride entity instance. |
 | `TeamsDevicesId` | `(data map[string]any) CloudflareZeroTrustEntity` | Create a TeamsDevicesId entity instance. |
@@ -360,14 +373,59 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    clientVersion, err := client.ClientVersion(nil).List(map[string]any{/* fields */}, nil)
+    alexandriaDeleteApplication, err := client.AlexandriaDeleteApplication(nil).Remove(nil, nil)
     if err != nil { /* handle */ }
-    // clientVersion is the returned record
+    // alexandriaDeleteApplication is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
 
 ### Entities
+
+#### AlexandriaDeleteApplication
+
+| Field | Description |
+| --- | --- |
+| `"id"` |  |
+
+Operations: Remove.
+
+API path: `/accounts/{account_id}/resource-library/applications/{id}`
+
+#### AlexandriaGetApplication
+
+| Field | Description |
+| --- | --- |
+| `"category_id"` | Returns the category ID. |
+| `"errors"` |  |
+| `"hostnames"` | Hostnames matched by the application. |
+| `"human_id"` | Returns the human readable ID. |
+| `"id"` |  |
+| `"ip_subnets"` | IP subnets for this application. |
+| `"messages"` |  |
+| `"name"` | Returns the application name. |
+| `"port_protocols"` | Port and protocol pairs matched by the application. |
+| `"result"` | Returns the list of applications. |
+| `"success"` | Indicates whether the API call was successful. |
+| `"support_domains"` | Support domains matched by the application. |
+
+Operations: Create, List, Load, Update.
+
+API path: `/accounts/{account_id}/resource-library/applications`
+
+#### AlexandriaGetCategory
+
+| Field | Description |
+| --- | --- |
+| `"errors"` |  |
+| `"id"` |  |
+| `"messages"` |  |
+| `"result"` | Returns the list of categories. |
+| `"success"` | Indicates whether the API call was successful. |
+
+Operations: List, Load.
+
+API path: `/accounts/{account_id}/resource-library/categories`
 
 #### ClientVersion
 
@@ -570,6 +628,16 @@ Operations: Load.
 
 API path: `/accounts/{account_id}/dex/fleet-status/over-time`
 
+#### Integration
+
+| Field | Description |
+| --- | --- |
+| `"id"` |  |
+
+Operations: Remove.
+
+API path: `/accounts/{account_id}/one/integrations/{id}`
+
 #### Interconnect
 
 | Field | Description |
@@ -696,6 +764,161 @@ API path: `/accounts/{account_id}/cni/slots`
 Operations: Load.
 
 API path: `/accounts/{account_id}/cni/interconnects/{icon}/status`
+
+#### OneApplicationDetail
+
+| Field | Description |
+| --- | --- |
+| `"errors"` | List of errors. |
+| `"messages"` | List of messages. |
+| `"result"` | The requested item. |
+| `"success"` | Whether the request succeeded. |
+
+Operations: Load.
+
+API path: `/accounts/{account_id}/one/applications/{application_id}`
+
+#### OneIntegrationCreate
+
+| Field | Description |
+| --- | --- |
+| `"application"` | Vendor/application slug (e.g., GOOGLE_WORKSPACE). |
+| `"auth_method"` | Authentication method slug (uses default if omitted). |
+| `"credentials"` | Credentials for the integration. |
+| `"dlp_profiles"` | List of DLP profile IDs to associate. |
+| `"name"` | Name of the integration. |
+| `"permissions"` | List of permission scopes (uses policy defaults if empty). |
+| `"use_cases"` | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+Operations: Create.
+
+API path: `/accounts/{account_id}/one/integrations`
+
+#### OneIntegrationDetail
+
+| Field | Description |
+| --- | --- |
+| `"errors"` | List of errors. |
+| `"id"` |  |
+| `"messages"` | List of messages. |
+| `"result"` | The requested item. |
+| `"success"` | Whether the request succeeded. |
+
+Operations: Load.
+
+API path: `/accounts/{account_id}/one/integrations/{id}`
+
+#### OneIntegrationPause
+
+| Field | Description |
+| --- | --- |
+| `"errors"` | List of errors. |
+| `"messages"` | List of messages. |
+| `"result"` | The requested item. |
+| `"success"` | Whether the request succeeded. |
+
+Operations: Create.
+
+API path: `/accounts/{account_id}/one/integrations/{id}/pause`
+
+#### OneIntegrationResume
+
+| Field | Description |
+| --- | --- |
+| `"errors"` | List of errors. |
+| `"messages"` | List of messages. |
+| `"result"` | The requested item. |
+| `"success"` | Whether the request succeeded. |
+
+Operations: Create.
+
+API path: `/accounts/{account_id}/one/integrations/{id}/resume`
+
+#### OneIntegrationUpdate
+
+| Field | Description |
+| --- | --- |
+| `"credentials"` | Partial credential fields to merge with existing. |
+| `"dlp_profiles"` | List of DLP profile IDs to associate with the integration. |
+| `"errors"` | List of errors. |
+| `"id"` |  |
+| `"messages"` | List of messages. |
+| `"name"` | Name of the integration. |
+| `"permissions"` | List of permission scopes granted to the integration. |
+| `"result"` | The requested item. |
+| `"success"` | Whether the request succeeded. |
+| `"use_cases"` | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+Operations: Update.
+
+API path: `/accounts/{account_id}/one/integrations/{id}`
+
+#### OnePaginatedApplicationListList
+
+| Field | Description |
+| --- | --- |
+| `"auth_methods"` | Available auth methods. |
+| `"category"` | Vendor category (e.g. |
+| `"description"` | Brief description of the integration. |
+| `"display_name"` | Human-readable vendor name. |
+| `"dlp_enabled"` | Whether DLP scanning is supported. |
+| `"id"` | Vendor identifier (e.g. |
+| `"logo"` | Logo path. |
+| `"permissions"` | All permissions with severity. |
+| `"supported_environments"` | Environments this vendor supports (standard, fedramp). |
+| `"use_cases"` | Supported use cases. |
+
+Operations: List.
+
+API path: `/accounts/{account_id}/one/applications`
+
+#### OnePaginatedAuthMethodDetailList
+
+| Field | Description |
+| --- | --- |
+| `"display_name"` | Human-readable auth method name. |
+| `"human_interaction_required"` | Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction). |
+| `"id"` | Auth method identifier. |
+| `"instructions"` | Step-by-step instructions for obtaining credentials. |
+| `"payload_example"` | Example credentials payload with placeholder values. |
+| `"payload_schema"` | JSON Schema for the credentials object in POST /v2/integrations request. |
+| `"redirect_url"` | OAuth redirect URL for vendors requiring human interaction. |
+
+Operations: List.
+
+API path: `/accounts/{account_id}/one/applications/{application_id}/auth-methods`
+
+#### OnePaginatedIntegrationV2ListItemList
+
+| Field | Description |
+| --- | --- |
+| `"application"` |  |
+| `"created"` | When the integration was created. |
+| `"id"` | Integration ID. |
+| `"is_paused"` | Whether the user paused the integration. |
+| `"name"` | Name of the integration. |
+| `"status"` | Integration status. |
+| `"updated"` | When the integration was last updated. |
+
+Operations: List.
+
+API path: `/accounts/{account_id}/one/integrations`
+
+#### OnePaginatedSetupFlowList
+
+| Field | Description |
+| --- | --- |
+| `"auth_config"` | OAuth configuration (present for OAuth-based flows). |
+| `"default"` | Whether this is the default auth method. |
+| `"description"` | Flow description. |
+| `"id"` | Setup flow identifier. |
+| `"name"` | Human-readable flow name. |
+| `"steps"` | Ordered list of setup steps. |
+| `"supported_environments"` | Environments this auth method supports (standard, fedramp). |
+
+Operations: List.
+
+API path: `/accounts/{account_id}/one/applications/{application_id}/setup-flows`
 
 #### OverrideCode
 
@@ -897,6 +1120,17 @@ API path: `/accounts/{account_id}/devices/policy`
 Operations: List, Remove.
 
 API path: `/accounts/{account_id}/devices/policies`
+
+#### TeamsDevicesDevicesPolicyCertificatesSingle
+
+| Field | Description |
+| --- | --- |
+| `"enabled"` | The current status of the device policy certificate provisioning feature for WARP clients. |
+| `"result"` |  |
+
+Operations: Load, Update.
+
+API path: `/zones/{zone_id}/devices/policy/certificates`
 
 #### TeamsDevicesFallbackDomainResponseCollection
 
@@ -1721,6 +1955,135 @@ API path: `/accounts/{account_id}/zt_risk_scoring/integrations`
 ## Entities
 
 
+### AlexandriaDeleteApplication
+
+Create an instance: `alexandriaDeleteApplication := client.AlexandriaDeleteApplication(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `Remove(match, ctrl)` | Remove the matching entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | `string` |  |
+
+
+### AlexandriaGetApplication
+
+Create an instance: `alexandriaGetApplication := client.AlexandriaGetApplication(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `List(match, ctrl)` | List entities matching the criteria. |
+| `Load(match, ctrl)` | Load a single entity by match criteria. |
+| `Create(data, ctrl)` | Create a new entity with the given data. |
+| `Update(data, ctrl)` | Update an existing entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `category_id` | `int` | Returns the category ID. |
+| `errors` | `[]any` |  |
+| `hostnames` | `[]any` | Hostnames matched by the application. |
+| `human_id` | `string` | Returns the human readable ID. |
+| `id` | `string` |  |
+| `ip_subnets` | `[]any` | IP subnets for this application. |
+| `messages` | `[]any` |  |
+| `name` | `string` | Returns the application name. |
+| `port_protocols` | `[]any` | Port and protocol pairs matched by the application. |
+| `result` | `map[string]any` | Returns the list of applications. |
+| `success` | `bool` | Indicates whether the API call was successful. |
+| `support_domains` | `[]any` | Support domains matched by the application. |
+
+#### Example: Load
+
+```go
+alexandriaGetApplication, err := client.AlexandriaGetApplication(nil).Load(map[string]any{"id": 1, "account_id": "account_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(alexandriaGetApplication) // the loaded record
+```
+
+#### Example: List
+
+```go
+alexandriaGetApplications, err := client.AlexandriaGetApplication(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(alexandriaGetApplications) // the array of records
+```
+
+#### Example: Create
+
+```go
+result, err := client.AlexandriaGetApplication(nil).Create(map[string]any{
+    "account_id": "example_account_id",
+    "category_id": 1,
+    "errors": []any{},
+    "human_id": "example_human_id",
+    "messages": []any{},
+    "name": "example_name",
+    "result": map[string]any{},
+    "success": true,
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+
+### AlexandriaGetCategory
+
+Create an instance: `alexandriaGetCategory := client.AlexandriaGetCategory(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `List(match, ctrl)` | List entities matching the criteria. |
+| `Load(match, ctrl)` | Load a single entity by match criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `[]any` |  |
+| `id` | `string` |  |
+| `messages` | `[]any` |  |
+| `result` | `map[string]any` | Returns the list of categories. |
+| `success` | `bool` | Indicates whether the API call was successful. |
+
+#### Example: Load
+
+```go
+alexandriaGetCategory, err := client.AlexandriaGetCategory(nil).Load(map[string]any{"id": 1, "account_id": "account_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(alexandriaGetCategory) // the loaded record
+```
+
+#### Example: List
+
+```go
+alexandriaGetCategorys, err := client.AlexandriaGetCategory(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(alexandriaGetCategorys) // the array of records
+```
+
+
 ### ClientVersion
 
 Create an instance: `clientVersion := client.ClientVersion(nil)`
@@ -2212,6 +2575,23 @@ fmt.Println(digitalExperienceMonitoringFleetStatusOverTime) // the loaded record
 ```
 
 
+### Integration
+
+Create an instance: `integration := client.Integration(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `Remove(match, ctrl)` | Remove the matching entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | `string` |  |
+
+
 ### Interconnect
 
 Create an instance: `interconnect := client.Interconnect(nil)`
@@ -2586,6 +2966,336 @@ if err != nil {
     panic(err)
 }
 fmt.Println(nscStatusInfo) // the loaded record
+```
+
+
+### OneApplicationDetail
+
+Create an instance: `oneApplicationDetail := client.OneApplicationDetail(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `Load(match, ctrl)` | Load a single entity by match criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `[]any` | List of errors. |
+| `messages` | `[]any` | List of messages. |
+| `result` | `any` | The requested item. |
+| `success` | `bool` | Whether the request succeeded. |
+
+#### Example: Load
+
+```go
+oneApplicationDetail, err := client.OneApplicationDetail(nil).Load(map[string]any{"account_id": "account_id", "application_id": "application_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(oneApplicationDetail) // the loaded record
+```
+
+
+### OneIntegrationCreate
+
+Create an instance: `oneIntegrationCreate := client.OneIntegrationCreate(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `Create(data, ctrl)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `application` | `string` | Vendor/application slug (e.g., GOOGLE_WORKSPACE). |
+| `auth_method` | `string` | Authentication method slug (uses default if omitted). |
+| `credentials` | `map[string]any` | Credentials for the integration. |
+| `dlp_profiles` | `[]any` | List of DLP profile IDs to associate. |
+| `name` | `string` | Name of the integration. |
+| `permissions` | `[]any` | List of permission scopes (uses policy defaults if empty). |
+| `use_cases` | `[]any` | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+#### Example: Create
+
+```go
+result, err := client.OneIntegrationCreate(nil).Create(map[string]any{
+    "account_id": "example_account_id",
+    "application": "example_application",
+    "credentials": map[string]any{},
+    "name": "example_name",
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+
+### OneIntegrationDetail
+
+Create an instance: `oneIntegrationDetail := client.OneIntegrationDetail(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `Load(match, ctrl)` | Load a single entity by match criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `[]any` | List of errors. |
+| `id` | `string` |  |
+| `messages` | `[]any` | List of messages. |
+| `result` | `any` | The requested item. |
+| `success` | `bool` | Whether the request succeeded. |
+
+#### Example: Load
+
+```go
+oneIntegrationDetail, err := client.OneIntegrationDetail(nil).Load(map[string]any{"id": "one_integration_detail_id", "account_id": "account_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(oneIntegrationDetail) // the loaded record
+```
+
+
+### OneIntegrationPause
+
+Create an instance: `oneIntegrationPause := client.OneIntegrationPause(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `Create(data, ctrl)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `[]any` | List of errors. |
+| `messages` | `[]any` | List of messages. |
+| `result` | `any` | The requested item. |
+| `success` | `bool` | Whether the request succeeded. |
+
+#### Example: Create
+
+```go
+result, err := client.OneIntegrationPause(nil).Create(map[string]any{
+    "account_id": "example_account_id",
+    "integration_id": "example_integration_id",
+    "result": "example_result",
+    "success": true,
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+
+### OneIntegrationResume
+
+Create an instance: `oneIntegrationResume := client.OneIntegrationResume(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `Create(data, ctrl)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `errors` | `[]any` | List of errors. |
+| `messages` | `[]any` | List of messages. |
+| `result` | `any` | The requested item. |
+| `success` | `bool` | Whether the request succeeded. |
+
+#### Example: Create
+
+```go
+result, err := client.OneIntegrationResume(nil).Create(map[string]any{
+    "account_id": "example_account_id",
+    "integration_id": "example_integration_id",
+    "result": "example_result",
+    "success": true,
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+
+### OneIntegrationUpdate
+
+Create an instance: `oneIntegrationUpdate := client.OneIntegrationUpdate(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `Update(data, ctrl)` | Update an existing entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `credentials` | `map[string]any` | Partial credential fields to merge with existing. |
+| `dlp_profiles` | `[]any` | List of DLP profile IDs to associate with the integration. |
+| `errors` | `[]any` | List of errors. |
+| `id` | `string` |  |
+| `messages` | `[]any` | List of messages. |
+| `name` | `string` | Name of the integration. |
+| `permissions` | `[]any` | List of permission scopes granted to the integration. |
+| `result` | `any` | The requested item. |
+| `success` | `bool` | Whether the request succeeded. |
+| `use_cases` | `[]any` | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+
+### OnePaginatedApplicationListList
+
+Create an instance: `onePaginatedApplicationListList := client.OnePaginatedApplicationListList(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `List(match, ctrl)` | List entities matching the criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `auth_methods` | `[]any` | Available auth methods. |
+| `category` | `string` | Vendor category (e.g. |
+| `description` | `string` | Brief description of the integration. |
+| `display_name` | `string` | Human-readable vendor name. |
+| `dlp_enabled` | `bool` | Whether DLP scanning is supported. |
+| `id` | `string` | Vendor identifier (e.g. |
+| `logo` | `string` | Logo path. |
+| `permissions` | `[]any` | All permissions with severity. |
+| `supported_environments` | `[]any` | Environments this vendor supports (standard, fedramp). |
+| `use_cases` | `[]any` | Supported use cases. |
+
+#### Example: List
+
+```go
+onePaginatedApplicationListLists, err := client.OnePaginatedApplicationListList(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(onePaginatedApplicationListLists) // the array of records
+```
+
+
+### OnePaginatedAuthMethodDetailList
+
+Create an instance: `onePaginatedAuthMethodDetailList := client.OnePaginatedAuthMethodDetailList(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `List(match, ctrl)` | List entities matching the criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `display_name` | `string` | Human-readable auth method name. |
+| `human_interaction_required` | `bool` | Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction). |
+| `id` | `string` | Auth method identifier. |
+| `instructions` | `any` | Step-by-step instructions for obtaining credentials. |
+| `payload_example` | `map[string]any` | Example credentials payload with placeholder values. |
+| `payload_schema` | `map[string]any` | JSON Schema for the credentials object in POST /v2/integrations request. |
+| `redirect_url` | `string` | OAuth redirect URL for vendors requiring human interaction. |
+
+#### Example: List
+
+```go
+onePaginatedAuthMethodDetailLists, err := client.OnePaginatedAuthMethodDetailList(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(onePaginatedAuthMethodDetailLists) // the array of records
+```
+
+
+### OnePaginatedIntegrationV2ListItemList
+
+Create an instance: `onePaginatedIntegrationV2ListItemList := client.OnePaginatedIntegrationV2ListItemList(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `List(match, ctrl)` | List entities matching the criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `application` | `map[string]any` |  |
+| `created` | `string` | When the integration was created. |
+| `id` | `string` | Integration ID. |
+| `is_paused` | `bool` | Whether the user paused the integration. |
+| `name` | `string` | Name of the integration. |
+| `status` | `string` | Integration status. |
+| `updated` | `string` | When the integration was last updated. |
+
+#### Example: List
+
+```go
+onePaginatedIntegrationV2ListItemLists, err := client.OnePaginatedIntegrationV2ListItemList(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(onePaginatedIntegrationV2ListItemLists) // the array of records
+```
+
+
+### OnePaginatedSetupFlowList
+
+Create an instance: `onePaginatedSetupFlowList := client.OnePaginatedSetupFlowList(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `List(match, ctrl)` | List entities matching the criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `auth_config` | `any` | OAuth configuration (present for OAuth-based flows). |
+| `default` | `bool` | Whether this is the default auth method. |
+| `description` | `string` | Flow description. |
+| `id` | `string` | Setup flow identifier. |
+| `name` | `string` | Human-readable flow name. |
+| `steps` | `[]any` | Ordered list of setup steps. |
+| `supported_environments` | `[]any` | Environments this auth method supports (standard, fedramp). |
+
+#### Example: List
+
+```go
+onePaginatedSetupFlowLists, err := client.OnePaginatedSetupFlowList(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(onePaginatedSetupFlowLists) // the array of records
 ```
 
 
@@ -3096,6 +3806,35 @@ if err != nil {
     panic(err)
 }
 fmt.Println(teamsDevicesDeviceSettingsResponseCollections) // the array of records
+```
+
+
+### TeamsDevicesDevicesPolicyCertificatesSingle
+
+Create an instance: `teamsDevicesDevicesPolicyCertificatesSingle := client.TeamsDevicesDevicesPolicyCertificatesSingle(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `Load(match, ctrl)` | Load a single entity by match criteria. |
+| `Update(data, ctrl)` | Update an existing entity. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `enabled` | `bool` | The current status of the device policy certificate provisioning feature for WARP clients. |
+| `result` | `map[string]any` |  |
+
+#### Example: Load
+
+```go
+teamsDevicesDevicesPolicyCertificatesSingle, err := client.TeamsDevicesDevicesPolicyCertificatesSingle(nil).Load(map[string]any{"zone_id": "zone_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(teamsDevicesDevicesPolicyCertificatesSingle) // the loaded record
 ```
 
 
@@ -5502,11 +6241,11 @@ Entity instances are stateful. After a successful `Load`, the entity
 stores the returned data and match criteria internally.
 
 ```go
-zerotrustgatewaysingleresponse6 := client.ZeroTrustGatewaySingleResponse6(nil)
-zerotrustgatewaysingleresponse6.Load(map[string]any{"account_id": "example"}, nil)
+teamsdevicesglobalwarpoverride := client.TeamsDevicesGlobalWarpOverride(nil)
+teamsdevicesglobalwarpoverride.Load(map[string]any{"account_id": "example"}, nil)
 
-// zerotrustgatewaysingleresponse6.Data() now returns the zerotrustgatewaysingleresponse6 data from the last load
-// zerotrustgatewaysingleresponse6.Match() returns the last match criteria
+// teamsdevicesglobalwarpoverride.Data() now returns the teamsdevicesglobalwarpoverride data from the last load
+// teamsdevicesglobalwarpoverride.Match() returns the last match criteria
 ```
 
 Call `Make()` to create a fresh instance with the same configuration

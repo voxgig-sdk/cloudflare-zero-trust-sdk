@@ -1,0 +1,189 @@
+# Entity: alexandria_get_category
+
+main: kit: entity: alexandria_get_category: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      op: {
+        list: {
+          req: false
+          type: "`$ARRAY`"
+        }
+      }
+      r: true
+      sh: "Returns the list of categories."
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Indicates whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "alexandria_get_category"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/resource-library/categories"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 25
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/resource-library/categories"
+          q: {
+            exist: [
+              "account_id"
+              "limit"
+              "offset"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "resource-library"
+            }
+            {
+              lit: "categories"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/resource-library/categories/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 12
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/resource-library/categories/{id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "resource-library"
+            }
+            {
+              lit: "categories"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

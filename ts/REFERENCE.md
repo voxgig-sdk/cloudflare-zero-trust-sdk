@@ -49,6 +49,42 @@ const client = CloudflareZeroTrustSDK.test()
 
 ### Instance Methods
 
+#### `AlexandriaDeleteApplication(data?: object)`
+
+Create a new `AlexandriaDeleteApplication` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `AlexandriaDeleteApplicationEntity` instance.
+
+#### `AlexandriaGetApplication(data?: object)`
+
+Create a new `AlexandriaGetApplication` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `AlexandriaGetApplicationEntity` instance.
+
+#### `AlexandriaGetCategory(data?: object)`
+
+Create a new `AlexandriaGetCategory` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `AlexandriaGetCategoryEntity` instance.
+
 #### `ClientVersion(data?: object)`
 
 Create a new `ClientVersion` entity instance.
@@ -205,6 +241,18 @@ Create a new `DigitalExperienceMonitoringFleetStatusOverTime` entity instance.
 
 **Returns:** `DigitalExperienceMonitoringFleetStatusOverTimeEntity` instance.
 
+#### `Integration(data?: object)`
+
+Create a new `Integration` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `IntegrationEntity` instance.
+
 #### `Interconnect(data?: object)`
 
 Create a new `Interconnect` entity instance.
@@ -324,6 +372,126 @@ Create a new `NscStatusInfo` entity instance.
 | `data` | `object` | Initial entity data. |
 
 **Returns:** `NscStatusInfoEntity` instance.
+
+#### `OneApplicationDetail(data?: object)`
+
+Create a new `OneApplicationDetail` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `OneApplicationDetailEntity` instance.
+
+#### `OneIntegrationCreate(data?: object)`
+
+Create a new `OneIntegrationCreate` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `OneIntegrationCreateEntity` instance.
+
+#### `OneIntegrationDetail(data?: object)`
+
+Create a new `OneIntegrationDetail` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `OneIntegrationDetailEntity` instance.
+
+#### `OneIntegrationPause(data?: object)`
+
+Create a new `OneIntegrationPause` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `OneIntegrationPauseEntity` instance.
+
+#### `OneIntegrationResume(data?: object)`
+
+Create a new `OneIntegrationResume` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `OneIntegrationResumeEntity` instance.
+
+#### `OneIntegrationUpdate(data?: object)`
+
+Create a new `OneIntegrationUpdate` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `OneIntegrationUpdateEntity` instance.
+
+#### `OnePaginatedApplicationListList(data?: object)`
+
+Create a new `OnePaginatedApplicationListList` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `OnePaginatedApplicationListListEntity` instance.
+
+#### `OnePaginatedAuthMethodDetailList(data?: object)`
+
+Create a new `OnePaginatedAuthMethodDetailList` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `OnePaginatedAuthMethodDetailListEntity` instance.
+
+#### `OnePaginatedIntegrationV2ListItemList(data?: object)`
+
+Create a new `OnePaginatedIntegrationV2ListItemList` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `OnePaginatedIntegrationV2ListItemListEntity` instance.
+
+#### `OnePaginatedSetupFlowList(data?: object)`
+
+Create a new `OnePaginatedSetupFlowList` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `OnePaginatedSetupFlowListEntity` instance.
 
 #### `OverrideCode(data?: object)`
 
@@ -480,6 +648,18 @@ Create a new `TeamsDevicesDeviceSettingsResponseCollection` entity instance.
 | `data` | `object` | Initial entity data. |
 
 **Returns:** `TeamsDevicesDeviceSettingsResponseCollectionEntity` instance.
+
+#### `TeamsDevicesDevicesPolicyCertificatesSingle(data?: object)`
+
+Create a new `TeamsDevicesDevicesPolicyCertificatesSingle` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `TeamsDevicesDevicesPolicyCertificatesSingleEntity` instance.
 
 #### `TeamsDevicesFallbackDomainResponseCollection(data?: object)`
 
@@ -1339,6 +1519,243 @@ same parameters as `direct()`.
 Alias for `CloudflareZeroTrustSDK.test()`.
 
 **Returns:** `CloudflareZeroTrustSDK` instance in test mode.
+
+
+---
+
+## AlexandriaDeleteApplicationEntity
+
+```ts
+const alexandria_delete_application = client.AlexandriaDeleteApplication()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | No |  |
+
+### Operations
+
+#### `remove(match: object, ctrl?: object)`
+
+Remove the entity matching the given criteria.
+
+```ts
+const result = await client.AlexandriaDeleteApplication().remove({ account_id: 'account_id', id: 1 })
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `AlexandriaDeleteApplicationEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## AlexandriaGetApplicationEntity
+
+```ts
+const alexandria_get_application = client.AlexandriaGetApplication()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `category_id` | `number` | Yes | Returns the category ID. |
+| `errors` | `any[]` | Yes |  |
+| `hostnames` | `any[]` | No | Hostnames matched by the application. |
+| `human_id` | `string` | Yes | Returns the human readable ID. |
+| `id` | `string` | No |  |
+| `ip_subnets` | `any[]` | No | IP subnets for this application. |
+| `messages` | `any[]` | Yes |  |
+| `name` | `string` | Yes | Returns the application name. |
+| `port_protocols` | `any[]` | No | Port and protocol pairs matched by the application. |
+| `result` | `Record<string, any>` | Yes | Returns the list of applications. |
+| `success` | `boolean` | Yes | Indicates whether the API call was successful. |
+| `support_domains` | `any[]` | No | Support domains matched by the application. |
+
+### Field Usage by Operation
+
+| Field | load | list | create | update |
+| --- | --- | --- | --- | --- |
+| `category_id` | - | - | - | - |
+| `errors` | - | - | - | - |
+| `hostnames` | - | - | - | - |
+| `human_id` | - | - | - | - |
+| `id` | - | - | - | - |
+| `ip_subnets` | - | - | - | - |
+| `messages` | - | - | - | - |
+| `name` | - | - | - | - |
+| `port_protocols` | - | - | - | - |
+| `result` | - | Yes | - | - |
+| `success` | - | - | - | - |
+| `support_domains` | - | - | - | - |
+
+### Operations
+
+#### `create(data: object, ctrl?: object)`
+
+Create a new entity with the given data.
+
+```ts
+const result = await client.AlexandriaGetApplication().create({
+  account_id: 'example_account_id',
+  category_id: 1,
+  errors: [],
+  human_id: 'example_human_id',
+  messages: [],
+  name: 'example_name',
+  result: {},
+  success: true,
+})
+```
+
+#### `list(match: object, ctrl?: object)`
+
+List entities matching the given criteria. Returns an array.
+
+```ts
+const results = await client.AlexandriaGetApplication().list({ account_id: "example" })
+```
+
+#### `load(match: object, ctrl?: object)`
+
+Load a single entity matching the given criteria.
+
+```ts
+const result = await client.AlexandriaGetApplication().load({ id: 1, account_id: 'account_id' })
+```
+
+#### `update(data: object, ctrl?: object)`
+
+Update an existing entity. The data must include the entity `id`.
+
+```ts
+const result = await client.AlexandriaGetApplication().update({
+  id: 1,
+  account_id: 'account_id',
+  // Fields to update
+})
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `AlexandriaGetApplicationEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## AlexandriaGetCategoryEntity
+
+```ts
+const alexandria_get_category = client.AlexandriaGetCategory()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `any[]` | Yes |  |
+| `id` | `string` | No |  |
+| `messages` | `any[]` | Yes |  |
+| `result` | `Record<string, any>` | Yes | Returns the list of categories. |
+| `success` | `boolean` | Yes | Indicates whether the API call was successful. |
+
+### Field Usage by Operation
+
+| Field | load | list |
+| --- | --- | --- |
+| `errors` | - | - |
+| `id` | - | - |
+| `messages` | - | - |
+| `result` | - | Yes |
+| `success` | - | - |
+
+### Operations
+
+#### `list(match: object, ctrl?: object)`
+
+List entities matching the given criteria. Returns an array.
+
+```ts
+const results = await client.AlexandriaGetCategory().list({ account_id: "example" })
+```
+
+#### `load(match: object, ctrl?: object)`
+
+Load a single entity matching the given criteria.
+
+```ts
+const result = await client.AlexandriaGetCategory().load({ id: 1, account_id: 'account_id' })
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `AlexandriaGetCategoryEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
 
 
 ---
@@ -2242,6 +2659,56 @@ Return a copy of the entity options.
 
 ---
 
+## IntegrationEntity
+
+```ts
+const integration = client.Integration()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | No |  |
+
+### Operations
+
+#### `remove(match: object, ctrl?: object)`
+
+Remove the entity matching the given criteria.
+
+```ts
+const result = await client.Integration().remove({ account_id: 'account_id', id: 'id' })
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `IntegrationEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
 ## InterconnectEntity
 
 ```ts
@@ -2924,6 +3391,580 @@ Get or set the entity match criteria. Works the same as `data()`.
 #### `make()`
 
 Create a new `NscStatusInfoEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## OneApplicationDetailEntity
+
+```ts
+const one_application_detail = client.OneApplicationDetail()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `any[]` | No | List of errors. |
+| `messages` | `any[]` | No | List of messages. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `boolean` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `load(match: object, ctrl?: object)`
+
+Load a single entity matching the given criteria.
+
+```ts
+const result = await client.OneApplicationDetail().load({ account_id: 'account_id', application_id: 'application_id' })
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `OneApplicationDetailEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## OneIntegrationCreateEntity
+
+```ts
+const one_integration_create = client.OneIntegrationCreate()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `application` | `string` | Yes | Vendor/application slug (e.g., GOOGLE_WORKSPACE). |
+| `auth_method` | `string` | No | Authentication method slug (uses default if omitted). |
+| `credentials` | `Record<string, any>` | Yes | Credentials for the integration. |
+| `dlp_profiles` | `any[]` | No | List of DLP profile IDs to associate. |
+| `name` | `string` | Yes | Name of the integration. |
+| `permissions` | `any[]` | No | List of permission scopes (uses policy defaults if empty). |
+| `use_cases` | `any[]` | No | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+### Operations
+
+#### `create(data: object, ctrl?: object)`
+
+Create a new entity with the given data.
+
+```ts
+const result = await client.OneIntegrationCreate().create({
+  account_id: 'example_account_id',
+  application: 'example_application',
+  credentials: {},
+  name: 'example_name',
+})
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `OneIntegrationCreateEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## OneIntegrationDetailEntity
+
+```ts
+const one_integration_detail = client.OneIntegrationDetail()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `any[]` | No | List of errors. |
+| `id` | `string` | No |  |
+| `messages` | `any[]` | No | List of messages. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `boolean` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `load(match: object, ctrl?: object)`
+
+Load a single entity matching the given criteria.
+
+```ts
+const result = await client.OneIntegrationDetail().load({ id: 'one_integration_detail_id', account_id: 'account_id' })
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `OneIntegrationDetailEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## OneIntegrationPauseEntity
+
+```ts
+const one_integration_pause = client.OneIntegrationPause()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `any[]` | No | List of errors. |
+| `messages` | `any[]` | No | List of messages. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `boolean` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `create(data: object, ctrl?: object)`
+
+Create a new entity with the given data.
+
+```ts
+const result = await client.OneIntegrationPause().create({
+  account_id: 'example_account_id',
+  integration_id: 'example_integration_id',
+  result: 'example_result',
+  success: true,
+})
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `OneIntegrationPauseEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## OneIntegrationResumeEntity
+
+```ts
+const one_integration_resume = client.OneIntegrationResume()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `errors` | `any[]` | No | List of errors. |
+| `messages` | `any[]` | No | List of messages. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `boolean` | Yes | Whether the request succeeded. |
+
+### Operations
+
+#### `create(data: object, ctrl?: object)`
+
+Create a new entity with the given data.
+
+```ts
+const result = await client.OneIntegrationResume().create({
+  account_id: 'example_account_id',
+  integration_id: 'example_integration_id',
+  result: 'example_result',
+  success: true,
+})
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `OneIntegrationResumeEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## OneIntegrationUpdateEntity
+
+```ts
+const one_integration_update = client.OneIntegrationUpdate()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `credentials` | `Record<string, any>` | No | Partial credential fields to merge with existing. |
+| `dlp_profiles` | `any[]` | No | List of DLP profile IDs to associate with the integration. |
+| `errors` | `any[]` | No | List of errors. |
+| `id` | `string` | No |  |
+| `messages` | `any[]` | No | List of messages. |
+| `name` | `string` | No | Name of the integration. |
+| `permissions` | `any[]` | No | List of permission scopes granted to the integration. |
+| `result` | `any` | Yes | The requested item. |
+| `success` | `boolean` | Yes | Whether the request succeeded. |
+| `use_cases` | `any[]` | No | List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']). |
+
+### Operations
+
+#### `update(data: object, ctrl?: object)`
+
+Update an existing entity. The data must include the entity `id`.
+
+```ts
+const result = await client.OneIntegrationUpdate().update({
+  account_id: 'account_id',
+  id: 'id',
+  // Fields to update
+})
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `OneIntegrationUpdateEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## OnePaginatedApplicationListListEntity
+
+```ts
+const one_paginated_application_list_list = client.OnePaginatedApplicationListList()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auth_methods` | `any[]` | Yes | Available auth methods. |
+| `category` | `string` | Yes | Vendor category (e.g. |
+| `description` | `string` | Yes | Brief description of the integration. |
+| `display_name` | `string` | Yes | Human-readable vendor name. |
+| `dlp_enabled` | `boolean` | Yes | Whether DLP scanning is supported. |
+| `id` | `string` | Yes | Vendor identifier (e.g. |
+| `logo` | `string` | Yes | Logo path. |
+| `permissions` | `any[]` | Yes | All permissions with severity. |
+| `supported_environments` | `any[]` | Yes | Environments this vendor supports (standard, fedramp). |
+| `use_cases` | `any[]` | Yes | Supported use cases. |
+
+### Operations
+
+#### `list(match: object, ctrl?: object)`
+
+List entities matching the given criteria. Returns an array.
+
+```ts
+const results = await client.OnePaginatedApplicationListList().list({ account_id: "example" })
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `OnePaginatedApplicationListListEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## OnePaginatedAuthMethodDetailListEntity
+
+```ts
+const one_paginated_auth_method_detail_list = client.OnePaginatedAuthMethodDetailList()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `display_name` | `string` | Yes | Human-readable auth method name. |
+| `human_interaction_required` | `boolean` | Yes | Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction). |
+| `id` | `string` | Yes | Auth method identifier. |
+| `instructions` | `any` | Yes | Step-by-step instructions for obtaining credentials. |
+| `payload_example` | `Record<string, any>` | Yes | Example credentials payload with placeholder values. |
+| `payload_schema` | `Record<string, any>` | Yes | JSON Schema for the credentials object in POST /v2/integrations request. |
+| `redirect_url` | `string` | Yes | OAuth redirect URL for vendors requiring human interaction. |
+
+### Operations
+
+#### `list(match: object, ctrl?: object)`
+
+List entities matching the given criteria. Returns an array.
+
+```ts
+const results = await client.OnePaginatedAuthMethodDetailList().list({ account_id: "example", application_id: "example" })
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `OnePaginatedAuthMethodDetailListEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## OnePaginatedIntegrationV2ListItemListEntity
+
+```ts
+const one_paginated_integration_v2_list_item_list = client.OnePaginatedIntegrationV2ListItemList()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `application` | `Record<string, any>` | Yes |  |
+| `created` | `string` | Yes | When the integration was created. |
+| `id` | `string` | Yes | Integration ID. |
+| `is_paused` | `boolean` | Yes | Whether the user paused the integration. |
+| `name` | `string` | Yes | Name of the integration. |
+| `status` | `string` | Yes | Integration status. |
+| `updated` | `string` | Yes | When the integration was last updated. |
+
+### Operations
+
+#### `list(match: object, ctrl?: object)`
+
+List entities matching the given criteria. Returns an array.
+
+```ts
+const results = await client.OnePaginatedIntegrationV2ListItemList().list({ account_id: "example" })
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `OnePaginatedIntegrationV2ListItemListEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## OnePaginatedSetupFlowListEntity
+
+```ts
+const one_paginated_setup_flow_list = client.OnePaginatedSetupFlowList()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `auth_config` | `any` | No | OAuth configuration (present for OAuth-based flows). |
+| `default` | `boolean` | Yes | Whether this is the default auth method. |
+| `description` | `string` | Yes | Flow description. |
+| `id` | `string` | Yes | Setup flow identifier. |
+| `name` | `string` | Yes | Human-readable flow name. |
+| `steps` | `any[]` | Yes | Ordered list of setup steps. |
+| `supported_environments` | `any[]` | Yes | Environments this auth method supports (standard, fedramp). |
+
+### Operations
+
+#### `list(match: object, ctrl?: object)`
+
+List entities matching the given criteria. Returns an array.
+
+```ts
+const results = await client.OnePaginatedSetupFlowList().list({ account_id: "example", application_id: "example" })
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `OnePaginatedSetupFlowListEntity` instance with the same client and
 options.
 
 #### `client()`
@@ -3898,6 +4939,68 @@ Get or set the entity match criteria. Works the same as `data()`.
 #### `make()`
 
 Create a new `TeamsDevicesDeviceSettingsResponseCollectionEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `CloudflareZeroTrustSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## TeamsDevicesDevicesPolicyCertificatesSingleEntity
+
+```ts
+const teams_devices_devices_policy_certificates_single = client.TeamsDevicesDevicesPolicyCertificatesSingle()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `enabled` | `boolean` | Yes | The current status of the device policy certificate provisioning feature for WARP clients. |
+| `result` | `Record<string, any>` | Yes |  |
+
+### Operations
+
+#### `load(match: object, ctrl?: object)`
+
+Load a single entity matching the given criteria.
+
+```ts
+const result = await client.TeamsDevicesDevicesPolicyCertificatesSingle().load({ zone_id: 'zone_id' })
+```
+
+#### `update(data: object, ctrl?: object)`
+
+Update an existing entity. The data must include the entity `id`.
+
+```ts
+const result = await client.TeamsDevicesDevicesPolicyCertificatesSingle().update({
+  zone_id: 'zone_id',
+  // Fields to update
+})
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `TeamsDevicesDevicesPolicyCertificatesSingleEntity` instance with the same client and
 options.
 
 #### `client()`

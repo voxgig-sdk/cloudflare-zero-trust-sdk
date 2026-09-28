@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "integration": {
+      "INTEGRATION00": {
+        "id": "INTEGRATION00",
+        "account_id": "ACCOUNT01"
+      },
+      "INTEGRATION01": {
+        "id": "INTEGRATION01",
+        "account_id": "ACCOUNT01"
+      },
+      "INTEGRATION02": {
+        "id": "INTEGRATION02",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "integration": {
+      "integration_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/one/integrations/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

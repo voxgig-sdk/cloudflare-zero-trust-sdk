@@ -1,0 +1,22 @@
+# BasicOneIntegrationCreateFlow
+
+main: kit: flow: BasicOneIntegrationCreateFlow:
+{
+  entity: "one_integration_create",
+  kind: "basic",
+  name: "BasicOneIntegrationCreateFlow",
+  step: [
+    {
+      i: {
+        ref: "one_integration_create_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicOneIntegrationCreateFlow"
+}

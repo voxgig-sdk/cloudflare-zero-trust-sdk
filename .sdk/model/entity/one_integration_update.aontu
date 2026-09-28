@@ -1,0 +1,150 @@
+# Entity: one_integration_update
+
+main: kit: entity: one_integration_update: {
+
+  alias: field: {}
+
+  fields: {
+    credentials: {
+      h: "Credentials"
+      n: "credentials"
+      r: false
+      sh: "Partial credential fields to merge with existing."
+      t: "`$OBJECT`"
+    }
+    dlp_profiles: {
+      h: "Dlp Profiles"
+      n: "dlp_profiles"
+      r: false
+      sh: "List of DLP profile IDs to associate with the integration."
+      t: "`$ARRAY`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: false
+      sh: "List of errors."
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: false
+      sh: "List of messages."
+      t: "`$ARRAY`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Name of the integration."
+      t: "`$STRING`"
+    }
+    permissions: {
+      h: "Permissions"
+      n: "permissions"
+      r: false
+      sh: "List of permission scopes granted to the integration."
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      sh: "The requested item."
+      t: "`$ANY`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the request succeeded."
+      t: "`$BOOLEAN`"
+    }
+    use_cases: {
+      h: "Use Cases"
+      n: "use_cases"
+      r: false
+      sh: "List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation'])."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "one_integration_update"
+  op: {
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/one/integrations/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/one/integrations/{id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "one"
+            }
+            {
+              lit: "integrations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

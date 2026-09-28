@@ -1,0 +1,88 @@
+# Entity: alexandria_delete_application
+
+main: kit: entity: alexandria_delete_application: {
+
+  alias: field: {}
+
+  fields: {
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "alexandria_delete_application"
+  op: {
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/resource-library/applications/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 498
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/resource-library/applications/{id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "resource-library"
+            }
+            {
+              lit: "applications"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -114,6 +114,724 @@
         "target": {}
       },
       "entity": {
+        "alexandria_delete_application": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "alexandria_delete_application",
+          "op": {
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /accounts/{account_id}/resource-library/applications/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 498,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/accounts/{account_id}/resource-library/applications/{id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "resource-library"
+                    },
+                    {
+                      "lit": "applications"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "alexandria_get_application": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "category_id": {
+              "a": true,
+              "fo": "int64",
+              "h": "Category Id",
+              "n": "category_id",
+              "r": true,
+              "sh": "Returns the category ID.",
+              "t": "`$INTEGER`"
+            },
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "hostnames": {
+              "a": true,
+              "h": "Hostnames",
+              "n": "hostnames",
+              "r": false,
+              "sh": "Hostnames matched by the application.",
+              "t": "`$ARRAY`"
+            },
+            "human_id": {
+              "a": true,
+              "h": "Human Id",
+              "n": "human_id",
+              "r": true,
+              "sh": "Returns the human readable ID.",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "ip_subnets": {
+              "a": true,
+              "h": "Ip Subnets",
+              "n": "ip_subnets",
+              "r": false,
+              "sh": "IP subnets for this application.",
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "Returns the application name.",
+              "t": "`$STRING`"
+            },
+            "port_protocols": {
+              "a": true,
+              "h": "Port Protocols",
+              "n": "port_protocols",
+              "r": false,
+              "sh": "Port and protocol pairs matched by the application.",
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "op": {
+                "list": {
+                  "req": false,
+                  "type": "`$ARRAY`"
+                }
+              },
+              "r": true,
+              "sh": "Returns the list of applications.",
+              "t": "`$OBJECT`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Indicates whether the API call was successful.",
+              "t": "`$BOOLEAN`"
+            },
+            "support_domains": {
+              "a": true,
+              "h": "Support Domains",
+              "n": "support_domains",
+              "r": false,
+              "sh": "Support domains matched by the application.",
+              "t": "`$ARRAY`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "alexandria_get_application",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/{account_id}/resource-library/applications",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/{account_id}/resource-library/applications",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "resource-library"
+                    },
+                    {
+                      "lit": "applications"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/resource-library/applications",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "id,name",
+                        "k": "query",
+                        "n": "field",
+                        "or": "field",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "filter=name:HR&filter=source:cloudflare&filter=id:498",
+                        "k": "query",
+                        "n": "filter",
+                        "or": "filter",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 25,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "name:asc",
+                        "k": "query",
+                        "n": "order_by",
+                        "or": "order_by",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "MyNewApp",
+                        "k": "query",
+                        "n": "search",
+                        "or": "search",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/resource-library/applications",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "field",
+                      "filter",
+                      "limit",
+                      "offset",
+                      "order_by",
+                      "search"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "resource-library"
+                    },
+                    {
+                      "lit": "applications"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/resource-library/applications/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 498,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/resource-library/applications/{id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "resource-library"
+                    },
+                    {
+                      "lit": "applications"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /accounts/{account_id}/resource-library/applications/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 498,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/accounts/{account_id}/resource-library/applications/{id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "resource-library"
+                    },
+                    {
+                      "lit": "applications"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "alexandria_get_category": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "op": {
+                "list": {
+                  "req": false,
+                  "type": "`$ARRAY`"
+                }
+              },
+              "r": true,
+              "sh": "Returns the list of categories.",
+              "t": "`$OBJECT`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Indicates whether the API call was successful.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "alexandria_get_category",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/resource-library/categories",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": 25,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/resource-library/categories",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "limit",
+                      "offset"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "resource-library"
+                    },
+                    {
+                      "lit": "categories"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/resource-library/categories/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 12,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/resource-library/categories/{id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "resource-library"
+                    },
+                    {
+                      "lit": "categories"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
         "client_version": {
           "active": true,
           "alias": {
@@ -4257,6 +4975,97 @@
             "ancestors": []
           }
         },
+        "integration": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "integration",
+          "op": {
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /accounts/{account_id}/one/integrations/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/accounts/{account_id}/one/integrations/{id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "one"
+                    },
+                    {
+                      "lit": "integrations"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
         "interconnect": {
           "active": true,
           "alias": {
@@ -6285,6 +7094,1518 @@
                 "$.main.kit.entity.interconnect"
               ]
             ]
+          }
+        },
+        "one_application_detail": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": false,
+              "sh": "List of errors.",
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": false,
+              "sh": "List of messages.",
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "sh": "The requested item.",
+              "t": "`$ANY`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the request succeeded.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "one_application_detail",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/one/applications/{application_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "application_id",
+                        "or": "application_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/one/applications/{application_id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "application_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "one"
+                    },
+                    {
+                      "lit": "applications"
+                    },
+                    {
+                      "var": "application_id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "one_integration_create": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "application": {
+              "a": true,
+              "h": "Application",
+              "n": "application",
+              "r": true,
+              "sh": "Vendor/application slug (e.g., GOOGLE_WORKSPACE).",
+              "t": "`$STRING`"
+            },
+            "auth_method": {
+              "a": true,
+              "h": "Auth Method",
+              "n": "auth_method",
+              "r": false,
+              "sh": "Authentication method slug (uses default if omitted).",
+              "t": "`$STRING`"
+            },
+            "credentials": {
+              "a": true,
+              "h": "Credentials",
+              "n": "credentials",
+              "r": true,
+              "sh": "Credentials for the integration.",
+              "t": "`$OBJECT`"
+            },
+            "dlp_profiles": {
+              "a": true,
+              "h": "Dlp Profiles",
+              "n": "dlp_profiles",
+              "r": false,
+              "sh": "List of DLP profile IDs to associate.",
+              "t": "`$ARRAY`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "Name of the integration.",
+              "t": "`$STRING`"
+            },
+            "permissions": {
+              "a": true,
+              "h": "Permissions",
+              "n": "permissions",
+              "r": false,
+              "sh": "List of permission scopes (uses policy defaults if empty).",
+              "t": "`$ARRAY`"
+            },
+            "use_cases": {
+              "a": true,
+              "h": "Use Cases",
+              "n": "use_cases",
+              "r": false,
+              "sh": "List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']).",
+              "t": "`$ARRAY`"
+            }
+          },
+          "name": "one_integration_create",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/{account_id}/one/integrations",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/{account_id}/one/integrations",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "one"
+                    },
+                    {
+                      "lit": "integrations"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "one_integration_detail": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": false,
+              "sh": "List of errors.",
+              "t": "`$ARRAY`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": false,
+              "sh": "List of messages.",
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "sh": "The requested item.",
+              "t": "`$ANY`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the request succeeded.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "one_integration_detail",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/one/integrations/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/one/integrations/{id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "one"
+                    },
+                    {
+                      "lit": "integrations"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "one_integration_pause": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": false,
+              "sh": "List of errors.",
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": false,
+              "sh": "List of messages.",
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "sh": "The requested item.",
+              "t": "`$ANY`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the request succeeded.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "one_integration_pause",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/{account_id}/one/integrations/{id}/pause",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "integration_id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/{account_id}/one/integrations/{id}/pause",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "integration_id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "id": "integration_id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "one"
+                    },
+                    {
+                      "lit": "integrations"
+                    },
+                    {
+                      "var": "integration_id"
+                    },
+                    {
+                      "lit": "pause"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.integration"
+              ]
+            ]
+          }
+        },
+        "one_integration_resume": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": false,
+              "sh": "List of errors.",
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": false,
+              "sh": "List of messages.",
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "sh": "The requested item.",
+              "t": "`$ANY`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the request succeeded.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "one_integration_resume",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/{account_id}/one/integrations/{id}/resume",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "integration_id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/{account_id}/one/integrations/{id}/resume",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "integration_id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "id": "integration_id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "one"
+                    },
+                    {
+                      "lit": "integrations"
+                    },
+                    {
+                      "var": "integration_id"
+                    },
+                    {
+                      "lit": "resume"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.integration"
+              ]
+            ]
+          }
+        },
+        "one_integration_update": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "credentials": {
+              "a": true,
+              "h": "Credentials",
+              "n": "credentials",
+              "r": false,
+              "sh": "Partial credential fields to merge with existing.",
+              "t": "`$OBJECT`"
+            },
+            "dlp_profiles": {
+              "a": true,
+              "h": "Dlp Profiles",
+              "n": "dlp_profiles",
+              "r": false,
+              "sh": "List of DLP profile IDs to associate with the integration.",
+              "t": "`$ARRAY`"
+            },
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": false,
+              "sh": "List of errors.",
+              "t": "`$ARRAY`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": false,
+              "sh": "List of messages.",
+              "t": "`$ARRAY`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": false,
+              "sh": "Name of the integration.",
+              "t": "`$STRING`"
+            },
+            "permissions": {
+              "a": true,
+              "h": "Permissions",
+              "n": "permissions",
+              "r": false,
+              "sh": "List of permission scopes granted to the integration.",
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "sh": "The requested item.",
+              "t": "`$ANY`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the request succeeded.",
+              "t": "`$BOOLEAN`"
+            },
+            "use_cases": {
+              "a": true,
+              "h": "Use Cases",
+              "n": "use_cases",
+              "r": false,
+              "sh": "List of use case or feature slugs to enroll (e.g., ['casb', 'ces', 'auto_remediation']).",
+              "t": "`$ARRAY`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "one_integration_update",
+          "op": {
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /accounts/{account_id}/one/integrations/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/accounts/{account_id}/one/integrations/{id}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "one"
+                    },
+                    {
+                      "lit": "integrations"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "one_paginated_application_list_list": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "auth_methods": {
+              "a": true,
+              "h": "Auth Methods",
+              "n": "auth_methods",
+              "r": true,
+              "sh": "Available auth methods.",
+              "t": "`$ARRAY`"
+            },
+            "category": {
+              "a": true,
+              "h": "Category",
+              "n": "category",
+              "r": true,
+              "sh": "Vendor category (e.g.",
+              "t": "`$STRING`"
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": true,
+              "sh": "Brief description of the integration.",
+              "t": "`$STRING`"
+            },
+            "display_name": {
+              "a": true,
+              "h": "Display Name",
+              "n": "display_name",
+              "r": true,
+              "sh": "Human-readable vendor name.",
+              "t": "`$STRING`"
+            },
+            "dlp_enabled": {
+              "a": true,
+              "h": "Dlp Enabled",
+              "n": "dlp_enabled",
+              "r": true,
+              "sh": "Whether DLP scanning is supported.",
+              "t": "`$BOOLEAN`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "Vendor identifier (e.g.",
+              "t": "`$STRING`"
+            },
+            "logo": {
+              "a": true,
+              "h": "Logo",
+              "n": "logo",
+              "r": true,
+              "sh": "Logo path.",
+              "t": "`$STRING`"
+            },
+            "permissions": {
+              "a": true,
+              "h": "Permissions",
+              "n": "permissions",
+              "r": true,
+              "sh": "All permissions with severity.",
+              "t": "`$ARRAY`"
+            },
+            "supported_environments": {
+              "a": true,
+              "h": "Supported Environments",
+              "n": "supported_environments",
+              "r": true,
+              "sh": "Environments this vendor supports (standard, fedramp).",
+              "t": "`$ARRAY`"
+            },
+            "use_cases": {
+              "a": true,
+              "h": "Use Cases",
+              "n": "use_cases",
+              "r": true,
+              "sh": "Supported use cases.",
+              "t": "`$ARRAY`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "one_paginated_application_list_list",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/one/applications",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "environment",
+                        "or": "environment",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page_size",
+                        "or": "page_size",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/one/applications",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "environment",
+                      "page",
+                      "page_size"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "one"
+                    },
+                    {
+                      "lit": "applications"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "one_paginated_auth_method_detail_list": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "display_name": {
+              "a": true,
+              "h": "Display Name",
+              "n": "display_name",
+              "r": true,
+              "sh": "Human-readable auth method name.",
+              "t": "`$STRING`"
+            },
+            "human_interaction_required": {
+              "a": true,
+              "h": "Human Interaction Required",
+              "n": "human_interaction_required",
+              "r": true,
+              "sh": "Whether setup requires human interaction or integration can be created purely using API (e.g., For OAuth can not be created without user interaction).",
+              "t": "`$BOOLEAN`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "Auth method identifier.",
+              "t": "`$STRING`"
+            },
+            "instructions": {
+              "a": true,
+              "h": "Instructions",
+              "n": "instructions",
+              "r": true,
+              "sh": "Step-by-step instructions for obtaining credentials.",
+              "t": "`$ANY`"
+            },
+            "payload_example": {
+              "a": true,
+              "h": "Payload Example",
+              "n": "payload_example",
+              "r": true,
+              "sh": "Example credentials payload with placeholder values.",
+              "t": "`$OBJECT`"
+            },
+            "payload_schema": {
+              "a": true,
+              "h": "Payload Schema",
+              "n": "payload_schema",
+              "r": true,
+              "sh": "JSON Schema for the credentials object in POST /v2/integrations request.",
+              "t": "`$OBJECT`"
+            },
+            "redirect_url": {
+              "a": true,
+              "h": "Redirect Url",
+              "n": "redirect_url",
+              "r": true,
+              "sh": "OAuth redirect URL for vendors requiring human interaction.",
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "one_paginated_auth_method_detail_list",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/one/applications/{application_id}/auth-methods",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "application_id",
+                        "or": "application_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page_size",
+                        "or": "page_size",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/one/applications/{application_id}/auth-methods",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "application_id",
+                      "page",
+                      "page_size"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "one"
+                    },
+                    {
+                      "lit": "applications"
+                    },
+                    {
+                      "var": "application_id"
+                    },
+                    {
+                      "lit": "auth-methods"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "one_paginated_integration_v2_list_item_list": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "application": {
+              "a": true,
+              "h": "Application",
+              "n": "application",
+              "r": true,
+              "ro": true,
+              "t": "`$OBJECT`"
+            },
+            "created": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Created",
+              "n": "created",
+              "r": true,
+              "ro": true,
+              "sh": "When the integration was created.",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "fo": "uuid",
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "ro": true,
+              "sh": "Integration ID.",
+              "t": "`$STRING`"
+            },
+            "is_paused": {
+              "a": true,
+              "h": "Is Paused",
+              "n": "is_paused",
+              "r": true,
+              "ro": true,
+              "sh": "Whether the user paused the integration.",
+              "t": "`$BOOLEAN`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "ro": true,
+              "sh": "Name of the integration.",
+              "t": "`$STRING`"
+            },
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": true,
+              "sh": "Integration status.",
+              "t": "`$STRING`"
+            },
+            "updated": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Updated",
+              "n": "updated",
+              "r": true,
+              "ro": true,
+              "sh": "When the integration was last updated.",
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "one_paginated_integration_v2_list_item_list",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/one/integrations",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "application",
+                        "or": "application",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "direction",
+                        "or": "direction",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "dlp_enabled",
+                        "or": "dlp_enabled",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "order",
+                        "or": "order",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page_size",
+                        "or": "page_size",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "search",
+                        "or": "search",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "status",
+                        "or": "status",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "use_case",
+                        "or": "use_case",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/one/integrations",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "application",
+                      "direction",
+                      "dlp_enabled",
+                      "order",
+                      "page",
+                      "page_size",
+                      "search",
+                      "status",
+                      "use_case"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "one"
+                    },
+                    {
+                      "lit": "integrations"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "one_paginated_setup_flow_list": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "auth_config": {
+              "a": true,
+              "h": "Auth Config",
+              "n": "auth_config",
+              "r": false,
+              "sh": "OAuth configuration (present for OAuth-based flows).",
+              "t": "`$ANY`"
+            },
+            "default": {
+              "a": true,
+              "h": "Default",
+              "n": "default",
+              "r": true,
+              "sh": "Whether this is the default auth method.",
+              "t": "`$BOOLEAN`"
+            },
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": true,
+              "sh": "Flow description.",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "Setup flow identifier.",
+              "t": "`$STRING`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "Human-readable flow name.",
+              "t": "`$STRING`"
+            },
+            "steps": {
+              "a": true,
+              "h": "Steps",
+              "n": "steps",
+              "r": true,
+              "sh": "Ordered list of setup steps.",
+              "t": "`$ARRAY`"
+            },
+            "supported_environments": {
+              "a": true,
+              "h": "Supported Environments",
+              "n": "supported_environments",
+              "r": true,
+              "sh": "Environments this auth method supports (standard, fedramp).",
+              "t": "`$ARRAY`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "one_paginated_setup_flow_list",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/one/applications/{application_id}/setup-flows",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "application_id",
+                        "or": "application_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "auth_method",
+                        "or": "auth_method",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "environment",
+                        "or": "environment",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "page_size",
+                        "or": "page_size",
+                        "r": false,
+                        "t": "`$INTEGER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/one/applications/{application_id}/setup-flows",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "application_id",
+                      "auth_method",
+                      "environment",
+                      "page",
+                      "page_size"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "one"
+                    },
+                    {
+                      "lit": "applications"
+                    },
+                    {
+                      "var": "application_id"
+                    },
+                    {
+                      "lit": "setup-flows"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
           }
         },
         "override_code": {
@@ -9428,6 +11749,149 @@
             "ancestors": []
           }
         },
+        "teams_devices_devices_policy_certificates_single": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "enabled": {
+              "a": true,
+              "h": "Enabled",
+              "n": "enabled",
+              "r": true,
+              "sh": "The current status of the device policy certificate provisioning feature for WARP clients.",
+              "t": "`$BOOLEAN`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "t": "`$OBJECT`"
+            }
+          },
+          "name": "teams_devices_devices_policy_certificates_single",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /zones/{zone_id}/devices/policy/certificates",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "699d98642c564d2e855e9661899b7252",
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/zones/{zone_id}/devices/policy/certificates",
+                  "q": {
+                    "exist": [
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "devices"
+                    },
+                    {
+                      "lit": "policy"
+                    },
+                    {
+                      "lit": "certificates"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /zones/{zone_id}/devices/policy/certificates",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "699d98642c564d2e855e9661899b7252",
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/zones/{zone_id}/devices/policy/certificates",
+                  "q": {
+                    "exist": [
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "devices"
+                    },
+                    {
+                      "lit": "policy"
+                    },
+                    {
+                      "lit": "certificates"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
         "teams_devices_fallback_domain_response_collection": {
           "active": true,
           "alias": {
@@ -10315,7 +12779,11 @@
             }
           },
           "relations": {
-            "ancestors": []
+            "ancestors": [
+              [
+                "$.main.kit.entity.integration"
+              ]
+            ]
           }
         },
         "teams_devices_schemas_response_collection": {
@@ -10672,7 +13140,11 @@
             }
           },
           "relations": {
-            "ancestors": []
+            "ancestors": [
+              [
+                "$.main.kit.entity.integration"
+              ]
+            ]
           }
         },
         "teams_devices_single": {
@@ -22758,6 +25230,153 @@
         }
       },
       "flow": {
+        "BasicAlexandriaDeleteApplicationFlow": {
+          "active": true,
+          "entity": "alexandria_delete_application",
+          "key$": "BasicAlexandriaDeleteApplicationFlow",
+          "kind": "basic",
+          "name": "BasicAlexandriaDeleteApplicationFlow",
+          "param": {},
+          "step": []
+        },
+        "BasicAlexandriaGetApplicationFlow": {
+          "active": true,
+          "entity": "alexandria_get_application",
+          "key$": "BasicAlexandriaGetApplicationFlow",
+          "kind": "basic",
+          "name": "BasicAlexandriaGetApplicationFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "alexandria_get_application_ref01"
+              },
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "alexandria_get_application_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {
+                "account_id": "account01"
+              },
+              "i": {
+                "ref": "alexandria_get_application_ref01",
+                "srcdatavar": "alexandria_get_application_ref01_data",
+                "suffix": "_up0",
+                "textfield": "human_id"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-alexandria_get_application_ref01"
+                  }
+                }
+              ],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "alexandria_get_application_ref01",
+                "srcdatavar": "alexandria_get_application_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "alexandria_get_application01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-alexandria_get_application_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicAlexandriaGetCategoryFlow": {
+          "active": true,
+          "entity": "alexandria_get_category",
+          "key$": "BasicAlexandriaGetCategoryFlow",
+          "kind": "basic",
+          "name": "BasicAlexandriaGetCategoryFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "alexandria_get_category_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "alexandria_get_category_ref01",
+                "srcdatavar": "alexandria_get_category_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "alexandria_get_category01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-alexandria_get_category_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
         "BasicClientVersionFlow": {
           "active": true,
           "entity": "client_version",
@@ -23325,6 +25944,15 @@
             }
           ]
         },
+        "BasicIntegrationFlow": {
+          "active": true,
+          "entity": "integration",
+          "key$": "BasicIntegrationFlow",
+          "kind": "basic",
+          "name": "BasicIntegrationFlow",
+          "param": {},
+          "step": []
+        },
         "BasicInterconnectFlow": {
           "active": true,
           "entity": "interconnect",
@@ -23812,6 +26440,290 @@
                   "apply": "TextFieldMark",
                   "def": {
                     "mark": "Mark01-nsc_status_info_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOneApplicationDetailFlow": {
+          "active": true,
+          "entity": "one_application_detail",
+          "key$": "BasicOneApplicationDetailFlow",
+          "kind": "basic",
+          "name": "BasicOneApplicationDetailFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "one_application_detail_ref01",
+                "srcdatavar": "one_application_detail_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "one_application_detail01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-one_application_detail_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOneIntegrationCreateFlow": {
+          "active": true,
+          "entity": "one_integration_create",
+          "key$": "BasicOneIntegrationCreateFlow",
+          "kind": "basic",
+          "name": "BasicOneIntegrationCreateFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "one_integration_create_ref01"
+              },
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicOneIntegrationDetailFlow": {
+          "active": true,
+          "entity": "one_integration_detail",
+          "key$": "BasicOneIntegrationDetailFlow",
+          "kind": "basic",
+          "name": "BasicOneIntegrationDetailFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "one_integration_detail_ref01",
+                "srcdatavar": "one_integration_detail_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "one_integration_detail01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-one_integration_detail_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOneIntegrationPauseFlow": {
+          "active": true,
+          "entity": "one_integration_pause",
+          "key$": "BasicOneIntegrationPauseFlow",
+          "kind": "basic",
+          "name": "BasicOneIntegrationPauseFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "one_integration_pause_ref01"
+              },
+              "m": {
+                "account_id": "account01",
+                "integration_id": "integration01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicOneIntegrationResumeFlow": {
+          "active": true,
+          "entity": "one_integration_resume",
+          "key$": "BasicOneIntegrationResumeFlow",
+          "kind": "basic",
+          "name": "BasicOneIntegrationResumeFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "one_integration_resume_ref01"
+              },
+              "m": {
+                "account_id": "account01",
+                "integration_id": "integration01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicOneIntegrationUpdateFlow": {
+          "active": true,
+          "entity": "one_integration_update",
+          "key$": "BasicOneIntegrationUpdateFlow",
+          "kind": "basic",
+          "name": "BasicOneIntegrationUpdateFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {
+                "account_id": "account01"
+              },
+              "i": {
+                "ref": "one_integration_update_ref01",
+                "srcdatavar": "one_integration_update_ref01_data",
+                "suffix": "_up0",
+                "textfield": "name"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-one_integration_update_ref01"
+                  }
+                }
+              ],
+              "v": []
+            }
+          ]
+        },
+        "BasicOnePaginatedApplicationListListFlow": {
+          "active": true,
+          "entity": "one_paginated_application_list_list",
+          "key$": "BasicOnePaginatedApplicationListListFlow",
+          "kind": "basic",
+          "name": "BasicOnePaginatedApplicationListListFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "one_paginated_application_list_list_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOnePaginatedAuthMethodDetailListFlow": {
+          "active": true,
+          "entity": "one_paginated_auth_method_detail_list",
+          "key$": "BasicOnePaginatedAuthMethodDetailListFlow",
+          "kind": "basic",
+          "name": "BasicOnePaginatedAuthMethodDetailListFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01",
+                "application_id": "application01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "one_paginated_auth_method_detail_list_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOnePaginatedIntegrationV2ListItemListFlow": {
+          "active": true,
+          "entity": "one_paginated_integration_v2_list_item_list",
+          "key$": "BasicOnePaginatedIntegrationV2ListItemListFlow",
+          "kind": "basic",
+          "name": "BasicOnePaginatedIntegrationV2ListItemListFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "one_paginated_integration_v2_list_item_list_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOnePaginatedSetupFlowListFlow": {
+          "active": true,
+          "entity": "one_paginated_setup_flow_list",
+          "key$": "BasicOnePaginatedSetupFlowListFlow",
+          "kind": "basic",
+          "name": "BasicOnePaginatedSetupFlowListFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01",
+                "application_id": "application01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "one_paginated_setup_flow_list_ref01"
                   }
                 }
               ]
@@ -24403,6 +27315,58 @@
                   "apply": "ItemExists",
                   "def": {
                     "ref": "teams_devices_device_settings_response_collection_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicTeamsDevicesDevicesPolicyCertificatesSingleFlow": {
+          "active": true,
+          "entity": "teams_devices_devices_policy_certificates_single",
+          "key$": "BasicTeamsDevicesDevicesPolicyCertificatesSingleFlow",
+          "kind": "basic",
+          "name": "BasicTeamsDevicesDevicesPolicyCertificatesSingleFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "teams_devices_devices_policy_certificates_single_ref01",
+                "srcdatavar": "teams_devices_devices_policy_certificates_single_ref01_data",
+                "suffix": "_up0"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-teams_devices_devices_policy_certificates_single_ref01"
+                  }
+                }
+              ],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "teams_devices_devices_policy_certificates_single_ref01",
+                "srcdatavar": "teams_devices_devices_policy_certificates_single_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "teams_devices_devices_policy_certificates_single01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-teams_devices_devices_policy_certificates_single_ref01"
                   }
                 }
               ]

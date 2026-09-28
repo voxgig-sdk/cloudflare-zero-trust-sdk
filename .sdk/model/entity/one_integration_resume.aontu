@@ -1,0 +1,115 @@
+# Entity: one_integration_resume
+
+main: kit: entity: one_integration_resume: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: false
+      sh: "List of errors."
+      t: "`$ARRAY`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: false
+      sh: "List of messages."
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      sh: "The requested item."
+      t: "`$ANY`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the request succeeded."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "one_integration_resume"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/one/integrations/{id}/resume"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "integration_id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/one/integrations/{id}/resume"
+          q: {
+            exist: [
+              "account_id"
+              "integration_id"
+            ]
+          }
+          r: {
+            param: {
+              id: "integration_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "one"
+            }
+            {
+              lit: "integrations"
+            }
+            {
+              var: "integration_id"
+            }
+            {
+              lit: "resume"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.integration")]
+  ]
+
+}
