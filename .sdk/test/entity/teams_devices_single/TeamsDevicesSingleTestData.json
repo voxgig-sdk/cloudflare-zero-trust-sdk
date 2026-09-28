@@ -1,0 +1,76 @@
+{
+  "existing": {
+    "teams_devices_single": {
+      "TEAMS_DEVICES_SINGLE00": {
+        "description": "s50",
+        "expiration": "s51",
+        "input": {},
+        "match": [],
+        "name": "s54",
+        "result": {},
+        "schedule": "s56",
+        "type": "s57",
+        "account_id": "ACCOUNT01",
+        "rule_id": "RULE01",
+        "id": "TEAMS_DEVICES_SINGLE00"
+      },
+      "TEAMS_DEVICES_SINGLE01": {
+        "description": "sa0",
+        "expiration": "sa1",
+        "input": {},
+        "match": [],
+        "name": "sa4",
+        "result": {},
+        "schedule": "sa6",
+        "type": "sa7",
+        "account_id": "ACCOUNT01",
+        "rule_id": "RULE01",
+        "id": "TEAMS_DEVICES_SINGLE01"
+      },
+      "TEAMS_DEVICES_SINGLE02": {
+        "description": "sf0",
+        "expiration": "sf1",
+        "input": {},
+        "match": [],
+        "name": "sf4",
+        "result": {},
+        "schedule": "sf6",
+        "type": "sf7",
+        "account_id": "ACCOUNT01",
+        "rule_id": "RULE01",
+        "id": "TEAMS_DEVICES_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_single": {
+      "teams_devices_single_ref01": {
+        "description": "s140",
+        "expiration": "s141",
+        "input": {},
+        "match": [],
+        "name": "s144",
+        "result": {},
+        "schedule": "s146",
+        "type": "s147"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/devices/posture": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/posture/{rule_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/devices/posture/{rule_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

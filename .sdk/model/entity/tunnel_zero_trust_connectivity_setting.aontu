@@ -1,0 +1,166 @@
+# Entity: tunnel_zero_trust_connectivity_setting
+
+main: kit: entity: tunnel_zero_trust_connectivity_setting: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    icmp_proxy_enabled: {
+      h: "Icmp Proxy Enabled"
+      n: "icmp_proxy_enabled"
+      r: false
+      sh: "A flag to enable the ICMP proxy for the account network."
+      t: "`$BOOLEAN`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    offramp_warp_enabled: {
+      h: "Offramp Warp Enabled"
+      n: "offramp_warp_enabled"
+      r: false
+      sh: "A flag to enable WARP to WARP traffic."
+      t: "`$BOOLEAN`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      op: {
+        list: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      ro: true
+      sh: "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel."
+      t: "`$STRING`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 0
+      }
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful"
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "tunnel_zero_trust_connectivity_setting"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/zerotrust/connectivity_settings"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/zerotrust/connectivity_settings"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "zerotrust"
+            }
+            {
+              lit: "connectivity_settings"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/zerotrust/connectivity_settings"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/zerotrust/connectivity_settings"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "zerotrust"
+            }
+            {
+              lit: "connectivity_settings"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

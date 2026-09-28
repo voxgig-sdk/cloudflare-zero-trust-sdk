@@ -1,0 +1,47 @@
+{
+  "existing": {
+    "tunnel_configuration": {
+      "TUNNEL_CONFIGURATION00": {
+        "config": {},
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01",
+        "id": "TUNNEL_CONFIGURATION00"
+      },
+      "TUNNEL_CONFIGURATION01": {
+        "config": {},
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01",
+        "id": "TUNNEL_CONFIGURATION01"
+      },
+      "TUNNEL_CONFIGURATION02": {
+        "config": {},
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01",
+        "id": "TUNNEL_CONFIGURATION02"
+      }
+    }
+  },
+  "new": {
+    "tunnel_configuration": {
+      "tunnel_configuration_ref01": {
+        "config": {},
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

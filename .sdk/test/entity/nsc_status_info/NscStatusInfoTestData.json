@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "nsc_status_info": {
+      "NSC_STATUS_INFO00": {
+        "account_id": "ACCOUNT01",
+        "icon": "ICON01",
+        "id": "NSC_STATUS_INFO00"
+      },
+      "NSC_STATUS_INFO01": {
+        "account_id": "ACCOUNT01",
+        "icon": "ICON01",
+        "id": "NSC_STATUS_INFO01"
+      },
+      "NSC_STATUS_INFO02": {
+        "account_id": "ACCOUNT01",
+        "icon": "ICON01",
+        "id": "NSC_STATUS_INFO02"
+      }
+    }
+  },
+  "new": {
+    "nsc_status_info": {
+      "nsc_status_info_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cni/interconnects/{icon}/status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

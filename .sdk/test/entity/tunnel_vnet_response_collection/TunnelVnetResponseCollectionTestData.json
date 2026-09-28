@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "tunnel_vnet_response_collection": {
+      "TUNNEL_VNET_RESPONSE_COLLECTION00": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "TUNNEL_VNET_RESPONSE_COLLECTION01": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "TUNNEL_VNET_RESPONSE_COLLECTION02": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "tunnel_vnet_response_collection": {
+      "tunnel_vnet_response_collection_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/teamnet/virtual_networks": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

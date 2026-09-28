@@ -1,0 +1,301 @@
+# Entity: tunnel_warp_connector_response_single
+
+main: kit: entity: tunnel_warp_connector_response_single: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    ha: {
+      h: "Ha"
+      n: "ha"
+      r: false
+      sh: "Indicates that the tunnel will be created to be highly available."
+      t: "`$BOOLEAN`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "A user-friendly name for a tunnel."
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      op: {
+        load: {
+          req: false
+          type: "`$OBJECT`"
+        }
+      }
+      r: true
+      ro: true
+      sh: "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel."
+      t: "`$STRING`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 0
+      }
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful"
+      t: "`$BOOLEAN`"
+    }
+    tunnel_secret: {
+      h: "Tunnel Secret"
+      n: "tunnel_secret"
+      r: false
+      sh: "Sets the password required to run a locally-managed tunnel."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "tunnel_warp_connector_response_single"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/warp_connector"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/warp_connector"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "warp_connector"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/warp_connector/{tunnel_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "tunnel_id"
+                or: "tunnel_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/warp_connector/{tunnel_id}"
+          q: {
+            exist: [
+              "account_id"
+              "tunnel_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "warp_connector"
+            }
+            {
+              var: "tunnel_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/warp_connector/{tunnel_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "tunnel_id"
+                or: "tunnel_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/warp_connector/{tunnel_id}"
+          q: {
+            exist: [
+              "account_id"
+              "tunnel_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "warp_connector"
+            }
+            {
+              var: "tunnel_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/warp_connector/{tunnel_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "tunnel_id"
+                or: "tunnel_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/warp_connector/{tunnel_id}"
+          q: {
+            exist: [
+              "account_id"
+              "tunnel_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "warp_connector"
+            }
+            {
+              var: "tunnel_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

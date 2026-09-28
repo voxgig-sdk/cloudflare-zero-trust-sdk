@@ -1,0 +1,50 @@
+{
+  "existing": {
+    "tunnel_teamnet_response_single": {
+      "TUNNEL_TEAMNET_RESPONSE_SINGLE00": {
+        "errors": [],
+        "messages": [],
+        "result": "s2a",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "ip": "IP01",
+        "id": "TUNNEL_TEAMNET_RESPONSE_SINGLE00"
+      },
+      "TUNNEL_TEAMNET_RESPONSE_SINGLE01": {
+        "errors": [],
+        "messages": [],
+        "result": "s52",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "ip": "IP01",
+        "id": "TUNNEL_TEAMNET_RESPONSE_SINGLE01"
+      },
+      "TUNNEL_TEAMNET_RESPONSE_SINGLE02": {
+        "errors": [],
+        "messages": [],
+        "result": "s7a",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "ip": "IP01",
+        "id": "TUNNEL_TEAMNET_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "tunnel_teamnet_response_single": {
+      "tunnel_teamnet_response_single_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": "sa2",
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/teamnet/routes/ip/{ip}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

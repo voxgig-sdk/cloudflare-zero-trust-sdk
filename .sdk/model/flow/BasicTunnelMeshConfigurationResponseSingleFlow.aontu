@@ -1,0 +1,56 @@
+# BasicTunnelMeshConfigurationResponseSingleFlow
+
+main: kit: flow: BasicTunnelMeshConfigurationResponseSingleFlow:
+{
+  entity: "tunnel_mesh_configuration_response_single",
+  kind: "basic",
+  name: "BasicTunnelMeshConfigurationResponseSingleFlow",
+  step: [
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "tunnel_mesh_configuration_response_single_ref01",
+        srcdatavar: "tunnel_mesh_configuration_response_single_ref01_data",
+        suffix: "_up0",
+        textfield: "ha_mode"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tunnel_mesh_configuration_response_single_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "tunnel_mesh_configuration_response_single_ref01",
+        srcdatavar: "tunnel_mesh_configuration_response_single_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "tunnel_mesh_configuration_response_single01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tunnel_mesh_configuration_response_single_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelMeshConfigurationResponseSingleFlow"
+}

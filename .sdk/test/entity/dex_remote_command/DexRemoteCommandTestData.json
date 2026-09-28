@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "dex_remote_command": {
+      "DEX_REMOTE_COMMAND00": {
+        "commands": [],
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "command_id": "COMMAND01",
+        "filename": "FILENAME01",
+        "id": "DEX_REMOTE_COMMAND00"
+      },
+      "DEX_REMOTE_COMMAND01": {
+        "commands": [],
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "command_id": "COMMAND01",
+        "filename": "FILENAME01",
+        "id": "DEX_REMOTE_COMMAND01"
+      },
+      "DEX_REMOTE_COMMAND02": {
+        "commands": [],
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "command_id": "COMMAND01",
+        "filename": "FILENAME01",
+        "id": "DEX_REMOTE_COMMAND02"
+      }
+    }
+  },
+  "new": {
+    "dex_remote_command": {
+      "dex_remote_command_ref01": {
+        "commands": [],
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/dex/commands": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/commands": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/commands/devices": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/commands/{command_id}/downloads/{filename}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/commands/quota": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

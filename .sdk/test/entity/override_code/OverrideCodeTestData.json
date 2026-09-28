@@ -1,0 +1,63 @@
+{
+  "existing": {
+    "override_code": {
+      "OVERRIDE_CODE00": {
+        "device_id": "DEVICE01",
+        "duration_hours": 81,
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "scope": "s55",
+        "success": true,
+        "type": "s57",
+        "account_id": "ACCOUNT01",
+        "id": "OVERRIDE_CODE00"
+      },
+      "OVERRIDE_CODE01": {
+        "device_id": "DEVICE01",
+        "duration_hours": 161,
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "scope": "sa5",
+        "success": true,
+        "type": "sa7",
+        "account_id": "ACCOUNT01",
+        "id": "OVERRIDE_CODE01"
+      },
+      "OVERRIDE_CODE02": {
+        "device_id": "DEVICE01",
+        "duration_hours": 241,
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "scope": "sf5",
+        "success": true,
+        "type": "sf7",
+        "account_id": "ACCOUNT01",
+        "id": "OVERRIDE_CODE02"
+      }
+    }
+  },
+  "new": {
+    "override_code": {
+      "override_code_ref01": {
+        "device_id": "DEVICE01",
+        "duration_hours": 321,
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "scope": "s145",
+        "success": true,
+        "type": "s147"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/devices/override_codes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

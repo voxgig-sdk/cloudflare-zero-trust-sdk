@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DexSyntheticApplicationMonitoring | Cloudflare Zero Trust Gateway</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Zero Trust Gateway<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-zero-trust-sdk">voxgig-sdk/cloudflare-zero-trust-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Zero Trust Gateway</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/client_version.html">ClientVersion</a>
+<a href="../api/cni.html">Cni</a>
+<a href="../api/deployment_group.html">DeploymentGroup</a>
+<a href="../api/dex_remote_command.html">DexRemoteCommand</a>
+<a href="../api/dex_rule.html">DexRule</a>
+<a aria-current="page" href="../api/dex_synthetic_application_monitoring.html">DexSyntheticApplicationMonitoring</a><div class="nav-sections"><a class="nav-section" href="#get-accountsaccount_iddexcolos">GET /accounts/{account_id}/dex/colos</a>
+<a class="nav-section" href="#get-accountsaccount_iddexdevicesdevice_idisps">GET /accounts/{account_id}/dex/devices/{device_id}/isps</a>
+<a class="nav-section" href="#get-accountsaccount_iddextestsoverview">GET /accounts/{account_id}/dex/tests/overview</a>
+<a class="nav-section" href="#get-accountsaccount_iddexhttp-teststest_id">GET /accounts/{account_id}/dex/http-tests/{test_id}</a>
+<a class="nav-section" href="#get-accountsaccount_iddextraceroute-teststest_id">GET /accounts/{account_id}/dex/traceroute-tests/{test_id}</a>
+<a class="nav-section" href="#get-accountsaccount_iddexhttp-teststest_idpercentiles">GET /accounts/{account_id}/dex/http-tests/{test_id}/percentiles</a>
+<a class="nav-section" href="#get-accountsaccount_iddexdevicesdevice_idfleet-statusover-time">GET /accounts/{account_id}/dex/devices/{device_id}/fleet-status/over-time</a>
+<a class="nav-section" href="#get-accountsaccount_iddextraceroute-teststest_idpercentiles">GET /accounts/{account_id}/dex/traceroute-tests/{test_id}/percentiles</a>
+<a class="nav-section" href="#get-accountsaccount_iddextraceroute-teststest_idnetwork-path">GET /accounts/{account_id}/dex/traceroute-tests/{test_id}/network-path</a>
+<a class="nav-section" href="#get-accountsaccount_iddextestsunique-devices">GET /accounts/{account_id}/dex/tests/unique-devices</a>
+<a class="nav-section" href="#get-accountsaccount_iddextraceroute-test-resultstest_result_idnetwork-path">GET /accounts/{account_id}/dex/traceroute-test-results/{test_result_id}/network-path</a></div>
+<a href="../api/digital_experience_monitoring_device.html">DigitalExperienceMonitoringDevice</a>
+<a href="../api/digital_experience_monitoring_dex_delete_response_collection.html">DigitalExperienceMonitoringDexDeleteResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_response_collection.html">DigitalExperienceMonitoringDexResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_single.html">DigitalExperienceMonitoringDexSingle</a>
+<a href="../api/digital_experience_monitoring_fleet_status_device.html">DigitalExperienceMonitoringFleetStatusDevice</a>
+<a href="../api/digital_experience_monitoring_fleet_status_live.html">DigitalExperienceMonitoringFleetStatusLive</a>
+<a href="../api/digital_experience_monitoring_fleet_status_over_time.html">DigitalExperienceMonitoringFleetStatusOverTime</a>
+<a href="../api/interconnect.html">Interconnect</a>
+<a href="../api/ip_profile.html">IpProfile</a>
+<a href="../api/list.html">List</a>
+<a href="../api/location.html">Location</a>
+<a href="../api/nsc_cni.html">NscCni</a>
+<a href="../api/nsc_default_name.html">NscDefaultName</a>
+<a href="../api/nsc_interconnect.html">NscInterconnect</a>
+<a href="../api/nsc_setting.html">NscSetting</a>
+<a href="../api/nsc_slot_info.html">NscSlotInfo</a>
+<a href="../api/nsc_status_info.html">NscStatusInfo</a>
+<a href="../api/override_code.html">OverrideCode</a>
+<a href="../api/pacfile.html">Pacfile</a>
+<a href="../api/physical_device.html">PhysicalDevice</a>
+<a href="../api/proxy_endpoint.html">ProxyEndpoint</a>
+<a href="../api/registration.html">Registration</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/teams_devices_api_response_single.html">TeamsDevicesApiResponseSingle</a>
+<a href="../api/teams_devices_components_schemas_response_collection.html">TeamsDevicesComponentsSchemasResponseCollection</a>
+<a href="../api/teams_devices_components_schemas_single.html">TeamsDevicesComponentsSchemasSingle</a>
+<a href="../api/teams_devices_default_device_setting.html">TeamsDevicesDefaultDeviceSetting</a>
+<a href="../api/teams_devices_device.html">TeamsDevicesDevice</a>
+<a href="../api/teams_devices_device_setting.html">TeamsDevicesDeviceSetting</a>
+<a href="../api/teams_devices_device_settings_response_collection.html">TeamsDevicesDeviceSettingsResponseCollection</a>
+<a href="../api/teams_devices_fallback_domain_response_collection.html">TeamsDevicesFallbackDomainResponseCollection</a>
+<a href="../api/teams_devices_global_warp_override.html">TeamsDevicesGlobalWarpOverride</a>
+<a href="../api/teams_devices_id.html">TeamsDevicesId</a>
+<a href="../api/teams_devices_override_code.html">TeamsDevicesOverrideCode</a>
+<a href="../api/teams_devices_response_collection.html">TeamsDevicesResponseCollection</a>
+<a href="../api/teams_devices_schemas_id.html">TeamsDevicesSchemasId</a>
+<a href="../api/teams_devices_schemas_response_collection.html">TeamsDevicesSchemasResponseCollection</a>
+<a href="../api/teams_devices_schemas_single.html">TeamsDevicesSchemasSingle</a>
+<a href="../api/teams_devices_single.html">TeamsDevicesSingle</a>
+<a href="../api/teams_devices_split_tunnel_include_response_collection.html">TeamsDevicesSplitTunnelIncludeResponseCollection</a>
+<a href="../api/teams_devices_split_tunnel_response_collection.html">TeamsDevicesSplitTunnelResponseCollection</a>
+<a href="../api/teams_devices_zero_trust_account_device_setting.html">TeamsDevicesZeroTrustAccountDeviceSetting</a>
+<a href="../api/tunnel.html">Tunnel</a>
+<a href="../api/tunnel_cfd_tunnel_response_collection.html">TunnelCfdTunnelResponseCollection</a>
+<a href="../api/tunnel_cfd_tunnel_response_single.html">TunnelCfdTunnelResponseSingle</a>
+<a href="../api/tunnel_configuration.html">TunnelConfiguration</a>
+<a href="../api/tunnel_empty.html">TunnelEmpty</a>
+<a href="../api/tunnel_hostname_route_response_collection.html">TunnelHostnameRouteResponseCollection</a>
+<a href="../api/tunnel_hostname_route_response_single.html">TunnelHostnameRouteResponseSingle</a>
+<a href="../api/tunnel_mesh_configuration_response_single.html">TunnelMeshConfigurationResponseSingle</a>
+<a href="../api/tunnel_route_response_single.html">TunnelRouteResponseSingle</a>
+<a href="../api/tunnel_subnet_response_collection.html">TunnelSubnetResponseCollection</a>
+<a href="../api/tunnel_subnet_response_single.html">TunnelSubnetResponseSingle</a>
+<a href="../api/tunnel_subnet_response_single_nullable.html">TunnelSubnetResponseSingleNullable</a>
+<a href="../api/tunnel_teamnet_response_collection.html">TunnelTeamnetResponseCollection</a>
+<a href="../api/tunnel_teamnet_response_single.html">TunnelTeamnetResponseSingle</a>
+<a href="../api/tunnel_tunnel_client.html">TunnelTunnelClient</a>
+<a href="../api/tunnel_tunnel_connection.html">TunnelTunnelConnection</a>
+<a href="../api/tunnel_tunnel_response_token.html">TunnelTunnelResponseToken</a>
+<a href="../api/tunnel_tunnel_warp_connector_client.html">TunnelTunnelWarpConnectorClient</a>
+<a href="../api/tunnel_tunnel_warp_connector_connection.html">TunnelTunnelWarpConnectorConnection</a>
+<a href="../api/tunnel_vnet_response_collection.html">TunnelVnetResponseCollection</a>
+<a href="../api/tunnel_vnet_response_single.html">TunnelVnetResponseSingle</a>
+<a href="../api/tunnel_warp_connector_response_collection.html">TunnelWarpConnectorResponseCollection</a>
+<a href="../api/tunnel_warp_connector_response_single.html">TunnelWarpConnectorResponseSingle</a>
+<a href="../api/tunnel_zero_trust_connectivity_setting.html">TunnelZeroTrustConnectivitySetting</a>
+<a href="../api/warp.html">Warp</a>
+<a href="../api/warp_change_event.html">WarpChangeEvent</a>
+<a href="../api/warp_teams_device_api_other.html">WarpTeamsDeviceApiOther</a>
+<a href="../api/zero_trust_gateway_applications_review_status.html">ZeroTrustGatewayApplicationsReviewStatus</a>
+<a href="../api/zero_trust_gateway_csv_operation_single.html">ZeroTrustGatewayCsvOperationSingle</a>
+<a href="../api/zero_trust_gateway_custom_certificate_setting.html">ZeroTrustGatewayCustomCertificateSetting</a>
+<a href="../api/zero_trust_gateway_gateway_account.html">ZeroTrustGatewayGatewayAccount</a>
+<a href="../api/zero_trust_gateway_gateway_account_config.html">ZeroTrustGatewayGatewayAccountConfig</a>
+<a href="../api/zero_trust_gateway_gateway_account_egress_cidr_pair_list.html">ZeroTrustGatewayGatewayAccountEgressCidrPairList</a>
+<a href="../api/zero_trust_gateway_gateway_account_logging_setting.html">ZeroTrustGatewayGatewayAccountLoggingSetting</a>
+<a href="../api/zero_trust_gateway_list_item_response_collection.html">ZeroTrustGatewayListItemResponseCollection</a>
+<a href="../api/zero_trust_gateway_list_single.html">ZeroTrustGatewayListSingle</a>
+<a href="../api/zero_trust_gateway_response_collection.html">ZeroTrustGatewayResponseCollection</a>
+<a href="../api/zero_trust_gateway_response_collection_10.html">ZeroTrustGatewayResponseCollection10</a>
+<a href="../api/zero_trust_gateway_response_collection_2.html">ZeroTrustGatewayResponseCollection2</a>
+<a href="../api/zero_trust_gateway_response_collection_3.html">ZeroTrustGatewayResponseCollection3</a>
+<a href="../api/zero_trust_gateway_response_collection_4.html">ZeroTrustGatewayResponseCollection4</a>
+<a href="../api/zero_trust_gateway_response_collection_5.html">ZeroTrustGatewayResponseCollection5</a>
+<a href="../api/zero_trust_gateway_response_collection_6.html">ZeroTrustGatewayResponseCollection6</a>
+<a href="../api/zero_trust_gateway_response_collection_7.html">ZeroTrustGatewayResponseCollection7</a>
+<a href="../api/zero_trust_gateway_response_collection_8.html">ZeroTrustGatewayResponseCollection8</a>
+<a href="../api/zero_trust_gateway_response_collection_9.html">ZeroTrustGatewayResponseCollection9</a>
+<a href="../api/zero_trust_gateway_single.html">ZeroTrustGatewaySingle</a>
+<a href="../api/zero_trust_gateway_single_response_2.html">ZeroTrustGatewaySingleResponse2</a>
+<a href="../api/zero_trust_gateway_single_response_3.html">ZeroTrustGatewaySingleResponse3</a>
+<a href="../api/zero_trust_gateway_single_response_4.html">ZeroTrustGatewaySingleResponse4</a>
+<a href="../api/zero_trust_gateway_single_response_5.html">ZeroTrustGatewaySingleResponse5</a>
+<a href="../api/zero_trust_gateway_single_response_6.html">ZeroTrustGatewaySingleResponse6</a>
+<a href="../api/zero_trust_gateway_single_response_7.html">ZeroTrustGatewaySingleResponse7</a>
+<a href="../api/zero_trust_gateway_single_response_with_list_item.html">ZeroTrustGatewaySingleResponseWithListItem</a>
+<a href="../api/zero_trust_risk_scoring.html">ZeroTrustRiskScoring</a>
+<a href="../api/zero_trust_risk_scoring_integration.html">ZeroTrustRiskScoringIntegration</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="dexsyntheticapplicationmonitoring">DexSyntheticApplicationMonitoring</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddexcolos"><code>/accounts/{account_id}/dex/colos</code></a></td>
+<td><code>list</code></td>
+<td>List colos response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddexdevicesdevice_idisps"><code>/accounts/{account_id}/dex/devices/{device_id}/isps</code></a></td>
+<td><code>load</code></td>
+<td>List of ISPs observed for the device</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddextestsoverview"><code>/accounts/{account_id}/dex/tests/overview</code></a></td>
+<td><code>load</code></td>
+<td>Success response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddexhttp-teststest_id"><code>/accounts/{account_id}/dex/http-tests/{test_id}</code></a></td>
+<td><code>load</code></td>
+<td>DEX HTTP test details response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddextraceroute-teststest_id"><code>/accounts/{account_id}/dex/traceroute-tests/{test_id}</code></a></td>
+<td><code>load</code></td>
+<td>DEX traceroute test details response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddexhttp-teststest_idpercentiles"><code>/accounts/{account_id}/dex/http-tests/{test_id}/percentiles</code></a></td>
+<td><code>load</code></td>
+<td>DEX HTTP test percentiles response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddexdevicesdevice_idfleet-statusover-time"><code>/accounts/{account_id}/dex/devices/{device_id}/fleet-status/over-time</code></a></td>
+<td><code>load</code></td>
+<td>Device status over time response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddextraceroute-teststest_idpercentiles"><code>/accounts/{account_id}/dex/traceroute-tests/{test_id}/percentiles</code></a></td>
+<td><code>load</code></td>
+<td>DEX Traceroute test percentiles response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddextraceroute-teststest_idnetwork-path"><code>/accounts/{account_id}/dex/traceroute-tests/{test_id}/network-path</code></a></td>
+<td><code>load</code></td>
+<td>DEX traceroute test network path response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddextestsunique-devices"><code>/accounts/{account_id}/dex/tests/unique-devices</code></a></td>
+<td><code>load</code></td>
+<td>DEX unique devices targeted response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddextraceroute-test-resultstest_result_idnetwork-path"><code>/accounts/{account_id}/dex/traceroute-test-results/{test_result_id}/network-path</code></a></td>
+<td><code>load</code></td>
+<td>DEX traceroute test result network path response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">dex_synthetic_application_monitorings, err := client.DexSyntheticApplicationMonitoring(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;from&quot;: &quot;example&quot;, &quot;to&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(dex_synthetic_application_monitorings)
+dex_synthetic_application_monitoring, err := client.DexSyntheticApplicationMonitoring(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(dex_synthetic_application_monitoring)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local dex_synthetic_application_monitorings, err = client:DexSyntheticApplicationMonitoring():list({ account_id = &quot;example&quot;, from = &quot;example&quot;, to = &quot;example&quot; })
+local dex_synthetic_application_monitoring, err = client:DexSyntheticApplicationMonitoring():load({ account_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$dex_synthetic_application_monitorings = $client-&gt;DexSyntheticApplicationMonitoring()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;from&quot; =&gt; &quot;example&quot;, &quot;to&quot; =&gt; &quot;example&quot;]);
+$dex_synthetic_application_monitoring = $client-&gt;DexSyntheticApplicationMonitoring()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">dex_synthetic_application_monitorings = client.DexSyntheticApplicationMonitoring().list({&quot;account_id&quot;: &quot;example&quot;, &quot;from&quot;: &quot;example&quot;, &quot;to&quot;: &quot;example&quot;})
+dex_synthetic_application_monitoring = client.DexSyntheticApplicationMonitoring().load({&quot;account_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">dex_synthetic_application_monitorings = client.DexSyntheticApplicationMonitoring.list({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;from&quot; =&gt; &quot;example&quot;, &quot;to&quot; =&gt; &quot;example&quot; })
+dex_synthetic_application_monitoring = client.DexSyntheticApplicationMonitoring.load({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const dex_synthetic_application_monitorings = await client.DexSyntheticApplicationMonitoring().list({ account_id: &quot;example&quot;, from: &quot;example&quot;, to: &quot;example&quot; })
+const dex_synthetic_application_monitoring = await client.DexSyntheticApplicationMonitoring().load({ account_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>array of colos.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_iddexcolos" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dex/colos</h3>
+<p>Operation ID: <code>dex-endpoints-list-colos</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or API key in the header (<code>user_service_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Unique Cloudflare account ID. |
+| <code>from</code> | <code>query</code> | <code>string</code> | Yes | Start time for connection period in ISO (RFC3339 - ISO 8601) format. |
+| <code>to</code> | <code>query</code> | <code>string</code> | Yes | End time for connection period in ISO (RFC3339 - ISO 8601) format. |
+| <code>sortBy</code> | <code>query</code> | <code>enum: fleet-status-usage, application-tests-usage</code> | No | Type of usage that colos should be sorted by. If unspecified, returns all Cloudflare colos sorted alphabetically. |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-list-colos-response" class="status" data-status="2xx">200: List colos response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-list-colos-failure-response">4XX: List colos failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_iddexdevicesdevice_idisps" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dex/devices/{device_id}/isps</h3>
+<p>Operation ID: <code>dex-endpoints-list-device-isps</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or API key in the header (<code>user_service_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Unique Cloudflare account ID. |
+| <code>device_id</code> | <code>path</code> | <code>string</code> | Yes | Device-specific ID, given as UUID. |
+| <code>page</code> | <code>query</code> | <code>integer</code> | No | Page number of paginated results. Mutually exclusive with cursor. |
+| <code>per_page</code> | <code>query</code> | <code>integer</code> | Yes | Number of items per page |
+| <code>cursor</code> | <code>query</code> | <code>string</code> | No | Cursor for cursor-based pagination. Mutually exclusive with page. |
+| <code>sort_by</code> | <code>query</code> | <code>enum: time_start</code> | No | The field to sort results by. |
+| <code>sort_order</code> | <code>query</code> | <code>enum: ASC, DESC</code> | No | The order to sort results. |
+| <code>from</code> | <code>query</code> | <code>string (date-time)</code> | No | Start time for the query in ISO 8601 format. |
+| <code>to</code> | <code>query</code> | <code>string (date-time)</code> | No | End time for the query in ISO 8601 format. |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-list-of-isps-observed-for-the-device" class="status" data-status="2xx">200: List of ISPs observed for the device</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-list-device-isps-failure-response">4XX: List device ISPs failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddextestsoverview" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dex/tests/overview</h3>
+<p>Operation ID: <code>dex-endpoints-list-tests-overview</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or API key in the header (<code>user_service_key</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Unique Cloudflare account ID. |
+| <code>colo</code> | <code>query</code> | <code>string</code> | No | Optionally filter result stats to a Cloudflare colo. Cannot be used in combination with deviceId param. |
+| <code>testName</code> | <code>query</code> | <code>string</code> | No | Optionally filter results by test name. |
+| <code>deviceId</code> | <code>query</code> | <code>array of string</code> | No | Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param. |
+| <code>registration_id</code> | <code>query</code> | <code>string</code> | No | Optionally filter results to a specific device registration. Must be used in combination with a single deviceId. |
+| <code>page</code> | <code>query</code> | <code>number</code> | No | Page number of paginated results |
+| <code>per_page</code> | <code>query</code> | <code>number</code> | No | Number of items per page |
+| <code>kind</code> | <code>query</code> | <code>enum: http, traceroute</code> | No | Filter by test type. |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-success-response" class="status" data-status="2xx">200: Success response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-failure-response">4XX: Failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddexhttp-teststest_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dex/http-tests/{test_id}</h3>
+<p>Operation ID: <code>dex-endpoints-http-test-details</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or API key in the header (<code>user_service_key</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Unique Cloudflare account ID. |
+| <code>test_id</code> | <code>path</code> | <code>string</code> | Yes | Unique identifier for a specific test. |
+| <code>deviceId</code> | <code>query</code> | <code>array of string</code> | No | Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param. |
+| <code>from</code> | <code>query</code> | <code>string</code> | Yes | Start time for aggregate metrics in ISO ms. |
+| <code>to</code> | <code>query</code> | <code>string</code> | Yes | End time for aggregate metrics in ISO ms. |
+| <code>interval</code> | <code>query</code> | <code>enum: minute, hour</code> | Yes | Time interval for aggregate time slots. |
+| <code>colo</code> | <code>query</code> | <code>string</code> | No | Optionally filter result stats to a Cloudflare colo. Cannot be used in combination with deviceId param. |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-dex-http-test-details-response" class="status" data-status="2xx">200: DEX HTTP test details response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-dex-http-test-details-failure-response">4XX: DEX HTTP test details failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddextraceroute-teststest_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dex/traceroute-tests/{test_id}</h3>
+<p>Operation ID: <code>dex-endpoints-traceroute-test-details</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or API key in the header (<code>user_service_key</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Unique Cloudflare account ID. |
+| <code>test_id</code> | <code>path</code> | <code>string</code> | Yes | Unique identifier for a specific test. |
+| <code>deviceId</code> | <code>query</code> | <code>array of string</code> | No | Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param. |
+| <code>from</code> | <code>query</code> | <code>string</code> | Yes | Start time for aggregate metrics in ISO ms. |
+| <code>to</code> | <code>query</code> | <code>string</code> | Yes | End time for aggregate metrics in ISO ms. |
+| <code>interval</code> | <code>query</code> | <code>enum: minute, hour</code> | Yes | Time interval for aggregate time slots. |
+| <code>colo</code> | <code>query</code> | <code>string</code> | No | Optionally filter result stats to a Cloudflare colo. Cannot be used in combination with deviceId param. |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-dex-traceroute-test-details-response" class="status" data-status="2xx">200: DEX traceroute test details response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-dex-traceroute-test-details-response-failure-response">4XX: DEX traceroute test details response failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddexhttp-teststest_idpercentiles" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dex/http-tests/{test_id}/percentiles</h3>
+<p>Operation ID: <code>dex-endpoints-http-test-percentiles</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or API key in the header (<code>user_service_key</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Unique Cloudflare account ID. |
+| <code>test_id</code> | <code>path</code> | <code>string</code> | Yes | Unique identifier for a specific test. |
+| <code>deviceId</code> | <code>query</code> | <code>array of string</code> | No | Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param. |
+| <code>from</code> | <code>query</code> | <code>string</code> | Yes | Start time for the query in ISO (RFC3339 - ISO 8601) format. |
+| <code>to</code> | <code>query</code> | <code>string</code> | Yes | End time for the query in ISO (RFC3339 - ISO 8601) format. |
+| <code>colo</code> | <code>query</code> | <code>string</code> | No | Optionally filter result stats to a Cloudflare colo. Cannot be used in combination with deviceId param. |</p>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-dex-http-test-percentiles-response" class="status" data-status="2xx">200: DEX HTTP test percentiles response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-dex-http-test-percentiles-failure-response">4XX: DEX HTTP test percentiles failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddexdevicesdevice_idfleet-statusover-time" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dex/devices/{device_id}/fleet-status/over-time</h3>
+<p>Operation ID: <code>dex-device-status-over-time</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or API key in the header (<code>user_service_key</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Unique Cloudflare account ID. |
+| <code>device_id</code> | <code>path</code> | <code>string</code> | Yes | Device-specific ID, given as UUID. |
+| <code>from</code> | <code>query</code> | <code>string</code> | Yes | Start of the time range to query. Timestamp can be provided in ISO 8601 datetime format or milliseconds since epoch. |
+| <code>to</code> | <code>query</code> | <code>string</code> | Yes | End of the time range to query. Timestamp can be provided in ISO 8601 datetime format or milliseconds since epoch. |
+| <code>interval</code> | <code>query</code> | <code>enum: minute, hour</code> | Yes | Time interval for aggregate time slots. |
+| <code>colo</code> | <code>query</code> | <code>string</code> | No | List of data centers to filter results. |</p>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-device-status-over-time-response" class="status" data-status="2xx">200: Device status over time response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-device-status-over-time-failure-response">4XX: Device status over time failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddextraceroute-teststest_idpercentiles" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dex/traceroute-tests/{test_id}/percentiles</h3>
+<p>Operation ID: <code>dex-endpoints-traceroute-test-percentiles</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or API key in the header (<code>user_service_key</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Unique Cloudflare account ID. |
+| <code>test_id</code> | <code>path</code> | <code>string</code> | Yes | Unique identifier for a specific test. |
+| <code>deviceId</code> | <code>query</code> | <code>array of string</code> | No | Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param. |
+| <code>from</code> | <code>query</code> | <code>string</code> | Yes | Start time for the query in ISO (RFC3339 - ISO 8601) format. |
+| <code>to</code> | <code>query</code> | <code>string</code> | Yes | End time for the query in ISO (RFC3339 - ISO 8601) format. |
+| <code>colo</code> | <code>query</code> | <code>string</code> | No | Optionally filter result stats to a Cloudflare colo. Cannot be used in combination with deviceId param. |</p>
+<h4 id="responses-7">Responses</h4>
+<h5 id="200-dex-traceroute-test-percentiles-response" class="status" data-status="2xx">200: DEX Traceroute test percentiles response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-dex-traceroute-test-percentiles-failure-response">4XX: DEX Traceroute test percentiles failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddextraceroute-teststest_idnetwork-path" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dex/traceroute-tests/{test_id}/network-path</h3>
+<p>Operation ID: <code>dex-endpoints-traceroute-test-network-path</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or API key in the header (<code>user_service_key</code>).</p>
+<h4 id="parameters-8">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Unique Cloudflare account ID. |
+| <code>test_id</code> | <code>path</code> | <code>string</code> | Yes | Unique identifier for a specific test. |
+| <code>deviceId</code> | <code>query</code> | <code>string</code> | Yes | Device to filter traceroute result runs to. |
+| <code>from</code> | <code>query</code> | <code>string</code> | Yes | Start time for aggregate metrics in ISO ms. |
+| <code>to</code> | <code>query</code> | <code>string</code> | Yes | End time for aggregate metrics in ISO ms. |
+| <code>interval</code> | <code>query</code> | <code>enum: minute, hour</code> | Yes | Time interval for aggregate time slots. |</p>
+<h4 id="responses-8">Responses</h4>
+<h5 id="200-dex-traceroute-test-network-path-response" class="status" data-status="2xx">200: DEX traceroute test network path response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-dex-traceroute-test-network-path-failure-response">4XX: DEX traceroute test network path failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddextestsunique-devices" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dex/tests/unique-devices</h3>
+<p>Operation ID: <code>dex-endpoints-tests-unique-devices</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or API key in the header (<code>user_service_key</code>).</p>
+<h4 id="parameters-9">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Unique Cloudflare account ID. |
+| <code>testName</code> | <code>query</code> | <code>string</code> | No | Optionally filter results by test name. |
+| <code>deviceId</code> | <code>query</code> | <code>array of string</code> | No | Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param. |</p>
+<h4 id="responses-9">Responses</h4>
+<h5 id="200-dex-unique-devices-targeted-response" class="status" data-status="2xx">200: DEX unique devices targeted response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-dex-unique-devices-targeted-failure-response">4XX: DEX unique devices targeted failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddextraceroute-test-resultstest_result_idnetwork-path" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dex/traceroute-test-results/{test_result_id}/network-path</h3>
+<p>Operation ID: <code>dex-endpoints-traceroute-test-result-network-path</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or API key in the header (<code>user_service_key</code>).</p>
+<h4 id="parameters-10">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Unique Cloudflare account ID. |
+| <code>test_result_id</code> | <code>path</code> | <code>string</code> | Yes | Unique identifier for a specific traceroute test. |</p>
+<h4 id="responses-10">Responses</h4>
+<h5 id="200-dex-traceroute-test-result-network-path-response" class="status" data-status="2xx">200: DEX traceroute test result network path response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-dex-traceroute-test-result-network-path-failure-response">4XX: DEX traceroute test result network path failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

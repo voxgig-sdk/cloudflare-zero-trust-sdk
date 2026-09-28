@@ -1,0 +1,50 @@
+# BasicNscSettingFlow
+
+main: kit: flow: BasicNscSettingFlow:
+{
+  entity: "nsc_setting",
+  kind: "basic",
+  name: "BasicNscSettingFlow",
+  step: [
+    {
+      i: {
+        ref: "nsc_setting_ref01",
+        srcdatavar: "nsc_setting_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-nsc_setting_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "nsc_setting_ref01",
+        srcdatavar: "nsc_setting_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "nsc_setting01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-nsc_setting_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicNscSettingFlow"
+}

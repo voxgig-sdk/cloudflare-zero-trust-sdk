@@ -1,0 +1,27 @@
+# BasicWarpTeamsDeviceApiOtherFlow
+
+main: kit: flow: BasicWarpTeamsDeviceApiOtherFlow:
+{
+  entity: "warp_teams_device_api_other",
+  kind: "basic",
+  name: "BasicWarpTeamsDeviceApiOtherFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01",
+        registration_id: "registration01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "warp_teams_device_api_other_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicWarpTeamsDeviceApiOtherFlow"
+}

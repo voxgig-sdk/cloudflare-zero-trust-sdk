@@ -1,0 +1,106 @@
+{
+  "existing": {
+    "zero_trust_gateway_single_response_4": {
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_400": {
+        "action": "s82",
+        "description": "s83",
+        "device_posture": "s84",
+        "enabled": false,
+        "expiration": {},
+        "filters": [],
+        "identity": "s88",
+        "name": "s89",
+        "precedence": 138,
+        "result": {},
+        "rule_settings": {},
+        "schedule": {},
+        "traffic": "s8e",
+        "account_id": "ACCOUNT01",
+        "rule_id": "RULE01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_400"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_401": {
+        "action": "s104",
+        "description": "s105",
+        "device_posture": "s106",
+        "enabled": false,
+        "expiration": {},
+        "filters": [],
+        "identity": "s10a",
+        "name": "s10b",
+        "precedence": 268,
+        "result": {},
+        "rule_settings": {},
+        "schedule": {},
+        "traffic": "s110",
+        "account_id": "ACCOUNT01",
+        "rule_id": "RULE01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_401"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_402": {
+        "action": "s186",
+        "description": "s187",
+        "device_posture": "s188",
+        "enabled": false,
+        "expiration": {},
+        "filters": [],
+        "identity": "s18c",
+        "name": "s18d",
+        "precedence": 398,
+        "result": {},
+        "rule_settings": {},
+        "schedule": {},
+        "traffic": "s192",
+        "account_id": "ACCOUNT01",
+        "rule_id": "RULE01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_402"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_single_response_4": {
+      "zero_trust_gateway_single_response_4_ref01": {
+        "action": "s208",
+        "description": "s209",
+        "device_posture": "s20a",
+        "enabled": false,
+        "expiration": {},
+        "filters": [],
+        "identity": "s20e",
+        "name": "s20f",
+        "precedence": 528,
+        "result": {},
+        "rule_settings": {},
+        "schedule": {},
+        "traffic": "s214"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/gateway/rules/{rule_id}/reset_expiration": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/gateway/rules": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/gateway/rules/{rule_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/gateway/rules/{rule_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/gateway/rules/{rule_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

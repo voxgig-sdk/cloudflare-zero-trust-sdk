@@ -1,0 +1,46 @@
+{
+  "existing": {
+    "tunnel_empty": {
+      "TUNNEL_EMPTY00": {
+        "client_id": "CLIENT01",
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01",
+        "warp_connector_id": "WARP_CONNECTOR01",
+        "id": "TUNNEL_EMPTY00"
+      },
+      "TUNNEL_EMPTY01": {
+        "client_id": "CLIENT01",
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01",
+        "warp_connector_id": "WARP_CONNECTOR01",
+        "id": "TUNNEL_EMPTY01"
+      },
+      "TUNNEL_EMPTY02": {
+        "client_id": "CLIENT01",
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01",
+        "warp_connector_id": "WARP_CONNECTOR01",
+        "id": "TUNNEL_EMPTY02"
+      }
+    }
+  },
+  "new": {
+    "tunnel_empty": {
+      "tunnel_empty_ref01": {
+        "client_id": "CLIENT01"
+      }
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/warp_connector/{tunnel_id}/failover": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

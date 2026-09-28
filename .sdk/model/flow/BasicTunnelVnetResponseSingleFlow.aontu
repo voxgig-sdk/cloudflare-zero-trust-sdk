@@ -1,0 +1,82 @@
+# BasicTunnelVnetResponseSingleFlow
+
+main: kit: flow: BasicTunnelVnetResponseSingleFlow:
+{
+  entity: "tunnel_vnet_response_single",
+  kind: "basic",
+  name: "BasicTunnelVnetResponseSingleFlow",
+  step: [
+    {
+      i: {
+        ref: "tunnel_vnet_response_single_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "tunnel_vnet_response_single_ref01",
+        srcdatavar: "tunnel_vnet_response_single_ref01_data",
+        suffix: "_up0",
+        textfield: "comment"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tunnel_vnet_response_single_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "tunnel_vnet_response_single_ref01",
+        srcdatavar: "tunnel_vnet_response_single_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "tunnel_vnet_response_single01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tunnel_vnet_response_single_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "tunnel_vnet_response_single_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "tunnel_vnet_response_single01"
+      }
+
+      o: "remove"
+    }
+  ],
+  "key$": "BasicTunnelVnetResponseSingleFlow"
+}

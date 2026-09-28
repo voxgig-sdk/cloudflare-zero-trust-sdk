@@ -1,0 +1,396 @@
+# Entity: digital_experience_monitoring_device
+
+main: kit: entity: digital_experience_monitoring_device: {
+
+  alias: field: {}
+
+  fields: {
+    alwaysOn: {
+      h: "Always On"
+      n: "alwaysOn"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    batteryCharging: {
+      h: "Battery Charging"
+      n: "batteryCharging"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    batteryCycles: {
+      fo: "int64"
+      h: "Battery Cycles"
+      n: "batteryCycles"
+      r: false
+      t: "`$INTEGER`"
+    }
+    batteryPct: {
+      fo: "float"
+      h: "Battery Pct"
+      n: "batteryPct"
+      r: false
+      t: "`$NUMBER`"
+    }
+    colo: {
+      h: "Colo"
+      n: "colo"
+      r: true
+      sh: "Cloudflare colo airport code."
+      t: "`$STRING`"
+    }
+    connectionType: {
+      h: "Connection Type"
+      n: "connectionType"
+      r: false
+      t: "`$STRING`"
+    }
+    cpuPct: {
+      fo: "float"
+      h: "Cpu Pct"
+      n: "cpuPct"
+      r: false
+      t: "`$NUMBER`"
+    }
+    cpuPctByApp: {
+      h: "Cpu Pct By App"
+      n: "cpuPctByApp"
+      r: false
+      t: "`$ARRAY`"
+    }
+    deviceId: {
+      h: "Device Id"
+      n: "deviceId"
+      r: true
+      sh: "Device identifier (UUID v4)"
+      t: "`$STRING`"
+    }
+    deviceIpv4: {
+      h: "Device Ipv4"
+      n: "deviceIpv4"
+      r: false
+      t: "`$OBJECT`"
+    }
+    deviceIpv6: {
+      h: "Device Ipv6"
+      n: "deviceIpv6"
+      r: false
+      t: "`$OBJECT`"
+    }
+    deviceName: {
+      h: "Device Name"
+      n: "deviceName"
+      r: false
+      sh: "Device identifier (human readable)."
+      t: "`$STRING`"
+    }
+    deviceRegistration: {
+      de: true
+      h: "Device Registration"
+      n: "deviceRegistration"
+      r: false
+      sh: "Deprecated: use registrationId."
+      t: "`$STRING`"
+    }
+    diskReadBps: {
+      fo: "int64"
+      h: "Disk Read Bps"
+      n: "diskReadBps"
+      r: false
+      t: "`$INTEGER`"
+    }
+    diskUsagePct: {
+      fo: "float"
+      h: "Disk Usage Pct"
+      n: "diskUsagePct"
+      r: false
+      t: "`$NUMBER`"
+    }
+    diskWriteBps: {
+      fo: "int64"
+      h: "Disk Write Bps"
+      n: "diskWriteBps"
+      r: false
+      t: "`$INTEGER`"
+    }
+    dohSubdomain: {
+      h: "Doh Subdomain"
+      n: "dohSubdomain"
+      r: false
+      t: "`$STRING`"
+    }
+    estimatedLossPct: {
+      fo: "float"
+      h: "Estimated Loss Pct"
+      n: "estimatedLossPct"
+      r: false
+      t: "`$NUMBER`"
+    }
+    firewallEnabled: {
+      h: "Firewall Enabled"
+      n: "firewallEnabled"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    gatewayIpv4: {
+      h: "Gateway Ipv4"
+      n: "gatewayIpv4"
+      r: false
+      t: "`$OBJECT`"
+    }
+    gatewayIpv6: {
+      h: "Gateway Ipv6"
+      n: "gatewayIpv6"
+      r: false
+      t: "`$OBJECT`"
+    }
+    handshakeLatencyMs: {
+      fo: "int64"
+      h: "Handshake Latency Ms"
+      n: "handshakeLatencyMs"
+      r: false
+      t: "`$NUMBER`"
+    }
+    ispIpv4: {
+      h: "Isp Ipv4"
+      n: "ispIpv4"
+      r: false
+      t: "`$OBJECT`"
+    }
+    ispIpv6: {
+      h: "Isp Ipv6"
+      n: "ispIpv6"
+      r: false
+      t: "`$OBJECT`"
+    }
+    metal: {
+      h: "Metal"
+      n: "metal"
+      r: false
+      t: "`$STRING`"
+    }
+    mode: {
+      h: "Mode"
+      n: "mode"
+      r: true
+      sh: "The mode under which the WARP client is run."
+      t: "`$STRING`"
+    }
+    networkRcvdBps: {
+      fo: "int64"
+      h: "Network Rcvd Bps"
+      n: "networkRcvdBps"
+      r: false
+      t: "`$INTEGER`"
+    }
+    networkSentBps: {
+      fo: "int64"
+      h: "Network Sent Bps"
+      n: "networkSentBps"
+      r: false
+      t: "`$INTEGER`"
+    }
+    networkSsid: {
+      h: "Network Ssid"
+      n: "networkSsid"
+      r: false
+      t: "`$STRING`"
+    }
+    personEmail: {
+      h: "Person Email"
+      n: "personEmail"
+      r: false
+      sh: "User contact email address"
+      t: "`$STRING`"
+    }
+    platform: {
+      h: "Platform"
+      n: "platform"
+      r: true
+      sh: "Operating system."
+      t: "`$STRING`"
+    }
+    ramAvailableKb: {
+      fo: "int64"
+      h: "Ram Available Kb"
+      n: "ramAvailableKb"
+      r: false
+      t: "`$INTEGER`"
+    }
+    ramUsedPct: {
+      fo: "float"
+      h: "Ram Used Pct"
+      n: "ramUsedPct"
+      r: false
+      t: "`$NUMBER`"
+    }
+    ramUsedPctByApp: {
+      h: "Ram Used Pct By App"
+      n: "ramUsedPctByApp"
+      r: false
+      t: "`$ARRAY`"
+    }
+    registrationId: {
+      h: "Registration Id"
+      n: "registrationId"
+      r: false
+      sh: "Device registration identifier (UUID v4)."
+      t: "`$STRING`"
+    }
+    rtt: {
+      h: "Rtt"
+      n: "rtt"
+      r: false
+      sh: "Round-trip time statistics for the WARP tunnel."
+      t: "`$OBJECT`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Network status."
+      t: "`$STRING`"
+    }
+    switchLocked: {
+      h: "Switch Locked"
+      n: "switchLocked"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    timestamp: {
+      h: "Timestamp"
+      n: "timestamp"
+      r: true
+      t: "`$STRING`"
+    }
+    tunnelStats: {
+      h: "Tunnel Stats"
+      n: "tunnelStats"
+      r: false
+      sh: "WARP tunnel packet and byte counters."
+      t: "`$OBJECT`"
+    }
+    tunnelType: {
+      h: "Tunnel Type"
+      n: "tunnelType"
+      r: false
+      t: "`$STRING`"
+    }
+    version: {
+      h: "Version"
+      n: "version"
+      r: true
+      sh: "WARP client version."
+      t: "`$STRING`"
+    }
+    wifiStrengthDbm: {
+      fo: "int64"
+      h: "Wifi Strength Dbm"
+      n: "wifiStrengthDbm"
+      r: false
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "digital_experience_monitoring_device"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/devices/{device_id}/fleet-status/live"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "cb49c27f-7f97-49c5-b6f3-f7c01ead0fd7"
+                k: "param"
+                n: "device_id"
+                or: "device_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "SJC"
+                k: "query"
+                n: "colo"
+                or: "colo"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 10
+                k: "query"
+                n: "since_minute"
+                or: "since_minute"
+                r: true
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "2023-10-11T00:00:00Z"
+                k: "query"
+                n: "time_now"
+                or: "time_now"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/devices/{device_id}/fleet-status/live"
+          q: {
+            exist: [
+              "account_id"
+              "colo"
+              "device_id"
+              "since_minute"
+              "time_now"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              var: "device_id"
+            }
+            {
+              lit: "fleet-status"
+            }
+            {
+              lit: "live"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

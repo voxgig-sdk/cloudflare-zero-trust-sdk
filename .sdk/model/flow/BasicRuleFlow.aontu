@@ -1,0 +1,9 @@
+# BasicRuleFlow
+
+main: kit: flow: BasicRuleFlow:
+{
+  entity: "rule",
+  kind: "basic",
+  name: "BasicRuleFlow",
+  "key$": "BasicRuleFlow"
+}

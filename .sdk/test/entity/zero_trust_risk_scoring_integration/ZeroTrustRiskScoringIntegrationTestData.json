@@ -1,0 +1,76 @@
+{
+  "existing": {
+    "zero_trust_risk_scoring_integration": {
+      "ZERO_TRUST_RISK_SCORING_INTEGRATION00": {
+        "active": true,
+        "id": "ZERO_TRUST_RISK_SCORING_INTEGRATION00",
+        "integration_type": "s3e",
+        "reference_id": "REFERENCE01",
+        "result": {},
+        "tenant_url": "s41",
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_RISK_SCORING_INTEGRATION01": {
+        "active": true,
+        "id": "ZERO_TRUST_RISK_SCORING_INTEGRATION01",
+        "integration_type": "s7a",
+        "reference_id": "REFERENCE01",
+        "result": {},
+        "tenant_url": "s7d",
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_RISK_SCORING_INTEGRATION02": {
+        "active": true,
+        "id": "ZERO_TRUST_RISK_SCORING_INTEGRATION02",
+        "integration_type": "sb6",
+        "reference_id": "REFERENCE01",
+        "result": {},
+        "tenant_url": "sb9",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_risk_scoring_integration": {
+      "zero_trust_risk_scoring_integration_ref01": {
+        "active": true,
+        "integration_type": "sf2",
+        "reference_id": "REFERENCE01",
+        "result": {},
+        "tenant_url": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/zt_risk_scoring/integrations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/zt_risk_scoring/integrations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/zt_risk_scoring/integrations/reference_id/{reference_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

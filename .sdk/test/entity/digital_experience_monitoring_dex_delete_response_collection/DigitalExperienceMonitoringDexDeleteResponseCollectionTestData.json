@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "digital_experience_monitoring_dex_delete_response_collection": {
+      "DIGITAL_EXPERIENCE_MONITORING_DEX_DELETE_RESPONSE_COLLECTION00": {
+        "account_id": "ACCOUNT01",
+        "dex_test_id": "DEX_TEST01",
+        "id": "DIGITAL_EXPERIENCE_MONITORING_DEX_DELETE_RESPONSE_COLLECTION00"
+      },
+      "DIGITAL_EXPERIENCE_MONITORING_DEX_DELETE_RESPONSE_COLLECTION01": {
+        "account_id": "ACCOUNT01",
+        "dex_test_id": "DEX_TEST01",
+        "id": "DIGITAL_EXPERIENCE_MONITORING_DEX_DELETE_RESPONSE_COLLECTION01"
+      },
+      "DIGITAL_EXPERIENCE_MONITORING_DEX_DELETE_RESPONSE_COLLECTION02": {
+        "account_id": "ACCOUNT01",
+        "dex_test_id": "DEX_TEST01",
+        "id": "DIGITAL_EXPERIENCE_MONITORING_DEX_DELETE_RESPONSE_COLLECTION02"
+      }
+    }
+  },
+  "new": {
+    "digital_experience_monitoring_dex_delete_response_collection": {
+      "digital_experience_monitoring_dex_delete_response_collection_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

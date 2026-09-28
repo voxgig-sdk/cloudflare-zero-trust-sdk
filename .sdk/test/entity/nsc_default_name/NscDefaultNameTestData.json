@@ -1,0 +1,38 @@
+{
+  "existing": {
+    "nsc_default_name": {
+      "NSC_DEFAULT_NAME00": {
+        "name": "sa",
+        "account_id": "ACCOUNT01",
+        "interconnect_id": "INTERCONNECT01",
+        "id": "NSC_DEFAULT_NAME00"
+      },
+      "NSC_DEFAULT_NAME01": {
+        "name": "s14",
+        "account_id": "ACCOUNT01",
+        "interconnect_id": "INTERCONNECT01",
+        "id": "NSC_DEFAULT_NAME01"
+      },
+      "NSC_DEFAULT_NAME02": {
+        "name": "s1e",
+        "account_id": "ACCOUNT01",
+        "interconnect_id": "INTERCONNECT01",
+        "id": "NSC_DEFAULT_NAME02"
+      }
+    }
+  },
+  "new": {
+    "nsc_default_name": {
+      "nsc_default_name_ref01": {
+        "name": "s28"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cni/interconnects/{icon}/loa/default": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

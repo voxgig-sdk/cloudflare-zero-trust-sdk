@@ -1,0 +1,275 @@
+# Entity: digital_experience_monitoring_dex_single
+
+main: kit: entity: digital_experience_monitoring_dex_single: {
+
+  alias: field: {}
+
+  fields: {
+    created: {
+      fo: "date-time"
+      h: "Created"
+      n: "created"
+      r: false
+      ro: true
+      sh: "Date the test was created, in RFC 3339 format."
+      t: "`$STRING`"
+    }
+    data: {
+      h: "Data"
+      n: "data"
+      r: true
+      sh: "The configuration object which contains the details for the WARP client to conduct the test."
+      t: "`$OBJECT`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Additional details about the test."
+      t: "`$STRING`"
+    }
+    enabled: {
+      h: "Enabled"
+      n: "enabled"
+      r: true
+      sh: "Determines whether or not the test is active."
+      t: "`$BOOLEAN`"
+    }
+    interval: {
+      h: "Interval"
+      n: "interval"
+      r: true
+      sh: "How often the test will run."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "The name of the DEX test."
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      t: "`$OBJECT`"
+    }
+    target_policies: {
+      h: "Target Policies"
+      n: "target_policies"
+      r: false
+      t: "`$ANY`"
+    }
+    targeted: {
+      h: "Targeted"
+      n: "targeted"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    test_id: {
+      h: "Test Id"
+      n: "test_id"
+      r: false
+      ro: true
+      sh: "The unique identifier for the test."
+      t: "`$STRING`"
+    }
+    updated: {
+      fo: "date-time"
+      h: "Updated"
+      n: "updated"
+      r: false
+      ro: true
+      sh: "Date the test was last updated, in RFC 3339 format."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "digital_experience_monitoring_dex_single"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/dex/devices/dex_tests"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/dex/devices/dex_tests"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              lit: "dex_tests"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "372e67954025e0ba6aaa6d586b9e0b59"
+                k: "param"
+                n: "dex_test_id"
+                or: "dex_test_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}"
+          q: {
+            exist: [
+              "account_id"
+              "dex_test_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              lit: "dex_tests"
+            }
+            {
+              var: "dex_test_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "dex_test_id"
+                or: "dex_test_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}"
+          q: {
+            exist: [
+              "account_id"
+              "dex_test_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              lit: "dex_tests"
+            }
+            {
+              var: "dex_test_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

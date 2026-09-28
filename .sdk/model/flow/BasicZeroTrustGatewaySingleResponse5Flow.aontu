@@ -1,0 +1,68 @@
+# BasicZeroTrustGatewaySingleResponse5Flow
+
+main: kit: flow: BasicZeroTrustGatewaySingleResponse5Flow:
+{
+  entity: "zero_trust_gateway_single_response_5",
+  kind: "basic",
+  name: "BasicZeroTrustGatewaySingleResponse5Flow",
+  step: [
+    {
+      i: {
+        ref: "zero_trust_gateway_single_response_5_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "zero_trust_gateway_single_response_5_ref01",
+        srcdatavar: "zero_trust_gateway_single_response_5_ref01_data",
+        suffix: "_up0",
+        textfield: "kind"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-zero_trust_gateway_single_response_5_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "zero_trust_gateway_single_response_5_ref01",
+        srcdatavar: "zero_trust_gateway_single_response_5_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "zero_trust_gateway_single_response_501"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-zero_trust_gateway_single_response_5_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicZeroTrustGatewaySingleResponse5Flow"
+}

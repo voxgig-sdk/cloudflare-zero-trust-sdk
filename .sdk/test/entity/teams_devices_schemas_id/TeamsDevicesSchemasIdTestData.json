@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "teams_devices_schemas_id": {
+      "TEAMS_DEVICES_SCHEMAS_ID00": {
+        "account_id": "ACCOUNT01",
+        "integration_id": "INTEGRATION01",
+        "id": "TEAMS_DEVICES_SCHEMAS_ID00"
+      },
+      "TEAMS_DEVICES_SCHEMAS_ID01": {
+        "account_id": "ACCOUNT01",
+        "integration_id": "INTEGRATION01",
+        "id": "TEAMS_DEVICES_SCHEMAS_ID01"
+      },
+      "TEAMS_DEVICES_SCHEMAS_ID02": {
+        "account_id": "ACCOUNT01",
+        "integration_id": "INTEGRATION01",
+        "id": "TEAMS_DEVICES_SCHEMAS_ID02"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_schemas_id": {
+      "teams_devices_schemas_id_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/devices/posture/integration/{integration_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

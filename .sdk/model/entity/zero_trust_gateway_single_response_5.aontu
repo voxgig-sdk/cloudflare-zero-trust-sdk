@@ -1,0 +1,217 @@
+# Entity: zero_trust_gateway_single_response_5
+
+main: kit: entity: zero_trust_gateway_single_response_5: {
+
+  alias: field: {}
+
+  fields: {
+    ips: {
+      h: "Ips"
+      n: "ips"
+      r: false
+      sh: "Specify the list of CIDRs to restrict ingress connections."
+      t: "`$ARRAY`"
+    }
+    kind: {
+      h: "Kind"
+      n: "kind"
+      r: false
+      sh: "The proxy endpoint kind."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Specify the name of the proxy endpoint."
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ANY`"
+    }
+  }
+
+  name: "zero_trust_gateway_single_response_5"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/gateway/proxy_endpoints"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/gateway/proxy_endpoints"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "proxy_endpoints"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "ed35569b41ce4d1facfe683550f54086"
+                k: "param"
+                n: "proxy_endpoint_id"
+                or: "proxy_endpoint_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}"
+          q: {
+            exist: [
+              "account_id"
+              "proxy_endpoint_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "proxy_endpoints"
+            }
+            {
+              var: "proxy_endpoint_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "ed35569b41ce4d1facfe683550f54086"
+                k: "param"
+                n: "proxy_endpoint_id"
+                or: "proxy_endpoint_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}"
+          q: {
+            exist: [
+              "account_id"
+              "proxy_endpoint_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "proxy_endpoints"
+            }
+            {
+              var: "proxy_endpoint_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.proxy_endpoint")]
+  ]
+
+}

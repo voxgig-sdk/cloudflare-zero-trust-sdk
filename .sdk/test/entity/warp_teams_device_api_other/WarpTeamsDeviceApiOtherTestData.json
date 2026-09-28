@@ -1,0 +1,47 @@
+{
+  "existing": {
+    "warp_teams_device_api_other": {
+      "WARP_TEAMS_DEVICE_API_OTHER00": {
+        "errors": [],
+        "messages": [],
+        "result": "s2a",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "registration_id": "REGISTRATION01"
+      },
+      "WARP_TEAMS_DEVICE_API_OTHER01": {
+        "errors": [],
+        "messages": [],
+        "result": "s52",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "registration_id": "REGISTRATION01"
+      },
+      "WARP_TEAMS_DEVICE_API_OTHER02": {
+        "errors": [],
+        "messages": [],
+        "result": "s7a",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "registration_id": "REGISTRATION01"
+      }
+    }
+  },
+  "new": {
+    "warp_teams_device_api_other": {
+      "warp_teams_device_api_other_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": "sa2",
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/devices/registrations/{registration_id}/override_codes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

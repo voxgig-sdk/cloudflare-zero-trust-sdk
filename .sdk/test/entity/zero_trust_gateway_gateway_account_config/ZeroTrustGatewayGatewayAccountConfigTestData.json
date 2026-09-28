@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "zero_trust_gateway_gateway_account_config": {
+      "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_CONFIG00": {
+        "result": {},
+        "settings": {},
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_CONFIG00"
+      },
+      "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_CONFIG01": {
+        "result": {},
+        "settings": {},
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_CONFIG01"
+      },
+      "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_CONFIG02": {
+        "result": {},
+        "settings": {},
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_CONFIG02"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_gateway_account_config": {
+      "zero_trust_gateway_gateway_account_config_ref01": {
+        "result": {},
+        "settings": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/gateway/configuration": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/gateway/configuration": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/gateway/configuration": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

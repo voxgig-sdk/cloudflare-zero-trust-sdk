@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "digital_experience_monitoring_fleet_status_device": {
+      "DIGITAL_EXPERIENCE_MONITORING_FLEET_STATUS_DEVICE00": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "DIGITAL_EXPERIENCE_MONITORING_FLEET_STATUS_DEVICE01": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "DIGITAL_EXPERIENCE_MONITORING_FLEET_STATUS_DEVICE02": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "digital_experience_monitoring_fleet_status_device": {
+      "digital_experience_monitoring_fleet_status_device_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/dex/fleet-status/devices": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

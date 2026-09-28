@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "zero_trust_gateway_response_collection_2": {
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_200": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_201": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_202": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_response_collection_2": {
+      "zero_trust_gateway_response_collection_2_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/gateway/dns_destination_ips": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

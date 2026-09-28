@@ -1,0 +1,406 @@
+# Entity: zero_trust_gateway_single_response_4
+
+main: kit: entity: zero_trust_gateway_single_response_4: {
+
+  alias: field: {}
+
+  fields: {
+    action: {
+      h: "Action"
+      n: "action"
+      r: true
+      sh: "Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Specify the rule description."
+      t: "`$STRING`"
+    }
+    device_posture: {
+      h: "Device Posture"
+      n: "device_posture"
+      r: false
+      sh: "Specify the wirefilter expression used for device posture check."
+      t: "`$STRING`"
+    }
+    enabled: {
+      h: "Enabled"
+      n: "enabled"
+      r: false
+      sh: "Specify whether the rule is enabled."
+      t: "`$BOOLEAN`"
+    }
+    expiration: {
+      h: "Expiration"
+      n: "expiration"
+      r: true
+      sh: "Defines the expiration time stamp and default duration of a DNS policy."
+      t: "`$OBJECT`"
+    }
+    filters: {
+      h: "Filters"
+      n: "filters"
+      r: false
+      sh: "Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions."
+      t: "`$ARRAY`"
+    }
+    identity: {
+      h: "Identity"
+      n: "identity"
+      r: false
+      sh: "Specify the wirefilter expression used for identity matching."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      op: {
+        patch: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "Specify the rule name."
+      t: "`$STRING`"
+    }
+    precedence: {
+      h: "Precedence"
+      n: "precedence"
+      r: false
+      sh: "Set the order of your rules."
+      t: "`$INTEGER`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      t: "`$OBJECT`"
+    }
+    rule_settings: {
+      h: "Rule Settings"
+      n: "rule_settings"
+      r: false
+      sh: "Defines settings for this rule."
+      t: "`$OBJECT`"
+    }
+    schedule: {
+      h: "Schedule"
+      n: "schedule"
+      r: false
+      sh: "Defines the schedule for activating DNS policies."
+      t: "`$OBJECT`"
+    }
+    traffic: {
+      h: "Traffic"
+      n: "traffic"
+      r: false
+      sh: "Specify the wirefilter expression used for traffic matching."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "zero_trust_gateway_single_response_4"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/gateway/rules/{rule_id}/reset_expiration"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "rule_id"
+                or: "rule_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/gateway/rules/{rule_id}/reset_expiration"
+          q: {
+            exist: [
+              "account_id"
+              "rule_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "rules"
+            }
+            {
+              var: "rule_id"
+            }
+            {
+              lit: "reset_expiration"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/gateway/rules"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/gateway/rules"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "rules"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/gateway/rules/{rule_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "rule_id"
+                or: "rule_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/gateway/rules/{rule_id}"
+          q: {
+            exist: [
+              "account_id"
+              "rule_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "rules"
+            }
+            {
+              var: "rule_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    patch: {
+      name: "patch"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/gateway/rules/{rule_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "rule_id"
+                or: "rule_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/gateway/rules/{rule_id}"
+          q: {
+            exist: [
+              "account_id"
+              "rule_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "rules"
+            }
+            {
+              var: "rule_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/gateway/rules/{rule_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "rule_id"
+                or: "rule_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/gateway/rules/{rule_id}"
+          q: {
+            exist: [
+              "account_id"
+              "rule_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "rules"
+            }
+            {
+              var: "rule_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.rule")]
+  ]
+
+}

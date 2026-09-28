@@ -1,0 +1,9 @@
+# BasicTunnelSubnetResponseSingleNullableFlow
+
+main: kit: flow: BasicTunnelSubnetResponseSingleNullableFlow:
+{
+  entity: "tunnel_subnet_response_single_nullable",
+  kind: "basic",
+  name: "BasicTunnelSubnetResponseSingleNullableFlow",
+  "key$": "BasicTunnelSubnetResponseSingleNullableFlow"
+}

@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "tunnel_subnet_response_single_nullable": {
+      "TUNNEL_SUBNET_RESPONSE_SINGLE_NULLABLE00": {
+        "account_id": "ACCOUNT01",
+        "subnet_id": "SUBNET01",
+        "id": "TUNNEL_SUBNET_RESPONSE_SINGLE_NULLABLE00"
+      },
+      "TUNNEL_SUBNET_RESPONSE_SINGLE_NULLABLE01": {
+        "account_id": "ACCOUNT01",
+        "subnet_id": "SUBNET01",
+        "id": "TUNNEL_SUBNET_RESPONSE_SINGLE_NULLABLE01"
+      },
+      "TUNNEL_SUBNET_RESPONSE_SINGLE_NULLABLE02": {
+        "account_id": "ACCOUNT01",
+        "subnet_id": "SUBNET01",
+        "id": "TUNNEL_SUBNET_RESPONSE_SINGLE_NULLABLE02"
+      }
+    }
+  },
+  "new": {
+    "tunnel_subnet_response_single_nullable": {
+      "tunnel_subnet_response_single_nullable_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

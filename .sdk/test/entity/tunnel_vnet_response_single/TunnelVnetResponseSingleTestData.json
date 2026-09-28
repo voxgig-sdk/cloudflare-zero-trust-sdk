@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "tunnel_vnet_response_single": {
+      "TUNNEL_VNET_RESPONSE_SINGLE00": {
+        "comment": "s28",
+        "is_default": false,
+        "is_default_network": true,
+        "name": "s2b",
+        "account_id": "ACCOUNT01",
+        "virtual_network_id": "VIRTUAL_NETWORK01",
+        "id": "TUNNEL_VNET_RESPONSE_SINGLE00"
+      },
+      "TUNNEL_VNET_RESPONSE_SINGLE01": {
+        "comment": "s50",
+        "is_default": false,
+        "is_default_network": true,
+        "name": "s53",
+        "account_id": "ACCOUNT01",
+        "virtual_network_id": "VIRTUAL_NETWORK01",
+        "id": "TUNNEL_VNET_RESPONSE_SINGLE01"
+      },
+      "TUNNEL_VNET_RESPONSE_SINGLE02": {
+        "comment": "s78",
+        "is_default": false,
+        "is_default_network": true,
+        "name": "s7b",
+        "account_id": "ACCOUNT01",
+        "virtual_network_id": "VIRTUAL_NETWORK01",
+        "id": "TUNNEL_VNET_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "tunnel_vnet_response_single": {
+      "tunnel_vnet_response_single_ref01": {
+        "comment": "sa0",
+        "is_default": false,
+        "is_default_network": true,
+        "name": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/teamnet/virtual_networks": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

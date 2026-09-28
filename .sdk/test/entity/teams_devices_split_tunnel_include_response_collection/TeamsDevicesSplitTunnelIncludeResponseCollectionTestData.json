@@ -1,0 +1,53 @@
+{
+  "existing": {
+    "teams_devices_split_tunnel_include_response_collection": {
+      "TEAMS_DEVICES_SPLIT_TUNNEL_INCLUDE_RESPONSE_COLLECTION00": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "policy_id": "POLICY01",
+        "id": "TEAMS_DEVICES_SPLIT_TUNNEL_INCLUDE_RESPONSE_COLLECTION00"
+      },
+      "TEAMS_DEVICES_SPLIT_TUNNEL_INCLUDE_RESPONSE_COLLECTION01": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "policy_id": "POLICY01",
+        "id": "TEAMS_DEVICES_SPLIT_TUNNEL_INCLUDE_RESPONSE_COLLECTION01"
+      },
+      "TEAMS_DEVICES_SPLIT_TUNNEL_INCLUDE_RESPONSE_COLLECTION02": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "policy_id": "POLICY01",
+        "id": "TEAMS_DEVICES_SPLIT_TUNNEL_INCLUDE_RESPONSE_COLLECTION02"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_split_tunnel_include_response_collection": {
+      "teams_devices_split_tunnel_include_response_collection_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/devices/policy/{policy_id}/include": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/policy/include": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/devices/policy/{policy_id}/include": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/devices/policy/include": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

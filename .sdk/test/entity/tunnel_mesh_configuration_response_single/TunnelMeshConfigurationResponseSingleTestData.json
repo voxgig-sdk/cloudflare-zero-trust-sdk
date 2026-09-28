@@ -1,0 +1,51 @@
+{
+  "existing": {
+    "tunnel_mesh_configuration_response_single": {
+      "TUNNEL_MESH_CONFIGURATION_RESPONSE_SINGLE00": {
+        "config": {},
+        "ha_mode": "s1f",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "warp_connector_id": "WARP_CONNECTOR01",
+        "id": "TUNNEL_MESH_CONFIGURATION_RESPONSE_SINGLE00"
+      },
+      "TUNNEL_MESH_CONFIGURATION_RESPONSE_SINGLE01": {
+        "config": {},
+        "ha_mode": "s3d",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "warp_connector_id": "WARP_CONNECTOR01",
+        "id": "TUNNEL_MESH_CONFIGURATION_RESPONSE_SINGLE01"
+      },
+      "TUNNEL_MESH_CONFIGURATION_RESPONSE_SINGLE02": {
+        "config": {},
+        "ha_mode": "s5b",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "warp_connector_id": "WARP_CONNECTOR01",
+        "id": "TUNNEL_MESH_CONFIGURATION_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "tunnel_mesh_configuration_response_single": {
+      "tunnel_mesh_configuration_response_single_ref01": {
+        "config": {},
+        "ha_mode": "s79",
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/warp_connector/{tunnel_id}/configurations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/warp_connector/{tunnel_id}/configurations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

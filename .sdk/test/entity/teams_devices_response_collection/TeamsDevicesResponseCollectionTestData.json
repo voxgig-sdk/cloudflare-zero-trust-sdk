@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "teams_devices_response_collection": {
+      "TEAMS_DEVICES_RESPONSE_COLLECTION00": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "TEAMS_DEVICES_RESPONSE_COLLECTION01": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "TEAMS_DEVICES_RESPONSE_COLLECTION02": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_response_collection": {
+      "teams_devices_response_collection_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/devices/posture": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

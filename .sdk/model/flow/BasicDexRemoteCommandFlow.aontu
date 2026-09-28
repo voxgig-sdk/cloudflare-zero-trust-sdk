@@ -1,0 +1,45 @@
+# BasicDexRemoteCommandFlow
+
+main: kit: flow: BasicDexRemoteCommandFlow:
+{
+  entity: "dex_remote_command",
+  kind: "basic",
+  name: "BasicDexRemoteCommandFlow",
+  step: [
+    {
+      i: {
+        ref: "dex_remote_command_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        command_id: "command01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "dex_remote_command_ref01",
+        srcdatavar: "dex_remote_command_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "dex_remote_command01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-dex_remote_command_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDexRemoteCommandFlow"
+}

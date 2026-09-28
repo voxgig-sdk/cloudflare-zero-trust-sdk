@@ -1,0 +1,32 @@
+# BasicDigitalExperienceMonitoringFleetStatusLiveFlow
+
+main: kit: flow: BasicDigitalExperienceMonitoringFleetStatusLiveFlow:
+{
+  entity: "digital_experience_monitoring_fleet_status_live",
+  kind: "basic",
+  name: "BasicDigitalExperienceMonitoringFleetStatusLiveFlow",
+  step: [
+    {
+      i: {
+        ref: "digital_experience_monitoring_fleet_status_live_ref01",
+        srcdatavar: "digital_experience_monitoring_fleet_status_live_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "digital_experience_monitoring_fleet_status_live01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-digital_experience_monitoring_fleet_status_live_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDigitalExperienceMonitoringFleetStatusLiveFlow"
+}

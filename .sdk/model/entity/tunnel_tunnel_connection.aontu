@@ -1,0 +1,88 @@
+# Entity: tunnel_tunnel_connection
+
+main: kit: entity: tunnel_tunnel_connection: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "tunnel_tunnel_connection"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "cfd_tunnel_id"
+                or: "tunnel_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections"
+          q: {
+            exist: [
+              "account_id"
+              "cfd_tunnel_id"
+            ]
+          }
+          r: {
+            param: {
+              tunnel_id: "cfd_tunnel_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cfd_tunnel"
+            }
+            {
+              var: "cfd_tunnel_id"
+            }
+            {
+              lit: "connections"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

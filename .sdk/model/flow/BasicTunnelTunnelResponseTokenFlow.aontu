@@ -1,0 +1,41 @@
+# BasicTunnelTunnelResponseTokenFlow
+
+main: kit: flow: BasicTunnelTunnelResponseTokenFlow:
+{
+  entity: "tunnel_tunnel_response_token",
+  kind: "basic",
+  name: "BasicTunnelTunnelResponseTokenFlow",
+  step: [
+    {
+      i: {
+        ref: "tunnel_tunnel_response_token_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        cfd_tunnel_id: "cfd_tunnel01",
+        warp_connector_id: "warp_connector01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01",
+        warp_connector_id: "warp_connector01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "tunnel_tunnel_response_token_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelTunnelResponseTokenFlow"
+}

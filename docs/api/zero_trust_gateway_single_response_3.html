@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ZeroTrustGatewaySingleResponse3 | Cloudflare Zero Trust Gateway</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Zero Trust Gateway<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-zero-trust-sdk">voxgig-sdk/cloudflare-zero-trust-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Zero Trust Gateway</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/client_version.html">ClientVersion</a>
+<a href="../api/cni.html">Cni</a>
+<a href="../api/deployment_group.html">DeploymentGroup</a>
+<a href="../api/dex_remote_command.html">DexRemoteCommand</a>
+<a href="../api/dex_rule.html">DexRule</a>
+<a href="../api/dex_synthetic_application_monitoring.html">DexSyntheticApplicationMonitoring</a>
+<a href="../api/digital_experience_monitoring_device.html">DigitalExperienceMonitoringDevice</a>
+<a href="../api/digital_experience_monitoring_dex_delete_response_collection.html">DigitalExperienceMonitoringDexDeleteResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_response_collection.html">DigitalExperienceMonitoringDexResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_single.html">DigitalExperienceMonitoringDexSingle</a>
+<a href="../api/digital_experience_monitoring_fleet_status_device.html">DigitalExperienceMonitoringFleetStatusDevice</a>
+<a href="../api/digital_experience_monitoring_fleet_status_live.html">DigitalExperienceMonitoringFleetStatusLive</a>
+<a href="../api/digital_experience_monitoring_fleet_status_over_time.html">DigitalExperienceMonitoringFleetStatusOverTime</a>
+<a href="../api/interconnect.html">Interconnect</a>
+<a href="../api/ip_profile.html">IpProfile</a>
+<a href="../api/list.html">List</a>
+<a href="../api/location.html">Location</a>
+<a href="../api/nsc_cni.html">NscCni</a>
+<a href="../api/nsc_default_name.html">NscDefaultName</a>
+<a href="../api/nsc_interconnect.html">NscInterconnect</a>
+<a href="../api/nsc_setting.html">NscSetting</a>
+<a href="../api/nsc_slot_info.html">NscSlotInfo</a>
+<a href="../api/nsc_status_info.html">NscStatusInfo</a>
+<a href="../api/override_code.html">OverrideCode</a>
+<a href="../api/pacfile.html">Pacfile</a>
+<a href="../api/physical_device.html">PhysicalDevice</a>
+<a href="../api/proxy_endpoint.html">ProxyEndpoint</a>
+<a href="../api/registration.html">Registration</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/teams_devices_api_response_single.html">TeamsDevicesApiResponseSingle</a>
+<a href="../api/teams_devices_components_schemas_response_collection.html">TeamsDevicesComponentsSchemasResponseCollection</a>
+<a href="../api/teams_devices_components_schemas_single.html">TeamsDevicesComponentsSchemasSingle</a>
+<a href="../api/teams_devices_default_device_setting.html">TeamsDevicesDefaultDeviceSetting</a>
+<a href="../api/teams_devices_device.html">TeamsDevicesDevice</a>
+<a href="../api/teams_devices_device_setting.html">TeamsDevicesDeviceSetting</a>
+<a href="../api/teams_devices_device_settings_response_collection.html">TeamsDevicesDeviceSettingsResponseCollection</a>
+<a href="../api/teams_devices_fallback_domain_response_collection.html">TeamsDevicesFallbackDomainResponseCollection</a>
+<a href="../api/teams_devices_global_warp_override.html">TeamsDevicesGlobalWarpOverride</a>
+<a href="../api/teams_devices_id.html">TeamsDevicesId</a>
+<a href="../api/teams_devices_override_code.html">TeamsDevicesOverrideCode</a>
+<a href="../api/teams_devices_response_collection.html">TeamsDevicesResponseCollection</a>
+<a href="../api/teams_devices_schemas_id.html">TeamsDevicesSchemasId</a>
+<a href="../api/teams_devices_schemas_response_collection.html">TeamsDevicesSchemasResponseCollection</a>
+<a href="../api/teams_devices_schemas_single.html">TeamsDevicesSchemasSingle</a>
+<a href="../api/teams_devices_single.html">TeamsDevicesSingle</a>
+<a href="../api/teams_devices_split_tunnel_include_response_collection.html">TeamsDevicesSplitTunnelIncludeResponseCollection</a>
+<a href="../api/teams_devices_split_tunnel_response_collection.html">TeamsDevicesSplitTunnelResponseCollection</a>
+<a href="../api/teams_devices_zero_trust_account_device_setting.html">TeamsDevicesZeroTrustAccountDeviceSetting</a>
+<a href="../api/tunnel.html">Tunnel</a>
+<a href="../api/tunnel_cfd_tunnel_response_collection.html">TunnelCfdTunnelResponseCollection</a>
+<a href="../api/tunnel_cfd_tunnel_response_single.html">TunnelCfdTunnelResponseSingle</a>
+<a href="../api/tunnel_configuration.html">TunnelConfiguration</a>
+<a href="../api/tunnel_empty.html">TunnelEmpty</a>
+<a href="../api/tunnel_hostname_route_response_collection.html">TunnelHostnameRouteResponseCollection</a>
+<a href="../api/tunnel_hostname_route_response_single.html">TunnelHostnameRouteResponseSingle</a>
+<a href="../api/tunnel_mesh_configuration_response_single.html">TunnelMeshConfigurationResponseSingle</a>
+<a href="../api/tunnel_route_response_single.html">TunnelRouteResponseSingle</a>
+<a href="../api/tunnel_subnet_response_collection.html">TunnelSubnetResponseCollection</a>
+<a href="../api/tunnel_subnet_response_single.html">TunnelSubnetResponseSingle</a>
+<a href="../api/tunnel_subnet_response_single_nullable.html">TunnelSubnetResponseSingleNullable</a>
+<a href="../api/tunnel_teamnet_response_collection.html">TunnelTeamnetResponseCollection</a>
+<a href="../api/tunnel_teamnet_response_single.html">TunnelTeamnetResponseSingle</a>
+<a href="../api/tunnel_tunnel_client.html">TunnelTunnelClient</a>
+<a href="../api/tunnel_tunnel_connection.html">TunnelTunnelConnection</a>
+<a href="../api/tunnel_tunnel_response_token.html">TunnelTunnelResponseToken</a>
+<a href="../api/tunnel_tunnel_warp_connector_client.html">TunnelTunnelWarpConnectorClient</a>
+<a href="../api/tunnel_tunnel_warp_connector_connection.html">TunnelTunnelWarpConnectorConnection</a>
+<a href="../api/tunnel_vnet_response_collection.html">TunnelVnetResponseCollection</a>
+<a href="../api/tunnel_vnet_response_single.html">TunnelVnetResponseSingle</a>
+<a href="../api/tunnel_warp_connector_response_collection.html">TunnelWarpConnectorResponseCollection</a>
+<a href="../api/tunnel_warp_connector_response_single.html">TunnelWarpConnectorResponseSingle</a>
+<a href="../api/tunnel_zero_trust_connectivity_setting.html">TunnelZeroTrustConnectivitySetting</a>
+<a href="../api/warp.html">Warp</a>
+<a href="../api/warp_change_event.html">WarpChangeEvent</a>
+<a href="../api/warp_teams_device_api_other.html">WarpTeamsDeviceApiOther</a>
+<a href="../api/zero_trust_gateway_applications_review_status.html">ZeroTrustGatewayApplicationsReviewStatus</a>
+<a href="../api/zero_trust_gateway_csv_operation_single.html">ZeroTrustGatewayCsvOperationSingle</a>
+<a href="../api/zero_trust_gateway_custom_certificate_setting.html">ZeroTrustGatewayCustomCertificateSetting</a>
+<a href="../api/zero_trust_gateway_gateway_account.html">ZeroTrustGatewayGatewayAccount</a>
+<a href="../api/zero_trust_gateway_gateway_account_config.html">ZeroTrustGatewayGatewayAccountConfig</a>
+<a href="../api/zero_trust_gateway_gateway_account_egress_cidr_pair_list.html">ZeroTrustGatewayGatewayAccountEgressCidrPairList</a>
+<a href="../api/zero_trust_gateway_gateway_account_logging_setting.html">ZeroTrustGatewayGatewayAccountLoggingSetting</a>
+<a href="../api/zero_trust_gateway_list_item_response_collection.html">ZeroTrustGatewayListItemResponseCollection</a>
+<a href="../api/zero_trust_gateway_list_single.html">ZeroTrustGatewayListSingle</a>
+<a href="../api/zero_trust_gateway_response_collection.html">ZeroTrustGatewayResponseCollection</a>
+<a href="../api/zero_trust_gateway_response_collection_10.html">ZeroTrustGatewayResponseCollection10</a>
+<a href="../api/zero_trust_gateway_response_collection_2.html">ZeroTrustGatewayResponseCollection2</a>
+<a href="../api/zero_trust_gateway_response_collection_3.html">ZeroTrustGatewayResponseCollection3</a>
+<a href="../api/zero_trust_gateway_response_collection_4.html">ZeroTrustGatewayResponseCollection4</a>
+<a href="../api/zero_trust_gateway_response_collection_5.html">ZeroTrustGatewayResponseCollection5</a>
+<a href="../api/zero_trust_gateway_response_collection_6.html">ZeroTrustGatewayResponseCollection6</a>
+<a href="../api/zero_trust_gateway_response_collection_7.html">ZeroTrustGatewayResponseCollection7</a>
+<a href="../api/zero_trust_gateway_response_collection_8.html">ZeroTrustGatewayResponseCollection8</a>
+<a href="../api/zero_trust_gateway_response_collection_9.html">ZeroTrustGatewayResponseCollection9</a>
+<a href="../api/zero_trust_gateway_single.html">ZeroTrustGatewaySingle</a>
+<a href="../api/zero_trust_gateway_single_response_2.html">ZeroTrustGatewaySingleResponse2</a>
+<a aria-current="page" href="../api/zero_trust_gateway_single_response_3.html">ZeroTrustGatewaySingleResponse3</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idgatewaylocations">POST /accounts/{account_id}/gateway/locations</a>
+<a class="nav-section" href="#get-accountsaccount_idgatewaylocationslocation_id">GET /accounts/{account_id}/gateway/locations/{location_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idgatewaylocationslocation_id">PUT /accounts/{account_id}/gateway/locations/{location_id}</a></div>
+<a href="../api/zero_trust_gateway_single_response_4.html">ZeroTrustGatewaySingleResponse4</a>
+<a href="../api/zero_trust_gateway_single_response_5.html">ZeroTrustGatewaySingleResponse5</a>
+<a href="../api/zero_trust_gateway_single_response_6.html">ZeroTrustGatewaySingleResponse6</a>
+<a href="../api/zero_trust_gateway_single_response_7.html">ZeroTrustGatewaySingleResponse7</a>
+<a href="../api/zero_trust_gateway_single_response_with_list_item.html">ZeroTrustGatewaySingleResponseWithListItem</a>
+<a href="../api/zero_trust_risk_scoring.html">ZeroTrustRiskScoring</a>
+<a href="../api/zero_trust_risk_scoring_integration.html">ZeroTrustRiskScoringIntegration</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="zerotrustgatewaysingleresponse3">ZeroTrustGatewaySingleResponse3</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idgatewaylocations"><code>/accounts/{account_id}/gateway/locations</code></a></td>
+<td><code>create</code></td>
+<td>Creates a Zero Trust Gateway location response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idgatewaylocationslocation_id"><code>/accounts/{account_id}/gateway/locations/{location_id}</code></a></td>
+<td><code>load</code></td>
+<td>Gets Zero Trust Gateway location details response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idgatewaylocationslocation_id"><code>/accounts/{account_id}/gateway/locations/{location_id}</code></a></td>
+<td><code>update</code></td>
+<td>Updates a Zero Trust Gateway location response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">zero_trust_gateway_single_response_3, err := client.ZeroTrustGatewaySingleResponse3(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;location_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(zero_trust_gateway_single_response_3)
+created, err := client.ZeroTrustGatewaySingleResponse3(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;endpoints&quot;: map[string]any{}, &quot;max_ttl&quot;: map[string]any{}, &quot;name&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.ZeroTrustGatewaySingleResponse3(nil).Update(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;location_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local zero_trust_gateway_single_response_3, err = client:ZeroTrustGatewaySingleResponse3():load({ account_id = &quot;example&quot;, location_id = &quot;example&quot; })
+local created, err = client:ZeroTrustGatewaySingleResponse3():create({ account_id = &quot;example&quot;, endpoints = {}, max_ttl = {}, name = &quot;example&quot; })
+local updated, err = client:ZeroTrustGatewaySingleResponse3():update({ account_id = &quot;example&quot;, location_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$zero_trust_gateway_single_response_3 = $client-&gt;ZeroTrustGatewaySingleResponse3()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;location_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;ZeroTrustGatewaySingleResponse3()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;endpoints&quot; =&gt; [], &quot;max_ttl&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;ZeroTrustGatewaySingleResponse3()-&gt;update([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;location_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">zero_trust_gateway_single_response_3 = client.ZeroTrustGatewaySingleResponse3().load({&quot;account_id&quot;: &quot;example&quot;, &quot;location_id&quot;: &quot;example&quot;})
+created = client.ZeroTrustGatewaySingleResponse3().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;endpoints&quot;: {}, &quot;max_ttl&quot;: {}, &quot;name&quot;: &quot;example&quot; })
+updated = client.ZeroTrustGatewaySingleResponse3().update({&quot;account_id&quot;: &quot;example&quot;, &quot;location_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">zero_trust_gateway_single_response_3 = client.ZeroTrustGatewaySingleResponse3.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;location_id&quot; =&gt; &quot;example&quot; })
+created = client.ZeroTrustGatewaySingleResponse3.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;endpoints&quot; =&gt; {}, &quot;max_ttl&quot; =&gt; {}, &quot;name&quot; =&gt; &quot;example&quot; })
+updated = client.ZeroTrustGatewaySingleResponse3.update({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;location_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const zero_trust_gateway_single_response_3 = await client.ZeroTrustGatewaySingleResponse3().load({ account_id: &quot;example&quot;, location_id: &quot;example&quot; })
+const created = await client.ZeroTrustGatewaySingleResponse3().create({ account_id: &quot;example&quot;, endpoints: {}, max_ttl: {}, name: &quot;example&quot; })
+const updated = await client.ZeroTrustGatewaySingleResponse3().update({ account_id: &quot;example&quot;, location_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>client_default</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether this location is the default location.</td>
+</tr>
+<tr>
+<td><code>dns_destination_ips_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the identifier of the pair of IPv4 addresses assigned to this location.</td>
+</tr>
+<tr>
+<td><code>ecs_support</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether the location must resolve EDNS queries.</td>
+</tr>
+<tr>
+<td><code>endpoints</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Configure the destination endpoints for this location.</td>
+</tr>
+<tr>
+<td><code>max_ttl</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Controls how DNS response TTLs are capped for this location relative to the account <code>max_ttl_secs</code> setting.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the location name.</td>
+</tr>
+<tr>
+<td><code>networks</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Specify the list of network ranges from which requests at this location originate.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idgatewaylocations" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/gateway/locations</h3>
+<p>Operation ID: <code>zero-trust-gateway-locations-create-zero-trust-gateway-location</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>client_default</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether this location is the default location.</td>
+</tr>
+<tr>
+<td><code>dns_destination_ips_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the identifier of the pair of IPv4 addresses assigned to this location. When creating a location, if this field is absent or set to null, the pair of shared IPv4 addresses (0e4a32c6-6fb8-4858-9296-98f51631e8e6) is auto-assigned. When updating a location, if this field is absent or set to null, the pre-assigned pair remains unchanged.</td>
+</tr>
+<tr>
+<td><code>ecs_support</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether the location must resolve EDNS queries.</td>
+</tr>
+<tr>
+<td><code>endpoints</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Configure the destination endpoints for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.doh</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>endpoints.doh.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether the DOH endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.doh.networks</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Specify the list of allowed source IP network ranges for this endpoint. When the list is empty, the endpoint allows all source IPs. The list takes effect only if the endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.doh.networks[].network</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the IP address or IP CIDR.</td>
+</tr>
+<tr>
+<td><code>endpoints.doh.require_token</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether the DOH endpoint requires user identity authentication.</td>
+</tr>
+<tr>
+<td><code>endpoints.dot</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>endpoints.dot.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether the DOT endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.dot.networks</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Specify the list of allowed source IP network ranges for this endpoint. When the list is empty, the endpoint allows all source IPs. The list takes effect only if the endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.dot.networks[].network</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the IP address or IP CIDR.</td>
+</tr>
+<tr>
+<td><code>endpoints.ipv4</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>endpoints.ipv4.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether the IPv4 endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.ipv6</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>endpoints.ipv6.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether the IPV6 endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.ipv6.networks</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Specify the list of allowed source IPv6 network ranges for this endpoint. When the list is empty, the endpoint allows all source IPs. The list takes effect only if the endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.ipv6.networks[].network</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the IPv6 address or IPv6 CIDR.</td>
+</tr>
+<tr>
+<td><code>max_ttl</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Controls how DNS response TTLs are capped for this location relative to the account <code>max_ttl_secs</code> setting. Omitting <code>max_ttl</code> on update resets it to <code>inherit</code>.</td>
+</tr>
+<tr>
+<td><code>max_ttl.mode</code></td>
+<td><code>enum: inherit, override, disabled</code></td>
+<td>Yes</td>
+<td><code>inherit</code> uses the account <code>max_ttl_secs</code>. <code>override</code> uses this location's <code>ttl_secs</code>. <code>disabled</code> leaves returned TTLs unchanged.</td>
+</tr>
+<tr>
+<td><code>max_ttl.ttl_secs</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Location-specific cap on DNS response TTLs, in seconds. Required when <code>mode</code> is <code>override</code>. Must be omitted when <code>mode</code> is <code>inherit</code> or <code>disabled</code>.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the location name.</td>
+</tr>
+<tr>
+<td><code>networks</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>networks[].network</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the IPv4 address or IPv4 CIDR. Limit IPv4 CIDRs to a maximum of /24.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-creates-a-zero-trust-gateway-location-response" class="status" data-status="2xx">200: Creates a Zero Trust Gateway location response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-creates-a-zero-trust-gateway-location-response-failure">4XX: Creates a Zero Trust Gateway location response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idgatewaylocationslocation_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/gateway/locations/{location_id}</h3>
+<p>Operation ID: <code>zero-trust-gateway-locations-zero-trust-gateway-location-details</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>location_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-gets-zero-trust-gateway-location-details-response" class="status" data-status="2xx">200: Gets Zero Trust Gateway location details response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-gets-zero-trust-gateway-location-details-response-failure">4XX: Gets Zero Trust Gateway location details response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idgatewaylocationslocation_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/gateway/locations/{location_id}</h3>
+<p>Operation ID: <code>zero-trust-gateway-locations-update-zero-trust-gateway-location</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>location_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>client_default</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether this location is the default location.</td>
+</tr>
+<tr>
+<td><code>dns_destination_ips_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the identifier of the pair of IPv4 addresses assigned to this location. When creating a location, if this field is absent or set to null, the pair of shared IPv4 addresses (0e4a32c6-6fb8-4858-9296-98f51631e8e6) is auto-assigned. When updating a location, if this field is absent or set to null, the pre-assigned pair remains unchanged.</td>
+</tr>
+<tr>
+<td><code>ecs_support</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether the location must resolve EDNS queries.</td>
+</tr>
+<tr>
+<td><code>endpoints</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Configure the destination endpoints for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.doh</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>endpoints.doh.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether the DOH endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.doh.networks</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Specify the list of allowed source IP network ranges for this endpoint. When the list is empty, the endpoint allows all source IPs. The list takes effect only if the endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.doh.networks[].network</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the IP address or IP CIDR.</td>
+</tr>
+<tr>
+<td><code>endpoints.doh.require_token</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether the DOH endpoint requires user identity authentication.</td>
+</tr>
+<tr>
+<td><code>endpoints.dot</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>endpoints.dot.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether the DOT endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.dot.networks</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Specify the list of allowed source IP network ranges for this endpoint. When the list is empty, the endpoint allows all source IPs. The list takes effect only if the endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.dot.networks[].network</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the IP address or IP CIDR.</td>
+</tr>
+<tr>
+<td><code>endpoints.ipv4</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>endpoints.ipv4.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether the IPv4 endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.ipv6</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>endpoints.ipv6.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate whether the IPV6 endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.ipv6.networks</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Specify the list of allowed source IPv6 network ranges for this endpoint. When the list is empty, the endpoint allows all source IPs. The list takes effect only if the endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>endpoints.ipv6.networks[].network</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the IPv6 address or IPv6 CIDR.</td>
+</tr>
+<tr>
+<td><code>max_ttl</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Controls how DNS response TTLs are capped for this location relative to the account <code>max_ttl_secs</code> setting. Omitting <code>max_ttl</code> on update resets it to <code>inherit</code>.</td>
+</tr>
+<tr>
+<td><code>max_ttl.mode</code></td>
+<td><code>enum: inherit, override, disabled</code></td>
+<td>Yes</td>
+<td><code>inherit</code> uses the account <code>max_ttl_secs</code>. <code>override</code> uses this location's <code>ttl_secs</code>. <code>disabled</code> leaves returned TTLs unchanged.</td>
+</tr>
+<tr>
+<td><code>max_ttl.ttl_secs</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Location-specific cap on DNS response TTLs, in seconds. Required when <code>mode</code> is <code>override</code>. Must be omitted when <code>mode</code> is <code>inherit</code> or <code>disabled</code>.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the location name.</td>
+</tr>
+<tr>
+<td><code>networks</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location.</td>
+</tr>
+<tr>
+<td><code>networks[].network</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the IPv4 address or IPv4 CIDR. Limit IPv4 CIDRs to a maximum of /24.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-updates-a-zero-trust-gateway-location-response" class="status" data-status="2xx">200: Updates a Zero Trust Gateway location response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-updates-a-zero-trust-gateway-location-response-failure">4XX: Updates a Zero Trust Gateway location response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

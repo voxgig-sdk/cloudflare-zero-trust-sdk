@@ -1,0 +1,245 @@
+# Entity: zero_trust_gateway_single_response_3
+
+main: kit: entity: zero_trust_gateway_single_response_3: {
+
+  alias: field: {}
+
+  fields: {
+    client_default: {
+      h: "Client Default"
+      n: "client_default"
+      r: false
+      sh: "Indicate whether this location is the default location."
+      t: "`$BOOLEAN`"
+    }
+    dns_destination_ips_id: {
+      h: "Dns Destination Ips Id"
+      n: "dns_destination_ips_id"
+      r: false
+      sh: "Specify the identifier of the pair of IPv4 addresses assigned to this location."
+      t: "`$STRING`"
+    }
+    ecs_support: {
+      h: "Ecs Support"
+      n: "ecs_support"
+      r: false
+      sh: "Indicate whether the location must resolve EDNS queries."
+      t: "`$BOOLEAN`"
+    }
+    endpoints: {
+      h: "Endpoints"
+      n: "endpoints"
+      r: true
+      sh: "Configure the destination endpoints for this location."
+      t: "`$OBJECT`"
+    }
+    max_ttl: {
+      h: "Max Ttl"
+      n: "max_ttl"
+      r: true
+      sh: "Controls how DNS response TTLs are capped for this location relative to the account `max_ttl_secs` setting."
+      t: "`$OBJECT`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "Specify the location name."
+      t: "`$STRING`"
+    }
+    networks: {
+      h: "Networks"
+      n: "networks"
+      r: false
+      sh: "Specify the list of network ranges from which requests at this location originate."
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "zero_trust_gateway_single_response_3"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/gateway/locations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/gateway/locations"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "locations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/gateway/locations/{location_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "ed35569b41ce4d1facfe683550f54086"
+                k: "param"
+                n: "location_id"
+                or: "location_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/gateway/locations/{location_id}"
+          q: {
+            exist: [
+              "account_id"
+              "location_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "locations"
+            }
+            {
+              var: "location_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/gateway/locations/{location_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "ed35569b41ce4d1facfe683550f54086"
+                k: "param"
+                n: "location_id"
+                or: "location_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/gateway/locations/{location_id}"
+          q: {
+            exist: [
+              "account_id"
+              "location_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "locations"
+            }
+            {
+              var: "location_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.location")]
+  ]
+
+}

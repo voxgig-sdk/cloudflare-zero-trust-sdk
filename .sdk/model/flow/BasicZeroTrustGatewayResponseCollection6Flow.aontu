@@ -1,0 +1,44 @@
+# BasicZeroTrustGatewayResponseCollection6Flow
+
+main: kit: flow: BasicZeroTrustGatewayResponseCollection6Flow:
+{
+  entity: "zero_trust_gateway_response_collection_6",
+  kind: "basic",
+  name: "BasicZeroTrustGatewayResponseCollection6Flow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "zero_trust_gateway_response_collection_6_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "zero_trust_gateway_response_collection_6_ref01",
+        srcdatavar: "zero_trust_gateway_response_collection_6_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-zero_trust_gateway_response_collection_6_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicZeroTrustGatewayResponseCollection6Flow"
+}

@@ -1,0 +1,20807 @@
+-- CloudflareZeroTrust SDK configuration
+
+-- Build a fresh, fully materialised config table. Every call rebuilds the
+-- whole structure, so prefer require("config_shared") unless you need a
+-- private copy you intend to mutate.
+local function make_config()
+  return {
+    main = {
+      name = "CloudflareZeroTrust",
+      slug = "cloudflare-zero-trust",
+      version = "0.0.1",
+      target = "lua",
+    },
+    feature = {
+      ["test"] = {
+        ["options"] = {
+          ["active"] = false,
+        },
+        ["optspec"] = {
+          ["entity"] = "`$MAP`",
+          ["net"] = "`$MAP`",
+        },
+        ["strict"] = false,
+        ["transport"] = "base",
+      },
+    },
+    options = {
+      base = "https://api.cloudflare.com/client/v4",
+      auth = {
+        prefix = "",
+        name = "X-Auth-Email",
+      },
+      headers = {
+        ["content-type"] = "application/json",
+      },
+      entity = {
+        ["client_version"] = {},
+        ["cni"] = {},
+        ["deployment_group"] = {},
+        ["dex_remote_command"] = {},
+        ["dex_rule"] = {},
+        ["dex_synthetic_application_monitoring"] = {},
+        ["digital_experience_monitoring_device"] = {},
+        ["digital_experience_monitoring_dex_delete_response_collection"] = {},
+        ["digital_experience_monitoring_dex_response_collection"] = {},
+        ["digital_experience_monitoring_dex_single"] = {},
+        ["digital_experience_monitoring_fleet_status_device"] = {},
+        ["digital_experience_monitoring_fleet_status_live"] = {},
+        ["digital_experience_monitoring_fleet_status_over_time"] = {},
+        ["interconnect"] = {},
+        ["ip_profile"] = {},
+        ["list"] = {},
+        ["location"] = {},
+        ["nsc_cni"] = {},
+        ["nsc_default_name"] = {},
+        ["nsc_interconnect"] = {},
+        ["nsc_setting"] = {},
+        ["nsc_slot_info"] = {},
+        ["nsc_status_info"] = {},
+        ["override_code"] = {},
+        ["pacfile"] = {},
+        ["physical_device"] = {},
+        ["proxy_endpoint"] = {},
+        ["registration"] = {},
+        ["rule"] = {},
+        ["teams_devices_api_response_single"] = {},
+        ["teams_devices_components_schemas_response_collection"] = {},
+        ["teams_devices_components_schemas_single"] = {},
+        ["teams_devices_default_device_setting"] = {},
+        ["teams_devices_device"] = {},
+        ["teams_devices_device_setting"] = {},
+        ["teams_devices_device_settings_response_collection"] = {},
+        ["teams_devices_fallback_domain_response_collection"] = {},
+        ["teams_devices_global_warp_override"] = {},
+        ["teams_devices_id"] = {},
+        ["teams_devices_override_code"] = {},
+        ["teams_devices_response_collection"] = {},
+        ["teams_devices_schemas_id"] = {},
+        ["teams_devices_schemas_response_collection"] = {},
+        ["teams_devices_schemas_single"] = {},
+        ["teams_devices_single"] = {},
+        ["teams_devices_split_tunnel_include_response_collection"] = {},
+        ["teams_devices_split_tunnel_response_collection"] = {},
+        ["teams_devices_zero_trust_account_device_setting"] = {},
+        ["tunnel"] = {},
+        ["tunnel_cfd_tunnel_response_collection"] = {},
+        ["tunnel_cfd_tunnel_response_single"] = {},
+        ["tunnel_configuration"] = {},
+        ["tunnel_empty"] = {},
+        ["tunnel_hostname_route_response_collection"] = {},
+        ["tunnel_hostname_route_response_single"] = {},
+        ["tunnel_mesh_configuration_response_single"] = {},
+        ["tunnel_route_response_single"] = {},
+        ["tunnel_subnet_response_collection"] = {},
+        ["tunnel_subnet_response_single"] = {},
+        ["tunnel_subnet_response_single_nullable"] = {},
+        ["tunnel_teamnet_response_collection"] = {},
+        ["tunnel_teamnet_response_single"] = {},
+        ["tunnel_tunnel_client"] = {},
+        ["tunnel_tunnel_connection"] = {},
+        ["tunnel_tunnel_response_token"] = {},
+        ["tunnel_tunnel_warp_connector_client"] = {},
+        ["tunnel_tunnel_warp_connector_connection"] = {},
+        ["tunnel_vnet_response_collection"] = {},
+        ["tunnel_vnet_response_single"] = {},
+        ["tunnel_warp_connector_response_collection"] = {},
+        ["tunnel_warp_connector_response_single"] = {},
+        ["tunnel_zero_trust_connectivity_setting"] = {},
+        ["warp"] = {},
+        ["warp_change_event"] = {},
+        ["warp_teams_device_api_other"] = {},
+        ["zero_trust_gateway_applications_review_status"] = {},
+        ["zero_trust_gateway_csv_operation_single"] = {},
+        ["zero_trust_gateway_custom_certificate_setting"] = {},
+        ["zero_trust_gateway_gateway_account"] = {},
+        ["zero_trust_gateway_gateway_account_config"] = {},
+        ["zero_trust_gateway_gateway_account_egress_cidr_pair_list"] = {},
+        ["zero_trust_gateway_gateway_account_logging_setting"] = {},
+        ["zero_trust_gateway_list_item_response_collection"] = {},
+        ["zero_trust_gateway_list_single"] = {},
+        ["zero_trust_gateway_response_collection"] = {},
+        ["zero_trust_gateway_response_collection_10"] = {},
+        ["zero_trust_gateway_response_collection_2"] = {},
+        ["zero_trust_gateway_response_collection_3"] = {},
+        ["zero_trust_gateway_response_collection_4"] = {},
+        ["zero_trust_gateway_response_collection_5"] = {},
+        ["zero_trust_gateway_response_collection_6"] = {},
+        ["zero_trust_gateway_response_collection_7"] = {},
+        ["zero_trust_gateway_response_collection_8"] = {},
+        ["zero_trust_gateway_response_collection_9"] = {},
+        ["zero_trust_gateway_single"] = {},
+        ["zero_trust_gateway_single_response_2"] = {},
+        ["zero_trust_gateway_single_response_3"] = {},
+        ["zero_trust_gateway_single_response_4"] = {},
+        ["zero_trust_gateway_single_response_5"] = {},
+        ["zero_trust_gateway_single_response_6"] = {},
+        ["zero_trust_gateway_single_response_7"] = {},
+        ["zero_trust_gateway_single_response_with_list_item"] = {},
+        ["zero_trust_risk_scoring"] = {},
+        ["zero_trust_risk_scoring_integration"] = {},
+      },
+    },
+    entity = {
+      ["client_version"] = {
+        ["fields"] = {
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result_info",
+            ["title"] = "Result Info",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Indicates whether the API call was successful.",
+          },
+        },
+        ["name"] = "client_version",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/client-versions",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "client-versions",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "client-versions",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 20,
+                    },
+                    {
+                      ["name"] = "release_track",
+                      ["orig"] = "release_track",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "target_environment",
+                      ["orig"] = "target_environment",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "page",
+                    "per_page",
+                    "release_track",
+                    "target_environment",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/client-versions/target-environments",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "client-versions",
+                  },
+                  {
+                    ["lit"] = "target-environments",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "client-versions",
+                  "target-environments",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["$action"] = "target_environment",
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["cni"] = {
+        ["fields"] = {
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "cni",
+        ["op"] = {
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/cni/cnis/{cni}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "cnis",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "cnis",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["cni"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "cni",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["deployment_group"] = {
+        ["fields"] = {
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "A user-friendly name for the deployment group.",
+          },
+          {
+            ["name"] = "policy_ids",
+            ["title"] = "Policy Ids",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "Contains an optional list of policy IDs assigned to a group.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result_info",
+            ["title"] = "Result Info",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Indicates whether the API call was successful.",
+          },
+          {
+            ["name"] = "version_config",
+            ["title"] = "Version Config",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$ARRAY`",
+              },
+            },
+            ["short"] = "Contains at least one version configuration.",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "deployment_group",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/deployment-groups",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "deployment-groups",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "deployment-groups",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/deployment-groups",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "deployment-groups",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "deployment-groups",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 50,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "page",
+                    "per_page",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/deployment-groups/{group_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "deployment-groups",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "deployment-groups",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["group_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "group_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/deployment-groups/{group_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "deployment-groups",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "deployment-groups",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["group_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "group_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/devices/deployment-groups/{group_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "deployment-groups",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "deployment-groups",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["group_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "group_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["dex_remote_command"] = {
+        ["fields"] = {
+          {
+            ["name"] = "commands",
+            ["title"] = "Commands",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+            ["short"] = "List of device-level commands to execute",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["op"] = {
+              ["load"] = {
+                ["req"] = true,
+                ["type"] = "`$OBJECT`",
+              },
+            },
+          },
+        },
+        ["name"] = "dex_remote_command",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/dex/commands",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "commands",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "commands",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/commands",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "commands",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "commands",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "command_type",
+                      ["orig"] = "command_type",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "from",
+                      ["orig"] = "from",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2023-08-20T20:45:00Z",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 10,
+                    },
+                    {
+                      ["name"] = "status",
+                      ["orig"] = "status",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "to",
+                      ["orig"] = "to",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2023-08-24T20:45:00Z",
+                    },
+                    {
+                      ["name"] = "user_email",
+                      ["orig"] = "user_email",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "command_type",
+                    "device_id",
+                    "from",
+                    "page",
+                    "per_page",
+                    "status",
+                    "to",
+                    "user_email",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/commands/devices",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "commands",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "commands",
+                  "devices",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 10,
+                    },
+                    {
+                      ["name"] = "search",
+                      ["orig"] = "search",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "page",
+                    "per_page",
+                    "search",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/commands/{command_id}/downloads/{filename}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "commands",
+                  },
+                  {
+                    ["var"] = "command_id",
+                  },
+                  {
+                    ["lit"] = "downloads",
+                  },
+                  {
+                    ["var"] = "filename",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "commands",
+                  "{command_id}",
+                  "downloads",
+                  "{filename}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "command_id",
+                      ["orig"] = "command_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "5758fefe-ae7e-4538-a39b-1fef6abcb909",
+                    },
+                    {
+                      ["name"] = "filename",
+                      ["orig"] = "filename",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "command_id",
+                    "filename",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/commands/quota",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "commands",
+                  },
+                  {
+                    ["lit"] = "quota",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "commands",
+                  "quota",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["dex_rule"] = {
+        ["fields"] = {
+          {
+            ["name"] = "description",
+            ["title"] = "Description",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "match",
+            ["title"] = "Match",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The wirefilter expression to match.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The name of the Rule.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["op"] = {
+              ["load"] = {
+                ["req"] = true,
+                ["type"] = "`$OBJECT`",
+              },
+            },
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "dex_rule",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/dex/rules",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "rules",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/rules",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "rules",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "name",
+                      ["orig"] = "name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 10,
+                    },
+                    {
+                      ["name"] = "sort_by",
+                      ["orig"] = "sort_by",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "name",
+                    },
+                    {
+                      ["name"] = "sort_order",
+                      ["orig"] = "sort_order",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "ASC",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "name",
+                    "page",
+                    "per_page",
+                    "sort_by",
+                    "sort_order",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/rules/{rule_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "rules",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["rule_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "rule_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/dex/rules/{rule_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "rules",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["rule_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "rule_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/dex/rules/{rule_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "rules",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["rule_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "rule_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["dex_synthetic_application_monitoring"] = {
+        ["fields"] = {
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["op"] = {
+              ["list"] = {
+                ["type"] = "`$ARRAY`",
+              },
+              ["load"] = {
+                ["type"] = "`$OBJECT`",
+              },
+            },
+            ["short"] = "array of colos.",
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful.",
+          },
+        },
+        ["name"] = "dex_synthetic_application_monitoring",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/colos",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "colos",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "colos",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "from",
+                      ["orig"] = "from",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-08-20T20:45:00Z",
+                    },
+                    {
+                      ["name"] = "sort_by",
+                      ["orig"] = "sort_by",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "to",
+                      ["orig"] = "to",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-08-24T20:45:00Z",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "from",
+                    "sort_by",
+                    "to",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/devices/{device_id}/isps",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["var"] = "device_id",
+                  },
+                  {
+                    ["lit"] = "isps",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "devices",
+                  "{device_id}",
+                  "isps",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "cursor",
+                      ["orig"] = "cursor",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "from",
+                      ["orig"] = "from",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 10,
+                    },
+                    {
+                      ["name"] = "sort_by",
+                      ["orig"] = "sort_by",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "time_start",
+                    },
+                    {
+                      ["name"] = "sort_order",
+                      ["orig"] = "sort_order",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "DESC",
+                    },
+                    {
+                      ["name"] = "to",
+                      ["orig"] = "to",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "cursor",
+                    "device_id",
+                    "from",
+                    "page",
+                    "per_page",
+                    "sort_by",
+                    "sort_order",
+                    "to",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/tests/overview",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "tests",
+                  },
+                  {
+                    ["lit"] = "overview",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "tests",
+                  "overview",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "colo",
+                      ["orig"] = "colo",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "SJC",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "kind",
+                      ["orig"] = "kind",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["example"] = 10,
+                    },
+                    {
+                      ["name"] = "registration_id",
+                      ["orig"] = "registration_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+                    },
+                    {
+                      ["name"] = "test_name",
+                      ["orig"] = "test_name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "colo",
+                    "device_id",
+                    "kind",
+                    "page",
+                    "per_page",
+                    "registration_id",
+                    "test_name",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/http-tests/{test_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "http-tests",
+                  },
+                  {
+                    ["var"] = "test_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "http-tests",
+                  "{test_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "test_id",
+                      ["orig"] = "test_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "colo",
+                      ["orig"] = "colo",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "SJC",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "from",
+                      ["orig"] = "from",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 1689520412000,
+                    },
+                    {
+                      ["name"] = "interval",
+                      ["orig"] = "interval",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "to",
+                      ["orig"] = "to",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 1689606812000,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "colo",
+                    "device_id",
+                    "from",
+                    "interval",
+                    "test_id",
+                    "to",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/traceroute-tests/{test_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "traceroute-tests",
+                  },
+                  {
+                    ["var"] = "test_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "traceroute-tests",
+                  "{test_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "test_id",
+                      ["orig"] = "test_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "colo",
+                      ["orig"] = "colo",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "from",
+                      ["orig"] = "from",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 1689520412000,
+                    },
+                    {
+                      ["name"] = "interval",
+                      ["orig"] = "interval",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "to",
+                      ["orig"] = "to",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 1689606812000,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "colo",
+                    "device_id",
+                    "from",
+                    "interval",
+                    "test_id",
+                    "to",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/http-tests/{test_id}/percentiles",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "http-tests",
+                  },
+                  {
+                    ["var"] = "http_test_id",
+                  },
+                  {
+                    ["lit"] = "percentiles",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "http-tests",
+                  "{http_test_id}",
+                  "percentiles",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["test_id"] = "http_test_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "http_test_id",
+                      ["orig"] = "test_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "colo",
+                      ["orig"] = "colo",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "SJC",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "from",
+                      ["orig"] = "from",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-09-20T17:00:00Z",
+                    },
+                    {
+                      ["name"] = "to",
+                      ["orig"] = "to",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-09-20T17:00:00Z",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "colo",
+                    "device_id",
+                    "from",
+                    "http_test_id",
+                    "to",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/devices/{device_id}/fleet-status/over-time",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["var"] = "device_id",
+                  },
+                  {
+                    ["lit"] = "fleet-status",
+                  },
+                  {
+                    ["lit"] = "over-time",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "devices",
+                  "{device_id}",
+                  "fleet-status",
+                  "over-time",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "cb49c27f-7f97-49c5-b6f3-f7c01ead0fd7",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "colo",
+                      ["orig"] = "colo",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "SJC",
+                    },
+                    {
+                      ["name"] = "from",
+                      ["orig"] = "from",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-10-11 00:00:00+00",
+                    },
+                    {
+                      ["name"] = "interval",
+                      ["orig"] = "interval",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "to",
+                      ["orig"] = "to",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-10-11 00:00:00+00",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "colo",
+                    "device_id",
+                    "from",
+                    "interval",
+                    "to",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/traceroute-tests/{test_id}/percentiles",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "traceroute-tests",
+                  },
+                  {
+                    ["var"] = "traceroute_test_id",
+                  },
+                  {
+                    ["lit"] = "percentiles",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "traceroute-tests",
+                  "{traceroute_test_id}",
+                  "percentiles",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["test_id"] = "traceroute_test_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "traceroute_test_id",
+                      ["orig"] = "test_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "colo",
+                      ["orig"] = "colo",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "from",
+                      ["orig"] = "from",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-09-20T17:00:00Z",
+                    },
+                    {
+                      ["name"] = "to",
+                      ["orig"] = "to",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-09-20T17:00:00Z",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "colo",
+                    "device_id",
+                    "from",
+                    "to",
+                    "traceroute_test_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/traceroute-tests/{test_id}/network-path",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "traceroute-tests",
+                  },
+                  {
+                    ["var"] = "traceroute_test_id",
+                  },
+                  {
+                    ["lit"] = "network-path",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "traceroute-tests",
+                  "{traceroute_test_id}",
+                  "network-path",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["test_id"] = "traceroute_test_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "traceroute_test_id",
+                      ["orig"] = "test_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "from",
+                      ["orig"] = "from",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 1689520412000,
+                    },
+                    {
+                      ["name"] = "interval",
+                      ["orig"] = "interval",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "to",
+                      ["orig"] = "to",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 1689606812000,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "device_id",
+                    "from",
+                    "interval",
+                    "to",
+                    "traceroute_test_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/tests/unique-devices",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "tests",
+                  },
+                  {
+                    ["lit"] = "unique-devices",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "tests",
+                  "unique-devices",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "test_name",
+                      ["orig"] = "test_name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "device_id",
+                    "test_name",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/traceroute-test-results/{test_result_id}/network-path",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "traceroute-test-results",
+                  },
+                  {
+                    ["var"] = "traceroute_test_result_id",
+                  },
+                  {
+                    ["lit"] = "network-path",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "traceroute-test-results",
+                  "{traceroute_test_result_id}",
+                  "network-path",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["test_result_id"] = "traceroute_test_result_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "traceroute_test_result_id",
+                      ["orig"] = "test_result_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "traceroute_test_result_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["digital_experience_monitoring_device"] = {
+        ["fields"] = {
+          {
+            ["name"] = "alwaysOn",
+            ["title"] = "Always On",
+            ["type"] = "`$BOOLEAN`",
+          },
+          {
+            ["name"] = "batteryCharging",
+            ["title"] = "Battery Charging",
+            ["type"] = "`$BOOLEAN`",
+          },
+          {
+            ["name"] = "batteryCycles",
+            ["title"] = "Battery Cycles",
+            ["type"] = "`$INTEGER`",
+            ["format"] = "int64",
+          },
+          {
+            ["name"] = "batteryPct",
+            ["title"] = "Battery Pct",
+            ["type"] = "`$NUMBER`",
+            ["format"] = "float",
+          },
+          {
+            ["name"] = "colo",
+            ["title"] = "Colo",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Cloudflare colo airport code.",
+          },
+          {
+            ["name"] = "connectionType",
+            ["title"] = "Connection Type",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "cpuPct",
+            ["title"] = "Cpu Pct",
+            ["type"] = "`$NUMBER`",
+            ["format"] = "float",
+          },
+          {
+            ["name"] = "cpuPctByApp",
+            ["title"] = "Cpu Pct By App",
+            ["type"] = "`$ARRAY`",
+          },
+          {
+            ["name"] = "deviceId",
+            ["title"] = "Device Id",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Device identifier (UUID v4)",
+          },
+          {
+            ["name"] = "deviceIpv4",
+            ["title"] = "Device Ipv4",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "deviceIpv6",
+            ["title"] = "Device Ipv6",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "deviceName",
+            ["title"] = "Device Name",
+            ["type"] = "`$STRING`",
+            ["short"] = "Device identifier (human readable).",
+          },
+          {
+            ["name"] = "deviceRegistration",
+            ["title"] = "Device Registration",
+            ["type"] = "`$STRING`",
+            ["short"] = "Deprecated: use registrationId.",
+            ["deprecated"] = true,
+          },
+          {
+            ["name"] = "diskReadBps",
+            ["title"] = "Disk Read Bps",
+            ["type"] = "`$INTEGER`",
+            ["format"] = "int64",
+          },
+          {
+            ["name"] = "diskUsagePct",
+            ["title"] = "Disk Usage Pct",
+            ["type"] = "`$NUMBER`",
+            ["format"] = "float",
+          },
+          {
+            ["name"] = "diskWriteBps",
+            ["title"] = "Disk Write Bps",
+            ["type"] = "`$INTEGER`",
+            ["format"] = "int64",
+          },
+          {
+            ["name"] = "dohSubdomain",
+            ["title"] = "Doh Subdomain",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "estimatedLossPct",
+            ["title"] = "Estimated Loss Pct",
+            ["type"] = "`$NUMBER`",
+            ["format"] = "float",
+          },
+          {
+            ["name"] = "firewallEnabled",
+            ["title"] = "Firewall Enabled",
+            ["type"] = "`$BOOLEAN`",
+          },
+          {
+            ["name"] = "gatewayIpv4",
+            ["title"] = "Gateway Ipv4",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "gatewayIpv6",
+            ["title"] = "Gateway Ipv6",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "handshakeLatencyMs",
+            ["title"] = "Handshake Latency Ms",
+            ["type"] = "`$NUMBER`",
+            ["format"] = "int64",
+          },
+          {
+            ["name"] = "ispIpv4",
+            ["title"] = "Isp Ipv4",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "ispIpv6",
+            ["title"] = "Isp Ipv6",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "metal",
+            ["title"] = "Metal",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "mode",
+            ["title"] = "Mode",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "The mode under which the WARP client is run.",
+          },
+          {
+            ["name"] = "networkRcvdBps",
+            ["title"] = "Network Rcvd Bps",
+            ["type"] = "`$INTEGER`",
+            ["format"] = "int64",
+          },
+          {
+            ["name"] = "networkSentBps",
+            ["title"] = "Network Sent Bps",
+            ["type"] = "`$INTEGER`",
+            ["format"] = "int64",
+          },
+          {
+            ["name"] = "networkSsid",
+            ["title"] = "Network Ssid",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "personEmail",
+            ["title"] = "Person Email",
+            ["type"] = "`$STRING`",
+            ["short"] = "User contact email address",
+          },
+          {
+            ["name"] = "platform",
+            ["title"] = "Platform",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Operating system.",
+          },
+          {
+            ["name"] = "ramAvailableKb",
+            ["title"] = "Ram Available Kb",
+            ["type"] = "`$INTEGER`",
+            ["format"] = "int64",
+          },
+          {
+            ["name"] = "ramUsedPct",
+            ["title"] = "Ram Used Pct",
+            ["type"] = "`$NUMBER`",
+            ["format"] = "float",
+          },
+          {
+            ["name"] = "ramUsedPctByApp",
+            ["title"] = "Ram Used Pct By App",
+            ["type"] = "`$ARRAY`",
+          },
+          {
+            ["name"] = "registrationId",
+            ["title"] = "Registration Id",
+            ["type"] = "`$STRING`",
+            ["short"] = "Device registration identifier (UUID v4).",
+          },
+          {
+            ["name"] = "rtt",
+            ["title"] = "Rtt",
+            ["type"] = "`$OBJECT`",
+            ["short"] = "Round-trip time statistics for the WARP tunnel.",
+          },
+          {
+            ["name"] = "status",
+            ["title"] = "Status",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Network status.",
+          },
+          {
+            ["name"] = "switchLocked",
+            ["title"] = "Switch Locked",
+            ["type"] = "`$BOOLEAN`",
+          },
+          {
+            ["name"] = "timestamp",
+            ["title"] = "Timestamp",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "tunnelStats",
+            ["title"] = "Tunnel Stats",
+            ["type"] = "`$OBJECT`",
+            ["short"] = "WARP tunnel packet and byte counters.",
+          },
+          {
+            ["name"] = "tunnelType",
+            ["title"] = "Tunnel Type",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "version",
+            ["title"] = "Version",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "WARP client version.",
+          },
+          {
+            ["name"] = "wifiStrengthDbm",
+            ["title"] = "Wifi Strength Dbm",
+            ["type"] = "`$INTEGER`",
+            ["format"] = "int64",
+          },
+        },
+        ["name"] = "digital_experience_monitoring_device",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/devices/{device_id}/fleet-status/live",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["var"] = "device_id",
+                  },
+                  {
+                    ["lit"] = "fleet-status",
+                  },
+                  {
+                    ["lit"] = "live",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "devices",
+                  "{device_id}",
+                  "fleet-status",
+                  "live",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "cb49c27f-7f97-49c5-b6f3-f7c01ead0fd7",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "colo",
+                      ["orig"] = "colo",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "SJC",
+                    },
+                    {
+                      ["name"] = "since_minute",
+                      ["orig"] = "since_minute",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 10,
+                    },
+                    {
+                      ["name"] = "time_now",
+                      ["orig"] = "time_now",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2023-10-11T00:00:00Z",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "colo",
+                    "device_id",
+                    "since_minute",
+                    "time_now",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["digital_experience_monitoring_dex_delete_response_collection"] = {
+        ["fields"] = {},
+        ["name"] = "digital_experience_monitoring_dex_delete_response_collection",
+        ["op"] = {
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "dex_tests",
+                  },
+                  {
+                    ["var"] = "dex_test_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "devices",
+                  "dex_tests",
+                  "{dex_test_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "dex_test_id",
+                      ["orig"] = "dex_test_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "dex_test_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["digital_experience_monitoring_dex_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "digital_experience_monitoring_dex_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/devices/dex_tests",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "dex_tests",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "devices",
+                  "dex_tests",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "kind",
+                      ["orig"] = "kind",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["example"] = 10,
+                    },
+                    {
+                      ["name"] = "test_name",
+                      ["orig"] = "test_name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "kind",
+                    "page",
+                    "per_page",
+                    "test_name",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["digital_experience_monitoring_dex_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "created",
+            ["title"] = "Created",
+            ["type"] = "`$STRING`",
+            ["short"] = "Date the test was created, in RFC 3339 format.",
+            ["readOnly"] = true,
+            ["format"] = "date-time",
+          },
+          {
+            ["name"] = "data",
+            ["title"] = "Data",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "The configuration object which contains the details for the WARP client to conduct the test.",
+          },
+          {
+            ["name"] = "description",
+            ["title"] = "Description",
+            ["type"] = "`$STRING`",
+            ["short"] = "Additional details about the test.",
+          },
+          {
+            ["name"] = "enabled",
+            ["title"] = "Enabled",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Determines whether or not the test is active.",
+          },
+          {
+            ["name"] = "interval",
+            ["title"] = "Interval",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "How often the test will run.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "The name of the DEX test.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "target_policies",
+            ["title"] = "Target Policies",
+            ["type"] = "`$ANY`",
+          },
+          {
+            ["name"] = "targeted",
+            ["title"] = "Targeted",
+            ["type"] = "`$BOOLEAN`",
+          },
+          {
+            ["name"] = "test_id",
+            ["title"] = "Test Id",
+            ["type"] = "`$STRING`",
+            ["short"] = "The unique identifier for the test.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "updated",
+            ["title"] = "Updated",
+            ["type"] = "`$STRING`",
+            ["short"] = "Date the test was last updated, in RFC 3339 format.",
+            ["readOnly"] = true,
+            ["format"] = "date-time",
+          },
+        },
+        ["name"] = "digital_experience_monitoring_dex_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/dex/devices/dex_tests",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "dex_tests",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "devices",
+                  "dex_tests",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "dex_tests",
+                  },
+                  {
+                    ["var"] = "dex_test_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "devices",
+                  "dex_tests",
+                  "{dex_test_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "dex_test_id",
+                      ["orig"] = "dex_test_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "372e67954025e0ba6aaa6d586b9e0b59",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "dex_test_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "dex_tests",
+                  },
+                  {
+                    ["var"] = "dex_test_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "devices",
+                  "dex_tests",
+                  "{dex_test_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                    {
+                      ["name"] = "dex_test_id",
+                      ["orig"] = "dex_test_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "dex_test_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["digital_experience_monitoring_fleet_status_device"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "digital_experience_monitoring_fleet_status_device",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/fleet-status/devices",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "fleet-status",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "fleet-status",
+                  "devices",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "colo",
+                      ["orig"] = "colo",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "SJC",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "cb49c27f-7f97-49c5-b6f3-f7c01ead0fd7",
+                    },
+                    {
+                      ["name"] = "from",
+                      ["orig"] = "from",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-10-11 00:00:00+00",
+                    },
+                    {
+                      ["name"] = "mode",
+                      ["orig"] = "mode",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "proxy",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 10,
+                    },
+                    {
+                      ["name"] = "platform",
+                      ["orig"] = "platform",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "windows",
+                    },
+                    {
+                      ["name"] = "sort_by",
+                      ["orig"] = "sort_by",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "timestamp",
+                    },
+                    {
+                      ["name"] = "source",
+                      ["orig"] = "source",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "last_seen",
+                    },
+                    {
+                      ["name"] = "status",
+                      ["orig"] = "status",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "connected",
+                    },
+                    {
+                      ["name"] = "to",
+                      ["orig"] = "to",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-10-11 00:00:00+00",
+                    },
+                    {
+                      ["name"] = "version",
+                      ["orig"] = "version",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "1.0.0",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "colo",
+                    "device_id",
+                    "from",
+                    "mode",
+                    "page",
+                    "per_page",
+                    "platform",
+                    "sort_by",
+                    "source",
+                    "status",
+                    "to",
+                    "version",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["digital_experience_monitoring_fleet_status_live"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+        },
+        ["name"] = "digital_experience_monitoring_fleet_status_live",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/fleet-status/live",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "fleet-status",
+                  },
+                  {
+                    ["lit"] = "live",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "fleet-status",
+                  "live",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "since_minute",
+                      ["orig"] = "since_minute",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 10,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "since_minute",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["digital_experience_monitoring_fleet_status_over_time"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+        },
+        ["name"] = "digital_experience_monitoring_fleet_status_over_time",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/fleet-status/over-time",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "fleet-status",
+                  },
+                  {
+                    ["lit"] = "over-time",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "fleet-status",
+                  "over-time",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "colo",
+                      ["orig"] = "colo",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "SJC",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "cb49c27f-7f97-49c5-b6f3-f7c01ead0fd7",
+                    },
+                    {
+                      ["name"] = "from",
+                      ["orig"] = "from",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-10-11 00:00:00+00",
+                    },
+                    {
+                      ["name"] = "to",
+                      ["orig"] = "to",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-10-11 00:00:00+00",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "colo",
+                    "device_id",
+                    "from",
+                    "to",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["interconnect"] = {
+        ["fields"] = {
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "interconnect",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cni/interconnects/{icon}/loa",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "interconnects",
+                  },
+                  {
+                    ["var"] = "icon",
+                  },
+                  {
+                    ["lit"] = "loa",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "interconnects",
+                  "{icon}",
+                  "loa",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "icon",
+                      ["orig"] = "icon",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "name",
+                      ["orig"] = "name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["$action"] = "loa",
+                  ["exist"] = {
+                    "account_id",
+                    "icon",
+                    "name",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/cni/interconnects/{icon}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "interconnects",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "interconnects",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["icon"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "icon",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["ip_profile"] = {
+        ["fields"] = {
+          {
+            ["name"] = "description",
+            ["title"] = "Description",
+            ["type"] = "`$STRING`",
+            ["short"] = "An optional description of the Device IP profile.",
+          },
+          {
+            ["name"] = "enabled",
+            ["title"] = "Enabled",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether the Device IP profile will be applied to matching devices.",
+          },
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "match",
+            ["title"] = "Match",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The wirefilter expression to match registrations.",
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "A user-friendly name for the Device IP profile.",
+          },
+          {
+            ["name"] = "precedence",
+            ["title"] = "Precedence",
+            ["type"] = "`$INTEGER`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$INTEGER`",
+              },
+            },
+            ["short"] = "The precedence of the Device IP profile.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result_info",
+            ["title"] = "Result Info",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "subnet_id",
+            ["title"] = "Subnet Id",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The ID of the Subnet.",
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful.",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "ip_profile",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/ip-profiles",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "ip-profiles",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "ip-profiles",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/ip-profiles",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "ip-profiles",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "ip-profiles",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 50,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "page",
+                    "per_page",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/ip-profiles/{profile_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "ip-profiles",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "ip-profiles",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["profile_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "profile_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/ip-profiles/{profile_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "ip-profiles",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "ip-profiles",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["profile_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "profile_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/devices/ip-profiles/{profile_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "ip-profiles",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "ip-profiles",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["profile_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "profile_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["list"] = {
+        ["fields"] = {
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "list",
+        ["op"] = {
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/gateway/lists/{list_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "lists",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "lists",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["list_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "list_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["location"] = {
+        ["fields"] = {
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "location",
+        ["op"] = {
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/gateway/locations/{location_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "locations",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "locations",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["location_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "location_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "ed35569b41ce4d1facfe683550f54086",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["nsc_cni"] = {
+        ["fields"] = {
+          {
+            ["name"] = "account",
+            ["title"] = "Account",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Customer account tag",
+          },
+          {
+            ["name"] = "bgp",
+            ["title"] = "Bgp",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "bgp_mode",
+            ["title"] = "Bgp Mode",
+            ["type"] = "`$STRING`",
+            ["short"] = "The BGP mode for a CNI.",
+          },
+          {
+            ["name"] = "cust_ip",
+            ["title"] = "Cust Ip",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Customer end of the point-to-point link This should always be inside the same prefix as `p2p_ip`.",
+            ["format"] = "A.B.C.D/N",
+          },
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["format"] = "uuid",
+          },
+          {
+            ["name"] = "interconnect",
+            ["title"] = "Interconnect",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Interconnect identifier hosting this CNI",
+          },
+          {
+            ["name"] = "magic",
+            ["title"] = "Magic",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "p2p_ip",
+            ["title"] = "P2p Ip",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Cloudflare end of the point-to-point link",
+            ["format"] = "A.B.C.D/N",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "nsc_cni",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/cni/cnis",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "cnis",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "cnis",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cni/cnis",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "cnis",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "cnis",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body.items`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "cursor",
+                      ["orig"] = "cursor",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "limit",
+                      ["orig"] = "limit",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "slot",
+                      ["orig"] = "slot",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "cursor",
+                    "limit",
+                    "slot",
+                    "tunnel_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cni/cnis/{cni}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "cnis",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "cnis",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["cni"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "cni",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/cni/cnis/{cni}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "cnis",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "cnis",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["cni"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "cni",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["nsc_default_name"] = {
+        ["fields"] = {
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "The default customer name for the interconnect",
+          },
+        },
+        ["name"] = "nsc_default_name",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cni/interconnects/{icon}/loa/default",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "interconnects",
+                  },
+                  {
+                    ["var"] = "interconnect_id",
+                  },
+                  {
+                    ["lit"] = "loa",
+                  },
+                  {
+                    ["lit"] = "default",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "interconnects",
+                  "{interconnect_id}",
+                  "loa",
+                  "default",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["icon"] = "interconnect_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "interconnect_id",
+                      ["orig"] = "icon",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "interconnect_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {
+            {
+              "$.main.kit.entity.interconnect",
+            },
+          },
+        },
+      },
+      ["nsc_interconnect"] = {
+        ["fields"] = {
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "items",
+            ["title"] = "Items",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "next",
+            ["title"] = "Next",
+            ["type"] = "`$INTEGER`",
+            ["format"] = "int32",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "nsc_interconnect",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/cni/interconnects",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "interconnects",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "interconnects",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cni/interconnects",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "interconnects",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "interconnects",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body.items`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "cursor",
+                      ["orig"] = "cursor",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "limit",
+                      ["orig"] = "limit",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "site",
+                      ["orig"] = "site",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "type",
+                      ["orig"] = "type",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "cursor",
+                    "limit",
+                    "site",
+                    "type",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cni/interconnects/{icon}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "interconnects",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "interconnects",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["icon"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "icon",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["nsc_setting"] = {
+        ["fields"] = {
+          {
+            ["name"] = "default_asn",
+            ["title"] = "Default Asn",
+            ["type"] = "`$INTEGER`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$INTEGER`",
+              },
+            },
+            ["format"] = "int32",
+          },
+        },
+        ["name"] = "nsc_setting",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cni/settings",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "settings",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "settings",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/cni/settings",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "settings",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "settings",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["nsc_slot_info"] = {
+        ["fields"] = {
+          {
+            ["name"] = "account",
+            ["title"] = "Account",
+            ["type"] = "`$STRING`",
+            ["short"] = "Customer account tag",
+          },
+          {
+            ["name"] = "address",
+            ["title"] = "Address",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "ccr_device_name",
+            ["title"] = "Ccr Device Name",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "facility",
+            ["title"] = "Facility",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Slot ID",
+            ["format"] = "uuid",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "occupied",
+            ["title"] = "Occupied",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the slot is occupied or not",
+          },
+          {
+            ["name"] = "site",
+            ["title"] = "Site",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "speed",
+            ["title"] = "Speed",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "nsc_slot_info",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cni/slots",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "slots",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "slots",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body.items`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "address_contain",
+                      ["orig"] = "address_contain",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "cursor",
+                      ["orig"] = "cursor",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "limit",
+                      ["orig"] = "limit",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "occupied",
+                      ["orig"] = "occupied",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "site",
+                      ["orig"] = "site",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "speed",
+                      ["orig"] = "speed",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "address_contain",
+                    "cursor",
+                    "limit",
+                    "occupied",
+                    "site",
+                    "speed",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cni/slots/{slot}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "slots",
+                  },
+                  {
+                    ["var"] = "slot",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "slots",
+                  "{slot}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body.facility`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "slot",
+                      ["orig"] = "slot",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "slot",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["nsc_status_info"] = {
+        ["fields"] = {},
+        ["name"] = "nsc_status_info",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cni/interconnects/{icon}/status",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cni",
+                  },
+                  {
+                    ["lit"] = "interconnects",
+                  },
+                  {
+                    ["var"] = "icon",
+                  },
+                  {
+                    ["lit"] = "status",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cni",
+                  "interconnects",
+                  "{icon}",
+                  "status",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "icon",
+                      ["orig"] = "icon",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "icon",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {
+            {
+              "$.main.kit.entity.interconnect",
+            },
+          },
+        },
+      },
+      ["override_code"] = {
+        ["fields"] = {
+          {
+            ["name"] = "device_id",
+            ["title"] = "Device Id",
+            ["type"] = "`$STRING`",
+            ["short"] = "Physical device ID.",
+            ["format"] = "uuid",
+          },
+          {
+            ["name"] = "duration_hours",
+            ["title"] = "Duration Hours",
+            ["type"] = "`$INTEGER`",
+            ["req"] = true,
+            ["short"] = "Number of hours for which the override code should remain valid.",
+          },
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "scope",
+            ["title"] = "Scope",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Whether the code applies to every device in the account or one physical device.",
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful.",
+          },
+          {
+            ["name"] = "type",
+            ["title"] = "Type",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "The feature that the override code applies to.",
+          },
+        },
+        ["name"] = "override_code",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/override_codes",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "override_codes",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "override_codes",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["pacfile"] = {
+        ["fields"] = {
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "pacfile",
+        ["op"] = {
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/gateway/pacfiles/{pacfile_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "pacfiles",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "pacfiles",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["pacfile_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "pacfile_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "ed35569b41ce4d1facfe683550f54086",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["physical_device"] = {
+        ["fields"] = {
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "A WARP Device.",
+          },
+          {
+            ["name"] = "result_info",
+            ["title"] = "Result Info",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "V4 public API Pagination/Cursor info.",
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful.",
+          },
+          {
+            ["name"] = "tags",
+            ["title"] = "Tags",
+            ["type"] = "`$OBJECT`",
+            ["short"] = "Replaces all tags assigned to the physical device.",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "physical_device",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/physical-devices/{device_id}/revoke",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "physical-devices",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                  {
+                    ["lit"] = "revoke",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "physical-devices",
+                  "{id}",
+                  "revoke",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["device_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["$action"] = "revoke",
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/physical-devices",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "physical-devices",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "physical-devices",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "active_registration",
+                      ["orig"] = "active_registration",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "cursor",
+                      ["orig"] = "cursor",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "has_registration_type",
+                      ["orig"] = "has_registration_type",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                      ["example"] = "warp",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "include",
+                      ["orig"] = "include",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "last_seen_registration_policy_id",
+                      ["orig"] = "last_seen_registration_policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "11ffb86f-3f0c-4306-b4a2-e62f872b166a",
+                    },
+                    {
+                      ["name"] = "last_seen_user_email",
+                      ["orig"] = "last_seen_user_email",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "search",
+                      ["orig"] = "search",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "seen_after",
+                      ["orig"] = "seen_after",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "seen_before",
+                      ["orig"] = "seen_before",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "sort_by",
+                      ["orig"] = "sort_by",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "sort_order",
+                      ["orig"] = "sort_order",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "tag",
+                      ["orig"] = "tag",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                      ["example"] = {
+                        "environment:production",
+                        "fleet:warehouse",
+                      },
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "active_registration",
+                    "cursor",
+                    "has_registration_type",
+                    "id",
+                    "include",
+                    "last_seen_registration_policy_id",
+                    "last_seen_user_email",
+                    "per_page",
+                    "search",
+                    "seen_after",
+                    "seen_before",
+                    "sort_by",
+                    "sort_order",
+                    "tag",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/physical-devices/{device_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "physical-devices",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "physical-devices",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["device_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "include",
+                      ["orig"] = "include",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                    "include",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/physical-devices/{device_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "physical-devices",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "physical-devices",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["device_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/registrations",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "registrations",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "registrations",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/devices/physical-devices/{device_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "physical-devices",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "physical-devices",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["device_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = {
+                    ["tags"] = "`reqdata.tag`",
+                  },
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["proxy_endpoint"] = {
+        ["fields"] = {
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "proxy_endpoint",
+        ["op"] = {
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "proxy_endpoints",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "proxy_endpoints",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["proxy_endpoint_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "proxy_endpoint_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "ed35569b41ce4d1facfe683550f54086",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["registration"] = {
+        ["fields"] = {
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "A WARP configuration tied to a single user.",
+          },
+          {
+            ["name"] = "result_info",
+            ["title"] = "Result Info",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "V4 public API Pagination/Cursor info.",
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful.",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "registration",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/registrations/revoke",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "registrations",
+                  },
+                  {
+                    ["lit"] = "revoke",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "registrations",
+                  "revoke",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["$action"] = "revoke",
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/registrations/unrevoke",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "registrations",
+                  },
+                  {
+                    ["lit"] = "unrevoke",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "registrations",
+                  "unrevoke",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["$action"] = "unrevoke",
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/registrations",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "registrations",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "registrations",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "cursor",
+                      ["orig"] = "cursor",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "include",
+                      ["orig"] = "include",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "policy_id",
+                      ["orig"] = "policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "11ffb86f-3f0c-4306-b4a2-e62f872b166a",
+                    },
+                    {
+                      ["name"] = "registration_type",
+                      ["orig"] = "registration_type",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "warp",
+                    },
+                    {
+                      ["name"] = "search",
+                      ["orig"] = "search",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "seen_after",
+                      ["orig"] = "seen_after",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "seen_before",
+                      ["orig"] = "seen_before",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "sort_by",
+                      ["orig"] = "sort_by",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "sort_order",
+                      ["orig"] = "sort_order",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "status",
+                      ["orig"] = "status",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "user_id",
+                      ["orig"] = "user_id",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "cursor",
+                    "device_id",
+                    "id",
+                    "include",
+                    "per_page",
+                    "policy_id",
+                    "registration_type",
+                    "search",
+                    "seen_after",
+                    "seen_before",
+                    "sort_by",
+                    "sort_order",
+                    "status",
+                    "user_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/registrations/{registration_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "registrations",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "registrations",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["registration_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "registration_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "include",
+                      ["orig"] = "include",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                    "include",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/registrations/{registration_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "registrations",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "registrations",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["registration_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "registration_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["rule"] = {
+        ["fields"] = {
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "rule",
+        ["op"] = {
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/gateway/rules/{rule_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "rules",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["rule_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "rule_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_api_response_single"] = {
+        ["fields"] = {},
+        ["name"] = "teams_devices_api_response_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/revoke",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "revoke",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "revoke",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/unrevoke",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "unrevoke",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "unrevoke",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_components_schemas_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "teams_devices_components_schemas_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/networks",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "networks",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "networks",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/networks/{network_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "networks",
+                  },
+                  {
+                    ["var"] = "network_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "networks",
+                  "{network_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "network_id",
+                      ["orig"] = "network_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "network_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_components_schemas_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "config",
+            ["title"] = "Config",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$OBJECT`",
+              },
+            },
+            ["short"] = "The configuration object containing information for the WARP client to detect the managed network.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The name of the device managed network.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "type",
+            ["title"] = "Type",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The type of device managed network.",
+          },
+        },
+        ["name"] = "teams_devices_components_schemas_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/networks",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "networks",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "networks",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/networks/{network_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "networks",
+                  },
+                  {
+                    ["var"] = "network_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "networks",
+                  "{network_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "network_id",
+                      ["orig"] = "network_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "network_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/devices/networks/{network_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "networks",
+                  },
+                  {
+                    ["var"] = "network_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "networks",
+                  "{network_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "network_id",
+                      ["orig"] = "network_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "network_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_default_device_setting"] = {
+        ["fields"] = {
+          {
+            ["name"] = "allow_mode_switch",
+            ["title"] = "Allow Mode Switch",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether to allow the user to switch WARP between modes.",
+          },
+          {
+            ["name"] = "allow_updates",
+            ["title"] = "Allow Updates",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether to receive update notifications when a new version of the client is available.",
+          },
+          {
+            ["name"] = "allowed_to_leave",
+            ["title"] = "Allowed To Leave",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether to allow devices to leave the organization.",
+          },
+          {
+            ["name"] = "auto_connect",
+            ["title"] = "Auto Connect",
+            ["type"] = "`$NUMBER`",
+            ["short"] = "The amount of time in seconds to reconnect after having been disabled.",
+          },
+          {
+            ["name"] = "captive_portal",
+            ["title"] = "Captive Portal",
+            ["type"] = "`$NUMBER`",
+            ["short"] = "Turn on the captive portal after the specified amount of time.",
+          },
+          {
+            ["name"] = "disable_auto_fallback",
+            ["title"] = "Disable Auto Fallback",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.",
+          },
+          {
+            ["name"] = "dns_search_suffixes",
+            ["title"] = "Dns Search Suffixes",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "List of DNS search suffixes to apply to clients.",
+          },
+          {
+            ["name"] = "exclude",
+            ["title"] = "Exclude",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "List of routes excluded in the WARP client's tunnel.",
+          },
+          {
+            ["name"] = "exclude_office_ips",
+            ["title"] = "Exclude Office Ips",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether to add Microsoft IPs to Split Tunnel exclusions.",
+          },
+          {
+            ["name"] = "global_acceleration",
+            ["title"] = "Global Acceleration",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "Global Acceleration settings for China.",
+          },
+          {
+            ["name"] = "include",
+            ["title"] = "Include",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "List of routes included in the WARP client's tunnel.",
+          },
+          {
+            ["name"] = "lan_allow_minutes",
+            ["title"] = "Lan Allow Minutes",
+            ["type"] = "`$NUMBER`",
+            ["short"] = "The amount of time in minutes a user is allowed access to their LAN.",
+          },
+          {
+            ["name"] = "lan_allow_subnet_size",
+            ["title"] = "Lan Allow Subnet Size",
+            ["type"] = "`$NUMBER`",
+            ["short"] = "The size of the subnet for the local access network.",
+          },
+          {
+            ["name"] = "register_interface_ip_with_dns",
+            ["title"] = "Register Interface Ip With Dns",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Determines if the operating system will register WARP's local interface IP with your on-premises DNS server.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "sccm_vpn_boundary_support",
+            ["title"] = "Sccm Vpn Boundary Support",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary.",
+          },
+          {
+            ["name"] = "service_mode_v2",
+            ["title"] = "Service Mode V2",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "support_url",
+            ["title"] = "Support Url",
+            ["type"] = "`$STRING`",
+            ["short"] = "The URL to launch when the Send Feedback button is clicked.",
+          },
+          {
+            ["name"] = "switch_locked",
+            ["title"] = "Switch Locked",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether to allow the user to turn off the WARP switch and disconnect the client.",
+          },
+          {
+            ["name"] = "tunnel_protocol",
+            ["title"] = "Tunnel Protocol",
+            ["type"] = "`$STRING`",
+            ["short"] = "Determines which tunnel protocol to use.",
+          },
+          {
+            ["name"] = "uninstall_protection",
+            ["title"] = "Uninstall Protection",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Determines whether uninstalling the WARP client requires an override code.",
+          },
+          {
+            ["name"] = "virtual_networks",
+            ["title"] = "Virtual Networks",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "Virtual network access settings for the device.",
+          },
+        },
+        ["name"] = "teams_devices_default_device_setting",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/policy",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/devices/policy",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_device"] = {
+        ["fields"] = {
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "teams_devices_device",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/{device_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["device_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_device_setting"] = {
+        ["fields"] = {
+          {
+            ["name"] = "allow_mode_switch",
+            ["title"] = "Allow Mode Switch",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether to allow the user to switch WARP between modes.",
+          },
+          {
+            ["name"] = "allow_updates",
+            ["title"] = "Allow Updates",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether to receive update notifications when a new version of the client is available.",
+          },
+          {
+            ["name"] = "allowed_to_leave",
+            ["title"] = "Allowed To Leave",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether to allow devices to leave the organization.",
+          },
+          {
+            ["name"] = "auto_connect",
+            ["title"] = "Auto Connect",
+            ["type"] = "`$NUMBER`",
+            ["short"] = "The amount of time in seconds to reconnect after having been disabled.",
+          },
+          {
+            ["name"] = "browser_extension_config",
+            ["title"] = "Browser Extension Config",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "Browser extension proxy settings.",
+          },
+          {
+            ["name"] = "captive_portal",
+            ["title"] = "Captive Portal",
+            ["type"] = "`$NUMBER`",
+            ["short"] = "Turn on the captive portal after the specified amount of time.",
+          },
+          {
+            ["name"] = "default",
+            ["title"] = "Default",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether the policy is the account default.",
+          },
+          {
+            ["name"] = "description",
+            ["title"] = "Description",
+            ["type"] = "`$STRING`",
+            ["short"] = "A description of the policy.",
+          },
+          {
+            ["name"] = "disable_auto_fallback",
+            ["title"] = "Disable Auto Fallback",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.",
+          },
+          {
+            ["name"] = "dns_search_suffixes",
+            ["title"] = "Dns Search Suffixes",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "List of DNS search suffixes to apply to clients.",
+          },
+          {
+            ["name"] = "enabled",
+            ["title"] = "Enabled",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether the policy will be applied to matching devices.",
+          },
+          {
+            ["name"] = "exclude",
+            ["title"] = "Exclude",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "List of routes excluded in the WARP client's tunnel.",
+          },
+          {
+            ["name"] = "exclude_office_ips",
+            ["title"] = "Exclude Office Ips",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether to add Microsoft IPs to Split Tunnel exclusions.",
+          },
+          {
+            ["name"] = "global_acceleration",
+            ["title"] = "Global Acceleration",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "Global Acceleration settings for China.",
+          },
+          {
+            ["name"] = "include",
+            ["title"] = "Include",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "List of routes included in the WARP client's tunnel.",
+          },
+          {
+            ["name"] = "lan_allow_minutes",
+            ["title"] = "Lan Allow Minutes",
+            ["type"] = "`$NUMBER`",
+            ["short"] = "The amount of time in minutes a user is allowed access to their LAN.",
+          },
+          {
+            ["name"] = "lan_allow_subnet_size",
+            ["title"] = "Lan Allow Subnet Size",
+            ["type"] = "`$NUMBER`",
+            ["short"] = "The size of the subnet for the local access network.",
+          },
+          {
+            ["name"] = "match",
+            ["title"] = "Match",
+            ["type"] = "`$STRING`",
+            ["short"] = "The wirefilter expression to match devices.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The name of the device settings profile.",
+          },
+          {
+            ["name"] = "precedence",
+            ["title"] = "Precedence",
+            ["type"] = "`$NUMBER`",
+            ["short"] = "The precedence of the policy.",
+          },
+          {
+            ["name"] = "profile_type",
+            ["title"] = "Profile Type",
+            ["type"] = "`$STRING`",
+            ["short"] = "The client type to which the device settings profile applies.",
+          },
+          {
+            ["name"] = "register_interface_ip_with_dns",
+            ["title"] = "Register Interface Ip With Dns",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Determines if the operating system will register WARP's local interface IP with your on-premises DNS server.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "sccm_vpn_boundary_support",
+            ["title"] = "Sccm Vpn Boundary Support",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary.",
+          },
+          {
+            ["name"] = "service_mode_v2",
+            ["title"] = "Service Mode V2",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "support_url",
+            ["title"] = "Support Url",
+            ["type"] = "`$STRING`",
+            ["short"] = "The URL to launch when the Send Feedback button is clicked.",
+          },
+          {
+            ["name"] = "switch_locked",
+            ["title"] = "Switch Locked",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Whether to allow the user to turn off the WARP switch and disconnect the client.",
+          },
+          {
+            ["name"] = "tunnel_protocol",
+            ["title"] = "Tunnel Protocol",
+            ["type"] = "`$STRING`",
+            ["short"] = "Determines which tunnel protocol to use.",
+          },
+          {
+            ["name"] = "uninstall_protection",
+            ["title"] = "Uninstall Protection",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Determines whether uninstalling the WARP client requires an override code.",
+          },
+          {
+            ["name"] = "virtual_networks",
+            ["title"] = "Virtual Networks",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "Virtual network access settings for the device.",
+          },
+        },
+        ["name"] = "teams_devices_device_setting",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/policy",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/policy/{policy_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["var"] = "policy_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "{policy_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "policy_id",
+                      ["orig"] = "policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "policy_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/devices/policy/{policy_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["var"] = "policy_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "{policy_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "policy_id",
+                      ["orig"] = "policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "policy_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_device_settings_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "teams_devices_device_settings_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/policies",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policies",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policies",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "profile_type",
+                      ["orig"] = "profile_type",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "warp",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "profile_type",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/policy/{policy_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["var"] = "policy_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "{policy_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "policy_id",
+                      ["orig"] = "policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "policy_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_fallback_domain_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "teams_devices_fallback_domain_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/policy/{policy_id}/fallback_domains",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["var"] = "policy_id",
+                  },
+                  {
+                    ["lit"] = "fallback_domains",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "{policy_id}",
+                  "fallback_domains",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "policy_id",
+                      ["orig"] = "policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "policy_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/policy/fallback_domains",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["lit"] = "fallback_domains",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "fallback_domains",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/policy/{policy_id}/fallback_domains",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["var"] = "policy_id",
+                  },
+                  {
+                    ["lit"] = "fallback_domains",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "{policy_id}",
+                  "fallback_domains",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "policy_id",
+                      ["orig"] = "policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "reset_default",
+                      ["orig"] = "reset_default",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                      ["example"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "policy_id",
+                    "reset_default",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/policy/fallback_domains",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["lit"] = "fallback_domains",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "fallback_domains",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "reset_default",
+                      ["orig"] = "reset_default",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                      ["example"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "reset_default",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/devices/policy/{policy_id}/fallback_domains",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["var"] = "policy_id",
+                  },
+                  {
+                    ["lit"] = "fallback_domains",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "{policy_id}",
+                  "fallback_domains",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "policy_id",
+                      ["orig"] = "policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "policy_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/devices/policy/fallback_domains",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["lit"] = "fallback_domains",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "fallback_domains",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_global_warp_override"] = {
+        ["fields"] = {
+          {
+            ["name"] = "disconnect",
+            ["title"] = "Disconnect",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Disconnects all devices on the account using Global WARP override.",
+          },
+          {
+            ["name"] = "justification",
+            ["title"] = "Justification",
+            ["type"] = "`$STRING`",
+            ["short"] = "Reasoning for setting the Global WARP override state.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+        },
+        ["name"] = "teams_devices_global_warp_override",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/resilience/disconnect",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "resilience",
+                  },
+                  {
+                    ["lit"] = "disconnect",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "resilience",
+                  "disconnect",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/resilience/disconnect",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "resilience",
+                  },
+                  {
+                    ["lit"] = "disconnect",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "resilience",
+                  "disconnect",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_id"] = {
+        ["fields"] = {},
+        ["name"] = "teams_devices_id",
+        ["op"] = {
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/posture/{rule_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "posture",
+                  },
+                  {
+                    ["var"] = "rule_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "posture",
+                  "{rule_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "rule_id",
+                      ["orig"] = "rule_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "rule_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_override_code"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+        },
+        ["name"] = "teams_devices_override_code",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/{device_id}/override_codes",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["var"] = "device_id",
+                  },
+                  {
+                    ["lit"] = "override_codes",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "{device_id}",
+                  "override_codes",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "device_id",
+                      ["orig"] = "device_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "device_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "teams_devices_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/posture",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "posture",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "posture",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_schemas_id"] = {
+        ["fields"] = {},
+        ["name"] = "teams_devices_schemas_id",
+        ["op"] = {
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/posture/integration/{integration_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "posture",
+                  },
+                  {
+                    ["lit"] = "integration",
+                  },
+                  {
+                    ["var"] = "integration_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "posture",
+                  "integration",
+                  "{integration_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "integration_id",
+                      ["orig"] = "integration_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "integration_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_schemas_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "teams_devices_schemas_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/posture/integration",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "posture",
+                  },
+                  {
+                    ["lit"] = "integration",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "posture",
+                  "integration",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_schemas_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "config",
+            ["title"] = "Config",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$OBJECT`",
+              },
+            },
+            ["short"] = "The configuration object containing third-party integration information.",
+          },
+          {
+            ["name"] = "interval",
+            ["title"] = "Interval",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The interval between each posture check with the third-party API.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The name of the device posture integration.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "type",
+            ["title"] = "Type",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The type of device posture integration.",
+          },
+        },
+        ["name"] = "teams_devices_schemas_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/posture/integration",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "posture",
+                  },
+                  {
+                    ["lit"] = "integration",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "posture",
+                  "integration",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/posture/integration/{integration_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "posture",
+                  },
+                  {
+                    ["lit"] = "integration",
+                  },
+                  {
+                    ["var"] = "integration_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "posture",
+                  "integration",
+                  "{integration_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "integration_id",
+                      ["orig"] = "integration_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "integration_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/devices/posture/integration/{integration_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "posture",
+                  },
+                  {
+                    ["lit"] = "integration",
+                  },
+                  {
+                    ["var"] = "integration_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "posture",
+                  "integration",
+                  "{integration_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "integration_id",
+                      ["orig"] = "integration_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "integration_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "description",
+            ["title"] = "Description",
+            ["type"] = "`$STRING`",
+            ["short"] = "The description of the device posture rule.",
+          },
+          {
+            ["name"] = "expiration",
+            ["title"] = "Expiration",
+            ["type"] = "`$STRING`",
+            ["short"] = "Sets the expiration time for a posture check result.",
+          },
+          {
+            ["name"] = "input",
+            ["title"] = "Input",
+            ["type"] = "`$OBJECT`",
+            ["short"] = "The value to be checked against.",
+          },
+          {
+            ["name"] = "match",
+            ["title"] = "Match",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "The conditions that the client must match to run the rule.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "The name of the device posture rule.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "schedule",
+            ["title"] = "Schedule",
+            ["type"] = "`$STRING`",
+            ["short"] = "Polling frequency for the WARP client posture check.",
+          },
+          {
+            ["name"] = "type",
+            ["title"] = "Type",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "The type of device posture rule.",
+          },
+        },
+        ["name"] = "teams_devices_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/devices/posture",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "posture",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "posture",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/posture/{rule_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "posture",
+                  },
+                  {
+                    ["var"] = "rule_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "posture",
+                  "{rule_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "rule_id",
+                      ["orig"] = "rule_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "rule_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/devices/posture/{rule_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "posture",
+                  },
+                  {
+                    ["var"] = "rule_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "posture",
+                  "{rule_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "rule_id",
+                      ["orig"] = "rule_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "rule_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_split_tunnel_include_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "teams_devices_split_tunnel_include_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/policy/{policy_id}/include",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["var"] = "policy_id",
+                  },
+                  {
+                    ["lit"] = "include",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "{policy_id}",
+                  "include",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "policy_id",
+                      ["orig"] = "policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "policy_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/policy/include",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["lit"] = "include",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "include",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/devices/policy/{policy_id}/include",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["var"] = "policy_id",
+                  },
+                  {
+                    ["lit"] = "include",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "{policy_id}",
+                  "include",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "policy_id",
+                      ["orig"] = "policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "policy_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/devices/policy/include",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["lit"] = "include",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "include",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_split_tunnel_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "teams_devices_split_tunnel_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/policy/{policy_id}/exclude",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["var"] = "policy_id",
+                  },
+                  {
+                    ["lit"] = "exclude",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "{policy_id}",
+                  "exclude",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "policy_id",
+                      ["orig"] = "policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "policy_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/policy/exclude",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["lit"] = "exclude",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "exclude",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/policy/{policy_id}/exclude",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["var"] = "policy_id",
+                  },
+                  {
+                    ["lit"] = "exclude",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "{policy_id}",
+                  "exclude",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "policy_id",
+                      ["orig"] = "policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "reset_default",
+                      ["orig"] = "reset_default",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                      ["example"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "policy_id",
+                    "reset_default",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/policy/exclude",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["lit"] = "exclude",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "exclude",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "reset_default",
+                      ["orig"] = "reset_default",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                      ["example"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "reset_default",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/devices/policy/{policy_id}/exclude",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["var"] = "policy_id",
+                  },
+                  {
+                    ["lit"] = "exclude",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "{policy_id}",
+                  "exclude",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "policy_id",
+                      ["orig"] = "policy_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "policy_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/devices/policy/exclude",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "policy",
+                  },
+                  {
+                    ["lit"] = "exclude",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "policy",
+                  "exclude",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["teams_devices_zero_trust_account_device_setting"] = {
+        ["fields"] = {
+          {
+            ["name"] = "disable_for_time",
+            ["title"] = "Disable For Time",
+            ["type"] = "`$NUMBER`",
+            ["short"] = "Sets the time limit, in seconds, that a user can use an override code to bypass WARP.",
+          },
+          {
+            ["name"] = "external_emergency_signal_enabled",
+            ["title"] = "External Emergency Signal Enabled",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Controls whether the external emergency disconnect feature is enabled.",
+          },
+          {
+            ["name"] = "external_emergency_signal_fingerprint",
+            ["title"] = "External Emergency Signal Fingerprint",
+            ["type"] = "`$STRING`",
+            ["short"] = "The SHA256 fingerprint (64 hexadecimal characters) of the HTTPS server certificate for the external_emergency_signal_url.",
+          },
+          {
+            ["name"] = "external_emergency_signal_interval",
+            ["title"] = "External Emergency Signal Interval",
+            ["type"] = "`$STRING`",
+            ["short"] = "The interval at which the WARP client fetches the emergency disconnect signal, formatted as a duration string (e.g., \"5m\", \"2m30s\", \"1h\").",
+          },
+          {
+            ["name"] = "external_emergency_signal_url",
+            ["title"] = "External Emergency Signal Url",
+            ["type"] = "`$STRING`",
+            ["short"] = "The HTTPS URL from which to fetch the emergency disconnect signal.",
+          },
+          {
+            ["name"] = "gateway_proxy_enabled",
+            ["title"] = "Gateway Proxy Enabled",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Enable gateway proxy filtering on TCP.",
+          },
+          {
+            ["name"] = "gateway_udp_proxy_enabled",
+            ["title"] = "Gateway Udp Proxy Enabled",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Enable gateway proxy filtering on UDP.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "root_certificate_installation_enabled",
+            ["title"] = "Root Certificate Installation Enabled",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Enable installation of cloudflare managed root certificate.",
+          },
+          {
+            ["name"] = "use_zt_virtual_ip",
+            ["title"] = "Use Zt Virtual Ip",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Enable using CGNAT virtual IPv4.",
+          },
+        },
+        ["name"] = "teams_devices_zero_trust_account_device_setting",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/settings",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "settings",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "settings",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["patch"] = {
+            ["input"] = "data",
+            ["name"] = "patch",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/devices/settings",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "settings",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "settings",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/devices/settings",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "settings",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "settings",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/devices/settings",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "settings",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "settings",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "tunnel",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/tunnels",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "tunnels",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "tunnels",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "exclude_prefix",
+                      ["orig"] = "exclude_prefix",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "vpc1-",
+                    },
+                    {
+                      ["name"] = "existed_at",
+                      ["orig"] = "existed_at",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2019-10-12T07%3A20%3A50.52Z",
+                    },
+                    {
+                      ["name"] = "include_prefix",
+                      ["orig"] = "include_prefix",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "vpc1-",
+                    },
+                    {
+                      ["name"] = "is_deleted",
+                      ["orig"] = "is_deleted",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                      ["example"] = true,
+                    },
+                    {
+                      ["name"] = "name",
+                      ["orig"] = "name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "blog",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "status",
+                      ["orig"] = "status",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "healthy",
+                    },
+                    {
+                      ["name"] = "tun_type",
+                      ["orig"] = "tun_type",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                      ["example"] = "cfd_tunnel,warp_connector",
+                    },
+                    {
+                      ["name"] = "uuid",
+                      ["orig"] = "uuid",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                    {
+                      ["name"] = "was_active_at",
+                      ["orig"] = "was_active_at",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2009-11-10T23:00:00Z",
+                    },
+                    {
+                      ["name"] = "was_inactive_at",
+                      ["orig"] = "was_inactive_at",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2009-11-10T23:00:00Z",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "exclude_prefix",
+                    "existed_at",
+                    "include_prefix",
+                    "is_deleted",
+                    "name",
+                    "page",
+                    "per_page",
+                    "status",
+                    "tun_type",
+                    "uuid",
+                    "was_active_at",
+                    "was_inactive_at",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_cfd_tunnel_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "tunnel_cfd_tunnel_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cfd_tunnel",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cfd_tunnel",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cfd_tunnel",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "exclude_prefix",
+                      ["orig"] = "exclude_prefix",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "vpc1-",
+                    },
+                    {
+                      ["name"] = "existed_at",
+                      ["orig"] = "existed_at",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2019-10-12T07%3A20%3A50.52Z",
+                    },
+                    {
+                      ["name"] = "include_prefix",
+                      ["orig"] = "include_prefix",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "vpc1-",
+                    },
+                    {
+                      ["name"] = "is_deleted",
+                      ["orig"] = "is_deleted",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                      ["example"] = true,
+                    },
+                    {
+                      ["name"] = "name",
+                      ["orig"] = "name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "blog",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "status",
+                      ["orig"] = "status",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "healthy",
+                    },
+                    {
+                      ["name"] = "uuid",
+                      ["orig"] = "uuid",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                    {
+                      ["name"] = "was_active_at",
+                      ["orig"] = "was_active_at",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2009-11-10T23:00:00Z",
+                    },
+                    {
+                      ["name"] = "was_inactive_at",
+                      ["orig"] = "was_inactive_at",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2009-11-10T23:00:00Z",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "exclude_prefix",
+                    "existed_at",
+                    "include_prefix",
+                    "is_deleted",
+                    "name",
+                    "page",
+                    "per_page",
+                    "status",
+                    "uuid",
+                    "was_active_at",
+                    "was_inactive_at",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_cfd_tunnel_response_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "config_src",
+            ["title"] = "Config Src",
+            ["type"] = "`$STRING`",
+            ["short"] = "Indicates if this is a locally or remotely configured tunnel.",
+          },
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "A user-friendly name for a tunnel.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["load"] = {
+                ["type"] = "`$OBJECT`",
+              },
+            },
+            ["short"] = "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful",
+          },
+          {
+            ["name"] = "tunnel_secret",
+            ["title"] = "Tunnel Secret",
+            ["type"] = "`$STRING`",
+            ["short"] = "Sets the password required to run a locally-managed tunnel.",
+          },
+        },
+        ["name"] = "tunnel_cfd_tunnel_response_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/cfd_tunnel",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cfd_tunnel",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cfd_tunnel",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cfd_tunnel/{tunnel_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cfd_tunnel",
+                  },
+                  {
+                    ["var"] = "tunnel_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cfd_tunnel",
+                  "{tunnel_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "tunnel_id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/cfd_tunnel/{tunnel_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cfd_tunnel",
+                  },
+                  {
+                    ["var"] = "tunnel_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cfd_tunnel",
+                  "{tunnel_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "tunnel_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/cfd_tunnel/{tunnel_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cfd_tunnel",
+                  },
+                  {
+                    ["var"] = "tunnel_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cfd_tunnel",
+                  "{tunnel_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "tunnel_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_configuration"] = {
+        ["fields"] = {
+          {
+            ["name"] = "config",
+            ["title"] = "Config",
+            ["type"] = "`$OBJECT`",
+            ["short"] = "The tunnel configuration and ingress rules.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["short"] = "Cloudflare Tunnel configuration",
+          },
+        },
+        ["name"] = "tunnel_configuration",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cfd_tunnel",
+                  },
+                  {
+                    ["var"] = "cfd_tunnel_id",
+                  },
+                  {
+                    ["lit"] = "configurations",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cfd_tunnel",
+                  "{cfd_tunnel_id}",
+                  "configurations",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "cfd_tunnel_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "023e105f4ecef8ad9ca31a8372d0c353",
+                    },
+                    {
+                      ["name"] = "cfd_tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "cfd_tunnel_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cfd_tunnel",
+                  },
+                  {
+                    ["var"] = "cfd_tunnel_id",
+                  },
+                  {
+                    ["lit"] = "configurations",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cfd_tunnel",
+                  "{cfd_tunnel_id}",
+                  "configurations",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "cfd_tunnel_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "023e105f4ecef8ad9ca31a8372d0c353",
+                    },
+                    {
+                      ["name"] = "cfd_tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "cfd_tunnel_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_empty"] = {
+        ["fields"] = {
+          {
+            ["name"] = "client_id",
+            ["title"] = "Client Id",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "UUID of the Cloudflare Tunnel connector.",
+            ["format"] = "uuid",
+          },
+        },
+        ["name"] = "tunnel_empty",
+        ["op"] = {
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cfd_tunnel",
+                  },
+                  {
+                    ["var"] = "cfd_tunnel_id",
+                  },
+                  {
+                    ["lit"] = "connections",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cfd_tunnel",
+                  "{cfd_tunnel_id}",
+                  "connections",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "cfd_tunnel_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "cfd_tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "client_id",
+                      ["orig"] = "client_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "1bedc50d-42b3-473c-b108-ff3d10c0d925",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "cfd_tunnel_id",
+                    "client_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/warp_connector/{tunnel_id}/failover",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "warp_connector",
+                  },
+                  {
+                    ["var"] = "warp_connector_id",
+                  },
+                  {
+                    ["lit"] = "failover",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "warp_connector",
+                  "{warp_connector_id}",
+                  "failover",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "warp_connector_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "warp_connector_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "warp_connector_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_hostname_route_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "tunnel_hostname_route_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/zerotrust/routes/hostname",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                  {
+                    ["lit"] = "hostname",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "routes",
+                  "hostname",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "comment",
+                      ["orig"] = "comment",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "example%20comment",
+                    },
+                    {
+                      ["name"] = "existed_at",
+                      ["orig"] = "existed_at",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2019-10-12T07%3A20%3A50.52Z",
+                    },
+                    {
+                      ["name"] = "hostname",
+                      ["orig"] = "hostname",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "office-1.local",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                    {
+                      ["name"] = "is_deleted",
+                      ["orig"] = "is_deleted",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                      ["example"] = true,
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "comment",
+                    "existed_at",
+                    "hostname",
+                    "id",
+                    "is_deleted",
+                    "page",
+                    "per_page",
+                    "tunnel_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_hostname_route_response_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "comment",
+            ["title"] = "Comment",
+            ["type"] = "`$STRING`",
+            ["short"] = "An optional description of the hostname route.",
+          },
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "hostname",
+            ["title"] = "Hostname",
+            ["type"] = "`$STRING`",
+            ["short"] = "The hostname of the route.",
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["load"] = {
+                ["type"] = "`$OBJECT`",
+              },
+            },
+            ["short"] = "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful",
+          },
+          {
+            ["name"] = "tunnel_id",
+            ["title"] = "Tunnel Id",
+            ["type"] = "`$STRING`",
+            ["short"] = "UUID of the tunnel.",
+            ["format"] = "uuid",
+          },
+        },
+        ["name"] = "tunnel_hostname_route_response_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/zerotrust/routes/hostname",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                  {
+                    ["lit"] = "hostname",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "routes",
+                  "hostname",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                  {
+                    ["lit"] = "hostname",
+                  },
+                  {
+                    ["var"] = "hostname_route_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "routes",
+                  "hostname",
+                  "{hostname_route_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "hostname_route_id",
+                      ["orig"] = "hostname_route_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "hostname_route_id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                  {
+                    ["lit"] = "hostname",
+                  },
+                  {
+                    ["var"] = "hostname_route_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "routes",
+                  "hostname",
+                  "{hostname_route_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "hostname_route_id",
+                      ["orig"] = "hostname_route_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "hostname_route_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                  {
+                    ["lit"] = "hostname",
+                  },
+                  {
+                    ["var"] = "hostname_route_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "routes",
+                  "hostname",
+                  "{hostname_route_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "hostname_route_id",
+                      ["orig"] = "hostname_route_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "hostname_route_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_mesh_configuration_response_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "config",
+            ["title"] = "Config",
+            ["type"] = "`$OBJECT`",
+            ["short"] = "Provider-specific configuration.",
+          },
+          {
+            ["name"] = "ha_mode",
+            ["title"] = "Ha Mode",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "High-availability mode for the WARP Connector tunnel.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+        },
+        ["name"] = "tunnel_mesh_configuration_response_single",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/warp_connector/{tunnel_id}/configurations",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "warp_connector",
+                  },
+                  {
+                    ["var"] = "warp_connector_id",
+                  },
+                  {
+                    ["lit"] = "configurations",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "warp_connector",
+                  "{warp_connector_id}",
+                  "configurations",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "warp_connector_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "023e105f4ecef8ad9ca31a8372d0c353",
+                    },
+                    {
+                      ["name"] = "warp_connector_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "warp_connector_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/warp_connector/{tunnel_id}/configurations",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "warp_connector",
+                  },
+                  {
+                    ["var"] = "warp_connector_id",
+                  },
+                  {
+                    ["lit"] = "configurations",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "warp_connector",
+                  "{warp_connector_id}",
+                  "configurations",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "warp_connector_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "023e105f4ecef8ad9ca31a8372d0c353",
+                    },
+                    {
+                      ["name"] = "warp_connector_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "warp_connector_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_route_response_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "comment",
+            ["title"] = "Comment",
+            ["type"] = "`$STRING`",
+            ["short"] = "Optional remark describing the route.",
+          },
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "network",
+            ["title"] = "Network",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The private IPv4 or IPv6 range connected by the route, in CIDR notation.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["load"] = {
+                ["type"] = "`$OBJECT`",
+              },
+              ["update"] = {
+                ["type"] = "`$OBJECT`",
+              },
+            },
+            ["short"] = "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful",
+          },
+          {
+            ["name"] = "tunnel_id",
+            ["title"] = "Tunnel Id",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "UUID of the tunnel.",
+            ["readOnly"] = true,
+            ["format"] = "uuid",
+          },
+          {
+            ["name"] = "virtual_network_id",
+            ["title"] = "Virtual Network Id",
+            ["type"] = "`$STRING`",
+            ["short"] = "UUID of the virtual network.",
+            ["format"] = "uuid",
+          },
+        },
+        ["name"] = "tunnel_route_response_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                  {
+                    ["lit"] = "network",
+                  },
+                  {
+                    ["var"] = "ip_network_encoded",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "routes",
+                  "network",
+                  "{ip_network_encoded}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "ip_network_encoded",
+                      ["orig"] = "ip_network_encoded",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "172.16.0.0%2F16",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "ip_network_encoded",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/teamnet/routes",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "routes",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/teamnet/routes/{route_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                  {
+                    ["var"] = "route_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "routes",
+                  "{route_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "route_id",
+                      ["orig"] = "route_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "route_id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                  {
+                    ["lit"] = "network",
+                  },
+                  {
+                    ["var"] = "ip_network_encoded",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "routes",
+                  "network",
+                  "{ip_network_encoded}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "ip_network_encoded",
+                      ["orig"] = "ip_network_encoded",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "172.16.0.0%2F16",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "tun_type",
+                      ["orig"] = "tun_type",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "cfd_tunnel",
+                    },
+                    {
+                      ["name"] = "tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                    {
+                      ["name"] = "virtual_network_id",
+                      ["orig"] = "virtual_network_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "ip_network_encoded",
+                    "tun_type",
+                    "tunnel_id",
+                    "virtual_network_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/teamnet/routes/{route_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                  {
+                    ["var"] = "route_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "routes",
+                  "{route_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "route_id",
+                      ["orig"] = "route_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "route_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                  {
+                    ["lit"] = "network",
+                  },
+                  {
+                    ["var"] = "ip_network_encoded",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "routes",
+                  "network",
+                  "{ip_network_encoded}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "ip_network_encoded",
+                      ["orig"] = "ip_network_encoded",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "172.16.0.0%2F16",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "ip_network_encoded",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/teamnet/routes/{route_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                  {
+                    ["var"] = "route_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "routes",
+                  "{route_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "route_id",
+                      ["orig"] = "route_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "route_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_subnet_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "tunnel_subnet_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/zerotrust/subnets",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "subnets",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "subnets",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "address_family",
+                      ["orig"] = "address_family",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "v4",
+                    },
+                    {
+                      ["name"] = "comment",
+                      ["orig"] = "comment",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "example%20comment",
+                    },
+                    {
+                      ["name"] = "existed_at",
+                      ["orig"] = "existed_at",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2019-10-12T07%3A20%3A50.52Z",
+                    },
+                    {
+                      ["name"] = "is_default_network",
+                      ["orig"] = "is_default_network",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "is_deleted",
+                      ["orig"] = "is_deleted",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "name",
+                      ["orig"] = "name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "IPv4%20Cloudflare%20Source%20IPs",
+                    },
+                    {
+                      ["name"] = "network",
+                      ["orig"] = "network",
+                      ["type"] = "`$ANY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "sort_order",
+                      ["orig"] = "sort_order",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "subnet_type",
+                      ["orig"] = "subnet_type",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "cloudflare_source,warp",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "address_family",
+                    "comment",
+                    "existed_at",
+                    "is_default_network",
+                    "is_deleted",
+                    "name",
+                    "network",
+                    "page",
+                    "per_page",
+                    "sort_order",
+                    "subnet_type",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_subnet_response_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "comment",
+            ["title"] = "Comment",
+            ["type"] = "`$STRING`",
+            ["short"] = "An optional description of the subnet.",
+          },
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "is_default_network",
+            ["title"] = "Is Default Network",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "If `true`, this is the default subnet for the account.",
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["patch"] = {
+                ["type"] = "`$STRING`",
+              },
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "A user-friendly name for the subnet.",
+          },
+          {
+            ["name"] = "network",
+            ["title"] = "Network",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["patch"] = {
+                ["type"] = "`$STRING`",
+              },
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The private IPv4 or IPv6 range defining the subnet, in CIDR notation.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["load"] = {
+                ["type"] = "`$OBJECT`",
+              },
+            },
+            ["short"] = "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful",
+          },
+        },
+        ["name"] = "tunnel_subnet_response_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/zerotrust/subnets/warp",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "subnets",
+                  },
+                  {
+                    ["lit"] = "warp",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "subnets",
+                  "warp",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "subnets",
+                  },
+                  {
+                    ["lit"] = "initial_resolved_ip",
+                  },
+                  {
+                    ["var"] = "address_family",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "subnets",
+                  "initial_resolved_ip",
+                  "{address_family}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "address_family",
+                      ["orig"] = "address_family",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "v4",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "address_family",
+                  },
+                },
+              },
+            },
+          },
+          ["patch"] = {
+            ["input"] = "data",
+            ["name"] = "patch",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/zerotrust/subnets/cloudflare_source/{address_family}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "subnets",
+                  },
+                  {
+                    ["lit"] = "cloudflare_source",
+                  },
+                  {
+                    ["var"] = "address_family",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "subnets",
+                  "cloudflare_source",
+                  "{address_family}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "address_family",
+                      ["orig"] = "address_family",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "v4",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "address_family",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "subnets",
+                  },
+                  {
+                    ["lit"] = "initial_resolved_ip",
+                  },
+                  {
+                    ["var"] = "address_family",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "subnets",
+                  "initial_resolved_ip",
+                  "{address_family}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "address_family",
+                      ["orig"] = "address_family",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "v4",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "address_family",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_subnet_response_single_nullable"] = {
+        ["fields"] = {},
+        ["name"] = "tunnel_subnet_response_single_nullable",
+        ["op"] = {
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "subnets",
+                  },
+                  {
+                    ["lit"] = "warp",
+                  },
+                  {
+                    ["var"] = "subnet_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "subnets",
+                  "warp",
+                  "{subnet_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "subnet_id",
+                      ["orig"] = "subnet_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "subnet_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {
+            {
+              "$.main.kit.entity.warp",
+            },
+          },
+        },
+      },
+      ["tunnel_teamnet_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "tunnel_teamnet_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/teamnet/routes",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "routes",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "comment",
+                      ["orig"] = "comment",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "Example comment for this route.",
+                    },
+                    {
+                      ["name"] = "existed_at",
+                      ["orig"] = "existed_at",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2019-10-12T07%3A20%3A50.52Z",
+                    },
+                    {
+                      ["name"] = "is_deleted",
+                      ["orig"] = "is_deleted",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "network_subset",
+                      ["orig"] = "network_subset",
+                      ["type"] = "`$ANY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "network_superset",
+                      ["orig"] = "network_superset",
+                      ["type"] = "`$ANY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "route_id",
+                      ["orig"] = "route_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                    {
+                      ["name"] = "tun_type",
+                      ["orig"] = "tun_type",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                      ["example"] = "cfd_tunnel,warp_connector",
+                    },
+                    {
+                      ["name"] = "tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                    {
+                      ["name"] = "virtual_network_id",
+                      ["orig"] = "virtual_network_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "comment",
+                    "existed_at",
+                    "is_deleted",
+                    "network_subset",
+                    "network_superset",
+                    "page",
+                    "per_page",
+                    "route_id",
+                    "tun_type",
+                    "tunnel_id",
+                    "virtual_network_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_teamnet_response_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["load"] = {
+                ["type"] = "`$OBJECT`",
+              },
+            },
+            ["short"] = "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful",
+          },
+        },
+        ["name"] = "tunnel_teamnet_response_single",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/teamnet/routes/ip/{ip}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "routes",
+                  },
+                  {
+                    ["lit"] = "ip",
+                  },
+                  {
+                    ["var"] = "ip",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "routes",
+                  "ip",
+                  "{ip}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "ip",
+                      ["orig"] = "ip",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "10.1.0.137",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "default_virtual_network_fallback",
+                      ["orig"] = "default_virtual_network_fallback",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                      ["example"] = true,
+                    },
+                    {
+                      ["name"] = "virtual_network_id",
+                      ["orig"] = "virtual_network_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "default_virtual_network_fallback",
+                    "ip",
+                    "virtual_network_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_tunnel_client"] = {
+        ["fields"] = {
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["load"] = {
+                ["type"] = "`$OBJECT`",
+              },
+            },
+            ["short"] = "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful",
+          },
+        },
+        ["name"] = "tunnel_tunnel_client",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connectors/{connector_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cfd_tunnel",
+                  },
+                  {
+                    ["var"] = "cfd_tunnel_id",
+                  },
+                  {
+                    ["lit"] = "connectors",
+                  },
+                  {
+                    ["var"] = "connector_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cfd_tunnel",
+                  "{cfd_tunnel_id}",
+                  "connectors",
+                  "{connector_id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "cfd_tunnel_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "cfd_tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                    {
+                      ["name"] = "connector_id",
+                      ["orig"] = "connector_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "1bedc50d-42b3-473c-b108-ff3d10c0d925",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "cfd_tunnel_id",
+                    "connector_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_tunnel_connection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "tunnel_tunnel_connection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cfd_tunnel",
+                  },
+                  {
+                    ["var"] = "cfd_tunnel_id",
+                  },
+                  {
+                    ["lit"] = "connections",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cfd_tunnel",
+                  "{cfd_tunnel_id}",
+                  "connections",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "cfd_tunnel_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "cfd_tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "cfd_tunnel_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_tunnel_response_token"] = {
+        ["fields"] = {
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "resources",
+            ["title"] = "Resources",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["list"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful",
+          },
+        },
+        ["name"] = "tunnel_tunnel_response_token",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/management",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cfd_tunnel",
+                  },
+                  {
+                    ["var"] = "cfd_tunnel_id",
+                  },
+                  {
+                    ["lit"] = "management",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cfd_tunnel",
+                  "{cfd_tunnel_id}",
+                  "management",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "cfd_tunnel_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "cfd_tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "cfd_tunnel_id",
+                  },
+                },
+              },
+            },
+          },
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/token",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "cfd_tunnel",
+                  },
+                  {
+                    ["var"] = "cfd_tunnel_id",
+                  },
+                  {
+                    ["lit"] = "token",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "cfd_tunnel",
+                  "{cfd_tunnel_id}",
+                  "token",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "cfd_tunnel_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "cfd_tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "cfd_tunnel_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/warp_connector/{tunnel_id}/token",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "warp_connector",
+                  },
+                  {
+                    ["var"] = "warp_connector_id",
+                  },
+                  {
+                    ["lit"] = "token",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "warp_connector",
+                  "{warp_connector_id}",
+                  "token",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "warp_connector_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "warp_connector_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "warp_connector_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_tunnel_warp_connector_client"] = {
+        ["fields"] = {
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["load"] = {
+                ["type"] = "`$OBJECT`",
+              },
+            },
+            ["short"] = "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful",
+          },
+        },
+        ["name"] = "tunnel_tunnel_warp_connector_client",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/warp_connector/{tunnel_id}/connectors/{connector_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "warp_connector",
+                  },
+                  {
+                    ["var"] = "warp_connector_id",
+                  },
+                  {
+                    ["lit"] = "connectors",
+                  },
+                  {
+                    ["var"] = "connector_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "warp_connector",
+                  "{warp_connector_id}",
+                  "connectors",
+                  "{connector_id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "warp_connector_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "connector_id",
+                      ["orig"] = "connector_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "1bedc50d-42b3-473c-b108-ff3d10c0d925",
+                    },
+                    {
+                      ["name"] = "warp_connector_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "connector_id",
+                    "warp_connector_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_tunnel_warp_connector_connection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "tunnel_tunnel_warp_connector_connection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/warp_connector/{tunnel_id}/connections",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "warp_connector",
+                  },
+                  {
+                    ["var"] = "warp_connector_id",
+                  },
+                  {
+                    ["lit"] = "connections",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "warp_connector",
+                  "{warp_connector_id}",
+                  "connections",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["tunnel_id"] = "warp_connector_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "warp_connector_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "warp_connector_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_vnet_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "tunnel_vnet_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/teamnet/virtual_networks",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "virtual_networks",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "virtual_networks",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                    {
+                      ["name"] = "is_default",
+                      ["orig"] = "is_default",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "is_default_network",
+                      ["orig"] = "is_default_network",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "is_deleted",
+                      ["orig"] = "is_deleted",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "name",
+                      ["orig"] = "name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "us-east-1-vpc",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                    "is_default",
+                    "is_default_network",
+                    "is_deleted",
+                    "name",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_vnet_response_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "comment",
+            ["title"] = "Comment",
+            ["type"] = "`$STRING`",
+            ["short"] = "Optional remark describing the virtual network.",
+          },
+          {
+            ["name"] = "is_default",
+            ["title"] = "Is Default",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "If `true`, this virtual network is the default for the account.",
+            ["deprecated"] = true,
+          },
+          {
+            ["name"] = "is_default_network",
+            ["title"] = "Is Default Network",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "If `true`, this virtual network is the default for the account.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["op"] = {
+              ["create"] = {
+                ["req"] = true,
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "A user-friendly name for the virtual network.",
+          },
+        },
+        ["name"] = "tunnel_vnet_response_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/teamnet/virtual_networks",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "virtual_networks",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "virtual_networks",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "virtual_networks",
+                  },
+                  {
+                    ["var"] = "virtual_network_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "virtual_networks",
+                  "{virtual_network_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "virtual_network_id",
+                      ["orig"] = "virtual_network_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "virtual_network_id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "virtual_networks",
+                  },
+                  {
+                    ["var"] = "virtual_network_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "virtual_networks",
+                  "{virtual_network_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "virtual_network_id",
+                      ["orig"] = "virtual_network_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "virtual_network_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "teamnet",
+                  },
+                  {
+                    ["lit"] = "virtual_networks",
+                  },
+                  {
+                    ["var"] = "virtual_network_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "teamnet",
+                  "virtual_networks",
+                  "{virtual_network_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "virtual_network_id",
+                      ["orig"] = "virtual_network_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "virtual_network_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_warp_connector_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "tunnel_warp_connector_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/warp_connector",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "warp_connector",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "warp_connector",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "exclude_prefix",
+                      ["orig"] = "exclude_prefix",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "vpc1-",
+                    },
+                    {
+                      ["name"] = "existed_at",
+                      ["orig"] = "existed_at",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2019-10-12T07%3A20%3A50.52Z",
+                    },
+                    {
+                      ["name"] = "include_prefix",
+                      ["orig"] = "include_prefix",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "vpc1-",
+                    },
+                    {
+                      ["name"] = "is_deleted",
+                      ["orig"] = "is_deleted",
+                      ["type"] = "`$BOOLEAN`",
+                      ["kind"] = "query",
+                      ["example"] = true,
+                    },
+                    {
+                      ["name"] = "name",
+                      ["orig"] = "name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "blog",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "status",
+                      ["orig"] = "status",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "healthy",
+                    },
+                    {
+                      ["name"] = "uuid",
+                      ["orig"] = "uuid",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                    {
+                      ["name"] = "was_active_at",
+                      ["orig"] = "was_active_at",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2009-11-10T23:00:00Z",
+                    },
+                    {
+                      ["name"] = "was_inactive_at",
+                      ["orig"] = "was_inactive_at",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "2009-11-10T23:00:00Z",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "exclude_prefix",
+                    "existed_at",
+                    "include_prefix",
+                    "is_deleted",
+                    "name",
+                    "page",
+                    "per_page",
+                    "status",
+                    "uuid",
+                    "was_active_at",
+                    "was_inactive_at",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_warp_connector_response_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "ha",
+            ["title"] = "Ha",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Indicates that the tunnel will be created to be highly available.",
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["update"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "A user-friendly name for a tunnel.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["load"] = {
+                ["type"] = "`$OBJECT`",
+              },
+            },
+            ["short"] = "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful",
+          },
+          {
+            ["name"] = "tunnel_secret",
+            ["title"] = "Tunnel Secret",
+            ["type"] = "`$STRING`",
+            ["short"] = "Sets the password required to run a locally-managed tunnel.",
+          },
+        },
+        ["name"] = "tunnel_warp_connector_response_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/warp_connector",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "warp_connector",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "warp_connector",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/warp_connector/{tunnel_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "warp_connector",
+                  },
+                  {
+                    ["var"] = "tunnel_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "warp_connector",
+                  "{tunnel_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "tunnel_id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/warp_connector/{tunnel_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "warp_connector",
+                  },
+                  {
+                    ["var"] = "tunnel_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "warp_connector",
+                  "{tunnel_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "tunnel_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/warp_connector/{tunnel_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "warp_connector",
+                  },
+                  {
+                    ["var"] = "tunnel_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "warp_connector",
+                  "{tunnel_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "tunnel_id",
+                      ["orig"] = "tunnel_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "tunnel_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["tunnel_zero_trust_connectivity_setting"] = {
+        ["fields"] = {
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "icmp_proxy_enabled",
+            ["title"] = "Icmp Proxy Enabled",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "A flag to enable the ICMP proxy for the account network.",
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "offramp_warp_enabled",
+            ["title"] = "Offramp Warp Enabled",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "A flag to enable WARP to WARP traffic.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["list"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful",
+          },
+        },
+        ["name"] = "tunnel_zero_trust_connectivity_setting",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/zerotrust/connectivity_settings",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "connectivity_settings",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "connectivity_settings",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/zerotrust/connectivity_settings",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "connectivity_settings",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "connectivity_settings",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["warp"] = {
+        ["fields"] = {
+          {
+            ["name"] = "comment",
+            ["title"] = "Comment",
+            ["type"] = "`$STRING`",
+            ["short"] = "An optional description of the subnet.",
+          },
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "is_default_network",
+            ["title"] = "Is Default Network",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "If `true`, this is the default subnet for the account.",
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["short"] = "A user-friendly name for the subnet.",
+          },
+          {
+            ["name"] = "network",
+            ["title"] = "Network",
+            ["type"] = "`$STRING`",
+            ["short"] = "The private IPv4 or IPv6 range defining the subnet, in CIDR notation.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["load"] = {
+                ["type"] = "`$OBJECT`",
+              },
+            },
+            ["short"] = "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "warp",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "subnets",
+                  },
+                  {
+                    ["lit"] = "warp",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "subnets",
+                  "warp",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["subnet_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "subnet_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zerotrust",
+                  },
+                  {
+                    ["lit"] = "subnets",
+                  },
+                  {
+                    ["lit"] = "warp",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zerotrust",
+                  "subnets",
+                  "warp",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["subnet_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "subnet_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["warp_change_event"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "warp_change_event",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/dex/warp-change-events",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "dex",
+                  },
+                  {
+                    ["lit"] = "warp-change-events",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "dex",
+                  "warp-change-events",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "01a7362d577a6c3019a474fd6f485823",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "account_name",
+                      ["orig"] = "account_name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "Myorg",
+                    },
+                    {
+                      ["name"] = "config_name",
+                      ["orig"] = "config_name",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "MASQUE",
+                    },
+                    {
+                      ["name"] = "from",
+                      ["orig"] = "from",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-09-20T17:00:00Z",
+                    },
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$NUMBER`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = 10,
+                    },
+                    {
+                      ["name"] = "sort_order",
+                      ["orig"] = "sort_order",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "ASC",
+                    },
+                    {
+                      ["name"] = "to",
+                      ["orig"] = "to",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["reqd"] = true,
+                      ["example"] = "2023-09-20T17:00:00Z",
+                    },
+                    {
+                      ["name"] = "toggle",
+                      ["orig"] = "toggle",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "type",
+                      ["orig"] = "type",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "account_name",
+                    "config_name",
+                    "from",
+                    "page",
+                    "per_page",
+                    "sort_order",
+                    "to",
+                    "toggle",
+                    "type",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["warp_teams_device_api_other"] = {
+        ["fields"] = {
+          {
+            ["name"] = "errors",
+            ["title"] = "Errors",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "messages",
+            ["title"] = "Messages",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ANY`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "success",
+            ["title"] = "Success",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether the API call was successful.",
+          },
+        },
+        ["name"] = "warp_teams_device_api_other",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/devices/registrations/{registration_id}/override_codes",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "devices",
+                  },
+                  {
+                    ["lit"] = "registrations",
+                  },
+                  {
+                    ["var"] = "registration_id",
+                  },
+                  {
+                    ["lit"] = "override_codes",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "devices",
+                  "registrations",
+                  "{registration_id}",
+                  "override_codes",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "registration_id",
+                      ["orig"] = "registration_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "registration_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {
+            {
+              "$.main.kit.entity.registration",
+            },
+          },
+        },
+      },
+      ["zero_trust_gateway_applications_review_status"] = {
+        ["fields"] = {
+          {
+            ["name"] = "approved_apps",
+            ["title"] = "Approved Apps",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+            ["short"] = "Contains the ids of the approved applications.",
+          },
+          {
+            ["name"] = "in_review_apps",
+            ["title"] = "In Review Apps",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+            ["short"] = "Contains the ids of the applications in review.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "unapproved_apps",
+            ["title"] = "Unapproved Apps",
+            ["type"] = "`$ARRAY`",
+            ["req"] = true,
+            ["short"] = "Contains the ids of the unapproved applications.",
+          },
+        },
+        ["name"] = "zero_trust_gateway_applications_review_status",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/apps/review_status",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "apps",
+                  },
+                  {
+                    ["lit"] = "review_status",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "apps",
+                  "review_status",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "023e105f4ecef8ad9ca31a8372d0c353",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/gateway/apps/review_status",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "apps",
+                  },
+                  {
+                    ["lit"] = "review_status",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "apps",
+                  "review_status",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "023e105f4ecef8ad9ca31a8372d0c353",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_csv_operation_single"] = {
+        ["fields"] = {},
+        ["name"] = "zero_trust_gateway_csv_operation_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/gateway/lists/upload",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "lists",
+                  },
+                  {
+                    ["lit"] = "upload",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "lists",
+                  "upload",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_custom_certificate_setting"] = {
+        ["fields"] = {
+          {
+            ["name"] = "binding_status",
+            ["title"] = "Binding Status",
+            ["type"] = "`$STRING`",
+            ["short"] = "Indicate the internal certificate status.",
+            ["readOnly"] = true,
+          },
+          {
+            ["name"] = "enabled",
+            ["title"] = "Enabled",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Specify whether to enable a custom certificate authority for signing Gateway traffic.",
+          },
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+            ["short"] = "Specify the UUID of the certificate (ID from MTLS certificate store).",
+          },
+          {
+            ["name"] = "updated_at",
+            ["title"] = "Updated At",
+            ["type"] = "`$STRING`",
+            ["readOnly"] = true,
+            ["format"] = "date-time",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "zero_trust_gateway_custom_certificate_setting",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/configuration/custom_certificate",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "configuration",
+                  },
+                  {
+                    ["lit"] = "custom_certificate",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "configuration",
+                  "custom_certificate",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_gateway_account"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_gateway_account",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/gateway",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_gateway_account_config"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "settings",
+            ["title"] = "Settings",
+            ["type"] = "`$OBJECT`",
+            ["short"] = "Specify account settings.",
+          },
+        },
+        ["name"] = "zero_trust_gateway_gateway_account_config",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/configuration",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "configuration",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "configuration",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["patch"] = {
+            ["input"] = "data",
+            ["name"] = "patch",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/gateway/configuration",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "configuration",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "configuration",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/gateway/configuration",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "configuration",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "configuration",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_gateway_account_egress_cidr_pair_list"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_gateway_account_egress_cidr_pair_list",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/egress_cidr_pairs",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "egress_cidr_pairs",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "egress_cidr_pairs",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_gateway_account_logging_setting"] = {
+        ["fields"] = {
+          {
+            ["name"] = "redact_pii",
+            ["title"] = "Redact Pii",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Indicate whether to redact personally identifiable information from activity logging (PII fields include source IP, user email, user ID, device ID, URL, referrer, and user agent).",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "settings_by_rule_type",
+            ["title"] = "Settings By Rule Type",
+            ["type"] = "`$OBJECT`",
+            ["short"] = "Configure logging settings for each rule type.",
+          },
+        },
+        ["name"] = "zero_trust_gateway_gateway_account_logging_setting",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/logging",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "logging",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "logging",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/gateway/logging",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "logging",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "logging",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_list_item_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "Provide the list items.",
+          },
+          {
+            ["name"] = "result_info",
+            ["title"] = "Result Info",
+            ["type"] = "`$OBJECT`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_list_item_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/lists/{list_id}/items",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "lists",
+                  },
+                  {
+                    ["var"] = "list_id",
+                  },
+                  {
+                    ["lit"] = "items",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "lists",
+                  "{list_id}",
+                  "items",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "list_id",
+                      ["orig"] = "list_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 50,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "list_id",
+                    "page",
+                    "per_page",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {
+            {
+              "$.main.kit.entity.list",
+            },
+          },
+        },
+      },
+      ["zero_trust_gateway_list_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "append",
+            ["title"] = "Append",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "Add items to the list.",
+          },
+          {
+            ["name"] = "description",
+            ["title"] = "Description",
+            ["type"] = "`$STRING`",
+            ["short"] = "Provide the list description.",
+          },
+          {
+            ["name"] = "items",
+            ["title"] = "Items",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "Add items to the list.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Specify the list name.",
+          },
+          {
+            ["name"] = "remove",
+            ["title"] = "Remove",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "Lists of item values you want to remove.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_list_single",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/lists/{list_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "lists",
+                  },
+                  {
+                    ["var"] = "list_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "lists",
+                  "{list_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "list_id",
+                      ["orig"] = "list_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "list_id",
+                  },
+                },
+              },
+            },
+          },
+          ["patch"] = {
+            ["input"] = "data",
+            ["name"] = "patch",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/gateway/lists/{list_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "lists",
+                  },
+                  {
+                    ["var"] = "list_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "lists",
+                  "{list_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "list_id",
+                      ["orig"] = "list_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "list_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/gateway/lists/{list_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "lists",
+                  },
+                  {
+                    ["var"] = "list_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "lists",
+                  "{list_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "list_id",
+                      ["orig"] = "list_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "list_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {
+            {
+              "$.main.kit.entity.list",
+            },
+          },
+        },
+      },
+      ["zero_trust_gateway_response_collection"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_response_collection",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/certificates",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "certificates",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "certificates",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_response_collection_10"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+          {
+            ["name"] = "result_info",
+            ["title"] = "Result Info",
+            ["type"] = "`$OBJECT`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_response_collection_10",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/pacfiles",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "pacfiles",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "pacfiles",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                    {
+                      ["name"] = "per_page",
+                      ["orig"] = "per_page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 50,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "page",
+                    "per_page",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_response_collection_2"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_response_collection_2",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/dns_destination_ips",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "dns_destination_ips",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "dns_destination_ips",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_response_collection_3"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_response_collection_3",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/lists",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "lists",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "lists",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "direction",
+                      ["orig"] = "direction",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "filter",
+                      ["orig"] = "filter",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "order_by",
+                      ["orig"] = "order_by",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "search",
+                      ["orig"] = "search",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "type",
+                      ["orig"] = "type",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                      ["example"] = "SERIAL",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "direction",
+                    "filter",
+                    "order_by",
+                    "search",
+                    "type",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_response_collection_4"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_response_collection_4",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/operations",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "operations",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "operations",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "023e105f4ecef8ad9ca31a8372d0c353",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_response_collection_5"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_response_collection_5",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/locations",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "locations",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "locations",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "direction",
+                      ["orig"] = "direction",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "filter",
+                      ["orig"] = "filter",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                      ["example"] = {
+                        "is_default:true",
+                      },
+                    },
+                    {
+                      ["name"] = "order_by",
+                      ["orig"] = "order_by",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "search",
+                      ["orig"] = "search",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "direction",
+                    "filter",
+                    "order_by",
+                    "search",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_response_collection_6"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_response_collection_6",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/rules",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "rules",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "direction",
+                      ["orig"] = "direction",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "filter",
+                      ["orig"] = "filter",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "order_by",
+                      ["orig"] = "order_by",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "search",
+                      ["orig"] = "search",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "direction",
+                    "filter",
+                    "order_by",
+                    "search",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/rules/tenant",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                  {
+                    ["lit"] = "tenant",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "rules",
+                  "tenant",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/gateway/rules",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "rules",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_response_collection_7"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_response_collection_7",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/app_types",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "app_types",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "app_types",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "023e105f4ecef8ad9ca31a8372d0c353",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_response_collection_8"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_response_collection_8",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/categories",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "categories",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "categories",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "023e105f4ecef8ad9ca31a8372d0c353",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_response_collection_9"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ARRAY`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_response_collection_9",
+        ["op"] = {
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/proxy_endpoints",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "proxy_endpoints",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "proxy_endpoints",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                  ["query"] = {
+                    {
+                      ["name"] = "direction",
+                      ["orig"] = "direction",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "filter",
+                      ["orig"] = "filter",
+                      ["type"] = "`$ARRAY`",
+                      ["kind"] = "query",
+                      ["example"] = {
+                        "kind:identity",
+                      },
+                    },
+                    {
+                      ["name"] = "order_by",
+                      ["orig"] = "order_by",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "search",
+                      ["orig"] = "search",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "direction",
+                    "filter",
+                    "order_by",
+                    "search",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_single"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "validity_period_days",
+            ["title"] = "Validity Period Days",
+            ["type"] = "`$INTEGER`",
+            ["short"] = "Sets the certificate validity period in days (range: 1-10,950 days / ~30 years).",
+          },
+        },
+        ["name"] = "zero_trust_gateway_single",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/gateway/certificates/{certificate_id}/activate",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "certificates",
+                  },
+                  {
+                    ["var"] = "certificate_id",
+                  },
+                  {
+                    ["lit"] = "activate",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "certificates",
+                  "{certificate_id}",
+                  "activate",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "certificate_id",
+                      ["orig"] = "certificate_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["$action"] = "activate",
+                  ["exist"] = {
+                    "account_id",
+                    "certificate_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/gateway/certificates/{certificate_id}/deactivate",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "certificates",
+                  },
+                  {
+                    ["var"] = "certificate_id",
+                  },
+                  {
+                    ["lit"] = "deactivate",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "certificates",
+                  "{certificate_id}",
+                  "deactivate",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "certificate_id",
+                      ["orig"] = "certificate_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "certificate_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/gateway/certificates",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "certificates",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "certificates",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/certificates/{certificate_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "certificates",
+                  },
+                  {
+                    ["var"] = "certificate_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "certificates",
+                  "{certificate_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "certificate_id",
+                      ["orig"] = "certificate_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "certificate_id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/gateway/certificates/{certificate_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "certificates",
+                  },
+                  {
+                    ["var"] = "certificate_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "certificates",
+                  "{certificate_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "certificate_id",
+                      ["orig"] = "certificate_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "certificate_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_single_response_2"] = {
+        ["fields"] = {
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["readOnly"] = true,
+          },
+        },
+        ["name"] = "zero_trust_gateway_single_response_2",
+        ["op"] = {
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/operations/{operation_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "operations",
+                  },
+                  {
+                    ["var"] = "operation_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "operations",
+                  "{operation_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "023e105f4ecef8ad9ca31a8372d0c353",
+                    },
+                    {
+                      ["name"] = "operation_id",
+                      ["orig"] = "operation_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "operation_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_single_response_3"] = {
+        ["fields"] = {
+          {
+            ["name"] = "client_default",
+            ["title"] = "Client Default",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Indicate whether this location is the default location.",
+          },
+          {
+            ["name"] = "dns_destination_ips_id",
+            ["title"] = "Dns Destination Ips Id",
+            ["type"] = "`$STRING`",
+            ["short"] = "Specify the identifier of the pair of IPv4 addresses assigned to this location.",
+          },
+          {
+            ["name"] = "ecs_support",
+            ["title"] = "Ecs Support",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Indicate whether the location must resolve EDNS queries.",
+          },
+          {
+            ["name"] = "endpoints",
+            ["title"] = "Endpoints",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "Configure the destination endpoints for this location.",
+          },
+          {
+            ["name"] = "max_ttl",
+            ["title"] = "Max Ttl",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "Controls how DNS response TTLs are capped for this location relative to the account `max_ttl_secs` setting.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Specify the location name.",
+          },
+          {
+            ["name"] = "networks",
+            ["title"] = "Networks",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "Specify the list of network ranges from which requests at this location originate.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_single_response_3",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/gateway/locations",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "locations",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "locations",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/locations/{location_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "locations",
+                  },
+                  {
+                    ["var"] = "location_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "locations",
+                  "{location_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "location_id",
+                      ["orig"] = "location_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "ed35569b41ce4d1facfe683550f54086",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "location_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/gateway/locations/{location_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "locations",
+                  },
+                  {
+                    ["var"] = "location_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "locations",
+                  "{location_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "location_id",
+                      ["orig"] = "location_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "ed35569b41ce4d1facfe683550f54086",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "location_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {
+            {
+              "$.main.kit.entity.location",
+            },
+          },
+        },
+      },
+      ["zero_trust_gateway_single_response_4"] = {
+        ["fields"] = {
+          {
+            ["name"] = "action",
+            ["title"] = "Action",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.",
+          },
+          {
+            ["name"] = "description",
+            ["title"] = "Description",
+            ["type"] = "`$STRING`",
+            ["short"] = "Specify the rule description.",
+          },
+          {
+            ["name"] = "device_posture",
+            ["title"] = "Device Posture",
+            ["type"] = "`$STRING`",
+            ["short"] = "Specify the wirefilter expression used for device posture check.",
+          },
+          {
+            ["name"] = "enabled",
+            ["title"] = "Enabled",
+            ["type"] = "`$BOOLEAN`",
+            ["short"] = "Specify whether the rule is enabled.",
+          },
+          {
+            ["name"] = "expiration",
+            ["title"] = "Expiration",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["short"] = "Defines the expiration time stamp and default duration of a DNS policy.",
+          },
+          {
+            ["name"] = "filters",
+            ["title"] = "Filters",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions.",
+          },
+          {
+            ["name"] = "identity",
+            ["title"] = "Identity",
+            ["type"] = "`$STRING`",
+            ["short"] = "Specify the wirefilter expression used for identity matching.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["op"] = {
+              ["patch"] = {
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "Specify the rule name.",
+          },
+          {
+            ["name"] = "precedence",
+            ["title"] = "Precedence",
+            ["type"] = "`$INTEGER`",
+            ["short"] = "Set the order of your rules.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "rule_settings",
+            ["title"] = "Rule Settings",
+            ["type"] = "`$OBJECT`",
+            ["short"] = "Defines settings for this rule.",
+          },
+          {
+            ["name"] = "schedule",
+            ["title"] = "Schedule",
+            ["type"] = "`$OBJECT`",
+            ["short"] = "Defines the schedule for activating DNS policies.",
+          },
+          {
+            ["name"] = "traffic",
+            ["title"] = "Traffic",
+            ["type"] = "`$STRING`",
+            ["short"] = "Specify the wirefilter expression used for traffic matching.",
+          },
+        },
+        ["name"] = "zero_trust_gateway_single_response_4",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/gateway/rules/{rule_id}/reset_expiration",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                  {
+                    ["var"] = "rule_id",
+                  },
+                  {
+                    ["lit"] = "reset_expiration",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "rules",
+                  "{rule_id}",
+                  "reset_expiration",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "rule_id",
+                      ["orig"] = "rule_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "rule_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/gateway/rules",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "rules",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/rules/{rule_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                  {
+                    ["var"] = "rule_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "rules",
+                  "{rule_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "rule_id",
+                      ["orig"] = "rule_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "rule_id",
+                  },
+                },
+              },
+            },
+          },
+          ["patch"] = {
+            ["input"] = "data",
+            ["name"] = "patch",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/gateway/rules/{rule_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                  {
+                    ["var"] = "rule_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "rules",
+                  "{rule_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "rule_id",
+                      ["orig"] = "rule_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "rule_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/gateway/rules/{rule_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "rules",
+                  },
+                  {
+                    ["var"] = "rule_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "rules",
+                  "{rule_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "rule_id",
+                      ["orig"] = "rule_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "rule_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {
+            {
+              "$.main.kit.entity.rule",
+            },
+          },
+        },
+      },
+      ["zero_trust_gateway_single_response_5"] = {
+        ["fields"] = {
+          {
+            ["name"] = "ips",
+            ["title"] = "Ips",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "Specify the list of CIDRs to restrict ingress connections.",
+          },
+          {
+            ["name"] = "kind",
+            ["title"] = "Kind",
+            ["type"] = "`$STRING`",
+            ["short"] = "The proxy endpoint kind.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["short"] = "Specify the name of the proxy endpoint.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$ANY`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_single_response_5",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/gateway/proxy_endpoints",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "proxy_endpoints",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "proxy_endpoints",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "proxy_endpoints",
+                  },
+                  {
+                    ["var"] = "proxy_endpoint_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "proxy_endpoints",
+                  "{proxy_endpoint_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "proxy_endpoint_id",
+                      ["orig"] = "proxy_endpoint_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "ed35569b41ce4d1facfe683550f54086",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "proxy_endpoint_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PATCH",
+                ["orig"] = "/accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "proxy_endpoints",
+                  },
+                  {
+                    ["var"] = "proxy_endpoint_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "proxy_endpoints",
+                  "{proxy_endpoint_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "proxy_endpoint_id",
+                      ["orig"] = "proxy_endpoint_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "ed35569b41ce4d1facfe683550f54086",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "proxy_endpoint_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {
+            {
+              "$.main.kit.entity.proxy_endpoint",
+            },
+          },
+        },
+      },
+      ["zero_trust_gateway_single_response_6"] = {
+        ["fields"] = {
+          {
+            ["name"] = "public_key",
+            ["title"] = "Public Key",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Provide the Base64-encoded HPKE public key that encrypts SSH session logs.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+        },
+        ["name"] = "zero_trust_gateway_single_response_6",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/gateway/audit_ssh_settings/rotate_seed",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "audit_ssh_settings",
+                  },
+                  {
+                    ["lit"] = "rotate_seed",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "audit_ssh_settings",
+                  "rotate_seed",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/audit_ssh_settings",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "audit_ssh_settings",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "audit_ssh_settings",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/gateway/audit_ssh_settings",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "audit_ssh_settings",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "audit_ssh_settings",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_gateway_single_response_7"] = {
+        ["fields"] = {
+          {
+            ["name"] = "contents",
+            ["title"] = "Contents",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Actual contents of the PAC file",
+          },
+          {
+            ["name"] = "description",
+            ["title"] = "Description",
+            ["type"] = "`$STRING`",
+            ["op"] = {
+              ["update"] = {
+                ["req"] = true,
+                ["type"] = "`$STRING`",
+              },
+            },
+            ["short"] = "Detailed description of the PAC file.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Name of the PAC file.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+          },
+          {
+            ["name"] = "slug",
+            ["title"] = "Slug",
+            ["type"] = "`$STRING`",
+            ["short"] = "URL-friendly version of the PAC file name.",
+          },
+        },
+        ["name"] = "zero_trust_gateway_single_response_7",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/gateway/pacfiles",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "pacfiles",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "pacfiles",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/gateway/pacfiles/{pacfile_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "pacfiles",
+                  },
+                  {
+                    ["var"] = "pacfile_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "pacfiles",
+                  "{pacfile_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "pacfile_id",
+                      ["orig"] = "pacfile_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "ed35569b41ce4d1facfe683550f54086",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "pacfile_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/gateway/pacfiles/{pacfile_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "pacfiles",
+                  },
+                  {
+                    ["var"] = "pacfile_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "pacfiles",
+                  "{pacfile_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                    {
+                      ["name"] = "pacfile_id",
+                      ["orig"] = "pacfile_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "ed35569b41ce4d1facfe683550f54086",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "pacfile_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {
+            {
+              "$.main.kit.entity.pacfile",
+            },
+          },
+        },
+      },
+      ["zero_trust_gateway_single_response_with_list_item"] = {
+        ["fields"] = {
+          {
+            ["name"] = "description",
+            ["title"] = "Description",
+            ["type"] = "`$STRING`",
+            ["short"] = "Provide the list description.",
+          },
+          {
+            ["name"] = "items",
+            ["title"] = "Items",
+            ["type"] = "`$ARRAY`",
+            ["short"] = "Add items to the list.",
+          },
+          {
+            ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Specify the list name.",
+          },
+          {
+            ["name"] = "type",
+            ["title"] = "Type",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "Specify the list type.",
+          },
+        },
+        ["name"] = "zero_trust_gateway_single_response_with_list_item",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/gateway/lists",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "gateway",
+                  },
+                  {
+                    ["lit"] = "lists",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "gateway",
+                  "lists",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "699d98642c564d2e855e9661899b7252",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_risk_scoring"] = {
+        ["fields"] = {
+          {
+            ["name"] = "behaviors",
+            ["title"] = "Behaviors",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+          },
+        },
+        ["name"] = "zero_trust_risk_scoring",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/zt_risk_scoring/{user_id}/reset",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zt_risk_scoring",
+                  },
+                  {
+                    ["var"] = "zt_risk_scoring_id",
+                  },
+                  {
+                    ["lit"] = "reset",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zt_risk_scoring",
+                  "{zt_risk_scoring_id}",
+                  "reset",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["user_id"] = "zt_risk_scoring_id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "zt_risk_scoring_id",
+                      ["orig"] = "user_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["$action"] = "reset",
+                  ["exist"] = {
+                    "account_id",
+                    "zt_risk_scoring_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/zt_risk_scoring/{user_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zt_risk_scoring",
+                  },
+                  {
+                    ["var"] = "user_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zt_risk_scoring",
+                  "{user_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "user_id",
+                      ["orig"] = "user_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "user_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/zt_risk_scoring/behaviors",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zt_risk_scoring",
+                  },
+                  {
+                    ["lit"] = "behaviors",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zt_risk_scoring",
+                  "behaviors",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/zt_risk_scoring/summary",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zt_risk_scoring",
+                  },
+                  {
+                    ["lit"] = "summary",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zt_risk_scoring",
+                  "summary",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/zt_risk_scoring/behaviors",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zt_risk_scoring",
+                  },
+                  {
+                    ["lit"] = "behaviors",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zt_risk_scoring",
+                  "behaviors",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+      ["zero_trust_risk_scoring_integration"] = {
+        ["fields"] = {
+          {
+            ["name"] = "active",
+            ["title"] = "Active",
+            ["type"] = "`$BOOLEAN`",
+            ["req"] = true,
+            ["short"] = "Whether this integration is enabled.",
+          },
+          {
+            ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "integration_type",
+            ["title"] = "Integration Type",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+          },
+          {
+            ["name"] = "reference_id",
+            ["title"] = "Reference Id",
+            ["type"] = "`$STRING`",
+            ["short"] = "A reference id that can be supplied by the client.",
+          },
+          {
+            ["name"] = "result",
+            ["title"] = "Result",
+            ["type"] = "`$OBJECT`",
+            ["req"] = true,
+            ["op"] = {
+              ["list"] = {
+                ["type"] = "`$ARRAY`",
+              },
+            },
+          },
+          {
+            ["name"] = "tenant_url",
+            ["title"] = "Tenant Url",
+            ["type"] = "`$STRING`",
+            ["req"] = true,
+            ["short"] = "The base url of the tenant, e.g.",
+            ["format"] = "uri",
+          },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
+        ["name"] = "zero_trust_risk_scoring_integration",
+        ["op"] = {
+          ["create"] = {
+            ["input"] = "data",
+            ["name"] = "create",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "POST",
+                ["orig"] = "/accounts/{account_id}/zt_risk_scoring/integrations",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zt_risk_scoring",
+                  },
+                  {
+                    ["lit"] = "integrations",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zt_risk_scoring",
+                  "integrations",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["list"] = {
+            ["input"] = "data",
+            ["name"] = "list",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/zt_risk_scoring/integrations",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zt_risk_scoring",
+                  },
+                  {
+                    ["lit"] = "integrations",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zt_risk_scoring",
+                  "integrations",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                  },
+                },
+              },
+            },
+          },
+          ["load"] = {
+            ["input"] = "data",
+            ["name"] = "load",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zt_risk_scoring",
+                  },
+                  {
+                    ["lit"] = "integrations",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zt_risk_scoring",
+                  "integrations",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["integration_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "integration_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+              {
+                ["kind"] = "http",
+                ["method"] = "GET",
+                ["orig"] = "/accounts/{account_id}/zt_risk_scoring/integrations/reference_id/{reference_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zt_risk_scoring",
+                  },
+                  {
+                    ["lit"] = "integrations",
+                  },
+                  {
+                    ["lit"] = "reference_id",
+                  },
+                  {
+                    ["var"] = "reference_id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zt_risk_scoring",
+                  "integrations",
+                  "reference_id",
+                  "{reference_id}",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "reference_id",
+                      ["orig"] = "reference_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "reference_id",
+                  },
+                },
+              },
+            },
+          },
+          ["remove"] = {
+            ["input"] = "data",
+            ["name"] = "remove",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "DELETE",
+                ["orig"] = "/accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zt_risk_scoring",
+                  },
+                  {
+                    ["lit"] = "integrations",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zt_risk_scoring",
+                  "integrations",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["integration_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "integration_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+          ["update"] = {
+            ["input"] = "data",
+            ["name"] = "update",
+            ["points"] = {
+              {
+                ["kind"] = "http",
+                ["method"] = "PUT",
+                ["orig"] = "/accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "accounts",
+                  },
+                  {
+                    ["var"] = "account_id",
+                  },
+                  {
+                    ["lit"] = "zt_risk_scoring",
+                  },
+                  {
+                    ["lit"] = "integrations",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
+                },
+                ["parts"] = {
+                  "accounts",
+                  "{account_id}",
+                  "zt_risk_scoring",
+                  "integrations",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["integration_id"] = "id",
+                  },
+                },
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "account_id",
+                      ["orig"] = "account_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "integration_id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "account_id",
+                    "id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        ["relations"] = {
+          ["ancestors"] = {},
+        },
+      },
+    },
+  }
+end
+
+
+local function make_feature(name)
+  local features = require("features")
+  local factory = features[name]
+  if factory ~= nil then
+    return factory()
+  end
+  return features.base()
+end
+
+
+-- Attach make_feature to the SDK class
+local function setup_sdk(SDK)
+  SDK._make_feature = make_feature
+end
+
+
+return make_config

@@ -1,0 +1,950 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 104
+  metrics: count: path: 138
+  metrics: count: method: 242
+
+  entity: client_version: {
+    path: "/accounts/{account_id}/devices/client-versions": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/devices/client-versions/target-environments": {
+      action: "target_environment": {}
+      op: list: method: *GET
+    }
+  }
+
+  entity: cni: {
+    path: "/accounts/{account_id}/cni/cnis/{cni}": {
+      rename: param: "cni": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: deployment_group: {
+    path: "/accounts/{account_id}/devices/deployment-groups": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/devices/deployment-groups/{group_id}": {
+      rename: param: "group_id": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: dex_remote_command: {
+    path: "/accounts/{account_id}/dex/commands": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/commands/devices": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/commands/quota": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/commands/{command_id}/downloads/{filename}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: dex_rule: {
+    path: "/accounts/{account_id}/dex/rules": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/rules/{rule_id}": {
+      rename: param: "rule_id": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: dex_synthetic_application_monitoring: {
+    path: "/accounts/{account_id}/dex/colos": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/devices/{device_id}/fleet-status/over-time": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/devices/{device_id}/isps": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/http-tests/{test_id}": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/http-tests/{test_id}/percentiles": {
+      rename: param: "test_id": *"http_test_id"
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/tests/overview": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/tests/unique-devices": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/traceroute-test-results/{test_result_id}/network-path": {
+      rename: param: "test_result_id": *"traceroute_test_result_id"
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/traceroute-tests/{test_id}": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/traceroute-tests/{test_id}/network-path": {
+      rename: param: "test_id": *"traceroute_test_id"
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dex/traceroute-tests/{test_id}/percentiles": {
+      rename: param: "test_id": *"traceroute_test_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: digital_experience_monitoring_device: {
+    path: "/accounts/{account_id}/dex/devices/{device_id}/fleet-status/live": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: digital_experience_monitoring_dex_delete_response_collection: {
+    path: "/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: digital_experience_monitoring_dex_response_collection: {
+    path: "/accounts/{account_id}/dex/devices/dex_tests": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: digital_experience_monitoring_dex_single: {
+    path: "/accounts/{account_id}/dex/devices/dex_tests": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: digital_experience_monitoring_fleet_status_device: {
+    path: "/accounts/{account_id}/dex/fleet-status/devices": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: digital_experience_monitoring_fleet_status_live: {
+    path: "/accounts/{account_id}/dex/fleet-status/live": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: digital_experience_monitoring_fleet_status_over_time: {
+    path: "/accounts/{account_id}/dex/fleet-status/over-time": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: interconnect: {
+    path: "/accounts/{account_id}/cni/interconnects/{icon}": {
+      rename: param: "icon": *"id"
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cni/interconnects/{icon}/loa": {
+      action: "loa": {}
+      op: load: method: *GET
+    }
+  }
+
+  entity: ip_profile: {
+    path: "/accounts/{account_id}/devices/ip-profiles": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/devices/ip-profiles/{profile_id}": {
+      rename: param: "profile_id": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: list: {
+    path: "/accounts/{account_id}/gateway/lists/{list_id}": {
+      rename: param: "list_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: location: {
+    path: "/accounts/{account_id}/gateway/locations/{location_id}": {
+      rename: param: "location_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: nsc_cni: {
+    path: "/accounts/{account_id}/cni/cnis": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/accounts/{account_id}/cni/cnis/{cni}": {
+      rename: param: "cni": *"id"
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: nsc_default_name: {
+    path: "/accounts/{account_id}/cni/interconnects/{icon}/loa/default": {
+      rename: param: "icon": *"interconnect_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: nsc_interconnect: {
+    path: "/accounts/{account_id}/cni/interconnects": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/accounts/{account_id}/cni/interconnects/{icon}": {
+      rename: param: "icon": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: nsc_setting: {
+    path: "/accounts/{account_id}/cni/settings": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: nsc_slot_info: {
+    path: "/accounts/{account_id}/cni/slots": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.items`")|top
+    }
+    path: "/accounts/{account_id}/cni/slots/{slot}": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.facility`")|top
+    }
+  }
+
+  entity: nsc_status_info: {
+    path: "/accounts/{account_id}/cni/interconnects/{icon}/status": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: override_code: {
+    path: "/accounts/{account_id}/devices/override_codes": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: pacfile: {
+    path: "/accounts/{account_id}/gateway/pacfiles/{pacfile_id}": {
+      rename: param: "pacfile_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: physical_device: {
+    path: "/accounts/{account_id}/devices/physical-devices": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/devices/physical-devices/{device_id}": {
+      rename: param: "device_id": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: patch: transform: req: "tags": *("`reqdata.tag`")|top
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/devices/physical-devices/{device_id}/revoke": {
+      action: "revoke": {}
+      rename: param: "device_id": *"id"
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/devices/registrations": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: proxy_endpoint: {
+    path: "/accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}": {
+      rename: param: "proxy_endpoint_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: registration: {
+    path: "/accounts/{account_id}/devices/registrations": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/devices/registrations/revoke": {
+      action: "revoke": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/devices/registrations/unrevoke": {
+      action: "unrevoke": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/devices/registrations/{registration_id}": {
+      rename: param: "registration_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: rule: {
+    path: "/accounts/{account_id}/gateway/rules/{rule_id}": {
+      rename: param: "rule_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: teams_devices_api_response_single: {
+    path: "/accounts/{account_id}/devices/revoke": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/devices/unrevoke": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: teams_devices_components_schemas_response_collection: {
+    path: "/accounts/{account_id}/devices/networks": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/devices/networks/{network_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: teams_devices_components_schemas_single: {
+    path: "/accounts/{account_id}/devices/networks": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/devices/networks/{network_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: teams_devices_default_device_setting: {
+    path: "/accounts/{account_id}/devices/policy": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: teams_devices_device: {
+    path: "/accounts/{account_id}/devices": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/devices/{device_id}": {
+      rename: param: "device_id": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: teams_devices_device_setting: {
+    path: "/accounts/{account_id}/devices/policy": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/devices/policy/{policy_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: teams_devices_device_settings_response_collection: {
+    path: "/accounts/{account_id}/devices/policies": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/devices/policy/{policy_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: teams_devices_fallback_domain_response_collection: {
+    path: "/accounts/{account_id}/devices/policy/fallback_domains": {
+      op: list: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/devices/policy/{policy_id}/fallback_domains": {
+      op: list: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: teams_devices_global_warp_override: {
+    path: "/accounts/{account_id}/devices/resilience/disconnect": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: teams_devices_id: {
+    path: "/accounts/{account_id}/devices/posture/{rule_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: teams_devices_override_code: {
+    path: "/accounts/{account_id}/devices/{device_id}/override_codes": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: teams_devices_response_collection: {
+    path: "/accounts/{account_id}/devices/posture": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: teams_devices_schemas_id: {
+    path: "/accounts/{account_id}/devices/posture/integration/{integration_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: teams_devices_schemas_response_collection: {
+    path: "/accounts/{account_id}/devices/posture/integration": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: teams_devices_schemas_single: {
+    path: "/accounts/{account_id}/devices/posture/integration": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/devices/posture/integration/{integration_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: teams_devices_single: {
+    path: "/accounts/{account_id}/devices/posture": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/devices/posture/{rule_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: teams_devices_split_tunnel_include_response_collection: {
+    path: "/accounts/{account_id}/devices/policy/include": {
+      op: list: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/devices/policy/{policy_id}/include": {
+      op: list: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: teams_devices_split_tunnel_response_collection: {
+    path: "/accounts/{account_id}/devices/policy/exclude": {
+      op: list: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/devices/policy/{policy_id}/exclude": {
+      op: list: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: teams_devices_zero_trust_account_device_setting: {
+    path: "/accounts/{account_id}/devices/settings": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: tunnel: {
+    path: "/accounts/{account_id}/tunnels": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: tunnel_cfd_tunnel_response_collection: {
+    path: "/accounts/{account_id}/cfd_tunnel": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: tunnel_cfd_tunnel_response_single: {
+    path: "/accounts/{account_id}/cfd_tunnel": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cfd_tunnel/{tunnel_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: tunnel_configuration: {
+    path: "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations": {
+      rename: param: "tunnel_id": *"cfd_tunnel_id"
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: tunnel_empty: {
+    path: "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections": {
+      rename: param: "tunnel_id": *"cfd_tunnel_id"
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/warp_connector/{tunnel_id}/failover": {
+      rename: param: "tunnel_id": *"warp_connector_id"
+      op: update: method: *PUT
+    }
+  }
+
+  entity: tunnel_hostname_route_response_collection: {
+    path: "/accounts/{account_id}/zerotrust/routes/hostname": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: tunnel_hostname_route_response_single: {
+    path: "/accounts/{account_id}/zerotrust/routes/hostname": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: tunnel_mesh_configuration_response_single: {
+    path: "/accounts/{account_id}/warp_connector/{tunnel_id}/configurations": {
+      rename: param: "tunnel_id": *"warp_connector_id"
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: tunnel_route_response_single: {
+    path: "/accounts/{account_id}/teamnet/routes": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}": {
+      op: create: method: *POST
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/teamnet/routes/{route_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: tunnel_subnet_response_collection: {
+    path: "/accounts/{account_id}/zerotrust/subnets": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: tunnel_subnet_response_single: {
+    path: "/accounts/{account_id}/zerotrust/subnets/cloudflare_source/{address_family}": {
+      op: patch: method: *PATCH
+    }
+    path: "/accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/zerotrust/subnets/warp": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: tunnel_subnet_response_single_nullable: {
+    path: "/accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: tunnel_teamnet_response_collection: {
+    path: "/accounts/{account_id}/teamnet/routes": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: tunnel_teamnet_response_single: {
+    path: "/accounts/{account_id}/teamnet/routes/ip/{ip}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: tunnel_tunnel_client: {
+    path: "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connectors/{connector_id}": {
+      rename: param: "tunnel_id": *"cfd_tunnel_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: tunnel_tunnel_connection: {
+    path: "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections": {
+      rename: param: "tunnel_id": *"cfd_tunnel_id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: tunnel_tunnel_response_token: {
+    path: "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/management": {
+      rename: param: "tunnel_id": *"cfd_tunnel_id"
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/token": {
+      rename: param: "tunnel_id": *"cfd_tunnel_id"
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/warp_connector/{tunnel_id}/token": {
+      rename: param: "tunnel_id": *"warp_connector_id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: tunnel_tunnel_warp_connector_client: {
+    path: "/accounts/{account_id}/warp_connector/{tunnel_id}/connectors/{connector_id}": {
+      rename: param: "tunnel_id": *"warp_connector_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: tunnel_tunnel_warp_connector_connection: {
+    path: "/accounts/{account_id}/warp_connector/{tunnel_id}/connections": {
+      rename: param: "tunnel_id": *"warp_connector_id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: tunnel_vnet_response_collection: {
+    path: "/accounts/{account_id}/teamnet/virtual_networks": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: tunnel_vnet_response_single: {
+    path: "/accounts/{account_id}/teamnet/virtual_networks": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: tunnel_warp_connector_response_collection: {
+    path: "/accounts/{account_id}/warp_connector": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: tunnel_warp_connector_response_single: {
+    path: "/accounts/{account_id}/warp_connector": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/warp_connector/{tunnel_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: tunnel_zero_trust_connectivity_setting: {
+    path: "/accounts/{account_id}/zerotrust/connectivity_settings": {
+      op: list: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: warp: {
+    path: "/accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}": {
+      rename: param: "subnet_id": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: warp_change_event: {
+    path: "/accounts/{account_id}/dex/warp-change-events": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: warp_teams_device_api_other: {
+    path: "/accounts/{account_id}/devices/registrations/{registration_id}/override_codes": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_applications_review_status: {
+    path: "/accounts/{account_id}/gateway/apps/review_status": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: zero_trust_gateway_csv_operation_single: {
+    path: "/accounts/{account_id}/gateway/lists/upload": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: zero_trust_gateway_custom_certificate_setting: {
+    path: "/accounts/{account_id}/gateway/configuration/custom_certificate": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_gateway_account: {
+    path: "/accounts/{account_id}/gateway": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_gateway_account_config: {
+    path: "/accounts/{account_id}/gateway/configuration": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+  }
+
+  entity: zero_trust_gateway_gateway_account_egress_cidr_pair_list: {
+    path: "/accounts/{account_id}/gateway/egress_cidr_pairs": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_gateway_account_logging_setting: {
+    path: "/accounts/{account_id}/gateway/logging": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: zero_trust_gateway_list_item_response_collection: {
+    path: "/accounts/{account_id}/gateway/lists/{list_id}/items": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_list_single: {
+    path: "/accounts/{account_id}/gateway/lists/{list_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+  }
+
+  entity: zero_trust_gateway_response_collection: {
+    path: "/accounts/{account_id}/gateway/certificates": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_response_collection_10: {
+    path: "/accounts/{account_id}/gateway/pacfiles": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_response_collection_2: {
+    path: "/accounts/{account_id}/gateway/dns_destination_ips": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_response_collection_3: {
+    path: "/accounts/{account_id}/gateway/lists": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_response_collection_4: {
+    path: "/accounts/{account_id}/gateway/operations": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_response_collection_5: {
+    path: "/accounts/{account_id}/gateway/locations": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_response_collection_6: {
+    path: "/accounts/{account_id}/gateway/rules": {
+      op: list: method: *GET
+      op: patch: method: *PATCH
+    }
+    path: "/accounts/{account_id}/gateway/rules/tenant": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_response_collection_7: {
+    path: "/accounts/{account_id}/gateway/app_types": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_response_collection_8: {
+    path: "/accounts/{account_id}/gateway/categories": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_response_collection_9: {
+    path: "/accounts/{account_id}/gateway/proxy_endpoints": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_single: {
+    path: "/accounts/{account_id}/gateway/certificates": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/gateway/certificates/{certificate_id}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/gateway/certificates/{certificate_id}/activate": {
+      action: "activate": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/gateway/certificates/{certificate_id}/deactivate": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: zero_trust_gateway_single_response_2: {
+    path: "/accounts/{account_id}/gateway/operations/{operation_id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: zero_trust_gateway_single_response_3: {
+    path: "/accounts/{account_id}/gateway/locations": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/gateway/locations/{location_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: zero_trust_gateway_single_response_4: {
+    path: "/accounts/{account_id}/gateway/rules": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/gateway/rules/{rule_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/gateway/rules/{rule_id}/reset_expiration": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: zero_trust_gateway_single_response_5: {
+    path: "/accounts/{account_id}/gateway/proxy_endpoints": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: zero_trust_gateway_single_response_6: {
+    path: "/accounts/{account_id}/gateway/audit_ssh_settings": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/gateway/audit_ssh_settings/rotate_seed": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: zero_trust_gateway_single_response_7: {
+    path: "/accounts/{account_id}/gateway/pacfiles": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/gateway/pacfiles/{pacfile_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: zero_trust_gateway_single_response_with_list_item: {
+    path: "/accounts/{account_id}/gateway/lists": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: zero_trust_risk_scoring: {
+    path: "/accounts/{account_id}/zt_risk_scoring/behaviors": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/zt_risk_scoring/summary": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/zt_risk_scoring/{user_id}": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/zt_risk_scoring/{user_id}/reset": {
+      action: "reset": {}
+      rename: param: "user_id": *"zt_risk_scoring_id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: zero_trust_risk_scoring_integration: {
+    path: "/accounts/{account_id}/zt_risk_scoring/integrations": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/zt_risk_scoring/integrations/reference_id/{reference_id}": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}": {
+      rename: param: "integration_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+}

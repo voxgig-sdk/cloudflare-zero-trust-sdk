@@ -1,0 +1,33 @@
+# BasicNscStatusInfoFlow
+
+main: kit: flow: BasicNscStatusInfoFlow:
+{
+  entity: "nsc_status_info",
+  kind: "basic",
+  name: "BasicNscStatusInfoFlow",
+  step: [
+    {
+      i: {
+        ref: "nsc_status_info_ref01",
+        srcdatavar: "nsc_status_info_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "nsc_status_info01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-nsc_status_info_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicNscStatusInfoFlow"
+}

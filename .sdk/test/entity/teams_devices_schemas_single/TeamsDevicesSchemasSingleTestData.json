@@ -1,0 +1,64 @@
+{
+  "existing": {
+    "teams_devices_schemas_single": {
+      "TEAMS_DEVICES_SCHEMAS_SINGLE00": {
+        "config": {},
+        "interval": "s33",
+        "name": "s34",
+        "result": {},
+        "type": "s36",
+        "account_id": "ACCOUNT01",
+        "integration_id": "INTEGRATION01",
+        "id": "TEAMS_DEVICES_SCHEMAS_SINGLE00"
+      },
+      "TEAMS_DEVICES_SCHEMAS_SINGLE01": {
+        "config": {},
+        "interval": "s65",
+        "name": "s66",
+        "result": {},
+        "type": "s68",
+        "account_id": "ACCOUNT01",
+        "integration_id": "INTEGRATION01",
+        "id": "TEAMS_DEVICES_SCHEMAS_SINGLE01"
+      },
+      "TEAMS_DEVICES_SCHEMAS_SINGLE02": {
+        "config": {},
+        "interval": "s97",
+        "name": "s98",
+        "result": {},
+        "type": "s9a",
+        "account_id": "ACCOUNT01",
+        "integration_id": "INTEGRATION01",
+        "id": "TEAMS_DEVICES_SCHEMAS_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_schemas_single": {
+      "teams_devices_schemas_single_ref01": {
+        "config": {},
+        "interval": "sc9",
+        "name": "sca",
+        "result": {},
+        "type": "scc"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/devices/posture/integration": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/posture/integration/{integration_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/devices/posture/integration/{integration_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

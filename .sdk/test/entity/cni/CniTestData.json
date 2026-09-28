@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "cni": {
+      "CNI00": {
+        "id": "CNI00",
+        "account_id": "ACCOUNT01"
+      },
+      "CNI01": {
+        "id": "CNI01",
+        "account_id": "ACCOUNT01"
+      },
+      "CNI02": {
+        "id": "CNI02",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "cni": {
+      "cni_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/cni/cnis/{cni}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

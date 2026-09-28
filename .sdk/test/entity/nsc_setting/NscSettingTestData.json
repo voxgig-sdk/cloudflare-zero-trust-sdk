@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "nsc_setting": {
+      "NSC_SETTING00": {
+        "default_asn": 10,
+        "account_id": "ACCOUNT01",
+        "id": "NSC_SETTING00"
+      },
+      "NSC_SETTING01": {
+        "default_asn": 20,
+        "account_id": "ACCOUNT01",
+        "id": "NSC_SETTING01"
+      },
+      "NSC_SETTING02": {
+        "default_asn": 30,
+        "account_id": "ACCOUNT01",
+        "id": "NSC_SETTING02"
+      }
+    }
+  },
+  "new": {
+    "nsc_setting": {
+      "nsc_setting_ref01": {
+        "default_asn": 40
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cni/settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cni/settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

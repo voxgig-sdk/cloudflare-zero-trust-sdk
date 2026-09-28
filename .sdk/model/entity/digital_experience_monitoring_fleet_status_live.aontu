@@ -1,0 +1,85 @@
+# Entity: digital_experience_monitoring_fleet_status_live
+
+main: kit: entity: digital_experience_monitoring_fleet_status_live: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "digital_experience_monitoring_fleet_status_live"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/fleet-status/live"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 10
+                k: "query"
+                n: "since_minute"
+                or: "since_minute"
+                r: true
+                t: "`$NUMBER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/fleet-status/live"
+          q: {
+            exist: [
+              "account_id"
+              "since_minute"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "fleet-status"
+            }
+            {
+              lit: "live"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "teams_devices_device": {
+      "TEAMS_DEVICES_DEVICE00": {
+        "id": "TEAMS_DEVICES_DEVICE00",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "TEAMS_DEVICES_DEVICE01": {
+        "id": "TEAMS_DEVICES_DEVICE01",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "TEAMS_DEVICES_DEVICE02": {
+        "id": "TEAMS_DEVICES_DEVICE02",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_device": {
+      "teams_devices_device_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/devices": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/{device_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

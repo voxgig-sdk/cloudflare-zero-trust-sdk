@@ -1,0 +1,33 @@
+# BasicTunnelEmptyFlow
+
+main: kit: flow: BasicTunnelEmptyFlow:
+{
+  entity: "tunnel_empty",
+  kind: "basic",
+  name: "BasicTunnelEmptyFlow",
+  step: [
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "tunnel_empty_ref01",
+        srcdatavar: "tunnel_empty_ref01_data",
+        suffix: "_up0",
+        textfield: "client_id"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tunnel_empty_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelEmptyFlow"
+}

@@ -1,0 +1,33 @@
+# BasicNscDefaultNameFlow
+
+main: kit: flow: BasicNscDefaultNameFlow:
+{
+  entity: "nsc_default_name",
+  kind: "basic",
+  name: "BasicNscDefaultNameFlow",
+  step: [
+    {
+      i: {
+        ref: "nsc_default_name_ref01",
+        srcdatavar: "nsc_default_name_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "nsc_default_name01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-nsc_default_name_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicNscDefaultNameFlow"
+}

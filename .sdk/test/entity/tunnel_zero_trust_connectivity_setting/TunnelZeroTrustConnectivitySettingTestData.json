@@ -1,0 +1,60 @@
+{
+  "existing": {
+    "tunnel_zero_trust_connectivity_setting": {
+      "TUNNEL_ZERO_TRUST_CONNECTIVITY_SETTING00": {
+        "errors": [],
+        "icmp_proxy_enabled": false,
+        "messages": [],
+        "offramp_warp_enabled": false,
+        "result": "s40",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "id": "TUNNEL_ZERO_TRUST_CONNECTIVITY_SETTING00"
+      },
+      "TUNNEL_ZERO_TRUST_CONNECTIVITY_SETTING01": {
+        "errors": [],
+        "icmp_proxy_enabled": false,
+        "messages": [],
+        "offramp_warp_enabled": false,
+        "result": "s7c",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "id": "TUNNEL_ZERO_TRUST_CONNECTIVITY_SETTING01"
+      },
+      "TUNNEL_ZERO_TRUST_CONNECTIVITY_SETTING02": {
+        "errors": [],
+        "icmp_proxy_enabled": false,
+        "messages": [],
+        "offramp_warp_enabled": false,
+        "result": "sb8",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "id": "TUNNEL_ZERO_TRUST_CONNECTIVITY_SETTING02"
+      }
+    }
+  },
+  "new": {
+    "tunnel_zero_trust_connectivity_setting": {
+      "tunnel_zero_trust_connectivity_setting_ref01": {
+        "errors": [],
+        "icmp_proxy_enabled": false,
+        "messages": [],
+        "offramp_warp_enabled": false,
+        "result": "sf4",
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/zerotrust/connectivity_settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/zerotrust/connectivity_settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "location": {
+      "LOCATION00": {
+        "id": "LOCATION00",
+        "account_id": "ACCOUNT01"
+      },
+      "LOCATION01": {
+        "id": "LOCATION01",
+        "account_id": "ACCOUNT01"
+      },
+      "LOCATION02": {
+        "id": "LOCATION02",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "location": {
+      "location_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/gateway/locations/{location_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

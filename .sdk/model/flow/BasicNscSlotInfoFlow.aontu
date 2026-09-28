@@ -1,0 +1,49 @@
+# BasicNscSlotInfoFlow
+
+main: kit: flow: BasicNscSlotInfoFlow:
+{
+  entity: "nsc_slot_info",
+  kind: "basic",
+  name: "BasicNscSlotInfoFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "nsc_slot_info_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "nsc_slot_info_ref01",
+        srcdatavar: "nsc_slot_info_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "nsc_slot_info01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-nsc_slot_info_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicNscSlotInfoFlow"
+}

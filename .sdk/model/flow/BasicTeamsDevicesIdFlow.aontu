@@ -1,0 +1,9 @@
+# BasicTeamsDevicesIdFlow
+
+main: kit: flow: BasicTeamsDevicesIdFlow:
+{
+  entity: "teams_devices_id",
+  kind: "basic",
+  name: "BasicTeamsDevicesIdFlow",
+  "key$": "BasicTeamsDevicesIdFlow"
+}

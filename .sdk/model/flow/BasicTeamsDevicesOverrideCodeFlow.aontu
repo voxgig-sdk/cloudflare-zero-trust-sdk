@@ -1,0 +1,33 @@
+# BasicTeamsDevicesOverrideCodeFlow
+
+main: kit: flow: BasicTeamsDevicesOverrideCodeFlow:
+{
+  entity: "teams_devices_override_code",
+  kind: "basic",
+  name: "BasicTeamsDevicesOverrideCodeFlow",
+  step: [
+    {
+      i: {
+        ref: "teams_devices_override_code_ref01",
+        srcdatavar: "teams_devices_override_code_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "teams_devices_override_code01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-teams_devices_override_code_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTeamsDevicesOverrideCodeFlow"
+}

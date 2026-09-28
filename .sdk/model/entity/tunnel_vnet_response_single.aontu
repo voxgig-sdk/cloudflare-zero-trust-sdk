@@ -1,0 +1,283 @@
+# Entity: tunnel_vnet_response_single
+
+main: kit: entity: tunnel_vnet_response_single: {
+
+  alias: field: {}
+
+  fields: {
+    comment: {
+      h: "Comment"
+      n: "comment"
+      r: false
+      sh: "Optional remark describing the virtual network."
+      t: "`$STRING`"
+    }
+    is_default: {
+      de: true
+      h: "Is Default"
+      n: "is_default"
+      r: false
+      sh: "If `true`, this virtual network is the default for the account."
+      t: "`$BOOLEAN`"
+    }
+    is_default_network: {
+      h: "Is Default Network"
+      n: "is_default_network"
+      r: false
+      sh: "If `true`, this virtual network is the default for the account."
+      t: "`$BOOLEAN`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      sh: "A user-friendly name for the virtual network."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "tunnel_vnet_response_single"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/teamnet/virtual_networks"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/teamnet/virtual_networks"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "teamnet"
+            }
+            {
+              lit: "virtual_networks"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "virtual_network_id"
+                or: "virtual_network_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}"
+          q: {
+            exist: [
+              "account_id"
+              "virtual_network_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "teamnet"
+            }
+            {
+              lit: "virtual_networks"
+            }
+            {
+              var: "virtual_network_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "virtual_network_id"
+                or: "virtual_network_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}"
+          q: {
+            exist: [
+              "account_id"
+              "virtual_network_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "teamnet"
+            }
+            {
+              lit: "virtual_networks"
+            }
+            {
+              var: "virtual_network_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "virtual_network_id"
+                or: "virtual_network_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}"
+          q: {
+            exist: [
+              "account_id"
+              "virtual_network_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "teamnet"
+            }
+            {
+              lit: "virtual_networks"
+            }
+            {
+              var: "virtual_network_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

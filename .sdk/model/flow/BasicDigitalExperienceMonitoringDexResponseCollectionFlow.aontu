@@ -1,0 +1,26 @@
+# BasicDigitalExperienceMonitoringDexResponseCollectionFlow
+
+main: kit: flow: BasicDigitalExperienceMonitoringDexResponseCollectionFlow:
+{
+  entity: "digital_experience_monitoring_dex_response_collection",
+  kind: "basic",
+  name: "BasicDigitalExperienceMonitoringDexResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "digital_experience_monitoring_dex_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDigitalExperienceMonitoringDexResponseCollectionFlow"
+}

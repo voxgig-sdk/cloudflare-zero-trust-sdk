@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>IpProfile | Cloudflare Zero Trust Gateway</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Zero Trust Gateway<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-zero-trust-sdk">voxgig-sdk/cloudflare-zero-trust-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Zero Trust Gateway</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/client_version.html">ClientVersion</a>
+<a href="../api/cni.html">Cni</a>
+<a href="../api/deployment_group.html">DeploymentGroup</a>
+<a href="../api/dex_remote_command.html">DexRemoteCommand</a>
+<a href="../api/dex_rule.html">DexRule</a>
+<a href="../api/dex_synthetic_application_monitoring.html">DexSyntheticApplicationMonitoring</a>
+<a href="../api/digital_experience_monitoring_device.html">DigitalExperienceMonitoringDevice</a>
+<a href="../api/digital_experience_monitoring_dex_delete_response_collection.html">DigitalExperienceMonitoringDexDeleteResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_response_collection.html">DigitalExperienceMonitoringDexResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_single.html">DigitalExperienceMonitoringDexSingle</a>
+<a href="../api/digital_experience_monitoring_fleet_status_device.html">DigitalExperienceMonitoringFleetStatusDevice</a>
+<a href="../api/digital_experience_monitoring_fleet_status_live.html">DigitalExperienceMonitoringFleetStatusLive</a>
+<a href="../api/digital_experience_monitoring_fleet_status_over_time.html">DigitalExperienceMonitoringFleetStatusOverTime</a>
+<a href="../api/interconnect.html">Interconnect</a>
+<a aria-current="page" href="../api/ip_profile.html">IpProfile</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_iddevicesip-profiles">POST /accounts/{account_id}/devices/ip-profiles</a>
+<a class="nav-section" href="#get-accountsaccount_iddevicesip-profiles">GET /accounts/{account_id}/devices/ip-profiles</a>
+<a class="nav-section" href="#get-accountsaccount_iddevicesip-profilesprofile_id">GET /accounts/{account_id}/devices/ip-profiles/{profile_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_iddevicesip-profilesprofile_id">DELETE /accounts/{account_id}/devices/ip-profiles/{profile_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_iddevicesip-profilesprofile_id">PATCH /accounts/{account_id}/devices/ip-profiles/{profile_id}</a></div>
+<a href="../api/list.html">List</a>
+<a href="../api/location.html">Location</a>
+<a href="../api/nsc_cni.html">NscCni</a>
+<a href="../api/nsc_default_name.html">NscDefaultName</a>
+<a href="../api/nsc_interconnect.html">NscInterconnect</a>
+<a href="../api/nsc_setting.html">NscSetting</a>
+<a href="../api/nsc_slot_info.html">NscSlotInfo</a>
+<a href="../api/nsc_status_info.html">NscStatusInfo</a>
+<a href="../api/override_code.html">OverrideCode</a>
+<a href="../api/pacfile.html">Pacfile</a>
+<a href="../api/physical_device.html">PhysicalDevice</a>
+<a href="../api/proxy_endpoint.html">ProxyEndpoint</a>
+<a href="../api/registration.html">Registration</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/teams_devices_api_response_single.html">TeamsDevicesApiResponseSingle</a>
+<a href="../api/teams_devices_components_schemas_response_collection.html">TeamsDevicesComponentsSchemasResponseCollection</a>
+<a href="../api/teams_devices_components_schemas_single.html">TeamsDevicesComponentsSchemasSingle</a>
+<a href="../api/teams_devices_default_device_setting.html">TeamsDevicesDefaultDeviceSetting</a>
+<a href="../api/teams_devices_device.html">TeamsDevicesDevice</a>
+<a href="../api/teams_devices_device_setting.html">TeamsDevicesDeviceSetting</a>
+<a href="../api/teams_devices_device_settings_response_collection.html">TeamsDevicesDeviceSettingsResponseCollection</a>
+<a href="../api/teams_devices_fallback_domain_response_collection.html">TeamsDevicesFallbackDomainResponseCollection</a>
+<a href="../api/teams_devices_global_warp_override.html">TeamsDevicesGlobalWarpOverride</a>
+<a href="../api/teams_devices_id.html">TeamsDevicesId</a>
+<a href="../api/teams_devices_override_code.html">TeamsDevicesOverrideCode</a>
+<a href="../api/teams_devices_response_collection.html">TeamsDevicesResponseCollection</a>
+<a href="../api/teams_devices_schemas_id.html">TeamsDevicesSchemasId</a>
+<a href="../api/teams_devices_schemas_response_collection.html">TeamsDevicesSchemasResponseCollection</a>
+<a href="../api/teams_devices_schemas_single.html">TeamsDevicesSchemasSingle</a>
+<a href="../api/teams_devices_single.html">TeamsDevicesSingle</a>
+<a href="../api/teams_devices_split_tunnel_include_response_collection.html">TeamsDevicesSplitTunnelIncludeResponseCollection</a>
+<a href="../api/teams_devices_split_tunnel_response_collection.html">TeamsDevicesSplitTunnelResponseCollection</a>
+<a href="../api/teams_devices_zero_trust_account_device_setting.html">TeamsDevicesZeroTrustAccountDeviceSetting</a>
+<a href="../api/tunnel.html">Tunnel</a>
+<a href="../api/tunnel_cfd_tunnel_response_collection.html">TunnelCfdTunnelResponseCollection</a>
+<a href="../api/tunnel_cfd_tunnel_response_single.html">TunnelCfdTunnelResponseSingle</a>
+<a href="../api/tunnel_configuration.html">TunnelConfiguration</a>
+<a href="../api/tunnel_empty.html">TunnelEmpty</a>
+<a href="../api/tunnel_hostname_route_response_collection.html">TunnelHostnameRouteResponseCollection</a>
+<a href="../api/tunnel_hostname_route_response_single.html">TunnelHostnameRouteResponseSingle</a>
+<a href="../api/tunnel_mesh_configuration_response_single.html">TunnelMeshConfigurationResponseSingle</a>
+<a href="../api/tunnel_route_response_single.html">TunnelRouteResponseSingle</a>
+<a href="../api/tunnel_subnet_response_collection.html">TunnelSubnetResponseCollection</a>
+<a href="../api/tunnel_subnet_response_single.html">TunnelSubnetResponseSingle</a>
+<a href="../api/tunnel_subnet_response_single_nullable.html">TunnelSubnetResponseSingleNullable</a>
+<a href="../api/tunnel_teamnet_response_collection.html">TunnelTeamnetResponseCollection</a>
+<a href="../api/tunnel_teamnet_response_single.html">TunnelTeamnetResponseSingle</a>
+<a href="../api/tunnel_tunnel_client.html">TunnelTunnelClient</a>
+<a href="../api/tunnel_tunnel_connection.html">TunnelTunnelConnection</a>
+<a href="../api/tunnel_tunnel_response_token.html">TunnelTunnelResponseToken</a>
+<a href="../api/tunnel_tunnel_warp_connector_client.html">TunnelTunnelWarpConnectorClient</a>
+<a href="../api/tunnel_tunnel_warp_connector_connection.html">TunnelTunnelWarpConnectorConnection</a>
+<a href="../api/tunnel_vnet_response_collection.html">TunnelVnetResponseCollection</a>
+<a href="../api/tunnel_vnet_response_single.html">TunnelVnetResponseSingle</a>
+<a href="../api/tunnel_warp_connector_response_collection.html">TunnelWarpConnectorResponseCollection</a>
+<a href="../api/tunnel_warp_connector_response_single.html">TunnelWarpConnectorResponseSingle</a>
+<a href="../api/tunnel_zero_trust_connectivity_setting.html">TunnelZeroTrustConnectivitySetting</a>
+<a href="../api/warp.html">Warp</a>
+<a href="../api/warp_change_event.html">WarpChangeEvent</a>
+<a href="../api/warp_teams_device_api_other.html">WarpTeamsDeviceApiOther</a>
+<a href="../api/zero_trust_gateway_applications_review_status.html">ZeroTrustGatewayApplicationsReviewStatus</a>
+<a href="../api/zero_trust_gateway_csv_operation_single.html">ZeroTrustGatewayCsvOperationSingle</a>
+<a href="../api/zero_trust_gateway_custom_certificate_setting.html">ZeroTrustGatewayCustomCertificateSetting</a>
+<a href="../api/zero_trust_gateway_gateway_account.html">ZeroTrustGatewayGatewayAccount</a>
+<a href="../api/zero_trust_gateway_gateway_account_config.html">ZeroTrustGatewayGatewayAccountConfig</a>
+<a href="../api/zero_trust_gateway_gateway_account_egress_cidr_pair_list.html">ZeroTrustGatewayGatewayAccountEgressCidrPairList</a>
+<a href="../api/zero_trust_gateway_gateway_account_logging_setting.html">ZeroTrustGatewayGatewayAccountLoggingSetting</a>
+<a href="../api/zero_trust_gateway_list_item_response_collection.html">ZeroTrustGatewayListItemResponseCollection</a>
+<a href="../api/zero_trust_gateway_list_single.html">ZeroTrustGatewayListSingle</a>
+<a href="../api/zero_trust_gateway_response_collection.html">ZeroTrustGatewayResponseCollection</a>
+<a href="../api/zero_trust_gateway_response_collection_10.html">ZeroTrustGatewayResponseCollection10</a>
+<a href="../api/zero_trust_gateway_response_collection_2.html">ZeroTrustGatewayResponseCollection2</a>
+<a href="../api/zero_trust_gateway_response_collection_3.html">ZeroTrustGatewayResponseCollection3</a>
+<a href="../api/zero_trust_gateway_response_collection_4.html">ZeroTrustGatewayResponseCollection4</a>
+<a href="../api/zero_trust_gateway_response_collection_5.html">ZeroTrustGatewayResponseCollection5</a>
+<a href="../api/zero_trust_gateway_response_collection_6.html">ZeroTrustGatewayResponseCollection6</a>
+<a href="../api/zero_trust_gateway_response_collection_7.html">ZeroTrustGatewayResponseCollection7</a>
+<a href="../api/zero_trust_gateway_response_collection_8.html">ZeroTrustGatewayResponseCollection8</a>
+<a href="../api/zero_trust_gateway_response_collection_9.html">ZeroTrustGatewayResponseCollection9</a>
+<a href="../api/zero_trust_gateway_single.html">ZeroTrustGatewaySingle</a>
+<a href="../api/zero_trust_gateway_single_response_2.html">ZeroTrustGatewaySingleResponse2</a>
+<a href="../api/zero_trust_gateway_single_response_3.html">ZeroTrustGatewaySingleResponse3</a>
+<a href="../api/zero_trust_gateway_single_response_4.html">ZeroTrustGatewaySingleResponse4</a>
+<a href="../api/zero_trust_gateway_single_response_5.html">ZeroTrustGatewaySingleResponse5</a>
+<a href="../api/zero_trust_gateway_single_response_6.html">ZeroTrustGatewaySingleResponse6</a>
+<a href="../api/zero_trust_gateway_single_response_7.html">ZeroTrustGatewaySingleResponse7</a>
+<a href="../api/zero_trust_gateway_single_response_with_list_item.html">ZeroTrustGatewaySingleResponseWithListItem</a>
+<a href="../api/zero_trust_risk_scoring.html">ZeroTrustRiskScoring</a>
+<a href="../api/zero_trust_risk_scoring_integration.html">ZeroTrustRiskScoringIntegration</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="ipprofile">IpProfile</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_iddevicesip-profiles"><code>/accounts/{account_id}/devices/ip-profiles</code></a></td>
+<td><code>create</code></td>
+<td>Create Device IP profile response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddevicesip-profiles"><code>/accounts/{account_id}/devices/ip-profiles</code></a></td>
+<td><code>list</code></td>
+<td>List Device IP profiles response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddevicesip-profilesprofile_id"><code>/accounts/{account_id}/devices/ip-profiles/{profile_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get Device IP profile response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_iddevicesip-profilesprofile_id"><code>/accounts/{account_id}/devices/ip-profiles/{profile_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Delete Device IP profile response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_iddevicesip-profilesprofile_id"><code>/accounts/{account_id}/devices/ip-profiles/{profile_id}</code></a></td>
+<td><code>update</code></td>
+<td>Update Device IP profile response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">ip_profiles, err := client.IpProfile(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(ip_profiles)
+ip_profile, err := client.IpProfile(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(ip_profile)
+created, err := client.IpProfile(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []any{}, &quot;match&quot;: &quot;example&quot;, &quot;messages&quot;: []any{}, &quot;name&quot;: &quot;example&quot;, &quot;precedence&quot;: 1, &quot;result&quot;: map[string]any{}, &quot;result_info&quot;: map[string]any{}, &quot;subnet_id&quot;: &quot;example&quot;, &quot;success&quot;: true}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.IpProfile(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;description&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.IpProfile(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local ip_profiles, err = client:IpProfile():list({ account_id = &quot;example&quot; })
+local ip_profile, err = client:IpProfile():load({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+local created, err = client:IpProfile():create({ account_id = &quot;example&quot;, errors = {}, match = &quot;example&quot;, messages = {}, name = &quot;example&quot;, precedence = 1, result = {}, result_info = {}, subnet_id = &quot;example&quot;, success = true })
+local updated, err = client:IpProfile():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, description = &quot;example&quot; })
+local removed, err = client:IpProfile():remove({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$ip_profiles = $client-&gt;IpProfile()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$ip_profile = $client-&gt;IpProfile()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;IpProfile()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;match&quot; =&gt; &quot;example&quot;, &quot;messages&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;precedence&quot; =&gt; 1, &quot;result&quot; =&gt; [], &quot;result_info&quot; =&gt; [], &quot;subnet_id&quot; =&gt; &quot;example&quot;, &quot;success&quot; =&gt; true]);
+$updated = $client-&gt;IpProfile()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;description&quot; =&gt; &quot;example&quot;]);
+$client-&gt;IpProfile()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">ip_profiles = client.IpProfile().list({&quot;account_id&quot;: &quot;example&quot;})
+ip_profile = client.IpProfile().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+created = client.IpProfile().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: [], &quot;match&quot;: &quot;example&quot;, &quot;messages&quot;: [], &quot;name&quot;: &quot;example&quot;, &quot;precedence&quot;: 1, &quot;result&quot;: {}, &quot;result_info&quot;: {}, &quot;subnet_id&quot;: &quot;example&quot;, &quot;success&quot;: True })
+updated = client.IpProfile().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;description&quot;: &quot;example&quot;})
+client.IpProfile().remove({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">ip_profiles = client.IpProfile.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+ip_profile = client.IpProfile.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.IpProfile.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;match&quot; =&gt; &quot;example&quot;, &quot;messages&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;precedence&quot; =&gt; 1, &quot;result&quot; =&gt; {}, &quot;result_info&quot; =&gt; {}, &quot;subnet_id&quot; =&gt; &quot;example&quot;, &quot;success&quot; =&gt; true })
+updated = client.IpProfile.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;description&quot; =&gt; &quot;example&quot; })
+client.IpProfile.remove({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const ip_profiles = await client.IpProfile().list({ account_id: &quot;example&quot; })
+const ip_profile = await client.IpProfile().load({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+const created = await client.IpProfile().create({ account_id: &quot;example&quot;, errors: [], match: &quot;example&quot;, messages: [], name: &quot;example&quot;, precedence: 1, result: {}, result_info: {}, subnet_id: &quot;example&quot;, success: true })
+const updated = await client.IpProfile().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, description: &quot;example&quot; })
+await client.IpProfile().remove({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An optional description of the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether the Device IP profile will be applied to matching devices.</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>match</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The wirefilter expression to match registrations.</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A user-friendly name for the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>precedence</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The precedence of the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>result_info</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Result Info</td>
+</tr>
+<tr>
+<td><code>subnet_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The ID of the Subnet.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_iddevicesip-profiles" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/devices/ip-profiles</h3>
+<p>Operation ID: <code>create-ip-profile</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An optional description of the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether the Device IP profile will be applied to matching devices.</td>
+</tr>
+<tr>
+<td><code>match</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The wirefilter expression to match registrations. Available values: &quot;identity.name&quot;, &quot;identity.email&quot;, &quot;identity.groups.id&quot;, &quot;identity.groups.name&quot;, &quot;identity.groups.email&quot;, &quot;identity.<code>saml_attributes</code>&quot;.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A user-friendly name for the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>precedence</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field.</td>
+</tr>
+<tr>
+<td><code>subnet_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The ID of the Subnet.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-create-device-ip-profile-response" class="status" data-status="2xx">200: Create Device IP profile response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339Nano timestamp when the Device IP profile was created.</td>
+</tr>
+<tr>
+<td><code>result.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>An optional description of the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result.enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the Device IP profile is enabled.</td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The ID of the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result.match</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The wirefilter expression to match registrations. Available values: &quot;identity.name&quot;, &quot;identity.email&quot;, &quot;identity.groups.id&quot;, &quot;identity.groups.name&quot;, &quot;identity.groups.email&quot;, &quot;identity.<code>saml_attributes</code>&quot;.</td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A user-friendly name for the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result.precedence</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field.</td>
+</tr>
+<tr>
+<td><code>result.subnet_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The ID of the Subnet.</td>
+</tr>
+<tr>
+<td><code>result.updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339Nano timestamp when the Device IP profile was last updated.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response">4XX: Client error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_iddevicesip-profiles" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/devices/ip-profiles</h3>
+<p>Operation ID: <code>list-ip-profiles</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>page</code> | <code>query</code> | <code>integer</code> | No | The page number to return. |
+| <code>per_page</code> | <code>query</code> | <code>integer</code> | No | The number of IP profiles to return per page. |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-list-device-ip-profiles-response" class="status" data-status="2xx">200: List Device IP profiles response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339Nano timestamp when the Device IP profile was created.</td>
+</tr>
+<tr>
+<td><code>result[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>An optional description of the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result[].enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the Device IP profile is enabled.</td>
+</tr>
+<tr>
+<td><code>result[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The ID of the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result[].match</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The wirefilter expression to match registrations. Available values: &quot;identity.name&quot;, &quot;identity.email&quot;, &quot;identity.groups.id&quot;, &quot;identity.groups.name&quot;, &quot;identity.groups.email&quot;, &quot;identity.<code>saml_attributes</code>&quot;.</td>
+</tr>
+<tr>
+<td><code>result[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A user-friendly name for the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result[].precedence</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field.</td>
+</tr>
+<tr>
+<td><code>result[].subnet_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The ID of the Subnet.</td>
+</tr>
+<tr>
+<td><code>result[].updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339Nano timestamp when the Device IP profile was last updated.</td>
+</tr>
+<tr>
+<td><code>result_info</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_info.count</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Number of records in the response.</td>
+</tr>
+<tr>
+<td><code>result_info.page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The page size number of the response.</td>
+</tr>
+<tr>
+<td><code>result_info.per_page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The limit for the number of records in the response.</td>
+</tr>
+<tr>
+<td><code>result_info.total_count</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Total number of records available.</td>
+</tr>
+<tr>
+<td><code>result_info.total_pages</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Total number of pages available.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-1">4XX: Client error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_iddevicesip-profilesprofile_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/devices/ip-profiles/{profile_id}</h3>
+<p>Operation ID: <code>get-ip-profile</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-get-device-ip-profile-response" class="status" data-status="2xx">200: Get Device IP profile response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339Nano timestamp when the Device IP profile was created.</td>
+</tr>
+<tr>
+<td><code>result.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>An optional description of the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result.enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the Device IP profile is enabled.</td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The ID of the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result.match</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The wirefilter expression to match registrations. Available values: &quot;identity.name&quot;, &quot;identity.email&quot;, &quot;identity.groups.id&quot;, &quot;identity.groups.name&quot;, &quot;identity.groups.email&quot;, &quot;identity.<code>saml_attributes</code>&quot;.</td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A user-friendly name for the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result.precedence</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field.</td>
+</tr>
+<tr>
+<td><code>result.subnet_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The ID of the Subnet.</td>
+</tr>
+<tr>
+<td><code>result.updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339Nano timestamp when the Device IP profile was last updated.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-2">4XX: Client error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_iddevicesip-profilesprofile_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/devices/ip-profiles/{profile_id}</h3>
+<p>Operation ID: <code>delete-ip-profile</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-delete-device-ip-profile-response" class="status" data-status="2xx">200: Delete Device IP profile response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ID of the deleted Device IP profile.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-3">4XX: Client error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="patch-accountsaccount_iddevicesip-profilesprofile_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/devices/ip-profiles/{profile_id}</h3>
+<p>Operation ID: <code>update-ip-profile</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>An optional description of the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether the Device IP profile is enabled.</td>
+</tr>
+<tr>
+<td><code>match</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The wirefilter expression to match registrations. Available values: &quot;identity.name&quot;, &quot;identity.email&quot;, &quot;identity.groups.id&quot;, &quot;identity.groups.name&quot;, &quot;identity.groups.email&quot;, &quot;identity.<code>saml_attributes</code>&quot;.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A user-friendly name for the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>precedence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field.</td>
+</tr>
+<tr>
+<td><code>subnet_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The ID of the Subnet.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-update-device-ip-profile-response" class="status" data-status="2xx">200: Update Device IP profile response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339Nano timestamp when the Device IP profile was created.</td>
+</tr>
+<tr>
+<td><code>result.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>An optional description of the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result.enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the Device IP profile is enabled.</td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The ID of the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result.match</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The wirefilter expression to match registrations. Available values: &quot;identity.name&quot;, &quot;identity.email&quot;, &quot;identity.groups.id&quot;, &quot;identity.groups.name&quot;, &quot;identity.groups.email&quot;, &quot;identity.<code>saml_attributes</code>&quot;.</td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A user-friendly name for the Device IP profile.</td>
+</tr>
+<tr>
+<td><code>result.precedence</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field.</td>
+</tr>
+<tr>
+<td><code>result.subnet_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The ID of the Subnet.</td>
+</tr>
+<tr>
+<td><code>result.updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339Nano timestamp when the Device IP profile was last updated.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-4">4XX: Client error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

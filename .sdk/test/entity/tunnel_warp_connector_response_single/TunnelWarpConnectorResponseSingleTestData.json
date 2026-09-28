@@ -1,0 +1,77 @@
+{
+  "existing": {
+    "tunnel_warp_connector_response_single": {
+      "TUNNEL_WARP_CONNECTOR_RESPONSE_SINGLE00": {
+        "errors": [],
+        "ha": false,
+        "messages": [],
+        "name": "s49",
+        "result": "s4a",
+        "success": false,
+        "tunnel_secret": "s4c",
+        "account_id": "ACCOUNT01",
+        "tunnel_id": "TUNNEL01",
+        "id": "TUNNEL_WARP_CONNECTOR_RESPONSE_SINGLE00"
+      },
+      "TUNNEL_WARP_CONNECTOR_RESPONSE_SINGLE01": {
+        "errors": [],
+        "ha": false,
+        "messages": [],
+        "name": "s8f",
+        "result": "s90",
+        "success": false,
+        "tunnel_secret": "s92",
+        "account_id": "ACCOUNT01",
+        "tunnel_id": "TUNNEL01",
+        "id": "TUNNEL_WARP_CONNECTOR_RESPONSE_SINGLE01"
+      },
+      "TUNNEL_WARP_CONNECTOR_RESPONSE_SINGLE02": {
+        "errors": [],
+        "ha": false,
+        "messages": [],
+        "name": "sd5",
+        "result": "sd6",
+        "success": false,
+        "tunnel_secret": "sd8",
+        "account_id": "ACCOUNT01",
+        "tunnel_id": "TUNNEL01",
+        "id": "TUNNEL_WARP_CONNECTOR_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "tunnel_warp_connector_response_single": {
+      "tunnel_warp_connector_response_single_ref01": {
+        "errors": [],
+        "ha": false,
+        "messages": [],
+        "name": "s11b",
+        "result": "s11c",
+        "success": false,
+        "tunnel_secret": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/warp_connector": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/warp_connector/{tunnel_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/warp_connector/{tunnel_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/warp_connector/{tunnel_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

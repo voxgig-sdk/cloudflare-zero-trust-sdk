@@ -1,0 +1,22 @@
+# BasicZeroTrustGatewaySingleResponseWithListItemFlow
+
+main: kit: flow: BasicZeroTrustGatewaySingleResponseWithListItemFlow:
+{
+  entity: "zero_trust_gateway_single_response_with_list_item",
+  kind: "basic",
+  name: "BasicZeroTrustGatewaySingleResponseWithListItemFlow",
+  step: [
+    {
+      i: {
+        ref: "zero_trust_gateway_single_response_with_list_item_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicZeroTrustGatewaySingleResponseWithListItemFlow"
+}

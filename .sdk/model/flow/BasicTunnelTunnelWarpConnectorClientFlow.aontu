@@ -1,0 +1,34 @@
+# BasicTunnelTunnelWarpConnectorClientFlow
+
+main: kit: flow: BasicTunnelTunnelWarpConnectorClientFlow:
+{
+  entity: "tunnel_tunnel_warp_connector_client",
+  kind: "basic",
+  name: "BasicTunnelTunnelWarpConnectorClientFlow",
+  step: [
+    {
+      i: {
+        ref: "tunnel_tunnel_warp_connector_client_ref01",
+        srcdatavar: "tunnel_tunnel_warp_connector_client_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "tunnel_tunnel_warp_connector_client01",
+        warp_connector_id: "warp_connector01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tunnel_tunnel_warp_connector_client_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelTunnelWarpConnectorClientFlow"
+}

@@ -1,0 +1,80 @@
+{
+  "existing": {
+    "physical_device": {
+      "PHYSICAL_DEVICE00": {
+        "errors": [],
+        "id": "PHYSICAL_DEVICE00",
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "tags": {},
+        "account_id": "ACCOUNT01"
+      },
+      "PHYSICAL_DEVICE01": {
+        "errors": [],
+        "id": "PHYSICAL_DEVICE01",
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "tags": {},
+        "account_id": "ACCOUNT01"
+      },
+      "PHYSICAL_DEVICE02": {
+        "errors": [],
+        "id": "PHYSICAL_DEVICE02",
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "tags": {},
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "physical_device": {
+      "physical_device_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "tags": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/devices/physical-devices/{device_id}/revoke": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/physical-devices": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/physical-devices/{device_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/devices/physical-devices/{device_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/devices/registrations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/devices/physical-devices/{device_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

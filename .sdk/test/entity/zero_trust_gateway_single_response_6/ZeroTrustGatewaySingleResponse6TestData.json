@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "zero_trust_gateway_single_response_6": {
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_600": {
+        "public_key": "s14",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_600"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_601": {
+        "public_key": "s28",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_601"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_602": {
+        "public_key": "s3c",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_602"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_single_response_6": {
+      "zero_trust_gateway_single_response_6_ref01": {
+        "public_key": "s50",
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/gateway/audit_ssh_settings/rotate_seed": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/gateway/audit_ssh_settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/gateway/audit_ssh_settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

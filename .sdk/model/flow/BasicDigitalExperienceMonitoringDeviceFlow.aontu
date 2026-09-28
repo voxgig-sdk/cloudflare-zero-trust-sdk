@@ -1,0 +1,27 @@
+# BasicDigitalExperienceMonitoringDeviceFlow
+
+main: kit: flow: BasicDigitalExperienceMonitoringDeviceFlow:
+{
+  entity: "digital_experience_monitoring_device",
+  kind: "basic",
+  name: "BasicDigitalExperienceMonitoringDeviceFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01",
+        device_id: "device01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "digital_experience_monitoring_device_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDigitalExperienceMonitoringDeviceFlow"
+}

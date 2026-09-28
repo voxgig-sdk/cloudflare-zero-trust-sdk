@@ -1,0 +1,236 @@
+# Entity: nsc_slot_info
+
+main: kit: entity: nsc_slot_info: {
+
+  alias: field: {}
+
+  fields: {
+    account: {
+      h: "Account"
+      n: "account"
+      r: false
+      sh: "Customer account tag"
+      t: "`$STRING`"
+    }
+    address: {
+      h: "Address"
+      n: "address"
+      r: true
+      t: "`$ARRAY`"
+    }
+    ccr_device_name: {
+      h: "Ccr Device Name"
+      n: "ccr_device_name"
+      r: false
+      t: "`$STRING`"
+    }
+    facility: {
+      h: "Facility"
+      n: "facility"
+      r: true
+      t: "`$OBJECT`"
+    }
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Slot ID"
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    occupied: {
+      h: "Occupied"
+      n: "occupied"
+      r: true
+      sh: "Whether the slot is occupied or not"
+      t: "`$BOOLEAN`"
+    }
+    site: {
+      h: "Site"
+      n: "site"
+      r: true
+      t: "`$STRING`"
+    }
+    speed: {
+      h: "Speed"
+      n: "speed"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "nsc_slot_info"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cni/slots"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "address_contain"
+                or: "address_contain"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "occupied"
+                or: "occupied"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "site"
+                or: "site"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "speed"
+                or: "speed"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cni/slots"
+          q: {
+            exist: [
+              "account_id"
+              "address_contain"
+              "cursor"
+              "limit"
+              "occupied"
+              "site"
+              "speed"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cni"
+            }
+            {
+              lit: "slots"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.items`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cni/slots/{slot}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "slot"
+                or: "slot"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cni/slots/{slot}"
+          q: {
+            exist: [
+              "account_id"
+              "slot"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cni"
+            }
+            {
+              lit: "slots"
+            }
+            {
+              var: "slot"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.facility`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

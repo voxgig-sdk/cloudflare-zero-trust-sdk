@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TeamsDevicesZeroTrustAccountDeviceSetting | Cloudflare Zero Trust Gateway</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Zero Trust Gateway<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-zero-trust-sdk">voxgig-sdk/cloudflare-zero-trust-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Zero Trust Gateway</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/client_version.html">ClientVersion</a>
+<a href="../api/cni.html">Cni</a>
+<a href="../api/deployment_group.html">DeploymentGroup</a>
+<a href="../api/dex_remote_command.html">DexRemoteCommand</a>
+<a href="../api/dex_rule.html">DexRule</a>
+<a href="../api/dex_synthetic_application_monitoring.html">DexSyntheticApplicationMonitoring</a>
+<a href="../api/digital_experience_monitoring_device.html">DigitalExperienceMonitoringDevice</a>
+<a href="../api/digital_experience_monitoring_dex_delete_response_collection.html">DigitalExperienceMonitoringDexDeleteResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_response_collection.html">DigitalExperienceMonitoringDexResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_single.html">DigitalExperienceMonitoringDexSingle</a>
+<a href="../api/digital_experience_monitoring_fleet_status_device.html">DigitalExperienceMonitoringFleetStatusDevice</a>
+<a href="../api/digital_experience_monitoring_fleet_status_live.html">DigitalExperienceMonitoringFleetStatusLive</a>
+<a href="../api/digital_experience_monitoring_fleet_status_over_time.html">DigitalExperienceMonitoringFleetStatusOverTime</a>
+<a href="../api/interconnect.html">Interconnect</a>
+<a href="../api/ip_profile.html">IpProfile</a>
+<a href="../api/list.html">List</a>
+<a href="../api/location.html">Location</a>
+<a href="../api/nsc_cni.html">NscCni</a>
+<a href="../api/nsc_default_name.html">NscDefaultName</a>
+<a href="../api/nsc_interconnect.html">NscInterconnect</a>
+<a href="../api/nsc_setting.html">NscSetting</a>
+<a href="../api/nsc_slot_info.html">NscSlotInfo</a>
+<a href="../api/nsc_status_info.html">NscStatusInfo</a>
+<a href="../api/override_code.html">OverrideCode</a>
+<a href="../api/pacfile.html">Pacfile</a>
+<a href="../api/physical_device.html">PhysicalDevice</a>
+<a href="../api/proxy_endpoint.html">ProxyEndpoint</a>
+<a href="../api/registration.html">Registration</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/teams_devices_api_response_single.html">TeamsDevicesApiResponseSingle</a>
+<a href="../api/teams_devices_components_schemas_response_collection.html">TeamsDevicesComponentsSchemasResponseCollection</a>
+<a href="../api/teams_devices_components_schemas_single.html">TeamsDevicesComponentsSchemasSingle</a>
+<a href="../api/teams_devices_default_device_setting.html">TeamsDevicesDefaultDeviceSetting</a>
+<a href="../api/teams_devices_device.html">TeamsDevicesDevice</a>
+<a href="../api/teams_devices_device_setting.html">TeamsDevicesDeviceSetting</a>
+<a href="../api/teams_devices_device_settings_response_collection.html">TeamsDevicesDeviceSettingsResponseCollection</a>
+<a href="../api/teams_devices_fallback_domain_response_collection.html">TeamsDevicesFallbackDomainResponseCollection</a>
+<a href="../api/teams_devices_global_warp_override.html">TeamsDevicesGlobalWarpOverride</a>
+<a href="../api/teams_devices_id.html">TeamsDevicesId</a>
+<a href="../api/teams_devices_override_code.html">TeamsDevicesOverrideCode</a>
+<a href="../api/teams_devices_response_collection.html">TeamsDevicesResponseCollection</a>
+<a href="../api/teams_devices_schemas_id.html">TeamsDevicesSchemasId</a>
+<a href="../api/teams_devices_schemas_response_collection.html">TeamsDevicesSchemasResponseCollection</a>
+<a href="../api/teams_devices_schemas_single.html">TeamsDevicesSchemasSingle</a>
+<a href="../api/teams_devices_single.html">TeamsDevicesSingle</a>
+<a href="../api/teams_devices_split_tunnel_include_response_collection.html">TeamsDevicesSplitTunnelIncludeResponseCollection</a>
+<a href="../api/teams_devices_split_tunnel_response_collection.html">TeamsDevicesSplitTunnelResponseCollection</a>
+<a aria-current="page" href="../api/teams_devices_zero_trust_account_device_setting.html">TeamsDevicesZeroTrustAccountDeviceSetting</a><div class="nav-sections"><a class="nav-section" href="#get-accountsaccount_iddevicessettings">GET /accounts/{account_id}/devices/settings</a>
+<a class="nav-section" href="#patch-accountsaccount_iddevicessettings">PATCH /accounts/{account_id}/devices/settings</a>
+<a class="nav-section" href="#delete-accountsaccount_iddevicessettings">DELETE /accounts/{account_id}/devices/settings</a>
+<a class="nav-section" href="#put-accountsaccount_iddevicessettings">PUT /accounts/{account_id}/devices/settings</a></div>
+<a href="../api/tunnel.html">Tunnel</a>
+<a href="../api/tunnel_cfd_tunnel_response_collection.html">TunnelCfdTunnelResponseCollection</a>
+<a href="../api/tunnel_cfd_tunnel_response_single.html">TunnelCfdTunnelResponseSingle</a>
+<a href="../api/tunnel_configuration.html">TunnelConfiguration</a>
+<a href="../api/tunnel_empty.html">TunnelEmpty</a>
+<a href="../api/tunnel_hostname_route_response_collection.html">TunnelHostnameRouteResponseCollection</a>
+<a href="../api/tunnel_hostname_route_response_single.html">TunnelHostnameRouteResponseSingle</a>
+<a href="../api/tunnel_mesh_configuration_response_single.html">TunnelMeshConfigurationResponseSingle</a>
+<a href="../api/tunnel_route_response_single.html">TunnelRouteResponseSingle</a>
+<a href="../api/tunnel_subnet_response_collection.html">TunnelSubnetResponseCollection</a>
+<a href="../api/tunnel_subnet_response_single.html">TunnelSubnetResponseSingle</a>
+<a href="../api/tunnel_subnet_response_single_nullable.html">TunnelSubnetResponseSingleNullable</a>
+<a href="../api/tunnel_teamnet_response_collection.html">TunnelTeamnetResponseCollection</a>
+<a href="../api/tunnel_teamnet_response_single.html">TunnelTeamnetResponseSingle</a>
+<a href="../api/tunnel_tunnel_client.html">TunnelTunnelClient</a>
+<a href="../api/tunnel_tunnel_connection.html">TunnelTunnelConnection</a>
+<a href="../api/tunnel_tunnel_response_token.html">TunnelTunnelResponseToken</a>
+<a href="../api/tunnel_tunnel_warp_connector_client.html">TunnelTunnelWarpConnectorClient</a>
+<a href="../api/tunnel_tunnel_warp_connector_connection.html">TunnelTunnelWarpConnectorConnection</a>
+<a href="../api/tunnel_vnet_response_collection.html">TunnelVnetResponseCollection</a>
+<a href="../api/tunnel_vnet_response_single.html">TunnelVnetResponseSingle</a>
+<a href="../api/tunnel_warp_connector_response_collection.html">TunnelWarpConnectorResponseCollection</a>
+<a href="../api/tunnel_warp_connector_response_single.html">TunnelWarpConnectorResponseSingle</a>
+<a href="../api/tunnel_zero_trust_connectivity_setting.html">TunnelZeroTrustConnectivitySetting</a>
+<a href="../api/warp.html">Warp</a>
+<a href="../api/warp_change_event.html">WarpChangeEvent</a>
+<a href="../api/warp_teams_device_api_other.html">WarpTeamsDeviceApiOther</a>
+<a href="../api/zero_trust_gateway_applications_review_status.html">ZeroTrustGatewayApplicationsReviewStatus</a>
+<a href="../api/zero_trust_gateway_csv_operation_single.html">ZeroTrustGatewayCsvOperationSingle</a>
+<a href="../api/zero_trust_gateway_custom_certificate_setting.html">ZeroTrustGatewayCustomCertificateSetting</a>
+<a href="../api/zero_trust_gateway_gateway_account.html">ZeroTrustGatewayGatewayAccount</a>
+<a href="../api/zero_trust_gateway_gateway_account_config.html">ZeroTrustGatewayGatewayAccountConfig</a>
+<a href="../api/zero_trust_gateway_gateway_account_egress_cidr_pair_list.html">ZeroTrustGatewayGatewayAccountEgressCidrPairList</a>
+<a href="../api/zero_trust_gateway_gateway_account_logging_setting.html">ZeroTrustGatewayGatewayAccountLoggingSetting</a>
+<a href="../api/zero_trust_gateway_list_item_response_collection.html">ZeroTrustGatewayListItemResponseCollection</a>
+<a href="../api/zero_trust_gateway_list_single.html">ZeroTrustGatewayListSingle</a>
+<a href="../api/zero_trust_gateway_response_collection.html">ZeroTrustGatewayResponseCollection</a>
+<a href="../api/zero_trust_gateway_response_collection_10.html">ZeroTrustGatewayResponseCollection10</a>
+<a href="../api/zero_trust_gateway_response_collection_2.html">ZeroTrustGatewayResponseCollection2</a>
+<a href="../api/zero_trust_gateway_response_collection_3.html">ZeroTrustGatewayResponseCollection3</a>
+<a href="../api/zero_trust_gateway_response_collection_4.html">ZeroTrustGatewayResponseCollection4</a>
+<a href="../api/zero_trust_gateway_response_collection_5.html">ZeroTrustGatewayResponseCollection5</a>
+<a href="../api/zero_trust_gateway_response_collection_6.html">ZeroTrustGatewayResponseCollection6</a>
+<a href="../api/zero_trust_gateway_response_collection_7.html">ZeroTrustGatewayResponseCollection7</a>
+<a href="../api/zero_trust_gateway_response_collection_8.html">ZeroTrustGatewayResponseCollection8</a>
+<a href="../api/zero_trust_gateway_response_collection_9.html">ZeroTrustGatewayResponseCollection9</a>
+<a href="../api/zero_trust_gateway_single.html">ZeroTrustGatewaySingle</a>
+<a href="../api/zero_trust_gateway_single_response_2.html">ZeroTrustGatewaySingleResponse2</a>
+<a href="../api/zero_trust_gateway_single_response_3.html">ZeroTrustGatewaySingleResponse3</a>
+<a href="../api/zero_trust_gateway_single_response_4.html">ZeroTrustGatewaySingleResponse4</a>
+<a href="../api/zero_trust_gateway_single_response_5.html">ZeroTrustGatewaySingleResponse5</a>
+<a href="../api/zero_trust_gateway_single_response_6.html">ZeroTrustGatewaySingleResponse6</a>
+<a href="../api/zero_trust_gateway_single_response_7.html">ZeroTrustGatewaySingleResponse7</a>
+<a href="../api/zero_trust_gateway_single_response_with_list_item.html">ZeroTrustGatewaySingleResponseWithListItem</a>
+<a href="../api/zero_trust_risk_scoring.html">ZeroTrustRiskScoring</a>
+<a href="../api/zero_trust_risk_scoring_integration.html">ZeroTrustRiskScoringIntegration</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="teamsdeviceszerotrustaccountdevicesetting">TeamsDevicesZeroTrustAccountDeviceSetting</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddevicessettings"><code>/accounts/{account_id}/devices/settings</code></a></td>
+<td><code>load</code></td>
+<td>Get device settings for a Zero Trust account response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_iddevicessettings"><code>/accounts/{account_id}/devices/settings</code></a></td>
+<td><code>patch</code></td>
+<td>Update device settings for a Zero Trust account response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_iddevicessettings"><code>/accounts/{account_id}/devices/settings</code></a></td>
+<td><code>remove</code></td>
+<td>Reset response for device settings for a Zero Trust account</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_iddevicessettings"><code>/accounts/{account_id}/devices/settings</code></a></td>
+<td><code>update</code></td>
+<td>Update device settings for a Zero Trust account response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">teams_devices_zero_trust_account_device_setting, err := client.TeamsDevicesZeroTrustAccountDeviceSetting(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(teams_devices_zero_trust_account_device_setting)
+updated, err := client.TeamsDevicesZeroTrustAccountDeviceSetting(nil).Update(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;disable_for_time&quot;: 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.TeamsDevicesZeroTrustAccountDeviceSetting(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local teams_devices_zero_trust_account_device_setting, err = client:TeamsDevicesZeroTrustAccountDeviceSetting():load({ account_id = &quot;example&quot; })
+local updated, err = client:TeamsDevicesZeroTrustAccountDeviceSetting():update({ account_id = &quot;example&quot;, disable_for_time = 1 })
+local removed, err = client:TeamsDevicesZeroTrustAccountDeviceSetting():remove({ account_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$teams_devices_zero_trust_account_device_setting = $client-&gt;TeamsDevicesZeroTrustAccountDeviceSetting()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;TeamsDevicesZeroTrustAccountDeviceSetting()-&gt;update([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;disable_for_time&quot; =&gt; 1]);
+$client-&gt;TeamsDevicesZeroTrustAccountDeviceSetting()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">teams_devices_zero_trust_account_device_setting = client.TeamsDevicesZeroTrustAccountDeviceSetting().load({&quot;account_id&quot;: &quot;example&quot;})
+updated = client.TeamsDevicesZeroTrustAccountDeviceSetting().update({&quot;account_id&quot;: &quot;example&quot;, &quot;disable_for_time&quot;: 1})
+client.TeamsDevicesZeroTrustAccountDeviceSetting().remove({&quot;account_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">teams_devices_zero_trust_account_device_setting = client.TeamsDevicesZeroTrustAccountDeviceSetting.load({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+updated = client.TeamsDevicesZeroTrustAccountDeviceSetting.update({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;disable_for_time&quot; =&gt; 1 })
+client.TeamsDevicesZeroTrustAccountDeviceSetting.remove({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const teams_devices_zero_trust_account_device_setting = await client.TeamsDevicesZeroTrustAccountDeviceSetting().load({ account_id: &quot;example&quot; })
+const updated = await client.TeamsDevicesZeroTrustAccountDeviceSetting().update({ account_id: &quot;example&quot;, disable_for_time: 1 })
+await client.TeamsDevicesZeroTrustAccountDeviceSetting().remove({ account_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>disable_for_time</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Sets the time limit, in seconds, that a user can use an override code to bypass WARP.</td>
+</tr>
+<tr>
+<td><code>external_emergency_signal_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Controls whether the external emergency disconnect feature is enabled.</td>
+</tr>
+<tr>
+<td><code>external_emergency_signal_fingerprint</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The SHA256 fingerprint (64 hexadecimal characters) of the HTTPS server certificate for the <code>external_emergency_signal_url</code>.</td>
+</tr>
+<tr>
+<td><code>external_emergency_signal_interval</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The interval at which the WARP client fetches the emergency disconnect signal, formatted as a duration string (for example, &quot;5m&quot;, &quot;2m30s&quot;, &quot;1h&quot;).</td>
+</tr>
+<tr>
+<td><code>external_emergency_signal_url</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The HTTPS URL from which to fetch the emergency disconnect signal.</td>
+</tr>
+<tr>
+<td><code>gateway_proxy_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable gateway proxy filtering on TCP.</td>
+</tr>
+<tr>
+<td><code>gateway_udp_proxy_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable gateway proxy filtering on UDP.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>root_certificate_installation_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable installation of cloudflare managed root certificate.</td>
+</tr>
+<tr>
+<td><code>use_zt_virtual_ip</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable using CGNAT virtual IPv4.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_iddevicessettings" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/devices/settings</h3>
+<p>Operation ID: <code>zero-trust-accounts-get-device-settings-for-zero-trust-account</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-get-device-settings-for-a-zero-trust-account-response" class="status" data-status="2xx">200: Get device settings for a Zero Trust account response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-get-device-settings-for-a-zero-trust-account-response-failure">4XX: Get device settings for a Zero Trust account response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="patch">patch</h2>
+<h3 id="patch-accountsaccount_iddevicessettings" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/devices/settings</h3>
+<p>Operation ID: <code>zero-trust-accounts-patch-device-settings-for-the-zero-trust-account</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>disable_for_time</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Sets the time limit, in seconds, that a user can use an override code to bypass WARP.</td>
+</tr>
+<tr>
+<td><code>external_emergency_signal_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Controls whether the external emergency disconnect feature is enabled.</td>
+</tr>
+<tr>
+<td><code>external_emergency_signal_fingerprint</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The SHA256 fingerprint (64 hexadecimal characters) of the HTTPS server certificate for the <code>external_emergency_signal_url</code>. If provided, the WARP client will use this value to verify the server's identity. The device will ignore any response if the server's certificate fingerprint does not exactly match this value.</td>
+</tr>
+<tr>
+<td><code>external_emergency_signal_interval</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The interval at which the WARP client fetches the emergency disconnect signal, formatted as a duration string (for example, &quot;5m&quot;, &quot;2m30s&quot;, &quot;1h&quot;). Minimum 30 seconds.</td>
+</tr>
+<tr>
+<td><code>external_emergency_signal_url</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The HTTPS URL from which to fetch the emergency disconnect signal. Must use HTTPS and have an IPv4 or IPv6 address as the host.</td>
+</tr>
+<tr>
+<td><code>gateway_proxy_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable gateway proxy filtering on TCP.</td>
+</tr>
+<tr>
+<td><code>gateway_udp_proxy_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable gateway proxy filtering on UDP.</td>
+</tr>
+<tr>
+<td><code>root_certificate_installation_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable installation of cloudflare managed root certificate.</td>
+</tr>
+<tr>
+<td><code>use_zt_virtual_ip</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable using CGNAT virtual IPv4.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-update-device-settings-for-a-zero-trust-account-response" class="status" data-status="2xx">200: Update device settings for a Zero Trust account response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-update-device-settings-for-a-zero-trust-account-response-failure">4XX: Update device settings for a Zero Trust account response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_iddevicessettings" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/devices/settings</h3>
+<p>Operation ID: <code>zero-trust-accounts-delete-device-settings-for-zero-trust-account</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-reset-response-for-device-settings-for-a-zero-trust-account" class="status" data-status="2xx">200: Reset response for device settings for a Zero Trust account</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-reset-failure-response-device-settings-for-a-zero-trust-account">4XX: Reset failure response device settings for a Zero Trust account</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_iddevicessettings" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/devices/settings</h3>
+<p>Operation ID: <code>zero-trust-accounts-update-device-settings-for-the-zero-trust-account</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>disable_for_time</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Sets the time limit, in seconds, that a user can use an override code to bypass WARP.</td>
+</tr>
+<tr>
+<td><code>external_emergency_signal_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Controls whether the external emergency disconnect feature is enabled.</td>
+</tr>
+<tr>
+<td><code>external_emergency_signal_fingerprint</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The SHA256 fingerprint (64 hexadecimal characters) of the HTTPS server certificate for the <code>external_emergency_signal_url</code>. If provided, the WARP client will use this value to verify the server's identity. The device will ignore any response if the server's certificate fingerprint does not exactly match this value.</td>
+</tr>
+<tr>
+<td><code>external_emergency_signal_interval</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The interval at which the WARP client fetches the emergency disconnect signal, formatted as a duration string (for example, &quot;5m&quot;, &quot;2m30s&quot;, &quot;1h&quot;). Minimum 30 seconds.</td>
+</tr>
+<tr>
+<td><code>external_emergency_signal_url</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The HTTPS URL from which to fetch the emergency disconnect signal. Must use HTTPS and have an IPv4 or IPv6 address as the host.</td>
+</tr>
+<tr>
+<td><code>gateway_proxy_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable gateway proxy filtering on TCP.</td>
+</tr>
+<tr>
+<td><code>gateway_udp_proxy_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable gateway proxy filtering on UDP.</td>
+</tr>
+<tr>
+<td><code>root_certificate_installation_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable installation of cloudflare managed root certificate.</td>
+</tr>
+<tr>
+<td><code>use_zt_virtual_ip</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable using CGNAT virtual IPv4.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-update-device-settings-for-a-zero-trust-account-response-1" class="status" data-status="2xx">200: Update device settings for a Zero Trust account response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-update-device-settings-for-a-zero-trust-account-response-failure-1">4XX: Update device settings for a Zero Trust account response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

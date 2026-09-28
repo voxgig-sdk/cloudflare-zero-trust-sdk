@@ -1,0 +1,64 @@
+{
+  "existing": {
+    "zero_trust_gateway_single_response_7": {
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_700": {
+        "contents": "s32",
+        "description": "s33",
+        "name": "s34",
+        "result": {},
+        "slug": "s36",
+        "account_id": "ACCOUNT01",
+        "pacfile_id": "PACFILE01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_700"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_701": {
+        "contents": "s64",
+        "description": "s65",
+        "name": "s66",
+        "result": {},
+        "slug": "s68",
+        "account_id": "ACCOUNT01",
+        "pacfile_id": "PACFILE01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_701"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_702": {
+        "contents": "s96",
+        "description": "s97",
+        "name": "s98",
+        "result": {},
+        "slug": "s9a",
+        "account_id": "ACCOUNT01",
+        "pacfile_id": "PACFILE01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_702"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_single_response_7": {
+      "zero_trust_gateway_single_response_7_ref01": {
+        "contents": "sc8",
+        "description": "sc9",
+        "name": "sca",
+        "result": {},
+        "slug": "scc"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/gateway/pacfiles": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/gateway/pacfiles/{pacfile_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/gateway/pacfiles/{pacfile_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

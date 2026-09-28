@@ -1,0 +1,38 @@
+{
+  "existing": {
+    "zero_trust_gateway_single_response_2": {
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_200": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "operation_id": "OPERATION01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_200"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_201": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "operation_id": "OPERATION01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_201"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_202": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "operation_id": "OPERATION01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_202"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_single_response_2": {
+      "zero_trust_gateway_single_response_2_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/gateway/operations/{operation_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

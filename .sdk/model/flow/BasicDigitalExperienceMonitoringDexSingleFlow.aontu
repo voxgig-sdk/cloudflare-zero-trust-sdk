@@ -1,0 +1,68 @@
+# BasicDigitalExperienceMonitoringDexSingleFlow
+
+main: kit: flow: BasicDigitalExperienceMonitoringDexSingleFlow:
+{
+  entity: "digital_experience_monitoring_dex_single",
+  kind: "basic",
+  name: "BasicDigitalExperienceMonitoringDexSingleFlow",
+  step: [
+    {
+      i: {
+        ref: "digital_experience_monitoring_dex_single_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "digital_experience_monitoring_dex_single_ref01",
+        srcdatavar: "digital_experience_monitoring_dex_single_ref01_data",
+        suffix: "_up0",
+        textfield: "description"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-digital_experience_monitoring_dex_single_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "digital_experience_monitoring_dex_single_ref01",
+        srcdatavar: "digital_experience_monitoring_dex_single_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "digital_experience_monitoring_dex_single01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-digital_experience_monitoring_dex_single_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDigitalExperienceMonitoringDexSingleFlow"
+}

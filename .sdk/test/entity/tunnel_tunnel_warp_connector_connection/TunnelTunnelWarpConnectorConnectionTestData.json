@@ -1,0 +1,35 @@
+{
+  "existing": {
+    "tunnel_tunnel_warp_connector_connection": {
+      "TUNNEL_TUNNEL_WARP_CONNECTOR_CONNECTION00": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "warp_connector_id": "WARP_CONNECTOR01"
+      },
+      "TUNNEL_TUNNEL_WARP_CONNECTOR_CONNECTION01": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "warp_connector_id": "WARP_CONNECTOR01"
+      },
+      "TUNNEL_TUNNEL_WARP_CONNECTOR_CONNECTION02": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "warp_connector_id": "WARP_CONNECTOR01"
+      }
+    }
+  },
+  "new": {
+    "tunnel_tunnel_warp_connector_connection": {
+      "tunnel_tunnel_warp_connector_connection_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/warp_connector/{tunnel_id}/connections": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

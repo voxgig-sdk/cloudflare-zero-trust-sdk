@@ -1,0 +1,9 @@
+# BasicCniFlow
+
+main: kit: flow: BasicCniFlow:
+{
+  entity: "cni",
+  kind: "basic",
+  name: "BasicCniFlow",
+  "key$": "BasicCniFlow"
+}

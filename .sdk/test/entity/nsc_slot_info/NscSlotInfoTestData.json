@@ -1,0 +1,71 @@
+{
+  "existing": {
+    "nsc_slot_info": {
+      "NSC_SLOT_INFO00": {
+        "account": "s5a",
+        "address": [],
+        "ccr_device_name": "s5c",
+        "facility": {},
+        "id": "NSC_SLOT_INFO00",
+        "name": "s5f",
+        "occupied": true,
+        "site": "s61",
+        "speed": "s62",
+        "account_id": "ACCOUNT01",
+        "slot": "SLOT01"
+      },
+      "NSC_SLOT_INFO01": {
+        "account": "sb4",
+        "address": [],
+        "ccr_device_name": "sb6",
+        "facility": {},
+        "id": "NSC_SLOT_INFO01",
+        "name": "sb9",
+        "occupied": true,
+        "site": "sbb",
+        "speed": "sbc",
+        "account_id": "ACCOUNT01",
+        "slot": "SLOT01"
+      },
+      "NSC_SLOT_INFO02": {
+        "account": "s10e",
+        "address": [],
+        "ccr_device_name": "s110",
+        "facility": {},
+        "id": "NSC_SLOT_INFO02",
+        "name": "s113",
+        "occupied": true,
+        "site": "s115",
+        "speed": "s116",
+        "account_id": "ACCOUNT01",
+        "slot": "SLOT01"
+      }
+    }
+  },
+  "new": {
+    "nsc_slot_info": {
+      "nsc_slot_info_ref01": {
+        "account": "s168",
+        "address": [],
+        "ccr_device_name": "s16a",
+        "facility": {},
+        "name": "s16d",
+        "occupied": true,
+        "site": "s16f",
+        "speed": "s170"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cni/slots": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cni/slots/{slot}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

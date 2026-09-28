@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "teams_devices_id": {
+      "TEAMS_DEVICES_ID00": {
+        "account_id": "ACCOUNT01",
+        "rule_id": "RULE01",
+        "id": "TEAMS_DEVICES_ID00"
+      },
+      "TEAMS_DEVICES_ID01": {
+        "account_id": "ACCOUNT01",
+        "rule_id": "RULE01",
+        "id": "TEAMS_DEVICES_ID01"
+      },
+      "TEAMS_DEVICES_ID02": {
+        "account_id": "ACCOUNT01",
+        "rule_id": "RULE01",
+        "id": "TEAMS_DEVICES_ID02"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_id": {
+      "teams_devices_id_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/devices/posture/{rule_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

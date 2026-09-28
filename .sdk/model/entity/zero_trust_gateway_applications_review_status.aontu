@@ -1,0 +1,147 @@
+# Entity: zero_trust_gateway_applications_review_status
+
+main: kit: entity: zero_trust_gateway_applications_review_status: {
+
+  alias: field: {}
+
+  fields: {
+    approved_apps: {
+      h: "Approved Apps"
+      n: "approved_apps"
+      r: true
+      sh: "Contains the ids of the approved applications."
+      t: "`$ARRAY`"
+    }
+    in_review_apps: {
+      h: "In Review Apps"
+      n: "in_review_apps"
+      r: true
+      sh: "Contains the ids of the applications in review."
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+    unapproved_apps: {
+      h: "Unapproved Apps"
+      n: "unapproved_apps"
+      r: true
+      sh: "Contains the ids of the unapproved applications."
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "zero_trust_gateway_applications_review_status"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/gateway/apps/review_status"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/gateway/apps/review_status"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "apps"
+            }
+            {
+              lit: "review_status"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/gateway/apps/review_status"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/gateway/apps/review_status"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "gateway"
+            }
+            {
+              lit: "apps"
+            }
+            {
+              lit: "review_status"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

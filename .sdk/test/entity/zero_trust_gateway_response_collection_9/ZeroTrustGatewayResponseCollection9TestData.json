@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "zero_trust_gateway_response_collection_9": {
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_900": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_901": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_902": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_response_collection_9": {
+      "zero_trust_gateway_response_collection_9_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/gateway/proxy_endpoints": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

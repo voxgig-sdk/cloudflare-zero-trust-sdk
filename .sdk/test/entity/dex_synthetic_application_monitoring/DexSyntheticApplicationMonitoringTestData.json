@@ -1,0 +1,112 @@
+{
+  "existing": {
+    "dex_synthetic_application_monitoring": {
+      "DEX_SYNTHETIC_APPLICATION_MONITORING00": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "device_id": "DEVICE01",
+        "test_id": "TEST01",
+        "http_test_id": "HTTP_TEST01",
+        "traceroute_test_id": "TRACEROUTE_TEST01",
+        "traceroute_test_result_id": "TRACEROUTE_TEST_RESULT01",
+        "id": "DEX_SYNTHETIC_APPLICATION_MONITORING00"
+      },
+      "DEX_SYNTHETIC_APPLICATION_MONITORING01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "device_id": "DEVICE01",
+        "test_id": "TEST01",
+        "http_test_id": "HTTP_TEST01",
+        "traceroute_test_id": "TRACEROUTE_TEST01",
+        "traceroute_test_result_id": "TRACEROUTE_TEST_RESULT01",
+        "id": "DEX_SYNTHETIC_APPLICATION_MONITORING01"
+      },
+      "DEX_SYNTHETIC_APPLICATION_MONITORING02": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "device_id": "DEVICE01",
+        "test_id": "TEST01",
+        "http_test_id": "HTTP_TEST01",
+        "traceroute_test_id": "TRACEROUTE_TEST01",
+        "traceroute_test_result_id": "TRACEROUTE_TEST_RESULT01",
+        "id": "DEX_SYNTHETIC_APPLICATION_MONITORING02"
+      }
+    }
+  },
+  "new": {
+    "dex_synthetic_application_monitoring": {
+      "dex_synthetic_application_monitoring_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/dex/colos": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/devices/{device_id}/isps": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/tests/overview": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/http-tests/{test_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/traceroute-tests/{test_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/http-tests/{test_id}/percentiles": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/devices/{device_id}/fleet-status/over-time": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/traceroute-tests/{test_id}/percentiles": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/traceroute-tests/{test_id}/network-path": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/tests/unique-devices": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dex/traceroute-test-results/{test_result_id}/network-path": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

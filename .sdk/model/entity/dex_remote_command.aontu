@@ -1,0 +1,400 @@
+# Entity: dex_remote_command
+
+main: kit: entity: dex_remote_command: {
+
+  alias: field: {}
+
+  fields: {
+    commands: {
+      h: "Commands"
+      n: "commands"
+      r: true
+      sh: "List of device-level commands to execute"
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 3
+      }
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      op: {
+        load: {
+          req: true
+          type: "`$OBJECT`"
+        }
+      }
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "dex_remote_command"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/dex/commands"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/dex/commands"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "commands"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/commands"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "command_type"
+                or: "command_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "device_id"
+                or: "device_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2023-08-20T20:45:00Z"
+                k: "query"
+                n: "from"
+                or: "from"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: true
+                t: "`$NUMBER`"
+              }
+              {
+                ex: 10
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: true
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2023-08-24T20:45:00Z"
+                k: "query"
+                n: "to"
+                or: "to"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "user_email"
+                or: "user_email"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/commands"
+          q: {
+            exist: [
+              "account_id"
+              "command_type"
+              "device_id"
+              "from"
+              "page"
+              "per_page"
+              "status"
+              "to"
+              "user_email"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "commands"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/commands/devices"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: true
+                t: "`$NUMBER`"
+              }
+              {
+                ex: 10
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: true
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/commands/devices"
+          q: {
+            exist: [
+              "account_id"
+              "page"
+              "per_page"
+              "search"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "commands"
+            }
+            {
+              lit: "devices"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/commands/{command_id}/downloads/{filename}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "5758fefe-ae7e-4538-a39b-1fef6abcb909"
+                k: "param"
+                n: "command_id"
+                or: "command_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "filename"
+                or: "filename"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/commands/{command_id}/downloads/{filename}"
+          q: {
+            exist: [
+              "account_id"
+              "command_id"
+              "filename"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "commands"
+            }
+            {
+              var: "command_id"
+            }
+            {
+              lit: "downloads"
+            }
+            {
+              var: "filename"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/commands/quota"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/commands/quota"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "commands"
+            }
+            {
+              lit: "quota"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

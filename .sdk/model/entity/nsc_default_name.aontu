@@ -1,0 +1,96 @@
+# Entity: nsc_default_name
+
+main: kit: entity: nsc_default_name: {
+
+  alias: field: {}
+
+  fields: {
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "The default customer name for the interconnect"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "nsc_default_name"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cni/interconnects/{icon}/loa/default"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "interconnect_id"
+                or: "icon"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cni/interconnects/{icon}/loa/default"
+          q: {
+            exist: [
+              "account_id"
+              "interconnect_id"
+            ]
+          }
+          r: {
+            param: {
+              icon: "interconnect_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cni"
+            }
+            {
+              lit: "interconnects"
+            }
+            {
+              var: "interconnect_id"
+            }
+            {
+              lit: "loa"
+            }
+            {
+              lit: "default"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.interconnect")]
+  ]
+
+}

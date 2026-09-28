@@ -1,0 +1,320 @@
+# Entity: tunnel_hostname_route_response_single
+
+main: kit: entity: tunnel_hostname_route_response_single: {
+
+  alias: field: {}
+
+  fields: {
+    comment: {
+      h: "Comment"
+      n: "comment"
+      r: false
+      sh: "An optional description of the hostname route."
+      t: "`$STRING`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    hostname: {
+      h: "Hostname"
+      n: "hostname"
+      r: false
+      sh: "The hostname of the route."
+      t: "`$STRING`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      op: {
+        load: {
+          req: false
+          type: "`$OBJECT`"
+        }
+      }
+      r: true
+      ro: true
+      sh: "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel."
+      t: "`$STRING`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 0
+      }
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful"
+      t: "`$BOOLEAN`"
+    }
+    tunnel_id: {
+      fo: "uuid"
+      h: "Tunnel Id"
+      n: "tunnel_id"
+      r: false
+      sh: "UUID of the tunnel."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "tunnel_hostname_route_response_single"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/zerotrust/routes/hostname"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/zerotrust/routes/hostname"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "zerotrust"
+            }
+            {
+              lit: "routes"
+            }
+            {
+              lit: "hostname"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "hostname_route_id"
+                or: "hostname_route_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}"
+          q: {
+            exist: [
+              "account_id"
+              "hostname_route_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "zerotrust"
+            }
+            {
+              lit: "routes"
+            }
+            {
+              lit: "hostname"
+            }
+            {
+              var: "hostname_route_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "hostname_route_id"
+                or: "hostname_route_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}"
+          q: {
+            exist: [
+              "account_id"
+              "hostname_route_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "zerotrust"
+            }
+            {
+              lit: "routes"
+            }
+            {
+              lit: "hostname"
+            }
+            {
+              var: "hostname_route_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "hostname_route_id"
+                or: "hostname_route_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}"
+          q: {
+            exist: [
+              "account_id"
+              "hostname_route_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "zerotrust"
+            }
+            {
+              lit: "routes"
+            }
+            {
+              lit: "hostname"
+            }
+            {
+              var: "hostname_route_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

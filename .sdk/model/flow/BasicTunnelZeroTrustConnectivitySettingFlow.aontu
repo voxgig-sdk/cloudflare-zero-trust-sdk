@@ -1,0 +1,44 @@
+# BasicTunnelZeroTrustConnectivitySettingFlow
+
+main: kit: flow: BasicTunnelZeroTrustConnectivitySettingFlow:
+{
+  entity: "tunnel_zero_trust_connectivity_setting",
+  kind: "basic",
+  name: "BasicTunnelZeroTrustConnectivitySettingFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "tunnel_zero_trust_connectivity_setting_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "tunnel_zero_trust_connectivity_setting_ref01",
+        srcdatavar: "tunnel_zero_trust_connectivity_setting_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tunnel_zero_trust_connectivity_setting_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelZeroTrustConnectivitySettingFlow"
+}

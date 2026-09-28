@@ -1,0 +1,81 @@
+{
+  "existing": {
+    "tunnel_subnet_response_single": {
+      "TUNNEL_SUBNET_RESPONSE_SINGLE00": {
+        "comment": "s50",
+        "errors": [],
+        "is_default_network": true,
+        "messages": [],
+        "name": "s54",
+        "network": "s55",
+        "result": "s56",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "address_family": "ADDRESS_FAMILY01",
+        "id": "TUNNEL_SUBNET_RESPONSE_SINGLE00"
+      },
+      "TUNNEL_SUBNET_RESPONSE_SINGLE01": {
+        "comment": "sa0",
+        "errors": [],
+        "is_default_network": true,
+        "messages": [],
+        "name": "sa4",
+        "network": "sa5",
+        "result": "sa6",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "address_family": "ADDRESS_FAMILY01",
+        "id": "TUNNEL_SUBNET_RESPONSE_SINGLE01"
+      },
+      "TUNNEL_SUBNET_RESPONSE_SINGLE02": {
+        "comment": "sf0",
+        "errors": [],
+        "is_default_network": true,
+        "messages": [],
+        "name": "sf4",
+        "network": "sf5",
+        "result": "sf6",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "address_family": "ADDRESS_FAMILY01",
+        "id": "TUNNEL_SUBNET_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "tunnel_subnet_response_single": {
+      "tunnel_subnet_response_single_ref01": {
+        "comment": "s140",
+        "errors": [],
+        "is_default_network": true,
+        "messages": [],
+        "name": "s144",
+        "network": "s145",
+        "result": "s146",
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/zerotrust/subnets/warp": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/zerotrust/subnets/cloudflare_source/{address_family}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

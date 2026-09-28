@@ -1,0 +1,74 @@
+{
+  "existing": {
+    "nsc_cni": {
+      "NSC_CNI00": {
+        "account": "s50",
+        "bgp": {},
+        "bgp_mode": "s52",
+        "cust_ip": "s53",
+        "id": "NSC_CNI00",
+        "interconnect": "s55",
+        "magic": {},
+        "p2p_ip": "s57",
+        "account_id": "ACCOUNT01"
+      },
+      "NSC_CNI01": {
+        "account": "sa0",
+        "bgp": {},
+        "bgp_mode": "sa2",
+        "cust_ip": "sa3",
+        "id": "NSC_CNI01",
+        "interconnect": "sa5",
+        "magic": {},
+        "p2p_ip": "sa7",
+        "account_id": "ACCOUNT01"
+      },
+      "NSC_CNI02": {
+        "account": "sf0",
+        "bgp": {},
+        "bgp_mode": "sf2",
+        "cust_ip": "sf3",
+        "id": "NSC_CNI02",
+        "interconnect": "sf5",
+        "magic": {},
+        "p2p_ip": "sf7",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "nsc_cni": {
+      "nsc_cni_ref01": {
+        "account": "s140",
+        "bgp": {},
+        "bgp_mode": "s142",
+        "cust_ip": "s143",
+        "interconnect": "s145",
+        "magic": {},
+        "p2p_ip": "s147"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cni/cnis": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cni/cnis": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cni/cnis/{cni}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cni/cnis/{cni}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

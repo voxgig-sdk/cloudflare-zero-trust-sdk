@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "zero_trust_gateway_response_collection_4": {
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_400": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_401": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_402": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_response_collection_4": {
+      "zero_trust_gateway_response_collection_4_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/gateway/operations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

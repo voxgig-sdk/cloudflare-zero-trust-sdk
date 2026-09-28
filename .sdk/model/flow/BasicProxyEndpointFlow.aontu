@@ -1,0 +1,9 @@
+# BasicProxyEndpointFlow
+
+main: kit: flow: BasicProxyEndpointFlow:
+{
+  entity: "proxy_endpoint",
+  kind: "basic",
+  name: "BasicProxyEndpointFlow",
+  "key$": "BasicProxyEndpointFlow"
+}

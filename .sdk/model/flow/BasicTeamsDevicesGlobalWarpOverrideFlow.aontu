@@ -1,0 +1,44 @@
+# BasicTeamsDevicesGlobalWarpOverrideFlow
+
+main: kit: flow: BasicTeamsDevicesGlobalWarpOverrideFlow:
+{
+  entity: "teams_devices_global_warp_override",
+  kind: "basic",
+  name: "BasicTeamsDevicesGlobalWarpOverrideFlow",
+  step: [
+    {
+      i: {
+        ref: "teams_devices_global_warp_override_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "teams_devices_global_warp_override_ref01",
+        srcdatavar: "teams_devices_global_warp_override_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "teams_devices_global_warp_override01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-teams_devices_global_warp_override_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTeamsDevicesGlobalWarpOverrideFlow"
+}

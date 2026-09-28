@@ -1,0 +1,26 @@
+# BasicZeroTrustGatewayResponseCollectionFlow
+
+main: kit: flow: BasicZeroTrustGatewayResponseCollectionFlow:
+{
+  entity: "zero_trust_gateway_response_collection",
+  kind: "basic",
+  name: "BasicZeroTrustGatewayResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "zero_trust_gateway_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicZeroTrustGatewayResponseCollectionFlow"
+}

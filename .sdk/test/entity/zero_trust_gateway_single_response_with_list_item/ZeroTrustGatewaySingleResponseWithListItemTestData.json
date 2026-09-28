@@ -1,0 +1,47 @@
+{
+  "existing": {
+    "zero_trust_gateway_single_response_with_list_item": {
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_WITH_LIST_ITEM00": {
+        "description": "s28",
+        "items": [],
+        "name": "s2a",
+        "type": "s2b",
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_WITH_LIST_ITEM00"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_WITH_LIST_ITEM01": {
+        "description": "s50",
+        "items": [],
+        "name": "s52",
+        "type": "s53",
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_WITH_LIST_ITEM01"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_WITH_LIST_ITEM02": {
+        "description": "s78",
+        "items": [],
+        "name": "s7a",
+        "type": "s7b",
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_WITH_LIST_ITEM02"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_single_response_with_list_item": {
+      "zero_trust_gateway_single_response_with_list_item_ref01": {
+        "description": "sa0",
+        "items": [],
+        "name": "sa2",
+        "type": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/gateway/lists": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

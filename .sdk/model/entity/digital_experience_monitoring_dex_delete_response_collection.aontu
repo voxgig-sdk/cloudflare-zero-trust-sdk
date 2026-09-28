@@ -1,0 +1,80 @@
+# Entity: digital_experience_monitoring_dex_delete_response_collection
+
+main: kit: entity: digital_experience_monitoring_dex_delete_response_collection: {
+
+  alias: field: {}
+
+  name: "digital_experience_monitoring_dex_delete_response_collection"
+  op: {
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "dex_test_id"
+                or: "dex_test_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}"
+          q: {
+            exist: [
+              "account_id"
+              "dex_test_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              lit: "dex_tests"
+            }
+            {
+              var: "dex_test_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

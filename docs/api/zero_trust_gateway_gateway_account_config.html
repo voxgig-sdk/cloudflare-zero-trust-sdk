@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ZeroTrustGatewayGatewayAccountConfig | Cloudflare Zero Trust Gateway</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Zero Trust Gateway<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-zero-trust-sdk">voxgig-sdk/cloudflare-zero-trust-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Zero Trust Gateway</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/client_version.html">ClientVersion</a>
+<a href="../api/cni.html">Cni</a>
+<a href="../api/deployment_group.html">DeploymentGroup</a>
+<a href="../api/dex_remote_command.html">DexRemoteCommand</a>
+<a href="../api/dex_rule.html">DexRule</a>
+<a href="../api/dex_synthetic_application_monitoring.html">DexSyntheticApplicationMonitoring</a>
+<a href="../api/digital_experience_monitoring_device.html">DigitalExperienceMonitoringDevice</a>
+<a href="../api/digital_experience_monitoring_dex_delete_response_collection.html">DigitalExperienceMonitoringDexDeleteResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_response_collection.html">DigitalExperienceMonitoringDexResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_single.html">DigitalExperienceMonitoringDexSingle</a>
+<a href="../api/digital_experience_monitoring_fleet_status_device.html">DigitalExperienceMonitoringFleetStatusDevice</a>
+<a href="../api/digital_experience_monitoring_fleet_status_live.html">DigitalExperienceMonitoringFleetStatusLive</a>
+<a href="../api/digital_experience_monitoring_fleet_status_over_time.html">DigitalExperienceMonitoringFleetStatusOverTime</a>
+<a href="../api/interconnect.html">Interconnect</a>
+<a href="../api/ip_profile.html">IpProfile</a>
+<a href="../api/list.html">List</a>
+<a href="../api/location.html">Location</a>
+<a href="../api/nsc_cni.html">NscCni</a>
+<a href="../api/nsc_default_name.html">NscDefaultName</a>
+<a href="../api/nsc_interconnect.html">NscInterconnect</a>
+<a href="../api/nsc_setting.html">NscSetting</a>
+<a href="../api/nsc_slot_info.html">NscSlotInfo</a>
+<a href="../api/nsc_status_info.html">NscStatusInfo</a>
+<a href="../api/override_code.html">OverrideCode</a>
+<a href="../api/pacfile.html">Pacfile</a>
+<a href="../api/physical_device.html">PhysicalDevice</a>
+<a href="../api/proxy_endpoint.html">ProxyEndpoint</a>
+<a href="../api/registration.html">Registration</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/teams_devices_api_response_single.html">TeamsDevicesApiResponseSingle</a>
+<a href="../api/teams_devices_components_schemas_response_collection.html">TeamsDevicesComponentsSchemasResponseCollection</a>
+<a href="../api/teams_devices_components_schemas_single.html">TeamsDevicesComponentsSchemasSingle</a>
+<a href="../api/teams_devices_default_device_setting.html">TeamsDevicesDefaultDeviceSetting</a>
+<a href="../api/teams_devices_device.html">TeamsDevicesDevice</a>
+<a href="../api/teams_devices_device_setting.html">TeamsDevicesDeviceSetting</a>
+<a href="../api/teams_devices_device_settings_response_collection.html">TeamsDevicesDeviceSettingsResponseCollection</a>
+<a href="../api/teams_devices_fallback_domain_response_collection.html">TeamsDevicesFallbackDomainResponseCollection</a>
+<a href="../api/teams_devices_global_warp_override.html">TeamsDevicesGlobalWarpOverride</a>
+<a href="../api/teams_devices_id.html">TeamsDevicesId</a>
+<a href="../api/teams_devices_override_code.html">TeamsDevicesOverrideCode</a>
+<a href="../api/teams_devices_response_collection.html">TeamsDevicesResponseCollection</a>
+<a href="../api/teams_devices_schemas_id.html">TeamsDevicesSchemasId</a>
+<a href="../api/teams_devices_schemas_response_collection.html">TeamsDevicesSchemasResponseCollection</a>
+<a href="../api/teams_devices_schemas_single.html">TeamsDevicesSchemasSingle</a>
+<a href="../api/teams_devices_single.html">TeamsDevicesSingle</a>
+<a href="../api/teams_devices_split_tunnel_include_response_collection.html">TeamsDevicesSplitTunnelIncludeResponseCollection</a>
+<a href="../api/teams_devices_split_tunnel_response_collection.html">TeamsDevicesSplitTunnelResponseCollection</a>
+<a href="../api/teams_devices_zero_trust_account_device_setting.html">TeamsDevicesZeroTrustAccountDeviceSetting</a>
+<a href="../api/tunnel.html">Tunnel</a>
+<a href="../api/tunnel_cfd_tunnel_response_collection.html">TunnelCfdTunnelResponseCollection</a>
+<a href="../api/tunnel_cfd_tunnel_response_single.html">TunnelCfdTunnelResponseSingle</a>
+<a href="../api/tunnel_configuration.html">TunnelConfiguration</a>
+<a href="../api/tunnel_empty.html">TunnelEmpty</a>
+<a href="../api/tunnel_hostname_route_response_collection.html">TunnelHostnameRouteResponseCollection</a>
+<a href="../api/tunnel_hostname_route_response_single.html">TunnelHostnameRouteResponseSingle</a>
+<a href="../api/tunnel_mesh_configuration_response_single.html">TunnelMeshConfigurationResponseSingle</a>
+<a href="../api/tunnel_route_response_single.html">TunnelRouteResponseSingle</a>
+<a href="../api/tunnel_subnet_response_collection.html">TunnelSubnetResponseCollection</a>
+<a href="../api/tunnel_subnet_response_single.html">TunnelSubnetResponseSingle</a>
+<a href="../api/tunnel_subnet_response_single_nullable.html">TunnelSubnetResponseSingleNullable</a>
+<a href="../api/tunnel_teamnet_response_collection.html">TunnelTeamnetResponseCollection</a>
+<a href="../api/tunnel_teamnet_response_single.html">TunnelTeamnetResponseSingle</a>
+<a href="../api/tunnel_tunnel_client.html">TunnelTunnelClient</a>
+<a href="../api/tunnel_tunnel_connection.html">TunnelTunnelConnection</a>
+<a href="../api/tunnel_tunnel_response_token.html">TunnelTunnelResponseToken</a>
+<a href="../api/tunnel_tunnel_warp_connector_client.html">TunnelTunnelWarpConnectorClient</a>
+<a href="../api/tunnel_tunnel_warp_connector_connection.html">TunnelTunnelWarpConnectorConnection</a>
+<a href="../api/tunnel_vnet_response_collection.html">TunnelVnetResponseCollection</a>
+<a href="../api/tunnel_vnet_response_single.html">TunnelVnetResponseSingle</a>
+<a href="../api/tunnel_warp_connector_response_collection.html">TunnelWarpConnectorResponseCollection</a>
+<a href="../api/tunnel_warp_connector_response_single.html">TunnelWarpConnectorResponseSingle</a>
+<a href="../api/tunnel_zero_trust_connectivity_setting.html">TunnelZeroTrustConnectivitySetting</a>
+<a href="../api/warp.html">Warp</a>
+<a href="../api/warp_change_event.html">WarpChangeEvent</a>
+<a href="../api/warp_teams_device_api_other.html">WarpTeamsDeviceApiOther</a>
+<a href="../api/zero_trust_gateway_applications_review_status.html">ZeroTrustGatewayApplicationsReviewStatus</a>
+<a href="../api/zero_trust_gateway_csv_operation_single.html">ZeroTrustGatewayCsvOperationSingle</a>
+<a href="../api/zero_trust_gateway_custom_certificate_setting.html">ZeroTrustGatewayCustomCertificateSetting</a>
+<a href="../api/zero_trust_gateway_gateway_account.html">ZeroTrustGatewayGatewayAccount</a>
+<a aria-current="page" href="../api/zero_trust_gateway_gateway_account_config.html">ZeroTrustGatewayGatewayAccountConfig</a><div class="nav-sections"><a class="nav-section" href="#get-accountsaccount_idgatewayconfiguration">GET /accounts/{account_id}/gateway/configuration</a>
+<a class="nav-section" href="#patch-accountsaccount_idgatewayconfiguration">PATCH /accounts/{account_id}/gateway/configuration</a>
+<a class="nav-section" href="#put-accountsaccount_idgatewayconfiguration">PUT /accounts/{account_id}/gateway/configuration</a></div>
+<a href="../api/zero_trust_gateway_gateway_account_egress_cidr_pair_list.html">ZeroTrustGatewayGatewayAccountEgressCidrPairList</a>
+<a href="../api/zero_trust_gateway_gateway_account_logging_setting.html">ZeroTrustGatewayGatewayAccountLoggingSetting</a>
+<a href="../api/zero_trust_gateway_list_item_response_collection.html">ZeroTrustGatewayListItemResponseCollection</a>
+<a href="../api/zero_trust_gateway_list_single.html">ZeroTrustGatewayListSingle</a>
+<a href="../api/zero_trust_gateway_response_collection.html">ZeroTrustGatewayResponseCollection</a>
+<a href="../api/zero_trust_gateway_response_collection_10.html">ZeroTrustGatewayResponseCollection10</a>
+<a href="../api/zero_trust_gateway_response_collection_2.html">ZeroTrustGatewayResponseCollection2</a>
+<a href="../api/zero_trust_gateway_response_collection_3.html">ZeroTrustGatewayResponseCollection3</a>
+<a href="../api/zero_trust_gateway_response_collection_4.html">ZeroTrustGatewayResponseCollection4</a>
+<a href="../api/zero_trust_gateway_response_collection_5.html">ZeroTrustGatewayResponseCollection5</a>
+<a href="../api/zero_trust_gateway_response_collection_6.html">ZeroTrustGatewayResponseCollection6</a>
+<a href="../api/zero_trust_gateway_response_collection_7.html">ZeroTrustGatewayResponseCollection7</a>
+<a href="../api/zero_trust_gateway_response_collection_8.html">ZeroTrustGatewayResponseCollection8</a>
+<a href="../api/zero_trust_gateway_response_collection_9.html">ZeroTrustGatewayResponseCollection9</a>
+<a href="../api/zero_trust_gateway_single.html">ZeroTrustGatewaySingle</a>
+<a href="../api/zero_trust_gateway_single_response_2.html">ZeroTrustGatewaySingleResponse2</a>
+<a href="../api/zero_trust_gateway_single_response_3.html">ZeroTrustGatewaySingleResponse3</a>
+<a href="../api/zero_trust_gateway_single_response_4.html">ZeroTrustGatewaySingleResponse4</a>
+<a href="../api/zero_trust_gateway_single_response_5.html">ZeroTrustGatewaySingleResponse5</a>
+<a href="../api/zero_trust_gateway_single_response_6.html">ZeroTrustGatewaySingleResponse6</a>
+<a href="../api/zero_trust_gateway_single_response_7.html">ZeroTrustGatewaySingleResponse7</a>
+<a href="../api/zero_trust_gateway_single_response_with_list_item.html">ZeroTrustGatewaySingleResponseWithListItem</a>
+<a href="../api/zero_trust_risk_scoring.html">ZeroTrustRiskScoring</a>
+<a href="../api/zero_trust_risk_scoring_integration.html">ZeroTrustRiskScoringIntegration</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="zerotrustgatewaygatewayaccountconfig">ZeroTrustGatewayGatewayAccountConfig</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idgatewayconfiguration"><code>/accounts/{account_id}/gateway/configuration</code></a></td>
+<td><code>load</code></td>
+<td>Zero Trust account configuration response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idgatewayconfiguration"><code>/accounts/{account_id}/gateway/configuration</code></a></td>
+<td><code>patch</code></td>
+<td>Zero Trust account configuration response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idgatewayconfiguration"><code>/accounts/{account_id}/gateway/configuration</code></a></td>
+<td><code>update</code></td>
+<td>Zero Trust account configuration response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">zero_trust_gateway_gateway_account_config, err := client.ZeroTrustGatewayGatewayAccountConfig(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(zero_trust_gateway_gateway_account_config)
+updated, err := client.ZeroTrustGatewayGatewayAccountConfig(nil).Update(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;result&quot;: map[string]any{}}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local zero_trust_gateway_gateway_account_config, err = client:ZeroTrustGatewayGatewayAccountConfig():load({ account_id = &quot;example&quot; })
+local updated, err = client:ZeroTrustGatewayGatewayAccountConfig():update({ account_id = &quot;example&quot;, result = {} })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$zero_trust_gateway_gateway_account_config = $client-&gt;ZeroTrustGatewayGatewayAccountConfig()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;ZeroTrustGatewayGatewayAccountConfig()-&gt;update([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; []]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">zero_trust_gateway_gateway_account_config = client.ZeroTrustGatewayGatewayAccountConfig().load({&quot;account_id&quot;: &quot;example&quot;})
+updated = client.ZeroTrustGatewayGatewayAccountConfig().update({&quot;account_id&quot;: &quot;example&quot;, &quot;result&quot;: {}})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">zero_trust_gateway_gateway_account_config = client.ZeroTrustGatewayGatewayAccountConfig.load({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+updated = client.ZeroTrustGatewayGatewayAccountConfig.update({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; {} })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const zero_trust_gateway_gateway_account_config = await client.ZeroTrustGatewayGatewayAccountConfig().load({ account_id: &quot;example&quot; })
+const updated = await client.ZeroTrustGatewayGatewayAccountConfig().update({ account_id: &quot;example&quot;, result: {} })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify account settings.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idgatewayconfiguration" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/gateway/configuration</h3>
+<p>Operation ID: <code>zero-trust-accounts-get-zero-trust-account-configuration</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-zero-trust-account-configuration-response" class="status" data-status="2xx">200: Zero Trust account configuration response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-zero-trust-account-configuration-response-failure">4XX: Zero Trust account configuration response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h2 id="patch">patch</h2>
+<h3 id="patch-accountsaccount_idgatewayconfiguration" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/gateway/configuration</h3>
+<p>Operation ID: <code>zero-trust-accounts-patch-zero-trust-account-configuration</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>settings</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify account settings.</td>
+</tr>
+<tr>
+<td><code>settings.activity_log</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify activity log settings.</td>
+</tr>
+<tr>
+<td><code>settings.activity_log.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to log activity.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify anti-virus settings.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.enabled_download_phase</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable anti-virus scanning on downloads.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.enabled_upload_phase</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable anti-virus scanning on uploads.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.fail_closed</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to block requests for unscannable files.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.notification_settings</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Configure the message the user's device shows during an antivirus scan.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.notification_settings.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable notifications.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.notification_settings.include_context</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to include context information as query parameters.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.notification_settings.msg</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the message to show in the notification.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.notification_settings.support_url</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify a URL that directs users to more information. If unset, the notification opens a block page.</td>
+</tr>
+<tr>
+<td><code>settings.block_page</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify block page layout settings.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.background_color</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the block page background color in <code>#rrggbb</code> format when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable the custom block page.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.footer_text</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the block page footer text when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.header_text</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the block page header text when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.include_context</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to append context to <code>target_uri</code> as query parameters. This applies only when the mode is <code>redirect_uri</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.logo_path</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the full URL to the logo file when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.mailto_address</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the admin email for users to contact when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.mailto_subject</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the subject line for emails created from the block page when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.mode</code></td>
+<td><code>enum: , customized_block_page, redirect_uri</code></td>
+<td>No</td>
+<td>Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the block page title when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.read_only</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate that this setting was shared via the Orgs API and read only for the current account.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.source_account</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Indicate the account tag of the account that shared this setting.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.suppress_footer</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to suppress detailed information at the bottom of the block page when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.target_uri</code></td>
+<td><code>string (uri)</code></td>
+<td>No</td>
+<td>Specify the URI to redirect users to when the mode is <code>redirect_uri</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.version</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Indicate the version number of the setting.</td>
+</tr>
+<tr>
+<td><code>settings.body_scanning</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify the DLP inspection mode.</td>
+</tr>
+<tr>
+<td><code>settings.body_scanning.inspection_mode</code></td>
+<td><code>enum: deep, shallow</code></td>
+<td>No</td>
+<td>Specify the inspection mode as either <code>deep</code> or <code>shallow</code>.</td>
+</tr>
+<tr>
+<td><code>settings.browser_isolation</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify Clientless Browser Isolation settings.</td>
+</tr>
+<tr>
+<td><code>settings.browser_isolation.non_identity_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable non-identity onramp support for Browser Isolation.</td>
+</tr>
+<tr>
+<td><code>settings.browser_isolation.url_browser_isolation_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable Clientless Browser Isolation.</td>
+</tr>
+<tr>
+<td><code>settings.certificate</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify certificate settings for Gateway TLS interception. If unset, the Cloudflare Root CA handles interception.</td>
+</tr>
+<tr>
+<td><code>settings.certificate.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the UUID of the certificate used for interception. Ensure the certificate is available at the edge(previously called 'active'). A nil UUID directs Cloudflare to use the Root CA.</td>
+</tr>
+<tr>
+<td><code>settings.custom_certificate</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify custom certificate settings for BYO-PKI. This field is deprecated; use <code>certificate</code> instead.</td>
+</tr>
+<tr>
+<td><code>settings.custom_certificate.binding_status</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Indicate the internal certificate status.</td>
+</tr>
+<tr>
+<td><code>settings.custom_certificate.enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Specify whether to enable a custom certificate authority for signing Gateway traffic.</td>
+</tr>
+<tr>
+<td><code>settings.custom_certificate.id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the UUID of the certificate (ID from MTLS certificate store).</td>
+</tr>
+<tr>
+<td><code>settings.custom_certificate.updated_at</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>settings.extended_email_matching</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Configures user email settings for firewall policies. When you enable this, the system standardizes email addresses in the identity portion of the rule to match extended email variants in firewall policies. When you disable this setting, the system matches email addresses exactly as you provide them. Enable this setting if your email uses <code>.</code> or <code>+</code> modifiers.</td>
+</tr>
+<tr>
+<td><code>settings.extended_email_matching.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to match all variants of user emails (with + or . modifiers) used as criteria in Firewall policies.</td>
+</tr>
+<tr>
+<td><code>settings.extended_email_matching.read_only</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate that this setting was shared via the Orgs API and read only for the current account.</td>
+</tr>
+<tr>
+<td><code>settings.extended_email_matching.source_account</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Indicate the account tag of the account that shared this setting.</td>
+</tr>
+<tr>
+<td><code>settings.extended_email_matching.version</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Indicate the version number of the setting.</td>
+</tr>
+<tr>
+<td><code>settings.fips</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify FIPS settings.</td>
+</tr>
+<tr>
+<td><code>settings.fips.tls</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enforce cipher suites and TLS versions compliant with FIPS 140-2.</td>
+</tr>
+<tr>
+<td><code>settings.host_selector</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Enable host selection in egress policies.</td>
+</tr>
+<tr>
+<td><code>settings.host_selector.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable filtering via hosts for egress policies.</td>
+</tr>
+<tr>
+<td><code>settings.inspection</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Define the proxy inspection mode.</td>
+</tr>
+<tr>
+<td><code>settings.inspection.mode</code></td>
+<td><code>enum: static, dynamic</code></td>
+<td>No</td>
+<td>Define the proxy inspection mode. 1. static: Gateway applies static inspection to HTTP on TCP(80). With TLS decryption on, Gateway inspects HTTPS traffic on TCP(443) and UDP(443). 2. dynamic: Gateway applies protocol detection to inspect HTTP and HTTPS traffic on any port. TLS decryption must remain on to inspect HTTPS traffic.</td>
+</tr>
+<tr>
+<td><code>settings.max_ttl_secs</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Account-level cap on DNS response TTLs, in seconds. Gateway rewrites DNS responses so returned record TTLs do not exceed this value. Null means no cap. Each DNS location can inherit, override, or disable it through the location <code>max_ttl</code> setting.</td>
+</tr>
+<tr>
+<td><code>settings.protocol_detection</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify whether to detect protocols from the initial bytes of client traffic.</td>
+</tr>
+<tr>
+<td><code>settings.protocol_detection.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to detect protocols from the initial bytes of client traffic.</td>
+</tr>
+<tr>
+<td><code>settings.sandbox</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify whether to enable the sandbox.</td>
+</tr>
+<tr>
+<td><code>settings.sandbox.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable the sandbox.</td>
+</tr>
+<tr>
+<td><code>settings.sandbox.fallback_action</code></td>
+<td><code>enum: allow, block</code></td>
+<td>No</td>
+<td>Specify the action to take when the system cannot scan the file.</td>
+</tr>
+<tr>
+<td><code>settings.tls_decrypt</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify whether to inspect encrypted HTTP traffic.</td>
+</tr>
+<tr>
+<td><code>settings.tls_decrypt.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to inspect encrypted HTTP traffic.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-zero-trust-account-configuration-response-1" class="status" data-status="2xx">200: Zero Trust account configuration response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-zero-trust-account-configuration-response-failure-1">4XX: Zero Trust account configuration response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idgatewayconfiguration" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/gateway/configuration</h3>
+<p>Operation ID: <code>zero-trust-accounts-update-zero-trust-account-configuration.</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>settings</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify account settings.</td>
+</tr>
+<tr>
+<td><code>settings.activity_log</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify activity log settings.</td>
+</tr>
+<tr>
+<td><code>settings.activity_log.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to log activity.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify anti-virus settings.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.enabled_download_phase</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable anti-virus scanning on downloads.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.enabled_upload_phase</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable anti-virus scanning on uploads.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.fail_closed</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to block requests for unscannable files.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.notification_settings</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Configure the message the user's device shows during an antivirus scan.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.notification_settings.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable notifications.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.notification_settings.include_context</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to include context information as query parameters.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.notification_settings.msg</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the message to show in the notification.</td>
+</tr>
+<tr>
+<td><code>settings.antivirus.notification_settings.support_url</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify a URL that directs users to more information. If unset, the notification opens a block page.</td>
+</tr>
+<tr>
+<td><code>settings.block_page</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify block page layout settings.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.background_color</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the block page background color in <code>#rrggbb</code> format when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable the custom block page.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.footer_text</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the block page footer text when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.header_text</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the block page header text when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.include_context</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to append context to <code>target_uri</code> as query parameters. This applies only when the mode is <code>redirect_uri</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.logo_path</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the full URL to the logo file when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.mailto_address</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the admin email for users to contact when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.mailto_subject</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the subject line for emails created from the block page when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.mode</code></td>
+<td><code>enum: , customized_block_page, redirect_uri</code></td>
+<td>No</td>
+<td>Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the block page title when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.read_only</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate that this setting was shared via the Orgs API and read only for the current account.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.source_account</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Indicate the account tag of the account that shared this setting.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.suppress_footer</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to suppress detailed information at the bottom of the block page when the mode is <code>customized_block_page</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.target_uri</code></td>
+<td><code>string (uri)</code></td>
+<td>No</td>
+<td>Specify the URI to redirect users to when the mode is <code>redirect_uri</code>.</td>
+</tr>
+<tr>
+<td><code>settings.block_page.version</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Indicate the version number of the setting.</td>
+</tr>
+<tr>
+<td><code>settings.body_scanning</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify the DLP inspection mode.</td>
+</tr>
+<tr>
+<td><code>settings.body_scanning.inspection_mode</code></td>
+<td><code>enum: deep, shallow</code></td>
+<td>No</td>
+<td>Specify the inspection mode as either <code>deep</code> or <code>shallow</code>.</td>
+</tr>
+<tr>
+<td><code>settings.browser_isolation</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify Clientless Browser Isolation settings.</td>
+</tr>
+<tr>
+<td><code>settings.browser_isolation.non_identity_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable non-identity onramp support for Browser Isolation.</td>
+</tr>
+<tr>
+<td><code>settings.browser_isolation.url_browser_isolation_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable Clientless Browser Isolation.</td>
+</tr>
+<tr>
+<td><code>settings.certificate</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify certificate settings for Gateway TLS interception. If unset, the Cloudflare Root CA handles interception.</td>
+</tr>
+<tr>
+<td><code>settings.certificate.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specify the UUID of the certificate used for interception. Ensure the certificate is available at the edge(previously called 'active'). A nil UUID directs Cloudflare to use the Root CA.</td>
+</tr>
+<tr>
+<td><code>settings.custom_certificate</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify custom certificate settings for BYO-PKI. This field is deprecated; use <code>certificate</code> instead.</td>
+</tr>
+<tr>
+<td><code>settings.custom_certificate.binding_status</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Indicate the internal certificate status.</td>
+</tr>
+<tr>
+<td><code>settings.custom_certificate.enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Specify whether to enable a custom certificate authority for signing Gateway traffic.</td>
+</tr>
+<tr>
+<td><code>settings.custom_certificate.id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Specify the UUID of the certificate (ID from MTLS certificate store).</td>
+</tr>
+<tr>
+<td><code>settings.custom_certificate.updated_at</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>settings.extended_email_matching</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Configures user email settings for firewall policies. When you enable this, the system standardizes email addresses in the identity portion of the rule to match extended email variants in firewall policies. When you disable this setting, the system matches email addresses exactly as you provide them. Enable this setting if your email uses <code>.</code> or <code>+</code> modifiers.</td>
+</tr>
+<tr>
+<td><code>settings.extended_email_matching.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to match all variants of user emails (with + or . modifiers) used as criteria in Firewall policies.</td>
+</tr>
+<tr>
+<td><code>settings.extended_email_matching.read_only</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Indicate that this setting was shared via the Orgs API and read only for the current account.</td>
+</tr>
+<tr>
+<td><code>settings.extended_email_matching.source_account</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Indicate the account tag of the account that shared this setting.</td>
+</tr>
+<tr>
+<td><code>settings.extended_email_matching.version</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Indicate the version number of the setting.</td>
+</tr>
+<tr>
+<td><code>settings.fips</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify FIPS settings.</td>
+</tr>
+<tr>
+<td><code>settings.fips.tls</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enforce cipher suites and TLS versions compliant with FIPS 140-2.</td>
+</tr>
+<tr>
+<td><code>settings.host_selector</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Enable host selection in egress policies.</td>
+</tr>
+<tr>
+<td><code>settings.host_selector.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable filtering via hosts for egress policies.</td>
+</tr>
+<tr>
+<td><code>settings.inspection</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Define the proxy inspection mode.</td>
+</tr>
+<tr>
+<td><code>settings.inspection.mode</code></td>
+<td><code>enum: static, dynamic</code></td>
+<td>No</td>
+<td>Define the proxy inspection mode. 1. static: Gateway applies static inspection to HTTP on TCP(80). With TLS decryption on, Gateway inspects HTTPS traffic on TCP(443) and UDP(443). 2. dynamic: Gateway applies protocol detection to inspect HTTP and HTTPS traffic on any port. TLS decryption must remain on to inspect HTTPS traffic.</td>
+</tr>
+<tr>
+<td><code>settings.max_ttl_secs</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Account-level cap on DNS response TTLs, in seconds. Gateway rewrites DNS responses so returned record TTLs do not exceed this value. Null means no cap. Each DNS location can inherit, override, or disable it through the location <code>max_ttl</code> setting.</td>
+</tr>
+<tr>
+<td><code>settings.protocol_detection</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify whether to detect protocols from the initial bytes of client traffic.</td>
+</tr>
+<tr>
+<td><code>settings.protocol_detection.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to detect protocols from the initial bytes of client traffic.</td>
+</tr>
+<tr>
+<td><code>settings.sandbox</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify whether to enable the sandbox.</td>
+</tr>
+<tr>
+<td><code>settings.sandbox.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to enable the sandbox.</td>
+</tr>
+<tr>
+<td><code>settings.sandbox.fallback_action</code></td>
+<td><code>enum: allow, block</code></td>
+<td>No</td>
+<td>Specify the action to take when the system cannot scan the file.</td>
+</tr>
+<tr>
+<td><code>settings.tls_decrypt</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Specify whether to inspect encrypted HTTP traffic.</td>
+</tr>
+<tr>
+<td><code>settings.tls_decrypt.enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Specify whether to inspect encrypted HTTP traffic.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-zero-trust-account-configuration-response-2" class="status" data-status="2xx">200: Zero Trust account configuration response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-zero-trust-account-configuration-response-failure-2">4XX: Zero Trust account configuration response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

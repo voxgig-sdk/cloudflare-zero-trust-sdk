@@ -1,0 +1,49 @@
+# BasicDexSyntheticApplicationMonitoringFlow
+
+main: kit: flow: BasicDexSyntheticApplicationMonitoringFlow:
+{
+  entity: "dex_synthetic_application_monitoring",
+  kind: "basic",
+  name: "BasicDexSyntheticApplicationMonitoringFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "dex_synthetic_application_monitoring_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "dex_synthetic_application_monitoring_ref01",
+        srcdatavar: "dex_synthetic_application_monitoring_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "dex_synthetic_application_monitoring01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-dex_synthetic_application_monitoring_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDexSyntheticApplicationMonitoringFlow"
+}

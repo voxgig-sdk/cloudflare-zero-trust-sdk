@@ -1,0 +1,26 @@
+# BasicWarpChangeEventFlow
+
+main: kit: flow: BasicWarpChangeEventFlow:
+{
+  entity: "warp_change_event",
+  kind: "basic",
+  name: "BasicWarpChangeEventFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "warp_change_event_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicWarpChangeEventFlow"
+}

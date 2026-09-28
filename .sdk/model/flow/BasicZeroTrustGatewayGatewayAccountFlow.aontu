@@ -1,0 +1,44 @@
+# BasicZeroTrustGatewayGatewayAccountFlow
+
+main: kit: flow: BasicZeroTrustGatewayGatewayAccountFlow:
+{
+  entity: "zero_trust_gateway_gateway_account",
+  kind: "basic",
+  name: "BasicZeroTrustGatewayGatewayAccountFlow",
+  step: [
+    {
+      i: {
+        ref: "zero_trust_gateway_gateway_account_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "zero_trust_gateway_gateway_account_ref01",
+        srcdatavar: "zero_trust_gateway_gateway_account_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "zero_trust_gateway_gateway_account01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-zero_trust_gateway_gateway_account_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicZeroTrustGatewayGatewayAccountFlow"
+}

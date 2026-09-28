@@ -1,0 +1,43 @@
+{
+  "existing": {
+    "zero_trust_gateway_custom_certificate_setting": {
+      "ZERO_TRUST_GATEWAY_CUSTOM_CERTIFICATE_SETTING00": {
+        "binding_status": "s28",
+        "enabled": false,
+        "id": "ZERO_TRUST_GATEWAY_CUSTOM_CERTIFICATE_SETTING00",
+        "updated_at": "s2b",
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_GATEWAY_CUSTOM_CERTIFICATE_SETTING01": {
+        "binding_status": "s50",
+        "enabled": false,
+        "id": "ZERO_TRUST_GATEWAY_CUSTOM_CERTIFICATE_SETTING01",
+        "updated_at": "s53",
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_GATEWAY_CUSTOM_CERTIFICATE_SETTING02": {
+        "binding_status": "s78",
+        "enabled": false,
+        "id": "ZERO_TRUST_GATEWAY_CUSTOM_CERTIFICATE_SETTING02",
+        "updated_at": "s7b",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_custom_certificate_setting": {
+      "zero_trust_gateway_custom_certificate_setting_ref01": {
+        "binding_status": "sa0",
+        "enabled": false,
+        "updated_at": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/gateway/configuration/custom_certificate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

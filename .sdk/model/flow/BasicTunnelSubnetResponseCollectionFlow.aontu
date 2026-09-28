@@ -1,0 +1,26 @@
+# BasicTunnelSubnetResponseCollectionFlow
+
+main: kit: flow: BasicTunnelSubnetResponseCollectionFlow:
+{
+  entity: "tunnel_subnet_response_collection",
+  kind: "basic",
+  name: "BasicTunnelSubnetResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "tunnel_subnet_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelSubnetResponseCollectionFlow"
+}

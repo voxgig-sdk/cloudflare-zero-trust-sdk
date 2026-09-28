@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "warp_change_event": {
+      "WARP_CHANGE_EVENT00": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "WARP_CHANGE_EVENT01": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "WARP_CHANGE_EVENT02": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "warp_change_event": {
+      "warp_change_event_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/dex/warp-change-events": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

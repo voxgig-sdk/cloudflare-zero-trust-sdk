@@ -1,0 +1,132 @@
+# Entity: tunnel_tunnel_client
+
+main: kit: entity: tunnel_tunnel_client: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      op: {
+        load: {
+          req: false
+          type: "`$OBJECT`"
+        }
+      }
+      r: true
+      ro: true
+      sh: "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel."
+      t: "`$STRING`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 0
+      }
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful"
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "tunnel_tunnel_client"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connectors/{connector_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "cfd_tunnel_id"
+                or: "tunnel_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "1bedc50d-42b3-473c-b108-ff3d10c0d925"
+                k: "param"
+                n: "connector_id"
+                or: "connector_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connectors/{connector_id}"
+          q: {
+            exist: [
+              "account_id"
+              "cfd_tunnel_id"
+              "connector_id"
+            ]
+          }
+          r: {
+            param: {
+              tunnel_id: "cfd_tunnel_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cfd_tunnel"
+            }
+            {
+              var: "cfd_tunnel_id"
+            }
+            {
+              lit: "connectors"
+            }
+            {
+              var: "connector_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

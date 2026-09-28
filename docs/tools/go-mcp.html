@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Go MCP server | Cloudflare Zero Trust Gateway</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Zero Trust Gateway<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-zero-trust-sdk">voxgig-sdk/cloudflare-zero-trust-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Zero Trust Gateway</a></details>
+<details><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/client_version.html">ClientVersion</a>
+<a href="../api/cni.html">Cni</a>
+<a href="../api/deployment_group.html">DeploymentGroup</a>
+<a href="../api/dex_remote_command.html">DexRemoteCommand</a>
+<a href="../api/dex_rule.html">DexRule</a>
+<a href="../api/dex_synthetic_application_monitoring.html">DexSyntheticApplicationMonitoring</a>
+<a href="../api/digital_experience_monitoring_device.html">DigitalExperienceMonitoringDevice</a>
+<a href="../api/digital_experience_monitoring_dex_delete_response_collection.html">DigitalExperienceMonitoringDexDeleteResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_response_collection.html">DigitalExperienceMonitoringDexResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_single.html">DigitalExperienceMonitoringDexSingle</a>
+<a href="../api/digital_experience_monitoring_fleet_status_device.html">DigitalExperienceMonitoringFleetStatusDevice</a>
+<a href="../api/digital_experience_monitoring_fleet_status_live.html">DigitalExperienceMonitoringFleetStatusLive</a>
+<a href="../api/digital_experience_monitoring_fleet_status_over_time.html">DigitalExperienceMonitoringFleetStatusOverTime</a>
+<a href="../api/interconnect.html">Interconnect</a>
+<a href="../api/ip_profile.html">IpProfile</a>
+<a href="../api/list.html">List</a>
+<a href="../api/location.html">Location</a>
+<a href="../api/nsc_cni.html">NscCni</a>
+<a href="../api/nsc_default_name.html">NscDefaultName</a>
+<a href="../api/nsc_interconnect.html">NscInterconnect</a>
+<a href="../api/nsc_setting.html">NscSetting</a>
+<a href="../api/nsc_slot_info.html">NscSlotInfo</a>
+<a href="../api/nsc_status_info.html">NscStatusInfo</a>
+<a href="../api/override_code.html">OverrideCode</a>
+<a href="../api/pacfile.html">Pacfile</a>
+<a href="../api/physical_device.html">PhysicalDevice</a>
+<a href="../api/proxy_endpoint.html">ProxyEndpoint</a>
+<a href="../api/registration.html">Registration</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/teams_devices_api_response_single.html">TeamsDevicesApiResponseSingle</a>
+<a href="../api/teams_devices_components_schemas_response_collection.html">TeamsDevicesComponentsSchemasResponseCollection</a>
+<a href="../api/teams_devices_components_schemas_single.html">TeamsDevicesComponentsSchemasSingle</a>
+<a href="../api/teams_devices_default_device_setting.html">TeamsDevicesDefaultDeviceSetting</a>
+<a href="../api/teams_devices_device.html">TeamsDevicesDevice</a>
+<a href="../api/teams_devices_device_setting.html">TeamsDevicesDeviceSetting</a>
+<a href="../api/teams_devices_device_settings_response_collection.html">TeamsDevicesDeviceSettingsResponseCollection</a>
+<a href="../api/teams_devices_fallback_domain_response_collection.html">TeamsDevicesFallbackDomainResponseCollection</a>
+<a href="../api/teams_devices_global_warp_override.html">TeamsDevicesGlobalWarpOverride</a>
+<a href="../api/teams_devices_id.html">TeamsDevicesId</a>
+<a href="../api/teams_devices_override_code.html">TeamsDevicesOverrideCode</a>
+<a href="../api/teams_devices_response_collection.html">TeamsDevicesResponseCollection</a>
+<a href="../api/teams_devices_schemas_id.html">TeamsDevicesSchemasId</a>
+<a href="../api/teams_devices_schemas_response_collection.html">TeamsDevicesSchemasResponseCollection</a>
+<a href="../api/teams_devices_schemas_single.html">TeamsDevicesSchemasSingle</a>
+<a href="../api/teams_devices_single.html">TeamsDevicesSingle</a>
+<a href="../api/teams_devices_split_tunnel_include_response_collection.html">TeamsDevicesSplitTunnelIncludeResponseCollection</a>
+<a href="../api/teams_devices_split_tunnel_response_collection.html">TeamsDevicesSplitTunnelResponseCollection</a>
+<a href="../api/teams_devices_zero_trust_account_device_setting.html">TeamsDevicesZeroTrustAccountDeviceSetting</a>
+<a href="../api/tunnel.html">Tunnel</a>
+<a href="../api/tunnel_cfd_tunnel_response_collection.html">TunnelCfdTunnelResponseCollection</a>
+<a href="../api/tunnel_cfd_tunnel_response_single.html">TunnelCfdTunnelResponseSingle</a>
+<a href="../api/tunnel_configuration.html">TunnelConfiguration</a>
+<a href="../api/tunnel_empty.html">TunnelEmpty</a>
+<a href="../api/tunnel_hostname_route_response_collection.html">TunnelHostnameRouteResponseCollection</a>
+<a href="../api/tunnel_hostname_route_response_single.html">TunnelHostnameRouteResponseSingle</a>
+<a href="../api/tunnel_mesh_configuration_response_single.html">TunnelMeshConfigurationResponseSingle</a>
+<a href="../api/tunnel_route_response_single.html">TunnelRouteResponseSingle</a>
+<a href="../api/tunnel_subnet_response_collection.html">TunnelSubnetResponseCollection</a>
+<a href="../api/tunnel_subnet_response_single.html">TunnelSubnetResponseSingle</a>
+<a href="../api/tunnel_subnet_response_single_nullable.html">TunnelSubnetResponseSingleNullable</a>
+<a href="../api/tunnel_teamnet_response_collection.html">TunnelTeamnetResponseCollection</a>
+<a href="../api/tunnel_teamnet_response_single.html">TunnelTeamnetResponseSingle</a>
+<a href="../api/tunnel_tunnel_client.html">TunnelTunnelClient</a>
+<a href="../api/tunnel_tunnel_connection.html">TunnelTunnelConnection</a>
+<a href="../api/tunnel_tunnel_response_token.html">TunnelTunnelResponseToken</a>
+<a href="../api/tunnel_tunnel_warp_connector_client.html">TunnelTunnelWarpConnectorClient</a>
+<a href="../api/tunnel_tunnel_warp_connector_connection.html">TunnelTunnelWarpConnectorConnection</a>
+<a href="../api/tunnel_vnet_response_collection.html">TunnelVnetResponseCollection</a>
+<a href="../api/tunnel_vnet_response_single.html">TunnelVnetResponseSingle</a>
+<a href="../api/tunnel_warp_connector_response_collection.html">TunnelWarpConnectorResponseCollection</a>
+<a href="../api/tunnel_warp_connector_response_single.html">TunnelWarpConnectorResponseSingle</a>
+<a href="../api/tunnel_zero_trust_connectivity_setting.html">TunnelZeroTrustConnectivitySetting</a>
+<a href="../api/warp.html">Warp</a>
+<a href="../api/warp_change_event.html">WarpChangeEvent</a>
+<a href="../api/warp_teams_device_api_other.html">WarpTeamsDeviceApiOther</a>
+<a href="../api/zero_trust_gateway_applications_review_status.html">ZeroTrustGatewayApplicationsReviewStatus</a>
+<a href="../api/zero_trust_gateway_csv_operation_single.html">ZeroTrustGatewayCsvOperationSingle</a>
+<a href="../api/zero_trust_gateway_custom_certificate_setting.html">ZeroTrustGatewayCustomCertificateSetting</a>
+<a href="../api/zero_trust_gateway_gateway_account.html">ZeroTrustGatewayGatewayAccount</a>
+<a href="../api/zero_trust_gateway_gateway_account_config.html">ZeroTrustGatewayGatewayAccountConfig</a>
+<a href="../api/zero_trust_gateway_gateway_account_egress_cidr_pair_list.html">ZeroTrustGatewayGatewayAccountEgressCidrPairList</a>
+<a href="../api/zero_trust_gateway_gateway_account_logging_setting.html">ZeroTrustGatewayGatewayAccountLoggingSetting</a>
+<a href="../api/zero_trust_gateway_list_item_response_collection.html">ZeroTrustGatewayListItemResponseCollection</a>
+<a href="../api/zero_trust_gateway_list_single.html">ZeroTrustGatewayListSingle</a>
+<a href="../api/zero_trust_gateway_response_collection.html">ZeroTrustGatewayResponseCollection</a>
+<a href="../api/zero_trust_gateway_response_collection_10.html">ZeroTrustGatewayResponseCollection10</a>
+<a href="../api/zero_trust_gateway_response_collection_2.html">ZeroTrustGatewayResponseCollection2</a>
+<a href="../api/zero_trust_gateway_response_collection_3.html">ZeroTrustGatewayResponseCollection3</a>
+<a href="../api/zero_trust_gateway_response_collection_4.html">ZeroTrustGatewayResponseCollection4</a>
+<a href="../api/zero_trust_gateway_response_collection_5.html">ZeroTrustGatewayResponseCollection5</a>
+<a href="../api/zero_trust_gateway_response_collection_6.html">ZeroTrustGatewayResponseCollection6</a>
+<a href="../api/zero_trust_gateway_response_collection_7.html">ZeroTrustGatewayResponseCollection7</a>
+<a href="../api/zero_trust_gateway_response_collection_8.html">ZeroTrustGatewayResponseCollection8</a>
+<a href="../api/zero_trust_gateway_response_collection_9.html">ZeroTrustGatewayResponseCollection9</a>
+<a href="../api/zero_trust_gateway_single.html">ZeroTrustGatewaySingle</a>
+<a href="../api/zero_trust_gateway_single_response_2.html">ZeroTrustGatewaySingleResponse2</a>
+<a href="../api/zero_trust_gateway_single_response_3.html">ZeroTrustGatewaySingleResponse3</a>
+<a href="../api/zero_trust_gateway_single_response_4.html">ZeroTrustGatewaySingleResponse4</a>
+<a href="../api/zero_trust_gateway_single_response_5.html">ZeroTrustGatewaySingleResponse5</a>
+<a href="../api/zero_trust_gateway_single_response_6.html">ZeroTrustGatewaySingleResponse6</a>
+<a href="../api/zero_trust_gateway_single_response_7.html">ZeroTrustGatewaySingleResponse7</a>
+<a href="../api/zero_trust_gateway_single_response_with_list_item.html">ZeroTrustGatewaySingleResponseWithListItem</a>
+<a href="../api/zero_trust_risk_scoring.html">ZeroTrustRiskScoring</a>
+<a href="../api/zero_trust_risk_scoring_integration.html">ZeroTrustRiskScoringIntegration</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details open><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a aria-current="page" href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>Tools</div><h1 id="go-mcp-server">Go MCP server</h1>
+<p>Go MCP server</p>
+<h2 id="install">Install</h2>
+<p>Not published. Build from the go-mcp directory.</p>
+<h2 id="package">Package</h2>
+<p><code>github.com/voxgig-sdk/cloudflare-zero-trust-sdk/go-mcp</code></p>
+<h2 id="api-reference">API reference</h2>
+<p>The API reference covers all entities. The tools section lists the operations this server exposes.</p>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Operations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../api/client_version.html">ClientVersion</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/cni.html">Cni</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/deployment_group.html">DeploymentGroup</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dex_remote_command.html">DexRemoteCommand</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/dex_rule.html">DexRule</a></td>
+<td><code>create</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dex_synthetic_application_monitoring.html">DexSyntheticApplicationMonitoring</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/digital_experience_monitoring_device.html">DigitalExperienceMonitoringDevice</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/digital_experience_monitoring_dex_delete_response_collection.html">DigitalExperienceMonitoringDexDeleteResponseCollection</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/digital_experience_monitoring_dex_response_collection.html">DigitalExperienceMonitoringDexResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/digital_experience_monitoring_dex_single.html">DigitalExperienceMonitoringDexSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/digital_experience_monitoring_fleet_status_device.html">DigitalExperienceMonitoringFleetStatusDevice</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/digital_experience_monitoring_fleet_status_live.html">DigitalExperienceMonitoringFleetStatusLive</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/digital_experience_monitoring_fleet_status_over_time.html">DigitalExperienceMonitoringFleetStatusOverTime</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/interconnect.html">Interconnect</a></td>
+<td><code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/ip_profile.html">IpProfile</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/list.html">List</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/location.html">Location</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/nsc_cni.html">NscCni</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/nsc_default_name.html">NscDefaultName</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/nsc_interconnect.html">NscInterconnect</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/nsc_setting.html">NscSetting</a></td>
+<td><code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/nsc_slot_info.html">NscSlotInfo</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/nsc_status_info.html">NscStatusInfo</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/override_code.html">OverrideCode</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/pacfile.html">Pacfile</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/physical_device.html">PhysicalDevice</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/proxy_endpoint.html">ProxyEndpoint</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/registration.html">Registration</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/rule.html">Rule</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_api_response_single.html">TeamsDevicesApiResponseSingle</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_components_schemas_response_collection.html">TeamsDevicesComponentsSchemasResponseCollection</a></td>
+<td><code>list</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_components_schemas_single.html">TeamsDevicesComponentsSchemasSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_default_device_setting.html">TeamsDevicesDefaultDeviceSetting</a></td>
+<td><code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_device.html">TeamsDevicesDevice</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_device_setting.html">TeamsDevicesDeviceSetting</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_device_settings_response_collection.html">TeamsDevicesDeviceSettingsResponseCollection</a></td>
+<td><code>list</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_fallback_domain_response_collection.html">TeamsDevicesFallbackDomainResponseCollection</a></td>
+<td><code>list</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_global_warp_override.html">TeamsDevicesGlobalWarpOverride</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_id.html">TeamsDevicesId</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_override_code.html">TeamsDevicesOverrideCode</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_response_collection.html">TeamsDevicesResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_schemas_id.html">TeamsDevicesSchemasId</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_schemas_response_collection.html">TeamsDevicesSchemasResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_schemas_single.html">TeamsDevicesSchemasSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_single.html">TeamsDevicesSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_split_tunnel_include_response_collection.html">TeamsDevicesSplitTunnelIncludeResponseCollection</a></td>
+<td><code>list</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_split_tunnel_response_collection.html">TeamsDevicesSplitTunnelResponseCollection</a></td>
+<td><code>list</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/teams_devices_zero_trust_account_device_setting.html">TeamsDevicesZeroTrustAccountDeviceSetting</a></td>
+<td><code>load</code>, <code>patch</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel.html">Tunnel</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_cfd_tunnel_response_collection.html">TunnelCfdTunnelResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_cfd_tunnel_response_single.html">TunnelCfdTunnelResponseSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_configuration.html">TunnelConfiguration</a></td>
+<td><code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_empty.html">TunnelEmpty</a></td>
+<td><code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_hostname_route_response_collection.html">TunnelHostnameRouteResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_hostname_route_response_single.html">TunnelHostnameRouteResponseSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_mesh_configuration_response_single.html">TunnelMeshConfigurationResponseSingle</a></td>
+<td><code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_route_response_single.html">TunnelRouteResponseSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_subnet_response_collection.html">TunnelSubnetResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_subnet_response_single.html">TunnelSubnetResponseSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>patch</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_subnet_response_single_nullable.html">TunnelSubnetResponseSingleNullable</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_teamnet_response_collection.html">TunnelTeamnetResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_teamnet_response_single.html">TunnelTeamnetResponseSingle</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_tunnel_client.html">TunnelTunnelClient</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_tunnel_connection.html">TunnelTunnelConnection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_tunnel_response_token.html">TunnelTunnelResponseToken</a></td>
+<td><code>create</code>, <code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_tunnel_warp_connector_client.html">TunnelTunnelWarpConnectorClient</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_tunnel_warp_connector_connection.html">TunnelTunnelWarpConnectorConnection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_vnet_response_collection.html">TunnelVnetResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_vnet_response_single.html">TunnelVnetResponseSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_warp_connector_response_collection.html">TunnelWarpConnectorResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_warp_connector_response_single.html">TunnelWarpConnectorResponseSingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/tunnel_zero_trust_connectivity_setting.html">TunnelZeroTrustConnectivitySetting</a></td>
+<td><code>list</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/warp.html">Warp</a></td>
+<td><code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/warp_change_event.html">WarpChangeEvent</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/warp_teams_device_api_other.html">WarpTeamsDeviceApiOther</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_applications_review_status.html">ZeroTrustGatewayApplicationsReviewStatus</a></td>
+<td><code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_csv_operation_single.html">ZeroTrustGatewayCsvOperationSingle</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_custom_certificate_setting.html">ZeroTrustGatewayCustomCertificateSetting</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_gateway_account.html">ZeroTrustGatewayGatewayAccount</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_gateway_account_config.html">ZeroTrustGatewayGatewayAccountConfig</a></td>
+<td><code>load</code>, <code>patch</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_gateway_account_egress_cidr_pair_list.html">ZeroTrustGatewayGatewayAccountEgressCidrPairList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_gateway_account_logging_setting.html">ZeroTrustGatewayGatewayAccountLoggingSetting</a></td>
+<td><code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_list_item_response_collection.html">ZeroTrustGatewayListItemResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_list_single.html">ZeroTrustGatewayListSingle</a></td>
+<td><code>load</code>, <code>patch</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_response_collection.html">ZeroTrustGatewayResponseCollection</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_response_collection_10.html">ZeroTrustGatewayResponseCollection10</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_response_collection_2.html">ZeroTrustGatewayResponseCollection2</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_response_collection_3.html">ZeroTrustGatewayResponseCollection3</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_response_collection_4.html">ZeroTrustGatewayResponseCollection4</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_response_collection_5.html">ZeroTrustGatewayResponseCollection5</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_response_collection_6.html">ZeroTrustGatewayResponseCollection6</a></td>
+<td><code>list</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_response_collection_7.html">ZeroTrustGatewayResponseCollection7</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_response_collection_8.html">ZeroTrustGatewayResponseCollection8</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_response_collection_9.html">ZeroTrustGatewayResponseCollection9</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_single.html">ZeroTrustGatewaySingle</a></td>
+<td><code>create</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_single_response_2.html">ZeroTrustGatewaySingleResponse2</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_single_response_3.html">ZeroTrustGatewaySingleResponse3</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_single_response_4.html">ZeroTrustGatewaySingleResponse4</a></td>
+<td><code>create</code>, <code>load</code>, <code>patch</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_single_response_5.html">ZeroTrustGatewaySingleResponse5</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_single_response_6.html">ZeroTrustGatewaySingleResponse6</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_single_response_7.html">ZeroTrustGatewaySingleResponse7</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_gateway_single_response_with_list_item.html">ZeroTrustGatewaySingleResponseWithListItem</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_risk_scoring.html">ZeroTrustRiskScoring</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/zero_trust_risk_scoring_integration.html">ZeroTrustRiskScoringIntegration</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuration">Configuration</h2>
+<p>Set the server URL and credentials for your environment. Enable only the features your application needs.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><a href="../features/test.html">Test transport</a></li>
+</ul>
+<h2 id="tools">Tools</h2>
+<h3 id="cloudflare-zero-trust_list"><code>cloudflare-zero-trust_list</code></h3>
+<p>List records for an entity.</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;required&quot;: [
+    &quot;entity&quot;
+  ],
+  &quot;properties&quot;: {
+    &quot;entity&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;client_version | cni | deployment_group | dex_remote_command | dex_rule | dex_synthetic_application_monitoring | digital_experience_monitoring_device | digital_experience_monitoring_dex_delete_response_collection | digital_experience_monitoring_dex_response_collection | digital_experience_monitoring_dex_single | digital_experience_monitoring_fleet_status_device | digital_experience_monitoring_fleet_status_live | digital_experience_monitoring_fleet_status_over_time | interconnect | ip_profile | list | location | nsc_cni | nsc_default_name | nsc_interconnect | nsc_setting | nsc_slot_info | nsc_status_info | override_code | pacfile | physical_device | proxy_endpoint | registration | rule | teams_devices_api_response_single | teams_devices_components_schemas_response_collection | teams_devices_components_schemas_single | teams_devices_default_device_setting | teams_devices_device | teams_devices_device_setting | teams_devices_device_settings_response_collection | teams_devices_fallback_domain_response_collection | teams_devices_global_warp_override | teams_devices_id | teams_devices_override_code | teams_devices_response_collection | teams_devices_schemas_id | teams_devices_schemas_response_collection | teams_devices_schemas_single | teams_devices_single | teams_devices_split_tunnel_include_response_collection | teams_devices_split_tunnel_response_collection | teams_devices_zero_trust_account_device_setting | tunnel | tunnel_cfd_tunnel_response_collection | tunnel_cfd_tunnel_response_single | tunnel_configuration | tunnel_empty | tunnel_hostname_route_response_collection | tunnel_hostname_route_response_single | tunnel_mesh_configuration_response_single | tunnel_route_response_single | tunnel_subnet_response_collection | tunnel_subnet_response_single | tunnel_subnet_response_single_nullable | tunnel_teamnet_response_collection | tunnel_teamnet_response_single | tunnel_tunnel_client | tunnel_tunnel_connection | tunnel_tunnel_response_token | tunnel_tunnel_warp_connector_client | tunnel_tunnel_warp_connector_connection | tunnel_vnet_response_collection | tunnel_vnet_response_single | tunnel_warp_connector_response_collection | tunnel_warp_connector_response_single | tunnel_zero_trust_connectivity_setting | warp | warp_change_event | warp_teams_device_api_other | zero_trust_gateway_applications_review_status | zero_trust_gateway_csv_operation_single | zero_trust_gateway_custom_certificate_setting | zero_trust_gateway_gateway_account | zero_trust_gateway_gateway_account_config | zero_trust_gateway_gateway_account_egress_cidr_pair_list | zero_trust_gateway_gateway_account_logging_setting | zero_trust_gateway_list_item_response_collection | zero_trust_gateway_list_single | zero_trust_gateway_response_collection | zero_trust_gateway_response_collection_10 | zero_trust_gateway_response_collection_2 | zero_trust_gateway_response_collection_3 | zero_trust_gateway_response_collection_4 | zero_trust_gateway_response_collection_5 | zero_trust_gateway_response_collection_6 | zero_trust_gateway_response_collection_7 | zero_trust_gateway_response_collection_8 | zero_trust_gateway_response_collection_9 | zero_trust_gateway_single | zero_trust_gateway_single_response_2 | zero_trust_gateway_single_response_3 | zero_trust_gateway_single_response_4 | zero_trust_gateway_single_response_5 | zero_trust_gateway_single_response_6 | zero_trust_gateway_single_response_7 | zero_trust_gateway_single_response_with_list_item | zero_trust_risk_scoring | zero_trust_risk_scoring_integration&quot;
+    },
+    &quot;query&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Optional match fields for the selected entity.&quot;
+    }
+  }
+}
+</code></pre>
+<p>Supported entities: <code>client_version</code>, <code>deployment_group</code>, <code>dex_synthetic_application_monitoring</code>, <code>digital_experience_monitoring_device</code>, <code>digital_experience_monitoring_dex_response_collection</code>, <code>digital_experience_monitoring_fleet_status_device</code>, <code>ip_profile</code>, <code>nsc_cni</code>, <code>nsc_interconnect</code>, <code>nsc_slot_info</code>, <code>physical_device</code>, <code>registration</code>, <code>teams_devices_components_schemas_response_collection</code>, <code>teams_devices_device</code>, <code>teams_devices_device_settings_response_collection</code>, <code>teams_devices_fallback_domain_response_collection</code>, <code>teams_devices_response_collection</code>, <code>teams_devices_schemas_response_collection</code>, <code>teams_devices_split_tunnel_include_response_collection</code>, <code>teams_devices_split_tunnel_response_collection</code>, <code>tunnel</code>, <code>tunnel_cfd_tunnel_response_collection</code>, <code>tunnel_hostname_route_response_collection</code>, <code>tunnel_subnet_response_collection</code>, <code>tunnel_teamnet_response_collection</code>, <code>tunnel_tunnel_connection</code>, <code>tunnel_tunnel_response_token</code>, <code>tunnel_tunnel_warp_connector_connection</code>, <code>tunnel_vnet_response_collection</code>, <code>tunnel_warp_connector_response_collection</code>, <code>tunnel_zero_trust_connectivity_setting</code>, <code>warp_change_event</code>, <code>warp_teams_device_api_other</code>, <code>zero_trust_gateway_gateway_account_egress_cidr_pair_list</code>, <code>zero_trust_gateway_list_item_response_collection</code>, <code>zero_trust_gateway_response_collection</code>, <code>zero_trust_gateway_response_collection_10</code>, <code>zero_trust_gateway_response_collection_2</code>, <code>zero_trust_gateway_response_collection_3</code>, <code>zero_trust_gateway_response_collection_4</code>, <code>zero_trust_gateway_response_collection_5</code>, <code>zero_trust_gateway_response_collection_6</code>, <code>zero_trust_gateway_response_collection_7</code>, <code>zero_trust_gateway_response_collection_8</code>, <code>zero_trust_gateway_response_collection_9</code>, <code>zero_trust_risk_scoring_integration</code>.</p>
+<h3 id="cloudflare-zero-trust_load"><code>cloudflare-zero-trust_load</code></h3>
+<p>Load one record for an entity.</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;required&quot;: [
+    &quot;entity&quot;
+  ],
+  &quot;properties&quot;: {
+    &quot;entity&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;client_version | cni | deployment_group | dex_remote_command | dex_rule | dex_synthetic_application_monitoring | digital_experience_monitoring_device | digital_experience_monitoring_dex_delete_response_collection | digital_experience_monitoring_dex_response_collection | digital_experience_monitoring_dex_single | digital_experience_monitoring_fleet_status_device | digital_experience_monitoring_fleet_status_live | digital_experience_monitoring_fleet_status_over_time | interconnect | ip_profile | list | location | nsc_cni | nsc_default_name | nsc_interconnect | nsc_setting | nsc_slot_info | nsc_status_info | override_code | pacfile | physical_device | proxy_endpoint | registration | rule | teams_devices_api_response_single | teams_devices_components_schemas_response_collection | teams_devices_components_schemas_single | teams_devices_default_device_setting | teams_devices_device | teams_devices_device_setting | teams_devices_device_settings_response_collection | teams_devices_fallback_domain_response_collection | teams_devices_global_warp_override | teams_devices_id | teams_devices_override_code | teams_devices_response_collection | teams_devices_schemas_id | teams_devices_schemas_response_collection | teams_devices_schemas_single | teams_devices_single | teams_devices_split_tunnel_include_response_collection | teams_devices_split_tunnel_response_collection | teams_devices_zero_trust_account_device_setting | tunnel | tunnel_cfd_tunnel_response_collection | tunnel_cfd_tunnel_response_single | tunnel_configuration | tunnel_empty | tunnel_hostname_route_response_collection | tunnel_hostname_route_response_single | tunnel_mesh_configuration_response_single | tunnel_route_response_single | tunnel_subnet_response_collection | tunnel_subnet_response_single | tunnel_subnet_response_single_nullable | tunnel_teamnet_response_collection | tunnel_teamnet_response_single | tunnel_tunnel_client | tunnel_tunnel_connection | tunnel_tunnel_response_token | tunnel_tunnel_warp_connector_client | tunnel_tunnel_warp_connector_connection | tunnel_vnet_response_collection | tunnel_vnet_response_single | tunnel_warp_connector_response_collection | tunnel_warp_connector_response_single | tunnel_zero_trust_connectivity_setting | warp | warp_change_event | warp_teams_device_api_other | zero_trust_gateway_applications_review_status | zero_trust_gateway_csv_operation_single | zero_trust_gateway_custom_certificate_setting | zero_trust_gateway_gateway_account | zero_trust_gateway_gateway_account_config | zero_trust_gateway_gateway_account_egress_cidr_pair_list | zero_trust_gateway_gateway_account_logging_setting | zero_trust_gateway_list_item_response_collection | zero_trust_gateway_list_single | zero_trust_gateway_response_collection | zero_trust_gateway_response_collection_10 | zero_trust_gateway_response_collection_2 | zero_trust_gateway_response_collection_3 | zero_trust_gateway_response_collection_4 | zero_trust_gateway_response_collection_5 | zero_trust_gateway_response_collection_6 | zero_trust_gateway_response_collection_7 | zero_trust_gateway_response_collection_8 | zero_trust_gateway_response_collection_9 | zero_trust_gateway_single | zero_trust_gateway_single_response_2 | zero_trust_gateway_single_response_3 | zero_trust_gateway_single_response_4 | zero_trust_gateway_single_response_5 | zero_trust_gateway_single_response_6 | zero_trust_gateway_single_response_7 | zero_trust_gateway_single_response_with_list_item | zero_trust_risk_scoring | zero_trust_risk_scoring_integration&quot;
+    },
+    &quot;query&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Optional match fields for the selected entity.&quot;
+    }
+  }
+}
+</code></pre>
+<p>Supported entities: <code>deployment_group</code>, <code>dex_remote_command</code>, <code>dex_rule</code>, <code>dex_synthetic_application_monitoring</code>, <code>digital_experience_monitoring_dex_single</code>, <code>digital_experience_monitoring_fleet_status_live</code>, <code>digital_experience_monitoring_fleet_status_over_time</code>, <code>interconnect</code>, <code>ip_profile</code>, <code>nsc_cni</code>, <code>nsc_default_name</code>, <code>nsc_interconnect</code>, <code>nsc_setting</code>, <code>nsc_slot_info</code>, <code>nsc_status_info</code>, <code>physical_device</code>, <code>registration</code>, <code>teams_devices_components_schemas_single</code>, <code>teams_devices_default_device_setting</code>, <code>teams_devices_device</code>, <code>teams_devices_device_setting</code>, <code>teams_devices_global_warp_override</code>, <code>teams_devices_override_code</code>, <code>teams_devices_schemas_single</code>, <code>teams_devices_single</code>, <code>teams_devices_zero_trust_account_device_setting</code>, <code>tunnel_cfd_tunnel_response_single</code>, <code>tunnel_configuration</code>, <code>tunnel_hostname_route_response_single</code>, <code>tunnel_mesh_configuration_response_single</code>, <code>tunnel_route_response_single</code>, <code>tunnel_subnet_response_single</code>, <code>tunnel_teamnet_response_single</code>, <code>tunnel_tunnel_client</code>, <code>tunnel_tunnel_warp_connector_client</code>, <code>tunnel_vnet_response_single</code>, <code>tunnel_warp_connector_response_single</code>, <code>warp</code>, <code>zero_trust_gateway_applications_review_status</code>, <code>zero_trust_gateway_custom_certificate_setting</code>, <code>zero_trust_gateway_gateway_account</code>, <code>zero_trust_gateway_gateway_account_config</code>, <code>zero_trust_gateway_gateway_account_logging_setting</code>, <code>zero_trust_gateway_list_single</code>, <code>zero_trust_gateway_single</code>, <code>zero_trust_gateway_single_response_2</code>, <code>zero_trust_gateway_single_response_3</code>, <code>zero_trust_gateway_single_response_4</code>, <code>zero_trust_gateway_single_response_5</code>, <code>zero_trust_gateway_single_response_6</code>, <code>zero_trust_gateway_single_response_7</code>, <code>zero_trust_risk_scoring</code>, <code>zero_trust_risk_scoring_integration</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

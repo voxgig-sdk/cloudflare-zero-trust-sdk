@@ -1,0 +1,71 @@
+{
+  "existing": {
+    "registration": {
+      "REGISTRATION00": {
+        "errors": [],
+        "id": "REGISTRATION00",
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "account_id": "ACCOUNT01"
+      },
+      "REGISTRATION01": {
+        "errors": [],
+        "id": "REGISTRATION01",
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "account_id": "ACCOUNT01"
+      },
+      "REGISTRATION02": {
+        "errors": [],
+        "id": "REGISTRATION02",
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "registration": {
+      "registration_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/devices/registrations/revoke": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/devices/registrations/unrevoke": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/registrations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/registrations/{registration_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/devices/registrations/{registration_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

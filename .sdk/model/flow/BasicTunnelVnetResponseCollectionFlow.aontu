@@ -1,0 +1,26 @@
+# BasicTunnelVnetResponseCollectionFlow
+
+main: kit: flow: BasicTunnelVnetResponseCollectionFlow:
+{
+  entity: "tunnel_vnet_response_collection",
+  kind: "basic",
+  name: "BasicTunnelVnetResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "tunnel_vnet_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelVnetResponseCollectionFlow"
+}

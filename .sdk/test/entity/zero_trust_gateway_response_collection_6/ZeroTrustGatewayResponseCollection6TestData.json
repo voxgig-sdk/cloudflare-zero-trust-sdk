@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "zero_trust_gateway_response_collection_6": {
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_600": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_600"
+      },
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_601": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_601"
+      },
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_602": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_602"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_response_collection_6": {
+      "zero_trust_gateway_response_collection_6_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/gateway/rules": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/gateway/rules/tenant": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/gateway/rules": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

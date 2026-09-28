@@ -1,0 +1,26 @@
+# BasicTeamsDevicesComponentsSchemasResponseCollectionFlow
+
+main: kit: flow: BasicTeamsDevicesComponentsSchemasResponseCollectionFlow:
+{
+  entity: "teams_devices_components_schemas_response_collection",
+  kind: "basic",
+  name: "BasicTeamsDevicesComponentsSchemasResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "teams_devices_components_schemas_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTeamsDevicesComponentsSchemasResponseCollectionFlow"
+}

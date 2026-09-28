@@ -1,0 +1,86 @@
+{
+  "existing": {
+    "teams_devices_zero_trust_account_device_setting": {
+      "TEAMS_DEVICES_ZERO_TRUST_ACCOUNT_DEVICE_SETTING00": {
+        "disable_for_time": 100,
+        "external_emergency_signal_enabled": false,
+        "external_emergency_signal_fingerprint": "s66",
+        "external_emergency_signal_interval": "s67",
+        "external_emergency_signal_url": "s68",
+        "gateway_proxy_enabled": false,
+        "gateway_udp_proxy_enabled": true,
+        "result": {},
+        "root_certificate_installation_enabled": true,
+        "use_zt_virtual_ip": false,
+        "account_id": "ACCOUNT01",
+        "id": "TEAMS_DEVICES_ZERO_TRUST_ACCOUNT_DEVICE_SETTING00"
+      },
+      "TEAMS_DEVICES_ZERO_TRUST_ACCOUNT_DEVICE_SETTING01": {
+        "disable_for_time": 200,
+        "external_emergency_signal_enabled": false,
+        "external_emergency_signal_fingerprint": "sca",
+        "external_emergency_signal_interval": "scb",
+        "external_emergency_signal_url": "scc",
+        "gateway_proxy_enabled": false,
+        "gateway_udp_proxy_enabled": true,
+        "result": {},
+        "root_certificate_installation_enabled": true,
+        "use_zt_virtual_ip": false,
+        "account_id": "ACCOUNT01",
+        "id": "TEAMS_DEVICES_ZERO_TRUST_ACCOUNT_DEVICE_SETTING01"
+      },
+      "TEAMS_DEVICES_ZERO_TRUST_ACCOUNT_DEVICE_SETTING02": {
+        "disable_for_time": 300,
+        "external_emergency_signal_enabled": false,
+        "external_emergency_signal_fingerprint": "s12e",
+        "external_emergency_signal_interval": "s12f",
+        "external_emergency_signal_url": "s130",
+        "gateway_proxy_enabled": false,
+        "gateway_udp_proxy_enabled": true,
+        "result": {},
+        "root_certificate_installation_enabled": true,
+        "use_zt_virtual_ip": false,
+        "account_id": "ACCOUNT01",
+        "id": "TEAMS_DEVICES_ZERO_TRUST_ACCOUNT_DEVICE_SETTING02"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_zero_trust_account_device_setting": {
+      "teams_devices_zero_trust_account_device_setting_ref01": {
+        "disable_for_time": 400,
+        "external_emergency_signal_enabled": false,
+        "external_emergency_signal_fingerprint": "s192",
+        "external_emergency_signal_interval": "s193",
+        "external_emergency_signal_url": "s194",
+        "gateway_proxy_enabled": false,
+        "gateway_udp_proxy_enabled": true,
+        "result": {},
+        "root_certificate_installation_enabled": true,
+        "use_zt_virtual_ip": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/devices/settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/devices/settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/devices/settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/devices/settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "existing": {
+    "warp": {
+      "WARP00": {
+        "comment": "s5a",
+        "errors": [],
+        "id": "WARP00",
+        "is_default_network": false,
+        "messages": [],
+        "name": "s5f",
+        "network": "s60",
+        "result": "s61",
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "WARP01": {
+        "comment": "sb4",
+        "errors": [],
+        "id": "WARP01",
+        "is_default_network": false,
+        "messages": [],
+        "name": "sb9",
+        "network": "sba",
+        "result": "sbb",
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "WARP02": {
+        "comment": "s10e",
+        "errors": [],
+        "id": "WARP02",
+        "is_default_network": false,
+        "messages": [],
+        "name": "s113",
+        "network": "s114",
+        "result": "s115",
+        "success": true,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "warp": {
+      "warp_ref01": {
+        "comment": "s168",
+        "errors": [],
+        "is_default_network": false,
+        "messages": [],
+        "name": "s16d",
+        "network": "s16e",
+        "result": "s16f",
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

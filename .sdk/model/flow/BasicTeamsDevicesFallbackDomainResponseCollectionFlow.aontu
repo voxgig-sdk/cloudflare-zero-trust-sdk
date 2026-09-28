@@ -1,0 +1,44 @@
+# BasicTeamsDevicesFallbackDomainResponseCollectionFlow
+
+main: kit: flow: BasicTeamsDevicesFallbackDomainResponseCollectionFlow:
+{
+  entity: "teams_devices_fallback_domain_response_collection",
+  kind: "basic",
+  name: "BasicTeamsDevicesFallbackDomainResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "teams_devices_fallback_domain_response_collection_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "teams_devices_fallback_domain_response_collection_ref01",
+        srcdatavar: "teams_devices_fallback_domain_response_collection_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-teams_devices_fallback_domain_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTeamsDevicesFallbackDomainResponseCollectionFlow"
+}

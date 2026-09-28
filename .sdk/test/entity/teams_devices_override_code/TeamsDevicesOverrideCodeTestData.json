@@ -1,0 +1,38 @@
+{
+  "existing": {
+    "teams_devices_override_code": {
+      "TEAMS_DEVICES_OVERRIDE_CODE00": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "device_id": "DEVICE01",
+        "id": "TEAMS_DEVICES_OVERRIDE_CODE00"
+      },
+      "TEAMS_DEVICES_OVERRIDE_CODE01": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "device_id": "DEVICE01",
+        "id": "TEAMS_DEVICES_OVERRIDE_CODE01"
+      },
+      "TEAMS_DEVICES_OVERRIDE_CODE02": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "device_id": "DEVICE01",
+        "id": "TEAMS_DEVICES_OVERRIDE_CODE02"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_override_code": {
+      "teams_devices_override_code_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/devices/{device_id}/override_codes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,1094 @@
+# Entity: dex_synthetic_application_monitoring
+
+main: kit: entity: dex_synthetic_application_monitoring: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      op: {
+        list: {
+          req: false
+          type: "`$ARRAY`"
+        }
+        load: {
+          req: false
+          type: "`$OBJECT`"
+        }
+      }
+      r: true
+      sh: "array of colos."
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "dex_synthetic_application_monitoring"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/colos"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "2023-08-20T20:45:00Z"
+                k: "query"
+                n: "from"
+                or: "from"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "sort_by"
+                or: "sort_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2023-08-24T20:45:00Z"
+                k: "query"
+                n: "to"
+                or: "to"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/colos"
+          q: {
+            exist: [
+              "account_id"
+              "from"
+              "sort_by"
+              "to"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "colos"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/devices/{device_id}/isps"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "device_id"
+                or: "device_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "from"
+                or: "from"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 10
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "time_start"
+                k: "query"
+                n: "sort_by"
+                or: "sort_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "DESC"
+                k: "query"
+                n: "sort_order"
+                or: "sort_order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "to"
+                or: "to"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/devices/{device_id}/isps"
+          q: {
+            exist: [
+              "account_id"
+              "cursor"
+              "device_id"
+              "from"
+              "page"
+              "per_page"
+              "sort_by"
+              "sort_order"
+              "to"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              var: "device_id"
+            }
+            {
+              lit: "isps"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/tests/overview"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "SJC"
+                k: "query"
+                n: "colo"
+                or: "colo"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "device_id"
+                or: "device_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "kind"
+                or: "kind"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: 10
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+                k: "query"
+                n: "registration_id"
+                or: "registration_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "test_name"
+                or: "test_name"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/tests/overview"
+          q: {
+            exist: [
+              "account_id"
+              "colo"
+              "device_id"
+              "kind"
+              "page"
+              "per_page"
+              "registration_id"
+              "test_name"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "tests"
+            }
+            {
+              lit: "overview"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/http-tests/{test_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "test_id"
+                or: "test_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "SJC"
+                k: "query"
+                n: "colo"
+                or: "colo"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "device_id"
+                or: "device_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: 1689520412000
+                k: "query"
+                n: "from"
+                or: "from"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "interval"
+                or: "interval"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 1689606812000
+                k: "query"
+                n: "to"
+                or: "to"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/http-tests/{test_id}"
+          q: {
+            exist: [
+              "account_id"
+              "colo"
+              "device_id"
+              "from"
+              "interval"
+              "test_id"
+              "to"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "http-tests"
+            }
+            {
+              var: "test_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/traceroute-tests/{test_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "test_id"
+                or: "test_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "colo"
+                or: "colo"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "device_id"
+                or: "device_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: 1689520412000
+                k: "query"
+                n: "from"
+                or: "from"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "interval"
+                or: "interval"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 1689606812000
+                k: "query"
+                n: "to"
+                or: "to"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/traceroute-tests/{test_id}"
+          q: {
+            exist: [
+              "account_id"
+              "colo"
+              "device_id"
+              "from"
+              "interval"
+              "test_id"
+              "to"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "traceroute-tests"
+            }
+            {
+              var: "test_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/http-tests/{test_id}/percentiles"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "http_test_id"
+                or: "test_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "SJC"
+                k: "query"
+                n: "colo"
+                or: "colo"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "device_id"
+                or: "device_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "2023-09-20T17:00:00Z"
+                k: "query"
+                n: "from"
+                or: "from"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "2023-09-20T17:00:00Z"
+                k: "query"
+                n: "to"
+                or: "to"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/http-tests/{test_id}/percentiles"
+          q: {
+            exist: [
+              "account_id"
+              "colo"
+              "device_id"
+              "from"
+              "http_test_id"
+              "to"
+            ]
+          }
+          r: {
+            param: {
+              test_id: "http_test_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "http-tests"
+            }
+            {
+              var: "http_test_id"
+            }
+            {
+              lit: "percentiles"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/devices/{device_id}/fleet-status/over-time"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "cb49c27f-7f97-49c5-b6f3-f7c01ead0fd7"
+                k: "param"
+                n: "device_id"
+                or: "device_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "SJC"
+                k: "query"
+                n: "colo"
+                or: "colo"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2023-10-11 00:00:00+00"
+                k: "query"
+                n: "from"
+                or: "from"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "interval"
+                or: "interval"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "2023-10-11 00:00:00+00"
+                k: "query"
+                n: "to"
+                or: "to"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/devices/{device_id}/fleet-status/over-time"
+          q: {
+            exist: [
+              "account_id"
+              "colo"
+              "device_id"
+              "from"
+              "interval"
+              "to"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              var: "device_id"
+            }
+            {
+              lit: "fleet-status"
+            }
+            {
+              lit: "over-time"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/traceroute-tests/{test_id}/percentiles"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "traceroute_test_id"
+                or: "test_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "colo"
+                or: "colo"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "device_id"
+                or: "device_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "2023-09-20T17:00:00Z"
+                k: "query"
+                n: "from"
+                or: "from"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "2023-09-20T17:00:00Z"
+                k: "query"
+                n: "to"
+                or: "to"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/traceroute-tests/{test_id}/percentiles"
+          q: {
+            exist: [
+              "account_id"
+              "colo"
+              "device_id"
+              "from"
+              "to"
+              "traceroute_test_id"
+            ]
+          }
+          r: {
+            param: {
+              test_id: "traceroute_test_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "traceroute-tests"
+            }
+            {
+              var: "traceroute_test_id"
+            }
+            {
+              lit: "percentiles"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/traceroute-tests/{test_id}/network-path"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "traceroute_test_id"
+                or: "test_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "device_id"
+                or: "device_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 1689520412000
+                k: "query"
+                n: "from"
+                or: "from"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "interval"
+                or: "interval"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: 1689606812000
+                k: "query"
+                n: "to"
+                or: "to"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/traceroute-tests/{test_id}/network-path"
+          q: {
+            exist: [
+              "account_id"
+              "device_id"
+              "from"
+              "interval"
+              "to"
+              "traceroute_test_id"
+            ]
+          }
+          r: {
+            param: {
+              test_id: "traceroute_test_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "traceroute-tests"
+            }
+            {
+              var: "traceroute_test_id"
+            }
+            {
+              lit: "network-path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/tests/unique-devices"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "device_id"
+                or: "device_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "test_name"
+                or: "test_name"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/tests/unique-devices"
+          q: {
+            exist: [
+              "account_id"
+              "device_id"
+              "test_name"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "tests"
+            }
+            {
+              lit: "unique-devices"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/traceroute-test-results/{test_result_id}/network-path"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "traceroute_test_result_id"
+                or: "test_result_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/traceroute-test-results/{test_result_id}/network-path"
+          q: {
+            exist: [
+              "account_id"
+              "traceroute_test_result_id"
+            ]
+          }
+          r: {
+            param: {
+              test_result_id: "traceroute_test_result_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "traceroute-test-results"
+            }
+            {
+              var: "traceroute_test_result_id"
+            }
+            {
+              lit: "network-path"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

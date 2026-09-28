@@ -1,0 +1,32 @@
+# BasicDigitalExperienceMonitoringFleetStatusOverTimeFlow
+
+main: kit: flow: BasicDigitalExperienceMonitoringFleetStatusOverTimeFlow:
+{
+  entity: "digital_experience_monitoring_fleet_status_over_time",
+  kind: "basic",
+  name: "BasicDigitalExperienceMonitoringFleetStatusOverTimeFlow",
+  step: [
+    {
+      i: {
+        ref: "digital_experience_monitoring_fleet_status_over_time_ref01",
+        srcdatavar: "digital_experience_monitoring_fleet_status_over_time_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "digital_experience_monitoring_fleet_status_over_time01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-digital_experience_monitoring_fleet_status_over_time_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDigitalExperienceMonitoringFleetStatusOverTimeFlow"
+}

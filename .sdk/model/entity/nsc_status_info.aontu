@@ -1,0 +1,81 @@
+# Entity: nsc_status_info
+
+main: kit: entity: nsc_status_info: {
+
+  alias: field: {}
+
+  name: "nsc_status_info"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cni/interconnects/{icon}/status"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "icon"
+                or: "icon"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cni/interconnects/{icon}/status"
+          q: {
+            exist: [
+              "account_id"
+              "icon"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cni"
+            }
+            {
+              lit: "interconnects"
+            }
+            {
+              var: "icon"
+            }
+            {
+              lit: "status"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.interconnect")]
+  ]
+
+}

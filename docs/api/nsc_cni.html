@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>NscCni | Cloudflare Zero Trust Gateway</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Zero Trust Gateway<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-zero-trust-sdk">voxgig-sdk/cloudflare-zero-trust-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Zero Trust Gateway</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/client_version.html">ClientVersion</a>
+<a href="../api/cni.html">Cni</a>
+<a href="../api/deployment_group.html">DeploymentGroup</a>
+<a href="../api/dex_remote_command.html">DexRemoteCommand</a>
+<a href="../api/dex_rule.html">DexRule</a>
+<a href="../api/dex_synthetic_application_monitoring.html">DexSyntheticApplicationMonitoring</a>
+<a href="../api/digital_experience_monitoring_device.html">DigitalExperienceMonitoringDevice</a>
+<a href="../api/digital_experience_monitoring_dex_delete_response_collection.html">DigitalExperienceMonitoringDexDeleteResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_response_collection.html">DigitalExperienceMonitoringDexResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_single.html">DigitalExperienceMonitoringDexSingle</a>
+<a href="../api/digital_experience_monitoring_fleet_status_device.html">DigitalExperienceMonitoringFleetStatusDevice</a>
+<a href="../api/digital_experience_monitoring_fleet_status_live.html">DigitalExperienceMonitoringFleetStatusLive</a>
+<a href="../api/digital_experience_monitoring_fleet_status_over_time.html">DigitalExperienceMonitoringFleetStatusOverTime</a>
+<a href="../api/interconnect.html">Interconnect</a>
+<a href="../api/ip_profile.html">IpProfile</a>
+<a href="../api/list.html">List</a>
+<a href="../api/location.html">Location</a>
+<a aria-current="page" href="../api/nsc_cni.html">NscCni</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcnicnis">POST /accounts/{account_id}/cni/cnis</a>
+<a class="nav-section" href="#get-accountsaccount_idcnicnis">GET /accounts/{account_id}/cni/cnis</a>
+<a class="nav-section" href="#get-accountsaccount_idcnicniscni">GET /accounts/{account_id}/cni/cnis/{cni}</a>
+<a class="nav-section" href="#put-accountsaccount_idcnicniscni">PUT /accounts/{account_id}/cni/cnis/{cni}</a></div>
+<a href="../api/nsc_default_name.html">NscDefaultName</a>
+<a href="../api/nsc_interconnect.html">NscInterconnect</a>
+<a href="../api/nsc_setting.html">NscSetting</a>
+<a href="../api/nsc_slot_info.html">NscSlotInfo</a>
+<a href="../api/nsc_status_info.html">NscStatusInfo</a>
+<a href="../api/override_code.html">OverrideCode</a>
+<a href="../api/pacfile.html">Pacfile</a>
+<a href="../api/physical_device.html">PhysicalDevice</a>
+<a href="../api/proxy_endpoint.html">ProxyEndpoint</a>
+<a href="../api/registration.html">Registration</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/teams_devices_api_response_single.html">TeamsDevicesApiResponseSingle</a>
+<a href="../api/teams_devices_components_schemas_response_collection.html">TeamsDevicesComponentsSchemasResponseCollection</a>
+<a href="../api/teams_devices_components_schemas_single.html">TeamsDevicesComponentsSchemasSingle</a>
+<a href="../api/teams_devices_default_device_setting.html">TeamsDevicesDefaultDeviceSetting</a>
+<a href="../api/teams_devices_device.html">TeamsDevicesDevice</a>
+<a href="../api/teams_devices_device_setting.html">TeamsDevicesDeviceSetting</a>
+<a href="../api/teams_devices_device_settings_response_collection.html">TeamsDevicesDeviceSettingsResponseCollection</a>
+<a href="../api/teams_devices_fallback_domain_response_collection.html">TeamsDevicesFallbackDomainResponseCollection</a>
+<a href="../api/teams_devices_global_warp_override.html">TeamsDevicesGlobalWarpOverride</a>
+<a href="../api/teams_devices_id.html">TeamsDevicesId</a>
+<a href="../api/teams_devices_override_code.html">TeamsDevicesOverrideCode</a>
+<a href="../api/teams_devices_response_collection.html">TeamsDevicesResponseCollection</a>
+<a href="../api/teams_devices_schemas_id.html">TeamsDevicesSchemasId</a>
+<a href="../api/teams_devices_schemas_response_collection.html">TeamsDevicesSchemasResponseCollection</a>
+<a href="../api/teams_devices_schemas_single.html">TeamsDevicesSchemasSingle</a>
+<a href="../api/teams_devices_single.html">TeamsDevicesSingle</a>
+<a href="../api/teams_devices_split_tunnel_include_response_collection.html">TeamsDevicesSplitTunnelIncludeResponseCollection</a>
+<a href="../api/teams_devices_split_tunnel_response_collection.html">TeamsDevicesSplitTunnelResponseCollection</a>
+<a href="../api/teams_devices_zero_trust_account_device_setting.html">TeamsDevicesZeroTrustAccountDeviceSetting</a>
+<a href="../api/tunnel.html">Tunnel</a>
+<a href="../api/tunnel_cfd_tunnel_response_collection.html">TunnelCfdTunnelResponseCollection</a>
+<a href="../api/tunnel_cfd_tunnel_response_single.html">TunnelCfdTunnelResponseSingle</a>
+<a href="../api/tunnel_configuration.html">TunnelConfiguration</a>
+<a href="../api/tunnel_empty.html">TunnelEmpty</a>
+<a href="../api/tunnel_hostname_route_response_collection.html">TunnelHostnameRouteResponseCollection</a>
+<a href="../api/tunnel_hostname_route_response_single.html">TunnelHostnameRouteResponseSingle</a>
+<a href="../api/tunnel_mesh_configuration_response_single.html">TunnelMeshConfigurationResponseSingle</a>
+<a href="../api/tunnel_route_response_single.html">TunnelRouteResponseSingle</a>
+<a href="../api/tunnel_subnet_response_collection.html">TunnelSubnetResponseCollection</a>
+<a href="../api/tunnel_subnet_response_single.html">TunnelSubnetResponseSingle</a>
+<a href="../api/tunnel_subnet_response_single_nullable.html">TunnelSubnetResponseSingleNullable</a>
+<a href="../api/tunnel_teamnet_response_collection.html">TunnelTeamnetResponseCollection</a>
+<a href="../api/tunnel_teamnet_response_single.html">TunnelTeamnetResponseSingle</a>
+<a href="../api/tunnel_tunnel_client.html">TunnelTunnelClient</a>
+<a href="../api/tunnel_tunnel_connection.html">TunnelTunnelConnection</a>
+<a href="../api/tunnel_tunnel_response_token.html">TunnelTunnelResponseToken</a>
+<a href="../api/tunnel_tunnel_warp_connector_client.html">TunnelTunnelWarpConnectorClient</a>
+<a href="../api/tunnel_tunnel_warp_connector_connection.html">TunnelTunnelWarpConnectorConnection</a>
+<a href="../api/tunnel_vnet_response_collection.html">TunnelVnetResponseCollection</a>
+<a href="../api/tunnel_vnet_response_single.html">TunnelVnetResponseSingle</a>
+<a href="../api/tunnel_warp_connector_response_collection.html">TunnelWarpConnectorResponseCollection</a>
+<a href="../api/tunnel_warp_connector_response_single.html">TunnelWarpConnectorResponseSingle</a>
+<a href="../api/tunnel_zero_trust_connectivity_setting.html">TunnelZeroTrustConnectivitySetting</a>
+<a href="../api/warp.html">Warp</a>
+<a href="../api/warp_change_event.html">WarpChangeEvent</a>
+<a href="../api/warp_teams_device_api_other.html">WarpTeamsDeviceApiOther</a>
+<a href="../api/zero_trust_gateway_applications_review_status.html">ZeroTrustGatewayApplicationsReviewStatus</a>
+<a href="../api/zero_trust_gateway_csv_operation_single.html">ZeroTrustGatewayCsvOperationSingle</a>
+<a href="../api/zero_trust_gateway_custom_certificate_setting.html">ZeroTrustGatewayCustomCertificateSetting</a>
+<a href="../api/zero_trust_gateway_gateway_account.html">ZeroTrustGatewayGatewayAccount</a>
+<a href="../api/zero_trust_gateway_gateway_account_config.html">ZeroTrustGatewayGatewayAccountConfig</a>
+<a href="../api/zero_trust_gateway_gateway_account_egress_cidr_pair_list.html">ZeroTrustGatewayGatewayAccountEgressCidrPairList</a>
+<a href="../api/zero_trust_gateway_gateway_account_logging_setting.html">ZeroTrustGatewayGatewayAccountLoggingSetting</a>
+<a href="../api/zero_trust_gateway_list_item_response_collection.html">ZeroTrustGatewayListItemResponseCollection</a>
+<a href="../api/zero_trust_gateway_list_single.html">ZeroTrustGatewayListSingle</a>
+<a href="../api/zero_trust_gateway_response_collection.html">ZeroTrustGatewayResponseCollection</a>
+<a href="../api/zero_trust_gateway_response_collection_10.html">ZeroTrustGatewayResponseCollection10</a>
+<a href="../api/zero_trust_gateway_response_collection_2.html">ZeroTrustGatewayResponseCollection2</a>
+<a href="../api/zero_trust_gateway_response_collection_3.html">ZeroTrustGatewayResponseCollection3</a>
+<a href="../api/zero_trust_gateway_response_collection_4.html">ZeroTrustGatewayResponseCollection4</a>
+<a href="../api/zero_trust_gateway_response_collection_5.html">ZeroTrustGatewayResponseCollection5</a>
+<a href="../api/zero_trust_gateway_response_collection_6.html">ZeroTrustGatewayResponseCollection6</a>
+<a href="../api/zero_trust_gateway_response_collection_7.html">ZeroTrustGatewayResponseCollection7</a>
+<a href="../api/zero_trust_gateway_response_collection_8.html">ZeroTrustGatewayResponseCollection8</a>
+<a href="../api/zero_trust_gateway_response_collection_9.html">ZeroTrustGatewayResponseCollection9</a>
+<a href="../api/zero_trust_gateway_single.html">ZeroTrustGatewaySingle</a>
+<a href="../api/zero_trust_gateway_single_response_2.html">ZeroTrustGatewaySingleResponse2</a>
+<a href="../api/zero_trust_gateway_single_response_3.html">ZeroTrustGatewaySingleResponse3</a>
+<a href="../api/zero_trust_gateway_single_response_4.html">ZeroTrustGatewaySingleResponse4</a>
+<a href="../api/zero_trust_gateway_single_response_5.html">ZeroTrustGatewaySingleResponse5</a>
+<a href="../api/zero_trust_gateway_single_response_6.html">ZeroTrustGatewaySingleResponse6</a>
+<a href="../api/zero_trust_gateway_single_response_7.html">ZeroTrustGatewaySingleResponse7</a>
+<a href="../api/zero_trust_gateway_single_response_with_list_item.html">ZeroTrustGatewaySingleResponseWithListItem</a>
+<a href="../api/zero_trust_risk_scoring.html">ZeroTrustRiskScoring</a>
+<a href="../api/zero_trust_risk_scoring_integration.html">ZeroTrustRiskScoringIntegration</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="nsccni">NscCni</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcnicnis"><code>/accounts/{account_id}/cni/cnis</code></a></td>
+<td><code>create</code></td>
+<td>CNI was successfully created</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcnicnis"><code>/accounts/{account_id}/cni/cnis</code></a></td>
+<td><code>list</code></td>
+<td>List of matching CNI objects</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcnicniscni"><code>/accounts/{account_id}/cni/cnis/{cni}</code></a></td>
+<td><code>load</code></td>
+<td>CNI's associated data</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idcnicniscni"><code>/accounts/{account_id}/cni/cnis/{cni}</code></a></td>
+<td><code>update</code></td>
+<td>CNI has been successfully modified</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">nsc_cnis, err := client.NscCni(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(nsc_cnis)
+nsc_cni, err := client.NscCni(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(nsc_cni)
+created, err := client.NscCni(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;account&quot;: &quot;example&quot;, &quot;bgp&quot;: map[string]any{}, &quot;cust_ip&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example&quot;, &quot;interconnect&quot;: &quot;example&quot;, &quot;magic&quot;: map[string]any{}, &quot;p2p_ip&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.NscCni(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;account&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local nsc_cnis, err = client:NscCni():list({ account_id = &quot;example&quot; })
+local nsc_cni, err = client:NscCni():load({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+local created, err = client:NscCni():create({ account_id = &quot;example&quot;, account = &quot;example&quot;, bgp = {}, cust_ip = &quot;example&quot;, id = &quot;example&quot;, interconnect = &quot;example&quot;, magic = {}, p2p_ip = &quot;example&quot; })
+local updated, err = client:NscCni():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, account = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$nsc_cnis = $client-&gt;NscCni()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$nsc_cni = $client-&gt;NscCni()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;NscCni()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;account&quot; =&gt; &quot;example&quot;, &quot;bgp&quot; =&gt; [], &quot;cust_ip&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example&quot;, &quot;interconnect&quot; =&gt; &quot;example&quot;, &quot;magic&quot; =&gt; [], &quot;p2p_ip&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;NscCni()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;account&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">nsc_cnis = client.NscCni().list({&quot;account_id&quot;: &quot;example&quot;})
+nsc_cni = client.NscCni().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+created = client.NscCni().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;account&quot;: &quot;example&quot;, &quot;bgp&quot;: {}, &quot;cust_ip&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example&quot;, &quot;interconnect&quot;: &quot;example&quot;, &quot;magic&quot;: {}, &quot;p2p_ip&quot;: &quot;example&quot; })
+updated = client.NscCni().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;account&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">nsc_cnis = client.NscCni.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+nsc_cni = client.NscCni.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.NscCni.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;account&quot; =&gt; &quot;example&quot;, &quot;bgp&quot; =&gt; {}, &quot;cust_ip&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example&quot;, &quot;interconnect&quot; =&gt; &quot;example&quot;, &quot;magic&quot; =&gt; {}, &quot;p2p_ip&quot; =&gt; &quot;example&quot; })
+updated = client.NscCni.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;account&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const nsc_cnis = await client.NscCni().list({ account_id: &quot;example&quot; })
+const nsc_cni = await client.NscCni().load({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+const created = await client.NscCni().create({ account_id: &quot;example&quot;, account: &quot;example&quot;, bgp: {}, cust_ip: &quot;example&quot;, id: &quot;example&quot;, interconnect: &quot;example&quot;, magic: {}, p2p_ip: &quot;example&quot; })
+const updated = await client.NscCni().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, account: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Customer account tag</td>
+</tr>
+<tr>
+<td><code>bgp</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Bgp</td>
+</tr>
+<tr>
+<td><code>bgp_mode</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The BGP mode for a CNI.</td>
+</tr>
+<tr>
+<td><code>cust_ip</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Customer end of the point-to-point link This should always be inside the same prefix as <code>p2p_ip</code>.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>interconnect</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Interconnect identifier hosting this CNI</td>
+</tr>
+<tr>
+<td><code>magic</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Magic</td>
+</tr>
+<tr>
+<td><code>p2p_ip</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Cloudflare end of the point-to-point link</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcnicnis" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cni/cnis</h3>
+<p>Operation ID: <code>create_cni</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Customer account tag</td>
+</tr>
+<tr>
+<td><code>bgp</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>bgp.customer_asn</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>ASN used on the customer end of the BGP session</td>
+</tr>
+<tr>
+<td><code>bgp.extra_prefixes</code></td>
+<td><code>array of string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Extra set of static prefixes to advertise to the customer's end of the session</td>
+</tr>
+<tr>
+<td><code>bgp.md5_key</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>MD5 key to use for session authentication. Note that <em>this is not a security measure</em>. MD5 is not a valid security mechanism, and the key is not treated as a secret value. This is <em>only</em> supported for preventing misconfiguration, not for defending against malicious attacks. The MD5 key, if set, must be of non-zero length and consist only of the following types of character: * ASCII alphanumerics: <code>[a-zA-Z0-9]</code> * Special characters in the set <code>&amp;#39;!@#$%^&amp;amp;*()+[]&amp;#123;&amp;#125;&amp;lt;&amp;gt;/.,;:_-~</code>= |<code> In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A), quotation mark (</code>&quot;<code>), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed (0x0C), and the question mark (</code>?`). Requests specifying an MD5 key with one or more of these disallowed characters will be rejected.</td>
+</tr>
+<tr>
+<td><code>interconnect</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.conduit_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.mtu</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-cni-was-successfully-created" class="status" data-status="2xx">200: CNI was successfully created</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Customer account tag</td>
+</tr>
+<tr>
+<td><code>bgp</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>bgp.customer_asn</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>ASN used on the customer end of the BGP session</td>
+</tr>
+<tr>
+<td><code>bgp.extra_prefixes</code></td>
+<td><code>array of string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Extra set of static prefixes to advertise to the customer's end of the session</td>
+</tr>
+<tr>
+<td><code>bgp.md5_key</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>MD5 key to use for session authentication. Note that <em>this is not a security measure</em>. MD5 is not a valid security mechanism, and the key is not treated as a secret value. This is <em>only</em> supported for preventing misconfiguration, not for defending against malicious attacks. The MD5 key, if set, must be of non-zero length and consist only of the following types of character: * ASCII alphanumerics: <code>[a-zA-Z0-9]</code> * Special characters in the set <code>&amp;#39;!@#$%^&amp;amp;*()+[]&amp;#123;&amp;#125;&amp;lt;&amp;gt;/.,;:_-~</code>= |<code> In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A), quotation mark (</code>&quot;<code>), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed (0x0C), and the question mark (</code>?`). Requests specifying an MD5 key with one or more of these disallowed characters will be rejected.</td>
+</tr>
+<tr>
+<td><code>bgp_mode</code></td>
+<td><code>enum: dynamic_route_exchange, advertise_only</code></td>
+<td>No</td>
+<td>The BGP mode for a CNI. Controls the customer-facing data path: * <code>DynamicRouteExchange</code>, Full BGP: routes flow through to conduit via CRE / bgp-bridge / bgp-bridge-receiver. * <code>AdvertiseOnly</code>, static advertisement via taserver, no routes exchanged with Conduit</td>
+</tr>
+<tr>
+<td><code>cust_ip</code></td>
+<td><code>string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Customer end of the point-to-point link This should always be inside the same prefix as <code>p2p_ip</code>.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>interconnect</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Interconnect identifier hosting this CNI</td>
+</tr>
+<tr>
+<td><code>magic</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.conduit_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.mtu</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>p2p_ip</code></td>
+<td><code>string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Cloudflare end of the point-to-point link</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request" class="status" data-status="4xx">400: Bad request</h5>
+<h5 id="409-name-conflict" class="status" data-status="4xx">409: Name Conflict</h5>
+<h5 id="500-internal-server-error" class="status" data-status="5xx">500: Internal server error</h5>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idcnicnis" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cni/cnis</h3>
+<p>Operation ID: <code>list_cnis</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>slot</code> | <code>query</code> | <code>string</code> | No | If specified, only show CNIs associated with the specified slot |
+| <code>tunnel_id</code> | <code>query</code> | <code>string</code> | No | If specified, only show cnis associated with the specified tunnel id |
+| <code>cursor</code> | <code>query</code> | <code>integer (int32)</code> | No |  |
+| <code>limit</code> | <code>query</code> | <code>integer</code> | No |  |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-list-of-matching-cni-objects" class="status" data-status="2xx">200: List of matching CNI objects</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>items</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].account</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Customer account tag</td>
+</tr>
+<tr>
+<td><code>items[].bgp</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].bgp.customer_asn</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>ASN used on the customer end of the BGP session</td>
+</tr>
+<tr>
+<td><code>items[].bgp.extra_prefixes</code></td>
+<td><code>array of string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Extra set of static prefixes to advertise to the customer's end of the session</td>
+</tr>
+<tr>
+<td><code>items[].bgp.md5_key</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>MD5 key to use for session authentication. Note that <em>this is not a security measure</em>. MD5 is not a valid security mechanism, and the key is not treated as a secret value. This is <em>only</em> supported for preventing misconfiguration, not for defending against malicious attacks. The MD5 key, if set, must be of non-zero length and consist only of the following types of character: * ASCII alphanumerics: <code>[a-zA-Z0-9]</code> * Special characters in the set <code>&amp;#39;!@#$%^&amp;amp;*()+[]&amp;#123;&amp;#125;&amp;lt;&amp;gt;/.,;:_-~</code>= |<code> In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A), quotation mark (</code>&quot;<code>), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed (0x0C), and the question mark (</code>?`). Requests specifying an MD5 key with one or more of these disallowed characters will be rejected.</td>
+</tr>
+<tr>
+<td><code>items[].bgp_mode</code></td>
+<td><code>enum: dynamic_route_exchange, advertise_only</code></td>
+<td>No</td>
+<td>The BGP mode for a CNI. Controls the customer-facing data path: * <code>DynamicRouteExchange</code>, Full BGP: routes flow through to conduit via CRE / bgp-bridge / bgp-bridge-receiver. * <code>AdvertiseOnly</code>, static advertisement via taserver, no routes exchanged with Conduit</td>
+</tr>
+<tr>
+<td><code>items[].cust_ip</code></td>
+<td><code>string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Customer end of the point-to-point link This should always be inside the same prefix as <code>p2p_ip</code>.</td>
+</tr>
+<tr>
+<td><code>items[].id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].interconnect</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Interconnect identifier hosting this CNI</td>
+</tr>
+<tr>
+<td><code>items[].magic</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].magic.conduit_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].magic.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].magic.mtu</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].p2p_ip</code></td>
+<td><code>string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Cloudflare end of the point-to-point link</td>
+</tr>
+<tr>
+<td><code>next</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-1" class="status" data-status="4xx">400: Bad request</h5>
+<h5 id="500-internal-server-error-1" class="status" data-status="5xx">500: Internal server error</h5>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcnicniscni" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cni/cnis/{cni}</h3>
+<p>Operation ID: <code>get_cni</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>cni</code> | <code>path</code> | <code>string (uuid)</code> | Yes | CNI ID to retrieve information about |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-cni39s-associated-data" class="status" data-status="2xx">200: CNI's associated data</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Customer account tag</td>
+</tr>
+<tr>
+<td><code>bgp</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>bgp.customer_asn</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>ASN used on the customer end of the BGP session</td>
+</tr>
+<tr>
+<td><code>bgp.extra_prefixes</code></td>
+<td><code>array of string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Extra set of static prefixes to advertise to the customer's end of the session</td>
+</tr>
+<tr>
+<td><code>bgp.md5_key</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>MD5 key to use for session authentication. Note that <em>this is not a security measure</em>. MD5 is not a valid security mechanism, and the key is not treated as a secret value. This is <em>only</em> supported for preventing misconfiguration, not for defending against malicious attacks. The MD5 key, if set, must be of non-zero length and consist only of the following types of character: * ASCII alphanumerics: <code>[a-zA-Z0-9]</code> * Special characters in the set <code>&amp;#39;!@#$%^&amp;amp;*()+[]&amp;#123;&amp;#125;&amp;lt;&amp;gt;/.,;:_-~</code>= |<code> In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A), quotation mark (</code>&quot;<code>), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed (0x0C), and the question mark (</code>?`). Requests specifying an MD5 key with one or more of these disallowed characters will be rejected.</td>
+</tr>
+<tr>
+<td><code>bgp_mode</code></td>
+<td><code>enum: dynamic_route_exchange, advertise_only</code></td>
+<td>No</td>
+<td>The BGP mode for a CNI. Controls the customer-facing data path: * <code>DynamicRouteExchange</code>, Full BGP: routes flow through to conduit via CRE / bgp-bridge / bgp-bridge-receiver. * <code>AdvertiseOnly</code>, static advertisement via taserver, no routes exchanged with Conduit</td>
+</tr>
+<tr>
+<td><code>cust_ip</code></td>
+<td><code>string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Customer end of the point-to-point link This should always be inside the same prefix as <code>p2p_ip</code>.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>interconnect</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Interconnect identifier hosting this CNI</td>
+</tr>
+<tr>
+<td><code>magic</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.conduit_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.mtu</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>p2p_ip</code></td>
+<td><code>string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Cloudflare end of the point-to-point link</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-2" class="status" data-status="4xx">400: Bad request</h5>
+<h5 id="404-cni-not-found" class="status" data-status="4xx">404: CNI not found</h5>
+<h5 id="500-internal-server-error-2" class="status" data-status="5xx">500: Internal server error</h5>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idcnicniscni" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/cni/cnis/{cni}</h3>
+<p>Operation ID: <code>update_cni</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>cni</code> | <code>path</code> | <code>string (uuid)</code> | Yes | CNI ID to retrieve information about |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Customer account tag</td>
+</tr>
+<tr>
+<td><code>bgp</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>bgp.customer_asn</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>ASN used on the customer end of the BGP session</td>
+</tr>
+<tr>
+<td><code>bgp.extra_prefixes</code></td>
+<td><code>array of string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Extra set of static prefixes to advertise to the customer's end of the session</td>
+</tr>
+<tr>
+<td><code>bgp.md5_key</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>MD5 key to use for session authentication. Note that <em>this is not a security measure</em>. MD5 is not a valid security mechanism, and the key is not treated as a secret value. This is <em>only</em> supported for preventing misconfiguration, not for defending against malicious attacks. The MD5 key, if set, must be of non-zero length and consist only of the following types of character: * ASCII alphanumerics: <code>[a-zA-Z0-9]</code> * Special characters in the set <code>&amp;#39;!@#$%^&amp;amp;*()+[]&amp;#123;&amp;#125;&amp;lt;&amp;gt;/.,;:_-~</code>= |<code> In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A), quotation mark (</code>&quot;<code>), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed (0x0C), and the question mark (</code>?`). Requests specifying an MD5 key with one or more of these disallowed characters will be rejected.</td>
+</tr>
+<tr>
+<td><code>bgp_mode</code></td>
+<td><code>enum: dynamic_route_exchange, advertise_only</code></td>
+<td>No</td>
+<td>The BGP mode for a CNI. Controls the customer-facing data path: * <code>DynamicRouteExchange</code>, Full BGP: routes flow through to conduit via CRE / bgp-bridge / bgp-bridge-receiver. * <code>AdvertiseOnly</code>, static advertisement via taserver, no routes exchanged with Conduit</td>
+</tr>
+<tr>
+<td><code>cust_ip</code></td>
+<td><code>string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Customer end of the point-to-point link This should always be inside the same prefix as <code>p2p_ip</code>.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>interconnect</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Interconnect identifier hosting this CNI</td>
+</tr>
+<tr>
+<td><code>magic</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.conduit_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.mtu</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>p2p_ip</code></td>
+<td><code>string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Cloudflare end of the point-to-point link</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-cni-has-been-successfully-modified" class="status" data-status="2xx">200: CNI has been successfully modified</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Customer account tag</td>
+</tr>
+<tr>
+<td><code>bgp</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>bgp.customer_asn</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td>ASN used on the customer end of the BGP session</td>
+</tr>
+<tr>
+<td><code>bgp.extra_prefixes</code></td>
+<td><code>array of string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Extra set of static prefixes to advertise to the customer's end of the session</td>
+</tr>
+<tr>
+<td><code>bgp.md5_key</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>MD5 key to use for session authentication. Note that <em>this is not a security measure</em>. MD5 is not a valid security mechanism, and the key is not treated as a secret value. This is <em>only</em> supported for preventing misconfiguration, not for defending against malicious attacks. The MD5 key, if set, must be of non-zero length and consist only of the following types of character: * ASCII alphanumerics: <code>[a-zA-Z0-9]</code> * Special characters in the set <code>&amp;#39;!@#$%^&amp;amp;*()+[]&amp;#123;&amp;#125;&amp;lt;&amp;gt;/.,;:_-~</code>= |<code> In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A), quotation mark (</code>&quot;<code>), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed (0x0C), and the question mark (</code>?`). Requests specifying an MD5 key with one or more of these disallowed characters will be rejected.</td>
+</tr>
+<tr>
+<td><code>bgp_mode</code></td>
+<td><code>enum: dynamic_route_exchange, advertise_only</code></td>
+<td>No</td>
+<td>The BGP mode for a CNI. Controls the customer-facing data path: * <code>DynamicRouteExchange</code>, Full BGP: routes flow through to conduit via CRE / bgp-bridge / bgp-bridge-receiver. * <code>AdvertiseOnly</code>, static advertisement via taserver, no routes exchanged with Conduit</td>
+</tr>
+<tr>
+<td><code>cust_ip</code></td>
+<td><code>string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Customer end of the point-to-point link This should always be inside the same prefix as <code>p2p_ip</code>.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>interconnect</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Interconnect identifier hosting this CNI</td>
+</tr>
+<tr>
+<td><code>magic</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.conduit_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>magic.mtu</code></td>
+<td><code>integer (int32)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>p2p_ip</code></td>
+<td><code>string (A.B.C.D/N)</code></td>
+<td>Yes</td>
+<td>Cloudflare end of the point-to-point link</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-3" class="status" data-status="4xx">400: Bad request</h5>
+<h5 id="404-cni-not-found-1" class="status" data-status="4xx">404: CNI not found</h5>
+<h5 id="500-internal-server-error-3" class="status" data-status="5xx">500: Internal server error</h5>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

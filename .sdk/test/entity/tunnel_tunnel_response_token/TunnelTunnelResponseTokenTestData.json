@@ -1,0 +1,67 @@
+{
+  "existing": {
+    "tunnel_tunnel_response_token": {
+      "TUNNEL_TUNNEL_RESPONSE_TOKEN00": {
+        "errors": [],
+        "messages": [],
+        "resources": [],
+        "result": "s35",
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01",
+        "warp_connector_id": "WARP_CONNECTOR01",
+        "id": "TUNNEL_TUNNEL_RESPONSE_TOKEN00"
+      },
+      "TUNNEL_TUNNEL_RESPONSE_TOKEN01": {
+        "errors": [],
+        "messages": [],
+        "resources": [],
+        "result": "s67",
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01",
+        "warp_connector_id": "WARP_CONNECTOR01",
+        "id": "TUNNEL_TUNNEL_RESPONSE_TOKEN01"
+      },
+      "TUNNEL_TUNNEL_RESPONSE_TOKEN02": {
+        "errors": [],
+        "messages": [],
+        "resources": [],
+        "result": "s99",
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01",
+        "warp_connector_id": "WARP_CONNECTOR01",
+        "id": "TUNNEL_TUNNEL_RESPONSE_TOKEN02"
+      }
+    }
+  },
+  "new": {
+    "tunnel_tunnel_response_token": {
+      "tunnel_tunnel_response_token_ref01": {
+        "errors": [],
+        "messages": [],
+        "resources": [],
+        "result": "scb",
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cfd_tunnel/{tunnel_id}/management": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/token": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/warp_connector/{tunnel_id}/token": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+# BasicDigitalExperienceMonitoringDexDeleteResponseCollectionFlow
+
+main: kit: flow: BasicDigitalExperienceMonitoringDexDeleteResponseCollectionFlow:
+{
+  entity: "digital_experience_monitoring_dex_delete_response_collection",
+  kind: "basic",
+  name: "BasicDigitalExperienceMonitoringDexDeleteResponseCollectionFlow",
+  "key$": "BasicDigitalExperienceMonitoringDexDeleteResponseCollectionFlow"
+}

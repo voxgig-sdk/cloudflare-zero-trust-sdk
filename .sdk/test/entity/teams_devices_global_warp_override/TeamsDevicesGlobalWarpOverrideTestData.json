@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "teams_devices_global_warp_override": {
+      "TEAMS_DEVICES_GLOBAL_WARP_OVERRIDE00": {
+        "disconnect": true,
+        "justification": "s1f",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "TEAMS_DEVICES_GLOBAL_WARP_OVERRIDE00"
+      },
+      "TEAMS_DEVICES_GLOBAL_WARP_OVERRIDE01": {
+        "disconnect": true,
+        "justification": "s3d",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "TEAMS_DEVICES_GLOBAL_WARP_OVERRIDE01"
+      },
+      "TEAMS_DEVICES_GLOBAL_WARP_OVERRIDE02": {
+        "disconnect": true,
+        "justification": "s5b",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "TEAMS_DEVICES_GLOBAL_WARP_OVERRIDE02"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_global_warp_override": {
+      "teams_devices_global_warp_override_ref01": {
+        "disconnect": true,
+        "justification": "s79",
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/devices/resilience/disconnect": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/resilience/disconnect": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

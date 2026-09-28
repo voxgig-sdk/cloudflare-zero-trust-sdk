@@ -1,0 +1,22 @@
+# BasicOverrideCodeFlow
+
+main: kit: flow: BasicOverrideCodeFlow:
+{
+  entity: "override_code",
+  kind: "basic",
+  name: "BasicOverrideCodeFlow",
+  step: [
+    {
+      i: {
+        ref: "override_code_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicOverrideCodeFlow"
+}

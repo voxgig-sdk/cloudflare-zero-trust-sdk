@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "zero_trust_risk_scoring": {
+      "ZERO_TRUST_RISK_SCORING00": {
+        "behaviors": {},
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "zt_risk_scoring_id": "ZT_RISK_SCORING01",
+        "user_id": "USER01",
+        "id": "ZERO_TRUST_RISK_SCORING00"
+      },
+      "ZERO_TRUST_RISK_SCORING01": {
+        "behaviors": {},
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "zt_risk_scoring_id": "ZT_RISK_SCORING01",
+        "user_id": "USER01",
+        "id": "ZERO_TRUST_RISK_SCORING01"
+      },
+      "ZERO_TRUST_RISK_SCORING02": {
+        "behaviors": {},
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "zt_risk_scoring_id": "ZT_RISK_SCORING01",
+        "user_id": "USER01",
+        "id": "ZERO_TRUST_RISK_SCORING02"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_risk_scoring": {
+      "zero_trust_risk_scoring_ref01": {
+        "behaviors": {},
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/zt_risk_scoring/{user_id}/reset": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/zt_risk_scoring/{user_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/zt_risk_scoring/behaviors": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/zt_risk_scoring/summary": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/zt_risk_scoring/behaviors": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

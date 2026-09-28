@@ -1,0 +1,83 @@
+{
+  "existing": {
+    "deployment_group": {
+      "DEPLOYMENT_GROUP00": {
+        "errors": [],
+        "id": "DEPLOYMENT_GROUP00",
+        "messages": [],
+        "name": "s5d",
+        "policy_ids": [],
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "version_config": [],
+        "account_id": "ACCOUNT01"
+      },
+      "DEPLOYMENT_GROUP01": {
+        "errors": [],
+        "id": "DEPLOYMENT_GROUP01",
+        "messages": [],
+        "name": "sb7",
+        "policy_ids": [],
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "version_config": [],
+        "account_id": "ACCOUNT01"
+      },
+      "DEPLOYMENT_GROUP02": {
+        "errors": [],
+        "id": "DEPLOYMENT_GROUP02",
+        "messages": [],
+        "name": "s111",
+        "policy_ids": [],
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "version_config": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "deployment_group": {
+      "deployment_group_ref01": {
+        "errors": [],
+        "messages": [],
+        "name": "s16b",
+        "policy_ids": [],
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "version_config": []
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/devices/deployment-groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/deployment-groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/deployment-groups/{group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/devices/deployment-groups/{group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/devices/deployment-groups/{group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

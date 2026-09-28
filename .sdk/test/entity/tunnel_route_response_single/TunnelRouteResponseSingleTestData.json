@@ -1,0 +1,99 @@
+{
+  "existing": {
+    "tunnel_route_response_single": {
+      "TUNNEL_ROUTE_RESPONSE_SINGLE00": {
+        "comment": "s50",
+        "errors": [],
+        "messages": [],
+        "network": "s53",
+        "result": "s54",
+        "success": false,
+        "tunnel_id": "TUNNEL01",
+        "virtual_network_id": "VIRTUAL_NETWORK01",
+        "account_id": "ACCOUNT01",
+        "ip_network_encoded": "IP_NETWORK_ENCODED01",
+        "route_id": "ROUTE01",
+        "id": "TUNNEL_ROUTE_RESPONSE_SINGLE00"
+      },
+      "TUNNEL_ROUTE_RESPONSE_SINGLE01": {
+        "comment": "sa0",
+        "errors": [],
+        "messages": [],
+        "network": "sa3",
+        "result": "sa4",
+        "success": false,
+        "tunnel_id": "TUNNEL01",
+        "virtual_network_id": "VIRTUAL_NETWORK01",
+        "account_id": "ACCOUNT01",
+        "ip_network_encoded": "IP_NETWORK_ENCODED01",
+        "route_id": "ROUTE01",
+        "id": "TUNNEL_ROUTE_RESPONSE_SINGLE01"
+      },
+      "TUNNEL_ROUTE_RESPONSE_SINGLE02": {
+        "comment": "sf0",
+        "errors": [],
+        "messages": [],
+        "network": "sf3",
+        "result": "sf4",
+        "success": false,
+        "tunnel_id": "TUNNEL01",
+        "virtual_network_id": "VIRTUAL_NETWORK01",
+        "account_id": "ACCOUNT01",
+        "ip_network_encoded": "IP_NETWORK_ENCODED01",
+        "route_id": "ROUTE01",
+        "id": "TUNNEL_ROUTE_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "tunnel_route_response_single": {
+      "tunnel_route_response_single_ref01": {
+        "comment": "s140",
+        "errors": [],
+        "messages": [],
+        "network": "s143",
+        "result": "s144",
+        "success": false,
+        "tunnel_id": "TUNNEL01",
+        "virtual_network_id": "VIRTUAL_NETWORK01"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/teamnet/routes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/teamnet/routes/{route_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/teamnet/routes/{route_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/teamnet/routes/{route_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

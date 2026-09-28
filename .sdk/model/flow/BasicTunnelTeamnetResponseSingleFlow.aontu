@@ -1,0 +1,33 @@
+# BasicTunnelTeamnetResponseSingleFlow
+
+main: kit: flow: BasicTunnelTeamnetResponseSingleFlow:
+{
+  entity: "tunnel_teamnet_response_single",
+  kind: "basic",
+  name: "BasicTunnelTeamnetResponseSingleFlow",
+  step: [
+    {
+      i: {
+        ref: "tunnel_teamnet_response_single_ref01",
+        srcdatavar: "tunnel_teamnet_response_single_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "tunnel_teamnet_response_single01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tunnel_teamnet_response_single_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelTeamnetResponseSingleFlow"
+}

@@ -1,0 +1,346 @@
+# Entity: tunnel_subnet_response_single
+
+main: kit: entity: tunnel_subnet_response_single: {
+
+  alias: field: {}
+
+  fields: {
+    comment: {
+      h: "Comment"
+      n: "comment"
+      r: false
+      sh: "An optional description of the subnet."
+      t: "`$STRING`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    is_default_network: {
+      h: "Is Default Network"
+      n: "is_default_network"
+      r: false
+      sh: "If `true`, this is the default subnet for the account."
+      t: "`$BOOLEAN`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      op: {
+        patch: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "A user-friendly name for the subnet."
+      t: "`$STRING`"
+    }
+    network: {
+      h: "Network"
+      n: "network"
+      op: {
+        patch: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "The private IPv4 or IPv6 range defining the subnet, in CIDR notation."
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      op: {
+        load: {
+          req: false
+          type: "`$OBJECT`"
+        }
+      }
+      r: true
+      ro: true
+      sh: "The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel."
+      t: "`$STRING`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 0
+      }
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful"
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "tunnel_subnet_response_single"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/zerotrust/subnets/warp"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/zerotrust/subnets/warp"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "zerotrust"
+            }
+            {
+              lit: "subnets"
+            }
+            {
+              lit: "warp"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "v4"
+                k: "param"
+                n: "address_family"
+                or: "address_family"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}"
+          q: {
+            exist: [
+              "account_id"
+              "address_family"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "zerotrust"
+            }
+            {
+              lit: "subnets"
+            }
+            {
+              lit: "initial_resolved_ip"
+            }
+            {
+              var: "address_family"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    patch: {
+      name: "patch"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/zerotrust/subnets/cloudflare_source/{address_family}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "v4"
+                k: "param"
+                n: "address_family"
+                or: "address_family"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/zerotrust/subnets/cloudflare_source/{address_family}"
+          q: {
+            exist: [
+              "account_id"
+              "address_family"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "zerotrust"
+            }
+            {
+              lit: "subnets"
+            }
+            {
+              lit: "cloudflare_source"
+            }
+            {
+              var: "address_family"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "v4"
+                k: "param"
+                n: "address_family"
+                or: "address_family"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}"
+          q: {
+            exist: [
+              "account_id"
+              "address_family"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "zerotrust"
+            }
+            {
+              lit: "subnets"
+            }
+            {
+              lit: "initial_resolved_ip"
+            }
+            {
+              var: "address_family"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,22 @@
+# BasicTeamsDevicesApiResponseSingleFlow
+
+main: kit: flow: BasicTeamsDevicesApiResponseSingleFlow:
+{
+  entity: "teams_devices_api_response_single",
+  kind: "basic",
+  name: "BasicTeamsDevicesApiResponseSingleFlow",
+  step: [
+    {
+      i: {
+        ref: "teams_devices_api_response_single_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicTeamsDevicesApiResponseSingleFlow"
+}

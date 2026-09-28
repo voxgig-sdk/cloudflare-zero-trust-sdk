@@ -1,0 +1,61 @@
+# BasicNscInterconnectFlow
+
+main: kit: flow: BasicNscInterconnectFlow:
+{
+  entity: "nsc_interconnect",
+  kind: "basic",
+  name: "BasicNscInterconnectFlow",
+  step: [
+    {
+      i: {
+        ref: "nsc_interconnect_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "nsc_interconnect_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "nsc_interconnect_ref01",
+        srcdatavar: "nsc_interconnect_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "nsc_interconnect01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-nsc_interconnect_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicNscInterconnectFlow"
+}

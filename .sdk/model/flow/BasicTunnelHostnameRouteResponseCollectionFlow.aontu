@@ -1,0 +1,26 @@
+# BasicTunnelHostnameRouteResponseCollectionFlow
+
+main: kit: flow: BasicTunnelHostnameRouteResponseCollectionFlow:
+{
+  entity: "tunnel_hostname_route_response_collection",
+  kind: "basic",
+  name: "BasicTunnelHostnameRouteResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "tunnel_hostname_route_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelHostnameRouteResponseCollectionFlow"
+}

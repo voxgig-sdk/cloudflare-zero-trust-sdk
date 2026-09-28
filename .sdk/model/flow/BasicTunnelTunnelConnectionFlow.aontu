@@ -1,0 +1,27 @@
+# BasicTunnelTunnelConnectionFlow
+
+main: kit: flow: BasicTunnelTunnelConnectionFlow:
+{
+  entity: "tunnel_tunnel_connection",
+  kind: "basic",
+  name: "BasicTunnelTunnelConnectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01",
+        cfd_tunnel_id: "cfd_tunnel01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "tunnel_tunnel_connection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelTunnelConnectionFlow"
+}

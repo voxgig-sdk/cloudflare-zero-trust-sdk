@@ -1,0 +1,162 @@
+# Entity: tunnel_configuration
+
+main: kit: entity: tunnel_configuration: {
+
+  alias: field: {}
+
+  fields: {
+    config: {
+      h: "Config"
+      n: "config"
+      r: false
+      sh: "The tunnel configuration and ingress rules."
+      t: "`$OBJECT`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      sh: "Cloudflare Tunnel configuration"
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "tunnel_configuration"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "cfd_tunnel_id"
+                or: "tunnel_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations"
+          q: {
+            exist: [
+              "account_id"
+              "cfd_tunnel_id"
+            ]
+          }
+          r: {
+            param: {
+              tunnel_id: "cfd_tunnel_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cfd_tunnel"
+            }
+            {
+              var: "cfd_tunnel_id"
+            }
+            {
+              lit: "configurations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "cfd_tunnel_id"
+                or: "tunnel_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations"
+          q: {
+            exist: [
+              "account_id"
+              "cfd_tunnel_id"
+            ]
+          }
+          r: {
+            param: {
+              tunnel_id: "cfd_tunnel_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cfd_tunnel"
+            }
+            {
+              var: "cfd_tunnel_id"
+            }
+            {
+              lit: "configurations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

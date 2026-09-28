@@ -1,0 +1,26 @@
+# BasicClientVersionFlow
+
+main: kit: flow: BasicClientVersionFlow:
+{
+  entity: "client_version",
+  kind: "basic",
+  name: "BasicClientVersionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "client_version_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicClientVersionFlow"
+}

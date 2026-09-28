@@ -1,0 +1,35 @@
+{
+  "existing": {
+    "tunnel_tunnel_connection": {
+      "TUNNEL_TUNNEL_CONNECTION00": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01"
+      },
+      "TUNNEL_TUNNEL_CONNECTION01": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01"
+      },
+      "TUNNEL_TUNNEL_CONNECTION02": {
+        "result": [],
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01"
+      }
+    }
+  },
+  "new": {
+    "tunnel_tunnel_connection": {
+      "tunnel_tunnel_connection_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

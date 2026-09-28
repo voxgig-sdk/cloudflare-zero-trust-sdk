@@ -1,0 +1,76 @@
+{
+  "existing": {
+    "zero_trust_gateway_single_response_3": {
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_300": {
+        "client_default": true,
+        "dns_destination_ips_id": "DNS_DESTINATION_IPS01",
+        "ecs_support": true,
+        "endpoints": {},
+        "max_ttl": {},
+        "name": "s55",
+        "networks": [],
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "location_id": "LOCATION01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_300"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_301": {
+        "client_default": true,
+        "dns_destination_ips_id": "DNS_DESTINATION_IPS01",
+        "ecs_support": true,
+        "endpoints": {},
+        "max_ttl": {},
+        "name": "sa5",
+        "networks": [],
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "location_id": "LOCATION01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_301"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_302": {
+        "client_default": true,
+        "dns_destination_ips_id": "DNS_DESTINATION_IPS01",
+        "ecs_support": true,
+        "endpoints": {},
+        "max_ttl": {},
+        "name": "sf5",
+        "networks": [],
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "location_id": "LOCATION01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE_RESPONSE_302"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_single_response_3": {
+      "zero_trust_gateway_single_response_3_ref01": {
+        "client_default": true,
+        "dns_destination_ips_id": "DNS_DESTINATION_IPS01",
+        "ecs_support": true,
+        "endpoints": {},
+        "max_ttl": {},
+        "name": "s145",
+        "networks": [],
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/gateway/locations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/gateway/locations/{location_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/gateway/locations/{location_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

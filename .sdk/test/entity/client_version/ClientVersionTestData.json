@@ -1,0 +1,53 @@
+{
+  "existing": {
+    "client_version": {
+      "CLIENT_VERSION00": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "CLIENT_VERSION01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "CLIENT_VERSION02": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "client_version": {
+      "client_version_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/devices/client-versions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/client-versions/target-environments": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

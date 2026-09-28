@@ -1,0 +1,184 @@
+# Entity: digital_experience_monitoring_fleet_status_device
+
+main: kit: entity: digital_experience_monitoring_fleet_status_device: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "digital_experience_monitoring_fleet_status_device"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dex/fleet-status/devices"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "01a7362d577a6c3019a474fd6f485823"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "SJC"
+                k: "query"
+                n: "colo"
+                or: "colo"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "cb49c27f-7f97-49c5-b6f3-f7c01ead0fd7"
+                k: "query"
+                n: "device_id"
+                or: "device_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2023-10-11 00:00:00+00"
+                k: "query"
+                n: "from"
+                or: "from"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "proxy"
+                k: "query"
+                n: "mode"
+                or: "mode"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: true
+                t: "`$NUMBER`"
+              }
+              {
+                ex: 10
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: true
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "windows"
+                k: "query"
+                n: "platform"
+                or: "platform"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "timestamp"
+                k: "query"
+                n: "sort_by"
+                or: "sort_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "last_seen"
+                k: "query"
+                n: "source"
+                or: "source"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "connected"
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2023-10-11 00:00:00+00"
+                k: "query"
+                n: "to"
+                or: "to"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "1.0.0"
+                k: "query"
+                n: "version"
+                or: "version"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dex/fleet-status/devices"
+          q: {
+            exist: [
+              "account_id"
+              "colo"
+              "device_id"
+              "from"
+              "mode"
+              "page"
+              "per_page"
+              "platform"
+              "sort_by"
+              "source"
+              "status"
+              "to"
+              "version"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dex"
+            }
+            {
+              lit: "fleet-status"
+            }
+            {
+              lit: "devices"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

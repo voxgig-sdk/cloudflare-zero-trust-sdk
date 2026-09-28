@@ -1,0 +1,281 @@
+# Entity: teams_devices_zero_trust_account_device_setting
+
+main: kit: entity: teams_devices_zero_trust_account_device_setting: {
+
+  alias: field: {}
+
+  fields: {
+    disable_for_time: {
+      h: "Disable For Time"
+      n: "disable_for_time"
+      r: false
+      sh: "Sets the time limit, in seconds, that a user can use an override code to bypass WARP."
+      t: "`$NUMBER`"
+    }
+    external_emergency_signal_enabled: {
+      h: "External Emergency Signal Enabled"
+      n: "external_emergency_signal_enabled"
+      r: false
+      sh: "Controls whether the external emergency disconnect feature is enabled."
+      t: "`$BOOLEAN`"
+    }
+    external_emergency_signal_fingerprint: {
+      h: "External Emergency Signal Fingerprint"
+      n: "external_emergency_signal_fingerprint"
+      r: false
+      sh: "The SHA256 fingerprint (64 hexadecimal characters) of the HTTPS server certificate for the external_emergency_signal_url."
+      t: "`$STRING`"
+    }
+    external_emergency_signal_interval: {
+      h: "External Emergency Signal Interval"
+      n: "external_emergency_signal_interval"
+      r: false
+      sh: "The interval at which the WARP client fetches the emergency disconnect signal, formatted as a duration string (e.g., \"5m\", \"2m30s\", \"1h\")."
+      t: "`$STRING`"
+    }
+    external_emergency_signal_url: {
+      h: "External Emergency Signal Url"
+      n: "external_emergency_signal_url"
+      r: false
+      sh: "The HTTPS URL from which to fetch the emergency disconnect signal."
+      t: "`$STRING`"
+    }
+    gateway_proxy_enabled: {
+      h: "Gateway Proxy Enabled"
+      n: "gateway_proxy_enabled"
+      r: false
+      sh: "Enable gateway proxy filtering on TCP."
+      t: "`$BOOLEAN`"
+    }
+    gateway_udp_proxy_enabled: {
+      h: "Gateway Udp Proxy Enabled"
+      n: "gateway_udp_proxy_enabled"
+      r: false
+      sh: "Enable gateway proxy filtering on UDP."
+      t: "`$BOOLEAN`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+    }
+    root_certificate_installation_enabled: {
+      h: "Root Certificate Installation Enabled"
+      n: "root_certificate_installation_enabled"
+      r: false
+      sh: "Enable installation of cloudflare managed root certificate."
+      t: "`$BOOLEAN`"
+    }
+    use_zt_virtual_ip: {
+      h: "Use Zt Virtual Ip"
+      n: "use_zt_virtual_ip"
+      r: false
+      sh: "Enable using CGNAT virtual IPv4."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "teams_devices_zero_trust_account_device_setting"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/devices/settings"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/devices/settings"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              lit: "settings"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    patch: {
+      name: "patch"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/devices/settings"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/devices/settings"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              lit: "settings"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/devices/settings"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/devices/settings"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              lit: "settings"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/devices/settings"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/devices/settings"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              lit: "settings"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

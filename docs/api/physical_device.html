@@ -1,0 +1,1564 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>PhysicalDevice | Cloudflare Zero Trust Gateway</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Zero Trust Gateway<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-zero-trust-sdk">voxgig-sdk/cloudflare-zero-trust-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Zero Trust Gateway</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/client_version.html">ClientVersion</a>
+<a href="../api/cni.html">Cni</a>
+<a href="../api/deployment_group.html">DeploymentGroup</a>
+<a href="../api/dex_remote_command.html">DexRemoteCommand</a>
+<a href="../api/dex_rule.html">DexRule</a>
+<a href="../api/dex_synthetic_application_monitoring.html">DexSyntheticApplicationMonitoring</a>
+<a href="../api/digital_experience_monitoring_device.html">DigitalExperienceMonitoringDevice</a>
+<a href="../api/digital_experience_monitoring_dex_delete_response_collection.html">DigitalExperienceMonitoringDexDeleteResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_response_collection.html">DigitalExperienceMonitoringDexResponseCollection</a>
+<a href="../api/digital_experience_monitoring_dex_single.html">DigitalExperienceMonitoringDexSingle</a>
+<a href="../api/digital_experience_monitoring_fleet_status_device.html">DigitalExperienceMonitoringFleetStatusDevice</a>
+<a href="../api/digital_experience_monitoring_fleet_status_live.html">DigitalExperienceMonitoringFleetStatusLive</a>
+<a href="../api/digital_experience_monitoring_fleet_status_over_time.html">DigitalExperienceMonitoringFleetStatusOverTime</a>
+<a href="../api/interconnect.html">Interconnect</a>
+<a href="../api/ip_profile.html">IpProfile</a>
+<a href="../api/list.html">List</a>
+<a href="../api/location.html">Location</a>
+<a href="../api/nsc_cni.html">NscCni</a>
+<a href="../api/nsc_default_name.html">NscDefaultName</a>
+<a href="../api/nsc_interconnect.html">NscInterconnect</a>
+<a href="../api/nsc_setting.html">NscSetting</a>
+<a href="../api/nsc_slot_info.html">NscSlotInfo</a>
+<a href="../api/nsc_status_info.html">NscStatusInfo</a>
+<a href="../api/override_code.html">OverrideCode</a>
+<a href="../api/pacfile.html">Pacfile</a>
+<a aria-current="page" href="../api/physical_device.html">PhysicalDevice</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_iddevicesphysical-devicesdevice_idrevoke">POST /accounts/{account_id}/devices/physical-devices/{device_id}/revoke</a>
+<a class="nav-section" href="#get-accountsaccount_iddevicesphysical-devices">GET /accounts/{account_id}/devices/physical-devices</a>
+<a class="nav-section" href="#get-accountsaccount_iddevicesphysical-devicesdevice_id">GET /accounts/{account_id}/devices/physical-devices/{device_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_iddevicesphysical-devicesdevice_id">DELETE /accounts/{account_id}/devices/physical-devices/{device_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_iddevicesregistrations">DELETE /accounts/{account_id}/devices/registrations</a>
+<a class="nav-section" href="#patch-accountsaccount_iddevicesphysical-devicesdevice_id">PATCH /accounts/{account_id}/devices/physical-devices/{device_id}</a></div>
+<a href="../api/proxy_endpoint.html">ProxyEndpoint</a>
+<a href="../api/registration.html">Registration</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/teams_devices_api_response_single.html">TeamsDevicesApiResponseSingle</a>
+<a href="../api/teams_devices_components_schemas_response_collection.html">TeamsDevicesComponentsSchemasResponseCollection</a>
+<a href="../api/teams_devices_components_schemas_single.html">TeamsDevicesComponentsSchemasSingle</a>
+<a href="../api/teams_devices_default_device_setting.html">TeamsDevicesDefaultDeviceSetting</a>
+<a href="../api/teams_devices_device.html">TeamsDevicesDevice</a>
+<a href="../api/teams_devices_device_setting.html">TeamsDevicesDeviceSetting</a>
+<a href="../api/teams_devices_device_settings_response_collection.html">TeamsDevicesDeviceSettingsResponseCollection</a>
+<a href="../api/teams_devices_fallback_domain_response_collection.html">TeamsDevicesFallbackDomainResponseCollection</a>
+<a href="../api/teams_devices_global_warp_override.html">TeamsDevicesGlobalWarpOverride</a>
+<a href="../api/teams_devices_id.html">TeamsDevicesId</a>
+<a href="../api/teams_devices_override_code.html">TeamsDevicesOverrideCode</a>
+<a href="../api/teams_devices_response_collection.html">TeamsDevicesResponseCollection</a>
+<a href="../api/teams_devices_schemas_id.html">TeamsDevicesSchemasId</a>
+<a href="../api/teams_devices_schemas_response_collection.html">TeamsDevicesSchemasResponseCollection</a>
+<a href="../api/teams_devices_schemas_single.html">TeamsDevicesSchemasSingle</a>
+<a href="../api/teams_devices_single.html">TeamsDevicesSingle</a>
+<a href="../api/teams_devices_split_tunnel_include_response_collection.html">TeamsDevicesSplitTunnelIncludeResponseCollection</a>
+<a href="../api/teams_devices_split_tunnel_response_collection.html">TeamsDevicesSplitTunnelResponseCollection</a>
+<a href="../api/teams_devices_zero_trust_account_device_setting.html">TeamsDevicesZeroTrustAccountDeviceSetting</a>
+<a href="../api/tunnel.html">Tunnel</a>
+<a href="../api/tunnel_cfd_tunnel_response_collection.html">TunnelCfdTunnelResponseCollection</a>
+<a href="../api/tunnel_cfd_tunnel_response_single.html">TunnelCfdTunnelResponseSingle</a>
+<a href="../api/tunnel_configuration.html">TunnelConfiguration</a>
+<a href="../api/tunnel_empty.html">TunnelEmpty</a>
+<a href="../api/tunnel_hostname_route_response_collection.html">TunnelHostnameRouteResponseCollection</a>
+<a href="../api/tunnel_hostname_route_response_single.html">TunnelHostnameRouteResponseSingle</a>
+<a href="../api/tunnel_mesh_configuration_response_single.html">TunnelMeshConfigurationResponseSingle</a>
+<a href="../api/tunnel_route_response_single.html">TunnelRouteResponseSingle</a>
+<a href="../api/tunnel_subnet_response_collection.html">TunnelSubnetResponseCollection</a>
+<a href="../api/tunnel_subnet_response_single.html">TunnelSubnetResponseSingle</a>
+<a href="../api/tunnel_subnet_response_single_nullable.html">TunnelSubnetResponseSingleNullable</a>
+<a href="../api/tunnel_teamnet_response_collection.html">TunnelTeamnetResponseCollection</a>
+<a href="../api/tunnel_teamnet_response_single.html">TunnelTeamnetResponseSingle</a>
+<a href="../api/tunnel_tunnel_client.html">TunnelTunnelClient</a>
+<a href="../api/tunnel_tunnel_connection.html">TunnelTunnelConnection</a>
+<a href="../api/tunnel_tunnel_response_token.html">TunnelTunnelResponseToken</a>
+<a href="../api/tunnel_tunnel_warp_connector_client.html">TunnelTunnelWarpConnectorClient</a>
+<a href="../api/tunnel_tunnel_warp_connector_connection.html">TunnelTunnelWarpConnectorConnection</a>
+<a href="../api/tunnel_vnet_response_collection.html">TunnelVnetResponseCollection</a>
+<a href="../api/tunnel_vnet_response_single.html">TunnelVnetResponseSingle</a>
+<a href="../api/tunnel_warp_connector_response_collection.html">TunnelWarpConnectorResponseCollection</a>
+<a href="../api/tunnel_warp_connector_response_single.html">TunnelWarpConnectorResponseSingle</a>
+<a href="../api/tunnel_zero_trust_connectivity_setting.html">TunnelZeroTrustConnectivitySetting</a>
+<a href="../api/warp.html">Warp</a>
+<a href="../api/warp_change_event.html">WarpChangeEvent</a>
+<a href="../api/warp_teams_device_api_other.html">WarpTeamsDeviceApiOther</a>
+<a href="../api/zero_trust_gateway_applications_review_status.html">ZeroTrustGatewayApplicationsReviewStatus</a>
+<a href="../api/zero_trust_gateway_csv_operation_single.html">ZeroTrustGatewayCsvOperationSingle</a>
+<a href="../api/zero_trust_gateway_custom_certificate_setting.html">ZeroTrustGatewayCustomCertificateSetting</a>
+<a href="../api/zero_trust_gateway_gateway_account.html">ZeroTrustGatewayGatewayAccount</a>
+<a href="../api/zero_trust_gateway_gateway_account_config.html">ZeroTrustGatewayGatewayAccountConfig</a>
+<a href="../api/zero_trust_gateway_gateway_account_egress_cidr_pair_list.html">ZeroTrustGatewayGatewayAccountEgressCidrPairList</a>
+<a href="../api/zero_trust_gateway_gateway_account_logging_setting.html">ZeroTrustGatewayGatewayAccountLoggingSetting</a>
+<a href="../api/zero_trust_gateway_list_item_response_collection.html">ZeroTrustGatewayListItemResponseCollection</a>
+<a href="../api/zero_trust_gateway_list_single.html">ZeroTrustGatewayListSingle</a>
+<a href="../api/zero_trust_gateway_response_collection.html">ZeroTrustGatewayResponseCollection</a>
+<a href="../api/zero_trust_gateway_response_collection_10.html">ZeroTrustGatewayResponseCollection10</a>
+<a href="../api/zero_trust_gateway_response_collection_2.html">ZeroTrustGatewayResponseCollection2</a>
+<a href="../api/zero_trust_gateway_response_collection_3.html">ZeroTrustGatewayResponseCollection3</a>
+<a href="../api/zero_trust_gateway_response_collection_4.html">ZeroTrustGatewayResponseCollection4</a>
+<a href="../api/zero_trust_gateway_response_collection_5.html">ZeroTrustGatewayResponseCollection5</a>
+<a href="../api/zero_trust_gateway_response_collection_6.html">ZeroTrustGatewayResponseCollection6</a>
+<a href="../api/zero_trust_gateway_response_collection_7.html">ZeroTrustGatewayResponseCollection7</a>
+<a href="../api/zero_trust_gateway_response_collection_8.html">ZeroTrustGatewayResponseCollection8</a>
+<a href="../api/zero_trust_gateway_response_collection_9.html">ZeroTrustGatewayResponseCollection9</a>
+<a href="../api/zero_trust_gateway_single.html">ZeroTrustGatewaySingle</a>
+<a href="../api/zero_trust_gateway_single_response_2.html">ZeroTrustGatewaySingleResponse2</a>
+<a href="../api/zero_trust_gateway_single_response_3.html">ZeroTrustGatewaySingleResponse3</a>
+<a href="../api/zero_trust_gateway_single_response_4.html">ZeroTrustGatewaySingleResponse4</a>
+<a href="../api/zero_trust_gateway_single_response_5.html">ZeroTrustGatewaySingleResponse5</a>
+<a href="../api/zero_trust_gateway_single_response_6.html">ZeroTrustGatewaySingleResponse6</a>
+<a href="../api/zero_trust_gateway_single_response_7.html">ZeroTrustGatewaySingleResponse7</a>
+<a href="../api/zero_trust_gateway_single_response_with_list_item.html">ZeroTrustGatewaySingleResponseWithListItem</a>
+<a href="../api/zero_trust_risk_scoring.html">ZeroTrustRiskScoring</a>
+<a href="../api/zero_trust_risk_scoring_integration.html">ZeroTrustRiskScoringIntegration</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="physicaldevice">PhysicalDevice</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_iddevicesphysical-devicesdevice_idrevoke"><code>/accounts/{account_id}/devices/physical-devices/{device_id}/revoke</code></a></td>
+<td><code>create</code></td>
+<td>Revoke device registrations response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddevicesphysical-devices"><code>/accounts/{account_id}/devices/physical-devices</code></a></td>
+<td><code>list</code></td>
+<td>Returns a list of Devices</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddevicesphysical-devicesdevice_id"><code>/accounts/{account_id}/devices/physical-devices/{device_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns a Device</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_iddevicesphysical-devicesdevice_id"><code>/accounts/{account_id}/devices/physical-devices/{device_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Device was successfully deleted</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_iddevicesregistrations"><code>/accounts/{account_id}/devices/registrations</code></a></td>
+<td><code>remove</code></td>
+<td>Delete a list of registrations response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_iddevicesphysical-devicesdevice_id"><code>/accounts/{account_id}/devices/physical-devices/{device_id}</code></a></td>
+<td><code>update</code></td>
+<td>Returns the updated Device</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">physical_devices, err := client.PhysicalDevice(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(physical_devices)
+physical_device, err := client.PhysicalDevice(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(physical_device)
+created, err := client.PhysicalDevice(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example&quot;, &quot;errors&quot;: []any{}, &quot;messages&quot;: []any{}, &quot;result&quot;: map[string]any{}, &quot;result_info&quot;: map[string]any{}, &quot;success&quot;: true}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.PhysicalDevice(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []any{}}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.PhysicalDevice(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local physical_devices, err = client:PhysicalDevice():list({ account_id = &quot;example&quot; })
+local physical_device, err = client:PhysicalDevice():load({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+local created, err = client:PhysicalDevice():create({ account_id = &quot;example&quot;, id = &quot;example&quot;, errors = {}, messages = {}, result = {}, result_info = {}, success = true })
+local updated, err = client:PhysicalDevice():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, errors = {} })
+local removed, err = client:PhysicalDevice():remove({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$physical_devices = $client-&gt;PhysicalDevice()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$physical_device = $client-&gt;PhysicalDevice()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;PhysicalDevice()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;result&quot; =&gt; [], &quot;result_info&quot; =&gt; [], &quot;success&quot; =&gt; true]);
+$updated = $client-&gt;PhysicalDevice()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; []]);
+$client-&gt;PhysicalDevice()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">physical_devices = client.PhysicalDevice().list({&quot;account_id&quot;: &quot;example&quot;})
+physical_device = client.PhysicalDevice().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+created = client.PhysicalDevice().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example&quot;, &quot;errors&quot;: [], &quot;messages&quot;: [], &quot;result&quot;: {}, &quot;result_info&quot;: {}, &quot;success&quot;: True })
+updated = client.PhysicalDevice().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []})
+client.PhysicalDevice().remove({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">physical_devices = client.PhysicalDevice.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+physical_device = client.PhysicalDevice.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.PhysicalDevice.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;result&quot; =&gt; {}, &quot;result_info&quot; =&gt; {}, &quot;success&quot; =&gt; true })
+updated = client.PhysicalDevice.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [] })
+client.PhysicalDevice.remove({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const physical_devices = await client.PhysicalDevice().list({ account_id: &quot;example&quot; })
+const physical_device = await client.PhysicalDevice().load({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+const created = await client.PhysicalDevice().create({ account_id: &quot;example&quot;, id: &quot;example&quot;, errors: [], messages: [], result: {}, result_info: {}, success: true })
+const updated = await client.PhysicalDevice().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, errors: [] })
+await client.PhysicalDevice().remove({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>A WARP Device.</td>
+</tr>
+<tr>
+<td><code>result_info</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>V4 public API Pagination/Cursor info.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Replaces all tags assigned to the physical device.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_iddevicesphysical-devicesdevice_idrevoke" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/devices/physical-devices/{device_id}/revoke</h3>
+<p>Operation ID: <code>revoke-device</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>device_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-revoke-device-registrations-response" class="status" data-status="2xx">200: Revoke device registrations response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response">4XX: Client error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_iddevicesphysical-devices" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/devices/physical-devices</h3>
+<p>Operation ID: <code>list-devices</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>cursor</code> | <code>query</code> | <code>string</code> | No | Opaque token indicating the starting position when requesting the next set of records. A cursor value can be obtained from the <code>result_info</code>.cursor field in the response. |
+| <code>sort_by</code> | <code>query</code> | <code>enum: name, id, client_version, last_seen_user.email, last_seen_at, active_registrations, ...</code> | No | The device field to order results by. |
+| <code>sort_order</code> | <code>query</code> | <code>enum: asc, desc</code> | No | Sort direction. |
+| <code>last_seen_user.email</code> | <code>query</code> | <code>string</code> | No | Filter by the last seen user's email. |
+| <code>seen_after</code> | <code>query</code> | <code>string</code> | No | Filter by the <code>last_seen</code> timestamp - returns only devices last seen after this timestamp. |
+| <code>seen_before</code> | <code>query</code> | <code>string</code> | No | Filter by the <code>last_seen</code> timestamp - returns only devices last seen before this timestamp. |
+| <code>per_page</code> | <code>query</code> | <code>integer (uint64)</code> | No | The maximum number of devices to return in a single response. |
+| <code>search</code> | <code>query</code> | <code>string</code> | No | Search by device details. |
+| <code>active_registrations</code> | <code>query</code> | <code>enum: include, only, exclude</code> | No | Include or exclude devices with active registrations. The default is &quot;only&quot; - return only devices with active registrations. |
+| <code>has_registration_type</code> | <code>query</code> | <code>enum: warp, browser_extension</code> | No | Filter by the type of active registration associated with the device. |
+| <code>id</code> | <code>query</code> | <code>array of string</code> | No | Filter by a one or more device IDs. |
+| <code>tag</code> | <code>query</code> | <code>array of string</code> | No | Filter by one or more device tags in key:value format. Devices must match all provided tags. |
+| <code>last_seen_registration.policy.id</code> | <code>query</code> | <code>string (uuid)</code> | No | Filter by the ID of the device settings profile assigned to the device registration. |
+| <code>include</code> | <code>query</code> | <code>string</code> | No | Comma-separated list of additional information that should be included in the device response. Supported values are: &quot;<code>last_seen_registration</code>.policy&quot;. |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-returns-a-list-of-devices" class="status" data-status="2xx">200: Returns a list of Devices</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].active_registrations</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The number of active registrations for the device. Active registrations are those which haven't been revoked or deleted.</td>
+</tr>
+<tr>
+<td><code>result[].client_version</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Version of the WARP client.</td>
+</tr>
+<tr>
+<td><code>result[].created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339 timestamp when the device was created.</td>
+</tr>
+<tr>
+<td><code>result[].deleted_at</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The RFC3339 timestamp when the device was deleted.</td>
+</tr>
+<tr>
+<td><code>result[].device_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device operating system.</td>
+</tr>
+<tr>
+<td><code>result[].hardware_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A string that uniquely identifies the hardware or virtual machine (VM).</td>
+</tr>
+<tr>
+<td><code>result[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The unique ID of the device.</td>
+</tr>
+<tr>
+<td><code>result[].last_seen_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339 timestamp when the device was last seen.</td>
+</tr>
+<tr>
+<td><code>result[].last_seen_registration</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The last seen registration for the device.</td>
+</tr>
+<tr>
+<td><code>result[].last_seen_user</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The last user to use the WARP device.</td>
+</tr>
+<tr>
+<td><code>result[].mac_address</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device MAC address.</td>
+</tr>
+<tr>
+<td><code>result[].manufacturer</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device manufacturer.</td>
+</tr>
+<tr>
+<td><code>result[].model</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The model name of the device.</td>
+</tr>
+<tr>
+<td><code>result[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The name of the device.</td>
+</tr>
+<tr>
+<td><code>result[].os_version</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device operating system version number.</td>
+</tr>
+<tr>
+<td><code>result[].os_version_extra</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.</td>
+</tr>
+<tr>
+<td><code>result[].public_ip</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td><strong>Deprecated</strong>: IP information is provided by DEX - see https://developers.cloudflare.com/api/resources/<code>zero_trust</code>/subresources/dex/subresources/<code>fleet_status</code>/subresources/devices/methods/list/</td>
+</tr>
+<tr>
+<td><code>result[].serial_number</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device serial number.</td>
+</tr>
+<tr>
+<td><code>result[].tags</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Tags assigned to the device. An empty object if the device has no tags.</td>
+</tr>
+<tr>
+<td><code>result[].updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339 timestamp when the device was last updated.</td>
+</tr>
+<tr>
+<td><code>result_info</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>V4 public API Pagination/Cursor info.</td>
+</tr>
+<tr>
+<td><code>result_info.count</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Number of records in the response.</td>
+</tr>
+<tr>
+<td><code>result_info.cursor</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Opaque token to request the next set of records.</td>
+</tr>
+<tr>
+<td><code>result_info.per_page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The limit for the number of records in the response.</td>
+</tr>
+<tr>
+<td><code>result_info.total_count</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Total number of records available.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-1">4XX: Client error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_iddevicesphysical-devicesdevice_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/devices/physical-devices/{device_id}</h3>
+<p>Operation ID: <code>get-device</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>device_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>include</code> | <code>query</code> | <code>string</code> | No | Comma-separated list of additional information that should be included in the device response. Supported values are: &quot;<code>last_seen_registration</code>.policy&quot;. |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-returns-a-device" class="status" data-status="2xx">200: Returns a Device</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>A WARP Device.</td>
+</tr>
+<tr>
+<td><code>result.active_registrations</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The number of active registrations for the device. Active registrations are those which haven't been revoked or deleted.</td>
+</tr>
+<tr>
+<td><code>result.client_version</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Version of the WARP client.</td>
+</tr>
+<tr>
+<td><code>result.created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339 timestamp when the device was created.</td>
+</tr>
+<tr>
+<td><code>result.deleted_at</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The RFC3339 timestamp when the device was deleted.</td>
+</tr>
+<tr>
+<td><code>result.device_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device operating system.</td>
+</tr>
+<tr>
+<td><code>result.hardware_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A string that uniquely identifies the hardware or virtual machine (VM).</td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The unique ID of the device.</td>
+</tr>
+<tr>
+<td><code>result.last_seen_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339 timestamp when the device was last seen.</td>
+</tr>
+<tr>
+<td><code>result.last_seen_registration</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The last seen registration for the device.</td>
+</tr>
+<tr>
+<td><code>result.last_seen_user</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The last user to use the WARP device.</td>
+</tr>
+<tr>
+<td><code>result.mac_address</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device MAC address.</td>
+</tr>
+<tr>
+<td><code>result.manufacturer</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device manufacturer.</td>
+</tr>
+<tr>
+<td><code>result.model</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The model name of the device.</td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The name of the device.</td>
+</tr>
+<tr>
+<td><code>result.os_version</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device operating system version number.</td>
+</tr>
+<tr>
+<td><code>result.os_version_extra</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.</td>
+</tr>
+<tr>
+<td><code>result.public_ip</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td><strong>Deprecated</strong>: IP information is provided by DEX - see https://developers.cloudflare.com/api/resources/<code>zero_trust</code>/subresources/dex/subresources/<code>fleet_status</code>/subresources/devices/methods/list/</td>
+</tr>
+<tr>
+<td><code>result.serial_number</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device serial number.</td>
+</tr>
+<tr>
+<td><code>result.tags</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Tags assigned to the device. An empty object if the device has no tags.</td>
+</tr>
+<tr>
+<td><code>result.updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339 timestamp when the device was last updated.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-2">4XX: Client error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_iddevicesphysical-devicesdevice_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/devices/physical-devices/{device_id}</h3>
+<p>Operation ID: <code>delete-device</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>device_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-device-was-successfully-deleted" class="status" data-status="2xx">200: Device was successfully deleted</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-3">4XX: Client error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="delete-accountsaccount_iddevicesregistrations" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/devices/registrations</h3>
+<p>Operation ID: <code>delete-registrations</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>id</code> | <code>query</code> | <code>array of string</code> | Yes | A list of registration IDs to delete. |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-delete-a-list-of-registrations-response" class="status" data-status="2xx">200: Delete a list of registrations response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_info</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>V4 public API Pagination/Cursor info.</td>
+</tr>
+<tr>
+<td><code>result_info.count</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Number of records in the response.</td>
+</tr>
+<tr>
+<td><code>result_info.cursor</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Opaque token to request the next set of records.</td>
+</tr>
+<tr>
+<td><code>result_info.per_page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The limit for the number of records in the response.</td>
+</tr>
+<tr>
+<td><code>result_info.total_count</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Total number of records available.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-4">4XX: Client error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="patch-accountsaccount_iddevicesphysical-devicesdevice_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/devices/physical-devices/{device_id}</h3>
+<p>Operation ID: <code>patch-device</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>device_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tags</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Replaces all tags assigned to the physical device. An empty object removes all tags.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-returns-the-updated-device" class="status" data-status="2xx">200: Returns the updated Device</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>A WARP Device.</td>
+</tr>
+<tr>
+<td><code>result.active_registrations</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The number of active registrations for the device. Active registrations are those which haven't been revoked or deleted.</td>
+</tr>
+<tr>
+<td><code>result.client_version</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Version of the WARP client.</td>
+</tr>
+<tr>
+<td><code>result.created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339 timestamp when the device was created.</td>
+</tr>
+<tr>
+<td><code>result.deleted_at</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The RFC3339 timestamp when the device was deleted.</td>
+</tr>
+<tr>
+<td><code>result.device_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device operating system.</td>
+</tr>
+<tr>
+<td><code>result.hardware_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A string that uniquely identifies the hardware or virtual machine (VM).</td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The unique ID of the device.</td>
+</tr>
+<tr>
+<td><code>result.last_seen_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339 timestamp when the device was last seen.</td>
+</tr>
+<tr>
+<td><code>result.last_seen_registration</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The last seen registration for the device.</td>
+</tr>
+<tr>
+<td><code>result.last_seen_user</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>The last user to use the WARP device.</td>
+</tr>
+<tr>
+<td><code>result.mac_address</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device MAC address.</td>
+</tr>
+<tr>
+<td><code>result.manufacturer</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device manufacturer.</td>
+</tr>
+<tr>
+<td><code>result.model</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The model name of the device.</td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The name of the device.</td>
+</tr>
+<tr>
+<td><code>result.os_version</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device operating system version number.</td>
+</tr>
+<tr>
+<td><code>result.os_version_extra</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.</td>
+</tr>
+<tr>
+<td><code>result.public_ip</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td><strong>Deprecated</strong>: IP information is provided by DEX - see https://developers.cloudflare.com/api/resources/<code>zero_trust</code>/subresources/dex/subresources/<code>fleet_status</code>/subresources/devices/methods/list/</td>
+</tr>
+<tr>
+<td><code>result.serial_number</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The device serial number.</td>
+</tr>
+<tr>
+<td><code>result.tags</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Tags assigned to the device. An empty object if the device has no tags.</td>
+</tr>
+<tr>
+<td><code>result.updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The RFC3339 timestamp when the device was last updated.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-5">4XX: Client error response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

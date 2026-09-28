@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "zero_trust_gateway_gateway_account_egress_cidr_pair_list": {
+      "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_EGRESS_CIDR_PAIR_LIST00": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_EGRESS_CIDR_PAIR_LIST01": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_EGRESS_CIDR_PAIR_LIST02": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_gateway_account_egress_cidr_pair_list": {
+      "zero_trust_gateway_gateway_account_egress_cidr_pair_list_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/gateway/egress_cidr_pairs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

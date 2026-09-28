@@ -1,0 +1,52 @@
+{
+  "existing": {
+    "zero_trust_gateway_applications_review_status": {
+      "ZERO_TRUST_GATEWAY_APPLICATIONS_REVIEW_STATUS00": {
+        "approved_apps": [],
+        "in_review_apps": [],
+        "result": {},
+        "unapproved_apps": [],
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_APPLICATIONS_REVIEW_STATUS00"
+      },
+      "ZERO_TRUST_GATEWAY_APPLICATIONS_REVIEW_STATUS01": {
+        "approved_apps": [],
+        "in_review_apps": [],
+        "result": {},
+        "unapproved_apps": [],
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_APPLICATIONS_REVIEW_STATUS01"
+      },
+      "ZERO_TRUST_GATEWAY_APPLICATIONS_REVIEW_STATUS02": {
+        "approved_apps": [],
+        "in_review_apps": [],
+        "result": {},
+        "unapproved_apps": [],
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_APPLICATIONS_REVIEW_STATUS02"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_applications_review_status": {
+      "zero_trust_gateway_applications_review_status_ref01": {
+        "approved_apps": [],
+        "in_review_apps": [],
+        "result": {},
+        "unapproved_apps": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/gateway/apps/review_status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/gateway/apps/review_status": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

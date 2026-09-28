@@ -1,0 +1,26 @@
+# BasicTunnelCfdTunnelResponseCollectionFlow
+
+main: kit: flow: BasicTunnelCfdTunnelResponseCollectionFlow:
+{
+  entity: "tunnel_cfd_tunnel_response_collection",
+  kind: "basic",
+  name: "BasicTunnelCfdTunnelResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "tunnel_cfd_tunnel_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelCfdTunnelResponseCollectionFlow"
+}

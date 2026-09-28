@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "list": {
+      "LIST00": {
+        "id": "LIST00",
+        "account_id": "ACCOUNT01"
+      },
+      "LIST01": {
+        "id": "LIST01",
+        "account_id": "ACCOUNT01"
+      },
+      "LIST02": {
+        "id": "LIST02",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "list": {
+      "list_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/gateway/lists/{list_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

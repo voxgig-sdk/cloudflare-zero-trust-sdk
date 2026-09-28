@@ -1,0 +1,281 @@
+# Entity: teams_devices_default_device_setting
+
+main: kit: entity: teams_devices_default_device_setting: {
+
+  alias: field: {}
+
+  fields: {
+    allow_mode_switch: {
+      h: "Allow Mode Switch"
+      n: "allow_mode_switch"
+      r: false
+      sh: "Whether to allow the user to switch WARP between modes."
+      t: "`$BOOLEAN`"
+    }
+    allow_updates: {
+      h: "Allow Updates"
+      n: "allow_updates"
+      r: false
+      sh: "Whether to receive update notifications when a new version of the client is available."
+      t: "`$BOOLEAN`"
+    }
+    allowed_to_leave: {
+      h: "Allowed To Leave"
+      n: "allowed_to_leave"
+      r: false
+      sh: "Whether to allow devices to leave the organization."
+      t: "`$BOOLEAN`"
+    }
+    auto_connect: {
+      h: "Auto Connect"
+      n: "auto_connect"
+      r: false
+      sh: "The amount of time in seconds to reconnect after having been disabled."
+      t: "`$NUMBER`"
+    }
+    captive_portal: {
+      h: "Captive Portal"
+      n: "captive_portal"
+      r: false
+      sh: "Turn on the captive portal after the specified amount of time."
+      t: "`$NUMBER`"
+    }
+    disable_auto_fallback: {
+      h: "Disable Auto Fallback"
+      n: "disable_auto_fallback"
+      r: false
+      sh: "If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`."
+      t: "`$BOOLEAN`"
+    }
+    dns_search_suffixes: {
+      h: "Dns Search Suffixes"
+      n: "dns_search_suffixes"
+      r: false
+      sh: "List of DNS search suffixes to apply to clients."
+      t: "`$ARRAY`"
+    }
+    exclude: {
+      h: "Exclude"
+      n: "exclude"
+      r: false
+      sh: "List of routes excluded in the WARP client's tunnel."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 1
+      }
+    }
+    exclude_office_ips: {
+      h: "Exclude Office Ips"
+      n: "exclude_office_ips"
+      r: false
+      sh: "Whether to add Microsoft IPs to Split Tunnel exclusions."
+      t: "`$BOOLEAN`"
+    }
+    global_acceleration: {
+      h: "Global Acceleration"
+      n: "global_acceleration"
+      r: true
+      sh: "Global Acceleration settings for China."
+      t: "`$OBJECT`"
+    }
+    include: {
+      h: "Include"
+      n: "include"
+      r: false
+      sh: "List of routes included in the WARP client's tunnel."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 1
+      }
+    }
+    lan_allow_minutes: {
+      h: "Lan Allow Minutes"
+      n: "lan_allow_minutes"
+      r: false
+      sh: "The amount of time in minutes a user is allowed access to their LAN."
+      t: "`$NUMBER`"
+    }
+    lan_allow_subnet_size: {
+      h: "Lan Allow Subnet Size"
+      n: "lan_allow_subnet_size"
+      r: false
+      sh: "The size of the subnet for the local access network."
+      t: "`$NUMBER`"
+    }
+    register_interface_ip_with_dns: {
+      h: "Register Interface Ip With Dns"
+      n: "register_interface_ip_with_dns"
+      r: false
+      sh: "Determines if the operating system will register WARP's local interface IP with your on-premises DNS server."
+      t: "`$BOOLEAN`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 2
+        depth: 3
+      }
+    }
+    sccm_vpn_boundary_support: {
+      h: "Sccm Vpn Boundary Support"
+      n: "sccm_vpn_boundary_support"
+      r: false
+      sh: "Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary."
+      t: "`$BOOLEAN`"
+    }
+    service_mode_v2: {
+      h: "Service Mode V2"
+      n: "service_mode_v2"
+      r: false
+      t: "`$OBJECT`"
+    }
+    support_url: {
+      h: "Support Url"
+      n: "support_url"
+      r: false
+      sh: "The URL to launch when the Send Feedback button is clicked."
+      t: "`$STRING`"
+    }
+    switch_locked: {
+      h: "Switch Locked"
+      n: "switch_locked"
+      r: false
+      sh: "Whether to allow the user to turn off the WARP switch and disconnect the client."
+      t: "`$BOOLEAN`"
+    }
+    tunnel_protocol: {
+      h: "Tunnel Protocol"
+      n: "tunnel_protocol"
+      r: false
+      sh: "Determines which tunnel protocol to use."
+      t: "`$STRING`"
+    }
+    uninstall_protection: {
+      h: "Uninstall Protection"
+      n: "uninstall_protection"
+      r: false
+      sh: "Determines whether uninstalling the WARP client requires an override code."
+      t: "`$BOOLEAN`"
+    }
+    virtual_networks: {
+      h: "Virtual Networks"
+      n: "virtual_networks"
+      r: true
+      sh: "Virtual network access settings for the device."
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "teams_devices_default_device_setting"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/devices/policy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/devices/policy"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              lit: "policy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/devices/policy"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/devices/policy"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "devices"
+            }
+            {
+              lit: "policy"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

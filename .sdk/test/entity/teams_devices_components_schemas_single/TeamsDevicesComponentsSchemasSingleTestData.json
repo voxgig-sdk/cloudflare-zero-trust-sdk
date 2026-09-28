@@ -1,0 +1,60 @@
+{
+  "existing": {
+    "teams_devices_components_schemas_single": {
+      "TEAMS_DEVICES_COMPONENTS_SCHEMAS_SINGLE00": {
+        "config": {},
+        "name": "s29",
+        "result": {},
+        "type": "s2b",
+        "account_id": "ACCOUNT01",
+        "network_id": "NETWORK01",
+        "id": "TEAMS_DEVICES_COMPONENTS_SCHEMAS_SINGLE00"
+      },
+      "TEAMS_DEVICES_COMPONENTS_SCHEMAS_SINGLE01": {
+        "config": {},
+        "name": "s51",
+        "result": {},
+        "type": "s53",
+        "account_id": "ACCOUNT01",
+        "network_id": "NETWORK01",
+        "id": "TEAMS_DEVICES_COMPONENTS_SCHEMAS_SINGLE01"
+      },
+      "TEAMS_DEVICES_COMPONENTS_SCHEMAS_SINGLE02": {
+        "config": {},
+        "name": "s79",
+        "result": {},
+        "type": "s7b",
+        "account_id": "ACCOUNT01",
+        "network_id": "NETWORK01",
+        "id": "TEAMS_DEVICES_COMPONENTS_SCHEMAS_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_components_schemas_single": {
+      "teams_devices_components_schemas_single_ref01": {
+        "config": {},
+        "name": "sa1",
+        "result": {},
+        "type": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/devices/networks": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/networks/{network_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/devices/networks/{network_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

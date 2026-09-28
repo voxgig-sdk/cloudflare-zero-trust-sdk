@@ -1,0 +1,26 @@
+# BasicTunnelWarpConnectorResponseCollectionFlow
+
+main: kit: flow: BasicTunnelWarpConnectorResponseCollectionFlow:
+{
+  entity: "tunnel_warp_connector_response_collection",
+  kind: "basic",
+  name: "BasicTunnelWarpConnectorResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "tunnel_warp_connector_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelWarpConnectorResponseCollectionFlow"
+}

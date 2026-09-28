@@ -1,0 +1,53 @@
+{
+  "existing": {
+    "tunnel_tunnel_client": {
+      "TUNNEL_TUNNEL_CLIENT00": {
+        "errors": [],
+        "messages": [],
+        "result": "s2a",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01",
+        "connector_id": "CONNECTOR01",
+        "id": "TUNNEL_TUNNEL_CLIENT00"
+      },
+      "TUNNEL_TUNNEL_CLIENT01": {
+        "errors": [],
+        "messages": [],
+        "result": "s52",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01",
+        "connector_id": "CONNECTOR01",
+        "id": "TUNNEL_TUNNEL_CLIENT01"
+      },
+      "TUNNEL_TUNNEL_CLIENT02": {
+        "errors": [],
+        "messages": [],
+        "result": "s7a",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "cfd_tunnel_id": "CFD_TUNNEL01",
+        "connector_id": "CONNECTOR01",
+        "id": "TUNNEL_TUNNEL_CLIENT02"
+      }
+    }
+  },
+  "new": {
+    "tunnel_tunnel_client": {
+      "tunnel_tunnel_client_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": "sa2",
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connectors/{connector_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

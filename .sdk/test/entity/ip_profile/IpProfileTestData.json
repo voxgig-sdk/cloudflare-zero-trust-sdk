@@ -1,0 +1,95 @@
+{
+  "existing": {
+    "ip_profile": {
+      "IP_PROFILE00": {
+        "description": "s78",
+        "enabled": false,
+        "errors": [],
+        "id": "IP_PROFILE00",
+        "match": "s7c",
+        "messages": [],
+        "name": "s7e",
+        "precedence": 127,
+        "result": {},
+        "result_info": {},
+        "subnet_id": "SUBNET01",
+        "success": false,
+        "account_id": "ACCOUNT01"
+      },
+      "IP_PROFILE01": {
+        "description": "sf0",
+        "enabled": false,
+        "errors": [],
+        "id": "IP_PROFILE01",
+        "match": "sf4",
+        "messages": [],
+        "name": "sf6",
+        "precedence": 247,
+        "result": {},
+        "result_info": {},
+        "subnet_id": "SUBNET01",
+        "success": false,
+        "account_id": "ACCOUNT01"
+      },
+      "IP_PROFILE02": {
+        "description": "s168",
+        "enabled": false,
+        "errors": [],
+        "id": "IP_PROFILE02",
+        "match": "s16c",
+        "messages": [],
+        "name": "s16e",
+        "precedence": 367,
+        "result": {},
+        "result_info": {},
+        "subnet_id": "SUBNET01",
+        "success": false,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "ip_profile": {
+      "ip_profile_ref01": {
+        "description": "s1e0",
+        "enabled": false,
+        "errors": [],
+        "match": "s1e4",
+        "messages": [],
+        "name": "s1e6",
+        "precedence": 487,
+        "result": {},
+        "result_info": {},
+        "subnet_id": "SUBNET01",
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/devices/ip-profiles": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/ip-profiles": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/devices/ip-profiles/{profile_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/devices/ip-profiles/{profile_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/devices/ip-profiles/{profile_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

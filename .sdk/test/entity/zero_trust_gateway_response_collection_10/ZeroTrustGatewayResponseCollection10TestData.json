@@ -1,0 +1,36 @@
+{
+  "existing": {
+    "zero_trust_gateway_response_collection_10": {
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_1000": {
+        "result": [],
+        "result_info": {},
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_1001": {
+        "result": [],
+        "result_info": {},
+        "account_id": "ACCOUNT01"
+      },
+      "ZERO_TRUST_GATEWAY_RESPONSE_COLLECTION_1002": {
+        "result": [],
+        "result_info": {},
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_response_collection_10": {
+      "zero_trust_gateway_response_collection_10_ref01": {
+        "result": [],
+        "result_info": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/gateway/pacfiles": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

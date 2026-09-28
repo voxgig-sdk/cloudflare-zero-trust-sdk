@@ -1,0 +1,35 @@
+{
+  "existing": {
+    "digital_experience_monitoring_fleet_status_over_time": {
+      "DIGITAL_EXPERIENCE_MONITORING_FLEET_STATUS_OVER_TIME00": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "DIGITAL_EXPERIENCE_MONITORING_FLEET_STATUS_OVER_TIME00"
+      },
+      "DIGITAL_EXPERIENCE_MONITORING_FLEET_STATUS_OVER_TIME01": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "DIGITAL_EXPERIENCE_MONITORING_FLEET_STATUS_OVER_TIME01"
+      },
+      "DIGITAL_EXPERIENCE_MONITORING_FLEET_STATUS_OVER_TIME02": {
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "DIGITAL_EXPERIENCE_MONITORING_FLEET_STATUS_OVER_TIME02"
+      }
+    }
+  },
+  "new": {
+    "digital_experience_monitoring_fleet_status_over_time": {
+      "digital_experience_monitoring_fleet_status_over_time_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/dex/fleet-status/over-time": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

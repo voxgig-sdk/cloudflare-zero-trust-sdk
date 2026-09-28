@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "digital_experience_monitoring_dex_response_collection": {
+      "DIGITAL_EXPERIENCE_MONITORING_DEX_RESPONSE_COLLECTION00": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "DIGITAL_EXPERIENCE_MONITORING_DEX_RESPONSE_COLLECTION01": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      },
+      "DIGITAL_EXPERIENCE_MONITORING_DEX_RESPONSE_COLLECTION02": {
+        "result": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "digital_experience_monitoring_dex_response_collection": {
+      "digital_experience_monitoring_dex_response_collection_ref01": {
+        "result": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/dex/devices/dex_tests": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

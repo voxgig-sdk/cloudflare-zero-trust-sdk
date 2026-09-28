@@ -1,0 +1,124 @@
+{
+  "existing": {
+    "teams_devices_default_device_setting": {
+      "TEAMS_DEVICES_DEFAULT_DEVICE_SETTING00": {
+        "allow_mode_switch": true,
+        "allow_updates": false,
+        "allowed_to_leave": true,
+        "auto_connect": 223,
+        "captive_portal": 224,
+        "disable_auto_fallback": false,
+        "dns_search_suffixes": [],
+        "exclude": [],
+        "exclude_office_ips": true,
+        "global_acceleration": {},
+        "include": [],
+        "lan_allow_minutes": 231,
+        "lan_allow_subnet_size": 232,
+        "register_interface_ip_with_dns": false,
+        "result": {},
+        "sccm_vpn_boundary_support": false,
+        "service_mode_v2": {},
+        "support_url": "sed",
+        "switch_locked": true,
+        "tunnel_protocol": "sef",
+        "uninstall_protection": true,
+        "virtual_networks": {},
+        "account_id": "ACCOUNT01",
+        "id": "TEAMS_DEVICES_DEFAULT_DEVICE_SETTING00"
+      },
+      "TEAMS_DEVICES_DEFAULT_DEVICE_SETTING01": {
+        "allow_mode_switch": true,
+        "allow_updates": false,
+        "allowed_to_leave": true,
+        "auto_connect": 443,
+        "captive_portal": 444,
+        "disable_auto_fallback": false,
+        "dns_search_suffixes": [],
+        "exclude": [],
+        "exclude_office_ips": true,
+        "global_acceleration": {},
+        "include": [],
+        "lan_allow_minutes": 451,
+        "lan_allow_subnet_size": 452,
+        "register_interface_ip_with_dns": false,
+        "result": {},
+        "sccm_vpn_boundary_support": false,
+        "service_mode_v2": {},
+        "support_url": "s1c9",
+        "switch_locked": true,
+        "tunnel_protocol": "s1cb",
+        "uninstall_protection": true,
+        "virtual_networks": {},
+        "account_id": "ACCOUNT01",
+        "id": "TEAMS_DEVICES_DEFAULT_DEVICE_SETTING01"
+      },
+      "TEAMS_DEVICES_DEFAULT_DEVICE_SETTING02": {
+        "allow_mode_switch": true,
+        "allow_updates": false,
+        "allowed_to_leave": true,
+        "auto_connect": 663,
+        "captive_portal": 664,
+        "disable_auto_fallback": false,
+        "dns_search_suffixes": [],
+        "exclude": [],
+        "exclude_office_ips": true,
+        "global_acceleration": {},
+        "include": [],
+        "lan_allow_minutes": 671,
+        "lan_allow_subnet_size": 672,
+        "register_interface_ip_with_dns": false,
+        "result": {},
+        "sccm_vpn_boundary_support": false,
+        "service_mode_v2": {},
+        "support_url": "s2a5",
+        "switch_locked": true,
+        "tunnel_protocol": "s2a7",
+        "uninstall_protection": true,
+        "virtual_networks": {},
+        "account_id": "ACCOUNT01",
+        "id": "TEAMS_DEVICES_DEFAULT_DEVICE_SETTING02"
+      }
+    }
+  },
+  "new": {
+    "teams_devices_default_device_setting": {
+      "teams_devices_default_device_setting_ref01": {
+        "allow_mode_switch": true,
+        "allow_updates": false,
+        "allowed_to_leave": true,
+        "auto_connect": 883,
+        "captive_portal": 884,
+        "disable_auto_fallback": false,
+        "dns_search_suffixes": [],
+        "exclude": [],
+        "exclude_office_ips": true,
+        "global_acceleration": {},
+        "include": [],
+        "lan_allow_minutes": 891,
+        "lan_allow_subnet_size": 892,
+        "register_interface_ip_with_dns": false,
+        "result": {},
+        "sccm_vpn_boundary_support": false,
+        "service_mode_v2": {},
+        "support_url": "s381",
+        "switch_locked": true,
+        "tunnel_protocol": "s383",
+        "uninstall_protection": true,
+        "virtual_networks": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/devices/policy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/devices/policy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

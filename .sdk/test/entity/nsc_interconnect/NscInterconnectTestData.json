@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "nsc_interconnect": {
+      "NSC_INTERCONNECT00": {
+        "id": "NSC_INTERCONNECT00",
+        "items": [],
+        "next": 32,
+        "account_id": "ACCOUNT01"
+      },
+      "NSC_INTERCONNECT01": {
+        "id": "NSC_INTERCONNECT01",
+        "items": [],
+        "next": 62,
+        "account_id": "ACCOUNT01"
+      },
+      "NSC_INTERCONNECT02": {
+        "id": "NSC_INTERCONNECT02",
+        "items": [],
+        "next": 92,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "nsc_interconnect": {
+      "nsc_interconnect_ref01": {
+        "items": [],
+        "next": 122
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cni/interconnects": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cni/interconnects": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cni/interconnects/{icon}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

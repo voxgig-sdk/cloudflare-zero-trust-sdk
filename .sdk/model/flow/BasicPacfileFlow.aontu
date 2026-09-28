@@ -1,0 +1,9 @@
+# BasicPacfileFlow
+
+main: kit: flow: BasicPacfileFlow:
+{
+  entity: "pacfile",
+  kind: "basic",
+  name: "BasicPacfileFlow",
+  "key$": "BasicPacfileFlow"
+}

@@ -1,0 +1,22 @@
+# BasicZeroTrustGatewayCsvOperationSingleFlow
+
+main: kit: flow: BasicZeroTrustGatewayCsvOperationSingleFlow:
+{
+  entity: "zero_trust_gateway_csv_operation_single",
+  kind: "basic",
+  name: "BasicZeroTrustGatewayCsvOperationSingleFlow",
+  step: [
+    {
+      i: {
+        ref: "zero_trust_gateway_csv_operation_single_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicZeroTrustGatewayCsvOperationSingleFlow"
+}

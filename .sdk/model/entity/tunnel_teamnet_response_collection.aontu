@@ -1,0 +1,168 @@
+# Entity: tunnel_teamnet_response_collection
+
+main: kit: entity: tunnel_teamnet_response_collection: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "tunnel_teamnet_response_collection"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/teamnet/routes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "Example comment for this route."
+                k: "query"
+                n: "comment"
+                or: "comment"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2019-10-12T07%3A20%3A50.52Z"
+                k: "query"
+                n: "existed_at"
+                or: "existed_at"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "is_deleted"
+                or: "is_deleted"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "network_subset"
+                or: "network_subset"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "network_superset"
+                or: "network_superset"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "query"
+                n: "route_id"
+                or: "route_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "cfd_tunnel,warp_connector"
+                k: "query"
+                n: "tun_type"
+                or: "tun_type"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "query"
+                n: "tunnel_id"
+                or: "tunnel_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "query"
+                n: "virtual_network_id"
+                or: "virtual_network_id"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/teamnet/routes"
+          q: {
+            exist: [
+              "account_id"
+              "comment"
+              "existed_at"
+              "is_deleted"
+              "network_subset"
+              "network_superset"
+              "page"
+              "per_page"
+              "route_id"
+              "tun_type"
+              "tunnel_id"
+              "virtual_network_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "teamnet"
+            }
+            {
+              lit: "routes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

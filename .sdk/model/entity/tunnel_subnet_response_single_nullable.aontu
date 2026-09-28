@@ -1,0 +1,83 @@
+# Entity: tunnel_subnet_response_single_nullable
+
+main: kit: entity: tunnel_subnet_response_single_nullable: {
+
+  alias: field: {}
+
+  name: "tunnel_subnet_response_single_nullable"
+  op: {
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "subnet_id"
+                or: "subnet_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}"
+          q: {
+            exist: [
+              "account_id"
+              "subnet_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "zerotrust"
+            }
+            {
+              lit: "subnets"
+            }
+            {
+              lit: "warp"
+            }
+            {
+              var: "subnet_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.warp")]
+  ]
+
+}

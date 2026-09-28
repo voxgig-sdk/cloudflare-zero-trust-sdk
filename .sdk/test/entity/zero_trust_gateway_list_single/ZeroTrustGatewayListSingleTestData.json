@@ -1,0 +1,68 @@
+{
+  "existing": {
+    "zero_trust_gateway_list_single": {
+      "ZERO_TRUST_GATEWAY_LIST_SINGLE00": {
+        "append": [],
+        "description": "s3d",
+        "items": [],
+        "name": "s3f",
+        "remove": [],
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "list_id": "LIST01",
+        "id": "ZERO_TRUST_GATEWAY_LIST_SINGLE00"
+      },
+      "ZERO_TRUST_GATEWAY_LIST_SINGLE01": {
+        "append": [],
+        "description": "s79",
+        "items": [],
+        "name": "s7b",
+        "remove": [],
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "list_id": "LIST01",
+        "id": "ZERO_TRUST_GATEWAY_LIST_SINGLE01"
+      },
+      "ZERO_TRUST_GATEWAY_LIST_SINGLE02": {
+        "append": [],
+        "description": "sb5",
+        "items": [],
+        "name": "sb7",
+        "remove": [],
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "list_id": "LIST01",
+        "id": "ZERO_TRUST_GATEWAY_LIST_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_list_single": {
+      "zero_trust_gateway_list_single_ref01": {
+        "append": [],
+        "description": "sf1",
+        "items": [],
+        "name": "sf3",
+        "remove": [],
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/gateway/lists/{list_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/gateway/lists/{list_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/gateway/lists/{list_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

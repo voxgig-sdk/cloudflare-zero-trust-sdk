@@ -1,0 +1,56 @@
+# BasicWarpFlow
+
+main: kit: flow: BasicWarpFlow:
+{
+  entity: "warp",
+  kind: "basic",
+  name: "BasicWarpFlow",
+  step: [
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "warp_ref01",
+        srcdatavar: "warp_ref01_data",
+        suffix: "_up0",
+        textfield: "comment"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-warp_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "warp_ref01",
+        srcdatavar: "warp_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "warp01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-warp_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicWarpFlow"
+}

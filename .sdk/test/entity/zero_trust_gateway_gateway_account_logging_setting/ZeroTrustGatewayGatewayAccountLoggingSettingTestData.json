@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "zero_trust_gateway_gateway_account_logging_setting": {
+      "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_LOGGING_SETTING00": {
+        "redact_pii": true,
+        "result": {},
+        "settings_by_rule_type": {},
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_LOGGING_SETTING00"
+      },
+      "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_LOGGING_SETTING01": {
+        "redact_pii": true,
+        "result": {},
+        "settings_by_rule_type": {},
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_LOGGING_SETTING01"
+      },
+      "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_LOGGING_SETTING02": {
+        "redact_pii": true,
+        "result": {},
+        "settings_by_rule_type": {},
+        "account_id": "ACCOUNT01",
+        "id": "ZERO_TRUST_GATEWAY_GATEWAY_ACCOUNT_LOGGING_SETTING02"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_gateway_account_logging_setting": {
+      "zero_trust_gateway_gateway_account_logging_setting_ref01": {
+        "redact_pii": true,
+        "result": {},
+        "settings_by_rule_type": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/gateway/logging": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/gateway/logging": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

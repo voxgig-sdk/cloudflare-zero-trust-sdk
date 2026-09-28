@@ -1,0 +1,62 @@
+{
+  "existing": {
+    "zero_trust_gateway_single": {
+      "ZERO_TRUST_GATEWAY_SINGLE00": {
+        "result": {},
+        "validity_period_days": 21,
+        "account_id": "ACCOUNT01",
+        "certificate_id": "CERTIFICATE01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE00"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE01": {
+        "result": {},
+        "validity_period_days": 41,
+        "account_id": "ACCOUNT01",
+        "certificate_id": "CERTIFICATE01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE01"
+      },
+      "ZERO_TRUST_GATEWAY_SINGLE02": {
+        "result": {},
+        "validity_period_days": 61,
+        "account_id": "ACCOUNT01",
+        "certificate_id": "CERTIFICATE01",
+        "id": "ZERO_TRUST_GATEWAY_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "zero_trust_gateway_single": {
+      "zero_trust_gateway_single_ref01": {
+        "result": {},
+        "validity_period_days": 81
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/gateway/certificates/{certificate_id}/activate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/gateway/certificates/{certificate_id}/deactivate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/gateway/certificates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/gateway/certificates/{certificate_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/gateway/certificates/{certificate_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

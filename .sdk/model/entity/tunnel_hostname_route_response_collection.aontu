@@ -1,0 +1,147 @@
+# Entity: tunnel_hostname_route_response_collection
+
+main: kit: entity: tunnel_hostname_route_response_collection: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "tunnel_hostname_route_response_collection"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/zerotrust/routes/hostname"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "example%20comment"
+                k: "query"
+                n: "comment"
+                or: "comment"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2019-10-12T07%3A20%3A50.52Z"
+                k: "query"
+                n: "existed_at"
+                or: "existed_at"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "office-1.local"
+                k: "query"
+                n: "hostname"
+                or: "hostname"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "query"
+                n: "id"
+                or: "id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: true
+                k: "query"
+                n: "is_deleted"
+                or: "is_deleted"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "query"
+                n: "tunnel_id"
+                or: "tunnel_id"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/zerotrust/routes/hostname"
+          q: {
+            exist: [
+              "account_id"
+              "comment"
+              "existed_at"
+              "hostname"
+              "id"
+              "is_deleted"
+              "page"
+              "per_page"
+              "tunnel_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "zerotrust"
+            }
+            {
+              lit: "routes"
+            }
+            {
+              lit: "hostname"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

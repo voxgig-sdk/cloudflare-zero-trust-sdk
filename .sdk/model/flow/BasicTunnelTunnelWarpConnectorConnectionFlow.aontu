@@ -1,0 +1,27 @@
+# BasicTunnelTunnelWarpConnectorConnectionFlow
+
+main: kit: flow: BasicTunnelTunnelWarpConnectorConnectionFlow:
+{
+  entity: "tunnel_tunnel_warp_connector_connection",
+  kind: "basic",
+  name: "BasicTunnelTunnelWarpConnectorConnectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01",
+        warp_connector_id: "warp_connector01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "tunnel_tunnel_warp_connector_connection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTunnelTunnelWarpConnectorConnectionFlow"
+}

@@ -1,0 +1,33 @@
+# BasicInterconnectFlow
+
+main: kit: flow: BasicInterconnectFlow:
+{
+  entity: "interconnect",
+  kind: "basic",
+  name: "BasicInterconnectFlow",
+  step: [
+    {
+      i: {
+        ref: "interconnect_ref01",
+        srcdatavar: "interconnect_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "interconnect01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-interconnect_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInterconnectFlow"
+}

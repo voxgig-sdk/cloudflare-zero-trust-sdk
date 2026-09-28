@@ -1,0 +1,182 @@
+# Entity: tunnel
+
+main: kit: entity: tunnel: {
+
+  alias: field: {}
+
+  fields: {
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 1
+      }
+    }
+  }
+
+  name: "tunnel"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/tunnels"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "699d98642c564d2e855e9661899b7252"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "vpc1-"
+                k: "query"
+                n: "exclude_prefix"
+                or: "exclude_prefix"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2019-10-12T07%3A20%3A50.52Z"
+                k: "query"
+                n: "existed_at"
+                or: "existed_at"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "vpc1-"
+                k: "query"
+                n: "include_prefix"
+                or: "include_prefix"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: true
+                k: "query"
+                n: "is_deleted"
+                or: "is_deleted"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: "blog"
+                k: "query"
+                n: "name"
+                or: "name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "healthy"
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "cfd_tunnel,warp_connector"
+                k: "query"
+                n: "tun_type"
+                or: "tun_type"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: "f70ff985-a4ef-4643-bbbc-4a0ed4fc8415"
+                k: "query"
+                n: "uuid"
+                or: "uuid"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2009-11-10T23:00:00Z"
+                k: "query"
+                n: "was_active_at"
+                or: "was_active_at"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2009-11-10T23:00:00Z"
+                k: "query"
+                n: "was_inactive_at"
+                or: "was_inactive_at"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/tunnels"
+          q: {
+            exist: [
+              "account_id"
+              "exclude_prefix"
+              "existed_at"
+              "include_prefix"
+              "is_deleted"
+              "name"
+              "page"
+              "per_page"
+              "status"
+              "tun_type"
+              "uuid"
+              "was_active_at"
+              "was_inactive_at"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "tunnels"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
